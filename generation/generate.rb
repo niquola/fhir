@@ -9,14 +9,31 @@ def value_by_path(node, path, attr = :value)
 end
 
 
-def line(acc, depth, line)
-  acc<< indent(line, depth) << "\n"
+def line(acc, depth, lines)
+  lines.split("\n").each do |line|
+    acc<< indent(line, depth) << "\n"
+  end
+end
+
+def blank_line(acc)
+  acc<< "\n"
 end
 
 def from_to(max, min,&block)
   (min...max).to_a
   .reverse
   .each(&block)
+end
+
+def el_comment(el)
+  value_by_path(el, 'definition/short')
+  .split("\n")
+  .map{|l| "# #{l}"}
+  .join("\n")
+end
+
+def is_root_class(prev_path)
+  prev_path.size == 0
 end
 
 def process_elements(els, prev_path, acc)
@@ -32,10 +49,17 @@ def process_elements(els, prev_path, acc)
     end
 
     if is_opening(path, prev_path)
-      line a, (d -1), open_class(path)
+      line a, (d - 1), open_class(path)
+      if is_root_class(prev_path)
+	line a, (d), "include Virtus"
+      else
+	line a, (d), "include Virtus::ValueObject"
+      end
     end
 
+    line a, d, el_comment(el)
     line a, d, add_attr(el)
+    blank_line a
 
     unless els.empty?
       process_elements(els, path, a)
