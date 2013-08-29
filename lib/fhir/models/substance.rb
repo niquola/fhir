@@ -1,3 +1,4 @@
+# A homogeneous material with a definite composition used in healthcare
 class Substance
   include Virtus
   # Additional Content defined by implementations

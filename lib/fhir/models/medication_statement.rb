@@ -1,3 +1,4 @@
+# Administration of medication to a patient
 class MedicationStatement
   include Virtus
   # Additional Content defined by implementations

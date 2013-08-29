@@ -1,3 +1,4 @@
+# An action that is performed on a patient
 class Procedure
   include Virtus
   # Additional Content defined by implementations

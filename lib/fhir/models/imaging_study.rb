@@ -1,3 +1,4 @@
+# A set of images produced in single study (one or more series of references images)
 class ImagingStudy
   include Virtus
   # Additional Content defined by implementations

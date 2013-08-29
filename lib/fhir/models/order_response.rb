@@ -1,3 +1,4 @@
+# A response to an order
 class OrderResponse
   include Virtus
   # Additional Content defined by implementations

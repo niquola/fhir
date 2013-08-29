@@ -1,3 +1,4 @@
+# An immunization profile
 class ImmunizationProfile
   include Virtus
   # Additional Content defined by implementations

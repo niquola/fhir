@@ -1,3 +1,4 @@
+# Information about a person or animal receiving health care services
 class Patient
   include Virtus
   # Additional Content defined by implementations

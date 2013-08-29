@@ -1,3 +1,4 @@
+# Describes the set of data produced by a device
 class DeviceCapabilities
   include Virtus
   # Additional Content defined by implementations

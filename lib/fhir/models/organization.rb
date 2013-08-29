@@ -1,3 +1,4 @@
+# A grouping of people or organizations with a common purpose
 class Organization
   include Virtus
   # Additional Content defined by implementations

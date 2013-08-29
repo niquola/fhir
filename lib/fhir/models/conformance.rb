@@ -1,3 +1,4 @@
+# A conformance statement
 class Conformance
   include Virtus
   # Additional Content defined by implementations

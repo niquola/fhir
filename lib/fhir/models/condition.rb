@@ -1,3 +1,4 @@
+# Detailed information about conditions, problems or diagnoses
 class Condition
   include Virtus
   # Additional Content defined by implementations

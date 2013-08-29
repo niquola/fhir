@@ -1,3 +1,4 @@
+# Prescription of medication to for patient
 class MedicationPrescription
   include Virtus
   # Additional Content defined by implementations

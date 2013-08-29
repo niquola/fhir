@@ -1,3 +1,4 @@
+# Information summarized from a list of other resources
 class List
   include Virtus
   # Additional Content defined by implementations

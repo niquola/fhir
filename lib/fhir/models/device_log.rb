@@ -1,3 +1,4 @@
+# A set of raw data produced by a device
 class DeviceLog
   include Virtus
   # Additional Content defined by implementations

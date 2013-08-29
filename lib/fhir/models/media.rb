@@ -1,3 +1,4 @@
+# A photo, video, or audio recording acquired or used in healthcare. The actual content maybe inline or provided by direct reference
 class Media
   include Virtus
   # Additional Content defined by implementations

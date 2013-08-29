@@ -1,3 +1,4 @@
+# Resource Profile
 class Profile
   include Virtus
   # Additional Content defined by implementations

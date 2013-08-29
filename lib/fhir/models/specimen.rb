@@ -1,3 +1,4 @@
+# Sample for analysis
 class Specimen
   include Virtus
   # Additional Content defined by implementations

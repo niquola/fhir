@@ -1,3 +1,4 @@
+# Dispensing a medication to a named patient
 class MedicationDispense
   include Virtus
   # Additional Content defined by implementations

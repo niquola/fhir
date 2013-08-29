@@ -1,3 +1,4 @@
+# A document that contains resources
 class Document
   include Virtus
   # Additional Content defined by implementations

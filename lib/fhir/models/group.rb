@@ -1,3 +1,4 @@
+# Group of multiple entities
 class Group
   include Virtus
   # Additional Content defined by implementations

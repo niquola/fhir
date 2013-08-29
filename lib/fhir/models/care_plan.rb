@@ -1,3 +1,4 @@
+# Healthcare plan for patient
 class CarePlan
   include Virtus
   # Additional Content defined by implementations

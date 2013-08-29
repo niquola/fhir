@@ -32,42 +32,42 @@ def el_comment(el)
   .join("\n")
 end
 
-def is_root_class(prev_path)
-  prev_path.size == 0
+def is_root_class(path)
+  path.size == 1
 end
 
-def process_elements(els, prev_path, acc)
-  acc.tap do |a|
-    el = els.shift
-    path = el_path(el)
-    d = depth(path)
+def process_elements(els)
+  a = ""
+  el = els.shift
+  path = el_path(el)
+  d = depth(path)
+  next_path = el_path(els.first)
 
-    if is_closing(path, prev_path)
-      from_to(depth(prev_path), d) do |dd|
-	line a, dd, close_class(path)
-      end
-    end
-
-    if is_opening(path, prev_path)
-      line a, (d - 1), open_class(path)
-      if is_root_class(prev_path)
-	line a, (d), "include Virtus"
-      else
-	line a, (d), "include Virtus::ValueObject"
-      end
-    end
-
-    line a, d, el_comment(el)
+  line a, d, el_comment(el)
+  unless is_root_class(path)
     line a, d, add_attr(el)
     blank_line a
+  end
 
-    unless els.empty?
-      process_elements(els, path, a)
-    else
-      from_to(d, 0) do |dd|
-	line a, dd, close_class(path)
-      end
+  if is_closing(next_path, path)
+    from_to(path.size, next_path.size < 1 ? 1 : next_path.size) do |dd|
+      line a, dd - 1, close_class(path)
     end
+  end
+
+  if is_opening(next_path, path)
+    line a, d, open_class(path)
+    if is_root_class(path)
+      line a, d + 1, "include Virtus"
+    else
+      line a, d + 1, "include Virtus::ValueObject"
+    end
+  end
+
+  if els.empty?
+    a
+  else
+    a << process_elements(els)
   end
 end
 
@@ -84,7 +84,7 @@ def open_class(path)
 end
 
 def class_name(path)
-  (path[-2] || path.last).camelize
+  path.last.camelize
 end
 
 def close_class(path)
@@ -145,7 +145,6 @@ doc.xpath('//Profile/structure')
   resource_name =  value_by_path(st, 'type')
   file_name = resource_name.underscore
   elements = st.xpath('./element').to_a
-  elements.shift
-  code = process_elements(elements, [], "")
+  code = process_elements(elements)
   File.open("#{lib_dir}/#{file_name}.rb",'w+'){|f| f<< code }
 end

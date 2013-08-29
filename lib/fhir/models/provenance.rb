@@ -1,3 +1,4 @@
+# Who, What, When for a set of resources
 class Provenance
   include Virtus
   # Additional Content defined by implementations

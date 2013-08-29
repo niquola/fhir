@@ -1,3 +1,4 @@
+# An interaction during which services are provided to the patient
 class Encounter
   include Virtus
   # Additional Content defined by implementations

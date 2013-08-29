@@ -1,3 +1,4 @@
+# Immunization event information
 class Immunization
   include Virtus
   # Additional Content defined by implementations

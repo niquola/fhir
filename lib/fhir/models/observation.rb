@@ -1,3 +1,4 @@
+# Simple observations
 class Observation
   include Virtus
   # Additional Content defined by implementations

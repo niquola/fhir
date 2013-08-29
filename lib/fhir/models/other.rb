@@ -1,3 +1,4 @@
+# Resource for non-supported content
 class Other
   include Virtus
   # Additional Content defined by implementations

@@ -1,3 +1,4 @@
+# Event record kept for security purposes
 class SecurityEvent
   include Virtus
   # Additional Content defined by implementations

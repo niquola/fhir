@@ -1,3 +1,4 @@
+# A set of observations produced by a device
 class DeviceObservation
   include Virtus
   # Additional Content defined by implementations

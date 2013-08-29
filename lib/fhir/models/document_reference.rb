@@ -1,3 +1,4 @@
+# A reference to a document
 class DocumentReference
   include Virtus
   # Additional Content defined by implementations

@@ -1,3 +1,4 @@
+# A message that contains resources
 class Message
   include Virtus
   # Additional Content defined by implementations

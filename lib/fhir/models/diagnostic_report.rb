@@ -1,3 +1,4 @@
+# A Diagnostic report - a combination of request information, atomic results, images, interpretation, and formatted reports
 class DiagnosticReport
   include Virtus
   # Additional Content defined by implementations

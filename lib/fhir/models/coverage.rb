@@ -1,3 +1,4 @@
+# Insurance or medical plan
 class Coverage
   include Virtus
   # Additional Content defined by implementations

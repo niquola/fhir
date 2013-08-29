@@ -1,3 +1,4 @@
+# A set of codes drawn from one or more code systems
 class ValueSet
   include Virtus
   # Additional Content defined by implementations

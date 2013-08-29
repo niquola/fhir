@@ -1,3 +1,4 @@
+# A request to perform an action
 class Order
   include Virtus
   # Additional Content defined by implementations

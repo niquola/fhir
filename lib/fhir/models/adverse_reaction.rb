@@ -1,3 +1,4 @@
+# Specific reactions to a substance
 class AdverseReaction
   include Virtus
   # Additional Content defined by implementations

@@ -1,3 +1,4 @@
+# A description of a query with a set of parameters
 class Query
   include Virtus
   # Additional Content defined by implementations

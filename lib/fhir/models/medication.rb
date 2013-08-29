@@ -1,3 +1,4 @@
+# Definition of a Medication
 class Medication
   include Virtus
   # Additional Content defined by implementations

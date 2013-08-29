@@ -1,3 +1,4 @@
+# Information about the success/failure of an action
 class OperationOutcome
   include Virtus
   # Additional Content defined by implementations

@@ -1,3 +1,4 @@
+# An person that is related to a patient, but who is not a direct target of care
 class RelatedPerson
   include Virtus
   # Additional Content defined by implementations

@@ -1,3 +1,4 @@
+# A set of answers to predefined lists of questions
 class Questionnaire
   include Virtus
   # Additional Content defined by implementations

@@ -1,3 +1,4 @@
+# Alert
 class Alert
   include Virtus
   # Additional Content defined by implementations

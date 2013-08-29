@@ -1,3 +1,4 @@
+# A person with a  formal responsibility in the provisioning of healthcare or related services
 class Practitioner
   include Virtus
   # Additional Content defined by implementations

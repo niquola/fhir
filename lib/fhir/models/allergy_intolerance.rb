@@ -1,3 +1,4 @@
+# Allergy/Intolerance
 class AllergyIntolerance
   include Virtus
   # Additional Content defined by implementations

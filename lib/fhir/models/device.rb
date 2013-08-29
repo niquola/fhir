@@ -1,3 +1,4 @@
+# An instance of a manufactured thing that is used in the provision of healthcare
 class Device
   include Virtus
   # Additional Content defined by implementations

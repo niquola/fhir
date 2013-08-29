@@ -1,3 +1,4 @@
+# A supply -  request and provision
 class Supply
   include Virtus
   # Additional Content defined by implementations

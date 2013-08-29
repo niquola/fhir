@@ -1,3 +1,4 @@
+# A request for a diagnostic service
 class DiagnosticOrder
   include Virtus
   # Additional Content defined by implementations

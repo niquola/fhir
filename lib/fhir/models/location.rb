@@ -1,3 +1,4 @@
+# Contact details and position information for a physical place
 class Location
   include Virtus
   # Additional Content defined by implementations
