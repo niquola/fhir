@@ -1,0 +1,2 @@
+require 'fhir'
+require 'virtus'
