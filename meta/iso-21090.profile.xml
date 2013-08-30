@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Profile xmlns="http://hl7.org/fhir">
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
+<span style=" color: Gray">&lt;!-- <span style="color: Darkviolet">Extensions</span> --&gt;</span>
+&lt;<span title="A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type."><b>extension</b></span>&gt;<a name="name-qualifier"> </a>&lt;!--  <span style="color: brown"><b>0..*</b></span> <span style="color: navy">Context: DataType = HumanName.part</span> --&gt;
+ &lt;<b>url</b> value=&quot;<span style="color: maroon">http://hl7connect.healthintersections.com.au/svc/fhir/profile/@iso-21090#name-qualifier</span>&quot;/&gt;
+ &lt;<span title="A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type."><b>valueCode</b></span> value=&quot;[<span style="color: darkgreen"><a href="http://hl7.org/fhir/datatypes.htm#code">code</a></span>]&quot;/&gt;<span style=" color: Gray">&lt;!-- </span><span style="color: navy">AD | SP | BR | CL | IN | LS | MID | PFX | SFX</span><span style=" color: Gray"> --&gt;</span>
+&lt;/extension&gt;
+
+</pre></div>
+  </text>
+  <name value="ISO 21090 Data Type Extensions"/>
+  <publisher value="HL7"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://www.hl7.org"/>
+  </telecom>
+  <description value="Extra ISO 21090 features not included in data types because of core design policy"/>
+  <status value="draft"/>
+  <date value="2012-06-24"/>
+  <extensionDefn>
+    <code value="name-qualifier"/>
+    <contextType value="datatype"/>
+    <context value="HumanName.part"/>
+    <definition>
+      <short value="AD | SP | BR | CL | IN | LS | MID | PFX | SFX"/>
+      <formal value="A set of codes each of which specifies a certain subcategory of the name part in addition to the main name part type."/>
+      <comments value="Used to indicate additional information about the name part and how it should be used."/>
+      <min value="0"/>
+      <max value="*"/>
+      <type>
+        <code value="code"/>
+      </type>
+      <mustSupport value="false"/>
+      <isModifier value="false"/>
+      <binding value="EntityNamePartQualifier"/>
+      <mapping>
+        <target value="ENXP.qualifier"/>
+        <map value="RIM"/>
+      </mapping>
+    </definition>
+  </extensionDefn>
+  <binding>
+    <name value="EntityNamePartQualifier"/>
+    <isExtensible value="true"/>
+    <referenceResource>
+      <type value="ValueSet"/>
+      <reference value="http://hl7.org/fhir/vs/name-part-qualifier"/>
+    </referenceResource>
+  </binding>
+</Profile>

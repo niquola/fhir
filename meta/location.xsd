@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright (c) 2011-2013, HL7, Inc.
+  All rights reserved.
+  
+  Redistribution and use in source and binary forms, with or without modification, 
+  are permitted provided that the following conditions are met:
+  
+   * Redistributions of source code must retain the above copyright notice, this 
+     list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright notice, 
+     this list of conditions and the following disclaimer in the documentation 
+     and/or other materials provided with the distribution.
+   * Neither the name of HL7 nor the names of its contributors may be used to 
+     endorse or promote products derived from this software without specific 
+     prior written permission.
+  
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+  POSSIBILITY OF SUCH DAMAGE.
+  
+
+  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+  <xs:include schemaLocation="fhir-base.xsd"/>
+  <xs:element name="Location" type="Location">
+    <xs:annotation>
+      <xs:documentation>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="Location">
+    <xs:annotation>
+      <xs:documentation>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Resource">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation>Name of the location which identifies it to its users.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation>Description of the Location, which helps in finding or referencing the place.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation>Classification of the location.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="telecom" minOccurs="0" maxOccurs="1" type="Contact">
+            <xs:annotation>
+              <xs:documentation>The contact details of the main communication devices present at the location.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="address" minOccurs="0" maxOccurs="1" type="Address">
+            <xs:annotation>
+              <xs:documentation>Physical location.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="position" type="Location.Position" minOccurs="0" maxOccurs="1">
+            <xs:annotation>
+              <xs:documentation>The absolute geographic location of the Location, expressed in a KML compatible manner (see notes below for KML).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="provider" minOccurs="0" maxOccurs="1" type="ResourceReference">
+            <xs:annotation>
+              <xs:documentation>The organization that provides services at the location.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation>Whether the location is still used to provide services.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="partOf" minOccurs="0" maxOccurs="1" type="ResourceReference">
+            <xs:annotation>
+              <xs:documentation>Another Location which this Location is physically inside of.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Location.Position">
+    <xs:annotation>
+      <xs:documentation>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:sequence>
+          <xs:element name="longitude" minOccurs="1" maxOccurs="1" type="decimal">
+            <xs:annotation>
+              <xs:documentation>Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="latitude" minOccurs="1" maxOccurs="1" type="decimal">
+            <xs:annotation>
+              <xs:documentation>Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="altitude" minOccurs="0" maxOccurs="1" type="decimal">
+            <xs:annotation>
+              <xs:documentation>Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

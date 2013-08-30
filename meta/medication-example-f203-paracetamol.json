@@ -1,0 +1,1 @@
+{"Medication":{"name":{"value":"Paracetamol"},"code":{"coding":[{"system":{"value":"http://snomed.info/id"},"code":{"value":"387517004"},"display":{"value":"Paracetamol"}}]},"isBrand":{"value":false},"kind":{"value":"product"},"product":{"form":{"coding":[{"system":{"value":"http://snomed.info/id"},"code":{"value":"385055001"},"display":{"value":"Tablet"}}]}}}}

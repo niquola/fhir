@@ -1,0 +1,3084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Resources as Profiles</title>
+  <id>http://hl7.org/fhir/profile/types</id>
+  <link href="http://hl7.org/implement/standards/fhir/profiles-types.xml" rel="self"/>
+  <updated>2013-08-13T07:56:40.654+10:00</updated>
+  <entry>
+    <title>&quot;period&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/period</id>
+    <link href="http://hl7.org/implement/standards/fhir/period.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.htm#Period">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Period"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Period for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Period"/>
+          <element>
+            <path value="Period"/>
+            <definition>
+              <short value="Time range defined by start and end time"/>
+              <formal value="A time period defined by a start and end time."/>
+              <comments value="Not a duration - that&#39;s a measure of time (a separate type), but a duration that occurs at a fixed value of time. A Period specifies a range of time; the context of use will specify whether the entire range applies (e.g. &quot;the patient was an inpatient of the hospital for this time range&quot;) or one value from the range applies (e.g. &quot;give to the patient between these two times&quot;). If a duration might be required, specify the type as Interval|Duration."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="1"/>
+                <name value="Start &lt;= End"/>
+                <severity value="error"/>
+                <human value="If present, start must have a lower value than end"/>
+                <xpath value="not(exists(f:start)) or not(exists(f:end)) or (f:start/@value &lt;= f:end/@value)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Period.start"/>
+            <definition>
+              <short value="The start of the period"/>
+              <formal value="The start of the period. The boundary is inclusive."/>
+              <comments value="If the low element is missing, the meaning is that the low boundary is not known."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="dateTime"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./low"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Period.end"/>
+            <definition>
+              <short value="The end of the period, if not ongoing"/>
+              <formal value="The end of the period. If the high is missing, it means that the period is ongoing."/>
+              <comments value="The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="dateTime"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./high"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.htm#Period">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;coding&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/coding</id>
+    <link href="http://hl7.org/implement/standards/fhir/coding.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Coding from <a href="http://hl7.org/fhir/datatypes.htm#Coding">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Coding"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Coding for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Coding"/>
+          <element>
+            <path value="Coding"/>
+            <definition>
+              <short value="A reference to a code defined by a terminology system"/>
+              <formal value="A reference to a code defined by a terminology system."/>
+              <comments value="Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED-CT - see the v3 core principles for more information."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CV"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Coding.system"/>
+            <definition>
+              <short value="Identity of the terminology system"/>
+              <formal value="The identification of the system that defines the meaning of the symbol in the code. Can be a simple list of enumerations, a list of codes with meanings or all the way to a complex semantic web such as SNOMED-CT, whether classification, terminology, or ontology."/>
+              <comments value="The identity is a uri. It may be an OID or a UUID, which must be references to the HL7 OID registry, or a URI which either comes from HL7&#39;s list of FHIR defined special URIs or from some system defined elsewhere, in which case the URI should de-reference to establish the system unambiguously."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Coding.code"/>
+            <definition>
+              <short value="Symbol in syntax defined by the system"/>
+              <formal value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./code"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Coding.display"/>
+            <definition>
+              <short value="Representation defined by the system"/>
+              <formal value="A representation of the meaning of the code in the system, following the rules laid out by the system."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CV.displayName"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Coding from <a href="http://hl7.org/fhir/datatypes.htm#Coding">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;range&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/range</id>
+    <link href="http://hl7.org/implement/standards/fhir/range.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.htm#Range">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Range"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Range for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Range"/>
+          <element>
+            <path value="Range"/>
+            <definition>
+              <short value="Set of values bounded by low and high"/>
+              <formal value="A set of ordered Quantities defined by a low and high limit."/>
+              <comments value="The stated low and high value are assumed to have arbitrarily high precision when it comes to determining which values are in the range. i.e. 1.99 is not in the range 2 -&gt; 3."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="No Range flag on Quantity"/>
+                <severity value="error"/>
+                <human value="Quantity values cannot have a comparator when used in a Range"/>
+                <xpath value="not(exists(f:low/f:comparator) or exists(f:high/f:comparator))"/>
+              </constraint>
+              <constraint>
+                <key value="2"/>
+                <name value="Low &lt; high"/>
+                <severity value="error"/>
+                <human value="If present, low must have a lower value than high"/>
+                <xpath value="not(exists(f:low/f:value/@value)) or not(exists(f:high/f:value/@value)) or (number(f:low/f:value/@value) &lt;= number(f:high/f:value/@value))"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL&lt;QTY[not(type=&quot;TS&quot;)]&gt; [lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]or URG&lt;QTY[not(type=&quot;TS&quot;)]&gt;"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Range.low"/>
+            <definition>
+              <short value="Low limit"/>
+              <formal value="The low limit. The boundary is inclusive."/>
+              <comments value="If the low element is missing, the meaning is that the low boundary is not known."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Quantity"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./low"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Range.high"/>
+            <definition>
+              <short value="High limit"/>
+              <formal value="The high limit. The boundary is inclusive."/>
+              <comments value="If the high element is missing, the meaning is that the high boundary is not known."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Quantity"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./high"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.htm#Range">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;quantity&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/quantity</id>
+    <link href="http://hl7.org/implement/standards/fhir/quantity.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Quantity"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Quantity for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Quantity"/>
+          <element>
+            <path value="Quantity"/>
+            <definition>
+              <short value="A measured or measurable amount"/>
+              <formal value="A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies."/>
+              <comments value="The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for status."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="Must have a system"/>
+                <severity value="error"/>
+                <human value="If a code for the units is present, the system must also be present"/>
+                <xpath value="not(exists(f:code)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.value"/>
+            <definition>
+              <short value="Numerical value (with implicit precision)"/>
+              <formal value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
+              <comments value="The implicit precision should always be honored. Currency has its own rules for handling precision."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.comparator"/>
+            <definition>
+              <short value="Relationship of stated value to actual value"/>
+              <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="QuantityCompararator"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL properties"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.units"/>
+            <definition>
+              <short value="Unit representation"/>
+              <formal value="A human readable form of the units."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.system"/>
+            <definition>
+              <short value="System that defines coded unit form"/>
+              <formal value="The identification of the system that provides the coded form of the unit."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.code"/>
+            <definition>
+              <short value="Coded form of the unit"/>
+              <formal value="A computer processable form of the units in some unit representation system."/>
+              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+
+The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="QuantityCompararator"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;choice&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/choice</id>
+    <link href="http://hl7.org/implement/standards/fhir/choice.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Choice from <a href="http://hl7.org/fhir/datatypes.htm#Choice">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Choice"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Choice for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Choice"/>
+          <element>
+            <path value="Choice"/>
+            <definition>
+              <short value="Code from list of choices"/>
+              <formal value="A code taken from a short list of codes that are not defined in a formal code system."/>
+              <comments value="Choice is generally used for things like pain scales, questionnaires or formally defined assessment indexes. The possible codes may be ordered with some arbitrarily defined scale. Choice does not fit all assessment scales - the more combinatorial the value is, the less likely that Choice will be an appropriate data type."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CD"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Choice.code"/>
+            <definition>
+              <short value="Selected code"/>
+              <formal value="The code or value that the user selected from the list of possible codes."/>
+              <comments value="The &quot;code&quot; might be a numerical choice in a pain scale, for instance, 1 where the choices are 1-5 with associated words for severity of pain."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CD.code"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Choice.option"/>
+            <definition>
+              <short value="List of possible code values"/>
+              <formal value="A list of possible values for the code."/>
+              <min value="1"/>
+              <max value="*"/>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="Expansion of CD.valueSet to list of CDs"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Choice.option.code"/>
+            <definition>
+              <short value="Possible code"/>
+              <formal value="A possible code or value that the user could have chosen."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CD.code"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Choice.option.display"/>
+            <definition>
+              <short value="Display for the code"/>
+              <formal value="A set of words associated with the code to give it meaning and displayed to the user."/>
+              <comments value="The code itself may convey sufficient meaning.  If there aren&#39;t both a code and a display provided, the display string is presumed to be the code."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CD.displayName"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Choice.isOrdered"/>
+            <definition>
+              <short value="If order of the values has meaning"/>
+              <formal value="Whether the order of the values has an assigned meaning."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="boolean"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Choice from <a href="http://hl7.org/fhir/datatypes.htm#Choice">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;attachment&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/attachment</id>
+    <link href="http://hl7.org/implement/standards/fhir/attachment.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.htm#Attachment">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Attachment"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Attachment for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Attachment"/>
+          <element>
+            <path value="Attachment"/>
+            <definition>
+              <short value="Content in a format defined elsewhere"/>
+              <formal value="For referring to data content defined in other formats."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="ED"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="ED/RP"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.contentType"/>
+            <definition>
+              <short value="Mime type of the content, with charset etc."/>
+              <formal value="Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="MimeType"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./mediaType, ./charset"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.language"/>
+            <definition>
+              <short value="Human language of the content (BCP-47)"/>
+              <formal value="The human language of the content. The value can be any valid value according to BCP 47."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="Language"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./language"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.data"/>
+            <definition>
+              <short value="Data inline, base64ed"/>
+              <formal value="The actual data of the attachment - a sequence of bytes. In XML, represented using base64."/>
+              <comments value="The base64-encoded data must be expressed in the same character set as the base resource XML."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="base64Binary"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./data"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="ED.5"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.url"/>
+            <definition>
+              <short value="Uri where the data can be found"/>
+              <formal value="An alternative location where the data can be accessed."/>
+              <comments value="If both data and url are provided, the url must point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. If a URL is provided, it must resolve to actual data."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./reference/literal"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="RP.1+RP.2 - if they refer to a URL (see v2.6)"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.size"/>
+            <definition>
+              <short value="Number of bytes of content (if url provided)"/>
+              <formal value="The number of bytes of data that make up this attachment."/>
+              <comments value="The number of bytes is redundant if the data is provided as a base64binary, but is useful if the data is provided as a url reference."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="integer"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="(needs data type R3 proposal)"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.hash"/>
+            <definition>
+              <short value="Hash of the data (sha-1, base64ed )"/>
+              <formal value="The calculated hash of the data using SHA-1. Represented using base64."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="base64Binary"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value=".integrityCheck[parent::ED/integrityCheckAlgorithm=&quot;SHA-1&quot;]"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Attachment.title"/>
+            <definition>
+              <short value="Label to display in place of the data"/>
+              <formal value="A label or set of text to display in place of the data."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./title/data"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="MimeType"/>
+          <conformance value="required"/>
+          <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
+        </binding>
+        <binding>
+          <name value="Language"/>
+          <conformance value="required"/>
+          <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.htm#Attachment">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;ratio&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/ratio</id>
+    <link href="http://hl7.org/implement/standards/fhir/ratio.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.htm#Ratio">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Ratio"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Ratio for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Ratio"/>
+          <element>
+            <path value="Ratio"/>
+            <definition>
+              <short value="A ratio of two Quantity values - a numerator and a denominator"/>
+              <formal value="A ratio of two Quantity values - a numerator and a denominator."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="RTO"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Ratio.numerator"/>
+            <definition>
+              <short value="The numerator"/>
+              <formal value="The numerator."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Quantity"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="RTO.numerator"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Ratio.denominator"/>
+            <definition>
+              <short value="The denominator"/>
+              <formal value="The denominator."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Quantity"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="RTO.denominator"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.htm#Ratio">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;sampleddata&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/sampleddata</id>
+    <link href="http://hl7.org/implement/standards/fhir/sampleddata.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.htm#SampledData">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for SampledData"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for SampledData for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="SampledData"/>
+          <element>
+            <path value="SampledData"/>
+            <definition>
+              <short value="A series of measurements taken by a device"/>
+              <formal value="A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data."/>
+              <comments value="The data is not interpretable without at least origin, period, and dimensions, but these are optional to allow a separation between the template of measurement and the actual measurement, such as between DeviceCapabilities and DeviceLog."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="SLIST + GLIST"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.origin"/>
+            <definition>
+              <short value="Zero value and units"/>
+              <formal value="The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Quantity"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="SLIST.origin"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.period"/>
+            <definition>
+              <short value="Number of milliseconds between samples"/>
+              <formal value="The length of time between sampling times, measured in milliseconds."/>
+              <comments value="This is usually a whole number."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="GLIST.increment"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.factor"/>
+            <definition>
+              <short value="Multiply data by this before adding to origin"/>
+              <formal value="A correction factor that is applied to the sampled data points before they are added to the origin."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="SLIST.factor"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.lowerLimit"/>
+            <definition>
+              <short value="Lower limit of detection"/>
+              <formal value="The lower limit of detection of the measured points. This is needed if any of the data points have the value &quot;L&quot; (lower than detection limit)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.upperLimit"/>
+            <definition>
+              <short value="Upper limit of detection"/>
+              <formal value="The upper limit of detection of the measured points. This is needed if any of the data points have the value &quot;U&quot; (higher than detection limit)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.dimensions"/>
+            <definition>
+              <short value="Number of sample points at each time point"/>
+              <formal value="The Number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once."/>
+              <comments value="If there is more than one dimension, the code for the type of data will define the meaning of the dimensions (typically ECG data)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="integer"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="SampledData.data"/>
+            <definition>
+              <short value="Decimal values with spaces, or &quot;E&quot; | &quot;U&quot; | &quot;L&quot;"/>
+              <formal value="A series of data points separated by a single space (character u20). The special values &quot;E&quot; (error), &quot;L&quot; (below detection limit) and &quot;U&quot; (above detection limit) can also be used."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="SLIST.digits"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.htm#SampledData">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;resourcereference&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/resourcereference</id>
+    <link href="http://hl7.org/implement/standards/fhir/resourcereference.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.htm#ResourceReference">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for ResourceReference"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for ResourceReference for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="ResourceReference"/>
+          <element>
+            <path value="ResourceReference"/>
+            <definition>
+              <short value="A reference from one resource to another"/>
+              <formal value="A reference from one resource to another."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="2"/>
+                <name value="Inline"/>
+                <severity value="error"/>
+                <human value="Must have a local reference if the resource is provided inline"/>
+                <xpath value="not(starts-with(f:reference/@value, &#39;#&#39;)) or exists(ancestor::a:content/f:*/f:contained/f:*[local-name(.)=current()/f:type/@value and @id=substring-after(current()/f:reference/@value, &#39;#&#39;)]|/f:*/f:contained/f:*[local-name(.)=current()/f:type/@value and @id=substring-after(current()/f:reference/@value, &#39;#&#39;)])"/>
+              </constraint>
+              <constraint>
+                <key value="1"/>
+                <name value="Type"/>
+                <severity value="error"/>
+                <human value="Must have a type if a reference is provided"/>
+                <xpath value="exists(f:type) or not(exists(f:reference))"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="ResourceReference.type"/>
+            <definition>
+              <short value="Resource Type"/>
+              <formal value="The name of one of the resource types defined in this specification to identify the type of the resource being referenced."/>
+              <comments value="Whether or not the type of the resource reference is fixed for a particular element, the reference includes the resource type."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="ResourceType"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="ResourceReference.reference"/>
+            <definition>
+              <short value="Relative, internal or absolute URL reference"/>
+              <formal value="A reference to a location at which the other resource is found. The reference may a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with &#39;#&#39;) refer to contained resources."/>
+              <comments value="Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries. 
+
+Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the url conforms to the structure &quot;/[type]/@[id]&quot; then it should be assumed that the reference is to a FHIR RESTful server."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="ResourceReference.display"/>
+            <definition>
+              <short value="Text alternative for the resource"/>
+              <formal value="Plain text narrative that identifies the resource in addition to the resource reference."/>
+              <comments value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what&#39;s being referenced, not to fully describe it."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="ResourceType"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/resource-types"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.htm#ResourceReference">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;codeableconcept&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/codeableconcept</id>
+    <link href="http://hl7.org/implement/standards/fhir/codeableconcept.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for CodeableConcept from <a href="http://hl7.org/fhir/datatypes.htm#CodeableConcept">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for CodeableConcept"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for CodeableConcept for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="CodeableConcept"/>
+          <element>
+            <path value="CodeableConcept"/>
+            <definition>
+              <short value="Concept - reference to a terminology or just  text"/>
+              <formal value="A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text."/>
+              <comments value="Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="2"/>
+                <name value="Primary Reference must resolve"/>
+                <severity value="error"/>
+                <human value="If a primary reference is present, it must point to one of the codings"/>
+                <xpath value="not(exists(f:primary)) or count(f:coding[@id=current()/f:primary/@value])=1"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CD"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="CE/CNE/CWE"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="CodeableConcept.coding"/>
+            <definition>
+              <short value="Code defined by a terminology system"/>
+              <formal value="A reference to a code defined by a terminology system."/>
+              <comments value="Codes may defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED-CT - see the v3 core principles for more information.  Ordering of codings is undefined and must not be used to infer meaning."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="Coding"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="union(., ./translation)"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="C*E.1-8, C*E.10-22"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="CodeableConcept.text"/>
+            <definition>
+              <short value="Plain text representation of the concept"/>
+              <formal value="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user or concept."/>
+              <comments value="Very often the text is the same as a displayName of one of the codings."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./originalText[mediaType/code=&quot;text/plain&quot;]/data"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="C*E.9. But note many systems use C*E.2 for this"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="CodeableConcept.primary"/>
+            <definition>
+              <short value="Which code was chosen directly by the user"/>
+              <formal value="Indicates which of the codes in the codings was chosen by a user, if one was chosen directly."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="idref"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="special(&quot;The id assigned to the coding that corresponds to the root code of the CD&quot;)"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="Sometimes implied by C*E.1"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for CodeableConcept from <a href="http://hl7.org/fhir/datatypes.htm#CodeableConcept">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;identifier&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/identifier</id>
+    <link href="http://hl7.org/implement/standards/fhir/identifier.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.htm#Identifier">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Identifier"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Identifier for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Identifier"/>
+          <element>
+            <path value="Identifier"/>
+            <definition>
+              <short value="An identifier intended for computation"/>
+              <formal value="A technical identifier - identifies some entity uniquely and unambiguously."/>
+              <comments value="the Identifier class is a little looser than II because it allows URIs as well as registered OIDs or GUIDs."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="II"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Identifier.use"/>
+            <definition>
+              <short value="The use of this identifier"/>
+              <formal value="Identifies the use for this identifier, if known."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is not temporary unless it explicitly says that it is."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="IdentifierUse"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Identifier.label"/>
+            <definition>
+              <short value="Description of identifier"/>
+              <formal value="A label for the identifier that can be displayed to a human so they can recognise the identifier."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Identifier.system"/>
+            <definition>
+              <short value="The namespace for the identifier"/>
+              <formal value="Establishes the namespace in which set of possible id values is unique."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="II.root"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Identifier.key"/>
+            <definition>
+              <short value="The value that is unique"/>
+              <formal value="The portion of the identifier typically displayed to the user and which is unique within the context of the system."/>
+              <comments value="if the key value is actually a full uri, then the system is urn:ietf:rfc:3986."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="II.extension or II.root if system indicates OID or GUID"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Identifier.period"/>
+            <definition>
+              <short value="Time period when id was valid for use"/>
+              <formal value="Time period during which identifier was valid for use."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Period"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Identifier.assigner"/>
+            <definition>
+              <short value="Organization that issued id (may be just text)"/>
+              <formal value="Organization that issued/manages the identifier."/>
+              <comments value="The reference may be just a text description of the assigner."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Resource(Organization)"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="IdentifierUse"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/identifier-use"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.htm#Identifier">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;extension&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/extension</id>
+    <link href="http://hl7.org/implement/standards/fhir/extension.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Extension from <a href="http://hl7.org/fhir/datatypes.htm#Extension">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Extension"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Extension for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Extension"/>
+          <element>
+            <path value="Extension"/>
+            <definition>
+              <short value="Optional Extensions Element - found in all resources."/>
+              <formal value="Optional Extensions Element - found in all resources."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="2"/>
+                <name value="No Internal extensions"/>
+                <severity value="error"/>
+                <human value="No extensions on isModifier"/>
+                <xpath value="not(exists(f:isModifier/f:extension))"/>
+              </constraint>
+              <constraint>
+                <key value="1"/>
+                <name value="No Internal extensions"/>
+                <severity value="error"/>
+                <human value="No extensions on url"/>
+                <xpath value="not(exists(f:url/f:extension))"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Extension.url"/>
+            <definition>
+              <short value="identifies the meaning of the extension"/>
+              <formal value="Source of the definition for the extension code - a logical name or a URL."/>
+              <comments value="The definition may point directly to a computable or human readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Extension.isModifier"/>
+            <definition>
+              <short value="If extension modifies other elements/extensions"/>
+              <formal value="This value should be set to true if the value of the extension qualifies or negates data in other content."/>
+              <comments value="If this element is set to true, then the containing resource/element and its children are only safe to process if the reader understands this extension, and knows what the potential impact is. This does not mean that the application is required to do anything with the value, it is just not permitted to act inappropriately for any possible value in the element."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="boolean"/>
+              </type>
+              <isModifier value="true"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Extension.value[x]"/>
+            <definition>
+              <short value="Value of extension"/>
+              <formal value="Value of extension - may be a resource or one of a constrained set of the data types (see Extensibility in the spec for list)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="*"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Extension from <a href="http://hl7.org/fhir/datatypes.htm#Extension">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;narrative&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/narrative</id>
+    <link href="http://hl7.org/implement/standards/fhir/narrative.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Narrative from <a href="http://hl7.org/fhir/datatypes.htm#Narrative">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Narrative"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Narrative for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Narrative"/>
+          <element>
+            <path value="Narrative"/>
+            <definition>
+              <short value="A human readable formatted text, including images"/>
+              <formal value="A human readable formatted text, including images."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Narrative.status"/>
+            <definition>
+              <short value="generated | extensions | additional"/>
+              <formal value="The status of the narrative - whether it&#39;s entirely generated (from just the defined data or the extensions too), or whether a human authored it and it may contain additional data."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="NarrativeStatus"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Narrative.div"/>
+            <definition>
+              <short value="Limited xhtml content"/>
+              <formal value="The actual narrative content, a stripped down version of XHTML."/>
+              <comments value="The contents of the html element are an XHTML fragment containing only the basic html formatting elements described in chapters 7-11 and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained stylesheets. The XHTML content may not contain a head, a body, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes and objects."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="xhtml"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="NarrativeStatus"/>
+          <isExtensible value="true"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/narrative-status"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Narrative from <a href="http://hl7.org/fhir/datatypes.htm#Narrative">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;schedule&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/schedule</id>
+    <link href="http://hl7.org/implement/standards/fhir/schedule.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Schedule from <a href="http://hl7.org/fhir/datatypes.htm#Schedule">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Schedule"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Schedule for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Schedule"/>
+          <element>
+            <path value="Schedule"/>
+            <definition>
+              <short value="A schedule that specifies an event that may occur multiple times"/>
+              <formal value="A schedule that specifies an event that may occur multiple times. Schedules are not used for recording when things did happen, but when they are expected or requested to occur."/>
+              <comments value="A schedule can be either a list of events - intervals on which the event occurs, or a single event with repeating criteria or just repeating criteria with no actual event."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Structure"/>
+              </type>
+              <constraint>
+                <key value="1"/>
+                <name value="Multiple or repeating events"/>
+                <severity value="error"/>
+                <human value="There can only be a repeat element if there is none or one event"/>
+                <xpath value="not(exists(f:repeat)) or count(f:event) &lt; 2"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="GTS"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.event"/>
+            <definition>
+              <short value="When the event occurs"/>
+              <formal value="Identifies specific time periods when the event should occur."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="Period"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat"/>
+            <definition>
+              <short value="Only if there is none or one event"/>
+              <formal value="Identifies a repeating pattern to the intended time periods."/>
+              <comments value="If present, the Schedule.event indicates the time of the first occurrence."/>
+              <min value="0"/>
+              <max value="1"/>
+              <constraint>
+                <key value="3"/>
+                <name value="End condition"/>
+                <severity value="error"/>
+                <human value="At most, only one of count and end can be present"/>
+                <xpath value="not(exists(f:count) and exists(f:end))"/>
+              </constraint>
+              <constraint>
+                <key value="2"/>
+                <name value="Repeat cycle"/>
+                <severity value="error"/>
+                <human value="Either frequency or when must be present, but not both"/>
+                <xpath value="exists(f:frequency) != exists(f:when)"/>
+              </constraint>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat.frequency"/>
+            <definition>
+              <short value="Event occurs frequency times per duration"/>
+              <formal value="Indicates how often the event should occur."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="integer"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat.when"/>
+            <definition>
+              <short value="Event occurs duration from common life event"/>
+              <formal value="Identifies the occurrence of daily life that determine timing."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="EventTiming"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat.duration"/>
+            <definition>
+              <short value="Repeating or event-related duration"/>
+              <formal value="How long each repetition should last."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <constraint>
+                <key value="4"/>
+                <name value="Duration Positive"/>
+                <severity value="error"/>
+                <human value="duration must be a positive value"/>
+                <xpath value="@value &gt; 0 or not(@value)"/>
+              </constraint>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat.units"/>
+            <definition>
+              <short value="The units of time for the duration"/>
+              <formal value="The units of time for the duration."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="UnitsOfTime"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat.count"/>
+            <definition>
+              <short value="Number of times to repeat"/>
+              <formal value="A total count of the desired number of repetitions."/>
+              <comments value="An end need not be specified."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="integer"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="Schedule.repeat.end"/>
+            <definition>
+              <short value="When to stop repeats"/>
+              <formal value="When to stop repeats."/>
+              <comments value="An end need not be specified."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="dateTime"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="UnitsOfTime"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/units-of-time"/>
+          </referenceResource>
+        </binding>
+        <binding>
+          <name value="EventTiming"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/event-timing"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Schedule from <a href="http://hl7.org/fhir/datatypes.htm#Schedule">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;contact&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/contact</id>
+    <link href="http://hl7.org/implement/standards/fhir/contact.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Contact from <a href="http://hl7.org/fhir/datatypes.htm#Contact">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Contact"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Contact for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Contact"/>
+          <element>
+            <path value="Contact"/>
+            <definition>
+              <short value="All kinds of technology mediated contact details for a person or organisation, including telephone, email, etc."/>
+              <formal value="All kinds of technology mediated contact details for a person or organisation, including telephone, email, etc."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Structure"/>
+              </type>
+              <constraint>
+                <key value="2"/>
+                <name value="System is required"/>
+                <severity value="error"/>
+                <human value="A system is required if a value is provided."/>
+                <xpath value="not(exists(f:value)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="TEL"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Contact.system"/>
+            <definition>
+              <short value="Telecommunications form for contact"/>
+              <formal value="Telecommunications form for contact - what communications system is required to make use of the contact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <binding value="ContactSystem"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./scheme"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Contact.value"/>
+            <definition>
+              <short value="The actual contact details"/>
+              <formal value="The actual contact details, in a form that is meaningful to the designated communication system (i.e. phone number or email address)."/>
+              <comments value="additional out of band data such as extensions, or notes about use of the contact are sometimes included in the value."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./url"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Contact.use"/>
+            <definition>
+              <short value="How to use this address"/>
+              <formal value="Identifies the context for the address."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old contact etc for a current/permanent one. Applications can assume that a contact is not temporary or old unless it explicitly says that it is."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="ContactUse"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="unique(./use)"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Contact.period"/>
+            <definition>
+              <short value="Time period when the contact was/is in use"/>
+              <formal value="Time period when the contact was/is in use."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Period"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./useablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="ContactSystem"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/contact-system"/>
+          </referenceResource>
+        </binding>
+        <binding>
+          <name value="ContactUse"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/contact-use"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Contact from <a href="http://hl7.org/fhir/datatypes.htm#Contact">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;address&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/address</id>
+    <link href="http://hl7.org/implement/standards/fhir/address.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Address from <a href="http://hl7.org/fhir/datatypes.htm#Address">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for Address"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Address for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Address"/>
+          <element>
+            <path value="Address"/>
+            <definition>
+              <short value="A postal address"/>
+              <formal value="There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for addresses all around the world."/>
+              <comments value="Note: address is for postal addresses, not physical locations."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Structure"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="AD"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.use"/>
+            <definition>
+              <short value="The use of this address"/>
+              <formal value="Identifies the intended purpose of this address."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old address etc for a current/permanent one. Applications can assume that an address is not temporary or old unless it explicitly says that it is."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="AddressUse"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="unique(./use)"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.7"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.text"/>
+            <definition>
+              <short value="Text representation of the address"/>
+              <formal value="A full text representation of the address."/>
+              <comments value="Can provide both a text representation and parts."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./formatted"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.line"/>
+            <definition>
+              <short value="Line of an address"/>
+              <formal value="A line of an address (typically used for street names &amp; numbers, unit details, delivery hints, etc.) ."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"/>
+              </mapping>
+              <mapping>
+                <target value="http://w3.org/vcard"/>
+                <map value="street address"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.city"/>
+            <definition>
+              <short value="Name of city, town etc."/>
+              <formal value="The name of the city, town, village or other community or delivery center."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.3"/>
+              </mapping>
+              <mapping>
+                <target value="http://w3.org/vcard"/>
+                <map value="locality"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.state"/>
+            <definition>
+              <short value="Sub-unit of country (abreviations ok)"/>
+              <formal value="Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.4"/>
+              </mapping>
+              <mapping>
+                <target value="http://w3.org/vcard"/>
+                <map value="region"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.zip"/>
+            <definition>
+              <short value="Post code for area"/>
+              <formal value="A postal code designating a region defined by the postal service."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.5"/>
+              </mapping>
+              <mapping>
+                <target value="http://w3.org/vcard"/>
+                <map value="postal code"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.country"/>
+            <definition>
+              <short value="Country (can be ISO 3166 3 letter code)"/>
+              <formal value="Country. ISO 3166 3 letter codes can be used in place of a full country name."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.6"/>
+              </mapping>
+              <mapping>
+                <target value="http://w3.org/vcard"/>
+                <map value="country name"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Address.period"/>
+            <definition>
+              <short value="Time period when address was/is in use"/>
+              <formal value="Time period when address was/is in use."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Period"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
+              </mapping>
+              <mapping>
+                <target value="http://hl7.org/v2"/>
+                <map value="XAD.12 / XAD.13 + XAD.14"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="AddressUse"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/address-use"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Address from <a href="http://hl7.org/fhir/datatypes.htm#Address">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;humanname&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/humanname</id>
+    <link href="http://hl7.org/implement/standards/fhir/humanname.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.htm#HumanName">FHIR Specification</a></div></div>
+        </text>
+        <name value="Basic Profile for HumanName"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for HumanName for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="HumanName"/>
+          <element>
+            <path value="HumanName"/>
+            <definition>
+              <short value="Name of a human"/>
+              <formal value="A human&#39;s name with the ability to identify parts and usage."/>
+              <comments value="Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts may or may not be imbued with some implicit meaning; various cultures associate different importance with the name parts, and the degree to which systems must care about name parts around the world varies widely."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Structure"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="EN"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.use"/>
+            <definition>
+              <short value="The use of this name"/>
+              <formal value="Identifies the purpose for this name."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old name etc for a current/permanent one. Applications can assume that a name is not temporary or old unless it explicitly says that it is."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="NameUse"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="unique(./use)"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.text"/>
+            <definition>
+              <short value="Text representation of the full name"/>
+              <formal value="A full text representation of the name."/>
+              <comments value="Can provide both a text representation and structured parts."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./formatted"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.family"/>
+            <definition>
+              <short value="Family name (often called &#39;Surname&#39;)"/>
+              <formal value="Family name, this is the name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father."/>
+              <comments value="family name is allowed to repeat. A single family name with spaces is equivalent to multiple family names with the same values."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.given"/>
+            <definition>
+              <short value="Given names (not always &#39;first&#39;). Includes middle names"/>
+              <formal value="Given name. NOTE: Not to be called &quot;first name&quot; since given names do not always come first."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.prefix"/>
+            <definition>
+              <short value="Parts that come before the name"/>
+              <formal value="Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that comes at the start of the name."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.suffix"/>
+            <definition>
+              <short value="Parts that come after the name"/>
+              <formal value="Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that comes at the end of the name."/>
+              <min value="0"/>
+              <max value="*"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+            </definition>
+          </element>
+          <element>
+            <path value="HumanName.period"/>
+            <definition>
+              <short value="Time period when name was/is in use"/>
+              <formal value="Indicates the period of time when this name was valid for the named person."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Period"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="NameUse"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/name-use"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.htm#HumanName">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;age&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/age</id>
+    <link href="http://hl7.org/implement/standards/fhir/age.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+        </text>
+        <name value="Profile for Age on Quantity"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Age on Quantity for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Quantity"/>
+          <name value="Age"/>
+          <element>
+            <path value="Quantity"/>
+            <definition>
+              <short value="A measured or measurable amount"/>
+              <formal value="A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies."/>
+              <comments value="The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for status."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="Must have a system"/>
+                <severity value="error"/>
+                <human value="If a code for the units is present, the system must also be present"/>
+                <xpath value="not(exists(f:code)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.value"/>
+            <definition>
+              <short value="Numerical value (with implicit precision)"/>
+              <formal value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
+              <comments value="The implicit precision should always be honored. Currency has its own rules for handling precision."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.comparator"/>
+            <definition>
+              <short value="Relationship of stated value to actual value"/>
+              <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="QuantityCompararator"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL properties"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.units"/>
+            <definition>
+              <short value="Unit representation"/>
+              <formal value="A human readable form of the units."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.system"/>
+            <definition>
+              <short value="System that defines coded unit form"/>
+              <formal value="The identification of the system that provides the coded form of the unit."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.code"/>
+            <definition>
+              <short value="Coded form of the unit"/>
+              <formal value="A computer processable form of the units in some unit representation system."/>
+              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+
+The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="QuantityCompararator"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;count&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/count</id>
+    <link href="http://hl7.org/implement/standards/fhir/count.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+        </text>
+        <name value="Profile for Count on Quantity"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Count on Quantity for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Quantity"/>
+          <name value="Count"/>
+          <element>
+            <path value="Quantity"/>
+            <definition>
+              <short value="A measured or measurable amount"/>
+              <formal value="A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies."/>
+              <comments value="The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for status."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="Must have a system"/>
+                <severity value="error"/>
+                <human value="If a code for the units is present, the system must also be present"/>
+                <xpath value="not(exists(f:code)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.value"/>
+            <definition>
+              <short value="Numerical value (with implicit precision)"/>
+              <formal value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
+              <comments value="The implicit precision should always be honored. Currency has its own rules for handling precision."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.comparator"/>
+            <definition>
+              <short value="Relationship of stated value to actual value"/>
+              <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="QuantityCompararator"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL properties"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.units"/>
+            <definition>
+              <short value="Unit representation"/>
+              <formal value="A human readable form of the units."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.system"/>
+            <definition>
+              <short value="System that defines coded unit form"/>
+              <formal value="The identification of the system that provides the coded form of the unit."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.code"/>
+            <definition>
+              <short value="Coded form of the unit"/>
+              <formal value="A computer processable form of the units in some unit representation system."/>
+              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+
+The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="QuantityCompararator"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;money&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/money</id>
+    <link href="http://hl7.org/implement/standards/fhir/money.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+        </text>
+        <name value="Profile for Money on Quantity"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Money on Quantity for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Quantity"/>
+          <name value="Money"/>
+          <element>
+            <path value="Quantity"/>
+            <definition>
+              <short value="A measured or measurable amount"/>
+              <formal value="A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies."/>
+              <comments value="The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for status."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="Must have a system"/>
+                <severity value="error"/>
+                <human value="If a code for the units is present, the system must also be present"/>
+                <xpath value="not(exists(f:code)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.value"/>
+            <definition>
+              <short value="Numerical value (with implicit precision)"/>
+              <formal value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
+              <comments value="The implicit precision should always be honored. Currency has its own rules for handling precision."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.comparator"/>
+            <definition>
+              <short value="Relationship of stated value to actual value"/>
+              <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="QuantityCompararator"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL properties"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.units"/>
+            <definition>
+              <short value="Unit representation"/>
+              <formal value="A human readable form of the units."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.system"/>
+            <definition>
+              <short value="System that defines coded unit form"/>
+              <formal value="The identification of the system that provides the coded form of the unit."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.code"/>
+            <definition>
+              <short value="Coded form of the unit"/>
+              <formal value="A computer processable form of the units in some unit representation system."/>
+              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+
+The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="QuantityCompararator"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;distance&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/distance</id>
+    <link href="http://hl7.org/implement/standards/fhir/distance.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+        </text>
+        <name value="Profile for Distance on Quantity"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Distance on Quantity for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Quantity"/>
+          <name value="Distance"/>
+          <element>
+            <path value="Quantity"/>
+            <definition>
+              <short value="A measured or measurable amount"/>
+              <formal value="A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies."/>
+              <comments value="The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for status."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="Must have a system"/>
+                <severity value="error"/>
+                <human value="If a code for the units is present, the system must also be present"/>
+                <xpath value="not(exists(f:code)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.value"/>
+            <definition>
+              <short value="Numerical value (with implicit precision)"/>
+              <formal value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
+              <comments value="The implicit precision should always be honored. Currency has its own rules for handling precision."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.comparator"/>
+            <definition>
+              <short value="Relationship of stated value to actual value"/>
+              <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="QuantityCompararator"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL properties"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.units"/>
+            <definition>
+              <short value="Unit representation"/>
+              <formal value="A human readable form of the units."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.system"/>
+            <definition>
+              <short value="System that defines coded unit form"/>
+              <formal value="The identification of the system that provides the coded form of the unit."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.code"/>
+            <definition>
+              <short value="Coded form of the unit"/>
+              <formal value="A computer processable form of the units in some unit representation system."/>
+              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+
+The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="QuantityCompararator"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+  <entry>
+    <title>&quot;duration&quot; as a profile (to help derivation)</title>
+    <id>http://hl7.org/fhir/profile/duration</id>
+    <link href="http://hl7.org/implement/standards/fhir/duration.profile.xml" rel="self"/>
+    <updated>2013-08-13T07:56:17.056+10:00</updated>
+    <published>2013-08-13T07:56:17.056+10:00</published>
+    <author>
+      <name>HL7, Inc (FHIR Project)</name>
+      <uri>http://hl7.org/fhir</uri>
+    </author>
+    <content type="text/xml">
+      <Profile xmlns="http://hl7.org/fhir">
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+        </text>
+        <name value="Profile for Duration on Quantity"/>
+        <publisher value="FHIR Specification"/>
+        <description value="Basic Profile for Duration on Quantity for validation support"/>
+        <status value="draft"/>
+        <date value="2013-08-13"/>
+        <structure>
+          <type value="Quantity"/>
+          <name value="Duration"/>
+          <element>
+            <path value="Quantity"/>
+            <definition>
+              <short value="A measured or measurable amount"/>
+              <formal value="A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies."/>
+              <comments value="The context of use may frequently define what kind of quantity this is and therefore what kind of units can be used. The context of use may also restrict the values for status."/>
+              <min value="1"/>
+              <max value="1"/>
+              <type>
+                <code value="Type"/>
+              </type>
+              <constraint>
+                <key value="3"/>
+                <name value="Must have a system"/>
+                <severity value="error"/>
+                <human value="If a code for the units is present, the system must also be present"/>
+                <xpath value="not(exists(f:code)) or exists(f:system)"/>
+              </constraint>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.value"/>
+            <definition>
+              <short value="Numerical value (with implicit precision)"/>
+              <formal value="The value of the measured amount. The value includes an implicit precision in the presentation of the value."/>
+              <comments value="The implicit precision should always be honored. Currency has its own rules for handling precision."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="decimal"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.comparator"/>
+            <definition>
+              <short value="Relationship of stated value to actual value"/>
+              <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
+              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="true"/>
+              <binding value="QuantityCompararator"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="IVL properties"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.units"/>
+            <definition>
+              <short value="Unit representation"/>
+              <formal value="A human readable form of the units."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="N/A"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.system"/>
+            <definition>
+              <short value="System that defines coded unit form"/>
+              <formal value="The identification of the system that provides the coded form of the unit."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="uri"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Quantity.code"/>
+            <definition>
+              <short value="Coded form of the unit"/>
+              <formal value="A computer processable form of the units in some unit representation system."/>
+              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+
+The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="code"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <target value="http://hl7.org/v3"/>
+                <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+            </definition>
+          </element>
+        </structure>
+        <binding>
+          <name value="QuantityCompararator"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <type value="ValueSet"/>
+            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+          </referenceResource>
+        </binding>
+      </Profile>
+    </content>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    </summary>
+  </entry>
+</feed>
