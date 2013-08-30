@@ -2,40 +2,40 @@
 # healthcare.
 class Fhir::Substance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Identifier of the substance
-  attribute :identifier, Identifier
+  attribute :identifier, Fhir::Identifier # Identifier
 
   # Name of the substance
   # Should be present
-  attribute :name, string
+  attribute :name, String # string
 
   # Type of the substance
-  attribute :type, CodeableConcept
+  attribute :type, Fhir::CodeableConcept # CodeableConcept
 
   # Description of the substance
-  attribute :description, string
+  attribute :description, String # string
 
   # Substance status
-  attribute :status, CodeableConcept
+  attribute :status, Fhir::CodeableConcept # CodeableConcept
 
   # Substance effective period
-  attribute :effective_time, Period
+  attribute :effective_time, Fhir::Period # Period
 
   # Substance amount
-  attribute :quantity, Quantity
+  attribute :quantity, Fhir::Quantity # Quantity
 
   # Substance composition
-  attribute :ingredient, Array[ResourceLink[Substance]]
+  attribute :ingredient, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
 
   # Absolute | Relative
-  attribute :quantity_mode, CodeableConcept
+  attribute :quantity_mode, Fhir::CodeableConcept # CodeableConcept
 end
 

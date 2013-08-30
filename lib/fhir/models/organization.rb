@@ -5,53 +5,53 @@
 # practice groups, etc.
 class Fhir::Organization < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Identifier for this organization
-  attribute :identifier, Array[Identifier]
+  attribute :identifier, Array[Fhir::Identifier] # Identifier
 
   # Name used for the organization
-  attribute :name, string
+  attribute :name, String # string
 
   # Kind of organization
-  attribute :type, CodeableConcept
+  attribute :type, Fhir::CodeableConcept # CodeableConcept
 
   # A contact detail for the organization
-  attribute :telecom, Array[Contact]
+  attribute :telecom, Array[Fhir::Contact] # Contact
 
   # An address for the organization
-  attribute :address, Array[Address]
+  attribute :address, Array[Fhir::Address] # Address
 
   # The organization of which this organization forms a part
-  attribute :part_of, ResourceLink[Organization]
+  attribute :part_of, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
 
   # Contact for the organization for a certain purpose.
   class Contact < Fhir::ValueObject
     # The type of contact
-    attribute :purpose, CodeableConcept
+    attribute :purpose, Fhir::CodeableConcept # CodeableConcept
 
     # A name associated with the contact
-    attribute :name, HumanName
+    attribute :name, Fhir::HumanName # HumanName
 
     # Contact details (telephone, email, etc)  for a contact
-    attribute :telecom, Array[Contact]
+    attribute :telecom, Array[Fhir::Contact] # Contact
 
     # Visiting or postal addresses for the contact
-    attribute :address, Address
+    attribute :address, Fhir::Address # Address
 
     # Gender for administrative purposes
-    attribute :gender, CodeableConcept
+    attribute :gender, Fhir::CodeableConcept # CodeableConcept
   end
 
-  attribute :contact, Array[Contact]
+  attribute :contact, Array[Contact] # 
 
   # Whether the organization's record is still in active use
-  attribute :active, boolean
+  attribute :active, Boolean # boolean
 end
 

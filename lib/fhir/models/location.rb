@@ -4,29 +4,29 @@
 # stored.
 class Fhir::Location < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Name of the location
   # Should be present
-  attribute :name, string
+  attribute :name, String # string
 
   # Description of the Location
-  attribute :description, string
+  attribute :description, String # string
 
   # Classification of the location
-  attribute :type, Array[CodeableConcept]
+  attribute :type, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Contact details of the location
-  attribute :telecom, Contact
+  attribute :telecom, Fhir::Contact # Contact
 
   # Physical location
-  attribute :address, Address
+  attribute :address, Fhir::Address # Address
 
   # The absolute geographic location of the Location,
   # expressed in a KML compatible manner (see notes below for
@@ -34,26 +34,26 @@ class Fhir::Location < Fhir::Resource
   class Position < Fhir::ValueObject
     # Longitude
     # Should be present
-    attribute :longitude, decimal
+    attribute :longitude, Float # decimal
 
     # Latitude
     # Should be present
-    attribute :latitude, decimal
+    attribute :latitude, Float # decimal
 
     # Altitude
-    attribute :altitude, decimal
+    attribute :altitude, Float # decimal
   end
 
-  attribute :position, Position
+  attribute :position, Position # 
 
   # The organization that provides services at the location
-  attribute :provider, ResourceLink[Organization]
+  attribute :provider, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
 
   # Whether the location is still used to provide services
-  attribute :active, boolean
+  attribute :active, Boolean # boolean
 
   # Another Location which this Location is physically inside
   # of
-  attribute :part_of, ResourceLink[Location]
+  attribute :part_of, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
 end
 

@@ -1,4 +1,10 @@
+# A set of ordered Quantities defined by a low and high
+# limit.
 class Fhir::Range < Fhir::Type
-  attribute :lows, Array[Fhir::Quantity]
-  attribute :highs, Array[Fhir::Quantity]
+  # Low limit
+  attribute :low, Fhir::Quantity # Quantity
+
+  # High limit
+  attribute :high, Fhir::Quantity # Quantity
 end
+

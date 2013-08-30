@@ -5,52 +5,52 @@
 # Organization.
 class Fhir::Group < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Unique id
-  attribute :identifier, Identifier
+  attribute :identifier, Fhir::Identifier # Identifier
 
   # Group Classification
   # Should be present
-  attribute :type, code
+  attribute :type, Fhir::Code # code
 
   # Descriptive or actual
   # Should be present
-  attribute :actual, boolean
+  attribute :actual, Boolean # boolean
 
   # Kind of Group members
-  attribute :code, CodeableConcept
+  attribute :code, Fhir::CodeableConcept # CodeableConcept
 
   # Label for Group
-  attribute :name, string
+  attribute :name, String # string
 
   # Number of members
-  attribute :quantity, integer
+  attribute :quantity, Integer # integer
 
   # Identifies the traits shared by members of the group.
   class Characteristic < Fhir::ValueObject
     # Kind of characteristic
     # Should be present
-    attribute :type, CodeableConcept
+    attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Value held by characteristic
     # Should be present
-    attribute :value[x], CodeableConcept
+    attribute :value, Fhir::CodeableConcept # CodeableConcept
 
     # Group includes or excludes
     # Should be present
-    attribute :exclude, boolean
+    attribute :exclude, Boolean # boolean
   end
 
-  attribute :characteristic, Array[Characteristic]
+  attribute :characteristic, Array[Characteristic] # 
 
   # Who is in group
-  attribute :member, Array[ResourceLink[Patient, Practitioner, Device, Medication]]
+  attribute :member, Array[Fhir::ResourceReference[Fhir::Patient, Fhir::Practitioner, Fhir::Device, Fhir::Medication]] # Resource(Patient|Practitioner|Device|Medication)
 end
 

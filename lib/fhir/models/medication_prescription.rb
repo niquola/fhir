@@ -3,89 +3,89 @@
 # patient.
 class Fhir::MedicationPrescription < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # External identifier
-  attribute :identifier, Array[Identifier]
+  attribute :identifier, Array[Fhir::Identifier] # Identifier
 
   # Prescription date
-  attribute :date_written, dateTime
+  attribute :date_written, DateTime # dateTime
 
   # active | paused | completed | nullified
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # Patient
-  attribute :patient, ResourceLink[Patient]
+  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
 
   # Prescriber
-  attribute :prescriber, ResourceLink[Practitioner]
+  attribute :prescriber, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
 
   # Encounter / Admission / Stay
-  attribute :encounter, ResourceLink[Encounter]
+  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
 
   # Reason or indication for writing the prescription
-  attribute :reason_for_prescribing[x], string
+  attribute :reason_for_prescribing, String # string
 
   # Medication to be taken
-  attribute :medication, ResourceLink[Medication]
+  attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
 
   # Indicates how the medication is to be used by the patient.
   class DosageInstruction < Fhir::ValueObject
     # Dosage text
-    attribute :dosage_instructions_text, string
+    attribute :dosage_instructions_text, String # string
 
     # Additional dosage instructions
-    attribute :additional_instructions[x], string
+    attribute :additional_instructions, String # string
 
     # Medication timing
-    attribute :timing[x], dateTime
+    attribute :timing, DateTime # dateTime
 
     # Entry site
-    attribute :site, CodeableConcept
+    attribute :site, Fhir::CodeableConcept # CodeableConcept
 
     # Route of administration
-    attribute :route, CodeableConcept
+    attribute :route, Fhir::CodeableConcept # CodeableConcept
 
     # Administration method
-    attribute :method, CodeableConcept
+    attribute :method, Fhir::CodeableConcept # CodeableConcept
 
     # Dose quantity per dose
-    attribute :dose_quantity, Quantity
+    attribute :dose_quantity, Fhir::Quantity # Quantity
 
     # Dose quantity per unit of time
-    attribute :rate, Ratio
+    attribute :rate, Fhir::Ratio # Ratio
 
     # Total dose that should be consumed per unit of time
-    attribute :max_dose_per_period, Ratio
+    attribute :max_dose_per_period, Fhir::Ratio # Ratio
   end
 
-  attribute :dosage_instruction, Array[DosageInstruction]
+  attribute :dosage_instruction, Array[DosageInstruction] # 
 
   # Deals with details of the dispense part of the order.
   class Dispense < Fhir::ValueObject
     # Medication to be dispensed
-    attribute :medication, ResourceLink[Medication]
+    attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
 
     # Validity period
-    attribute :validity_period, Period
+    attribute :validity_period, Fhir::Period # Period
 
     # Number of repeats allowed
-    attribute :number_of_repeats_allowed, integer
+    attribute :number_of_repeats_allowed, Integer # integer
 
     # Quanity
-    attribute :quantity, Quantity
+    attribute :quantity, Fhir::Quantity # Quantity
 
     # Expected supply duration
-    attribute :expected_supply_duration, Duration
+    attribute :expected_supply_duration, Fhir::Quantity # Duration
   end
 
-  attribute :dispense, Dispense
+  attribute :dispense, Dispense # 
 
   # Indicates whether or not substitution can or should as
   # part of the dispense.  In some cases substitution must 
@@ -96,12 +96,12 @@ class Fhir::MedicationPrescription < Fhir::Resource
   class Substitution < Fhir::ValueObject
     # Type of substitiution
     # Should be present
-    attribute :type, CodeableConcept
+    attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Why should substitution (not) be made
-    attribute :reason, CodeableConcept
+    attribute :reason, Fhir::CodeableConcept # CodeableConcept
   end
 
-  attribute :substitution, Substitution
+  attribute :substitution, Substitution # 
 end
 

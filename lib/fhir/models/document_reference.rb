@@ -1,122 +1,122 @@
 # A reference to a document.
 class Fhir::DocumentReference < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Master Version Specific Identifier
   # Should be present
-  attribute :master_identifier, Identifier
+  attribute :master_identifier, Fhir::Identifier # Identifier
 
   # Other identifiers for the document
-  attribute :identifier, Array[Identifier]
+  attribute :identifier, Array[Fhir::Identifier] # Identifier
 
   # The subject of the document
   # Should be present
-  attribute :subject, ResourceLink[Patient, Practitioner, Group, Device]
+  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device] # Resource(Patient|Practitioner|Group|Device)
 
   # What kind of document this is (LOINC if possible)
   # Should be present
-  attribute :type, CodeableConcept
+  attribute :type, Fhir::CodeableConcept # CodeableConcept
 
   # More detail about the document type
-  attribute :subtype, CodeableConcept
+  attribute :subtype, Fhir::CodeableConcept # CodeableConcept
 
   # Who/what authored the document
   # Should be present
-  attribute :author, Array[ResourceLink[Practitioner, Device]]
+  attribute :author, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device]] # Resource(Practitioner|Device)
 
   # Org which maintains the document
-  attribute :custodian, ResourceLink[Organization]
+  attribute :custodian, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
 
   # Who authenticated the document
-  attribute :authenticator, ResourceLink[Practitioner, Organization]
+  attribute :authenticator, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization] # Resource(Practitioner|Organization)
 
   # Document creation time
-  attribute :created, dateTime
+  attribute :created, DateTime # dateTime
 
   # When this document reference created
   # Should be present
-  attribute :indexed, instant
+  attribute :indexed, DateTime # instant
 
   # current | superseded | error
   # Should be present
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # Status of the underlying document
-  attribute :doc_status, CodeableConcept
+  attribute :doc_status, Fhir::CodeableConcept # CodeableConcept
 
   # If this document replaces another
-  attribute :supercedes, ResourceLink[DocumentReference]
+  attribute :supercedes, Fhir::ResourceReference[Fhir::DocumentReference] # Resource(DocumentReference)
 
   # Human Readable description (title)
-  attribute :description, string
+  attribute :description, String # string
 
   # Sensitivity of source document
-  attribute :confidentiality, CodeableConcept
+  attribute :confidentiality, Fhir::CodeableConcept # CodeableConcept
 
   # Primary language of the document
-  attribute :primary_language, code
+  attribute :primary_language, Fhir::Code # code
 
   # Mime type of the document
   # Should be present
-  attribute :mime_type, code
+  attribute :mime_type, Fhir::Code # code
 
   # Format of the document
-  attribute :format, CodeableConcept
+  attribute :format, Fhir::CodeableConcept # CodeableConcept
 
   # Size of the document in bytes
-  attribute :size, integer
+  attribute :size, Integer # integer
 
   # HexBinary representation of SHA1
-  attribute :hash, string
+  attribute :hash, String # string
 
   # Where to access the document
-  attribute :location, uri
+  attribute :location, Fhir::URI # uri
 
   # A description of a service call that can be used to
   # retrieve the document.
   class Service < Fhir::ValueObject
     # Type of service (i.e. XDS.b)
     # Should be present
-    attribute :type, CodeableConcept
+    attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Where service is located (usually a URL)
-    attribute :address, string
+    attribute :address, String # string
 
     # A list of named parameters that is used in the service
     # call.
     class Parameter < Fhir::ValueObject
       # Name of parameter
       # Should be present
-      attribute :name, string
+      attribute :name, String # string
 
       # Parameter value
-      attribute :value, string
+      attribute :value, String # string
     end
 
-    attribute :parameter, Array[Parameter]
+    attribute :parameter, Array[Parameter] # 
   end
 
-  attribute :service, Service
+  attribute :service, Service # 
 
   # The clinical context in which the document was prepared.
   class Context < Fhir::ValueObject
     # Type of context (i.e. type of event)
-    attribute :code, Array[CodeableConcept]
+    attribute :code, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Time described by the document
-    attribute :period, Period
+    attribute :period, Fhir::Period # Period
 
     # Kind of facility where patient was seen
-    attribute :facility_type, CodeableConcept
+    attribute :facility_type, Fhir::CodeableConcept # CodeableConcept
   end
 
-  attribute :context, Context
+  attribute :context, Context # 
 end
 

@@ -1,4 +1,11 @@
+# A human readable formatted text, including images.
 class Fhir::Narrative < Fhir::Type
-  attribute :statuses, Array[Fhir::Code]
-  attribute :divs, Array[Fhir::xhtml]
+  # generated | extensions | additional
+  # Should be present
+  attribute :status, Fhir::Code # code
+
+  # Limited xhtml content
+  # Should be present
+  attribute :div, String # xhtml
 end
+

@@ -1,46 +1,46 @@
 # Allergy/Intolerance.
 class Fhir::AllergyIntolerance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # An external identifier for the sensitivity
-  attribute :identifier, Identifier
+  attribute :identifier, Fhir::Identifier # Identifier
 
   # Criticality of the sensitivity
-  attribute :criticality, code
+  attribute :criticality, Fhir::Code # code
 
   # Type of the sensitivity
   # Should be present
-  attribute :sensitivity_type, code
+  attribute :sensitivity_type, Fhir::Code # code
 
   # Date when the sensitivity was recorded
-  attribute :recorded_date, dateTime
+  attribute :recorded_date, DateTime # dateTime
 
   # Status of the sensitivity
   # Should be present
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # Who the sensitivity is for
   # Should be present
-  attribute :subject, ResourceLink[Patient]
+  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
 
   # Who recorded the sensitivity
-  attribute :recorder, ResourceLink[Practitioner, Patient]
+  attribute :recorder, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient] # Resource(Practitioner|Patient)
 
   # The substance that causes the sensitivity
   # Should be present
-  attribute :substance, ResourceLink[Substance]
+  attribute :substance, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
 
   # Reactions associated with the sensitivity
-  attribute :reaction, Array[ResourceLink[AdverseReaction]]
+  attribute :reaction, Array[Fhir::ResourceReference[Fhir::AdverseReaction]] # Resource(AdverseReaction)
 
   # Observations that confirm or refute the sensitivity
-  attribute :sensitivity_test, Array[ResourceLink[Observation]]
+  attribute :sensitivity_test, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
 end
 

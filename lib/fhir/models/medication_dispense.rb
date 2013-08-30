@@ -3,90 +3,90 @@
 # for administering the medication.
 class Fhir::MedicationDispense < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # External identifier
-  attribute :identifier, Identifier
+  attribute :identifier, Fhir::Identifier # Identifier
 
   # active | paused | completed | nullified
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # Patient
-  attribute :patient, ResourceLink[Patient]
+  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
 
   # Dispenser
-  attribute :dispenser, ResourceLink[Practitioner]
+  attribute :dispenser, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
 
   # Medication order that authorises the dispense
-  attribute :authorizing_prescription, Array[ResourceLink[MedicationPrescription]]
+  attribute :authorizing_prescription, Array[Fhir::ResourceReference[Fhir::MedicationPrescription]] # Resource(MedicationPrescription)
 
   # Indicates the details of the dispense event such as the
   # days supply and quantity of medication dispensed.
   class Dispense < Fhir::ValueObject
     # External identifier
-    attribute :identifier, Identifier
+    attribute :identifier, Fhir::Identifier # Identifier
 
     # Active/Completed/Aborted
-    attribute :status, code
+    attribute :status, Fhir::Code # code
 
     # Type of dispense
-    attribute :type, CodeableConcept
+    attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Amount dispensed
-    attribute :quantity, Quantity
+    attribute :quantity, Fhir::Quantity # Quantity
 
     # Medication
-    attribute :medication, ResourceLink[Medication]
+    attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
 
     # Dispensing time
-    attribute :when_prepared, Period
+    attribute :when_prepared, Fhir::Period # Period
 
     # Handover time
-    attribute :when_handed_over, Period
+    attribute :when_handed_over, Fhir::Period # Period
 
     # Where the medication was sent
-    attribute :destination, ResourceLink[Location]
+    attribute :destination, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
 
     # Who collected the medication
-    attribute :receiver, Array[ResourceLink[Practitioner]]
+    attribute :receiver, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
 
     # Indicates how the medication is to be used by the patient.
     class Dosage < Fhir::ValueObject
       # Additional dosage instructions
-      attribute :additional_instructions[x], string
+      attribute :additional_instructions, String # string
 
       # Medication timing
-      attribute :timing[x], dateTime
+      attribute :timing, DateTime # dateTime
 
       # Entry site
-      attribute :site, CodeableConcept
+      attribute :site, Fhir::CodeableConcept # CodeableConcept
 
       # Rout of administration
-      attribute :route, CodeableConcept
+      attribute :route, Fhir::CodeableConcept # CodeableConcept
 
       # Administration method
-      attribute :method, CodeableConcept
+      attribute :method, Fhir::CodeableConcept # CodeableConcept
 
       # Dose quantity per dose
-      attribute :quantity, Quantity
+      attribute :quantity, Fhir::Quantity # Quantity
 
       # Dose quantity per unit of time
-      attribute :rate, Ratio
+      attribute :rate, Fhir::Ratio # Ratio
 
       # Total dose that should be consumed per unit of time
-      attribute :max_dose_per_period, Ratio
+      attribute :max_dose_per_period, Fhir::Ratio # Ratio
     end
 
-    attribute :dosage, Array[Dosage]
+    attribute :dosage, Array[Dosage] # 
   end
 
-  attribute :dispense, Array[Dispense]
+  attribute :dispense, Array[Dispense] # 
 
   # Indicates whether or not substitution was made as part of
   # the dispense.  In some cases substitution will be expected
@@ -96,15 +96,15 @@ class Fhir::MedicationDispense < Fhir::Resource
   class Substitution < Fhir::ValueObject
     # Type of substitiution
     # Should be present
-    attribute :type, CodeableConcept
+    attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Why was substitution made
-    attribute :reason, Array[CodeableConcept]
+    attribute :reason, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Who is responsible for the substitution
-    attribute :responsible_party, Array[ResourceLink[Practitioner]]
+    attribute :responsible_party, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
   end
 
-  attribute :substitution, Substitution
+  attribute :substitution, Substitution # 
 end
 

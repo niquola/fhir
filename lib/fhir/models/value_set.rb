@@ -2,97 +2,97 @@
 # more code systems.
 class Fhir::ValueSet < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Logical id to reference this value set
-  attribute :identifier, string
+  attribute :identifier, String # string
 
   # Logical id for this version of the value set
-  attribute :version, string
+  attribute :version, String # string
 
   # Informal name for this value set
   # Should be present
-  attribute :name, string
+  attribute :name, String # string
 
   # Name of the publisher (Organization or individual)
-  attribute :publisher, string
+  attribute :publisher, String # string
 
   # Contact information of the publisher
-  attribute :telecom, Array[Contact]
+  attribute :telecom, Array[Fhir::Contact] # Contact
 
   # Human language description of the value set
   # Should be present
-  attribute :description, string
+  attribute :description, String # string
 
   # About the value set or its content
-  attribute :copyright, string
+  attribute :copyright, String # string
 
   # draft | experimental | review | production | withdrawn |
   # superseded
   # Should be present
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # If for testing purposes, not real usage
-  attribute :experimental, boolean
+  attribute :experimental, Boolean # boolean
 
   # Date for given status
-  attribute :date, dateTime
+  attribute :date, DateTime # dateTime
 
   # When value set defines its own codes.
   class Define < Fhir::ValueObject
     # URI to identify the code system
     # Should be present
-    attribute :system, uri
+    attribute :system, Fhir::URI # uri
 
     # If code comparison is case sensitive
-    attribute :case_sensitive, boolean
+    attribute :case_sensitive, Boolean # boolean
 
     # Concepts in the code system.
     class Concept < Fhir::ValueObject
       # Code that identifies concept
       # Should be present
-      attribute :code, code
+      attribute :code, Fhir::Code # code
 
       # If this code is not for use as a real concept
-      attribute :abstract, boolean
+      attribute :abstract, Boolean # boolean
 
       # Text to Display to the user
-      attribute :display, string
+      attribute :display, String # string
 
       # Formal Definition
-      attribute :definition, string
+      attribute :definition, String # string
 
       # Child Concepts (is-a / contains)
-      attribute :concept, Array[@ValueSet.define.concept]
+      attribute :concept, Array[Fhir::ValueSet::Define::Concept] # @ValueSet.define.concept
     end
 
-    attribute :concept, Array[Concept]
+    attribute :concept, Array[Concept] # 
   end
 
-  attribute :define, Define
+  attribute :define, Define # 
 
   # When value set includes codes from elsewhere.
   class Compose < Fhir::ValueObject
     # Import the contents of another value set
-    attribute :import, Array[uri]
+    attribute :import, Array[Fhir::URI] # uri
 
     # Include one or more codes from a code system.
     class Include < Fhir::ValueObject
       # The system the codes come from
       # Should be present
-      attribute :system, uri
+      attribute :system, Fhir::URI # uri
 
       # Specific version of the code system referred to
-      attribute :version, string
+      attribute :version, String # string
 
       # Code or concept
-      attribute :code, Array[code]
+      attribute :code, Array[Fhir::Code] # code
 
       # Select concepts by specify a matching criteria based on
       # the properties (including relationships) defined by the
@@ -101,52 +101,52 @@ class Fhir::ValueSet < Fhir::Resource
       class Filter < Fhir::ValueObject
         # A property defined by the code system
         # Should be present
-        attribute :property, code
+        attribute :property, Fhir::Code # code
 
         # = | is-a | is_not_a | regex
         # Should be present
-        attribute :op, code
+        attribute :op, Fhir::Code # code
 
         # Code from the system, or regex criteria
         # Should be present
-        attribute :value, code
+        attribute :value, Fhir::Code # code
       end
 
-      attribute :filter, Array[Filter]
+      attribute :filter, Array[Filter] # 
     end
 
-    attribute :include, Array[Include]
+    attribute :include, Array[Include] # 
 
     # Explicitly exclude codes
-    attribute :exclude, Array[@ValueSet.compose.include]
+    attribute :exclude, Array[Fhir::ValueSet::Compose::Include] # @ValueSet.compose.include
   end
 
-  attribute :compose, Compose
+  attribute :compose, Compose # 
 
   # When value set is an expansion.
   class Expansion < Fhir::ValueObject
     # Time valueset expansion happened
     # Should be present
-    attribute :timestamp, instant
+    attribute :timestamp, DateTime # instant
 
     # Codes in the value set.
     class Contains < Fhir::ValueObject
       # System value for the code
-      attribute :system, uri
+      attribute :system, Fhir::URI # uri
 
       # Code - if blank, this is not a choosable code
-      attribute :code, code
+      attribute :code, Fhir::Code # code
 
       # User display for the concept
-      attribute :display, string
+      attribute :display, String # string
 
       # Codes contained in this concept
-      attribute :contains, Array[@ValueSet.expansion.contains]
+      attribute :contains, Array[Fhir::ValueSet::Expansion::Contains] # @ValueSet.expansion.contains
     end
 
-    attribute :contains, Array[Contains]
+    attribute :contains, Array[Contains] # 
   end
 
-  attribute :expansion, Expansion
+  attribute :expansion, Expansion # 
 end
 

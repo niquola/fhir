@@ -3,43 +3,43 @@
 # a desired implementation.
 class Fhir::Conformance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Logical id to reference this statement
-  attribute :identifier, string
+  attribute :identifier, String # string
 
   # Logical id for this version of the statement
-  attribute :version, string
+  attribute :version, String # string
 
   # Informal name for this conformance statement
-  attribute :name, string
+  attribute :name, String # string
 
   # Publishing Organization
   # Should be present
-  attribute :publisher, string
+  attribute :publisher, String # string
 
   # Contacts for Organization
-  attribute :telecom, Array[Contact]
+  attribute :telecom, Array[Fhir::Contact] # Contact
 
   # Human description of the conformance statement
-  attribute :description, string
+  attribute :description, String # string
 
   # draft | experimental | review | production | withdrawn |
   # superseded
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # If for testing purposes, not real usage
-  attribute :experimental, boolean
+  attribute :experimental, Boolean # boolean
 
   # Publication Date
   # Should be present
-  attribute :date, dateTime
+  attribute :date, DateTime # dateTime
 
   # Describes the software that is covered by this conformance
   # statement.  Used when the profile describes the capabilities
@@ -48,16 +48,16 @@ class Fhir::Conformance < Fhir::Resource
   class Software < Fhir::ValueObject
     # Name software is known by
     # Should be present
-    attribute :name, string
+    attribute :name, String # string
 
     # Version covered by this statement
-    attribute :version, string
+    attribute :version, String # string
 
     # Date this version released
-    attribute :release_date, dateTime
+    attribute :release_date, DateTime # dateTime
   end
 
-  attribute :software, Software
+  attribute :software, Software # 
 
   # Used when the statement describes the capabilities of a
   # specific implementation instance - i.e. a particular
@@ -66,207 +66,207 @@ class Fhir::Conformance < Fhir::Resource
   class Implementation < Fhir::ValueObject
     # Describes this specific instance
     # Should be present
-    attribute :description, string
+    attribute :description, String # string
 
     # Base URL for the installation
-    attribute :url, uri
+    attribute :url, Fhir::URI # uri
   end
 
-  attribute :implementation, Implementation
+  attribute :implementation, Implementation # 
 
   # FHIR Version
   # Should be present
-  attribute :fhir_version, id
+  attribute :fhir_version, String # id
 
   # True if application accepts unknown elements
   # Should be present
-  attribute :accept_unknown, boolean
+  attribute :accept_unknown, Boolean # boolean
 
   # formats supported (xml | json | mime type)
   # Should be present
-  attribute :format, Array[code]
+  attribute :format, Array[Fhir::Code] # code
 
   # Defines the restful capabilities of the solution, if any.
   class Rest < Fhir::ValueObject
     # client | server
     # Should be present
-    attribute :mode, code
+    attribute :mode, Fhir::Code # code
 
     # General description of implementation
-    attribute :documentation, string
+    attribute :documentation, String # string
 
     # Information about security of implementation.
     class Security < Fhir::ValueObject
       # What type of security services are supported/required
-      attribute :service, Array[CodeableConcept]
+      attribute :service, Array[Fhir::CodeableConcept] # CodeableConcept
 
       # General description of how security works
-      attribute :description, string
+      attribute :description, String # string
 
       # Certificates associated with security profiles.
       class Certificate < Fhir::ValueObject
         # Mime type for certificate
-        attribute :type, code
+        attribute :type, Fhir::Code # code
 
         # Actual certificate
-        attribute :blob, base64Binary
+        attribute :blob, String # base64Binary
       end
 
-      attribute :certificate, Array[Certificate]
+      attribute :certificate, Array[Certificate] # 
     end
 
-    attribute :security, Security
+    attribute :security, Security # 
 
     # Identifies the restful capabilities of the solution for a
     # specific resource type.
     class Resource < Fhir::ValueObject
       # Resource type
       # Should be present
-      attribute :type, code
+      attribute :type, Fhir::Code # code
 
       # Resource Profiles supported
-      attribute :profile, ResourceLink[Profile]
+      attribute :profile, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
 
       # Identifies a restful operation supported by the solution.
       class Operation < Fhir::ValueObject
         # read | vread | update | etc.
         # Should be present
-        attribute :code, code
+        attribute :code, Fhir::Code # code
 
         # Anything special about operation behavior
-        attribute :documentation, string
+        attribute :documentation, String # string
       end
 
       # Should be present
-      attribute :operation, Array[Operation]
+      attribute :operation, Array[Operation] # 
 
       # Whether vRead can return past versions
-      attribute :read_history, boolean
+      attribute :read_history, Boolean # boolean
 
       # _include values supported by the server
-      attribute :search_include, Array[string]
+      attribute :search_include, Array[String] # string
 
       # Defines additional search parameters for implementations
       # to support and/or make use of.
       class SearchParam < Fhir::ValueObject
         # Name of search parameter
         # Should be present
-        attribute :name, string
+        attribute :name, String # string
 
         # Source of definition
-        attribute :source, uri
+        attribute :source, Fhir::URI # uri
 
         # Type of search parameter
         # Should be present
-        attribute :type, code
+        attribute :type, Fhir::Code # code
 
         # Contents and meaning of search parameter
         # Should be present
-        attribute :documentation, string
+        attribute :documentation, String # string
 
         # XPath that extracts the parameter set
-        attribute :xpath, string
+        attribute :xpath, String # string
 
         # Types of resource (if a resource reference)
-        attribute :target, Array[code]
+        attribute :target, Array[Fhir::Code] # code
 
         # Chained names supported
-        attribute :chain, Array[string]
+        attribute :chain, Array[String] # string
       end
 
-      attribute :search_param, Array[SearchParam]
+      attribute :search_param, Array[SearchParam] # 
     end
 
     # Should be present
-    attribute :resource, Array[ResourceLink[Resource]]
+    attribute :resource, Array[Resource] # 
 
     # If batches are supported
-    attribute :batch, boolean
+    attribute :batch, Boolean # boolean
 
     # If a system wide history list is supported
-    attribute :history, boolean
+    attribute :history, Boolean # boolean
 
     # Definition of a named query and its parameters and their
     # meaning.
     class Query < Fhir::ValueObject
       # Name of the query (_query=)
       # Should be present
-      attribute :name, string
+      attribute :name, String # string
 
       # Describes the named query
       # Should be present
-      attribute :documentation, string
+      attribute :documentation, String # string
 
       # Parameter for the named query
-      attribute :parameter, Array[@Conformance.rest.resource.searchParam]
+      attribute :parameter, Array[Fhir::Conformance::Rest::Resource::SearchParam] # @Conformance.rest.resource.searchParam
     end
 
-    attribute :query, Array[Query]
+    attribute :query, Array[Query] # 
   end
 
-  attribute :rest, Array[Rest]
+  attribute :rest, Array[Rest] # 
 
   # Describes the messaging capabilities of the solution.
   class Messaging < Fhir::ValueObject
     # Actual endpoint being described
-    attribute :endpoint, uri
+    attribute :endpoint, Fhir::URI # uri
 
     # Reliable Message Cache Length
-    attribute :reliable_cache, integer
+    attribute :reliable_cache, Integer # integer
 
     # Messaging interface behavior details
-    attribute :documentation, string
+    attribute :documentation, String # string
 
     # Describes the solution's support for an event at this end
     # point.
     class Event < Fhir::ValueObject
       # Event type
       # Should be present
-      attribute :code, code
+      attribute :code, Fhir::Code # code
 
       # sender | receiver
       # Should be present
-      attribute :mode, code
+      attribute :mode, Fhir::Code # code
 
       # http | ftp |MLLP | etc.
-      attribute :protocol, Array[Coding]
+      attribute :protocol, Array[Fhir::Coding] # Coding
 
       # Resource that's focus of message
       # Should be present
-      attribute :focus, code
+      attribute :focus, Fhir::Code # code
 
       # Profile that describes the request
       # Should be present
-      attribute :request, ResourceLink[Profile]
+      attribute :request, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
 
       # Profile that describes the response
       # Should be present
-      attribute :response, ResourceLink[Profile]
+      attribute :response, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
 
       # Endpoint-specific event documentation
-      attribute :documentation, string
+      attribute :documentation, String # string
     end
 
     # Should be present
-    attribute :event, Array[Event]
+    attribute :event, Array[Event] # 
   end
 
-  attribute :messaging, Array[Messaging]
+  attribute :messaging, Array[Messaging] # 
 
   # A document definition.
   class Document < Fhir::ValueObject
     # producer | consumer
     # Should be present
-    attribute :mode, code
+    attribute :mode, Fhir::Code # code
 
     # Description of document support
-    attribute :documentation, string
+    attribute :documentation, String # string
 
     # Constraint on a resource used in the document
     # Should be present
-    attribute :profile, ResourceLink[Profile]
+    attribute :profile, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
   end
 
-  attribute :document, Array[Document]
+  attribute :document, Array[Document] # 
 end
 

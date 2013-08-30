@@ -1,67 +1,10 @@
-require 'nokogiri'
-require 'active_support/core_ext'
-FHIR_DIR = "#{File.dirname(__FILE__)}/.."
+require_relative "common"
 
+FHIR_DIR = File.dirname(__FILE__) + "/.."
 
-module FhirProfile
-  def load_profile(path) #profile doc
-    doc = Nokogiri::XML(open(path).read)
-    doc.remove_namespaces!
-  end
-
-  def structures(doc) #structures
-    doc.xpath('//Profile/structure')
-  end
-
-  def elements(st)
-    st.xpath('./element').to_a
-  end
-
-  def el_path(el)
-    return [] if el.nil?
-    value_by_path(el, 'path').split('.')
-  end
-
-  def value_by_path(node, path, attr = :value)
-    (node.xpath("./#{path}").first || {})[attr]
-  end
-
-  def st_type(st)
-    value_by_path(st, './type')
-  end
-
-  def el_type(el)
-    value_by_path(el, 'definition/type/code')
-  end
-
-  def el_name(el)
-    el_path(el).last
-  end
-
-  def el_min(el)
-    value_by_path(el, 'definition/min')
-  end
-
-  def el_max(el)
-    value_by_path(el, 'definition/max')
-  end
-
-  def el_multiple?(el)
-    el_max(el) != '1'
-  end
-end
-
-module FhirSimpleTypes
-  def t_to_ruby(type)
-    {
-      'string' => 'String',
-      'code' => 'Fhir::Code',
-      'integer' => 'Integer',
-      'boolean' => 'Boolean',
-      'decimal' => 'Float',
-      'dateTime' => 'DateTime'
-    }[type] || "Fhir::#{type}"
-  end
+def load_profile(path) #profile doc
+  doc = Nokogiri::XML(open(path).read)
+  doc.remove_namespaces!
 end
 
 def ruby_block(head, &block)
@@ -100,32 +43,43 @@ def profiles(base_path)
   Dir["#{base_path}/meta/type-*profile.xml"]
 end
 
+extend FhirElementsToTree
 extend FhirProfile
-extend FhirSimpleTypes
+extend RubyCodeGeneration
 
-lib_dir  = File.expand_path('lib/fhir/types', FHIR_DIR)
-FileUtils.rm_rf(lib_dir)
-FileUtils.mkdir_p(lib_dir)
+HANDMADE_TYPES = ["ResourceReference"]
 
-autoloads = []
+def generate_types
+  lib_dir  = File.expand_path('lib/fhir/types', FHIR_DIR)
+  FileUtils.rm_rf(lib_dir)
+  FileUtils.mkdir_p(lib_dir)
 
-profiles(FHIR_DIR).each do |profile_path|
-  doc = load_profile(profile_path)
-  structures(doc).each do |st|
-    type = st_type(st)
-    file_name = type.underscore
-    autoloads << [type, file_name]
+  autoloads = []
 
-    File.open("#{lib_dir}/#{file_name}.rb", 'w') do |f|
-      f<< ruby_class_from_st(st)
+  profiles(FHIR_DIR).each do |profile_path|
+    doc = load_profile(profile_path)
+    structures(doc).each do |st|
+      type = st_type(st)
+      next if HANDMADE_TYPES.include?(type)
+      elements = st_elements(st)
+      file_name = type.underscore
+
+      tree = make_tree(elements)
+      code = tree_to_ruby_code(tree, "Fhir::Type")
+
+      autoloads << [type, file_name]
+
+      File.open("#{lib_dir}/#{file_name}.rb", 'w') do |f|
+        f << code
+      end
     end
   end
-end
 
-open("#{lib_dir}/autoloads.rb", 'w') do |f|
-  f<< ruby_block("module Fhir") do
-    autoloads.map do |(c,f)|
-      %Q[ autoload :#{c}, 'fhir/types/#{f}.rb']
-    end.join("\n")
+  open("#{lib_dir}/autoloads.rb", 'w') do |f|
+    f<< ruby_block("module Fhir") do
+      autoloads.map do |(c,f)|
+        %Q[ autoload :#{c}, 'fhir/types/#{f}.rb']
+      end.join("\n")
+    end
   end
 end

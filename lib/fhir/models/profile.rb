@@ -4,75 +4,75 @@
 # Definitions.
 class Fhir::Profile < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Logical id to reference this profile
-  attribute :identifier, string
+  attribute :identifier, String # string
 
   # Logical id for this version of the profile
-  attribute :version, string
+  attribute :version, String # string
 
   # Informal name for this profile
   # Should be present
-  attribute :name, string
+  attribute :name, String # string
 
   # Name of the publisher (Organization or individual)
-  attribute :publisher, string
+  attribute :publisher, String # string
 
   # Contact information of the publisher
-  attribute :telecom, Array[Contact]
+  attribute :telecom, Array[Fhir::Contact] # Contact
 
   # Natural language description of the profile
-  attribute :description, string
+  attribute :description, String # string
 
   # Assist with indexing and finding
-  attribute :code, Array[Coding]
+  attribute :code, Array[Fhir::Coding] # Coding
 
   # draft | experimental | review | production | withdrawn |
   # superseded
   # Should be present
-  attribute :status, code
+  attribute :status, Fhir::Code # code
 
   # If for testing purposes, not real usage
-  attribute :experimental, boolean
+  attribute :experimental, Boolean # boolean
 
   # Date for this version of the profile
-  attribute :date, dateTime
+  attribute :date, DateTime # dateTime
 
   # FHIR Version this profile targets
-  attribute :fhir_version, id
+  attribute :fhir_version, String # id
 
   # A constraint statement about what contents a resource or
   # data type may have.
   class Structure < Fhir::ValueObject
     # The Resource or Data Type being described
     # Should be present
-    attribute :type, code
+    attribute :type, Fhir::Code # code
 
     # Name for this particular structure (reference target)
-    attribute :name, string
+    attribute :name, String # string
 
     # This definition is published (i.e. for validation)
-    attribute :publish, boolean
+    attribute :publish, Boolean # boolean
 
     # Human summary: why describe this resource?
-    attribute :purpose, string
+    attribute :purpose, String # string
 
     # Captures constraints on each element within the resource.
     class Element < Fhir::ValueObject
       # The path of the element (see the formal definitions)
       # Should be present
-      attribute :path, string
+      attribute :path, String # string
 
       # Name for this particular element definition (reference
       # target)
-      attribute :name, string
+      attribute :name, String # string
 
       # Indicates that the element is sliced into a set of
       # alternative definitions (there are multiple definitions on a
@@ -83,18 +83,18 @@ class Fhir::Profile < Fhir::Resource
       class Slicing < Fhir::ValueObject
         # Element that used to distinguish the slices
         # Should be present
-        attribute :discriminator, id
+        attribute :discriminator, String # id
 
         # If elements must be in same order as slices
         # Should be present
-        attribute :ordered, boolean
+        attribute :ordered, Boolean # boolean
 
         # Whether slice list is open or closed
         # Should be present
-        attribute :rules, code
+        attribute :rules, Fhir::Code # code
       end
 
-      attribute :slicing, Slicing
+      attribute :slicing, Slicing # 
 
       # Definition of the content of the element to provide a more
       # specific definition than that contained for the element in
@@ -102,59 +102,59 @@ class Fhir::Profile < Fhir::Resource
       class Definition < Fhir::ValueObject
         # Concise definition for xml presentation
         # Should be present
-        attribute :short, string
+        attribute :short, String # string
 
         # Formal definition
         # Should be present
-        attribute :formal, string
+        attribute :formal, String # string
 
         # Comments about the use of this element
-        attribute :comments, string
+        attribute :comments, String # string
 
         # Why is this needed?
-        attribute :requirements, string
+        attribute :requirements, String # string
 
         # Other names
-        attribute :synonym, Array[string]
+        attribute :synonym, Array[String] # string
 
         # Minimum Cardinality
         # Should be present
-        attribute :min, integer
+        attribute :min, Integer # integer
 
         # Maximum Cardinality (a number or *)
         # Should be present
-        attribute :max, string
+        attribute :max, String # string
 
         # The data type or resource that the value of this element
         # is permitted to be.
         class Type < Fhir::ValueObject
           # Data type or Resource
           # Should be present
-          attribute :code, code
+          attribute :code, Fhir::Code # code
 
           # Profile.structure to apply
-          attribute :profile, uri
+          attribute :profile, Fhir::URI # uri
 
           # If code is a Resource, is it in the bundle?
-          attribute :bundled, boolean
+          attribute :bundled, Boolean # boolean
         end
 
-        attribute :type, Array[Type]
+        attribute :type, Array[Type] # 
 
         # To another element constraint (by element.name)
-        attribute :name_reference, string
+        attribute :name_reference, String # string
 
         # Fixed value: [as defined for type]
-        attribute :value[x], *
+        attribute :value, Object # *
 
         # Example value: [as defined for type]
-        attribute :example[x], *
+        attribute :example, Object # *
 
         # Length for strings
-        attribute :max_length, integer
+        attribute :max_length, Integer # integer
 
         # Reference to invariant about presence
-        attribute :condition, Array[id]
+        attribute :condition, Array[String] # id
 
         # Formal constraints such as co-occurrence and other
         # constraints that can be computationally evaluated within the
@@ -162,81 +162,81 @@ class Fhir::Profile < Fhir::Resource
         class Constraint < Fhir::ValueObject
           # Target of 'condition' reference above
           # Should be present
-          attribute :key, id
+          attribute :key, String # id
 
           # Short human label
-          attribute :name, string
+          attribute :name, String # string
 
           # error | warning
           # Should be present
-          attribute :severity, code
+          attribute :severity, Fhir::Code # code
 
           # Human description of constraint
           # Should be present
-          attribute :human, string
+          attribute :human, String # string
 
           # XPath expression of constraint
           # Should be present
-          attribute :xpath, string
+          attribute :xpath, String # string
 
           # OCL expression of constraint
-          attribute :ocl, string
+          attribute :ocl, String # string
         end
 
-        attribute :constraint, Array[Constraint]
+        attribute :constraint, Array[Constraint] # 
 
         # If the element must be usable
-        attribute :must_support, boolean
+        attribute :must_support, Boolean # boolean
 
         # If this modifies the meaning of other elements
         # Should be present
-        attribute :is_modifier, boolean
+        attribute :is_modifier, Boolean # boolean
 
         # Reference to a binding (local or absolute)
-        attribute :binding, uri
+        attribute :binding, Fhir::URI # uri
 
         # Identifies a concept from an external specification that
         # roughly corresponds to this element.
         class Mapping < Fhir::ValueObject
           # Which mapping this is (v2, CDA, openEHR, etc.)
           # Should be present
-          attribute :target, uri
+          attribute :target, Fhir::URI # uri
 
           # Details of the mapping
-          attribute :map, string
+          attribute :map, String # string
         end
 
-        attribute :mapping, Array[Mapping]
+        attribute :mapping, Array[Mapping] # 
       end
 
-      attribute :definition, Definition
+      attribute :definition, Definition # 
     end
 
-    attribute :element, Array[Element]
+    attribute :element, Array[Element] # 
   end
 
-  attribute :structure, Array[Structure]
+  attribute :structure, Array[Structure] # 
 
   # An extension defined as part of the profile.
   class ExtensionDefn < Fhir::ValueObject
     # Identifies the extension in this profile
     # Should be present
-    attribute :code, code
+    attribute :code, Fhir::Code # code
 
     # resource | datatype | mapping | extension
     # Should be present
-    attribute :context_type, code
+    attribute :context_type, Fhir::Code # code
 
     # Where the extension can be used in instances
     # Should be present
-    attribute :context, Array[string]
+    attribute :context, Array[String] # string
 
     # Definition of the extension and its content
     # Should be present
-    attribute :definition, @Profile.structure.element.definition
+    attribute :definition, Fhir::Profile::Structure::Element::Definition # @Profile.structure.element.definition
   end
 
-  attribute :extension_defn, Array[ExtensionDefn]
+  attribute :extension_defn, Array[ExtensionDefn] # 
 
   # Defines a linkage between a vocabulary binding name used
   # in the profile (or expected to be used in profile importing
@@ -244,21 +244,21 @@ class Fhir::Profile < Fhir::Resource
   class Binding < Fhir::ValueObject
     # Binding name
     # Should be present
-    attribute :name, string
+    attribute :name, String # string
 
     # Can additional codes be used?
-    attribute :is_extensible, boolean
+    attribute :is_extensible, Boolean # boolean
 
     # required | preferred | example
-    attribute :conformance, code
+    attribute :conformance, Fhir::Code # code
 
     # Human explanation of the binding
-    attribute :description, string
+    attribute :description, String # string
 
     # Source of binding content
-    attribute :reference[x], uri
+    attribute :reference, Fhir::URI # uri
   end
 
-  attribute :binding, Array[Binding]
+  attribute :binding, Array[Binding] # 
 end
 

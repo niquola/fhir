@@ -1,10 +1,29 @@
+# There is a variety of postal address formats defined
+# around the world. This format defines a superset that is the
+# basis for addresses all around the world.
 class Fhir::Address < Fhir::Type
-  attribute :uses, Array[Fhir::Code]
-  attribute :texts, Array[String]
-  attribute :line, String
-  attribute :cities, Array[String]
-  attribute :states, Array[String]
-  attribute :zips, Array[String]
-  attribute :countries, Array[String]
-  attribute :periods, Array[Fhir::Period]
+  # The use of this address
+  attribute :use, Fhir::Code # code
+
+  # Text representation of the address
+  attribute :text, String # string
+
+  # Line of an address
+  attribute :line, Array[String] # string
+
+  # Name of city, town etc.
+  attribute :city, String # string
+
+  # Sub-unit of country (abreviations ok)
+  attribute :state, String # string
+
+  # Post code for area
+  attribute :zip, String # string
+
+  # Country (can be ISO 3166 3 letter code)
+  attribute :country, String # string
+
+  # Time period when address was/is in use
+  attribute :period, Fhir::Period # Period
 end
+

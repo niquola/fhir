@@ -3,138 +3,138 @@
 # attempts and monitoring for inappropriate usage.
 class Fhir::SecurityEvent < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Identifies the name, action type, time, and disposition of
   # the audited event.
   class Event < Fhir::ValueObject
     # Type of event
     # Should be present
-    attribute :type, CodeableConcept
+    attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Sub-type of event
-    attribute :subtype, Array[CodeableConcept]
+    attribute :subtype, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Type of action performed during the event
-    attribute :action, code
+    attribute :action, Fhir::Code # code
 
     # Time when the event occurred on source
     # Should be present
-    attribute :date_time, instant
+    attribute :date_time, DateTime # instant
 
     # Whether the event succeeded or failed
-    attribute :outcome, code
+    attribute :outcome, Fhir::Code # code
 
     # Description of the event outcome
-    attribute :outcome_desc, string
+    attribute :outcome_desc, String # string
   end
 
   # Should be present
-  attribute :event, Event
+  attribute :event, Event # 
 
   # A person, a hardware device or software process.
   class Participant < Fhir::ValueObject
     # User roles (e.g. local RBAC codes)
-    attribute :role, Array[CodeableConcept]
+    attribute :role, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Direct reference to resource
-    attribute :reference, ResourceLink[Practitioner, Patient, Device]
+    attribute :reference, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient, Fhir::Device] # Resource(Practitioner|Patient|Device)
 
     # Unique identifier for the user
-    attribute :user_id, string
+    attribute :user_id, String # string
 
     # User id used by authentication system
-    attribute :auth_id, string
+    attribute :auth_id, String # string
 
     # Human-meaningful name for the user
-    attribute :name, string
+    attribute :name, String # string
 
     # Whether user is initiator
     # Should be present
-    attribute :requestor, boolean
+    attribute :requestor, Boolean # boolean
 
     # Type of media
-    attribute :media, Coding
+    attribute :media, Fhir::Coding # Coding
 
     # Logical network location for application activity, if the
     # activity has a network location.
     class Network < Fhir::ValueObject
       # Identifier for the network access point of the user device
-      attribute :identifier, string
+      attribute :identifier, String # string
 
       # The type of network access point
-      attribute :type, code
+      attribute :type, Fhir::Code # code
     end
 
-    attribute :network, Network
+    attribute :network, Network # 
   end
 
   # Should be present
-  attribute :participant, Array[Participant]
+  attribute :participant, Array[Participant] # 
 
   # Application systems and processes.
   class Source < Fhir::ValueObject
     # Logical source location within the enterprise
-    attribute :site, string
+    attribute :site, String # string
 
     # The id of source where event originated
     # Should be present
-    attribute :identifier, string
+    attribute :identifier, String # string
 
     # The type of source where event originated
-    attribute :type, Array[Coding]
+    attribute :type, Array[Fhir::Coding] # Coding
   end
 
   # Should be present
-  attribute :source, Source
+  attribute :source, Source # 
 
   # Specific instances of data or objects that have been
   # accessed.
   class Object < Fhir::ValueObject
     # Specific instance of object (e.g. versioned)
-    attribute :identifier, Identifier
+    attribute :identifier, Fhir::Identifier # Identifier
 
     # Specific instance of resource (e.g. versioned)
-    attribute :reference, ResourceLink[Any]
+    attribute :reference, Fhir::ResourceReference # Resource(Any)
 
     # Object type being audited
-    attribute :type, code
+    attribute :type, Fhir::Code # code
 
     # Functional application role of Object
-    attribute :role, code
+    attribute :role, Fhir::Code # code
 
     # Life-cycle stage for the object
-    attribute :lifecycle, code
+    attribute :lifecycle, Fhir::Code # code
 
     # Policy-defined sensitivity for the object
-    attribute :sensitivity, CodeableConcept
+    attribute :sensitivity, Fhir::CodeableConcept # CodeableConcept
 
     # Instance-specific descriptor for Object
-    attribute :name, string
+    attribute :name, String # string
 
     # Actual query for object
-    attribute :query, base64Binary
+    attribute :query, String # base64Binary
 
     # Additional Information about the Object.
     class Detail < Fhir::ValueObject
       # Name of the property
       # Should be present
-      attribute :type, string
+      attribute :type, String # string
 
       # Property value
       # Should be present
-      attribute :value, base64Binary
+      attribute :value, String # base64Binary
     end
 
-    attribute :detail, Array[Detail]
+    attribute :detail, Array[Detail] # 
   end
 
-  attribute :object, Array[Object]
+  attribute :object, Array[Object] # 
 end
 

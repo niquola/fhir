@@ -6,102 +6,102 @@
 # bundle.
 class Fhir::Message < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Extension]
+  attribute :extension, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
-  attribute :text, Narrative
+  attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[ResourceLink[Resource]]
+  attribute :contained, Array[Fhir::Resource] # Resource
 
   # Id of this message
   # Should be present
-  attribute :identifier, id
+  attribute :identifier, String # id
 
   # Time that the message was sent
   # Should be present
-  attribute :timestamp, instant
+  attribute :timestamp, DateTime # instant
 
   # Code for the event this message represents
   # Should be present
-  attribute :event, code
+  attribute :event, Fhir::Code # code
 
   # Information about the message that this message is a
   # response to.  Only present if this message is a response.
   class Response < Fhir::ValueObject
     # Id of original message
     # Should be present
-    attribute :identifier, id
+    attribute :identifier, String # id
 
     # Type of response to the message
     # Should be present
-    attribute :code, code
+    attribute :code, Fhir::Code # code
 
     # Specific list of hints/warnings/errors
-    attribute :details, ResourceLink[OperationOutcome]
+    attribute :details, Fhir::ResourceReference[Fhir::OperationOutcome] # Resource(OperationOutcome)
   end
 
-  attribute :response, Response
+  attribute :response, Response # 
 
   # The source application from which this message originated.
   class Source < Fhir::ValueObject
     # Name of system
-    attribute :name, string
+    attribute :name, String # string
 
     # Name of software running the system
     # Should be present
-    attribute :software, string
+    attribute :software, String # string
 
     # Version of software running
-    attribute :version, string
+    attribute :version, String # string
 
     # Human contact for problems
-    attribute :contact, Contact
+    attribute :contact, Fhir::Contact # Contact
 
     # Actual message source address or id
     # Should be present
-    attribute :endpoint, uri
+    attribute :endpoint, Fhir::URI # uri
   end
 
   # Should be present
-  attribute :source, Source
+  attribute :source, Source # 
 
   # The destination application which the message is intended
   # for.
   class Destination < Fhir::ValueObject
     # Name of system
-    attribute :name, string
+    attribute :name, String # string
 
     # Particular delivery destination within the destination
-    attribute :target, ResourceLink[Device]
+    attribute :target, Fhir::ResourceReference[Fhir::Device] # Resource(Device)
 
     # Actual destination address or id
     # Should be present
-    attribute :endpoint, uri
+    attribute :endpoint, Fhir::URI # uri
   end
 
   # Should be present
-  attribute :destination, Destination
+  attribute :destination, Destination # 
 
   # The source of the data entry
-  attribute :enterer, ResourceLink[Practitioner]
+  attribute :enterer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
 
   # The source of the decision
-  attribute :author, ResourceLink[Practitioner]
+  attribute :author, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
 
   # Intended "real-world" recipient for the data
-  attribute :receiver, ResourceLink[Practitioner, Organization]
+  attribute :receiver, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization] # Resource(Practitioner|Organization)
 
   # Final responsibility for event
-  attribute :responsible, ResourceLink[Practitioner, Organization]
+  attribute :responsible, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization] # Resource(Practitioner|Organization)
 
   # Time of effect
-  attribute :effective, Period
+  attribute :effective, Fhir::Period # Period
 
   # Cause of event
-  attribute :reason, CodeableConcept
+  attribute :reason, Fhir::CodeableConcept # CodeableConcept
 
   # The actual content of the message
-  attribute :data, Array[ResourceLink[Any]]
+  attribute :data, Array[Fhir::ResourceReference] # Resource(Any)
 end
 
