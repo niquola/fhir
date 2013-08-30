@@ -75,20 +75,29 @@ TYPES_MAPPING = {
   'String' => 'String'
 }
 
-def attribute_type(node)
+def attribute_type(node, minmax)
   original_type = value_by_path(node[:el], 'definition/type/code')
-  TYPES_MAPPING[original_type] || original_type
+  mapped_type = TYPES_MAPPING[original_type] || original_type || class_name(node_path(node).last)
+
+  if mapped_type.starts_with?("Resource")
+    mapped_type.gsub!(/(Resource)(\(.*?\))?/) do |*args|
+      types = $2.nil? ? "Resource" : $2.gsub(/[()]/, '').gsub('|', ', ')
+      "ResourceLink[#{types}]"
+    end
+  end
+
+  apply_minmax_to_type(mapped_type, minmax)
+end
+
+def apply_minmax_to_type(type, minmax)
+  minmax && minmax.last == '*' ? "Array[#{type}]" : type
 end
 
 def attribute_minmax(node)
   min = value_by_path(node[:el], 'definition/min')
   max = value_by_path(node[:el], 'definition/max')
 
-  if min.present? && max.present?
-    "#{min}..#{max}"
-  else
-    nil
-  end
+  min.present? && max.present? ? [min, max] : nil
 end
 
 def class_name(node_name)
@@ -117,15 +126,15 @@ def tree_to_ruby_code(tree)
   get_attributes(tree).each do |node_name, node|
     depth = node_depth(node)
 
-    write_attribute = -> {
+    write_attribute = ->(write_comment = true) {
       minmax = attribute_minmax(node)
-      line(code, depth, node_comment(node))
+      line(code, depth, node_comment(node)) if write_comment
 
       if minmax && minmax.first == '1'
         line(code, depth, "# Should be present")
       end
 
-      line(code, depth, "attribute :#{attribute_name(node_name)}, #{attribute_type(node)}")
+      line(code, depth, "attribute :#{attribute_name(node_name)}, #{attribute_type(node, minmax)}")
       blank_line(code)
     }
 
@@ -145,7 +154,7 @@ def tree_to_ruby_code(tree)
       line(code, depth, "end")
       blank_line(code)
 
-      write_attribute.call if value_object
+      write_attribute.call(false) if value_object
     end
   end
 
@@ -169,7 +178,8 @@ doc.xpath('//Profile/structure')
   autoloads << [resource_name, "fhir/models/#{file_name}"]
 
   tree = make_tree(elements)
-  puts tree_to_ruby_code(tree) if resource_name == "AdverseReaction"
+  code = tree_to_ruby_code(tree)
+  File.open("#{lib_dir}/#{file_name}.rb",'w+'){ |f| f << code }
 end
 
 autoload_code = "module Fhir\n"
