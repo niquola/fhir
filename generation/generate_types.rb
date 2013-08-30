@@ -55,8 +55,12 @@ module FhirSimpleTypes
   def t_to_ruby(type)
     {
       'string' => 'String',
-      'code' => 'Code'
-    }[type] || type
+      'code' => 'Fhir::Code',
+      'integer' => 'Integer',
+      'boolean' => 'Boolean',
+      'decimal' => 'Float',
+      'dateTime' => 'DateTime'
+    }[type] || "Fhir::#{type}"
   end
 end
 
@@ -76,10 +80,10 @@ def attr_to_ruby(el)
   type = t_to_ruby(el_type(el))
   attr_name = el_name(el).underscore
   if el_multiple?(el)
-    "  attribute :#{attr_name}, Fhir::#{type}"
+    "  attribute :#{attr_name}, #{type}"
   else
-    "  attribute :#{attr_name.pluralize}, Array[Fhir::#{type}]"
-    end
+    "  attribute :#{attr_name.pluralize}, Array[#{type}]"
+  end
 end
 
 def ruby_class_from_st(st)

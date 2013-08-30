@@ -1,4 +1,4 @@
 class Fhir::Period < Fhir::Type
-  attribute :starts, Array[Fhir::dateTime]
-  attribute :ends, Array[Fhir::dateTime]
+  attribute :starts, Array[DateTime]
+  attribute :ends, Array[DateTime]
 end

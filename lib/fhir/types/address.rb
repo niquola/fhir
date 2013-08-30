@@ -1,10 +1,10 @@
 class Fhir::Address < Fhir::Type
   attribute :uses, Array[Fhir::Code]
-  attribute :texts, Array[Fhir::String]
-  attribute :line, Fhir::String
-  attribute :cities, Array[Fhir::String]
-  attribute :states, Array[Fhir::String]
-  attribute :zips, Array[Fhir::String]
-  attribute :countries, Array[Fhir::String]
+  attribute :texts, Array[String]
+  attribute :line, String
+  attribute :cities, Array[String]
+  attribute :states, Array[String]
+  attribute :zips, Array[String]
+  attribute :countries, Array[String]
   attribute :periods, Array[Fhir::Period]
 end

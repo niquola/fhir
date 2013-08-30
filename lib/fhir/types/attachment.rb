@@ -3,7 +3,7 @@ class Fhir::Attachment < Fhir::Type
   attribute :languages, Array[Fhir::Code]
   attribute :data, Array[Fhir::base64Binary]
   attribute :urls, Array[Fhir::uri]
-  attribute :sizes, Array[Fhir::integer]
+  attribute :sizes, Array[Integer]
   attribute :hashes, Array[Fhir::base64Binary]
-  attribute :titles, Array[Fhir::String]
+  attribute :titles, Array[String]
 end
