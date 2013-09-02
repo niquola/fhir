@@ -3,13 +3,13 @@
 # counseling or hypnotherapy.
 class Fhir::Procedure < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Subject of this procedure
   # Should be present
@@ -19,7 +19,7 @@ class Fhir::Procedure < Fhir::Resource
   attribute :type, Fhir::CodeableConcept # CodeableConcept
 
   # Precise location details
-  attribute :body_site, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :body_sites, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Indications for the procedure
   attribute :indication, String # string
@@ -33,7 +33,7 @@ class Fhir::Procedure < Fhir::Resource
     attribute :role, Fhir::CodeableConcept # CodeableConcept
   end
 
-  attribute :performer, Array[Performer] # 
+  attribute :performers, Array[Performer] # 
 
   # The date the procedure was performed
   attribute :date, Fhir::Period # Period
@@ -45,7 +45,7 @@ class Fhir::Procedure < Fhir::Resource
   attribute :outcome, String # string
 
   # Any report that results from the procedure
-  attribute :report, Array[Fhir::ResourceReference[Fhir::DiagnosticReport]] # Resource(DiagnosticReport)
+  attribute :reports, Array[Fhir::ResourceReference[Fhir::DiagnosticReport]] # Resource(DiagnosticReport)
 
   # Complications
   attribute :complication, String # string
@@ -64,7 +64,7 @@ class Fhir::Procedure < Fhir::Resource
     attribute :target, Fhir::ResourceReference[Fhir::Procedure, Fhir::MedicationPrescription] # Resource(Procedure|MedicationPrescription)
   end
 
-  attribute :related_item, Array[RelatedItem] # 
+  attribute :related_items, Array[RelatedItem] # 
 
   # Procedure notes
   attribute :notes, String # string

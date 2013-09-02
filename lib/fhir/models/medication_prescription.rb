@@ -3,16 +3,16 @@
 # patient.
 class Fhir::MedicationPrescription < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # External identifier
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # Prescription date
   attribute :date_written, DateTime # dateTime
@@ -65,7 +65,7 @@ class Fhir::MedicationPrescription < Fhir::Resource
     attribute :max_dose_per_period, Fhir::Ratio # Ratio
   end
 
-  attribute :dosage_instruction, Array[DosageInstruction] # 
+  attribute :dosage_instructions, Array[DosageInstruction] # 
 
   # Deals with details of the dispense part of the order.
   class Dispense < Fhir::ValueObject

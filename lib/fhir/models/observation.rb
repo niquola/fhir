@@ -2,13 +2,13 @@
 # device or other subject.
 class Fhir::Observation < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Kind of observation
   # Should be present
@@ -63,7 +63,7 @@ class Fhir::Observation < Fhir::Resource
     attribute :range, Fhir::Quantity # Quantity
   end
 
-  attribute :reference_range, Array[ReferenceRange] # 
+  attribute :reference_ranges, Array[ReferenceRange] # 
 
   # Component observation.
   class Component < Fhir::ValueObject
@@ -76,6 +76,6 @@ class Fhir::Observation < Fhir::Resource
     attribute :value, Fhir::Quantity # Quantity
   end
 
-  attribute :component, Array[Component] # 
+  attribute :components, Array[Component] # 
 end
 

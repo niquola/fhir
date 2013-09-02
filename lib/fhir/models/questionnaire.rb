@@ -4,13 +4,13 @@
 # underlying questions.
 class Fhir::Questionnaire < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
@@ -50,7 +50,7 @@ class Fhir::Questionnaire < Fhir::Resource
     attribute :answer, Float # decimal
 
     # Selected options
-    attribute :choice, Array[Fhir::Coding] # Coding
+    attribute :choices, Array[Fhir::Coding] # Coding
 
     # Valueset containing the possible options
     attribute :options, Fhir::URI # uri
@@ -62,7 +62,7 @@ class Fhir::Questionnaire < Fhir::Resource
     attribute :remarks, String # string
   end
 
-  attribute :question, Array[Question] # 
+  attribute :questions, Array[Question] # 
 
   # A group of questions to a possibly similarly grouped set
   # of question in the questionnaire.
@@ -80,12 +80,12 @@ class Fhir::Questionnaire < Fhir::Resource
     attribute :subject, Fhir::ResourceReference # Resource(Any)
 
     # Questions belonging to this group
-    attribute :question, Array[Fhir::Questionnaire::Question] # @Questionnaire.question
+    attribute :questions, Array[Fhir::Questionnaire::Question] # @Questionnaire.question
 
     # Nested questionnaire group
-    attribute :group, Array[Fhir::Questionnaire::Group] # @Questionnaire.group
+    attribute :groups, Array[Fhir::Questionnaire::Group] # @Questionnaire.group
   end
 
-  attribute :group, Array[Group] # 
+  attribute :groups, Array[Group] # 
 end
 

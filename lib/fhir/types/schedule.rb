@@ -3,7 +3,7 @@
 # happen, but when they are expected or requested to occur.
 class Fhir::Schedule < Fhir::Type
   # When the event occurs
-  attribute :event, Array[Fhir::Period] # Period
+  attribute :events, Array[Fhir::Period] # Period
 
   # Identifies a repeating pattern to the intended time
   # periods.

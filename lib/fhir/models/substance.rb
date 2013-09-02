@@ -2,13 +2,13 @@
 # healthcare.
 class Fhir::Substance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Identifier of the substance
   attribute :identifier, Fhir::Identifier # Identifier
@@ -33,7 +33,7 @@ class Fhir::Substance < Fhir::Resource
   attribute :quantity, Fhir::Quantity # Quantity
 
   # Substance composition
-  attribute :ingredient, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
+  attribute :ingredients, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
 
   # Absolute | Relative
   attribute :quantity_mode, Fhir::CodeableConcept # CodeableConcept

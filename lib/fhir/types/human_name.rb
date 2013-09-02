@@ -8,16 +8,16 @@ class Fhir::HumanName < Fhir::Type
   attribute :text, String # string
 
   # Family name (often called 'Surname')
-  attribute :family, Array[String] # string
+  attribute :families, Array[String] # string
 
   # Given names (not always 'first'). Includes middle names
-  attribute :given, Array[String] # string
+  attribute :givens, Array[String] # string
 
   # Parts that come before the name
-  attribute :prefix, Array[String] # string
+  attribute :prefixes, Array[String] # string
 
   # Parts that come after the name
-  attribute :suffix, Array[String] # string
+  attribute :suffixes, Array[String] # string
 
   # Time period when name was/is in use
   attribute :period, Fhir::Period # Period

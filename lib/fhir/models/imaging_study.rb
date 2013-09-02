@@ -3,13 +3,13 @@
 # incomplete sample, such as a list of key images.
 class Fhir::ImagingStudy < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # When the study was performed
   attribute :date_time, DateTime # dateTime
@@ -26,10 +26,10 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :accession_no, Fhir::Identifier # Identifier
 
   # Other identifiers for the study (0020,0010)
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # All series.modality if actual acquisition modalities
-  attribute :modality, Array[Fhir::Code] # code
+  attribute :modalities, Array[Fhir::Code] # code
 
   # Referring physician (0008,0090)
   attribute :referrer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
@@ -52,7 +52,7 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :clinical_information, String # string
 
   # Type of procedure performed (0008,1032)
-  attribute :procedure, Array[Fhir::Coding] # Coding
+  attribute :procedures, Array[Fhir::Coding] # Coding
 
   # Who interpreted images (0008,1060)
   attribute :interpreter, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
@@ -119,7 +119,7 @@ class Fhir::ImagingStudy < Fhir::Resource
     end
 
     # Should be present
-    attribute :instance, Array[Instance] # 
+    attribute :instances, Array[Instance] # 
   end
 
   attribute :series, Array[Series] # 

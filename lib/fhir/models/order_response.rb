@@ -1,13 +1,13 @@
 # A response to an order.
 class Fhir::OrderResponse < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # The order that this is a response to
   # Should be present
@@ -33,6 +33,6 @@ class Fhir::OrderResponse < Fhir::Resource
   attribute :description, String # string
 
   # Details of the outcome of performing the order
-  attribute :fulfillment, Array[Fhir::ResourceReference] # Resource(Any)
+  attribute :fulfillments, Array[Fhir::ResourceReference] # Resource(Any)
 end
 

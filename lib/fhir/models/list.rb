@@ -2,13 +2,13 @@
 # resources.
 class Fhir::List < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # What the purpose of this list is
   attribute :code, Fhir::CodeableConcept # CodeableConcept
@@ -29,7 +29,7 @@ class Fhir::List < Fhir::Resource
   # Entries in this list.
   class Entry < Fhir::ValueObject
     # Workflow information about this item
-    attribute :flag, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :flags, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # If this item is actually marked as deleted
     attribute :deleted, Boolean # boolean
@@ -42,7 +42,7 @@ class Fhir::List < Fhir::Resource
     attribute :item, Fhir::ResourceReference # Resource(Any)
   end
 
-  attribute :entry, Array[Entry] # 
+  attribute :entries, Array[Entry] # 
 
   # Why list is empty
   attribute :empty_reason, Fhir::CodeableConcept # CodeableConcept

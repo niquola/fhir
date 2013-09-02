@@ -1,20 +1,20 @@
 # A reference to a document.
 class Fhir::DocumentReference < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Master Version Specific Identifier
   # Should be present
   attribute :master_identifier, Fhir::Identifier # Identifier
 
   # Other identifiers for the document
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # The subject of the document
   # Should be present
@@ -29,7 +29,7 @@ class Fhir::DocumentReference < Fhir::Resource
 
   # Who/what authored the document
   # Should be present
-  attribute :author, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device]] # Resource(Practitioner|Device)
+  attribute :authors, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device]] # Resource(Practitioner|Device)
 
   # Org which maintains the document
   attribute :custodian, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
@@ -100,7 +100,7 @@ class Fhir::DocumentReference < Fhir::Resource
       attribute :value, String # string
     end
 
-    attribute :parameter, Array[Parameter] # 
+    attribute :parameters, Array[Parameter] # 
   end
 
   attribute :service, Service # 
@@ -108,7 +108,7 @@ class Fhir::DocumentReference < Fhir::Resource
   # The clinical context in which the document was prepared.
   class Context < Fhir::ValueObject
     # Type of context (i.e. type of event)
-    attribute :code, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :codes, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Time described by the document
     attribute :period, Fhir::Period # Period

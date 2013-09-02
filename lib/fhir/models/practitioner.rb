@@ -3,22 +3,22 @@
 # provisioning of healthcare.
 class Fhir::Practitioner < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # A identifier for the person as this agent
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # A name associated with the person
   attribute :name, Fhir::HumanName # HumanName
 
   # A contact detail for the practitioner
-  attribute :telecom, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact] # Contact
 
   # One or more addresses for the practitioner
   attribute :address, Fhir::Address # Address
@@ -30,16 +30,16 @@ class Fhir::Practitioner < Fhir::Resource
   attribute :birth_date, DateTime # dateTime
 
   # Image of the person
-  attribute :photo, Array[Fhir::Attachment] # Attachment
+  attribute :photos, Array[Fhir::Attachment] # Attachment
 
   # The represented organization
   attribute :organization, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
 
   # A role the practitioner has
-  attribute :role, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :roles, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Specific specialty of the practitioner
-  attribute :specialty, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :specialties, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # The period during which the person is authorized to
   # perform the service
@@ -58,10 +58,10 @@ class Fhir::Practitioner < Fhir::Resource
     attribute :issuer, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
   end
 
-  attribute :qualification, Array[Qualification] # 
+  attribute :qualifications, Array[Qualification] # 
 
   # A language the practitioner is able to use in patient
   # communication
-  attribute :communication, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :communications, Array[Fhir::CodeableConcept] # CodeableConcept
 end
 

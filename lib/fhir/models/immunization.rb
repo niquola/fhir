@@ -1,13 +1,13 @@
 # Immunization event information.
 class Fhir::Immunization < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Vaccination  Administration Date
   # Should be present
@@ -59,10 +59,10 @@ class Fhir::Immunization < Fhir::Resource
   # Reasons why a vaccine was administered or refused.
   class Explanation < Fhir::ValueObject
     # Administration Reasons
-    attribute :reason, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :reasons, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Explanation of refusal / exemption
-    attribute :refusal_reason, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :refusal_reasons, Array[Fhir::CodeableConcept] # CodeableConcept
   end
 
   attribute :explanation, Explanation # 
@@ -80,7 +80,7 @@ class Fhir::Immunization < Fhir::Resource
     attribute :reported, Boolean # boolean
   end
 
-  attribute :reaction, Array[Reaction] # 
+  attribute :reactions, Array[Reaction] # 
 
   # Contains information about the protocol under which the
   # vaccine was administered.

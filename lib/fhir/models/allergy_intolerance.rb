@@ -1,13 +1,13 @@
 # Allergy/Intolerance.
 class Fhir::AllergyIntolerance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # An external identifier for the sensitivity
   attribute :identifier, Fhir::Identifier # Identifier
@@ -35,12 +35,13 @@ class Fhir::AllergyIntolerance < Fhir::Resource
 
   # The substance that causes the sensitivity
   # Should be present
-  attribute :substance, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
+  attribute :substance, Fhir::Substance # Resource(Substance)
+  # attribute :substance, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
 
   # Reactions associated with the sensitivity
-  attribute :reaction, Array[Fhir::ResourceReference[Fhir::AdverseReaction]] # Resource(AdverseReaction)
+  attribute :reactions, Array[Fhir::ResourceReference[Fhir::AdverseReaction]] # Resource(AdverseReaction)
 
   # Observations that confirm or refute the sensitivity
-  attribute :sensitivity_test, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
+  attribute :sensitivity_tests, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
 end
 

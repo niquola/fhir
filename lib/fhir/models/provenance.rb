@@ -7,17 +7,17 @@
 # significance.
 class Fhir::Provenance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Target resource(s) (usually version specific)
   # Should be present
-  attribute :target, Array[Fhir::ResourceReference] # Resource(Any)
+  attribute :targets, Array[Fhir::ResourceReference] # Resource(Any)
 
   # When the activity occurred
   attribute :period, Fhir::Period # Period
@@ -33,7 +33,7 @@ class Fhir::Provenance < Fhir::Resource
   attribute :location, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
 
   # Policy or plan the activity was defined by
-  attribute :policy, Array[Fhir::URI] # uri
+  attribute :policies, Array[Fhir::URI] # uri
 
   # An agent takes a role in an activity such that the agent
   # can be assigned some degree of responsibility for the
@@ -57,7 +57,7 @@ class Fhir::Provenance < Fhir::Resource
     attribute :display, String # string
   end
 
-  attribute :agent, Array[Agent] # 
+  attribute :agents, Array[Agent] # 
 
   # An entity used in this activity.
   class Entity < Fhir::ValueObject
@@ -80,7 +80,7 @@ class Fhir::Provenance < Fhir::Resource
     attribute :agent, Fhir::Provenance::Agent # @Provenance.agent
   end
 
-  attribute :entity, Array[Entity] # 
+  attribute :entities, Array[Entity] # 
 
   # Base64 Cryptographic signature of resource (DigSig)
   attribute :signature, String # string

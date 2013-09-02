@@ -5,16 +5,16 @@
 # encounter between patient and health care practitioner.
 class Fhir::MedicationAdministration < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # External Identifier
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # Status of the administration - active | paused | completed
   # | nullified
@@ -40,7 +40,7 @@ class Fhir::MedicationAdministration < Fhir::Resource
   attribute :was_not_given, Boolean # boolean
 
   # Reason event is negated
-  attribute :reason_not_given, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :reason_not_givens, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Effective time
   # Should be present
@@ -50,7 +50,7 @@ class Fhir::MedicationAdministration < Fhir::Resource
   attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
 
   # Administration device
-  attribute :administration_device, Array[Fhir::ResourceReference[Fhir::Device]] # Resource(Device)
+  attribute :administration_devices, Array[Fhir::ResourceReference[Fhir::Device]] # Resource(Device)
 
   # Indicates how the medication is to be used by the patient.
   class Dosage < Fhir::ValueObject
@@ -76,6 +76,6 @@ class Fhir::MedicationAdministration < Fhir::Resource
     attribute :max_dose_per_period, Fhir::Ratio # Ratio
   end
 
-  attribute :dosage, Array[Dosage] # 
+  attribute :dosages, Array[Dosage] # 
 end
 

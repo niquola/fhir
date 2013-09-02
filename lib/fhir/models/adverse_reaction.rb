@@ -1,13 +1,13 @@
 # Specific reactions to a substance.
 class Fhir::AdverseReaction < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # When the reaction occurred
   attribute :reaction_date, DateTime # dateTime
@@ -34,7 +34,7 @@ class Fhir::AdverseReaction < Fhir::Resource
     attribute :severity, Fhir::Code # code
   end
 
-  attribute :symptom, Array[Symptom] # 
+  attribute :symptoms, Array[Symptom] # 
 
   # An exposure to a substance that preceded a reaction
   # occurrence.
@@ -54,6 +54,6 @@ class Fhir::AdverseReaction < Fhir::Resource
     attribute :substance, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
   end
 
-  attribute :exposure, Array[Exposure] # 
+  attribute :exposures, Array[Exposure] # 
 end
 

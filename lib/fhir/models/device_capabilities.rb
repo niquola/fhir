@@ -1,13 +1,13 @@
 # Describes the set of data produced by a device.
 class Fhir::DeviceCapabilities < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # The name of this device
   attribute :name, String # string
@@ -84,15 +84,15 @@ class Fhir::DeviceCapabilities < Fhir::Resource
           attribute :info, Fhir::DeviceCapabilities::VirtualDevice::Channel::Metric::Info # @DeviceCapabilities.virtualDevice.channel.metric.info
         end
 
-        attribute :facet, Array[Facet] # 
+        attribute :facets, Array[Facet] # 
       end
 
-      attribute :metric, Array[Metric] # 
+      attribute :metrics, Array[Metric] # 
     end
 
-    attribute :channel, Array[Channel] # 
+    attribute :channels, Array[Channel] # 
   end
 
-  attribute :virtual_device, Array[VirtualDevice] # 
+  attribute :virtual_devices, Array[VirtualDevice] # 
 end
 

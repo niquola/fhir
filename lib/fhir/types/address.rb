@@ -9,7 +9,7 @@ class Fhir::Address < Fhir::Type
   attribute :text, String # string
 
   # Line of an address
-  attribute :line, Array[String] # string
+  attribute :lines, Array[String] # string
 
   # Name of city, town etc.
   attribute :city, String # string

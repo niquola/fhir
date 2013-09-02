@@ -175,8 +175,9 @@ module RubyCodeGeneration
     code << "\n"
   end
 
-  def attribute_name(node_name)
-    node_name.gsub('[x]', '').underscore
+  def attribute_name(node_name, minmax)
+    attr_name = node_name.gsub('[x]', '').underscore
+    minmax && minmax.last == '*' ? attr_name.pluralize : attr_name
   end
 
   def attribute_class_name(node_name)
@@ -215,7 +216,7 @@ module RubyCodeGeneration
           line(code, depth, "# Should be present")
         end
 
-        line(code, depth, "attribute :#{attribute_name(node_name)}, #{ruby_type}")
+        line(code, depth, "attribute :#{attribute_name(node_name, minmax)}, #{ruby_type}")
         blank_line(code)
       }
 

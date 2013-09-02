@@ -2,7 +2,7 @@
 # terminology or ontology or may be provided by text.
 class Fhir::CodeableConcept < Fhir::Type
   # Code defined by a terminology system
-  attribute :coding, Array[Fhir::Coding] # Coding
+  attribute :codings, Array[Fhir::Coding] # Coding
 
   # Plain text representation of the concept
   attribute :text, String # string

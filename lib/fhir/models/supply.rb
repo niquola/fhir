@@ -1,13 +1,13 @@
 # A supply -  request and provision.
 class Fhir::Supply < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # The kind of supply (central, non-stock, etc)
   attribute :name, Fhir::CodeableConcept # CodeableConcept
@@ -55,9 +55,9 @@ class Fhir::Supply < Fhir::Resource
     attribute :destination, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
 
     # Who collected the Supply
-    attribute :receiver, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
+    attribute :receivers, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
   end
 
-  attribute :dispense, Array[Dispense] # 
+  attribute :dispenses, Array[Dispense] # 
 end
 

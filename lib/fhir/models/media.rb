@@ -3,13 +3,13 @@
 # direct reference.
 class Fhir::Media < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # photo | audio | video
   # Should be present
@@ -19,7 +19,7 @@ class Fhir::Media < Fhir::Resource
   attribute :subtype, Fhir::CodeableConcept # CodeableConcept
 
   # Identifier(s) for the image
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # When the media was taken/recorded
   attribute :date_time, DateTime # dateTime

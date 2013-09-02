@@ -6,13 +6,13 @@
 # diagnostic reports.
 class Fhir::DiagnosticReport < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
@@ -45,7 +45,7 @@ class Fhir::DiagnosticReport < Fhir::Resource
     attribute :receiver_order_id, Fhir::Identifier # Identifier
 
     # Test Requested
-    attribute :request_test, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :request_tests, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Location of requested test (if applicable)
     attribute :body_site, Fhir::CodeableConcept # CodeableConcept
@@ -57,7 +57,7 @@ class Fhir::DiagnosticReport < Fhir::Resource
     attribute :clinical_info, String # string
   end
 
-  attribute :request_detail, Array[RequestDetail] # 
+  attribute :request_details, Array[RequestDetail] # 
 
   # Biochemistry, Haematology etc.
   attribute :service_category, Fhir::CodeableConcept # CodeableConcept
@@ -78,25 +78,25 @@ class Fhir::DiagnosticReport < Fhir::Resource
     attribute :specimen, Fhir::ResourceReference[Fhir::Specimen] # Resource(Specimen)
 
     # Nested Report Group
-    attribute :group, Array[Fhir::DiagnosticReport::Results] # @DiagnosticReport.results
+    attribute :groups, Array[Fhir::DiagnosticReport::Results] # @DiagnosticReport.results
 
     # An atomic data result
-    attribute :result, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
+    attribute :results, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
   end
 
   # Should be present
   attribute :results, Results # 
 
   # Key images associated with this report
-  attribute :image, Array[Fhir::ResourceReference[Fhir::Media, Fhir::ImagingStudy]] # Resource(Media|ImagingStudy)
+  attribute :images, Array[Fhir::ResourceReference[Fhir::Media, Fhir::ImagingStudy]] # Resource(Media|ImagingStudy)
 
   # Clinical Interpretation of test results
   attribute :conclusion, String # string
 
   # Codes for the conclusion
-  attribute :coded_diagnosis, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :coded_diagnoses, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Entire Report as issued
-  attribute :representation, Array[Fhir::Attachment] # Attachment
+  attribute :representations, Array[Fhir::Attachment] # Attachment
 end
 

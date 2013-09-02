@@ -2,13 +2,13 @@
 # more code systems.
 class Fhir::ValueSet < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Logical id to reference this value set
   attribute :identifier, String # string
@@ -24,7 +24,7 @@ class Fhir::ValueSet < Fhir::Resource
   attribute :publisher, String # string
 
   # Contact information of the publisher
-  attribute :telecom, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact] # Contact
 
   # Human language description of the value set
   # Should be present
@@ -69,10 +69,10 @@ class Fhir::ValueSet < Fhir::Resource
       attribute :definition, String # string
 
       # Child Concepts (is-a / contains)
-      attribute :concept, Array[Fhir::ValueSet::Define::Concept] # @ValueSet.define.concept
+      attribute :concepts, Array[Fhir::ValueSet::Define::Concept] # @ValueSet.define.concept
     end
 
-    attribute :concept, Array[Concept] # 
+    attribute :concepts, Array[Concept] # 
   end
 
   attribute :define, Define # 
@@ -80,7 +80,7 @@ class Fhir::ValueSet < Fhir::Resource
   # When value set includes codes from elsewhere.
   class Compose < Fhir::ValueObject
     # Import the contents of another value set
-    attribute :import, Array[Fhir::URI] # uri
+    attribute :imports, Array[Fhir::URI] # uri
 
     # Include one or more codes from a code system.
     class Include < Fhir::ValueObject
@@ -92,7 +92,7 @@ class Fhir::ValueSet < Fhir::Resource
       attribute :version, String # string
 
       # Code or concept
-      attribute :code, Array[Fhir::Code] # code
+      attribute :codes, Array[Fhir::Code] # code
 
       # Select concepts by specify a matching criteria based on
       # the properties (including relationships) defined by the
@@ -112,13 +112,13 @@ class Fhir::ValueSet < Fhir::Resource
         attribute :value, Fhir::Code # code
       end
 
-      attribute :filter, Array[Filter] # 
+      attribute :filters, Array[Filter] # 
     end
 
-    attribute :include, Array[Include] # 
+    attribute :includes, Array[Include] # 
 
     # Explicitly exclude codes
-    attribute :exclude, Array[Fhir::ValueSet::Compose::Include] # @ValueSet.compose.include
+    attribute :excludes, Array[Fhir::ValueSet::Compose::Include] # @ValueSet.compose.include
   end
 
   attribute :compose, Compose # 

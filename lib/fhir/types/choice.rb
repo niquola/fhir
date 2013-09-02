@@ -15,7 +15,7 @@ class Fhir::Choice < Fhir::Type
   end
 
   # Should be present
-  attribute :option, Array[Option] # 
+  attribute :options, Array[Option] # 
 
   # If order of the values has meaning
   attribute :is_ordered, Boolean # boolean

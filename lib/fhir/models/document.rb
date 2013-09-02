@@ -8,13 +8,13 @@
 # resources, or they may be bundled together in an atom feed.
 class Fhir::Document < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Logical identifier for document (version-independent)
   attribute :identifier, Fhir::Identifier # Identifier
@@ -50,7 +50,7 @@ class Fhir::Document < Fhir::Resource
 
   # Who/what authored the final document
   # Should be present
-  attribute :author, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device]] # Resource(Practitioner|Device)
+  attribute :authors, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device]] # Resource(Practitioner|Device)
 
   # A participant who has attested to the accuracy of the
   # document.
@@ -66,7 +66,7 @@ class Fhir::Document < Fhir::Resource
     attribute :party, Fhir::ResourceReference[Fhir::Patient, Fhir::Practitioner, Fhir::Organization] # Resource(Patient|Practitioner|Organization)
   end
 
-  attribute :attester, Array[Attester] # 
+  attribute :attesters, Array[Attester] # 
 
   # Org which maintains the document
   attribute :custodian, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
@@ -75,13 +75,13 @@ class Fhir::Document < Fhir::Resource
   # appendectomy, being documented.
   class Event < Fhir::ValueObject
     # Code(s) that apply to the event being documented
-    attribute :code, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :codes, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # The period covered by the document
     attribute :period, Fhir::Period # Period
 
     # Full details for the event(s) the document concents
-    attribute :detail, Array[Fhir::ResourceReference] # Resource(Any)
+    attribute :details, Array[Fhir::ResourceReference] # Resource(Any)
   end
 
   attribute :event, Event # 
@@ -93,7 +93,7 @@ class Fhir::Document < Fhir::Resource
   attribute :replaces, String # id
 
   # Additional provenance about the document and its parts
-  attribute :provenance, Array[Fhir::ResourceReference[Fhir::Provenance]] # Resource(Provenance)
+  attribute :provenances, Array[Fhir::ResourceReference[Fhir::Provenance]] # Resource(Provenance)
 
   # Stylesheet to use when rendering the document
   attribute :stylesheet, Fhir::Attachment # Attachment
@@ -114,9 +114,9 @@ class Fhir::Document < Fhir::Resource
     attribute :content, Fhir::ResourceReference # Resource(Any)
 
     # Nested Section
-    attribute :section, Array[Fhir::Document::Section] # @Document.section
+    attribute :sections, Array[Fhir::Document::Section] # @Document.section
   end
 
-  attribute :section, Array[Section] # 
+  attribute :sections, Array[Section] # 
 end
 

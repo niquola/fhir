@@ -5,16 +5,16 @@
 # practice groups, etc.
 class Fhir::Organization < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Identifier for this organization
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # Name used for the organization
   attribute :name, String # string
@@ -23,10 +23,10 @@ class Fhir::Organization < Fhir::Resource
   attribute :type, Fhir::CodeableConcept # CodeableConcept
 
   # A contact detail for the organization
-  attribute :telecom, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact] # Contact
 
   # An address for the organization
-  attribute :address, Array[Fhir::Address] # Address
+  attribute :addresses, Array[Fhir::Address] # Address
 
   # The organization of which this organization forms a part
   attribute :part_of, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
@@ -40,7 +40,7 @@ class Fhir::Organization < Fhir::Resource
     attribute :name, Fhir::HumanName # HumanName
 
     # Contact details (telephone, email, etc)  for a contact
-    attribute :telecom, Array[Fhir::Contact] # Contact
+    attribute :telecoms, Array[Fhir::Contact] # Contact
 
     # Visiting or postal addresses for the contact
     attribute :address, Fhir::Address # Address
@@ -49,7 +49,7 @@ class Fhir::Organization < Fhir::Resource
     attribute :gender, Fhir::CodeableConcept # CodeableConcept
   end
 
-  attribute :contact, Array[Contact] # 
+  attribute :contacts, Array[Contact] # 
 
   # Whether the organization's record is still in active use
   attribute :active, Boolean # boolean

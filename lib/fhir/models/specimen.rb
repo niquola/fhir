@@ -1,13 +1,13 @@
 # Sample for analysis.
 class Fhir::Specimen < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # External Identifier
   attribute :identifier, Fhir::Identifier # Identifier
@@ -23,17 +23,17 @@ class Fhir::Specimen < Fhir::Resource
     attribute :relationship, Fhir::Code # code
 
     # The subject of the relationship
-    attribute :target, Array[Fhir::ResourceReference[Fhir::Specimen]] # Resource(Specimen)
+    attribute :targets, Array[Fhir::ResourceReference[Fhir::Specimen]] # Resource(Specimen)
   end
 
-  attribute :source, Array[Source] # 
+  attribute :sources, Array[Source] # 
 
   # The subject of the report
   # Should be present
   attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Substance] # Resource(Patient|Group|Device|Substance)
 
   # Accession Identifier
-  attribute :accession_identifier, Array[Fhir::Identifier] # Identifier
+  attribute :accession_identifiers, Array[Fhir::Identifier] # Identifier
 
   # Received Time
   attribute :received_time, DateTime # dateTime
@@ -44,7 +44,7 @@ class Fhir::Specimen < Fhir::Resource
     attribute :collector, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
 
     # Collector comments
-    attribute :comment, Array[String] # string
+    attribute :comments, Array[String] # string
 
     # Collection time
     # Should be present
@@ -73,17 +73,17 @@ class Fhir::Specimen < Fhir::Resource
     attribute :procedure, Fhir::CodeableConcept # CodeableConcept
 
     # Specimen additive
-    attribute :additive, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
+    attribute :additives, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
   end
 
-  attribute :treatment, Array[Treatment] # 
+  attribute :treatments, Array[Treatment] # 
 
   # The container holding the specimen. May be recursive; ie
   # blood in tube in tray in rack.
   class Container < Fhir::ValueObject
     # Id for container
     # Should be present
-    attribute :identifier, Array[Fhir::Identifier] # Identifier
+    attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
     # Textual description of container
     attribute :description, String # string
@@ -101,6 +101,6 @@ class Fhir::Specimen < Fhir::Resource
     attribute :additive, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
   end
 
-  attribute :container, Array[Container] # 
+  attribute :containers, Array[Container] # 
 end
 

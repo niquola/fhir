@@ -5,13 +5,13 @@
 # such as a Discharge Summary.
 class Fhir::Condition < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Subject of this condition
   # Should be present
@@ -56,7 +56,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :summary, Fhir::CodeableConcept # CodeableConcept
 
     # Formal record of assessment
-    attribute :assessment, Array[Fhir::ResourceReference] # Resource(Any)
+    attribute :assessments, Array[Fhir::ResourceReference] # Resource(Any)
   end
 
   attribute :stage, Stage # 
@@ -68,10 +68,10 @@ class Fhir::Condition < Fhir::Resource
     attribute :code, Fhir::CodeableConcept # CodeableConcept
 
     # Supporting information found elsewhere
-    attribute :detail, Array[Fhir::ResourceReference] # Resource(Any)
+    attribute :details, Array[Fhir::ResourceReference] # Resource(Any)
   end
 
-  attribute :evidence, Array[Evidence] # 
+  attribute :evidences, Array[Evidence] # 
 
   # The anatomical location where this condition manifests
   # itself.
@@ -83,7 +83,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :detail, String # string
   end
 
-  attribute :location, Array[Location] # 
+  attribute :locations, Array[Location] # 
 
   # Further conditions, problems, diagnoses, procedures or
   # events that are related in some way to this condition, or
@@ -100,7 +100,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :target, Fhir::ResourceReference[Fhir::Condition, Fhir::Procedure, Fhir::Substance] # Resource(Condition|Procedure|Substance)
   end
 
-  attribute :related_item, Array[RelatedItem] # 
+  attribute :related_items, Array[RelatedItem] # 
 
   # Additional information about the Condition
   attribute :notes, String # string

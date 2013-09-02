@@ -2,13 +2,13 @@
 # Medication, but also covers ingredients and packaging.
 class Fhir::Medication < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Common / Commercial name
   attribute :name, String # string
@@ -40,7 +40,7 @@ class Fhir::Medication < Fhir::Resource
       attribute :amount, Fhir::Ratio # Ratio
     end
 
-    attribute :ingredient, Array[Ingredient] # 
+    attribute :ingredients, Array[Ingredient] # 
   end
 
   attribute :product, Product # 
@@ -60,7 +60,7 @@ class Fhir::Medication < Fhir::Resource
       attribute :amount, Fhir::Quantity # Quantity
     end
 
-    attribute :content, Array[Content] # 
+    attribute :contents, Array[Content] # 
   end
 
   attribute :package, Package # 

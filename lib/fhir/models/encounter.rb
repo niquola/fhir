@@ -3,16 +3,16 @@
 # service(s) or assessing the health status of a patient.
 class Fhir::Encounter < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Identifier(s) by which this encounter is known
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # E.g. active, aborted, finished
   # Should be present
@@ -23,7 +23,7 @@ class Fhir::Encounter < Fhir::Resource
   attribute :class, Fhir::Code # code
 
   # Specific type of encounter
-  attribute :type, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :types, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # The patient present at the encounter
   attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
@@ -32,13 +32,13 @@ class Fhir::Encounter < Fhir::Resource
   # service.
   class Participant < Fhir::ValueObject
     # Role of participant in encounter
-    attribute :type, Array[Fhir::Code] # code
+    attribute :types, Array[Fhir::Code] # code
 
     # The practitioner that is involved
     attribute :practitioner, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
   end
 
-  attribute :participant, Array[Participant] # 
+  attribute :participants, Array[Participant] # 
 
   # The appointment that scheduled this encounter
   attribute :fulfills, Fhir::ResourceReference # Resource(Appointment)
@@ -82,16 +82,16 @@ class Fhir::Encounter < Fhir::Resource
       attribute :period, Fhir::Period # Period
     end
 
-    attribute :accomodation, Array[Accomodation] # 
+    attribute :accomodations, Array[Accomodation] # 
 
     # Dietary restrictions for the patient
     attribute :diet, Fhir::CodeableConcept # CodeableConcept
 
     # Special courtesies (VIP, board member)
-    attribute :special_courtesy, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :special_courtesies, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Wheelchair, translator, stretcher, etc
-    attribute :special_arrangement, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :special_arrangements, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Location the patient is discharged to
     attribute :destination, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
@@ -117,7 +117,7 @@ class Fhir::Encounter < Fhir::Resource
     attribute :period, Fhir::Period # Period
   end
 
-  attribute :location, Array[Location] # 
+  attribute :locations, Array[Location] # 
 
   # Department or team providing care
   attribute :service_provider, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)

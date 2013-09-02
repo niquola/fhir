@@ -3,13 +3,13 @@
 # a desired implementation.
 class Fhir::Conformance < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Logical id to reference this statement
   attribute :identifier, String # string
@@ -25,7 +25,7 @@ class Fhir::Conformance < Fhir::Resource
   attribute :publisher, String # string
 
   # Contacts for Organization
-  attribute :telecom, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact] # Contact
 
   # Human description of the conformance statement
   attribute :description, String # string
@@ -84,7 +84,7 @@ class Fhir::Conformance < Fhir::Resource
 
   # formats supported (xml | json | mime type)
   # Should be present
-  attribute :format, Array[Fhir::Code] # code
+  attribute :formats, Array[Fhir::Code] # code
 
   # Defines the restful capabilities of the solution, if any.
   class Rest < Fhir::ValueObject
@@ -98,7 +98,7 @@ class Fhir::Conformance < Fhir::Resource
     # Information about security of implementation.
     class Security < Fhir::ValueObject
       # What type of security services are supported/required
-      attribute :service, Array[Fhir::CodeableConcept] # CodeableConcept
+      attribute :services, Array[Fhir::CodeableConcept] # CodeableConcept
 
       # General description of how security works
       attribute :description, String # string
@@ -112,7 +112,7 @@ class Fhir::Conformance < Fhir::Resource
         attribute :blob, String # base64Binary
       end
 
-      attribute :certificate, Array[Certificate] # 
+      attribute :certificates, Array[Certificate] # 
     end
 
     attribute :security, Security # 
@@ -138,13 +138,13 @@ class Fhir::Conformance < Fhir::Resource
       end
 
       # Should be present
-      attribute :operation, Array[Operation] # 
+      attribute :operations, Array[Operation] # 
 
       # Whether vRead can return past versions
       attribute :read_history, Boolean # boolean
 
       # _include values supported by the server
-      attribute :search_include, Array[String] # string
+      attribute :search_includes, Array[String] # string
 
       # Defines additional search parameters for implementations
       # to support and/or make use of.
@@ -168,17 +168,17 @@ class Fhir::Conformance < Fhir::Resource
         attribute :xpath, String # string
 
         # Types of resource (if a resource reference)
-        attribute :target, Array[Fhir::Code] # code
+        attribute :targets, Array[Fhir::Code] # code
 
         # Chained names supported
-        attribute :chain, Array[String] # string
+        attribute :chains, Array[String] # string
       end
 
-      attribute :search_param, Array[SearchParam] # 
+      attribute :search_params, Array[SearchParam] # 
     end
 
     # Should be present
-    attribute :resource, Array[Resource] # 
+    attribute :resources, Array[Resource] # 
 
     # If batches are supported
     attribute :batch, Boolean # boolean
@@ -198,13 +198,13 @@ class Fhir::Conformance < Fhir::Resource
       attribute :documentation, String # string
 
       # Parameter for the named query
-      attribute :parameter, Array[Fhir::Conformance::Rest::Resource::SearchParam] # @Conformance.rest.resource.searchParam
+      attribute :parameters, Array[Fhir::Conformance::Rest::Resource::SearchParam] # @Conformance.rest.resource.searchParam
     end
 
-    attribute :query, Array[Query] # 
+    attribute :queries, Array[Query] # 
   end
 
-  attribute :rest, Array[Rest] # 
+  attribute :rests, Array[Rest] # 
 
   # Describes the messaging capabilities of the solution.
   class Messaging < Fhir::ValueObject
@@ -229,7 +229,7 @@ class Fhir::Conformance < Fhir::Resource
       attribute :mode, Fhir::Code # code
 
       # http | ftp |MLLP | etc.
-      attribute :protocol, Array[Fhir::Coding] # Coding
+      attribute :protocols, Array[Fhir::Coding] # Coding
 
       # Resource that's focus of message
       # Should be present
@@ -248,10 +248,10 @@ class Fhir::Conformance < Fhir::Resource
     end
 
     # Should be present
-    attribute :event, Array[Event] # 
+    attribute :events, Array[Event] # 
   end
 
-  attribute :messaging, Array[Messaging] # 
+  attribute :messagings, Array[Messaging] # 
 
   # A document definition.
   class Document < Fhir::ValueObject
@@ -267,6 +267,6 @@ class Fhir::Conformance < Fhir::Resource
     attribute :profile, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
   end
 
-  attribute :document, Array[Document] # 
+  attribute :documents, Array[Document] # 
 end
 

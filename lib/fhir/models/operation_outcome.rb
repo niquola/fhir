@@ -2,13 +2,13 @@
 # that result from a system action.
 class Fhir::OperationOutcome < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # An error, warning or information message that results from
   # a system action.
@@ -24,10 +24,10 @@ class Fhir::OperationOutcome < Fhir::Resource
     attribute :details, String # string
 
     # XPath of element(s) related to issue
-    attribute :location, Array[String] # string
+    attribute :locations, Array[String] # string
   end
 
   # Should be present
-  attribute :issue, Array[Issue] # 
+  attribute :issues, Array[Issue] # 
 end
 

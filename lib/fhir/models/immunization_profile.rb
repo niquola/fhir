@@ -2,13 +2,13 @@
 # recommendation with optional supporting justification.
 class Fhir::ImmunizationProfile < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Who this profile is for
   # Should be present
@@ -43,7 +43,7 @@ class Fhir::ImmunizationProfile < Fhir::Resource
       attribute :value, DateTime # dateTime
     end
 
-    attribute :date_criterion, Array[DateCriterion] # 
+    attribute :date_criterions, Array[DateCriterion] # 
 
     # Contains information about the protocol under which the
     # vaccine was administered.
@@ -64,14 +64,14 @@ class Fhir::ImmunizationProfile < Fhir::Resource
     attribute :protocol, Protocol # 
 
     # Supporting Immunization
-    attribute :supporting_immunization, Array[Fhir::ResourceReference[Fhir::Immunization]] # Resource(Immunization)
+    attribute :supporting_immunizations, Array[Fhir::ResourceReference[Fhir::Immunization]] # Resource(Immunization)
 
     # Adverse event report information that supports the status
     # and recommendation.
     class SupportingAdverseEventReport < Fhir::ValueObject
       # Adverse event report identifier
       # Should be present
-      attribute :identifier, Array[String] # id
+      attribute :identifiers, Array[String] # id
 
       # Adverse event report classification
       attribute :report_type, Fhir::CodeableConcept # CodeableConcept
@@ -83,16 +83,16 @@ class Fhir::ImmunizationProfile < Fhir::Resource
       attribute :text, String # string
 
       # Documented reaction
-      attribute :reaction, Array[Fhir::ResourceReference[Fhir::AdverseReaction]] # Resource(AdverseReaction)
+      attribute :reactions, Array[Fhir::ResourceReference[Fhir::AdverseReaction]] # Resource(AdverseReaction)
     end
 
-    attribute :supporting_adverse_event_report, Array[SupportingAdverseEventReport] # 
+    attribute :supporting_adverse_event_reports, Array[SupportingAdverseEventReport] # 
 
     # Supporting Patient Observation
-    attribute :supporting_patient_observation, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
+    attribute :supporting_patient_observations, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
   end
 
   # Should be present
-  attribute :recommendation, Array[Recommendation] # 
+  attribute :recommendations, Array[Recommendation] # 
 end
 

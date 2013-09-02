@@ -1,13 +1,13 @@
 # A set of raw data produced by a device.
 class Fhir::DeviceLog < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # When the data values are reported
   attribute :instant, DateTime # instant
@@ -28,9 +28,9 @@ class Fhir::DeviceLog < Fhir::Resource
     attribute :value, String # string
 
     # Information about the quality of the data etc
-    attribute :flag, Array[Fhir::Code] # code
+    attribute :flags, Array[Fhir::Code] # code
   end
 
-  attribute :item, Array[Item] # 
+  attribute :items, Array[Item] # 
 end
 

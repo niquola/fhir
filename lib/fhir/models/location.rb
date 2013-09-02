@@ -4,13 +4,13 @@
 # stored.
 class Fhir::Location < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Name of the location
   # Should be present
@@ -20,7 +20,7 @@ class Fhir::Location < Fhir::Resource
   attribute :description, String # string
 
   # Classification of the location
-  attribute :type, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :types, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Contact details of the location
   attribute :telecom, Fhir::Contact # Contact

@@ -4,13 +4,13 @@
 # Definitions.
 class Fhir::Profile < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Logical id to reference this profile
   attribute :identifier, String # string
@@ -26,13 +26,13 @@ class Fhir::Profile < Fhir::Resource
   attribute :publisher, String # string
 
   # Contact information of the publisher
-  attribute :telecom, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact] # Contact
 
   # Natural language description of the profile
   attribute :description, String # string
 
   # Assist with indexing and finding
-  attribute :code, Array[Fhir::Coding] # Coding
+  attribute :codes, Array[Fhir::Coding] # Coding
 
   # draft | experimental | review | production | withdrawn |
   # superseded
@@ -115,7 +115,7 @@ class Fhir::Profile < Fhir::Resource
         attribute :requirements, String # string
 
         # Other names
-        attribute :synonym, Array[String] # string
+        attribute :synonyms, Array[String] # string
 
         # Minimum Cardinality
         # Should be present
@@ -139,7 +139,7 @@ class Fhir::Profile < Fhir::Resource
           attribute :bundled, Boolean # boolean
         end
 
-        attribute :type, Array[Type] # 
+        attribute :types, Array[Type] # 
 
         # To another element constraint (by element.name)
         attribute :name_reference, String # string
@@ -154,7 +154,7 @@ class Fhir::Profile < Fhir::Resource
         attribute :max_length, Integer # integer
 
         # Reference to invariant about presence
-        attribute :condition, Array[String] # id
+        attribute :conditions, Array[String] # id
 
         # Formal constraints such as co-occurrence and other
         # constraints that can be computationally evaluated within the
@@ -183,7 +183,7 @@ class Fhir::Profile < Fhir::Resource
           attribute :ocl, String # string
         end
 
-        attribute :constraint, Array[Constraint] # 
+        attribute :constraints, Array[Constraint] # 
 
         # If the element must be usable
         attribute :must_support, Boolean # boolean
@@ -206,16 +206,16 @@ class Fhir::Profile < Fhir::Resource
           attribute :map, String # string
         end
 
-        attribute :mapping, Array[Mapping] # 
+        attribute :mappings, Array[Mapping] # 
       end
 
       attribute :definition, Definition # 
     end
 
-    attribute :element, Array[Element] # 
+    attribute :elements, Array[Element] # 
   end
 
-  attribute :structure, Array[Structure] # 
+  attribute :structures, Array[Structure] # 
 
   # An extension defined as part of the profile.
   class ExtensionDefn < Fhir::ValueObject
@@ -229,14 +229,14 @@ class Fhir::Profile < Fhir::Resource
 
     # Where the extension can be used in instances
     # Should be present
-    attribute :context, Array[String] # string
+    attribute :contexts, Array[String] # string
 
     # Definition of the extension and its content
     # Should be present
     attribute :definition, Fhir::Profile::Structure::Element::Definition # @Profile.structure.element.definition
   end
 
-  attribute :extension_defn, Array[ExtensionDefn] # 
+  attribute :extension_defns, Array[ExtensionDefn] # 
 
   # Defines a linkage between a vocabulary binding name used
   # in the profile (or expected to be used in profile importing
@@ -259,6 +259,6 @@ class Fhir::Profile < Fhir::Resource
     attribute :reference, Fhir::URI # uri
   end
 
-  attribute :binding, Array[Binding] # 
+  attribute :bindings, Array[Binding] # 
 end
 

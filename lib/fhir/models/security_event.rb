@@ -3,13 +3,13 @@
 # attempts and monitoring for inappropriate usage.
 class Fhir::SecurityEvent < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Identifies the name, action type, time, and disposition of
   # the audited event.
@@ -19,7 +19,7 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :type, Fhir::CodeableConcept # CodeableConcept
 
     # Sub-type of event
-    attribute :subtype, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :subtypes, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Type of action performed during the event
     attribute :action, Fhir::Code # code
@@ -41,7 +41,7 @@ class Fhir::SecurityEvent < Fhir::Resource
   # A person, a hardware device or software process.
   class Participant < Fhir::ValueObject
     # User roles (e.g. local RBAC codes)
-    attribute :role, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :roles, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Direct reference to resource
     attribute :reference, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient, Fhir::Device] # Resource(Practitioner|Patient|Device)
@@ -76,7 +76,7 @@ class Fhir::SecurityEvent < Fhir::Resource
   end
 
   # Should be present
-  attribute :participant, Array[Participant] # 
+  attribute :participants, Array[Participant] # 
 
   # Application systems and processes.
   class Source < Fhir::ValueObject
@@ -88,7 +88,7 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :identifier, String # string
 
     # The type of source where event originated
-    attribute :type, Array[Fhir::Coding] # Coding
+    attribute :types, Array[Fhir::Coding] # Coding
   end
 
   # Should be present
@@ -132,9 +132,9 @@ class Fhir::SecurityEvent < Fhir::Resource
       attribute :value, String # base64Binary
     end
 
-    attribute :detail, Array[Detail] # 
+    attribute :details, Array[Detail] # 
   end
 
-  attribute :object, Array[Object] # 
+  attribute :objects, Array[Object] # 
 end
 

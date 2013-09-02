@@ -2,13 +2,13 @@
 # performed.
 class Fhir::DiagnosticOrder < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # Who/what test is about
   # Should be present
@@ -18,7 +18,7 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   attribute :orderer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
 
   # Identifiers assigned to this order
-  attribute :identifier, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # The encounter that this diagnostic order is associated
   # with
@@ -53,7 +53,7 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     attribute :actor, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device] # Resource(Practitioner|Device)
   end
 
-  attribute :event, Array[Event] # 
+  attribute :events, Array[Event] # 
 
   # The specific diagnostic investigations that are requested
   # as part of this request. Sometimes, there can only be one
@@ -75,9 +75,9 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     attribute :status, Fhir::Code # code
 
     # Events specific to this item
-    attribute :event, Array[Fhir::DiagnosticOrder::Event] # @DiagnosticOrder.event
+    attribute :events, Array[Fhir::DiagnosticOrder::Event] # @DiagnosticOrder.event
   end
 
-  attribute :item, Array[Item] # 
+  attribute :items, Array[Item] # 
 end
 

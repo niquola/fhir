@@ -1,13 +1,13 @@
 # A request to perform an action.
 class Fhir::Order < Fhir::Resource
   # Additional Content defined by implementations
-  attribute :extension, Array[Fhir::Extension] # Extension
+  attribute :extensions, Array[Fhir::Extension] # Extension
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   # When the order was made
   attribute :date, DateTime # dateTime
@@ -41,6 +41,6 @@ class Fhir::Order < Fhir::Resource
 
   # What action is being ordered
   # Should be present
-  attribute :detail, Array[Fhir::ResourceReference] # Resource(Any)
+  attribute :details, Array[Fhir::ResourceReference] # Resource(Any)
 end
 
