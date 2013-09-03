@@ -1,11 +1,15 @@
 module Fhir::Virtus::ResourceCoercion
+  private
+
   def coerce_member(value)
     if value.is_a?(::Hash)
       type = value.delete(:resource_type)
-      check_type!(type)
-      get_type(type).new(value)
+      klass = type.constantize
+
+      check_type!(klass)
+      klass.new(value)
     else
-      check_type!(value.class.name)
+      check_type!(value.class)
       value
     end
   end
@@ -14,13 +18,9 @@ module Fhir::Virtus::ResourceCoercion
     @options[:types]
   end
 
-  def get_type(type_name)
-    allowed_types.find {|t| t.name == type_name.to_s }
-  end
-
-  def check_type!(type)
-    unless allowed_types.find {|t| t.name == type}
-      raise ArgumentError.new("Unexpected type #{type}, expected one of: #{allowed_types.inspect}")
+  def check_type!(klass)
+    unless allowed_types.any? { |t| klass <= t }
+      raise ArgumentError.new("Unexpected type #{klass.name}, expected one of: #{allowed_types.inspect}")
     end
   end
 end

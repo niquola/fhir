@@ -14,13 +14,13 @@ class Fhir::Resource
   # Contained, inline Resources
   attribute :contained, Array[Fhir::Resource] # Resource
 
-  def generate_uuid
+  def self.generate_uuid
     "##{rand(10000)}"
   end
 
-  def initialize(attrs)
-    attrs[:uuid] ||= generate_uuid
-    super(attrs)
+  def initialize(attributes = {})
+    attributes[:uuid] ||= self.class.generate_uuid
+    super(attributes)
   end
 
   def to_ref

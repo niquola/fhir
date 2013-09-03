@@ -11,6 +11,7 @@ describe 'ResourceAttribute' do
 
   class TestRes1 < Fhir::Resource
     resource_reference :subject, Res1
+    resource_reference :any_resource, Fhir::Resource
   end
 
   class TestRes2 < Fhir::Resource
@@ -18,12 +19,10 @@ describe 'ResourceAttribute' do
   end
 
   it "hash in constructor"  do
-    res = TestRes1.new(
-      subject: {
-	resource_type: 'Res1',
-	prop1: 'val1'
-      }
-    )
+    res = TestRes1.new(subject: {
+                         resource_type: 'Res1',
+                         prop1: 'val1'
+                       })
 
     res.subject.is_a?(Res1)
     res.subject.prop1.should == 'val1'
@@ -31,6 +30,14 @@ describe 'ResourceAttribute' do
     res.subject_ref.type.should == 'Res1'
     res.subject_ref.reference.should_not be_nil
     res.subject_ref.reference.should == res.subject.uuid
+  end
+
+  it "should allow to set any resource if reference is declared with base Resource class" do
+    res = TestRes1.new(any_resource: {
+                         resource_type: 'Res1',
+                         prop1: "some value"
+                       })
+    res.any_resource_ref.reference.should == res.any_resource.uuid
   end
 
   it "wrong object in constructor" do
