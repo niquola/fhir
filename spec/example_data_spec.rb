@@ -4,6 +4,11 @@ require 'json'
 EXAMPLE_JSONS = Dir[File.dirname(__FILE__) + "/../meta/*example.json"].delete_if { |f| f.include?("other") }
 
 describe "Fhir Example JSON Data" do
+  def is_reference(value)
+    ref = value.is_a?(Array) ? value.first : value
+    ref.is_a?(::Hash) && (ref.keys - ["type", "reference", "display"]).empty?
+  end
+
   def fix_json(json)
     if json.is_a?(Array)
       json.map do |element|
@@ -17,7 +22,14 @@ describe "Fhir Example JSON Data" do
 
         json.each do |key, value|
           fixed_key = key.underscore
-          fixed_json[fixed_key] = fix_json(value)
+          is_collection = value.is_a?(::Array)
+
+          if is_reference(value)
+            fixed_json["#{fixed_key}_ref#{is_collection ? "s" : ""}"] = fix_json(value)
+          else
+            fixed_key = fixed_key.pluralize if is_collection
+            fixed_json[fixed_key] = fix_json(value)
+          end
         end
 
         fixed_json
@@ -33,7 +45,7 @@ describe "Fhir Example JSON Data" do
     data = json.values.first
 
     it "should load example data for #{resource_name} resource from file #{file_name}" do
-      if resource_name == "AdverseReaction" && false
+      if resource_name == "Alert" && false
         puts fix_json(data).to_yaml
         puts '-' * 40
       end
@@ -41,13 +53,8 @@ describe "Fhir Example JSON Data" do
       resource_class = "Fhir::#{resource_name}".constantize
       fixed_json = fix_json(data)
 
-      begin
-        res = resource_class.new(fixed_json)
-      rescue => e
-        puts "Loading data into #{resource_name}: #{e.message}"
-        puts fixed_json.to_yaml
-        raise e
-      end
+
+      res = resource_class.new(fixed_json)
     end
   end
 end

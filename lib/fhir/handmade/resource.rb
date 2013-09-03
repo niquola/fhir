@@ -19,7 +19,7 @@ class Fhir::Resource
   end
 
   def initialize(attributes = {})
-    attributes[:uuid] ||= self.class.generate_uuid
+    attributes[:uuid] ||= Fhir::Resource.generate_uuid
     super(attributes)
   end
 
