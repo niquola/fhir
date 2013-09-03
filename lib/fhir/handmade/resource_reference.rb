@@ -5,5 +5,7 @@ class Fhir::ResourceReference < Fhir::Type
   def initialize(attributes = {})
     @instance = attributes.delete(:instance)
     @container = attributes.delete(:container)
+
+    super(attributes)
   end
 end

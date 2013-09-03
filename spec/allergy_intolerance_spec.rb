@@ -8,16 +8,17 @@ describe 'AllergyIntolerance' do
       recorded_date: Time.now,
       status: 'status',
       substance: {
+        resource_type: "Fhir::Substance",
         name: 'substance name',
         type: {
           text: 'aspirin',
           codings: [
-	    {
-	      system: 'RxNorm',
-	      code: '123456',
-	      display: 'aspirin'
-	    }
-	  ]
+            {
+              system: 'RxNorm',
+              code: '123456',
+              display: 'aspirin'
+            }
+          ]
         },
         description: 'substance description',
         status: { text: 'active' },
@@ -27,6 +28,7 @@ describe 'AllergyIntolerance' do
         }
       },
       reactions: [{
+        resource_type: "Fhir::AdverseReaction",
         reaction_date: Time.now,
         did_not_occur_flag: false,
         symptoms: [{
@@ -41,12 +43,9 @@ describe 'AllergyIntolerance' do
       }]
     )
 
-    p allergy
     allergy.criticality.should == 'fatal'
     allergy.sensitivity_type.should == 'allergy'
-    p allergy.recorded_date
     allergy.status.should == 'status'
     allergy.substance.type.codings.first.system.should == 'RxNorm'
-    p allergy.reactions
   end
 end

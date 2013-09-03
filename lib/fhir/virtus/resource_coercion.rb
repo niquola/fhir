@@ -4,6 +4,11 @@ module Fhir::Virtus::ResourceCoercion
   def coerce_member(value)
     if value.is_a?(::Hash)
       type = value.delete(:resource_type)
+
+      if type.blank?
+        raise ArgumentError, ":resource_type attribute is required for attribute #{name} #{value.inspect}"
+      end
+
       klass = type.constantize
 
       check_type!(klass)

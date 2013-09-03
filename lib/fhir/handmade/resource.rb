@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class Fhir::Resource
   include Virtus
   extend Fhir::ResourceRefering
@@ -21,7 +23,7 @@ class Fhir::Resource
   attribute :contained, Array[Fhir::Resource] # Resource
 
   def self.generate_uuid
-    "##{rand(10000)}"
+    SecureRandom.uuid
   end
 
   def initialize(attributes = {})

@@ -32,7 +32,6 @@ describe 'ResourceAttribute' do
     subj.should be_a(Res1)
 
     res.subject_refs.size == 2
-    pending "test refs"
   end
 
   it "hash in constructor"  do
@@ -57,6 +56,5 @@ describe 'ResourceAttribute' do
     subj.prop1.should == 'val3'
 
     res.subject_refs.size == 3
-    pending "test refs"
   end
 end

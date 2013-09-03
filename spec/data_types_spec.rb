@@ -6,8 +6,9 @@ describe "Datatypes" do
       uses: 'blah',
       texts: ['f safsad','f sadf sad'],
       line: 'Spb',
-      cities: ['some city'],
+      city: 'Omsk'
     )
-    p address
+
+    address.city.should == "Omsk"
   end
 end
