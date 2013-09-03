@@ -4,7 +4,6 @@ module Fhir::Virtus::ResourceCoercion
   def coerce_member(value)
     if value.is_a?(::Hash)
       type = value.delete(:resource_type)
-      puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" + value.to_yaml if type.nil?
       klass = type.constantize
 
       check_type!(klass)
