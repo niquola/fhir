@@ -5,15 +5,6 @@
 # the Message resource instance is the first resource in the
 # bundle.
 class Fhir::Message < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Id of this message
   # Should be present
   attribute :identifier, String # id
@@ -38,7 +29,7 @@ class Fhir::Message < Fhir::Resource
     attribute :code, Fhir::Code # code
 
     # Specific list of hints/warnings/errors
-    attribute :details, Fhir::ResourceReference[Fhir::OperationOutcome] # Resource(OperationOutcome)
+    resource_reference :details, [Fhir::OperationOutcome]
   end
 
   attribute :response, Response # 
@@ -73,7 +64,7 @@ class Fhir::Message < Fhir::Resource
     attribute :name, String # string
 
     # Particular delivery destination within the destination
-    attribute :target, Fhir::ResourceReference[Fhir::Device] # Resource(Device)
+    resource_reference :target, [Fhir::Device]
 
     # Actual destination address or id
     # Should be present
@@ -84,16 +75,16 @@ class Fhir::Message < Fhir::Resource
   attribute :destination, Destination # 
 
   # The source of the data entry
-  attribute :enterer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :enterer, [Fhir::Practitioner]
 
   # The source of the decision
-  attribute :author, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :author, [Fhir::Practitioner]
 
   # Intended "real-world" recipient for the data
-  attribute :receiver, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization] # Resource(Practitioner|Organization)
+  resource_reference :receiver, [Fhir::Practitioner, Fhir::Organization]
 
   # Final responsibility for event
-  attribute :responsible, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization] # Resource(Practitioner|Organization)
+  resource_reference :responsible, [Fhir::Practitioner, Fhir::Organization]
 
   # Time of effect
   attribute :effective, Fhir::Period # Period
@@ -102,6 +93,6 @@ class Fhir::Message < Fhir::Resource
   attribute :reason, Fhir::CodeableConcept # CodeableConcept
 
   # The actual content of the message
-  attribute :data, Array[Fhir::ResourceReference] # Resource(Any)
+  resource_references :datas, [Fhir::Resource]
 end
 

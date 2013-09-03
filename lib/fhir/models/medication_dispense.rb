@@ -2,15 +2,6 @@
 # a description of the supply provided and the instructions
 # for administering the medication.
 class Fhir::MedicationDispense < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # External identifier
   attribute :identifier, Fhir::Identifier # Identifier
 
@@ -18,13 +9,13 @@ class Fhir::MedicationDispense < Fhir::Resource
   attribute :status, Fhir::Code # code
 
   # Patient
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # Dispenser
-  attribute :dispenser, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :dispenser, [Fhir::Practitioner]
 
   # Medication order that authorises the dispense
-  attribute :authorizing_prescriptions, Array[Fhir::ResourceReference[Fhir::MedicationPrescription]] # Resource(MedicationPrescription)
+  resource_references :authorizing_prescriptions, [Fhir::MedicationPrescription]
 
   # Indicates the details of the dispense event such as the
   # days supply and quantity of medication dispensed.
@@ -42,7 +33,7 @@ class Fhir::MedicationDispense < Fhir::Resource
     attribute :quantity, Fhir::Quantity # Quantity
 
     # Medication
-    attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
+    resource_reference :medication, [Fhir::Medication]
 
     # Dispensing time
     attribute :when_prepared, Fhir::Period # Period
@@ -51,10 +42,10 @@ class Fhir::MedicationDispense < Fhir::Resource
     attribute :when_handed_over, Fhir::Period # Period
 
     # Where the medication was sent
-    attribute :destination, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+    resource_reference :destination, [Fhir::Location]
 
     # Who collected the medication
-    attribute :receivers, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
+    resource_references :receivers, [Fhir::Practitioner]
 
     # Indicates how the medication is to be used by the patient.
     class Dosage < Fhir::ValueObject
@@ -102,7 +93,7 @@ class Fhir::MedicationDispense < Fhir::Resource
     attribute :reasons, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Who is responsible for the substitution
-    attribute :responsible_parties, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
+    resource_references :responsible_parties, [Fhir::Practitioner]
   end
 
   attribute :substitution, Substitution # 

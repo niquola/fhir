@@ -3,21 +3,12 @@
 # of time, possibly limited to care for a specific condition
 # or set of conditions.
 class Fhir::CarePlan < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # ID for plan
   attribute :identifier, Fhir::Identifier # Identifier
 
   # Who care plan is for
   # Should be present
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # planned | active | ended
   # Should be present
@@ -30,7 +21,7 @@ class Fhir::CarePlan < Fhir::Resource
   attribute :modified, DateTime # dateTime
 
   # Health issues plan addresses
-  attribute :concerns, Array[Fhir::ResourceReference[Fhir::Condition]] # Resource(Condition)
+  resource_references :concerns, [Fhir::Condition]
 
   # Identifies all people and organizations who are expected
   # to be involved in the care envisioned by this plan.
@@ -40,7 +31,7 @@ class Fhir::CarePlan < Fhir::Resource
 
     # Who is involved
     # Should be present
-    attribute :member, Fhir::ResourceReference[Fhir::Practitioner, Fhir::RelatedPerson, Fhir::Patient, Fhir::Organization] # Resource(Practitioner|RelatedPerson|Patient|Organization)
+    resource_reference :member, [Fhir::Practitioner, Fhir::RelatedPerson, Fhir::Patient, Fhir::Organization]
   end
 
   attribute :participants, Array[Participant] # 
@@ -83,13 +74,13 @@ class Fhir::CarePlan < Fhir::Resource
     attribute :timing, Fhir::Schedule # Schedule
 
     # Where it should happen
-    attribute :location, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+    resource_reference :location, [Fhir::Location]
 
     # Who's responsible?
-    attribute :performers, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization, Fhir::RelatedPerson, Fhir::Patient]] # Resource(Practitioner|Organization|RelatedPerson|Patient)
+    resource_references :performers, [Fhir::Practitioner, Fhir::Organization, Fhir::RelatedPerson, Fhir::Patient]
 
     # What's administered/supplied
-    attribute :product, Fhir::ResourceReference[Fhir::Medication, Fhir::Substance] # Resource(Medication|Substance)
+    resource_reference :product, [Fhir::Medication, Fhir::Substance]
 
     # How much consumed/day?
     attribute :daily_amount, Fhir::Quantity # Quantity
@@ -101,7 +92,7 @@ class Fhir::CarePlan < Fhir::Resource
     attribute :details, String # string
 
     # Appointments, orders, etc.
-    attribute :action_takens, Array[Fhir::ResourceReference] # Resource(Any)
+    resource_references :action_takens, [Fhir::Resource]
 
     # Comments about the activity
     attribute :notes, String # string

@@ -2,15 +2,6 @@
 # healthcare. The actual content maybe inline or provided by
 # direct reference.
 class Fhir::Media < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # photo | audio | video
   # Should be present
   attribute :type, Fhir::Code # code
@@ -25,13 +16,13 @@ class Fhir::Media < Fhir::Resource
   attribute :date_time, DateTime # dateTime
 
   # Who/What this Media is a record of
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device, Fhir::Specimen] # Resource(Patient|Practitioner|Group|Device|Specimen)
+  resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device, Fhir::Specimen]
 
   # Who asked that this image be collected
-  attribute :requester, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :requester, [Fhir::Practitioner]
 
   # The person who generated the image
-  attribute :operator, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :operator, [Fhir::Practitioner]
 
   # Imaging view e.g Lateral or Antero-posterior
   attribute :view, Fhir::CodeableConcept # CodeableConcept

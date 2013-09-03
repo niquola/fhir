@@ -4,24 +4,15 @@
 # Encounter; populating a problem List or a Summary Statement,
 # such as a Discharge Summary.
 class Fhir::Condition < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Subject of this condition
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Encounter during which the condition was first asserted
-  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :encounter, [Fhir::Encounter]
 
   # Person who asserts this condition
-  attribute :asserter, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient] # Resource(Practitioner|Patient)
+  resource_reference :asserter, [Fhir::Practitioner, Fhir::Patient]
 
   # When first detected/suspected/entered
   attribute :date_asserted, Date # date
@@ -56,7 +47,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :summary, Fhir::CodeableConcept # CodeableConcept
 
     # Formal record of assessment
-    attribute :assessments, Array[Fhir::ResourceReference] # Resource(Any)
+    resource_references :assessments, [Fhir::Resource]
   end
 
   attribute :stage, Stage # 
@@ -68,7 +59,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :code, Fhir::CodeableConcept # CodeableConcept
 
     # Supporting information found elsewhere
-    attribute :details, Array[Fhir::ResourceReference] # Resource(Any)
+    resource_references :details, [Fhir::Resource]
   end
 
   attribute :evidences, Array[Evidence] # 
@@ -97,7 +88,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :code, Fhir::CodeableConcept # CodeableConcept
 
     # Relationship target resource
-    attribute :target, Fhir::ResourceReference[Fhir::Condition, Fhir::Procedure, Fhir::Substance] # Resource(Condition|Procedure|Substance)
+    resource_reference :target, [Fhir::Condition, Fhir::Procedure, Fhir::Substance]
   end
 
   attribute :related_items, Array[RelatedItem] # 

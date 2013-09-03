@@ -4,9 +4,6 @@ class Fhir::CodeableConcept < Fhir::Type
   # Code defined by a terminology system
   attribute :codings, Array[Fhir::Coding] # Coding
 
-  # Plain text representation of the concept
-  attribute :text, String # string
-
   # Which code was chosen directly by the user
   attribute :primary, Integer # idref
 end

@@ -6,18 +6,9 @@
 # traceability, and not explicit statements of clinical
 # significance.
 class Fhir::Provenance < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Target resource(s) (usually version specific)
   # Should be present
-  attribute :targets, Array[Fhir::ResourceReference] # Resource(Any)
+  resource_references :targets, [Fhir::Resource]
 
   # When the activity occurred
   attribute :period, Fhir::Period # Period
@@ -30,7 +21,7 @@ class Fhir::Provenance < Fhir::Resource
   attribute :reason, Fhir::CodeableConcept # CodeableConcept
 
   # Where the activity occurred, if relevant
-  attribute :location, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+  resource_reference :location, [Fhir::Location]
 
   # Policy or plan the activity was defined by
   attribute :policies, Array[Fhir::URI] # uri

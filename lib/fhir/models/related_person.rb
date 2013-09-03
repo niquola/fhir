@@ -2,21 +2,12 @@
 # for a patient, but who is not the target of healthcare, nor
 # has a formal responsibility in the care process.
 class Fhir::RelatedPerson < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # A Human identifier for this person
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # The patient this person is related to
   # Should be present
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # The nature of the relationship
   attribute :relationship, Fhir::CodeableConcept # CodeableConcept

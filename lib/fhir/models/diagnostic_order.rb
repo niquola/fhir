@@ -1,34 +1,25 @@
 # A request for a diagnostic investigation service to be
 # performed.
 class Fhir::DiagnosticOrder < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Who/what test is about
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Group, Fhir::Location, Fhir::Device] # Resource(Patient|Group|Location|Device)
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Location, Fhir::Device]
 
   # Who ordered the test
-  attribute :orderer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :orderer, [Fhir::Practitioner]
 
   # Identifiers assigned to this order
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # The encounter that this diagnostic order is associated
   # with
-  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :encounter, [Fhir::Encounter]
 
   # Explanation/Justification for test
   attribute :clinical_notes, String # string
 
   # If the whole order relates to specific specimens
-  attribute :specimen, Array[Fhir::ResourceReference[Fhir::Specimen]] # Resource(Specimen)
+  resource_references :specimen, [Fhir::Specimen]
 
   # requested | received | accepted | inprogress | review |
   # complete | suspended | rejected | failed
@@ -50,7 +41,7 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     attribute :date, DateTime # dateTime
 
     # Who recorded or did this
-    attribute :actor, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device] # Resource(Practitioner|Device)
+    resource_reference :actor, [Fhir::Practitioner, Fhir::Device]
   end
 
   attribute :events, Array[Event] # 
@@ -65,7 +56,7 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     attribute :code, Fhir::CodeableConcept # CodeableConcept
 
     # If this item relates to specific specimens
-    attribute :specimen, Array[Fhir::ResourceReference[Fhir::Specimen]] # Resource(Specimen)
+    resource_references :specimen, [Fhir::Specimen]
 
     # Location of requested test (if applicable)
     attribute :body_site, Fhir::CodeableConcept # CodeableConcept

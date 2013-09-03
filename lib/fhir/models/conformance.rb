@@ -2,15 +2,6 @@
 # implementation supports FHIR or the set of requirements for
 # a desired implementation.
 class Fhir::Conformance < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Logical id to reference this statement
   attribute :identifier, String # string
 
@@ -125,7 +116,7 @@ class Fhir::Conformance < Fhir::Resource
       attribute :type, Fhir::Code # code
 
       # Resource Profiles supported
-      attribute :profile, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
+      resource_reference :profile, [Fhir::Profile]
 
       # Identifies a restful operation supported by the solution.
       class Operation < Fhir::ValueObject
@@ -237,11 +228,11 @@ class Fhir::Conformance < Fhir::Resource
 
       # Profile that describes the request
       # Should be present
-      attribute :request, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
+      resource_reference :request, [Fhir::Profile]
 
       # Profile that describes the response
       # Should be present
-      attribute :response, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
+      resource_reference :response, [Fhir::Profile]
 
       # Endpoint-specific event documentation
       attribute :documentation, String # string
@@ -264,7 +255,7 @@ class Fhir::Conformance < Fhir::Resource
 
     # Constraint on a resource used in the document
     # Should be present
-    attribute :profile, Fhir::ResourceReference[Fhir::Profile] # Resource(Profile)
+    resource_reference :profile, [Fhir::Profile]
   end
 
   attribute :documents, Array[Document] # 

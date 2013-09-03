@@ -2,21 +2,12 @@
 # images may include every image in the study, or it may be an
 # incomplete sample, such as a list of key images.
 class Fhir::ImagingStudy < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # When the study was performed
   attribute :date_time, DateTime # dateTime
 
   # Who the images are of
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Formal identifier for the study (0020,000D)
   # Should be present
@@ -32,7 +23,7 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :modalities, Array[Fhir::Code] # code
 
   # Referring physician (0008,0090)
-  attribute :referrer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :referrer, [Fhir::Practitioner]
 
   # Instance Availability (0008,0056)
   attribute :availability, Fhir::Code # code
@@ -55,7 +46,7 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :procedures, Array[Fhir::Coding] # Coding
 
   # Who interpreted images (0008,1060)
-  attribute :interpreter, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :interpreter, [Fhir::Practitioner]
 
   # Institution-generated description (0008,1030)
   attribute :description, String # string
@@ -115,7 +106,7 @@ class Fhir::ImagingStudy < Fhir::Resource
       attribute :url, Fhir::URI # uri
 
       # A FHIR resource with content for this instance
-      attribute :attachment, Fhir::ResourceReference # Resource(Any)
+      resource_reference :attachment, [Fhir::Resource]
     end
 
     # Should be present

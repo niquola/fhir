@@ -1,15 +1,6 @@
 # Simple assertions and measurements made about a patient,
 # device or other subject.
 class Fhir::Observation < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Kind of observation
   # Should be present
   attribute :name, Fhir::CodeableConcept # CodeableConcept
@@ -47,10 +38,10 @@ class Fhir::Observation < Fhir::Resource
   attribute :identifier, Fhir::Identifier # Identifier
 
   # Who/what this is about
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Group, Fhir::Device] # Resource(Patient|Group|Device)
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device]
 
   # Who did the observation
-  attribute :performer, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device, Fhir::Organization] # Resource(Practitioner|Device|Organization)
+  resource_reference :performer, [Fhir::Practitioner, Fhir::Device, Fhir::Organization]
 
   # Guidance on how to interpret the value by comparison to a
   # normal or recommended range.

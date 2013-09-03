@@ -4,15 +4,6 @@
 # corporations, departments, community groups, healthcare
 # practice groups, etc.
 class Fhir::Organization < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Identifier for this organization
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
@@ -29,7 +20,7 @@ class Fhir::Organization < Fhir::Resource
   attribute :addresses, Array[Fhir::Address] # Address
 
   # The organization of which this organization forms a part
-  attribute :part_of, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :part_of, [Fhir::Organization]
 
   # Contact for the organization for a certain purpose.
   class Contact < Fhir::ValueObject

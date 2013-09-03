@@ -2,15 +2,6 @@
 # person or animal receiving care or other health-related
 # services.
 class Fhir::Patient < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # An identifier for the person as this patient
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
@@ -60,7 +51,7 @@ class Fhir::Patient < Fhir::Resource
     attribute :gender, Fhir::CodeableConcept # CodeableConcept
 
     # Organization that is associated with the contact
-    attribute :organization, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+    resource_reference :organization, [Fhir::Organization]
   end
 
   attribute :contacts, Array[Contact] # 
@@ -85,10 +76,10 @@ class Fhir::Patient < Fhir::Resource
   attribute :communications, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # Organization managing the patient
-  attribute :provider, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :provider, [Fhir::Organization]
 
   # Other patient resources linked to this resource
-  attribute :links, Array[Fhir::ResourceReference[Fhir::Patient]] # Resource(Patient)
+  resource_references :links, [Fhir::Patient]
 
   # Whether this patient's record is in active use
   attribute :active, Boolean # boolean

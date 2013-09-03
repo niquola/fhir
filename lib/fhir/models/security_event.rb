@@ -2,15 +2,6 @@
 # security log. Typical uses include detection of intrusion
 # attempts and monitoring for inappropriate usage.
 class Fhir::SecurityEvent < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Identifies the name, action type, time, and disposition of
   # the audited event.
   class Event < Fhir::ValueObject
@@ -44,7 +35,7 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :roles, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Direct reference to resource
-    attribute :reference, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient, Fhir::Device] # Resource(Practitioner|Patient|Device)
+    resource_reference :reference, [Fhir::Practitioner, Fhir::Patient, Fhir::Device]
 
     # Unique identifier for the user
     attribute :user_id, String # string
@@ -101,7 +92,7 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :identifier, Fhir::Identifier # Identifier
 
     # Specific instance of resource (e.g. versioned)
-    attribute :reference, Fhir::ResourceReference # Resource(Any)
+    resource_reference :reference, [Fhir::Resource]
 
     # Object type being audited
     attribute :type, Fhir::Code # code

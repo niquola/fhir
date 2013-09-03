@@ -1,31 +1,22 @@
 # A request to perform an action.
 class Fhir::Order < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # When the order was made
   attribute :date, DateTime # dateTime
 
   # Patient this order is about
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Who initiated the order
-  attribute :source, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :source, [Fhir::Practitioner]
 
   # Who is intended to fulfill the order
-  attribute :target, Fhir::ResourceReference[Fhir::Organization, Fhir::Device] # Resource(Organization|Device)
+  resource_reference :target, [Fhir::Organization, Fhir::Device]
 
   # Text - why the order was made
   attribute :reason, String # string
 
   # If required by policy
-  attribute :authority, Fhir::ResourceReference # Resource(Any)
+  resource_reference :authority, [Fhir::Resource]
 
   # When order should be fulfilled.
   class When < Fhir::ValueObject
@@ -41,6 +32,6 @@ class Fhir::Order < Fhir::Resource
 
   # What action is being ordered
   # Should be present
-  attribute :details, Array[Fhir::ResourceReference] # Resource(Any)
+  resource_references :details, [Fhir::Resource]
 end
 

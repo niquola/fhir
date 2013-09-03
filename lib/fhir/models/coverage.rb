@@ -1,17 +1,8 @@
 # Financial instrument by which payment information for
 # health care.
 class Fhir::Coverage < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # An identifier for the plan issuer
-  attribute :issuer, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :issuer, [Fhir::Organization]
 
   # Coverage start and end dates
   attribute :period, Fhir::Period # Period

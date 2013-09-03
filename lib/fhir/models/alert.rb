@@ -1,15 +1,6 @@
 # Prospective warnings of potential issues when providing
 # care to the patient.
 class Fhir::Alert < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # The category of this alert
   attribute :category, Fhir::CodeableConcept # CodeableConcept
 
@@ -19,10 +10,10 @@ class Fhir::Alert < Fhir::Resource
 
   # Subject of this alert
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Alert creator
-  attribute :author, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient, Fhir::Device] # Resource(Practitioner|Patient|Device)
+  resource_reference :author, [Fhir::Practitioner, Fhir::Patient, Fhir::Device]
 
   # Text of alert
   # Should be present

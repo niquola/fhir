@@ -3,13 +3,14 @@ require 'virtus'
 module Fhir
   autoload :VERSION, 'fhir/version'
 
-  autoload :Type, 'fhir/basic_types/type'
-  autoload :Code, 'fhir/basic_types/code'
-  autoload :URI, 'fhir/basic_types/uri'
-  autoload :ResourceReference, 'fhir/basic_types/resource_reference'
-  autoload :Resource, 'fhir/basic_types/resource'
-  autoload :ValueObject, 'fhir/basic_types/value_object'
-  autoload :Money, 'fhir/basic_types/money'
+  autoload :Type, 'fhir/handmade/type'
+  autoload :Code, 'fhir/handmade/code'
+  autoload :URI, 'fhir/handmade/uri'
+  autoload :ResourceReference, 'fhir/handmade/resource_reference'
+  autoload :Resource, 'fhir/handmade/resource'
+  autoload :ValueObject, 'fhir/handmade/value_object'
+  autoload :Money, 'fhir/handmade/money'
+  autoload :ResourceRefering, 'fhir/handmade/resource_refering'
 
   module Virtus
     autoload :ResourceCoercion, 'fhir/virtus/resource_coercion'

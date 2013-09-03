@@ -126,6 +126,21 @@ module RubyCodeGeneration
     "Any"
   ]
 
+  def attribute_resource_types(node)
+    original_type = el_type(node[:el])
+    types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
+      MISSED_RESOURCES.include?(type) ? nil : "Fhir::#{type}"
+    end.compact
+
+    types.empty? ? ["Fhir::Resource"] : types
+  end
+
+  def attribute_resource_ref?(node)
+    original_type = el_type(node[:el]).to_s
+
+    !! original_type.match(/^Resource\(/)
+  end
+
   def attribute_type(node, minmax)
     original_type = el_type(node[:el])
     mapped_type = nil
@@ -142,16 +157,6 @@ module RubyCodeGeneration
       end
     else
       mapped_type = attribute_class_name(node_path(node).last)
-    end
-
-    if mapped_type =~ /^Fhir::Resource\([^\)]+\)$/
-      mapped_type.gsub!(/(Resource)(\(.*?\))?/) do |*args|
-        types = $2.to_s.gsub(/[()]/, '').split('|')
-        types -= MISSED_RESOURCES
-        types = types.map { |t| "Fhir::#{t}" }.join(", ")
-
-        "ResourceReference#{types.present? ? '[' + types + ']' : ''}"
-      end
     end
 
     apply_minmax_to_type(mapped_type, minmax) + " # #{original_type}"
@@ -200,15 +205,17 @@ module RubyCodeGeneration
     end * "\n"
   end
 
+  IGNORED_ATTRIBUTES = %w[contained text extension]
+
   def tree_to_ruby_code(tree, root_class_name)
     code = ""
 
     get_attributes(tree).each do |node_name, node|
       depth = node_depth(node)
+      next if IGNORED_ATTRIBUTES.include?(node_name)
 
       write_attribute = ->(write_comment = true) {
         minmax = el_minmax(node[:el])
-        ruby_type = attribute_type(node, minmax)
 
         line(code, depth, attribute_comment(node)) if write_comment
 
@@ -216,7 +223,18 @@ module RubyCodeGeneration
           line(code, depth, "# Should be present")
         end
 
-        line(code, depth, "attribute :#{attribute_name(node_name, minmax)}, #{ruby_type}")
+        if attribute_resource_ref?(node)
+          resource_types = attribute_resource_types(node)
+          is_collection = minmax.last == '*'
+
+          res_ref_method = is_collection ? 'resource_references' : 'resource_reference'
+
+          line(code, depth, "#{res_ref_method} :#{attribute_name(node_name, minmax)}, [#{resource_types.join(", ")}]")
+        else
+          ruby_type = attribute_type(node, minmax)
+          line(code, depth, "attribute :#{attribute_name(node_name, minmax)}, #{ruby_type}")
+        end
+
         blank_line(code)
       }
 

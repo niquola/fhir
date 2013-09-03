@@ -3,15 +3,6 @@
 # participants may be found or contained, accommodated, or
 # stored.
 class Fhir::Location < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Name of the location
   # Should be present
   attribute :name, String # string
@@ -47,13 +38,13 @@ class Fhir::Location < Fhir::Resource
   attribute :position, Position # 
 
   # The organization that provides services at the location
-  attribute :provider, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :provider, [Fhir::Organization]
 
   # Whether the location is still used to provide services
   attribute :active, Boolean # boolean
 
   # Another Location which this Location is physically inside
   # of
-  attribute :part_of, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+  resource_reference :part_of, [Fhir::Location]
 end
 

@@ -17,6 +17,6 @@ class Fhir::Identifier < Fhir::Type
   attribute :period, Fhir::Period # Period
 
   # Organization that issued id (may be just text)
-  attribute :assigner, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :assigner, [Fhir::Organization]
 end
 

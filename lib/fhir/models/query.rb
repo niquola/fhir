@@ -1,14 +1,5 @@
 # A description of a query with a set of parameters.
 class Fhir::Query < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Links query and its response(s)
   # Should be present
   attribute :identifier, Fhir::URI # uri
@@ -46,7 +37,7 @@ class Fhir::Query < Fhir::Resource
     attribute :lasts, Array[Fhir::Extension] # Extension
 
     # Resources that are the results of the search
-    attribute :references, Array[Fhir::ResourceReference] # Resource(Any)
+    resource_references :references, [Fhir::Resource]
   end
 
   attribute :response, Response # 

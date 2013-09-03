@@ -1,20 +1,11 @@
 # A set of information summarized from a list of other
 # resources.
 class Fhir::List < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # What the purpose of this list is
   attribute :code, Fhir::CodeableConcept # CodeableConcept
 
   # Source of the list
-  attribute :source, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient, Fhir::Device] # Resource(Practitioner|Patient|Device)
+  resource_reference :source, [Fhir::Practitioner, Fhir::Patient, Fhir::Device]
 
   # When the list was prepared
   attribute :date, DateTime # dateTime
@@ -39,7 +30,7 @@ class Fhir::List < Fhir::Resource
 
     # Actual entry
     # Should be present
-    attribute :item, Fhir::ResourceReference # Resource(Any)
+    resource_reference :item, [Fhir::Resource]
   end
 
   attribute :entries, Array[Entry] # 

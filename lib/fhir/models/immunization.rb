@@ -1,14 +1,5 @@
 # Immunization event information.
 class Fhir::Immunization < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Vaccination  Administration Date
   # Should be present
   attribute :date, DateTime # dateTime
@@ -19,7 +10,7 @@ class Fhir::Immunization < Fhir::Resource
 
   # Who this immunization was adminstered to
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Resual Indicator
   # Should be present
@@ -30,16 +21,16 @@ class Fhir::Immunization < Fhir::Resource
   attribute :reported, Boolean # boolean
 
   # Vaccine Administering Provider Name
-  attribute :performer, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :performer, [Fhir::Practitioner]
 
   # Vaccine Ordering Provider Name
-  attribute :requester, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :requester, [Fhir::Practitioner]
 
   # Vaccine Manufacturer
-  attribute :manufacturer, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :manufacturer, [Fhir::Organization]
 
   # Vaccine Administration Facility
-  attribute :location, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+  resource_reference :location, [Fhir::Location]
 
   # Vaccine Lot Number
   attribute :lot_number, String # string
@@ -74,7 +65,7 @@ class Fhir::Immunization < Fhir::Resource
     attribute :date, DateTime # dateTime
 
     # Details of the reaction
-    attribute :detail, Fhir::ResourceReference[Fhir::AdverseReaction, Fhir::Observation] # Resource(AdverseReaction|Observation)
+    resource_reference :detail, [Fhir::AdverseReaction, Fhir::Observation]
 
     # Self-reported indicator
     attribute :reported, Boolean # boolean
@@ -93,7 +84,7 @@ class Fhir::Immunization < Fhir::Resource
     attribute :description, String # string
 
     # Vaccine Administration Protocol Authority
-    attribute :authority, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+    resource_reference :authority, [Fhir::Organization]
 
     # Vaccine Series
     attribute :series, String # string

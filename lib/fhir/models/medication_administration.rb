@@ -4,15 +4,6 @@
 # this event to the authorizing prescription, and the specific
 # encounter between patient and health care practitioner.
 class Fhir::MedicationAdministration < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # External Identifier
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
@@ -23,18 +14,18 @@ class Fhir::MedicationAdministration < Fhir::Resource
 
   # Patient
   # Should be present
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # Practitioner (responsible Health Care professional)
   # Should be present
-  attribute :practitioner, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :practitioner, [Fhir::Practitioner]
 
   # Current Encounter / Admission
-  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :encounter, [Fhir::Encounter]
 
   # Prescription
   # Should be present
-  attribute :prescription, Fhir::ResourceReference[Fhir::MedicationPrescription] # Resource(MedicationPrescription)
+  resource_reference :prescription, [Fhir::MedicationPrescription]
 
   # True if asserting medication was not given
   attribute :was_not_given, Boolean # boolean
@@ -47,10 +38,10 @@ class Fhir::MedicationAdministration < Fhir::Resource
   attribute :when_given, Fhir::Period # Period
 
   # Medication
-  attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
+  resource_reference :medication, [Fhir::Medication]
 
   # Administration device
-  attribute :administration_devices, Array[Fhir::ResourceReference[Fhir::Device]] # Resource(Device)
+  resource_references :administration_devices, [Fhir::Device]
 
   # Indicates how the medication is to be used by the patient.
   class Dosage < Fhir::ValueObject

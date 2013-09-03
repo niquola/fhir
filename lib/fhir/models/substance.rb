@@ -1,15 +1,6 @@
 # A homogeneous material with a definite composition used in
 # healthcare.
 class Fhir::Substance < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Identifier of the substance
   attribute :identifier, Fhir::Identifier # Identifier
 
@@ -33,7 +24,7 @@ class Fhir::Substance < Fhir::Resource
   attribute :quantity, Fhir::Quantity # Quantity
 
   # Substance composition
-  attribute :ingredients, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
+  resource_references :ingredients, [Fhir::Substance]
 
   # Absolute | Relative
   attribute :quantity_mode, Fhir::CodeableConcept # CodeableConcept

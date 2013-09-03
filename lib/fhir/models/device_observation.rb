@@ -1,14 +1,5 @@
 # A set of observations produced by a device.
 class Fhir::DeviceObservation < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Type of device observation
   # Should be present
   attribute :code, Fhir::CodeableConcept # CodeableConcept
@@ -22,13 +13,13 @@ class Fhir::DeviceObservation < Fhir::Resource
 
   # The subject of the measurements
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Group, Fhir::Device] # Resource(Patient|Group|Device)
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device]
 
   # Device that produced the results
   # Should be present
-  attribute :device, Fhir::ResourceReference[Fhir::Device] # Resource(Device)
+  resource_reference :device, [Fhir::Device]
 
   # Actual measurements
-  attribute :measurements, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
+  resource_references :measurements, [Fhir::Observation]
 end
 

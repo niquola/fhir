@@ -7,15 +7,6 @@
 # diagnostic, treatment, and research for healthcare and
 # public health.
 class Fhir::Device < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # What kind of device this is
   # Should be present
   attribute :type, Fhir::CodeableConcept # CodeableConcept
@@ -48,16 +39,16 @@ class Fhir::Device < Fhir::Resource
   attribute :identity, Identity # 
 
   # Organization responsible for device
-  attribute :owner, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :owner, [Fhir::Organization]
 
   # Identifier assigned by various organizations
   attribute :assigned_ids, Array[Fhir::Identifier] # Identifier
 
   # Where the resource is found
-  attribute :location, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+  resource_reference :location, [Fhir::Location]
 
   # If the resource is affixed to a person
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # Details for human/organization for support
   attribute :contacts, Array[Fhir::Contact] # Contact

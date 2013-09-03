@@ -1,14 +1,5 @@
 # Sample for analysis.
 class Fhir::Specimen < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # External Identifier
   attribute :identifier, Fhir::Identifier # Identifier
 
@@ -23,14 +14,14 @@ class Fhir::Specimen < Fhir::Resource
     attribute :relationship, Fhir::Code # code
 
     # The subject of the relationship
-    attribute :targets, Array[Fhir::ResourceReference[Fhir::Specimen]] # Resource(Specimen)
+    resource_references :targets, [Fhir::Specimen]
   end
 
   attribute :sources, Array[Source] # 
 
   # The subject of the report
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Substance] # Resource(Patient|Group|Device|Substance)
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Substance]
 
   # Accession Identifier
   attribute :accession_identifiers, Array[Fhir::Identifier] # Identifier
@@ -41,7 +32,7 @@ class Fhir::Specimen < Fhir::Resource
   # Details concerning the specimen collection.
   class Collection < Fhir::ValueObject
     # Who collected the specimen
-    attribute :collector, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+    resource_reference :collector, [Fhir::Practitioner]
 
     # Collector comments
     attribute :comments, Array[String] # string
@@ -73,7 +64,7 @@ class Fhir::Specimen < Fhir::Resource
     attribute :procedure, Fhir::CodeableConcept # CodeableConcept
 
     # Specimen additive
-    attribute :additives, Array[Fhir::ResourceReference[Fhir::Substance]] # Resource(Substance)
+    resource_references :additives, [Fhir::Substance]
   end
 
   attribute :treatments, Array[Treatment] # 
@@ -98,7 +89,7 @@ class Fhir::Specimen < Fhir::Resource
     attribute :specimen_quantity, Fhir::Quantity # Quantity
 
     # Container Additive
-    attribute :additive, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
+    resource_reference :additive, [Fhir::Substance]
   end
 
   attribute :containers, Array[Container] # 

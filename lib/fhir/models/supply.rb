@@ -1,14 +1,5 @@
 # A supply -  request and provision.
 class Fhir::Supply < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # The kind of supply (central, non-stock, etc)
   attribute :name, Fhir::CodeableConcept # CodeableConcept
 
@@ -19,10 +10,10 @@ class Fhir::Supply < Fhir::Resource
   attribute :status, Fhir::Code # code
 
   # Medication, Substance, or Device requested to be supplied
-  attribute :ordered_item, Fhir::ResourceReference[Fhir::Medication, Fhir::Substance, Fhir::Device] # Resource(Medication|Substance|Device)
+  resource_reference :ordered_item, [Fhir::Medication, Fhir::Substance, Fhir::Device]
 
   # Patient
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # Indicates the details of the dispense event such as the
   # days supply and quantity of a supply dispensed.
@@ -40,10 +31,10 @@ class Fhir::Supply < Fhir::Resource
     attribute :quantity, Fhir::Quantity # Quantity
 
     # Medication, Substance, or Device being supplied
-    attribute :supplied_item, Fhir::ResourceReference[Fhir::Medication, Fhir::Substance, Fhir::Device] # Resource(Medication|Substance|Device)
+    resource_reference :supplied_item, [Fhir::Medication, Fhir::Substance, Fhir::Device]
 
     # Dispenser
-    attribute :supplier, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+    resource_reference :supplier, [Fhir::Practitioner]
 
     # Dispensing time
     attribute :when_prepared, Fhir::Period # Period
@@ -52,10 +43,10 @@ class Fhir::Supply < Fhir::Resource
     attribute :when_handed_over, Fhir::Period # Period
 
     # Where the Supply was sent
-    attribute :destination, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+    resource_reference :destination, [Fhir::Location]
 
     # Who collected the Supply
-    attribute :receivers, Array[Fhir::ResourceReference[Fhir::Practitioner]] # Resource(Practitioner)
+    resource_references :receivers, [Fhir::Practitioner]
   end
 
   attribute :dispenses, Array[Dispense] # 

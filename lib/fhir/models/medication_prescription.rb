@@ -2,15 +2,6 @@
 # instructions for administration of the medicine to a
 # patient.
 class Fhir::MedicationPrescription < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # External identifier
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
@@ -21,19 +12,19 @@ class Fhir::MedicationPrescription < Fhir::Resource
   attribute :status, Fhir::Code # code
 
   # Patient
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # Prescriber
-  attribute :prescriber, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+  resource_reference :prescriber, [Fhir::Practitioner]
 
   # Encounter / Admission / Stay
-  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :encounter, [Fhir::Encounter]
 
   # Reason or indication for writing the prescription
   attribute :reason_for_prescribing, String # string
 
   # Medication to be taken
-  attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
+  resource_reference :medication, [Fhir::Medication]
 
   # Indicates how the medication is to be used by the patient.
   class DosageInstruction < Fhir::ValueObject
@@ -70,7 +61,7 @@ class Fhir::MedicationPrescription < Fhir::Resource
   # Deals with details of the dispense part of the order.
   class Dispense < Fhir::ValueObject
     # Medication to be dispensed
-    attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
+    resource_reference :medication, [Fhir::Medication]
 
     # Validity period
     attribute :validity_period, Fhir::Period # Period

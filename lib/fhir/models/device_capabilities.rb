@@ -1,14 +1,5 @@
 # Describes the set of data produced by a device.
 class Fhir::DeviceCapabilities < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # The name of this device
   attribute :name, String # string
 
@@ -19,7 +10,7 @@ class Fhir::DeviceCapabilities < Fhir::Resource
   attribute :manufacturer, String # string
 
   # Identifies this particular device uniquely
-  attribute :identity, Fhir::ResourceReference[Fhir::Device] # Resource(Device)
+  resource_reference :identity, [Fhir::Device]
 
   # A medical-related subsystem of a medical device.
   class VirtualDevice < Fhir::ValueObject

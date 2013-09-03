@@ -2,15 +2,6 @@
 # individual who is directly or indirectly involved in the
 # provisioning of healthcare.
 class Fhir::Practitioner < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # A identifier for the person as this agent
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
@@ -33,7 +24,7 @@ class Fhir::Practitioner < Fhir::Resource
   attribute :photos, Array[Fhir::Attachment] # Attachment
 
   # The represented organization
-  attribute :organization, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :organization, [Fhir::Organization]
 
   # A role the practitioner has
   attribute :roles, Array[Fhir::CodeableConcept] # CodeableConcept
@@ -55,7 +46,7 @@ class Fhir::Practitioner < Fhir::Resource
     attribute :period, Fhir::Period # Period
 
     # Organization that regulates and issues the qualification
-    attribute :issuer, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+    resource_reference :issuer, [Fhir::Organization]
   end
 
   attribute :qualifications, Array[Qualification] # 

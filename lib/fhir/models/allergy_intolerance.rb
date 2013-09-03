@@ -1,14 +1,5 @@
 # Allergy/Intolerance.
 class Fhir::AllergyIntolerance < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # An external identifier for the sensitivity
   attribute :identifier, Fhir::Identifier # Identifier
 
@@ -28,20 +19,19 @@ class Fhir::AllergyIntolerance < Fhir::Resource
 
   # Who the sensitivity is for
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Who recorded the sensitivity
-  attribute :recorder, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient] # Resource(Practitioner|Patient)
+  resource_reference :recorder, [Fhir::Practitioner, Fhir::Patient]
 
   # The substance that causes the sensitivity
   # Should be present
-  attribute :substance, Fhir::Substance # Resource(Substance)
-  # attribute :substance, Fhir::ResourceReference[Fhir::Substance] # Resource(Substance)
+  resource_reference :substance, [Fhir::Substance]
 
   # Reactions associated with the sensitivity
-  attribute :reactions, Array[Fhir::ResourceReference[Fhir::AdverseReaction]] # Resource(AdverseReaction)
+  resource_references :reactions, [Fhir::AdverseReaction]
 
   # Observations that confirm or refute the sensitivity
-  attribute :sensitivity_tests, Array[Fhir::ResourceReference[Fhir::Observation]] # Resource(Observation)
+  resource_references :sensitivity_tests, [Fhir::Observation]
 end
 

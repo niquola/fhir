@@ -1,15 +1,6 @@
 # A value set specifies a set of codes drawn from one or
 # more code systems.
 class Fhir::ValueSet < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Logical id to reference this value set
   attribute :identifier, String # string
 

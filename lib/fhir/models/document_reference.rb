@@ -1,14 +1,5 @@
 # A reference to a document.
 class Fhir::DocumentReference < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Master Version Specific Identifier
   # Should be present
   attribute :master_identifier, Fhir::Identifier # Identifier
@@ -18,7 +9,7 @@ class Fhir::DocumentReference < Fhir::Resource
 
   # The subject of the document
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device] # Resource(Patient|Practitioner|Group|Device)
+  resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device]
 
   # What kind of document this is (LOINC if possible)
   # Should be present
@@ -29,13 +20,13 @@ class Fhir::DocumentReference < Fhir::Resource
 
   # Who/what authored the document
   # Should be present
-  attribute :authors, Array[Fhir::ResourceReference[Fhir::Practitioner, Fhir::Device]] # Resource(Practitioner|Device)
+  resource_references :authors, [Fhir::Practitioner, Fhir::Device]
 
   # Org which maintains the document
-  attribute :custodian, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :custodian, [Fhir::Organization]
 
   # Who authenticated the document
-  attribute :authenticator, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Organization] # Resource(Practitioner|Organization)
+  resource_reference :authenticator, [Fhir::Practitioner, Fhir::Organization]
 
   # Document creation time
   attribute :created, DateTime # dateTime
@@ -52,7 +43,7 @@ class Fhir::DocumentReference < Fhir::Resource
   attribute :doc_status, Fhir::CodeableConcept # CodeableConcept
 
   # If this document replaces another
-  attribute :supercedes, Fhir::ResourceReference[Fhir::DocumentReference] # Resource(DocumentReference)
+  resource_reference :supercedes, [Fhir::DocumentReference]
 
   # Human Readable description (title)
   attribute :description, String # string

@@ -2,18 +2,9 @@
 # physical 'thing' like an operation, or less invasive like
 # counseling or hypnotherapy.
 class Fhir::Procedure < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Subject of this procedure
   # Should be present
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # Identification of the procedure
   attribute :type, Fhir::CodeableConcept # CodeableConcept
@@ -27,7 +18,7 @@ class Fhir::Procedure < Fhir::Resource
   # Limited to 'real' people rather than equipment.
   class Performer < Fhir::ValueObject
     # The reference to the practitioner
-    attribute :person, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+    resource_reference :person, [Fhir::Practitioner]
 
     # The role the person was in
     attribute :role, Fhir::CodeableConcept # CodeableConcept
@@ -39,13 +30,13 @@ class Fhir::Procedure < Fhir::Resource
   attribute :date, Fhir::Period # Period
 
   # The encounter during which the procedure was performed
-  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :encounter, [Fhir::Encounter]
 
   # Outcome of the procedure
   attribute :outcome, String # string
 
   # Any report that results from the procedure
-  attribute :reports, Array[Fhir::ResourceReference[Fhir::DiagnosticReport]] # Resource(DiagnosticReport)
+  resource_references :reports, [Fhir::DiagnosticReport]
 
   # Complications
   attribute :complication, String # string
@@ -61,7 +52,7 @@ class Fhir::Procedure < Fhir::Resource
     attribute :type, Fhir::Code # code
 
     # The related item - e.g. a procedure
-    attribute :target, Fhir::ResourceReference[Fhir::Procedure, Fhir::MedicationPrescription] # Resource(Procedure|MedicationPrescription)
+    resource_reference :target, [Fhir::Procedure, Fhir::MedicationPrescription]
   end
 
   attribute :related_items, Array[RelatedItem] # 

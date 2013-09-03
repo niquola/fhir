@@ -3,20 +3,11 @@
 # is the result of a report from the patient, or another
 # clinician.
 class Fhir::MedicationStatement < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # External Identifier
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
   # Patient
-  attribute :patient, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :patient, [Fhir::Patient]
 
   # True if asserting medication was not given
   attribute :was_not_given, Boolean # boolean
@@ -28,10 +19,10 @@ class Fhir::MedicationStatement < Fhir::Resource
   attribute :when_given, Fhir::Period # Period
 
   # Medication
-  attribute :medication, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
+  resource_reference :medication, [Fhir::Medication]
 
   # Administration device
-  attribute :administration_devices, Array[Fhir::ResourceReference[Fhir::Device]] # Resource(Device)
+  resource_references :administration_devices, [Fhir::Device]
 
   # Indicates how the medication is to be used by the patient.
   class Dosage < Fhir::ValueObject

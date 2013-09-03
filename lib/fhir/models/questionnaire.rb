@@ -3,15 +3,6 @@
 # corresponding to the structure of the grouping of the
 # underlying questions.
 class Fhir::Questionnaire < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
   attribute :status, Fhir::Code # code
@@ -21,13 +12,13 @@ class Fhir::Questionnaire < Fhir::Resource
   attribute :authored, DateTime # dateTime
 
   # The subject of the questionnaires
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient, Fhir::RelatedPerson] # Resource(Patient|RelatedPerson)
+  resource_reference :subject, [Fhir::Patient, Fhir::RelatedPerson]
 
   # Person that collected the answers
-  attribute :author, Fhir::ResourceReference[Fhir::Practitioner, Fhir::Patient, Fhir::RelatedPerson] # Resource(Practitioner|Patient|RelatedPerson)
+  resource_reference :author, [Fhir::Practitioner, Fhir::Patient, Fhir::RelatedPerson]
 
   # The person that answered the questions
-  attribute :source, Fhir::ResourceReference[Fhir::Patient, Fhir::Practitioner, Fhir::RelatedPerson] # Resource(Patient|Practitioner|RelatedPerson)
+  resource_reference :source, [Fhir::Patient, Fhir::Practitioner, Fhir::RelatedPerson]
 
   # Name/code for a predefined list of questions
   attribute :name, Fhir::CodeableConcept # CodeableConcept
@@ -36,15 +27,12 @@ class Fhir::Questionnaire < Fhir::Resource
   attribute :identifier, Fhir::Identifier # Identifier
 
   # Primary encounter during which the answers were collected
-  attribute :encounter, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :encounter, [Fhir::Encounter]
 
   # Answers to questions on a questionnaire.
   class Question < Fhir::ValueObject
     # Code or name of the question
     attribute :name, Fhir::CodeableConcept # CodeableConcept
-
-    # Text of the question
-    attribute :text, String # string
 
     # Single-valued answer to the question
     attribute :answer, Float # decimal
@@ -73,11 +61,8 @@ class Fhir::Questionnaire < Fhir::Resource
     # Header for the group
     attribute :header, String # string
 
-    # Additional text for the group
-    attribute :text, String # string
-
     # The subject this group's answers are about
-    attribute :subject, Fhir::ResourceReference # Resource(Any)
+    resource_reference :subject, [Fhir::Resource]
 
     # Questions belonging to this group
     attribute :questions, Array[Fhir::Questionnaire::Question] # @Questionnaire.question

@@ -1,15 +1,6 @@
 # Primarily used for identification and definition of
 # Medication, but also covers ingredients and packaging.
 class Fhir::Medication < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Common / Commercial name
   attribute :name, String # string
 
@@ -20,7 +11,7 @@ class Fhir::Medication < Fhir::Resource
   attribute :is_brand, Boolean # boolean
 
   # Manufacturer of the item
-  attribute :manufacturer, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :manufacturer, [Fhir::Organization]
 
   # product | package
   attribute :kind, Fhir::Code # code
@@ -34,7 +25,7 @@ class Fhir::Medication < Fhir::Resource
     class Ingredient < Fhir::ValueObject
       # Ingredient
       # Should be present
-      attribute :item, Fhir::ResourceReference[Fhir::Substance, Fhir::Medication] # Resource(Substance|Medication)
+      resource_reference :item, [Fhir::Substance, Fhir::Medication]
 
       # Amount of ingredient
       attribute :amount, Fhir::Ratio # Ratio
@@ -54,7 +45,7 @@ class Fhir::Medication < Fhir::Resource
     class Content < Fhir::ValueObject
       # A product in the package
       # Should be present
-      attribute :item, Fhir::ResourceReference[Fhir::Medication] # Resource(Medication)
+      resource_reference :item, [Fhir::Medication]
 
       # Amount in the package
       attribute :amount, Fhir::Quantity # Quantity

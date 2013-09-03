@@ -2,15 +2,6 @@
 # provider(s) for the purpose of providing healthcare
 # service(s) or assessing the health status of a patient.
 class Fhir::Encounter < Fhir::Resource
-  # Additional Content defined by implementations
-  attribute :extensions, Array[Fhir::Extension] # Extension
-
-  # Text summary of the resource, for human interpretation
-  attribute :text, Fhir::Narrative # Narrative
-
-  # Contained, inline Resources
-  attribute :containeds, Array[Fhir::Resource] # Resource
-
   # Identifier(s) by which this encounter is known
   attribute :identifiers, Array[Fhir::Identifier] # Identifier
 
@@ -26,7 +17,7 @@ class Fhir::Encounter < Fhir::Resource
   attribute :types, Array[Fhir::CodeableConcept] # CodeableConcept
 
   # The patient present at the encounter
-  attribute :subject, Fhir::ResourceReference[Fhir::Patient] # Resource(Patient)
+  resource_reference :subject, [Fhir::Patient]
 
   # The main practitioner responsible for providing the
   # service.
@@ -35,13 +26,13 @@ class Fhir::Encounter < Fhir::Resource
     attribute :types, Array[Fhir::Code] # code
 
     # The practitioner that is involved
-    attribute :practitioner, Fhir::ResourceReference[Fhir::Practitioner] # Resource(Practitioner)
+    resource_reference :practitioner, [Fhir::Practitioner]
   end
 
   attribute :participants, Array[Participant] # 
 
   # The appointment that scheduled this encounter
-  attribute :fulfills, Fhir::ResourceReference # Resource(Appointment)
+  resource_reference :fulfills, [Fhir::Resource]
 
   # The date and time the encounter starts
   attribute :start, DateTime # dateTime
@@ -53,7 +44,7 @@ class Fhir::Encounter < Fhir::Resource
   attribute :reason, String # string
 
   # Reason the encounter takes place
-  attribute :indication, Fhir::ResourceReference # Resource(Any)
+  resource_reference :indication, [Fhir::Resource]
 
   # Indicates the urgency of the encounter
   attribute :priority, Fhir::CodeableConcept # CodeableConcept
@@ -64,7 +55,7 @@ class Fhir::Encounter < Fhir::Resource
     attribute :pre_admission_identifier, Fhir::Identifier # Identifier
 
     # The location the patient came from before admission
-    attribute :origin, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+    resource_reference :origin, [Fhir::Location]
 
     # Where patient was admitted from (physician referral,
     # transfer)
@@ -76,7 +67,7 @@ class Fhir::Encounter < Fhir::Resource
     # Where the patient stays during this encounter.
     class Accomodation < Fhir::ValueObject
       # Bed
-      attribute :bed, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+      resource_reference :bed, [Fhir::Location]
 
       # Period during which the patient was assigned the bed
       attribute :period, Fhir::Period # Period
@@ -94,7 +85,7 @@ class Fhir::Encounter < Fhir::Resource
     attribute :special_arrangements, Array[Fhir::CodeableConcept] # CodeableConcept
 
     # Location the patient is discharged to
-    attribute :destination, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+    resource_reference :destination, [Fhir::Location]
 
     # Disposition patient released to
     attribute :discharge_disposition, Fhir::CodeableConcept # CodeableConcept
@@ -109,7 +100,7 @@ class Fhir::Encounter < Fhir::Resource
   class Location < Fhir::ValueObject
     # The location the encounter takes place
     # Should be present
-    attribute :location, Fhir::ResourceReference[Fhir::Location] # Resource(Location)
+    resource_reference :location, [Fhir::Location]
 
     # Time period during which the patient was present at the
     # location
@@ -120,9 +111,9 @@ class Fhir::Encounter < Fhir::Resource
   attribute :locations, Array[Location] # 
 
   # Department or team providing care
-  attribute :service_provider, Fhir::ResourceReference[Fhir::Organization] # Resource(Organization)
+  resource_reference :service_provider, [Fhir::Organization]
 
   # Another Encounter this encounter is part of
-  attribute :part_of, Fhir::ResourceReference[Fhir::Encounter] # Resource(Encounter)
+  resource_reference :part_of, [Fhir::Encounter]
 end
 
