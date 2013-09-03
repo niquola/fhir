@@ -11,7 +11,7 @@ class Fhir::Encounter < Fhir::Resource
 
   # Inpatient | Outpatient etc
   # Should be present
-  attribute :class, Fhir::Code # code
+  attribute :encounter_class, Fhir::Code # code
 
   # Specific type of encounter
   attribute :types, Array[Fhir::CodeableConcept] # CodeableConcept

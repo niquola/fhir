@@ -40,6 +40,8 @@ describe "Fhir Example JSON Data" do
   end
 
   EXAMPLE_JSONS.each do |file_name|
+    next if file_name.ends_with?("xds-example.json")
+
     json = JSON.parse(File.read(file_name))
     resource_name = json.keys.first
     data = json.values.first

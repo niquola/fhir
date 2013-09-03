@@ -180,8 +180,14 @@ module RubyCodeGeneration
     code << "\n"
   end
 
-  def attribute_name(node_name, minmax)
+  KEYWORDS = ["class"]
+
+  def attribute_name(node_path, minmax)
+    class_name = node_path[-2].underscore
+    node_name = node_path[-1]
+
     attr_name = node_name.gsub('[x]', '').underscore
+    attr_name = "#{class_name}_#{attr_name}" if KEYWORDS.include?(attr_name)
     minmax && minmax.last == '*' ? attr_name.pluralize : attr_name
   end
 
@@ -212,6 +218,7 @@ module RubyCodeGeneration
 
     get_attributes(tree).each do |node_name, node|
       depth = node_depth(node)
+      node_path = node_path(node)
       next if IGNORED_ATTRIBUTES.include?(node_name)
 
       write_attribute = ->(write_comment = true) {
@@ -229,10 +236,10 @@ module RubyCodeGeneration
 
           res_ref_method = is_collection ? 'resource_references' : 'resource_reference'
 
-          line(code, depth, "#{res_ref_method} :#{attribute_name(node_name, minmax)}, [#{resource_types.join(", ")}]")
+          line(code, depth, "#{res_ref_method} :#{attribute_name(node_path, minmax)}, [#{resource_types.join(", ")}]")
         else
           ruby_type = attribute_type(node, minmax)
-          line(code, depth, "attribute :#{attribute_name(node_name, minmax)}, #{ruby_type}")
+          line(code, depth, "attribute :#{attribute_name(node_path, minmax)}, #{ruby_type}")
         end
 
         blank_line(code)
