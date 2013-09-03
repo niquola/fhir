@@ -2,9 +2,8 @@ class Fhir::ResourceReference < Fhir::Type
   attribute :type, String
   attribute :reference, String
 
-  class << self
-    def [](*types)
-      self
-    end
+  def initialize(attributes = {})
+    @instance = attributes.delete(:instance)
+    @container = attributes.delete(:container)
   end
 end

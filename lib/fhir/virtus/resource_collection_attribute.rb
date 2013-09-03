@@ -8,8 +8,9 @@ class Fhir::Virtus::ResourceCollectionAttribute < Virtus::Attribute::Array
     vals = Array(value).map do |v|
       coerce_member(v)
     end
+
     super(instance, vals)
 
-    instance.send("#{name.to_s.singularize}_refs=",  vals.map(&:to_ref))
+    instance.send("#{name.to_s.singularize}_refs=",  vals.map { |v| v.to_ref(instance) })
   end
 end

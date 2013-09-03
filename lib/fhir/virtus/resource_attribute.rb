@@ -6,7 +6,8 @@ class Fhir::Virtus::ResourceAttribute < Virtus::Attribute
   def set(instance, value)
     v = coerce_member(value)
     super(instance, v)
-    instance.send("#{name}_ref=",  v.to_ref)
+
+    instance.send("#{name}_ref=",  v.to_ref(instance))
   end
 
   def get(instance)

@@ -16,6 +16,7 @@ module Fhir
     autoload :ResourceCoercion, 'fhir/virtus/resource_coercion'
     autoload :ResourceAttribute, 'fhir/virtus/resource_attribute'
     autoload :ResourceCollectionAttribute, 'fhir/virtus/resource_collection_attribute'
+    autoload :Serializable, 'fhir/virtus/serializable'
   end
 end
 

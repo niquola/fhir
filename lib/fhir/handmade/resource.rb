@@ -1,9 +1,15 @@
 class Fhir::Resource
   include Virtus
   extend Fhir::ResourceRefering
+  include Fhir::Virtus::Serializable
 
   # Unique Identifier for Resource
   attribute :uuid, String
+
+  # Unique Resource Identifier
+  def uri
+    "#{self.class.name.tableize}/#{self.uuid}"
+  end
 
   # Additional Content defined by implementations
   attribute :extensions, Array[Fhir::Extension] # Extension
@@ -19,14 +25,32 @@ class Fhir::Resource
   end
 
   def initialize(attributes = {})
-    raise "!BANG!" if self.class.nil?
-
     attributes[:uuid] ||= self.class.generate_uuid
     super(attributes)
+
+    contained!
   end
 
-  def to_ref
+  def independent?
+    @independent
+  end
+
+  def independent!
+    @independent = true
+  end
+
+  def contained?
+    !@independent
+  end
+
+  def contained!
+    @independent = false
+  end
+
+  def to_ref(container = nil)
     Fhir::ResourceReference.new(type: self.class.name,
-				reference: "#{self.uuid}")
+                                reference: "#{self.uuid}",
+                                container: container,
+                                instance: self)
   end
 end
