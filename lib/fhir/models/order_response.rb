@@ -5,7 +5,7 @@ class Fhir::OrderResponse < Fhir::Resource
   resource_reference :request, [Fhir::Order]
 
   # When the response was made
-  attribute :date, DateTime # dateTime
+  attribute :date, DateTime
 
   # Who made the response
   resource_reference :who, [Fhir::Practitioner, Fhir::Organization]
@@ -14,14 +14,14 @@ class Fhir::OrderResponse < Fhir::Resource
   resource_reference :authority, [Fhir::Resource]
 
   # How much the request will/did cost
-  attribute :cost, Fhir::Money # Money
+  attribute :cost, Fhir::Money
 
   # The status of the response
   # Should be present
-  attribute :code, Fhir::Code # code
+  attribute :code, Fhir::Code
 
   # Additional description of the response
-  attribute :description, String # string
+  attribute :description, String
 
   # Details of the outcome of performing the order
   resource_references :fulfillments, [Fhir::Resource]

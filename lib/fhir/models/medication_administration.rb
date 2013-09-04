@@ -5,12 +5,12 @@
 # encounter between patient and health care practitioner.
 class Fhir::MedicationAdministration < Fhir::Resource
   # External Identifier
-  attribute :identifiers, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier]
 
   # Status of the administration - active | paused | completed
   # | nullified
   # Should be present
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # Patient
   # Should be present
@@ -28,14 +28,14 @@ class Fhir::MedicationAdministration < Fhir::Resource
   resource_reference :prescription, [Fhir::MedicationPrescription]
 
   # True if asserting medication was not given
-  attribute :was_not_given, Boolean # boolean
+  attribute :was_not_given, Boolean
 
   # Reason event is negated
-  attribute :reason_not_givens, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :reason_not_givens, Array[Fhir::CodeableConcept]
 
   # Effective time
   # Should be present
-  attribute :when_given, Fhir::Period # Period
+  attribute :when_given, Fhir::Period
 
   # Medication
   resource_reference :medication, [Fhir::Medication]
@@ -46,27 +46,27 @@ class Fhir::MedicationAdministration < Fhir::Resource
   # Indicates how the medication is to be used by the patient.
   class Dosage < Fhir::ValueObject
     # Medication timing
-    attribute :timing, Fhir::Schedule # Schedule
+    attribute :timing, Fhir::Schedule
 
     # Entry site
-    attribute :site, Fhir::CodeableConcept # CodeableConcept
+    attribute :site, Fhir::CodeableConcept
 
     # Rout of administration
-    attribute :route, Fhir::CodeableConcept # CodeableConcept
+    attribute :route, Fhir::CodeableConcept
 
     # Administration method
-    attribute :method, Fhir::CodeableConcept # CodeableConcept
+    attribute :method, Fhir::CodeableConcept
 
     # Dose quantity per dose
-    attribute :quantity, Fhir::Quantity # Quantity
+    attribute :quantity, Fhir::Quantity
 
     # Dose quantity per unit of time
-    attribute :rate, Fhir::Ratio # Ratio
+    attribute :rate, Fhir::Ratio
 
     # Total dose that should be consumed per unit of time
-    attribute :max_dose_per_period, Fhir::Ratio # Ratio
+    attribute :max_dose_per_period, Fhir::Ratio
   end
 
-  attribute :dosages, Array[Dosage] # 
+  attribute :dosages, Array[Dosage]
 end
 

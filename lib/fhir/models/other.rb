@@ -3,7 +3,7 @@
 class Fhir::Other < Fhir::Resource
   # Kind of Resource
   # Should be present
-  attribute :code, Fhir::CodeableConcept # CodeableConcept
+  attribute :code, Fhir::CodeableConcept
 
   # Identifies the
   resource_reference :subject, [Fhir::Resource]
@@ -12,6 +12,6 @@ class Fhir::Other < Fhir::Resource
   resource_reference :author, [Fhir::Practitioner, Fhir::Patient, Fhir::RelatedPerson]
 
   # When created
-  attribute :created, Date # date
+  attribute :created, Date
 end
 

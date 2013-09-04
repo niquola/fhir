@@ -1,13 +1,13 @@
 # A supply -  request and provision.
 class Fhir::Supply < Fhir::Resource
   # The kind of supply (central, non-stock, etc)
-  attribute :name, Fhir::CodeableConcept # CodeableConcept
+  attribute :name, Fhir::CodeableConcept
 
   # Unique identifier
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Dispensed|Received|Requested
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # Medication, Substance, or Device requested to be supplied
   resource_reference :ordered_item, [Fhir::Medication, Fhir::Substance, Fhir::Device]
@@ -19,16 +19,16 @@ class Fhir::Supply < Fhir::Resource
   # days supply and quantity of a supply dispensed.
   class Dispense < Fhir::ValueObject
     # External identifier
-    attribute :identifier, Fhir::Identifier # Identifier
+    attribute :identifier, Fhir::Identifier
 
     # Active/Completed/Aborted
-    attribute :status, Fhir::Code # code
+    attribute :status, Fhir::Code
 
     # Type of dispense
-    attribute :type, Fhir::CodeableConcept # CodeableConcept
+    attribute :type, Fhir::CodeableConcept
 
     # Amount dispensed
-    attribute :quantity, Fhir::Quantity # Quantity
+    attribute :quantity, Fhir::Quantity
 
     # Medication, Substance, or Device being supplied
     resource_reference :supplied_item, [Fhir::Medication, Fhir::Substance, Fhir::Device]
@@ -37,10 +37,10 @@ class Fhir::Supply < Fhir::Resource
     resource_reference :supplier, [Fhir::Practitioner]
 
     # Dispensing time
-    attribute :when_prepared, Fhir::Period # Period
+    attribute :when_prepared, Fhir::Period
 
     # Handover time
-    attribute :when_handed_over, Fhir::Period # Period
+    attribute :when_handed_over, Fhir::Period
 
     # Where the Supply was sent
     resource_reference :destination, [Fhir::Location]
@@ -49,6 +49,6 @@ class Fhir::Supply < Fhir::Resource
     resource_references :receivers, [Fhir::Practitioner]
   end
 
-  attribute :dispenses, Array[Dispense] # 
+  attribute :dispenses, Array[Dispense]
 end
 

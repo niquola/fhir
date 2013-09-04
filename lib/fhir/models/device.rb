@@ -9,40 +9,40 @@
 class Fhir::Device < Fhir::Resource
   # What kind of device this is
   # Should be present
-  attribute :type, Fhir::CodeableConcept # CodeableConcept
+  attribute :type, Fhir::CodeableConcept
 
   # Name of device manufacturer
-  attribute :manufacturer, String # string
+  attribute :manufacturer, String
 
   # Model id assigned by the manufacturer
-  attribute :model, String # string
+  attribute :model, String
 
   # Version number (i.e. software)
-  attribute :version, String # string
+  attribute :version, String
 
   # Date of expiry of this device (if applicable)
-  attribute :expiry, Date # date
+  attribute :expiry, Date
 
   # Universal Device Id fields.
   class Identity < Fhir::ValueObject
     # Global Trade Identification Number
-    attribute :gtin, String # string
+    attribute :gtin, String
 
     # Lot number of manufacture
-    attribute :lot, String # string
+    attribute :lot, String
 
     # Serial number assigned by the manufacturer
     # Should be present
-    attribute :serial_number, String # string
+    attribute :serial_number, String
   end
 
-  attribute :identity, Identity # 
+  attribute :identity, Identity
 
   # Organization responsible for device
   resource_reference :owner, [Fhir::Organization]
 
   # Identifier assigned by various organizations
-  attribute :assigned_ids, Array[Fhir::Identifier] # Identifier
+  attribute :assigned_ids, Array[Fhir::Identifier]
 
   # Where the resource is found
   resource_reference :location, [Fhir::Location]
@@ -51,9 +51,9 @@ class Fhir::Device < Fhir::Resource
   resource_reference :patient, [Fhir::Patient]
 
   # Details for human/organization for support
-  attribute :contacts, Array[Fhir::Contact] # Contact
+  attribute :contacts, Array[Fhir::Contact]
 
   # Network address to contact device
-  attribute :url, Fhir::URI # uri
+  attribute :url, Fhir::URI
 end
 

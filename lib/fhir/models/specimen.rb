@@ -1,33 +1,33 @@
 # Sample for analysis.
 class Fhir::Specimen < Fhir::Resource
   # External Identifier
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Type of specimen
-  attribute :type, Fhir::CodeableConcept # CodeableConcept
+  attribute :type, Fhir::CodeableConcept
 
   # Parent specimen from which the focal specimen was a
   # component.
   class Source < Fhir::ValueObject
     # parent | child
     # Should be present
-    attribute :relationship, Fhir::Code # code
+    attribute :relationship, Fhir::Code
 
     # The subject of the relationship
     resource_references :targets, [Fhir::Specimen]
   end
 
-  attribute :sources, Array[Source] # 
+  attribute :sources, Array[Source]
 
   # The subject of the report
   # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Substance]
 
   # Accession Identifier
-  attribute :accession_identifiers, Array[Fhir::Identifier] # Identifier
+  attribute :accession_identifiers, Array[Fhir::Identifier]
 
   # Received Time
-  attribute :received_time, DateTime # dateTime
+  attribute :received_time, DateTime
 
   # Details concerning the specimen collection.
   class Collection < Fhir::ValueObject
@@ -35,63 +35,63 @@ class Fhir::Specimen < Fhir::Resource
     resource_reference :collector, [Fhir::Practitioner]
 
     # Collector comments
-    attribute :comments, Array[String] # string
+    attribute :comments, Array[String]
 
     # Collection time
     # Should be present
-    attribute :collected_time, DateTime # dateTime
+    attribute :collected_time, DateTime
 
     # The quantity of specimen collected
-    attribute :quantity, Fhir::Quantity # Quantity
+    attribute :quantity, Fhir::Quantity
 
     # Specimen Collection Method
-    attribute :method, Fhir::CodeableConcept # CodeableConcept
+    attribute :method, Fhir::CodeableConcept
 
     # Site of the source of the specimen
-    attribute :source_site, Fhir::CodeableConcept # CodeableConcept
+    attribute :source_site, Fhir::CodeableConcept
   end
 
   # Should be present
-  attribute :collection, Collection # 
+  attribute :collection, Collection
 
   # Details concerning treatment and processing steps for the
   # specimen.
   class Treatment < Fhir::ValueObject
     # Textual description of procedure
-    attribute :description, String # string
+    attribute :description, String
 
     # Specimen Treatment Procedure
-    attribute :procedure, Fhir::CodeableConcept # CodeableConcept
+    attribute :procedure, Fhir::CodeableConcept
 
     # Specimen additive
     resource_references :additives, [Fhir::Substance]
   end
 
-  attribute :treatments, Array[Treatment] # 
+  attribute :treatments, Array[Treatment]
 
   # The container holding the specimen. May be recursive; ie
   # blood in tube in tray in rack.
   class Container < Fhir::ValueObject
     # Id for container
     # Should be present
-    attribute :identifiers, Array[Fhir::Identifier] # Identifier
+    attribute :identifiers, Array[Fhir::Identifier]
 
     # Textual description of container
-    attribute :description, String # string
+    attribute :description, String
 
     # Specimen Container Type
-    attribute :type, Fhir::CodeableConcept # CodeableConcept
+    attribute :type, Fhir::CodeableConcept
 
     # Container Capacity
-    attribute :capacity, Fhir::Quantity # Quantity
+    attribute :capacity, Fhir::Quantity
 
     # Specimen Container Quantity
-    attribute :specimen_quantity, Fhir::Quantity # Quantity
+    attribute :specimen_quantity, Fhir::Quantity
 
     # Container Additive
     resource_reference :additive, [Fhir::Substance]
   end
 
-  attribute :containers, Array[Container] # 
+  attribute :containers, Array[Container]
 end
 

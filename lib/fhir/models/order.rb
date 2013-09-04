@@ -1,7 +1,7 @@
 # A request to perform an action.
 class Fhir::Order < Fhir::Resource
   # When the order was made
-  attribute :date, DateTime # dateTime
+  attribute :date, DateTime
 
   # Patient this order is about
   resource_reference :subject, [Fhir::Patient]
@@ -13,7 +13,7 @@ class Fhir::Order < Fhir::Resource
   resource_reference :target, [Fhir::Organization, Fhir::Device]
 
   # Text - why the order was made
-  attribute :reason, String # string
+  attribute :reason, String
 
   # If required by policy
   resource_reference :authority, [Fhir::Resource]
@@ -22,13 +22,13 @@ class Fhir::Order < Fhir::Resource
   class When < Fhir::ValueObject
     # Code specifies when request should be done. The code may
     # simply be a priority code
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # A formal schedule
-    attribute :schedule, Fhir::Schedule # Schedule
+    attribute :schedule, Fhir::Schedule
   end
 
-  attribute :when, When # 
+  attribute :when, When
 
   # What action is being ordered
   # Should be present

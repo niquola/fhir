@@ -7,72 +7,72 @@
 class Fhir::Message < Fhir::Resource
   # Id of this message
   # Should be present
-  attribute :identifier, String # id
+  attribute :identifier, String
 
   # Time that the message was sent
   # Should be present
-  attribute :timestamp, DateTime # instant
+  attribute :timestamp, DateTime
 
   # Code for the event this message represents
   # Should be present
-  attribute :event, Fhir::Code # code
+  attribute :event, Fhir::Code
 
   # Information about the message that this message is a
   # response to.  Only present if this message is a response.
   class Response < Fhir::ValueObject
     # Id of original message
     # Should be present
-    attribute :identifier, String # id
+    attribute :identifier, String
 
     # Type of response to the message
     # Should be present
-    attribute :code, Fhir::Code # code
+    attribute :code, Fhir::Code
 
     # Specific list of hints/warnings/errors
     resource_reference :details, [Fhir::OperationOutcome]
   end
 
-  attribute :response, Response # 
+  attribute :response, Response
 
   # The source application from which this message originated.
   class Source < Fhir::ValueObject
     # Name of system
-    attribute :name, String # string
+    attribute :name, String
 
     # Name of software running the system
     # Should be present
-    attribute :software, String # string
+    attribute :software, String
 
     # Version of software running
-    attribute :version, String # string
+    attribute :version, String
 
     # Human contact for problems
-    attribute :contact, Fhir::Contact # Contact
+    attribute :contact, Fhir::Contact
 
     # Actual message source address or id
     # Should be present
-    attribute :endpoint, Fhir::URI # uri
+    attribute :endpoint, Fhir::URI
   end
 
   # Should be present
-  attribute :source, Source # 
+  attribute :source, Source
 
   # The destination application which the message is intended
   # for.
   class Destination < Fhir::ValueObject
     # Name of system
-    attribute :name, String # string
+    attribute :name, String
 
     # Particular delivery destination within the destination
     resource_reference :target, [Fhir::Device]
 
     # Actual destination address or id
     # Should be present
-    attribute :endpoint, Fhir::URI # uri
+    attribute :endpoint, Fhir::URI
   end
 
   # Should be present
-  attribute :destination, Destination # 
+  attribute :destination, Destination
 
   # The source of the data entry
   resource_reference :enterer, [Fhir::Practitioner]
@@ -87,10 +87,10 @@ class Fhir::Message < Fhir::Resource
   resource_reference :responsible, [Fhir::Practitioner, Fhir::Organization]
 
   # Time of effect
-  attribute :effective, Fhir::Period # Period
+  attribute :effective, Fhir::Period
 
   # Cause of event
-  attribute :reason, Fhir::CodeableConcept # CodeableConcept
+  attribute :reason, Fhir::CodeableConcept
 
   # The actual content of the message
   resource_references :datas, [Fhir::Resource]

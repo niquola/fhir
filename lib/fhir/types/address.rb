@@ -3,24 +3,24 @@
 # basis for addresses all around the world.
 class Fhir::Address < Fhir::Type
   # The use of this address
-  attribute :use, Fhir::Code # code
+  attribute :use, Fhir::Code
 
   # Line of an address
-  attribute :lines, Array[String] # string
+  attribute :lines, Array[String]
 
   # Name of city, town etc.
-  attribute :city, String # string
+  attribute :city, String
 
   # Sub-unit of country (abreviations ok)
-  attribute :state, String # string
+  attribute :state, String
 
   # Post code for area
-  attribute :zip, String # string
+  attribute :zip, String
 
   # Country (can be ISO 3166 3 letter code)
-  attribute :country, String # string
+  attribute :country, String
 
   # Time period when address was/is in use
-  attribute :period, Fhir::Period # Period
+  attribute :period, Fhir::Period
 end
 

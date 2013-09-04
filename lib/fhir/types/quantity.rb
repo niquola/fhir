@@ -4,18 +4,18 @@
 # arbitrary units and floating currencies.
 class Fhir::Quantity < Fhir::Type
   # Numerical value (with implicit precision)
-  attribute :value, Float # decimal
+  attribute :value, Float
 
   # Relationship of stated value to actual value
-  attribute :comparator, Fhir::Code # code
+  attribute :comparator, Fhir::Code
 
   # Unit representation
-  attribute :units, String # string
+  attribute :units, String
 
   # System that defines coded unit form
-  attribute :system, Fhir::URI # uri
+  attribute :system, Fhir::URI
 
   # Coded form of the unit
-  attribute :code, Fhir::Code # code
+  attribute :code, Fhir::Code
 end
 

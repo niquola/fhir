@@ -3,24 +3,24 @@
 # data.
 class Fhir::SampledData < Fhir::Type
   # Zero value and units
-  attribute :origin, Fhir::Quantity # Quantity
+  attribute :origin, Fhir::Quantity
 
   # Number of milliseconds between samples
-  attribute :period, Float # decimal
+  attribute :period, Float
 
   # Multiply data by this before adding to origin
-  attribute :factor, Float # decimal
+  attribute :factor, Float
 
   # Lower limit of detection
-  attribute :lower_limit, Float # decimal
+  attribute :lower_limit, Float
 
   # Upper limit of detection
-  attribute :upper_limit, Float # decimal
+  attribute :upper_limit, Float
 
   # Number of sample points at each time point
-  attribute :dimensions, Integer # integer
+  attribute :dimensions, Integer
 
   # Decimal values with spaces, or "E" | "U" | "L"
-  attribute :data, String # string
+  attribute :data, String
 end
 

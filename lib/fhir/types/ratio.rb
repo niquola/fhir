@@ -2,9 +2,9 @@
 # denominator.
 class Fhir::Ratio < Fhir::Type
   # The numerator
-  attribute :numerator, Fhir::Quantity # Quantity
+  attribute :numerator, Fhir::Quantity
 
   # The denominator
-  attribute :denominator, Fhir::Quantity # Quantity
+  attribute :denominator, Fhir::Quantity
 end
 

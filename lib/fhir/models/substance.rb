@@ -2,31 +2,31 @@
 # healthcare.
 class Fhir::Substance < Fhir::Resource
   # Identifier of the substance
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Name of the substance
   # Should be present
-  attribute :name, String # string
+  attribute :name, String
 
   # Type of the substance
-  attribute :type, Fhir::CodeableConcept # CodeableConcept
+  attribute :type, Fhir::CodeableConcept
 
   # Description of the substance
-  attribute :description, String # string
+  attribute :description, String
 
   # Substance status
-  attribute :status, Fhir::CodeableConcept # CodeableConcept
+  attribute :status, Fhir::CodeableConcept
 
   # Substance effective period
-  attribute :effective_time, Fhir::Period # Period
+  attribute :effective_time, Fhir::Period
 
   # Substance amount
-  attribute :quantity, Fhir::Quantity # Quantity
+  attribute :quantity, Fhir::Quantity
 
   # Substance composition
   resource_references :ingredients, [Fhir::Substance]
 
   # Absolute | Relative
-  attribute :quantity_mode, Fhir::CodeableConcept # CodeableConcept
+  attribute :quantity_mode, Fhir::CodeableConcept
 end
 

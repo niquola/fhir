@@ -5,19 +5,19 @@
 class Fhir::Location < Fhir::Resource
   # Name of the location
   # Should be present
-  attribute :name, String # string
+  attribute :name, String
 
   # Description of the Location
-  attribute :description, String # string
+  attribute :description, String
 
   # Classification of the location
-  attribute :types, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :types, Array[Fhir::CodeableConcept]
 
   # Contact details of the location
-  attribute :telecom, Fhir::Contact # Contact
+  attribute :telecom, Fhir::Contact
 
   # Physical location
-  attribute :address, Fhir::Address # Address
+  attribute :address, Fhir::Address
 
   # The absolute geographic location of the Location,
   # expressed in a KML compatible manner (see notes below for
@@ -25,23 +25,23 @@ class Fhir::Location < Fhir::Resource
   class Position < Fhir::ValueObject
     # Longitude
     # Should be present
-    attribute :longitude, Float # decimal
+    attribute :longitude, Float
 
     # Latitude
     # Should be present
-    attribute :latitude, Float # decimal
+    attribute :latitude, Float
 
     # Altitude
-    attribute :altitude, Float # decimal
+    attribute :altitude, Float
   end
 
-  attribute :position, Position # 
+  attribute :position, Position
 
   # The organization that provides services at the location
   resource_reference :provider, [Fhir::Organization]
 
   # Whether the location is still used to provide services
-  attribute :active, Boolean # boolean
+  attribute :active, Boolean
 
   # Another Location which this Location is physically inside
   # of

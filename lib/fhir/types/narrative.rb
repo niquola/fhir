@@ -2,10 +2,10 @@
 class Fhir::Narrative < Fhir::Type
   # generated | extensions | additional
   # Should be present
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # Limited xhtml content
   # Should be present
-  attribute :div, String # xhtml
+  attribute :div, String
 end
 

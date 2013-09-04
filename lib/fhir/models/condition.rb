@@ -15,66 +15,66 @@ class Fhir::Condition < Fhir::Resource
   resource_reference :asserter, [Fhir::Practitioner, Fhir::Patient]
 
   # When first detected/suspected/entered
-  attribute :date_asserted, Date # date
+  attribute :date_asserted, Date
 
   # Identification of the condition, problem or diagnosis
   # Should be present
-  attribute :code, Fhir::CodeableConcept # CodeableConcept
+  attribute :code, Fhir::CodeableConcept
 
   # E.g. complaint | symptom | finding | diagnosis
-  attribute :category, Fhir::CodeableConcept # CodeableConcept
+  attribute :category, Fhir::CodeableConcept
 
   # provisional | working | confirmed | refuted
   # Should be present
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # Degree of confidence
-  attribute :certainty, Fhir::CodeableConcept # CodeableConcept
+  attribute :certainty, Fhir::CodeableConcept
 
   # Subjective severity of condition
-  attribute :severity, Fhir::CodeableConcept # CodeableConcept
+  attribute :severity, Fhir::CodeableConcept
 
   # Estimated or actual date, or age
-  attribute :onset, Date # date
+  attribute :onset, *Fhir::Type[Date, Fhir::Quantity]
 
   # If/when in resolution/remission
-  attribute :abatement, Date # date
+  attribute :abatement, *Fhir::Type[Date, Fhir::Quantity, Boolean]
 
   # Clinical stage or grade of a condition. May include formal
   # severity assessments.
   class Stage < Fhir::ValueObject
     # Simple summary (disease specific)
-    attribute :summary, Fhir::CodeableConcept # CodeableConcept
+    attribute :summary, Fhir::CodeableConcept
 
     # Formal record of assessment
     resource_references :assessments, [Fhir::Resource]
   end
 
-  attribute :stage, Stage # 
+  attribute :stage, Stage
 
   # Supporting Evidence / manifestations that are the basis on
   # which this condition is suspected or confirmed.
   class Evidence < Fhir::ValueObject
     # Manifestation/symptom
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # Supporting information found elsewhere
     resource_references :details, [Fhir::Resource]
   end
 
-  attribute :evidences, Array[Evidence] # 
+  attribute :evidences, Array[Evidence]
 
   # The anatomical location where this condition manifests
   # itself.
   class Location < Fhir::ValueObject
     # Location - may include laterality
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # Precise location details
-    attribute :detail, String # string
+    attribute :detail, String
   end
 
-  attribute :locations, Array[Location] # 
+  attribute :locations, Array[Location]
 
   # Further conditions, problems, diagnoses, procedures or
   # events that are related in some way to this condition, or
@@ -82,18 +82,18 @@ class Fhir::Condition < Fhir::Resource
   class RelatedItem < Fhir::ValueObject
     # due-to | follows
     # Should be present
-    attribute :type, Fhir::Code # code
+    attribute :type, Fhir::Code
 
     # Relationship target by means of a predefined code
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # Relationship target resource
     resource_reference :target, [Fhir::Condition, Fhir::Procedure, Fhir::Substance]
   end
 
-  attribute :related_items, Array[RelatedItem] # 
+  attribute :related_items, Array[RelatedItem]
 
   # Additional information about the Condition
-  attribute :notes, String # string
+  attribute :notes, String
 end
 

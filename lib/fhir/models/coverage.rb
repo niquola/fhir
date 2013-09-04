@@ -5,42 +5,42 @@ class Fhir::Coverage < Fhir::Resource
   resource_reference :issuer, [Fhir::Organization]
 
   # Coverage start and end dates
-  attribute :period, Fhir::Period # Period
+  attribute :period, Fhir::Period
 
   # Type of coverage
   # Should be present
-  attribute :type, Fhir::Coding # Coding
+  attribute :type, Fhir::Coding
 
   # The primary coverage ID
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # An identifier for the group
-  attribute :group, Fhir::Identifier # Identifier
+  attribute :group, Fhir::Identifier
 
   # An identifier for the plan
-  attribute :plan, Fhir::Identifier # Identifier
+  attribute :plan, Fhir::Identifier
 
   # An identifier for the subsection of the plan
-  attribute :subplan, Fhir::Identifier # Identifier
+  attribute :subplan, Fhir::Identifier
 
   # The dependent number
-  attribute :dependent, Integer # integer
+  attribute :dependent, Integer
 
   # The plan instance or sequence counter
-  attribute :sequence, Integer # integer
+  attribute :sequence, Integer
 
   # Planholder information.
   class Subscriber < Fhir::ValueObject
     # PolicyHolder name
-    attribute :name, Fhir::HumanName # HumanName
+    attribute :name, Fhir::HumanName
 
     # PolicyHolder address
-    attribute :address, Fhir::Address # Address
+    attribute :address, Fhir::Address
 
     # PolicyHolder date of birth
-    attribute :birthdate, Date # date
+    attribute :birthdate, Date
   end
 
-  attribute :subscriber, Subscriber # 
+  attribute :subscriber, Subscriber
 end
 

@@ -9,50 +9,50 @@ class Fhir::ImmunizationProfile < Fhir::Resource
   class Recommendation < Fhir::ValueObject
     # Recommendation date
     # Should be present
-    attribute :recommendation_date, DateTime # dateTime
+    attribute :recommendation_date, DateTime
 
     # Vaccine that pertains to the recommendation
     # Should be present
-    attribute :vaccine_type, Fhir::CodeableConcept # CodeableConcept
+    attribute :vaccine_type, Fhir::CodeableConcept
 
     # Recommended dose number
-    attribute :dose_number, Integer # integer
+    attribute :dose_number, Integer
 
     # Vaccine administration status
     # Should be present
-    attribute :forecast_status, Fhir::Code # code
+    attribute :forecast_status, Fhir::Code
 
     # Vaccine date recommentations - e.g. earliest date to
     # administer, latest date to administer, etc.
     class DateCriterion < Fhir::ValueObject
       # Date classification of recommendation
       # Should be present
-      attribute :code, Fhir::CodeableConcept # CodeableConcept
+      attribute :code, Fhir::CodeableConcept
 
       # Date recommendation
       # Should be present
-      attribute :value, DateTime # dateTime
+      attribute :value, DateTime
     end
 
-    attribute :date_criterions, Array[DateCriterion] # 
+    attribute :date_criterions, Array[DateCriterion]
 
     # Contains information about the protocol under which the
     # vaccine was administered.
     class Protocol < Fhir::ValueObject
       # Dose Number
-      attribute :dose_sequence, Integer # integer
+      attribute :dose_sequence, Integer
 
       # Vaccine Administration Protocol Description
-      attribute :description, String # string
+      attribute :description, String
 
       # Vaccine Administration Protocol Authority
       resource_reference :authority, [Fhir::Organization]
 
       # Vaccine Series
-      attribute :series, String # string
+      attribute :series, String
     end
 
-    attribute :protocol, Protocol # 
+    attribute :protocol, Protocol
 
     # Supporting Immunization
     resource_references :supporting_immunizations, [Fhir::Immunization]
@@ -62,25 +62,25 @@ class Fhir::ImmunizationProfile < Fhir::Resource
     class SupportingAdverseEventReport < Fhir::ValueObject
       # Adverse event report identifier
       # Should be present
-      attribute :identifiers, Array[String] # id
+      attribute :identifiers, Array[String]
 
       # Adverse event report classification
-      attribute :report_type, Fhir::CodeableConcept # CodeableConcept
+      attribute :report_type, Fhir::CodeableConcept
 
       # Adverse event report date
-      attribute :report_date, DateTime # dateTime
+      attribute :report_date, DateTime
 
       # Documented reaction
       resource_references :reactions, [Fhir::AdverseReaction]
     end
 
-    attribute :supporting_adverse_event_reports, Array[SupportingAdverseEventReport] # 
+    attribute :supporting_adverse_event_reports, Array[SupportingAdverseEventReport]
 
     # Supporting Patient Observation
     resource_references :supporting_patient_observations, [Fhir::Observation]
   end
 
   # Should be present
-  attribute :recommendations, Array[Recommendation] # 
+  attribute :recommendations, Array[Recommendation]
 end
 

@@ -6,19 +6,19 @@ class Fhir::OperationOutcome < Fhir::Resource
   class Issue < Fhir::ValueObject
     # error | warning | information
     # Should be present
-    attribute :severity, Fhir::Code # code
+    attribute :severity, Fhir::Code
 
     # Error or warning code
-    attribute :type, Fhir::Coding # Coding
+    attribute :type, Fhir::Coding
 
     # Additional description of the issue
-    attribute :details, String # string
+    attribute :details, String
 
     # XPath of element(s) related to issue
-    attribute :locations, Array[String] # string
+    attribute :locations, Array[String]
   end
 
   # Should be present
-  attribute :issues, Array[Issue] # 
+  attribute :issues, Array[Issue]
 end
 

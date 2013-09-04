@@ -3,56 +3,56 @@
 # provisioning of healthcare.
 class Fhir::Practitioner < Fhir::Resource
   # A identifier for the person as this agent
-  attribute :identifiers, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier]
 
   # A name associated with the person
-  attribute :name, Fhir::HumanName # HumanName
+  attribute :name, Fhir::HumanName
 
   # A contact detail for the practitioner
-  attribute :telecoms, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact]
 
   # One or more addresses for the practitioner
-  attribute :address, Fhir::Address # Address
+  attribute :address, Fhir::Address
 
   # Gender for administrative purposes
-  attribute :gender, Fhir::CodeableConcept # CodeableConcept
+  attribute :gender, Fhir::CodeableConcept
 
   # The date and time of birth for the practitioner
-  attribute :birth_date, DateTime # dateTime
+  attribute :birth_date, DateTime
 
   # Image of the person
-  attribute :photos, Array[Fhir::Attachment] # Attachment
+  attribute :photos, Array[Fhir::Attachment]
 
   # The represented organization
   resource_reference :organization, [Fhir::Organization]
 
   # A role the practitioner has
-  attribute :roles, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :roles, Array[Fhir::CodeableConcept]
 
   # Specific specialty of the practitioner
-  attribute :specialties, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :specialties, Array[Fhir::CodeableConcept]
 
   # The period during which the person is authorized to
   # perform the service
-  attribute :period, Fhir::Period # Period
+  attribute :period, Fhir::Period
 
   # Qualifications relevant to the provided service.
   class Qualification < Fhir::ValueObject
     # Qualification
     # Should be present
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # Period during which the qualification is valid
-    attribute :period, Fhir::Period # Period
+    attribute :period, Fhir::Period
 
     # Organization that regulates and issues the qualification
     resource_reference :issuer, [Fhir::Organization]
   end
 
-  attribute :qualifications, Array[Qualification] # 
+  attribute :qualifications, Array[Qualification]
 
   # A language the practitioner is able to use in patient
   # communication
-  attribute :communications, Array[Fhir::CodeableConcept] # CodeableConcept
+  attribute :communications, Array[Fhir::CodeableConcept]
 end
 

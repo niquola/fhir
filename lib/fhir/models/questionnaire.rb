@@ -5,11 +5,11 @@
 class Fhir::Questionnaire < Fhir::Resource
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # Date this version was authored
   # Should be present
-  attribute :authored, DateTime # dateTime
+  attribute :authored, DateTime
 
   # The subject of the questionnaires
   resource_reference :subject, [Fhir::Patient, Fhir::RelatedPerson]
@@ -21,10 +21,10 @@ class Fhir::Questionnaire < Fhir::Resource
   resource_reference :source, [Fhir::Patient, Fhir::Practitioner, Fhir::RelatedPerson]
 
   # Name/code for a predefined list of questions
-  attribute :name, Fhir::CodeableConcept # CodeableConcept
+  attribute :name, Fhir::CodeableConcept
 
   # Identification of this questionnaire
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Primary encounter during which the answers were collected
   resource_reference :encounter, [Fhir::Encounter]
@@ -32,45 +32,45 @@ class Fhir::Questionnaire < Fhir::Resource
   # Answers to questions on a questionnaire.
   class Question < Fhir::ValueObject
     # Code or name of the question
-    attribute :name, Fhir::CodeableConcept # CodeableConcept
+    attribute :name, Fhir::CodeableConcept
 
     # Single-valued answer to the question
-    attribute :answer, Float # decimal
+    attribute :answer, *Fhir::Type[Float, Integer, Boolean, Date, String, DateTime, DateTime]
 
     # Selected options
-    attribute :choices, Array[Fhir::Coding] # Coding
+    attribute :choices, Array[Fhir::Coding]
 
     # Valueset containing the possible options
-    attribute :options, Fhir::URI # uri
+    resource_reference :options, [Fhir::ValueSet]
 
     # Structured answer
-    attribute :data, Object # *
+    attribute :data, Object
 
     # Remarks about the answer given
-    attribute :remarks, String # string
+    attribute :remarks, String
   end
 
-  attribute :questions, Array[Question] # 
+  attribute :questions, Array[Question]
 
   # A group of questions to a possibly similarly grouped set
   # of question in the questionnaire.
   class Group < Fhir::ValueObject
     # Code or name of the section on a questionnaire
-    attribute :name, Fhir::CodeableConcept # CodeableConcept
+    attribute :name, Fhir::CodeableConcept
 
     # Header for the group
-    attribute :header, String # string
+    attribute :header, String
 
     # The subject this group's answers are about
     resource_reference :subject, [Fhir::Resource]
 
     # Questions belonging to this group
-    attribute :questions, Array[Fhir::Questionnaire::Question] # @Questionnaire.question
+    attribute :questions, Array[Fhir::Questionnaire::Question]
 
     # Nested questionnaire group
-    attribute :groups, Array[Fhir::Questionnaire::Group] # @Questionnaire.group
+    attribute :groups, Array[Fhir::Questionnaire::Group]
   end
 
-  attribute :groups, Array[Group] # 
+  attribute :groups, Array[Group]
 end
 

@@ -64,12 +64,18 @@ module FhirProfile
     (node.xpath("./#{path}").first || {})[attr]
   end
 
+  def values_by_path(node, path, attr = :value)
+    node.xpath("./#{path}").map do |n|
+      n[attr]
+    end
+  end
+
   def st_type(st)
     value_by_path(st, './type')
   end
 
-  def el_type(el)
-    value_by_path(el, 'definition/type/code')
+  def el_types(el)
+    values_by_path(el, 'definition/type/code')
   end
 
   def el_name(el)
@@ -127,7 +133,10 @@ module RubyCodeGeneration
   ]
 
   def attribute_resource_types(node)
-    original_type = el_type(node[:el])
+    types = el_types(node[:el])
+    puts "to many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
+
+    original_type = types.find {|t| t.include?("Resource(") }
     types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
       MISSED_RESOURCES.include?(type) ? nil : "Fhir::#{type}"
     end.compact
@@ -136,30 +145,29 @@ module RubyCodeGeneration
   end
 
   def attribute_resource_ref?(node)
-    original_type = el_type(node[:el]).to_s
-
-    !! original_type.match(/^Resource\(/)
+    el_types(node[:el]).any? do |original_type|
+      !! original_type.to_s.match(/^Resource\(/)
+    end
   end
 
-  def attribute_type(node, minmax)
-    original_type = el_type(node[:el])
-    mapped_type = nil
-
-    if original_type
-      mapped_type = TYPE_MAPPINGS[original_type]
-      if mapped_type.nil?
-        if original_type.starts_with?("@")
-          mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
-          mapped_type = "Fhir::#{mapped_type}"
-        else
-          mapped_type = "Fhir::#{original_type}"
-        end
+  def attribute_types(node, minmax)
+    original_types = el_types(node[:el])
+    if original_types.present?
+      original_types.map do |original_type|
+	mapped_type = TYPE_MAPPINGS[original_type]
+	if mapped_type.nil?
+	  if original_type.starts_with?("@")
+	    mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
+	    mapped_type = "Fhir::#{mapped_type}"
+	  else
+	    mapped_type = "Fhir::#{original_type}"
+	  end
+	end
+	apply_minmax_to_type(mapped_type, minmax)
       end
     else
-      mapped_type = attribute_class_name(node_path(node).last)
+      [apply_minmax_to_type(attribute_class_name(node_path(node).last), minmax)]
     end
-
-    apply_minmax_to_type(mapped_type, minmax) + " # #{original_type}"
   end
 
   def apply_minmax_to_type(type, minmax)
@@ -238,8 +246,14 @@ module RubyCodeGeneration
 
           line(code, depth, "#{res_ref_method} :#{attribute_name(node_path, minmax)}, [#{resource_types.join(", ")}]")
         else
-          ruby_type = attribute_type(node, minmax)
-          line(code, depth, "attribute :#{attribute_name(node_path, minmax)}, #{ruby_type}")
+          ruby_types = attribute_types(node, minmax)
+	  types_code = if ruby_types.length == 1 
+			 ruby_types.first 
+		       else
+			 # puts "#{node_path}: *Fhir::Type[#{ruby_types.join(', ')}]"
+			 "*Fhir::Type[#{ruby_types.join(', ')}]"
+		       end
+          line(code, depth, "attribute :#{attribute_name(node_path, minmax)}, #{types_code}")
         end
 
         blank_line(code)

@@ -2,11 +2,11 @@
 class Fhir::Immunization < Fhir::Resource
   # Vaccination  Administration Date
   # Should be present
-  attribute :date, DateTime # dateTime
+  attribute :date, DateTime
 
   # Vaccine Product Administered
   # Should be present
-  attribute :vaccine_type, Fhir::CodeableConcept # CodeableConcept
+  attribute :vaccine_type, Fhir::CodeableConcept
 
   # Who this immunization was adminstered to
   # Should be present
@@ -14,11 +14,11 @@ class Fhir::Immunization < Fhir::Resource
 
   # Resual Indicator
   # Should be present
-  attribute :refused_indicator, Boolean # boolean
+  attribute :refused_indicator, Boolean
 
   # If self-reported
   # Should be present
-  attribute :reported, Boolean # boolean
+  attribute :reported, Boolean
 
   # Vaccine Administering Provider Name
   resource_reference :performer, [Fhir::Practitioner]
@@ -33,76 +33,76 @@ class Fhir::Immunization < Fhir::Resource
   resource_reference :location, [Fhir::Location]
 
   # Vaccine Lot Number
-  attribute :lot_number, String # string
+  attribute :lot_number, String
 
   # Vaccine Expiration Date
-  attribute :expiration_date, Date # date
+  attribute :expiration_date, Date
 
   # Vaccine  Site of Administration
-  attribute :site, Fhir::CodeableConcept # CodeableConcept
+  attribute :site, Fhir::CodeableConcept
 
   # Vaccine Route of Administration
-  attribute :route, Fhir::CodeableConcept # CodeableConcept
+  attribute :route, Fhir::CodeableConcept
 
   # Vaccine dosage
-  attribute :dose_quantity, Fhir::Quantity # Quantity
+  attribute :dose_quantity, Fhir::Quantity
 
   # Reasons why a vaccine was administered or refused.
   class Explanation < Fhir::ValueObject
     # Administration Reasons
-    attribute :reasons, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :reasons, Array[Fhir::CodeableConcept]
 
     # Explanation of refusal / exemption
-    attribute :refusal_reasons, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :refusal_reasons, Array[Fhir::CodeableConcept]
   end
 
-  attribute :explanation, Explanation # 
+  attribute :explanation, Explanation
 
   # Categorical data indicating that an adverse event is
   # associated in time to an immunization.
   class Reaction < Fhir::ValueObject
     # Reaction Date
-    attribute :date, DateTime # dateTime
+    attribute :date, DateTime
 
     # Details of the reaction
     resource_reference :detail, [Fhir::AdverseReaction, Fhir::Observation]
 
     # Self-reported indicator
-    attribute :reported, Boolean # boolean
+    attribute :reported, Boolean
   end
 
-  attribute :reactions, Array[Reaction] # 
+  attribute :reactions, Array[Reaction]
 
   # Contains information about the protocol under which the
   # vaccine was administered.
   class VaccinationProtocol < Fhir::ValueObject
     # Dose Number
     # Should be present
-    attribute :dose_sequence, Integer # integer
+    attribute :dose_sequence, Integer
 
     # Vaccine Administration Protocol Description
-    attribute :description, String # string
+    attribute :description, String
 
     # Vaccine Administration Protocol Authority
     resource_reference :authority, [Fhir::Organization]
 
     # Vaccine Series
-    attribute :series, String # string
+    attribute :series, String
 
     # Dose Number Recommendation
-    attribute :series_doses, Integer # integer
+    attribute :series_doses, Integer
 
     # Targeted Disease
-    attribute :dose_target, Fhir::CodeableConcept # CodeableConcept
+    attribute :dose_target, Fhir::CodeableConcept
 
     # Dose Status
     # Should be present
-    attribute :dose_status, Fhir::CodeableConcept # CodeableConcept
+    attribute :dose_status, Fhir::CodeableConcept
 
     # Dose Status Reason
-    attribute :dose_status_reason, Fhir::CodeableConcept # CodeableConcept
+    attribute :dose_status_reason, Fhir::CodeableConcept
   end
 
-  attribute :vaccination_protocol, VaccinationProtocol # 
+  attribute :vaccination_protocol, VaccinationProtocol
 end
 

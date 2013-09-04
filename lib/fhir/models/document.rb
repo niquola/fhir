@@ -8,32 +8,32 @@
 # resources, or they may be bundled together in an atom feed.
 class Fhir::Document < Fhir::Resource
   # Logical identifier for document (version-independent)
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Version-specific identifier for document
-  attribute :version_identifier, Fhir::Identifier # Identifier
+  attribute :version_identifier, Fhir::Identifier
 
   # Document creation time
   # Should be present
-  attribute :created, DateTime # instant
+  attribute :created, DateTime
 
   # Kind of document (LOINC if possible)
   # Should be present
-  attribute :type, Fhir::CodeableConcept # CodeableConcept
+  attribute :type, Fhir::CodeableConcept
 
   # More detail about the document type
-  attribute :subtype, Fhir::CodeableConcept # CodeableConcept
+  attribute :subtype, Fhir::CodeableConcept
 
   # Document title
-  attribute :title, String # string
+  attribute :title, String
 
   # Status of this document
   # Should be present
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # As defined by affinity domain
   # Should be present
-  attribute :confidentiality, Fhir::Coding # Coding
+  attribute :confidentiality, Fhir::Coding
 
   # Who/what the document is about
   # Should be present
@@ -48,16 +48,16 @@ class Fhir::Document < Fhir::Resource
   class Attester < Fhir::ValueObject
     # personal | professional | legal | official
     # Should be present
-    attribute :mode, Fhir::Code # code
+    attribute :mode, Fhir::Code
 
     # When document attested
-    attribute :time, DateTime # dateTime
+    attribute :time, DateTime
 
     # Who attested the document
     resource_reference :party, [Fhir::Patient, Fhir::Practitioner, Fhir::Organization]
   end
 
-  attribute :attesters, Array[Attester] # 
+  attribute :attesters, Array[Attester]
 
   # Org which maintains the document
   resource_reference :custodian, [Fhir::Organization]
@@ -66,37 +66,37 @@ class Fhir::Document < Fhir::Resource
   # appendectomy, being documented.
   class Event < Fhir::ValueObject
     # Code(s) that apply to the event being documented
-    attribute :codes, Array[Fhir::CodeableConcept] # CodeableConcept
+    attribute :codes, Array[Fhir::CodeableConcept]
 
     # The period covered by the document
-    attribute :period, Fhir::Period # Period
+    attribute :period, Fhir::Period
 
     # Full details for the event(s) the document concents
     resource_references :details, [Fhir::Resource]
   end
 
-  attribute :event, Event # 
+  attribute :event, Event
 
   # Context of the document
   resource_reference :encounter, [Fhir::Encounter]
 
   # If this document replaces another
-  attribute :replaces, String # id
+  attribute :replaces, String
 
   # Additional provenance about the document and its parts
   resource_references :provenances, [Fhir::Provenance]
 
   # Stylesheet to use when rendering the document
-  attribute :stylesheet, Fhir::Attachment # Attachment
+  attribute :stylesheet, Fhir::Attachment
 
   # Alternative representation of the document
-  attribute :representation, Fhir::Attachment # Attachment
+  attribute :representation, Fhir::Attachment
 
   # Identifies a main topic within the document's table of
   # contents.
   class Section < Fhir::ValueObject
     # Classification of section (recommended)
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # If section different to document
     resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device]
@@ -105,9 +105,9 @@ class Fhir::Document < Fhir::Resource
     resource_reference :content, [Fhir::Resource]
 
     # Nested Section
-    attribute :sections, Array[Fhir::Document::Section] # @Document.section
+    attribute :sections, Array[Fhir::Document::Section]
   end
 
-  attribute :sections, Array[Section] # 
+  attribute :sections, Array[Section]
 end
 

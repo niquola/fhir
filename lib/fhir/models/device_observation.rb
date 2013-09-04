@@ -2,14 +2,14 @@
 class Fhir::DeviceObservation < Fhir::Resource
   # Type of device observation
   # Should be present
-  attribute :code, Fhir::CodeableConcept # CodeableConcept
+  attribute :code, Fhir::CodeableConcept
 
   # Identifiers assigned to this observation
-  attribute :identifiers, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier]
 
   # Date the measurements were made
   # Should be present
-  attribute :issued, DateTime # instant
+  attribute :issued, DateTime
 
   # The subject of the measurements
   # Should be present

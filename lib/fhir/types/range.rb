@@ -2,9 +2,9 @@
 # limit.
 class Fhir::Range < Fhir::Type
   # Low limit
-  attribute :low, Fhir::Quantity # Quantity
+  attribute :low, Fhir::Quantity
 
   # High limit
-  attribute :high, Fhir::Quantity # Quantity
+  attribute :high, Fhir::Quantity
 end
 

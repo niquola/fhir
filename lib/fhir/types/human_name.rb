@@ -2,21 +2,21 @@
 # usage.
 class Fhir::HumanName < Fhir::Type
   # The use of this name
-  attribute :use, Fhir::Code # code
+  attribute :use, Fhir::Code
 
   # Family name (often called 'Surname')
-  attribute :families, Array[String] # string
+  attribute :families, Array[String]
 
   # Given names (not always 'first'). Includes middle names
-  attribute :givens, Array[String] # string
+  attribute :givens, Array[String]
 
   # Parts that come before the name
-  attribute :prefixes, Array[String] # string
+  attribute :prefixes, Array[String]
 
   # Parts that come after the name
-  attribute :suffixes, Array[String] # string
+  attribute :suffixes, Array[String]
 
   # Time period when name was/is in use
-  attribute :period, Fhir::Period # Period
+  attribute :period, Fhir::Period
 end
 

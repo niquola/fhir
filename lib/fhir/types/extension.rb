@@ -2,12 +2,12 @@
 class Fhir::Extension < Fhir::Type
   # identifies the meaning of the extension
   # Should be present
-  attribute :url, Fhir::URI # uri
+  attribute :url, Fhir::URI
 
   # If extension modifies other elements/extensions
-  attribute :is_modifier, Boolean # boolean
+  attribute :is_modifier, Boolean
 
   # Value of extension
-  attribute :value, Object # *
+  attribute :value, Object
 end
 

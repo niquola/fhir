@@ -5,41 +5,41 @@
 # Organization.
 class Fhir::Group < Fhir::Resource
   # Unique id
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Group Classification
   # Should be present
-  attribute :type, Fhir::Code # code
+  attribute :type, Fhir::Code
 
   # Descriptive or actual
   # Should be present
-  attribute :actual, Boolean # boolean
+  attribute :actual, Boolean
 
   # Kind of Group members
-  attribute :code, Fhir::CodeableConcept # CodeableConcept
+  attribute :code, Fhir::CodeableConcept
 
   # Label for Group
-  attribute :name, String # string
+  attribute :name, String
 
   # Number of members
-  attribute :quantity, Integer # integer
+  attribute :quantity, Integer
 
   # Identifies the traits shared by members of the group.
   class Characteristic < Fhir::ValueObject
     # Kind of characteristic
     # Should be present
-    attribute :type, Fhir::CodeableConcept # CodeableConcept
+    attribute :type, Fhir::CodeableConcept
 
     # Value held by characteristic
     # Should be present
-    attribute :value, Fhir::CodeableConcept # CodeableConcept
+    attribute :value, *Fhir::Type[Fhir::CodeableConcept, String, Boolean, Fhir::Quantity, Fhir::Range]
 
     # Group includes or excludes
     # Should be present
-    attribute :exclude, Boolean # boolean
+    attribute :exclude, Boolean
   end
 
-  attribute :characteristics, Array[Characteristic] # 
+  attribute :characteristics, Array[Characteristic]
 
   # Who is in group
   resource_references :members, [Fhir::Patient, Fhir::Practitioner, Fhir::Device, Fhir::Medication]

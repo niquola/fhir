@@ -1,21 +1,21 @@
 # Allergy/Intolerance.
 class Fhir::AllergyIntolerance < Fhir::Resource
   # An external identifier for the sensitivity
-  attribute :identifier, Fhir::Identifier # Identifier
+  attribute :identifier, Fhir::Identifier
 
   # Criticality of the sensitivity
-  attribute :criticality, Fhir::Code # code
+  attribute :criticality, Fhir::Code
 
   # Type of the sensitivity
   # Should be present
-  attribute :sensitivity_type, Fhir::Code # code
+  attribute :sensitivity_type, Fhir::Code
 
   # Date when the sensitivity was recorded
-  attribute :recorded_date, DateTime # dateTime
+  attribute :recorded_date, DateTime
 
   # Status of the sensitivity
   # Should be present
-  attribute :status, Fhir::Code # code
+  attribute :status, Fhir::Code
 
   # Who the sensitivity is for
   # Should be present

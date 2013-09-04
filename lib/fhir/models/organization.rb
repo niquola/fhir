@@ -5,19 +5,19 @@
 # practice groups, etc.
 class Fhir::Organization < Fhir::Resource
   # Identifier for this organization
-  attribute :identifiers, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier]
 
   # Name used for the organization
-  attribute :name, String # string
+  attribute :name, String
 
   # Kind of organization
-  attribute :type, Fhir::CodeableConcept # CodeableConcept
+  attribute :type, Fhir::CodeableConcept
 
   # A contact detail for the organization
-  attribute :telecoms, Array[Fhir::Contact] # Contact
+  attribute :telecoms, Array[Fhir::Contact]
 
   # An address for the organization
-  attribute :addresses, Array[Fhir::Address] # Address
+  attribute :addresses, Array[Fhir::Address]
 
   # The organization of which this organization forms a part
   resource_reference :part_of, [Fhir::Organization]
@@ -25,24 +25,24 @@ class Fhir::Organization < Fhir::Resource
   # Contact for the organization for a certain purpose.
   class Contact < Fhir::ValueObject
     # The type of contact
-    attribute :purpose, Fhir::CodeableConcept # CodeableConcept
+    attribute :purpose, Fhir::CodeableConcept
 
     # A name associated with the contact
-    attribute :name, Fhir::HumanName # HumanName
+    attribute :name, Fhir::HumanName
 
     # Contact details (telephone, email, etc)  for a contact
-    attribute :telecoms, Array[Fhir::Contact] # Contact
+    attribute :telecoms, Array[Fhir::Contact]
 
     # Visiting or postal addresses for the contact
-    attribute :address, Fhir::Address # Address
+    attribute :address, Fhir::Address
 
     # Gender for administrative purposes
-    attribute :gender, Fhir::CodeableConcept # CodeableConcept
+    attribute :gender, Fhir::CodeableConcept
   end
 
-  attribute :contacts, Array[Contact] # 
+  attribute :contacts, Array[Contact]
 
   # Whether the organization's record is still in active use
-  attribute :active, Boolean # boolean
+  attribute :active, Boolean
 end
 

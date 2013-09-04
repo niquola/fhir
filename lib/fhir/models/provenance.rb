@@ -11,20 +11,20 @@ class Fhir::Provenance < Fhir::Resource
   resource_references :targets, [Fhir::Resource]
 
   # When the activity occurred
-  attribute :period, Fhir::Period # Period
+  attribute :period, Fhir::Period
 
   # When the activity was recorded / updated
   # Should be present
-  attribute :recorded, DateTime # instant
+  attribute :recorded, DateTime
 
   # Reason the activity is occurring
-  attribute :reason, Fhir::CodeableConcept # CodeableConcept
+  attribute :reason, Fhir::CodeableConcept
 
   # Where the activity occurred, if relevant
   resource_reference :location, [Fhir::Location]
 
   # Policy or plan the activity was defined by
-  attribute :policies, Array[Fhir::URI] # uri
+  attribute :policies, Array[Fhir::URI]
 
   # An agent takes a role in an activity such that the agent
   # can be assigned some degree of responsibility for the
@@ -34,46 +34,46 @@ class Fhir::Provenance < Fhir::Resource
   class Agent < Fhir::ValueObject
     # author | overseer | enterer | attester | source | cc: +
     # Should be present
-    attribute :role, Fhir::Coding # Coding
+    attribute :role, Fhir::Coding
 
     # Resource | Person | Application | Record | Document +
     # Should be present
-    attribute :type, Fhir::Coding # Coding
+    attribute :type, Fhir::Coding
 
     # Identity of agent (urn or url)
     # Should be present
-    attribute :reference, Fhir::URI # uri
+    attribute :reference, Fhir::URI
 
     # Human description of participant
-    attribute :display, String # string
+    attribute :display, String
   end
 
-  attribute :agents, Array[Agent] # 
+  attribute :agents, Array[Agent]
 
   # An entity used in this activity.
   class Entity < Fhir::ValueObject
     # derivation | revision | quotation | source
     # Should be present
-    attribute :role, Fhir::Code # code
+    attribute :role, Fhir::Code
 
     # Resource Type, or something else
     # Should be present
-    attribute :type, Fhir::Coding # Coding
+    attribute :type, Fhir::Coding
 
     # Identity of participant (urn or url)
     # Should be present
-    attribute :reference, Fhir::URI # uri
+    attribute :reference, Fhir::URI
 
     # Human description of participant
-    attribute :display, String # string
+    attribute :display, String
 
     # Entity is attributed to this agent
-    attribute :agent, Fhir::Provenance::Agent # @Provenance.agent
+    attribute :agent, Fhir::Provenance::Agent
   end
 
-  attribute :entities, Array[Entity] # 
+  attribute :entities, Array[Entity]
 
   # Base64 Cryptographic signature of resource (DigSig)
-  attribute :signature, String # string
+  attribute :signature, String
 end
 

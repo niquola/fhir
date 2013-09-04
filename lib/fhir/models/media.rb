@@ -4,16 +4,16 @@
 class Fhir::Media < Fhir::Resource
   # photo | audio | video
   # Should be present
-  attribute :type, Fhir::Code # code
+  attribute :type, Fhir::Code
 
   # The type of acquisition equipment/process
-  attribute :subtype, Fhir::CodeableConcept # CodeableConcept
+  attribute :subtype, Fhir::CodeableConcept
 
   # Identifier(s) for the image
-  attribute :identifiers, Array[Fhir::Identifier] # Identifier
+  attribute :identifiers, Array[Fhir::Identifier]
 
   # When the media was taken/recorded
-  attribute :date_time, DateTime # dateTime
+  attribute :date_time, DateTime
 
   # Who/What this Media is a record of
   resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device, Fhir::Specimen]
@@ -25,25 +25,25 @@ class Fhir::Media < Fhir::Resource
   resource_reference :operator, [Fhir::Practitioner]
 
   # Imaging view e.g Lateral or Antero-posterior
-  attribute :view, Fhir::CodeableConcept # CodeableConcept
+  attribute :view, Fhir::CodeableConcept
 
   # Name of the device/manufacturer
-  attribute :device_name, String # string
+  attribute :device_name, String
 
   # Height of the image in pixels(photo/video)
-  attribute :height, Integer # integer
+  attribute :height, Integer
 
   # Width of the image in pixels (photo/video)
-  attribute :width, Integer # integer
+  attribute :width, Integer
 
   # Number of frames if > 1 (photo)
-  attribute :frames, Integer # integer
+  attribute :frames, Integer
 
   # Length in seconds (audio / video)
-  attribute :length, Integer # integer
+  attribute :length, Integer
 
   # Actual Media - reference or data
   # Should be present
-  attribute :content, Fhir::Attachment # Attachment
+  attribute :content, Fhir::Attachment
 end
 

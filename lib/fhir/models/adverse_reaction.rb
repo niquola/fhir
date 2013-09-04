@@ -1,7 +1,7 @@
 # Specific reactions to a substance.
 class Fhir::AdverseReaction < Fhir::Resource
   # When the reaction occurred
-  attribute :reaction_date, DateTime # dateTime
+  attribute :reaction_date, DateTime
 
   # The subject of the adverse reaction
   # Should be present
@@ -9,7 +9,7 @@ class Fhir::AdverseReaction < Fhir::Resource
 
   # To say that a reaction to substance did not occur
   # Should be present
-  attribute :did_not_occur_flag, Boolean # boolean
+  attribute :did_not_occur_flag, Boolean
 
   # Who recorded the reaction
   resource_reference :recorder, [Fhir::Practitioner, Fhir::Patient]
@@ -19,32 +19,32 @@ class Fhir::AdverseReaction < Fhir::Resource
   class Symptom < Fhir::ValueObject
     # Indicates the specific sign or symptom that was observed
     # Should be present
-    attribute :code, Fhir::CodeableConcept # CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # The severity of the sign or symptom
-    attribute :severity, Fhir::Code # code
+    attribute :severity, Fhir::Code
   end
 
-  attribute :symptoms, Array[Symptom] # 
+  attribute :symptoms, Array[Symptom]
 
   # An exposure to a substance that preceded a reaction
   # occurrence.
   class Exposure < Fhir::ValueObject
     # When the exposure occurred
-    attribute :exposure_date, DateTime # dateTime
+    attribute :exposure_date, DateTime
 
     # The type of exposure
-    attribute :exposure_type, Fhir::Code # code
+    attribute :exposure_type, Fhir::Code
 
     # A statement of how confident that the recorder was that
     # this exposure caused the reaction
-    attribute :causality_expectation, Fhir::Code # code
+    attribute :causality_expectation, Fhir::Code
 
     # Substance(s) that is presumed to have caused the adverse
     # reaction
     resource_reference :substance, [Fhir::Substance]
   end
 
-  attribute :exposures, Array[Exposure] # 
+  attribute :exposures, Array[Exposure]
 end
 

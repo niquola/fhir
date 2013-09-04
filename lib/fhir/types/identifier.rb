@@ -2,19 +2,19 @@
 # and unambiguously.
 class Fhir::Identifier < Fhir::Type
   # The use of this identifier
-  attribute :use, Fhir::Code # code
+  attribute :use, Fhir::Code
 
   # Description of identifier
-  attribute :label, String # string
+  attribute :label, String
 
   # The namespace for the identifier
-  attribute :system, Fhir::URI # uri
+  attribute :system, Fhir::URI
 
   # The value that is unique
-  attribute :key, String # string
+  attribute :key, String
 
   # Time period when id was valid for use
-  attribute :period, Fhir::Period # Period
+  attribute :period, Fhir::Period
 
   # Organization that issued id (may be just text)
   resource_reference :assigner, [Fhir::Organization]
