@@ -19,8 +19,8 @@ describe 'ResourceAttribute' do
 
   it "hash in constructor"  do
     res = TestRes1.new(subjects: [
-      { resource_type: 'Res1', prop1: 'val1' },
-      { resource_type: 'Res1', prop1: 'val2' }
+      { _type: 'Res1', prop1: 'val1' },
+      { _type: 'Res1', prop1: 'val2' }
     ])
 
     res.subjects.size == 2
@@ -36,8 +36,8 @@ describe 'ResourceAttribute' do
 
   it "hash in constructor"  do
     res = TestRes2.new(subjects: [
-      { resource_type: 'Res1', prop1: 'val1' },
-      { resource_type: 'Res2', prop2: 'val2' },
+      { _type: 'Res1', prop1: 'val1' },
+      { _type: 'Res2', prop2: 'val2' },
       Res1.new(prop1: 'val3')
     ])
 

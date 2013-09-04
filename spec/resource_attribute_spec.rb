@@ -20,7 +20,7 @@ describe 'ResourceAttribute' do
 
   it "hash in constructor"  do
     res = TestRes1.new(subject: {
-                         resource_type: 'Res1',
+                         _type: 'Res1',
                          prop1: 'val1'
                        })
 
@@ -34,7 +34,7 @@ describe 'ResourceAttribute' do
 
   it "should allow to set any resource if reference is declared with base Resource class" do
     res = TestRes1.new(any_resource: {
-                         resource_type: 'Res1',
+                         _type: 'Res1',
                          prop1: "some value"
                        })
     res.any_resource_ref.reference.should == res.any_resource.uuid
@@ -66,7 +66,7 @@ describe 'ResourceAttribute' do
 
   it "polymorphic resource ref" do
     res = TestRes2.new(subject: {
-      resource_type: 'Res1',
+      _type: 'Res1',
       prop1: 'val1'})
 
     res.subject.is_a?(Res1)
@@ -80,7 +80,7 @@ describe 'ResourceAttribute' do
   it "polymorphic resource ref" do
     res = TestRes2.new(
       subject: {
-	resource_type: 'Res2',
+	_type: 'Res2',
 	prop2: 'val2'
       }
     )

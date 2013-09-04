@@ -8,7 +8,7 @@ describe 'AllergyIntolerance' do
       recorded_date: Time.now,
       status: 'status',
       substance: {
-        resource_type: "Fhir::Substance",
+        _type: "Fhir::Substance",
         name: 'substance name',
         type: {
           text: 'aspirin',
@@ -28,7 +28,7 @@ describe 'AllergyIntolerance' do
         }
       },
       reactions: [{
-        resource_type: "Fhir::AdverseReaction",
+        _type: "Fhir::AdverseReaction",
         reaction_date: Time.now,
         did_not_occur_flag: false,
         symptoms: [{
