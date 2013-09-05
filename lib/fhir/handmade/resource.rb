@@ -3,7 +3,8 @@ require 'securerandom'
 class Fhir::Resource
   include Virtus
   extend Fhir::ResourceRefering
-  include Fhir::Virtus::Serializable
+  include Fhir::Virtus
+  include Fhir::Validations
 
   # Unique Identifier for Resource
   attribute :uuid, String
@@ -26,7 +27,8 @@ class Fhir::Resource
     SecureRandom.uuid
   end
 
-  def initialize(attributes = {})
+  def initialize(attributes, options = {})
+    @options = options || {}
     attributes[:uuid] ||= self.class.generate_uuid
     super(attributes)
 

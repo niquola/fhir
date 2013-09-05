@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'i18n'
-gem 'active_support'
+gem 'activesupport'
+gem 'activemodel'
 gem 'nokogiri'
 gem 'rspec'
-gem 'virtus'
+gem 'virtus', github: 'solnic/virtus'

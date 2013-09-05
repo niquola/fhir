@@ -1,22 +1,19 @@
 class Fhir::Type
   include Virtus::ValueObject
   extend Fhir::ResourceRefering
-  include Fhir::Virtus::Serializable
+
+  include Fhir::Virtus
+  include Fhir::Validations
 
   include Fhir::Virtus::ResourceCoercion
 
-  class TypeAttribute < Virtus::Attribute::Object
-    primitive       ::Object
-    accept_options :types
-    coercion_method :to_object
-
-    include Fhir::Virtus::ResourceCoercion
-    def set(instance, value)
-      super(instance, coerce_member(value))
-    end
+  def initialize(attributes, options = {})
+    @options = options || {}
+    super(attributes)
   end
 
+  # For Virtus attributes DSL syntax
   def self.[](*types)
-    [TypeAttribute, {types: types}]
+    [Object, { coercer: Fhir::Virtus::Coercer.new(*types) }]
   end
 end

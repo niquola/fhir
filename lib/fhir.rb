@@ -1,9 +1,12 @@
 require 'virtus'
 
+require 'active_support'
+
 module Fhir
   autoload :VERSION, 'fhir/version'
 
   autoload :Type, 'fhir/handmade/type'
+  autoload :Collection, 'fhir/handmade/collection'
   autoload :Code, 'fhir/handmade/code'
   autoload :URI, 'fhir/handmade/uri'
   autoload :ResourceReference, 'fhir/handmade/resource_reference'
@@ -12,12 +15,9 @@ module Fhir
   autoload :Money, 'fhir/handmade/money'
   autoload :ResourceRefering, 'fhir/handmade/resource_refering'
 
-  module Virtus
-    autoload :ResourceCoercion, 'fhir/virtus/resource_coercion'
-    autoload :ResourceAttribute, 'fhir/virtus/resource_attribute'
-    autoload :ResourceCollectionAttribute, 'fhir/virtus/resource_collection_attribute'
-    autoload :Serializable, 'fhir/virtus/serializable'
-  end
+
+  autoload :Virtus, 'fhir/virtus'
+  autoload :Validations, 'fhir/validations'
 end
 
 require "fhir/models/autoloads"
