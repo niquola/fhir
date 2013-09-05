@@ -3,8 +3,8 @@ class Fhir::Type
   include Fhir::Virtus
   include Fhir::Validations
 
-  def initialize(attributes)
-    # @options = options || {}
+  def initialize(attributes, options = {})
+    @options = options || {}
     super(attributes)
   end
 

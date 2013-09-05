@@ -246,6 +246,7 @@ module RubyCodeGeneration
           line(code, depth, "#{res_ref_method} :#{attribute_name(node_path, minmax)}, [#{resource_types.join(", ")}]")
         else
           ruby_types = attribute_types(node)
+          # fhir_types_present = ruby_types.any? { |rt| rt.include?("Fhir::") }
 
           if ruby_types.size == 1
             types_code = is_collection ? "Array[#{ruby_types.first}]" : ruby_types.first

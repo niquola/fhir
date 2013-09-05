@@ -16,6 +16,14 @@ module Fhir
       def validate_attributes(attributes)
         self.new(attributes, skip_invariants_check: true)
       end
+
+      def validator(validator_name, &block)
+        with_options(:if => ->(obj) { obj.active_validators.include?(validator_name) }, &block)
+      end
+
+      def invariants(&block)
+        validator(:invariants, &block)
+      end
     end
 
     def errors
@@ -28,7 +36,7 @@ module Fhir
     end
 
     def skip_invariants_check?
-      !! @options[:skip_invariants_check]
+      !!(@options && @options[:skip_invariants_check])
     end
 
     private
@@ -42,7 +50,7 @@ module Fhir
     end
 
     def attribute_changed(attr_name)
-      # validate_attribute(attr_name)
+      validate_attribute(attr_name)
     end
   end
 end

@@ -7,19 +7,29 @@ describe "Validation" do
     attribute :code, String
     attribute :system, String
 
-    with_options :if => ->(obj) { obj.active_validators.include?(:invariant) } do
+    def initialize(*args)
+      puts "Called Code#new with #{args.inspect}"
+      super(*args)
+    end
+
+    invariants do
       validates_presence_of :code
       validates_length_of :code, minimum: 1
     end
   end
 
   class Substance < Fhir::Type
-    attribute :codings, Array[Code]
+    attribute :codings, *Fhir::Collection[Code]
   end
 
   class Allergy < Fhir::Resource
-    with_options :if => ->(obj) { obj.active_validators.include?(:invariant) } do
+    invariants do
       validates_presence_of :substance
+    end
+
+    def initialize(*args)
+      puts "Called Allergy#new with #{args.inspect}"
+      super(*args)
     end
 
     attribute :substance, *Fhir::Type[Substance]
@@ -30,6 +40,7 @@ describe "Validation" do
                             _type: "Substance",
                             codings: [
                               {
+                                _type: "Code",
                                 code: "123541",
                                 system: "FDB"
                               }
@@ -37,6 +48,7 @@ describe "Validation" do
                           })
 
     -> { allergy.substance = nil }.should raise_error(/Invalid value/)
+    -> { Allergy.new(allergy.serialize.except(:substance)) }.should raise_error(/Invalid value/)
   end
 
   example do
@@ -45,6 +57,7 @@ describe "Validation" do
         _type: "Substance",
         codings: [
           {
+            _type: "Code",
             code: "",
             system: "FDB"
           }
@@ -53,6 +66,5 @@ describe "Validation" do
     }
 
     errors = Allergy.validate_attributes(hash_to_validate)
-    p errors.to_yaml
   end
 end
