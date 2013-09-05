@@ -1,12 +1,20 @@
 module Fhir::Virtus::ResourceCoercion
-  private
+  def value_coerced?(val)
+    klass = val.class
+    allowed_types.any? { |t| klass <= t }
+  end
+
+  def type_to_coerce(val)
+    type = val.fetch(:_type)
+    type.constantize
+  end
 
   def coerce_member(value)
     if value.is_a?(::Hash)
       type = value.delete(:_type)
 
       if type.blank?
-        raise ArgumentError, ":_type attribute is required for attribute #{name} #{value.inspect}"
+	raise ArgumentError, ":_type attribute is required for attribute #{name} #{value.inspect}"
       end
 
       klass = type.constantize
@@ -18,6 +26,8 @@ module Fhir::Virtus::ResourceCoercion
       value
     end
   end
+
+  protected
 
   def allowed_types
     @options[:types]
