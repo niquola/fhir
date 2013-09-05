@@ -1,6 +1,6 @@
 # A technical identifier - identifies some entity uniquely
 # and unambiguously.
-class Fhir::Identifier < Fhir::Type
+class Fhir::Identifier < Fhir::DataType
   # The use of this identifier
   attribute :use, Fhir::Code
 

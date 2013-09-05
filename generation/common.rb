@@ -150,28 +150,27 @@ module RubyCodeGeneration
     end
   end
 
-  def attribute_types(node, minmax)
+  def attribute_types(node)
     original_types = el_types(node[:el])
+
     if original_types.present?
       original_types.map do |original_type|
-	mapped_type = TYPE_MAPPINGS[original_type]
-	if mapped_type.nil?
-	  if original_type.starts_with?("@")
-	    mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
-	    mapped_type = "Fhir::#{mapped_type}"
-	  else
-	    mapped_type = "Fhir::#{original_type}"
-	  end
-	end
-	apply_minmax_to_type(mapped_type, minmax)
-      end
-    else
-      [apply_minmax_to_type(attribute_class_name(node_path(node).last), minmax)]
-    end
-  end
+        mapped_type = TYPE_MAPPINGS[original_type]
 
-  def apply_minmax_to_type(type, minmax)
-    minmax && minmax.last == '*' ? "Array[#{type}]" : type
+        if mapped_type.nil?
+          if original_type.starts_with?("@")
+            mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
+            mapped_type = "Fhir::#{mapped_type}"
+          else
+            mapped_type = "Fhir::#{original_type}"
+          end
+        else
+          mapped_type
+        end
+      end.compact
+    else
+      [attribute_class_name(node_path(node).last)]
+    end
   end
 
   def indent(depth, mesg)
@@ -231,6 +230,7 @@ module RubyCodeGeneration
 
       write_attribute = ->(write_comment = true) {
         minmax = el_minmax(node[:el])
+        is_collection = minmax.last == '*'
 
         line(code, depth, attribute_comment(node)) if write_comment
 
@@ -240,19 +240,19 @@ module RubyCodeGeneration
 
         if attribute_resource_ref?(node)
           resource_types = attribute_resource_types(node)
-          is_collection = minmax.last == '*'
 
           res_ref_method = is_collection ? 'resource_references' : 'resource_reference'
 
           line(code, depth, "#{res_ref_method} :#{attribute_name(node_path, minmax)}, [#{resource_types.join(", ")}]")
         else
-          ruby_types = attribute_types(node, minmax)
-	  types_code = if ruby_types.length == 1 
-			 ruby_types.first 
-		       else
-			 # puts "#{node_path}: *Fhir::Type[#{ruby_types.join(', ')}]"
-			 "*Fhir::Type[#{ruby_types.join(', ')}]"
-		       end
+          ruby_types = attribute_types(node)
+
+          if ruby_types.size == 1
+            types_code = is_collection ? "Array[#{ruby_types.first}]" : ruby_types.first
+          else
+            types_code = "*Fhir::#{is_collection ? 'Collection' : 'Type'}[#{ruby_types.join(', ')}]"
+          end
+
           line(code, depth, "attribute :#{attribute_name(node_path, minmax)}, #{types_code}")
         end
 

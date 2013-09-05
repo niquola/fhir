@@ -1,6 +1,6 @@
 # A set of ordered Quantities defined by a low and high
 # limit.
-class Fhir::Range < Fhir::Type
+class Fhir::Range < Fhir::DataType
   # Low limit
   attribute :low, Fhir::Quantity
 

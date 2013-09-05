@@ -1,11 +1,6 @@
 require 'securerandom'
 
-class Fhir::Resource
-  include Virtus
-  extend Fhir::ResourceRefering
-  include Fhir::Virtus
-  include Fhir::Validations
-
+class Fhir::Resource < Fhir::Type
   # Unique Identifier for Resource
   attribute :uuid, String
 

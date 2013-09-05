@@ -1,5 +1,5 @@
 # For referring to data content defined in other formats.
-class Fhir::Attachment < Fhir::Type
+class Fhir::Attachment < Fhir::DataType
   # Mime type of the content, with charset etc.
   # Should be present
   attribute :content_type, Fhir::Code

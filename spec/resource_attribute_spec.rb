@@ -43,7 +43,7 @@ describe 'ResourceAttribute' do
   it "wrong object in constructor" do
     ->  {
       TestRes1.new(subject: Object.new)
-    }.should raise_error /Unexpected type/
+    }.should raise_error /Unexpected value/
   end
 
   it "object in constructor" do

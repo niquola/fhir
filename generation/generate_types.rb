@@ -65,7 +65,7 @@ def generate_types
       file_name = type.underscore
 
       tree = make_tree(elements)
-      code = tree_to_ruby_code(tree, "Fhir::Type")
+      code = tree_to_ruby_code(tree, "Fhir::DataType")
 
       autoloads << [type, file_name]
 

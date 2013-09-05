@@ -1,6 +1,6 @@
 # A concept that may be defined by a formal reference to a
 # terminology or ontology or may be provided by text.
-class Fhir::CodeableConcept < Fhir::Type
+class Fhir::CodeableConcept < Fhir::DataType
   # Code defined by a terminology system
   attribute :codings, Array[Fhir::Coding]
 

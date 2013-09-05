@@ -1,6 +1,6 @@
 # A code taken from a short list of codes that are not
 # defined in a formal code system.
-class Fhir::Choice < Fhir::Type
+class Fhir::Choice < Fhir::DataType
   # Selected code
   attribute :code, Fhir::Code
 

@@ -5,13 +5,13 @@ describe "Resource References: inline and external" do
     patient = Fhir::Patient.new(names: [{ givens: ["Alexey", "Pivovarov"] }])
     patient.independent!
 
-    allergy = Fhir::AllergyIntolerance.new
-
     substance = Fhir::Substance.new(name: "cats")
     substance.should be_contained
     substance.should_not be_independent
 
-    allergy.subject = patient
+    allergy = Fhir::AllergyIntolerance.new(substance: substance,
+                                           subject: patient)
+
     allergy.subject_ref.should_not be_nil
     allergy.subject.should_not be_contained
 

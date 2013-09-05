@@ -1,5 +1,5 @@
 # Optional Extensions Element - found in all resources.
-class Fhir::Extension < Fhir::Type
+class Fhir::Extension < Fhir::DataType
   # identifies the meaning of the extension
   # Should be present
   attribute :url, Fhir::URI

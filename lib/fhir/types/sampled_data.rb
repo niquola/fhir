@@ -1,7 +1,7 @@
 # A series of measurements taken by a device, with upper and
 # lower limits. There may be more than one dimension in the
 # data.
-class Fhir::SampledData < Fhir::Type
+class Fhir::SampledData < Fhir::DataType
   # Zero value and units
   attribute :origin, Fhir::Quantity
 

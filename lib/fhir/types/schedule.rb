@@ -1,7 +1,7 @@
 # A schedule that specifies an event that may occur multiple
 # times. Schedules are not used for recording when things did
 # happen, but when they are expected or requested to occur.
-class Fhir::Schedule < Fhir::Type
+class Fhir::Schedule < Fhir::DataType
   # When the event occurs
   attribute :events, Array[Fhir::Period]
 

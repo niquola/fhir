@@ -1,6 +1,6 @@
 # All kinds of technology mediated contact details for a
 # person or organisation, including telephone, email, etc.
-class Fhir::Contact < Fhir::Type
+class Fhir::Contact < Fhir::DataType
   # Telecommunications form for contact
   attribute :system, Fhir::Code
 

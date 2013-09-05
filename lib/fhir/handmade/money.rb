@@ -1,3 +1,3 @@
-class Fhir::Money < Fhir::Type
+class Fhir::Money < Fhir::DataType
 
 end

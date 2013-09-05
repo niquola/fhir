@@ -42,7 +42,7 @@ module Fhir
     end
 
     def attribute_changed(attr_name)
-      validate_attribute(attr_name)
+      # validate_attribute(attr_name)
     end
   end
 end

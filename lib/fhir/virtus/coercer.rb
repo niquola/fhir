@@ -10,11 +10,11 @@ module Fhir::Virtus
 
         klass = type.constantize
 
-        check_type!(klass)
+        check_type!(klass, value)
         klass.new(value)
       else
         coerced_value = coerce_according_to_types(value)
-        check_type!(coerced_value.class)
+        check_type!(coerced_value.class, value)
         coerced_value
       end
     end
@@ -45,9 +45,9 @@ module Fhir::Virtus
       @types
     end
 
-    def check_type!(klass)
+    def check_type!(klass, value)
       if klass != NilClass && !allowed_types.any? { |t| klass <= t }
-        raise ArgumentError.new("Unexpected type #{klass.name}, expected one of: #{allowed_types.inspect}")
+        raise ArgumentError.new("Unexpected value #{value.inspect} with type #{klass.name}, expected one of: #{allowed_types.inspect}")
       end
     end
   end

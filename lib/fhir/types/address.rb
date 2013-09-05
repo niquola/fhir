@@ -1,7 +1,7 @@
 # There is a variety of postal address formats defined
 # around the world. This format defines a superset that is the
 # basis for addresses all around the world.
-class Fhir::Address < Fhir::Type
+class Fhir::Address < Fhir::DataType
   # The use of this address
   attribute :use, Fhir::Code
 

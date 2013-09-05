@@ -1,7 +1,6 @@
 module Fhir
   module Virtus
     autoload :Serializable, 'fhir/virtus/serializable'
-
     autoload :Coercer, 'fhir/virtus/coercer'
     autoload :ArrayCoercer, 'fhir/virtus/array_coercer'
 

@@ -1,4 +1,4 @@
-class Fhir::ResourceReference < Fhir::Type
+class Fhir::ResourceReference < Fhir::DataType
   attribute :type, String
   attribute :reference, String
 

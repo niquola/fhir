@@ -1,6 +1,6 @@
 # A human's name with the ability to identify parts and
 # usage.
-class Fhir::HumanName < Fhir::Type
+class Fhir::HumanName < Fhir::DataType
   # The use of this name
   attribute :use, Fhir::Code
 

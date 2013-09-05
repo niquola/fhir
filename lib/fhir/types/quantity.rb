@@ -2,7 +2,7 @@
 # measured). Note that measured amounts include amounts that
 # are not precisely quantified, including amounts involving
 # arbitrary units and floating currencies.
-class Fhir::Quantity < Fhir::Type
+class Fhir::Quantity < Fhir::DataType
   # Numerical value (with implicit precision)
   attribute :value, Float
 

@@ -47,7 +47,7 @@ describe 'Fhir::Virtus::Coercer' do
                         _type: "SomeType",
                         value: 120
                       })
-    end.should raise_error(/type/)
+    end.should raise_error(/Unexpected value/)
   end
 
   it "should preserve primitive types"  do
@@ -61,12 +61,12 @@ describe 'Fhir::Virtus::Coercer' do
   it "should support multitype arrays" do
     obs = Observation.new(name: "example",
                           values: [
-                            12,
+                            12.2,
                             { _type: "Quantity", value: 30, units: "bpm" },
                             { _type: "Coding", code: "34521", system: "loinc" }
                           ])
 
-    obs.values.first.should == 12
+    obs.values.first.should == 12.2
 
     obs.values.second.class.should == Quantity
     obs.values.second.value.should == 30

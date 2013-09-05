@@ -1,5 +1,5 @@
 # A reference to a code defined by a terminology system.
-class Fhir::Coding < Fhir::Type
+class Fhir::Coding < Fhir::DataType
   # Identity of the terminology system
   attribute :system, Fhir::URI
 
