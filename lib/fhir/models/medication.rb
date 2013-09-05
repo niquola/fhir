@@ -23,6 +23,10 @@ class Fhir::Medication < Fhir::Resource
 
     # The ingredients of the medication.
     class Ingredient < Fhir::ValueObject
+      invariants do
+        validates_presence_of :item
+      end
+
       # Ingredient
       # Should be present
       resource_reference :item, [Fhir::Substance, Fhir::Medication]
@@ -43,6 +47,10 @@ class Fhir::Medication < Fhir::Resource
 
     # A set of components that go to make up the described item.
     class Content < Fhir::ValueObject
+      invariants do
+        validates_presence_of :item
+      end
+
       # A product in the package
       # Should be present
       resource_reference :item, [Fhir::Medication]

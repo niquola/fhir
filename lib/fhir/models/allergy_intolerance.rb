@@ -1,5 +1,12 @@
 # Allergy/Intolerance.
 class Fhir::AllergyIntolerance < Fhir::Resource
+  invariants do
+    validates_presence_of :sensitivity_type
+    validates_presence_of :status
+    validates_presence_of :subject
+    validates_presence_of :substance
+  end
+
   # An external identifier for the sensitivity
   attribute :identifier, Fhir::Identifier
 

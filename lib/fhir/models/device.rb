@@ -7,6 +7,10 @@
 # diagnostic, treatment, and research for healthcare and
 # public health.
 class Fhir::Device < Fhir::Resource
+  invariants do
+    validates_presence_of :type
+  end
+
   # What kind of device this is
   # Should be present
   attribute :type, Fhir::CodeableConcept
@@ -25,6 +29,10 @@ class Fhir::Device < Fhir::Resource
 
   # Universal Device Id fields.
   class Identity < Fhir::ValueObject
+    invariants do
+      validates_presence_of :serial_number
+    end
+
     # Global Trade Identification Number
     attribute :gtin, String
 

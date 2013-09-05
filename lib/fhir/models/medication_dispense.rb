@@ -85,6 +85,10 @@ class Fhir::MedicationDispense < Fhir::Resource
   # expected but does happen.  This block explains what
   # substitition did or did not happen and why.
   class Substitution < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+    end
+
     # Type of substitiution
     # Should be present
     attribute :type, Fhir::CodeableConcept

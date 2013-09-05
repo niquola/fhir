@@ -3,6 +3,11 @@
 # Data Types, Terminology Binding Statements and Extension
 # Definitions.
 class Fhir::Profile < Fhir::Resource
+  invariants do
+    validates_presence_of :name
+    validates_presence_of :status
+  end
+
   # Logical id to reference this profile
   attribute :identifier, String
 
@@ -42,6 +47,10 @@ class Fhir::Profile < Fhir::Resource
   # A constraint statement about what contents a resource or
   # data type may have.
   class Structure < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+    end
+
     # The Resource or Data Type being described
     # Should be present
     attribute :type, Fhir::Code
@@ -57,6 +66,10 @@ class Fhir::Profile < Fhir::Resource
 
     # Captures constraints on each element within the resource.
     class Element < Fhir::ValueObject
+      invariants do
+        validates_presence_of :path
+      end
+
       # The path of the element (see the formal definitions)
       # Should be present
       attribute :path, String
@@ -72,6 +85,12 @@ class Fhir::Profile < Fhir::Resource
       # that have the same path, until a shorter path occurs (the
       # shorter path terminates the set).
       class Slicing < Fhir::ValueObject
+        invariants do
+          validates_presence_of :discriminator
+          validates_presence_of :ordered
+          validates_presence_of :rules
+        end
+
         # Element that used to distinguish the slices
         # Should be present
         attribute :discriminator, String
@@ -91,6 +110,14 @@ class Fhir::Profile < Fhir::Resource
       # specific definition than that contained for the element in
       # the base resource.
       class Definition < Fhir::ValueObject
+        invariants do
+          validates_presence_of :short
+          validates_presence_of :formal
+          validates_presence_of :min
+          validates_presence_of :max
+          validates_presence_of :is_modifier
+        end
+
         # Concise definition for xml presentation
         # Should be present
         attribute :short, String
@@ -119,6 +146,10 @@ class Fhir::Profile < Fhir::Resource
         # The data type or resource that the value of this element
         # is permitted to be.
         class Type < Fhir::ValueObject
+          invariants do
+            validates_presence_of :code
+          end
+
           # Data type or Resource
           # Should be present
           attribute :code, Fhir::Code
@@ -151,6 +182,13 @@ class Fhir::Profile < Fhir::Resource
         # constraints that can be computationally evaluated within the
         # context of the instance.
         class Constraint < Fhir::ValueObject
+          invariants do
+            validates_presence_of :key
+            validates_presence_of :severity
+            validates_presence_of :human
+            validates_presence_of :xpath
+          end
+
           # Target of 'condition' reference above
           # Should be present
           attribute :key, String
@@ -189,6 +227,10 @@ class Fhir::Profile < Fhir::Resource
         # Identifies a concept from an external specification that
         # roughly corresponds to this element.
         class Mapping < Fhir::ValueObject
+          invariants do
+            validates_presence_of :target
+          end
+
           # Which mapping this is (v2, CDA, openEHR, etc.)
           # Should be present
           attribute :target, Fhir::URI
@@ -210,6 +252,13 @@ class Fhir::Profile < Fhir::Resource
 
   # An extension defined as part of the profile.
   class ExtensionDefn < Fhir::ValueObject
+    invariants do
+      validates_presence_of :code
+      validates_presence_of :context_type
+      validates_presence_of :contexts
+      validates_presence_of :definition
+    end
+
     # Identifies the extension in this profile
     # Should be present
     attribute :code, Fhir::Code
@@ -233,6 +282,10 @@ class Fhir::Profile < Fhir::Resource
   # in the profile (or expected to be used in profile importing
   # this one) and a value set or code list.
   class Binding < Fhir::ValueObject
+    invariants do
+      validates_presence_of :name
+    end
+
     # Binding name
     # Should be present
     attribute :name, String

@@ -3,6 +3,11 @@
 # of time, possibly limited to care for a specific condition
 # or set of conditions.
 class Fhir::CarePlan < Fhir::Resource
+  invariants do
+    validates_presence_of :patient
+    validates_presence_of :status
+  end
+
   # ID for plan
   attribute :identifier, Fhir::Identifier
 
@@ -26,6 +31,10 @@ class Fhir::CarePlan < Fhir::Resource
   # Identifies all people and organizations who are expected
   # to be involved in the care envisioned by this plan.
   class Participant < Fhir::ValueObject
+    invariants do
+      validates_presence_of :member
+    end
+
     # Type of involvement
     attribute :role, Fhir::CodeableConcept
 
@@ -39,6 +48,10 @@ class Fhir::CarePlan < Fhir::Resource
   # Describes the intended objective(s) of carrying out the
   # Care Plan.
   class Goal < Fhir::ValueObject
+    invariants do
+      validates_presence_of :description
+    end
+
     # What's the desired outcome?
     # Should be present
     attribute :description, String
@@ -56,6 +69,11 @@ class Fhir::CarePlan < Fhir::Resource
   # For example, a medication to be used, lab tests to perform,
   # self-monitoring, education, etc.
   class Activity < Fhir::ValueObject
+    invariants do
+      validates_presence_of :category
+      validates_presence_of :prohibited
+    end
+
     # encounter | procedure | observation | +
     # Should be present
     attribute :category, Fhir::Code

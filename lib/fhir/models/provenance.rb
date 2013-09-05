@@ -6,6 +6,11 @@
 # traceability, and not explicit statements of clinical
 # significance.
 class Fhir::Provenance < Fhir::Resource
+  invariants do
+    validates_presence_of :targets
+    validates_presence_of :recorded
+  end
+
   # Target resource(s) (usually version specific)
   # Should be present
   resource_references :targets, [Fhir::Resource]
@@ -32,6 +37,12 @@ class Fhir::Provenance < Fhir::Resource
   # software, an inanimate object, an organization, or other
   # entities that may be ascribed responsibility.
   class Agent < Fhir::ValueObject
+    invariants do
+      validates_presence_of :role
+      validates_presence_of :type
+      validates_presence_of :reference
+    end
+
     # author | overseer | enterer | attester | source | cc: +
     # Should be present
     attribute :role, Fhir::Coding
@@ -52,6 +63,12 @@ class Fhir::Provenance < Fhir::Resource
 
   # An entity used in this activity.
   class Entity < Fhir::ValueObject
+    invariants do
+      validates_presence_of :role
+      validates_presence_of :type
+      validates_presence_of :reference
+    end
+
     # derivation | revision | quotation | source
     # Should be present
     attribute :role, Fhir::Code

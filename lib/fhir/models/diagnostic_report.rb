@@ -5,6 +5,15 @@
 # and coded interpretation, and formatted representation of
 # diagnostic reports.
 class Fhir::DiagnosticReport < Fhir::Resource
+  invariants do
+    validates_presence_of :status
+    validates_presence_of :issued
+    validates_presence_of :subject
+    validates_presence_of :performer
+    validates_presence_of :diagnostic_time
+    validates_presence_of :results
+  end
+
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
   attribute :status, Fhir::Code
@@ -61,6 +70,10 @@ class Fhir::DiagnosticReport < Fhir::Resource
   # by some value in DiagnosticReport.resultGroup.name to
   # describe what binds all the results together.
   class Results < Fhir::ValueObject
+    invariants do
+      validates_presence_of :name
+    end
+
     # Name/Code for this group of results
     # Should be present
     attribute :name, Fhir::CodeableConcept

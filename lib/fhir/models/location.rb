@@ -3,6 +3,10 @@
 # participants may be found or contained, accommodated, or
 # stored.
 class Fhir::Location < Fhir::Resource
+  invariants do
+    validates_presence_of :name
+  end
+
   # Name of the location
   # Should be present
   attribute :name, String
@@ -23,6 +27,11 @@ class Fhir::Location < Fhir::Resource
   # expressed in a KML compatible manner (see notes below for
   # KML).
   class Position < Fhir::ValueObject
+    invariants do
+      validates_presence_of :longitude
+      validates_presence_of :latitude
+    end
+
     # Longitude
     # Should be present
     attribute :longitude, Float

@@ -3,6 +3,11 @@
 # corresponding to the structure of the grouping of the
 # underlying questions.
 class Fhir::Questionnaire < Fhir::Resource
+  invariants do
+    validates_presence_of :status
+    validates_presence_of :authored
+  end
+
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
   attribute :status, Fhir::Code

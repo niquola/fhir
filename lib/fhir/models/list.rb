@@ -1,6 +1,10 @@
 # A set of information summarized from a list of other
 # resources.
 class Fhir::List < Fhir::Resource
+  invariants do
+    validates_presence_of :mode
+  end
+
   # What the purpose of this list is
   attribute :code, Fhir::CodeableConcept
 
@@ -19,6 +23,10 @@ class Fhir::List < Fhir::Resource
 
   # Entries in this list.
   class Entry < Fhir::ValueObject
+    invariants do
+      validates_presence_of :item
+    end
+
     # Workflow information about this item
     attribute :flags, Array[Fhir::CodeableConcept]
 

@@ -1,5 +1,10 @@
 # Sample for analysis.
 class Fhir::Specimen < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+    validates_presence_of :collection
+  end
+
   # External Identifier
   attribute :identifier, Fhir::Identifier
 
@@ -9,6 +14,10 @@ class Fhir::Specimen < Fhir::Resource
   # Parent specimen from which the focal specimen was a
   # component.
   class Source < Fhir::ValueObject
+    invariants do
+      validates_presence_of :relationship
+    end
+
     # parent | child
     # Should be present
     attribute :relationship, Fhir::Code
@@ -31,6 +40,10 @@ class Fhir::Specimen < Fhir::Resource
 
   # Details concerning the specimen collection.
   class Collection < Fhir::ValueObject
+    invariants do
+      validates_presence_of :collected_time
+    end
+
     # Who collected the specimen
     resource_reference :collector, [Fhir::Practitioner]
 
@@ -72,6 +85,10 @@ class Fhir::Specimen < Fhir::Resource
   # The container holding the specimen. May be recursive; ie
   # blood in tube in tray in rack.
   class Container < Fhir::ValueObject
+    invariants do
+      validates_presence_of :identifiers
+    end
+
     # Id for container
     # Should be present
     attribute :identifiers, Array[Fhir::Identifier]

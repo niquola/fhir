@@ -1,6 +1,12 @@
 # Simple assertions and measurements made about a patient,
 # device or other subject.
 class Fhir::Observation < Fhir::Resource
+  invariants do
+    validates_presence_of :name
+    validates_presence_of :status
+    validates_presence_of :reliability
+  end
+
   # Kind of observation
   # Should be present
   attribute :name, Fhir::CodeableConcept
@@ -46,6 +52,10 @@ class Fhir::Observation < Fhir::Resource
   # Guidance on how to interpret the value by comparison to a
   # normal or recommended range.
   class ReferenceRange < Fhir::ValueObject
+    invariants do
+      validates_presence_of :range
+    end
+
     # The meaning of this range
     attribute :meaning, Fhir::CodeableConcept
 
@@ -58,6 +68,11 @@ class Fhir::Observation < Fhir::Resource
 
   # Component observation.
   class Component < Fhir::ValueObject
+    invariants do
+      validates_presence_of :name
+      validates_presence_of :value
+    end
+
     # Kind of component observation
     # Should be present
     attribute :name, Fhir::CodeableConcept

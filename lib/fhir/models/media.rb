@@ -2,6 +2,11 @@
 # healthcare. The actual content maybe inline or provided by
 # direct reference.
 class Fhir::Media < Fhir::Resource
+  invariants do
+    validates_presence_of :type
+    validates_presence_of :content
+  end
+
   # photo | audio | video
   # Should be present
   attribute :type, Fhir::Code

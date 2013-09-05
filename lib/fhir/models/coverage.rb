@@ -1,6 +1,10 @@
 # Financial instrument by which payment information for
 # health care.
 class Fhir::Coverage < Fhir::Resource
+  invariants do
+    validates_presence_of :type
+  end
+
   # An identifier for the plan issuer
   resource_reference :issuer, [Fhir::Organization]
 

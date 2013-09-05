@@ -2,6 +2,10 @@
 # physical 'thing' like an operation, or less invasive like
 # counseling or hypnotherapy.
 class Fhir::Procedure < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+  end
+
   # Subject of this procedure
   # Should be present
   resource_reference :subject, [Fhir::Patient]

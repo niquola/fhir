@@ -1,12 +1,23 @@
 # A patient's point-of-time immunization status and
 # recommendation with optional supporting justification.
 class Fhir::ImmunizationProfile < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+    validates_presence_of :recommendations
+  end
+
   # Who this profile is for
   # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Vaccine administration recommendations.
   class Recommendation < Fhir::ValueObject
+    invariants do
+      validates_presence_of :recommendation_date
+      validates_presence_of :vaccine_type
+      validates_presence_of :forecast_status
+    end
+
     # Recommendation date
     # Should be present
     attribute :recommendation_date, DateTime
@@ -25,6 +36,11 @@ class Fhir::ImmunizationProfile < Fhir::Resource
     # Vaccine date recommentations - e.g. earliest date to
     # administer, latest date to administer, etc.
     class DateCriterion < Fhir::ValueObject
+      invariants do
+        validates_presence_of :code
+        validates_presence_of :value
+      end
+
       # Date classification of recommendation
       # Should be present
       attribute :code, Fhir::CodeableConcept
@@ -60,6 +76,10 @@ class Fhir::ImmunizationProfile < Fhir::Resource
     # Adverse event report information that supports the status
     # and recommendation.
     class SupportingAdverseEventReport < Fhir::ValueObject
+      invariants do
+        validates_presence_of :identifiers
+      end
+
       # Adverse event report identifier
       # Should be present
       attribute :identifiers, Array[String]

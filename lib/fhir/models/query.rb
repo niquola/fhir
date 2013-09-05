@@ -1,5 +1,10 @@
 # A description of a query with a set of parameters.
 class Fhir::Query < Fhir::Resource
+  invariants do
+    validates_presence_of :identifier
+    validates_presence_of :parameters
+  end
+
   # Links query and its response(s)
   # Should be present
   attribute :identifier, Fhir::URI
@@ -10,6 +15,11 @@ class Fhir::Query < Fhir::Resource
 
   # If this is a response to a query.
   class Response < Fhir::ValueObject
+    invariants do
+      validates_presence_of :identifier
+      validates_presence_of :outcome
+    end
+
     # Links response to source query
     # Should be present
     attribute :identifier, Fhir::URI

@@ -2,6 +2,10 @@
 # related to the subject relevant in the context of care for
 # the subject.
 class Fhir::FamilyHistory < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+  end
+
   # Subject of this history
   # Should be present
   resource_reference :subject, [Fhir::Patient]
@@ -12,6 +16,10 @@ class Fhir::FamilyHistory < Fhir::Resource
   # The related person. Each FamilyHistory resource contains
   # the entire family history for a single person.
   class Relation < Fhir::ValueObject
+    invariants do
+      validates_presence_of :relationship
+    end
+
     # The family member who had the condition
     attribute :name, String
 
@@ -30,6 +38,10 @@ class Fhir::FamilyHistory < Fhir::Resource
     # represent more than one condition per resource, though there
     # is nothing stopping multiple resources - one per condition.
     class Condition < Fhir::ValueObject
+      invariants do
+        validates_presence_of :type
+      end
+
       # The condition
       # Should be present
       attribute :type, Fhir::CodeableConcept

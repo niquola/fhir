@@ -1,6 +1,12 @@
 # Prospective warnings of potential issues when providing
 # care to the patient.
 class Fhir::Alert < Fhir::Resource
+  invariants do
+    validates_presence_of :status
+    validates_presence_of :subject
+    validates_presence_of :note
+  end
+
   # The category of this alert
   attribute :category, Fhir::CodeableConcept
 

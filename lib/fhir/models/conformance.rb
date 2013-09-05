@@ -2,6 +2,14 @@
 # implementation supports FHIR or the set of requirements for
 # a desired implementation.
 class Fhir::Conformance < Fhir::Resource
+  invariants do
+    validates_presence_of :publisher
+    validates_presence_of :date
+    validates_presence_of :fhir_version
+    validates_presence_of :accept_unknown
+    validates_presence_of :formats
+  end
+
   # Logical id to reference this statement
   attribute :identifier, String
 
@@ -37,6 +45,10 @@ class Fhir::Conformance < Fhir::Resource
   # of a particular software version, independent of an
   # installation.
   class Software < Fhir::ValueObject
+    invariants do
+      validates_presence_of :name
+    end
+
     # Name software is known by
     # Should be present
     attribute :name, String
@@ -55,6 +67,10 @@ class Fhir::Conformance < Fhir::Resource
   # installation, rather than the capabilities of a software
   # program.
   class Implementation < Fhir::ValueObject
+    invariants do
+      validates_presence_of :description
+    end
+
     # Describes this specific instance
     # Should be present
     attribute :description, String
@@ -79,6 +95,11 @@ class Fhir::Conformance < Fhir::Resource
 
   # Defines the restful capabilities of the solution, if any.
   class Rest < Fhir::ValueObject
+    invariants do
+      validates_presence_of :mode
+      validates_presence_of :resources
+    end
+
     # client | server
     # Should be present
     attribute :mode, Fhir::Code
@@ -111,6 +132,11 @@ class Fhir::Conformance < Fhir::Resource
     # Identifies the restful capabilities of the solution for a
     # specific resource type.
     class Resource < Fhir::ValueObject
+      invariants do
+        validates_presence_of :type
+        validates_presence_of :operations
+      end
+
       # Resource type
       # Should be present
       attribute :type, Fhir::Code
@@ -120,6 +146,10 @@ class Fhir::Conformance < Fhir::Resource
 
       # Identifies a restful operation supported by the solution.
       class Operation < Fhir::ValueObject
+        invariants do
+          validates_presence_of :code
+        end
+
         # read | vread | update | etc.
         # Should be present
         attribute :code, Fhir::Code
@@ -140,6 +170,12 @@ class Fhir::Conformance < Fhir::Resource
       # Defines additional search parameters for implementations
       # to support and/or make use of.
       class SearchParam < Fhir::ValueObject
+        invariants do
+          validates_presence_of :name
+          validates_presence_of :type
+          validates_presence_of :documentation
+        end
+
         # Name of search parameter
         # Should be present
         attribute :name, String
@@ -180,6 +216,11 @@ class Fhir::Conformance < Fhir::Resource
     # Definition of a named query and its parameters and their
     # meaning.
     class Query < Fhir::ValueObject
+      invariants do
+        validates_presence_of :name
+        validates_presence_of :documentation
+      end
+
       # Name of the query (_query=)
       # Should be present
       attribute :name, String
@@ -199,6 +240,10 @@ class Fhir::Conformance < Fhir::Resource
 
   # Describes the messaging capabilities of the solution.
   class Messaging < Fhir::ValueObject
+    invariants do
+      validates_presence_of :events
+    end
+
     # Actual endpoint being described
     attribute :endpoint, Fhir::URI
 
@@ -211,6 +256,14 @@ class Fhir::Conformance < Fhir::Resource
     # Describes the solution's support for an event at this end
     # point.
     class Event < Fhir::ValueObject
+      invariants do
+        validates_presence_of :code
+        validates_presence_of :mode
+        validates_presence_of :focus
+        validates_presence_of :request
+        validates_presence_of :response
+      end
+
       # Event type
       # Should be present
       attribute :code, Fhir::Code
@@ -246,6 +299,11 @@ class Fhir::Conformance < Fhir::Resource
 
   # A document definition.
   class Document < Fhir::ValueObject
+    invariants do
+      validates_presence_of :mode
+      validates_presence_of :profile
+    end
+
     # producer | consumer
     # Should be present
     attribute :mode, Fhir::Code

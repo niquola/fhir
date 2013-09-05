@@ -85,6 +85,10 @@ class Fhir::MedicationPrescription < Fhir::Resource
   # prescribers intent.  If nothing is specified substitution
   # may be done.
   class Substitution < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+    end
+
     # Type of substitiution
     # Should be present
     attribute :type, Fhir::CodeableConcept

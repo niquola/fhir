@@ -1,5 +1,12 @@
 # A set of observations produced by a device.
 class Fhir::DeviceObservation < Fhir::Resource
+  invariants do
+    validates_presence_of :code
+    validates_presence_of :issued
+    validates_presence_of :subject
+    validates_presence_of :device
+  end
+
   # Type of device observation
   # Should be present
   attribute :code, Fhir::CodeableConcept

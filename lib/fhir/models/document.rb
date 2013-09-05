@@ -7,6 +7,15 @@
 # whole. A document may be kept as a set of logically linked
 # resources, or they may be bundled together in an atom feed.
 class Fhir::Document < Fhir::Resource
+  invariants do
+    validates_presence_of :created
+    validates_presence_of :type
+    validates_presence_of :status
+    validates_presence_of :confidentiality
+    validates_presence_of :subject
+    validates_presence_of :authors
+  end
+
   # Logical identifier for document (version-independent)
   attribute :identifier, Fhir::Identifier
 
@@ -46,6 +55,10 @@ class Fhir::Document < Fhir::Resource
   # A participant who has attested to the accuracy of the
   # document.
   class Attester < Fhir::ValueObject
+    invariants do
+      validates_presence_of :mode
+    end
+
     # personal | professional | legal | official
     # Should be present
     attribute :mode, Fhir::Code

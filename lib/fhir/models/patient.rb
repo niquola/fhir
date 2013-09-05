@@ -58,6 +58,10 @@ class Fhir::Patient < Fhir::Resource
 
   # This element has a value if the patient is an animal.
   class Animal < Fhir::ValueObject
+    invariants do
+      validates_presence_of :species
+    end
+
     # E.g. Dog, Cow
     # Should be present
     attribute :species, Fhir::CodeableConcept

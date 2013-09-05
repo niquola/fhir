@@ -4,6 +4,14 @@
 # this event to the authorizing prescription, and the specific
 # encounter between patient and health care practitioner.
 class Fhir::MedicationAdministration < Fhir::Resource
+  invariants do
+    validates_presence_of :status
+    validates_presence_of :patient
+    validates_presence_of :practitioner
+    validates_presence_of :prescription
+    validates_presence_of :when_given
+  end
+
   # External Identifier
   attribute :identifiers, Array[Fhir::Identifier]
 

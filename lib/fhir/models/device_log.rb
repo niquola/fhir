@@ -11,6 +11,10 @@ class Fhir::DeviceLog < Fhir::Resource
 
   # An item of data that the device produces.
   class Item < Fhir::ValueObject
+    invariants do
+      validates_presence_of :key
+    end
+
     # Reference to device capabilities declaration
     # Should be present
     attribute :key, String

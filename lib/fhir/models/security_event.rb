@@ -2,9 +2,20 @@
 # security log. Typical uses include detection of intrusion
 # attempts and monitoring for inappropriate usage.
 class Fhir::SecurityEvent < Fhir::Resource
+  invariants do
+    validates_presence_of :event
+    validates_presence_of :participants
+    validates_presence_of :source
+  end
+
   # Identifies the name, action type, time, and disposition of
   # the audited event.
   class Event < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+      validates_presence_of :date_time
+    end
+
     # Type of event
     # Should be present
     attribute :type, Fhir::CodeableConcept
@@ -31,6 +42,10 @@ class Fhir::SecurityEvent < Fhir::Resource
 
   # A person, a hardware device or software process.
   class Participant < Fhir::ValueObject
+    invariants do
+      validates_presence_of :requestor
+    end
+
     # User roles (e.g. local RBAC codes)
     attribute :roles, Array[Fhir::CodeableConcept]
 
@@ -71,6 +86,10 @@ class Fhir::SecurityEvent < Fhir::Resource
 
   # Application systems and processes.
   class Source < Fhir::ValueObject
+    invariants do
+      validates_presence_of :identifier
+    end
+
     # Logical source location within the enterprise
     attribute :site, String
 
@@ -114,6 +133,11 @@ class Fhir::SecurityEvent < Fhir::Resource
 
     # Additional Information about the Object.
     class Detail < Fhir::ValueObject
+      invariants do
+        validates_presence_of :type
+        validates_presence_of :value
+      end
+
       # Name of the property
       # Should be present
       attribute :type, String

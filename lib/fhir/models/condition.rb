@@ -4,6 +4,12 @@
 # Encounter; populating a problem List or a Summary Statement,
 # such as a Discharge Summary.
 class Fhir::Condition < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+    validates_presence_of :code
+    validates_presence_of :status
+  end
+
   # Subject of this condition
   # Should be present
   resource_reference :subject, [Fhir::Patient]
@@ -80,6 +86,10 @@ class Fhir::Condition < Fhir::Resource
   # events that are related in some way to this condition, or
   # the substance that caused/triggered this Condition.
   class RelatedItem < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+    end
+
     # due-to | follows
     # Should be present
     attribute :type, Fhir::Code

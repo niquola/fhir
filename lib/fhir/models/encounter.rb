@@ -2,6 +2,11 @@
 # provider(s) for the purpose of providing healthcare
 # service(s) or assessing the health status of a patient.
 class Fhir::Encounter < Fhir::Resource
+  invariants do
+    validates_presence_of :status
+    validates_presence_of :encounter_class
+  end
+
   # Identifier(s) by which this encounter is known
   attribute :identifiers, Array[Fhir::Identifier]
 
@@ -98,6 +103,11 @@ class Fhir::Encounter < Fhir::Resource
 
   # List of locations the patient has been at.
   class Location < Fhir::ValueObject
+    invariants do
+      validates_presence_of :location
+      validates_presence_of :period
+    end
+
     # The location the encounter takes place
     # Should be present
     resource_reference :location, [Fhir::Location]

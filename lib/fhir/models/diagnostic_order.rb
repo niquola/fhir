@@ -1,6 +1,10 @@
 # A request for a diagnostic investigation service to be
 # performed.
 class Fhir::DiagnosticOrder < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+  end
+
   # Who/what test is about
   # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Location, Fhir::Device]
@@ -31,6 +35,11 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   # A summary of the events of interest that have occurred as
   # the request is processed.
   class Event < Fhir::ValueObject
+    invariants do
+      validates_presence_of :status
+      validates_presence_of :date
+    end
+
     # requested | received | accepted | inprogress | review |
     # complete | suspended | rejected | failed
     # Should be present
@@ -51,6 +60,10 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   # item per request, but in most contexts, more than one
   # investigation can be requested.
   class Item < Fhir::ValueObject
+    invariants do
+      validates_presence_of :code
+    end
+
     # Code for this item
     # Should be present
     attribute :code, Fhir::CodeableConcept

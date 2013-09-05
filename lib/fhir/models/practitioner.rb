@@ -38,6 +38,10 @@ class Fhir::Practitioner < Fhir::Resource
 
   # Qualifications relevant to the provided service.
   class Qualification < Fhir::ValueObject
+    invariants do
+      validates_presence_of :code
+    end
+
     # Qualification
     # Should be present
     attribute :code, Fhir::CodeableConcept

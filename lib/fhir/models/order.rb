@@ -1,5 +1,9 @@
 # A request to perform an action.
 class Fhir::Order < Fhir::Resource
+  invariants do
+    validates_presence_of :details
+  end
+
   # When the order was made
   attribute :date, DateTime
 

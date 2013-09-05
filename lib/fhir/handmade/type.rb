@@ -3,10 +3,64 @@ class Fhir::Type
   include Fhir::Virtus
   include Fhir::Validations
 
-  def initialize(attributes, options = {})
-    @options = options || {}
+  attr_accessor :skip_invariants_check
+
+  def initialize(attributes)
+    @skip_invariants_check = true
     super(attributes)
   end
+
+  def self.create(attributes)
+    instance = new(attributes)
+    instance.check_invariants!
+    instance.skip_invariants_check = false
+
+    instance
+  end
+
+  def check_invariants!
+    found_errors = []
+
+    collect_errors = lambda do |hash|
+      found_errors << hash[:_errors] if hash[:_errors].present?
+
+      hash.each do |key, value|
+        next if key == :_errors
+        if value.is_a?(Hash)
+          collect_errors.call(value)
+        elsif value.is_a?(Array)
+          value.each { |el| collect_errors.call(el) if el.is_a?(Hash) }
+        end
+      end
+    end
+
+    collect_errors.call(self.to_hash_with_errors)
+
+    raise "Invalid values: #{found_errors.inspect}" if found_errors.present?
+  end
+
+  def to_hash_with_errors
+    valid?
+    result = {}
+
+    to_hash_with_errors = ->(v) {
+      v.respond_to?(:to_hash_with_errors) ? v.to_hash_with_errors : v
+    }
+
+    self.to_hash.each do |attribute, value|
+      value = send(attribute)
+
+      if value.is_a?(Array)
+        result[attribute] = value.map { |v| to_hash_with_errors.call(v) }
+      else
+        result[attribute] = to_hash_with_errors.call(value)
+      end
+    end
+
+    result[:_errors] = self.errors if self.errors.present?
+    result
+  end
+
 
   # For Virtus attributes DSL syntax
   def self.[](*types)

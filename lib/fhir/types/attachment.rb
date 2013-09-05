@@ -1,5 +1,9 @@
 # For referring to data content defined in other formats.
 class Fhir::Attachment < Fhir::DataType
+  invariants do
+    validates_presence_of :content_type
+  end
+
   # Mime type of the content, with charset etc.
   # Should be present
   attribute :content_type, Fhir::Code

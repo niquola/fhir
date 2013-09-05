@@ -7,11 +7,6 @@ describe "Validation" do
     attribute :code, String
     attribute :system, String
 
-    def initialize(*args)
-      puts "Called Code#new with #{args.inspect}"
-      super(*args)
-    end
-
     invariants do
       validates_presence_of :code
       validates_length_of :code, minimum: 1
@@ -27,28 +22,25 @@ describe "Validation" do
       validates_presence_of :substance
     end
 
-    def initialize(*args)
-      puts "Called Allergy#new with #{args.inspect}"
-      super(*args)
-    end
-
     attribute :substance, *Fhir::Type[Substance]
   end
 
   example do
-    allergy = Allergy.new(substance: {
-                            _type: "Substance",
-                            codings: [
-                              {
-                                _type: "Code",
-                                code: "123541",
-                                system: "FDB"
-                              }
-                            ]
-                          })
+    allergy = Allergy.create(substance: {
+                               _type: "Substance",
+                               codings: [
+                                 {
+                                   _type: "Code",
+                                   code: "123541",
+                                   system: "FDB"
+                                 }
+                               ]
+                             })
+
+    allergy.should be_instance_of(Allergy)
 
     -> { allergy.substance = nil }.should raise_error(/Invalid value/)
-    -> { Allergy.new(allergy.serialize.except(:substance)) }.should raise_error(/Invalid value/)
+    -> { Allergy.create(substance: nil) }.should raise_error(/Invalid value/)
   end
 
   example do
@@ -65,6 +57,7 @@ describe "Validation" do
       }
     }
 
-    errors = Allergy.validate_attributes(hash_to_validate)
+    hash_with_errors = Allergy.validate_attributes(hash_to_validate)
+    hash_with_errors[:substance][:codings].first[:_errors][:code].should_not be_empty
   end
 end

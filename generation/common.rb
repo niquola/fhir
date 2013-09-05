@@ -220,6 +220,24 @@ module RubyCodeGeneration
 
   IGNORED_ATTRIBUTES = %w[contained text extension]
 
+  def node_invariants(node)
+    code = get_attributes(node).map do |node_name, node|
+      minmax = el_minmax(node[:el])
+      node_path = node_path(node)
+      should_be_present = minmax.first == '1'
+
+      if should_be_present
+        "  validates_presence_of :#{attribute_name(node_path, minmax)}"
+      end
+    end.compact.join("\n")
+
+    if code.present?
+      "invariants do\n#{code}\nend\n"
+    else
+      ''
+    end
+  end
+
   def tree_to_ruby_code(tree, root_class_name)
     code = ""
 
@@ -271,6 +289,12 @@ module RubyCodeGeneration
 
         line(code, depth, attribute_comment(node))
         line(code, depth, "class #{classname} < #{parent_class}")
+
+        invariants = node_invariants(node)
+        if invariants.present?
+          line(code, depth + 1, invariants)
+          blank_line(code)
+        end
 
         line(code, 0, tree_to_ruby_code(node, root_class_name))
         line(code, depth, "end")

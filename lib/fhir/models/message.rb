@@ -5,6 +5,14 @@
 # the Message resource instance is the first resource in the
 # bundle.
 class Fhir::Message < Fhir::Resource
+  invariants do
+    validates_presence_of :identifier
+    validates_presence_of :timestamp
+    validates_presence_of :event
+    validates_presence_of :source
+    validates_presence_of :destination
+  end
+
   # Id of this message
   # Should be present
   attribute :identifier, String
@@ -20,6 +28,11 @@ class Fhir::Message < Fhir::Resource
   # Information about the message that this message is a
   # response to.  Only present if this message is a response.
   class Response < Fhir::ValueObject
+    invariants do
+      validates_presence_of :identifier
+      validates_presence_of :code
+    end
+
     # Id of original message
     # Should be present
     attribute :identifier, String
@@ -36,6 +49,11 @@ class Fhir::Message < Fhir::Resource
 
   # The source application from which this message originated.
   class Source < Fhir::ValueObject
+    invariants do
+      validates_presence_of :software
+      validates_presence_of :endpoint
+    end
+
     # Name of system
     attribute :name, String
 
@@ -60,6 +78,10 @@ class Fhir::Message < Fhir::Resource
   # The destination application which the message is intended
   # for.
   class Destination < Fhir::ValueObject
+    invariants do
+      validates_presence_of :endpoint
+    end
+
     # Name of system
     attribute :name, String
 

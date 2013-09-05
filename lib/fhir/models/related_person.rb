@@ -2,6 +2,10 @@
 # for a patient, but who is not the target of healthcare, nor
 # has a formal responsibility in the care process.
 class Fhir::RelatedPerson < Fhir::Resource
+  invariants do
+    validates_presence_of :patient
+  end
+
   # A Human identifier for this person
   attribute :identifiers, Array[Fhir::Identifier]
 

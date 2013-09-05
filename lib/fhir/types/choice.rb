@@ -1,11 +1,19 @@
 # A code taken from a short list of codes that are not
 # defined in a formal code system.
 class Fhir::Choice < Fhir::DataType
+  invariants do
+    validates_presence_of :options
+  end
+
   # Selected code
   attribute :code, Fhir::Code
 
   # A list of possible values for the code.
   class Option < Fhir::ValueObject
+    invariants do
+      validates_presence_of :code
+    end
+
     # Possible code
     # Should be present
     attribute :code, Fhir::Code

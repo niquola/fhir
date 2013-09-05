@@ -2,6 +2,13 @@
 # images may include every image in the study, or it may be an
 # incomplete sample, such as a list of key images.
 class Fhir::ImagingStudy < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+    validates_presence_of :uid
+    validates_presence_of :number_of_series
+    validates_presence_of :number_of_instances
+  end
+
   # When the study was performed
   attribute :date_time, DateTime
 
@@ -53,6 +60,13 @@ class Fhir::ImagingStudy < Fhir::Resource
 
   # Each study has one or more series of image instances.
   class Series < Fhir::ValueObject
+    invariants do
+      validates_presence_of :modality
+      validates_presence_of :uid
+      validates_presence_of :number_of_instances
+      validates_presence_of :instances
+    end
+
     # Number of this series in overall sequence (0020,0011)
     attribute :number, Integer
 
@@ -85,6 +99,11 @@ class Fhir::ImagingStudy < Fhir::Resource
 
     # A single image taken from a patient.
     class Instance < Fhir::ValueObject
+      invariants do
+        validates_presence_of :uid
+        validates_presence_of :sopclass
+      end
+
       # The number of this instance in the series (0020,0013)
       attribute :number, Integer
 

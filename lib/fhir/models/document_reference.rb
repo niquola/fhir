@@ -1,5 +1,15 @@
 # A reference to a document.
 class Fhir::DocumentReference < Fhir::Resource
+  invariants do
+    validates_presence_of :master_identifier
+    validates_presence_of :subject
+    validates_presence_of :type
+    validates_presence_of :authors
+    validates_presence_of :indexed
+    validates_presence_of :status
+    validates_presence_of :mime_type
+  end
+
   # Master Version Specific Identifier
   # Should be present
   attribute :master_identifier, Fhir::Identifier
@@ -73,6 +83,10 @@ class Fhir::DocumentReference < Fhir::Resource
   # A description of a service call that can be used to
   # retrieve the document.
   class Service < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+    end
+
     # Type of service (i.e. XDS.b)
     # Should be present
     attribute :type, Fhir::CodeableConcept
@@ -83,6 +97,10 @@ class Fhir::DocumentReference < Fhir::Resource
     # A list of named parameters that is used in the service
     # call.
     class Parameter < Fhir::ValueObject
+      invariants do
+        validates_presence_of :name
+      end
+
       # Name of parameter
       # Should be present
       attribute :name, String

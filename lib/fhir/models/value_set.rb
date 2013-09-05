@@ -1,6 +1,12 @@
 # A value set specifies a set of codes drawn from one or
 # more code systems.
 class Fhir::ValueSet < Fhir::Resource
+  invariants do
+    validates_presence_of :name
+    validates_presence_of :description
+    validates_presence_of :status
+  end
+
   # Logical id to reference this value set
   attribute :identifier, String
 
@@ -37,6 +43,10 @@ class Fhir::ValueSet < Fhir::Resource
 
   # When value set defines its own codes.
   class Define < Fhir::ValueObject
+    invariants do
+      validates_presence_of :system
+    end
+
     # URI to identify the code system
     # Should be present
     attribute :system, Fhir::URI
@@ -46,6 +56,10 @@ class Fhir::ValueSet < Fhir::Resource
 
     # Concepts in the code system.
     class Concept < Fhir::ValueObject
+      invariants do
+        validates_presence_of :code
+      end
+
       # Code that identifies concept
       # Should be present
       attribute :code, Fhir::Code
@@ -75,6 +89,10 @@ class Fhir::ValueSet < Fhir::Resource
 
     # Include one or more codes from a code system.
     class Include < Fhir::ValueObject
+      invariants do
+        validates_presence_of :system
+      end
+
       # The system the codes come from
       # Should be present
       attribute :system, Fhir::URI
@@ -90,6 +108,12 @@ class Fhir::ValueSet < Fhir::Resource
       # system. If multiple filters are specified, they must all be
       # true.
       class Filter < Fhir::ValueObject
+        invariants do
+          validates_presence_of :property
+          validates_presence_of :op
+          validates_presence_of :value
+        end
+
         # A property defined by the code system
         # Should be present
         attribute :property, Fhir::Code
@@ -116,6 +140,10 @@ class Fhir::ValueSet < Fhir::Resource
 
   # When value set is an expansion.
   class Expansion < Fhir::ValueObject
+    invariants do
+      validates_presence_of :timestamp
+    end
+
     # Time valueset expansion happened
     # Should be present
     attribute :timestamp, DateTime

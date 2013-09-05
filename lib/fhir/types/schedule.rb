@@ -8,6 +8,11 @@ class Fhir::Schedule < Fhir::DataType
   # Identifies a repeating pattern to the intended time
   # periods.
   class Repeat < Fhir::ValueObject
+    invariants do
+      validates_presence_of :duration
+      validates_presence_of :units
+    end
+
     # Event occurs frequency times per duration
     attribute :frequency, Integer
 

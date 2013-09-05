@@ -1,5 +1,10 @@
 # Specific reactions to a substance.
 class Fhir::AdverseReaction < Fhir::Resource
+  invariants do
+    validates_presence_of :subject
+    validates_presence_of :did_not_occur_flag
+  end
+
   # When the reaction occurred
   attribute :reaction_date, DateTime
 
@@ -17,6 +22,10 @@ class Fhir::AdverseReaction < Fhir::Resource
   # The signs and symptoms that were observed as part of the
   # reaction.
   class Symptom < Fhir::ValueObject
+    invariants do
+      validates_presence_of :code
+    end
+
     # Indicates the specific sign or symptom that was observed
     # Should be present
     attribute :code, Fhir::CodeableConcept

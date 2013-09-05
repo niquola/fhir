@@ -1,5 +1,13 @@
 # Immunization event information.
 class Fhir::Immunization < Fhir::Resource
+  invariants do
+    validates_presence_of :date
+    validates_presence_of :vaccine_type
+    validates_presence_of :subject
+    validates_presence_of :refused_indicator
+    validates_presence_of :reported
+  end
+
   # Vaccination  Administration Date
   # Should be present
   attribute :date, DateTime
@@ -76,6 +84,11 @@ class Fhir::Immunization < Fhir::Resource
   # Contains information about the protocol under which the
   # vaccine was administered.
   class VaccinationProtocol < Fhir::ValueObject
+    invariants do
+      validates_presence_of :dose_sequence
+      validates_presence_of :dose_status
+    end
+
     # Dose Number
     # Should be present
     attribute :dose_sequence, Integer

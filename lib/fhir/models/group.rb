@@ -4,6 +4,11 @@
 # recognized.  I.e. A collection of entities that isn't an
 # Organization.
 class Fhir::Group < Fhir::Resource
+  invariants do
+    validates_presence_of :type
+    validates_presence_of :actual
+  end
+
   # Unique id
   attribute :identifier, Fhir::Identifier
 
@@ -26,6 +31,12 @@ class Fhir::Group < Fhir::Resource
 
   # Identifies the traits shared by members of the group.
   class Characteristic < Fhir::ValueObject
+    invariants do
+      validates_presence_of :type
+      validates_presence_of :value
+      validates_presence_of :exclude
+    end
+
     # Kind of characteristic
     # Should be present
     attribute :type, Fhir::CodeableConcept

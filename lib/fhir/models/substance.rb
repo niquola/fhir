@@ -1,6 +1,10 @@
 # A homogeneous material with a definite composition used in
 # healthcare.
 class Fhir::Substance < Fhir::Resource
+  invariants do
+    validates_presence_of :name
+  end
+
   # Identifier of the substance
   attribute :identifier, Fhir::Identifier
 

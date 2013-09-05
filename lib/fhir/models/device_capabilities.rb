@@ -26,6 +26,12 @@ class Fhir::DeviceCapabilities < Fhir::Resource
       # A piece of measured or derived data that will be reported
       # by the machine.
       class Metric < Fhir::ValueObject
+        invariants do
+          validates_presence_of :code
+          validates_presence_of :key
+          validates_presence_of :info
+        end
+
         # Describes the metrics
         # Should be present
         attribute :code, Fhir::CodeableConcept
@@ -36,6 +42,10 @@ class Fhir::DeviceCapabilities < Fhir::Resource
 
         # How to interpret this metric value.
         class Info < Fhir::ValueObject
+          invariants do
+            validates_presence_of :type
+          end
+
           # Quantity | Coding | Array | string
           # Should be present
           attribute :type, Fhir::Code
@@ -59,6 +69,12 @@ class Fhir::DeviceCapabilities < Fhir::Resource
         # Additional data that qualifies the metric, or contributes
         # to its assessment.
         class Facet < Fhir::ValueObject
+          invariants do
+            validates_presence_of :code
+            validates_presence_of :key
+            validates_presence_of :info
+          end
+
           # Describes the facet
           # Should be present
           attribute :code, Fhir::CodeableConcept
