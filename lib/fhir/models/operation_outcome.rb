@@ -5,6 +5,9 @@ class Fhir::OperationOutcome < Fhir::Resource
     validates_presence_of :issues
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # An error, warning or information message that results from
   # a system action.
   class Issue < Fhir::ValueObject

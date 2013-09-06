@@ -3,10 +3,13 @@ class Fhir::Immunization < Fhir::Resource
   invariants do
     validates_presence_of :date
     validates_presence_of :vaccine_type
-    validates_presence_of :subject
-    validates_presence_of :refused_indicator
-    validates_presence_of :reported
+    validates_presence_of :subject_ref
+    validates_inclusion_of :refused_indicator, in: [true, false]
+    validates_inclusion_of :reported, in: [true, false]
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Vaccination  Administration Date
   # Should be present

@@ -1,8 +1,11 @@
 # A request to perform an action.
 class Fhir::Order < Fhir::Resource
   invariants do
-    validates_presence_of :details
+    validates_presence_of :detail_refs
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # When the order was made
   attribute :date, DateTime

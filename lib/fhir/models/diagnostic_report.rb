@@ -8,11 +8,14 @@ class Fhir::DiagnosticReport < Fhir::Resource
   invariants do
     validates_presence_of :status
     validates_presence_of :issued
-    validates_presence_of :subject
-    validates_presence_of :performer
+    validates_presence_of :subject_ref
+    validates_presence_of :performer_ref
     validates_presence_of :diagnostic_time
     validates_presence_of :results
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present

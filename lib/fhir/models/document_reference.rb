@@ -2,13 +2,16 @@
 class Fhir::DocumentReference < Fhir::Resource
   invariants do
     validates_presence_of :master_identifier
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
     validates_presence_of :type
-    validates_presence_of :authors
+    validates_presence_of :author_refs
     validates_presence_of :indexed
     validates_presence_of :status
     validates_presence_of :mime_type
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Master Version Specific Identifier
   # Should be present

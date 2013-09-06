@@ -1,9 +1,12 @@
 # A response to an order.
 class Fhir::OrderResponse < Fhir::Resource
   invariants do
-    validates_presence_of :request
+    validates_presence_of :request_ref
     validates_presence_of :code
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # The order that this is a response to
   # Should be present

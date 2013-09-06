@@ -8,6 +8,9 @@ class Fhir::SecurityEvent < Fhir::Resource
     validates_presence_of :source
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Identifies the name, action type, time, and disposition of
   # the audited event.
   class Event < Fhir::ValueObject
@@ -43,7 +46,7 @@ class Fhir::SecurityEvent < Fhir::Resource
   # A person, a hardware device or software process.
   class Participant < Fhir::ValueObject
     invariants do
-      validates_presence_of :requestor
+      validates_inclusion_of :requestor, in: [true, false]
     end
 
     # User roles (e.g. local RBAC codes)

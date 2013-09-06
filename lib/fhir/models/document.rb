@@ -12,9 +12,12 @@ class Fhir::Document < Fhir::Resource
     validates_presence_of :type
     validates_presence_of :status
     validates_presence_of :confidentiality
-    validates_presence_of :subject
-    validates_presence_of :authors
+    validates_presence_of :subject_ref
+    validates_presence_of :author_refs
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Logical identifier for document (version-independent)
   attribute :identifier, Fhir::Identifier

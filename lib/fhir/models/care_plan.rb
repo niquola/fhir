@@ -4,9 +4,12 @@
 # or set of conditions.
 class Fhir::CarePlan < Fhir::Resource
   invariants do
-    validates_presence_of :patient
+    validates_presence_of :patient_ref
     validates_presence_of :status
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # ID for plan
   attribute :identifier, Fhir::Identifier
@@ -32,7 +35,7 @@ class Fhir::CarePlan < Fhir::Resource
   # to be involved in the care envisioned by this plan.
   class Participant < Fhir::ValueObject
     invariants do
-      validates_presence_of :member
+      validates_presence_of :member_ref
     end
 
     # Type of involvement
@@ -71,7 +74,7 @@ class Fhir::CarePlan < Fhir::Resource
   class Activity < Fhir::ValueObject
     invariants do
       validates_presence_of :category
-      validates_presence_of :prohibited
+      validates_inclusion_of :prohibited, in: [true, false]
     end
 
     # encounter | procedure | observation | +

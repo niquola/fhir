@@ -8,6 +8,9 @@ class Fhir::Profile < Fhir::Resource
     validates_presence_of :status
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Logical id to reference this profile
   attribute :identifier, String
 
@@ -87,7 +90,7 @@ class Fhir::Profile < Fhir::Resource
       class Slicing < Fhir::ValueObject
         invariants do
           validates_presence_of :discriminator
-          validates_presence_of :ordered
+          validates_inclusion_of :ordered, in: [true, false]
           validates_presence_of :rules
         end
 
@@ -115,7 +118,7 @@ class Fhir::Profile < Fhir::Resource
           validates_presence_of :formal
           validates_presence_of :min
           validates_presence_of :max
-          validates_presence_of :is_modifier
+          validates_inclusion_of :is_modifier, in: [true, false]
         end
 
         # Concise definition for xml presentation

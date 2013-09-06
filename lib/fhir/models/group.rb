@@ -6,8 +6,11 @@
 class Fhir::Group < Fhir::Resource
   invariants do
     validates_presence_of :type
-    validates_presence_of :actual
+    validates_inclusion_of :actual, in: [true, false]
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Unique id
   attribute :identifier, Fhir::Identifier
@@ -34,7 +37,7 @@ class Fhir::Group < Fhir::Resource
     invariants do
       validates_presence_of :type
       validates_presence_of :value
-      validates_presence_of :exclude
+      validates_inclusion_of :exclude, in: [true, false]
     end
 
     # Kind of characteristic

@@ -7,9 +7,12 @@
 # significance.
 class Fhir::Provenance < Fhir::Resource
   invariants do
-    validates_presence_of :targets
+    validates_presence_of :target_refs
     validates_presence_of :recorded
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Target resource(s) (usually version specific)
   # Should be present

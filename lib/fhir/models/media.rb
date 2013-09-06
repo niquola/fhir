@@ -7,6 +7,9 @@ class Fhir::Media < Fhir::Resource
     validates_presence_of :content
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # photo | audio | video
   # Should be present
   attribute :type, Fhir::Code

@@ -3,11 +3,14 @@
 # incomplete sample, such as a list of key images.
 class Fhir::ImagingStudy < Fhir::Resource
   invariants do
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
     validates_presence_of :uid
     validates_presence_of :number_of_series
     validates_presence_of :number_of_instances
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # When the study was performed
   attribute :date_time, DateTime

@@ -1,6 +1,9 @@
 # Primarily used for identification and definition of
 # Medication, but also covers ingredients and packaging.
 class Fhir::Medication < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Common / Commercial name
   attribute :name, String
 
@@ -24,7 +27,7 @@ class Fhir::Medication < Fhir::Resource
     # The ingredients of the medication.
     class Ingredient < Fhir::ValueObject
       invariants do
-        validates_presence_of :item
+        validates_presence_of :item_ref
       end
 
       # Ingredient
@@ -48,7 +51,7 @@ class Fhir::Medication < Fhir::Resource
     # A set of components that go to make up the described item.
     class Content < Fhir::ValueObject
       invariants do
-        validates_presence_of :item
+        validates_presence_of :item_ref
       end
 
       # A product in the package

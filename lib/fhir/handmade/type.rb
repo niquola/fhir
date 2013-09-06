@@ -7,7 +7,7 @@ class Fhir::Type
 
   module Validations
     def validate_attributes(attributes)
-      self.new(attributes).to_hash_with_errors
+      self.new(attributes, true).to_hash_with_errors
     end
 
     def validator(validator_name, &block)
@@ -23,9 +23,40 @@ class Fhir::Type
 
   attr_accessor :skip_invariants_check
 
-  def initialize(attributes)
-    @skip_invariants_check = true
-    super(attributes)
+  attr_accessor :parent
+
+  def initialize(attributes, skip_invariants_check = false)
+
+    @skip_invariants_check = skip_invariants_check
+    attrs_with_parent = attributes.symbolize_keys
+    self.class.check_attribute_keys!(attrs_with_parent)
+    attrs_with_parent.each do |k,v|
+      if v.is_a?(::Hash)
+	v[:parent] = self
+      elsif v.is_a?(::Array)
+	v.each do |vv|
+	  vv[:parent] = self if vv.is_a?(::Hash)
+	end
+      end
+    end
+    @parent = attrs_with_parent.delete(:parent)
+    @initiated = false
+    super(attrs_with_parent)
+    @initiated = true
+    validate_attribute(:base)
+  end
+
+  def self.check_attribute_keys!(attrs)
+    extra_keys =  (attrs.keys - self.attribute_set.map(&:name) - [:parent, :_type])
+    raise "While creating #{self.name} unknown keys : #{extra_keys.join(', ')} #{attrs.inspect}" unless extra_keys.empty?
+  end
+
+  def skip_invariants_check?
+    if parent.present?
+      parent.skip_invariants_check?
+    else
+      @skip_invariants_check
+    end
   end
 
   def self.create(attributes)
@@ -40,9 +71,6 @@ class Fhir::Type
     [:invariant].include?(validator_name)
   end
 
-  def skip_invariants_check?
-    @skip_invariants_check
-  end
 
   def check_invariants!
     found_errors = []
@@ -88,14 +116,19 @@ class Fhir::Type
   end
 
   def validate_attribute(attr_name)
-    valid?
+    return unless @initiated
 
+    valid?
     if !skip_invariants_check? && self.errors.present?
-      raise "Invalid value for attribute #{attr_name}: " + self.errors.inspect
+      raise "Invalid value for attribute #{attr_name}: " + self.errors.full_messages.join(", ")
     end
   end
 
   def attribute_changed(attr_name)
+    attr = self[attr_name]
+    if attr.is_a?(Fhir::Type)
+      attr.parent = self
+    end
     validate_attribute(attr_name)
   end
 
@@ -111,7 +144,6 @@ class Fhir::Type
 
     define_method "#{attribute_name}=" do |value|
       super(value)
-
       assigned_resource = send(attribute_name)
       send("#{attribute_name}_ref=", assigned_resource.to_ref(self)) if assigned_resource
     end
@@ -128,5 +160,9 @@ class Fhir::Type
       assigned_resources = send(attribute_name)
       send("#{ref_attr_name}=", assigned_resources.map { |s| !s.nil? && s.to_ref(self) }.compact)
     end
+  end
+
+  def inspect
+    "<#{self.class.name} #{to_hash.except(:parent)}>"
   end
 end

@@ -9,8 +9,12 @@ describe "Resource References: inline and external" do
     substance.should be_contained
     substance.should_not be_independent
 
-    allergy = Fhir::AllergyIntolerance.new(substance: substance,
-                                           subject: patient)
+    allergy = Fhir::AllergyIntolerance.new(
+      substance: substance,
+      subject: patient,
+      status: 'status',
+      sensitivity_type: 'allergy'
+    )
 
     allergy.subject_ref.should_not be_nil
     allergy.subject.should_not be_contained

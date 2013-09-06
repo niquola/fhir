@@ -3,6 +3,9 @@
 # is the result of a report from the patient, or another
 # clinician.
 class Fhir::MedicationStatement < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # External Identifier
   attribute :identifiers, Array[Fhir::Identifier]
 

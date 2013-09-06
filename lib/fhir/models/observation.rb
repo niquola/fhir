@@ -7,6 +7,9 @@ class Fhir::Observation < Fhir::Resource
     validates_presence_of :reliability
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Kind of observation
   # Should be present
   attribute :name, Fhir::CodeableConcept

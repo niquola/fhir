@@ -5,6 +5,9 @@ class Fhir::Substance < Fhir::Resource
     validates_presence_of :name
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Identifier of the substance
   attribute :identifier, Fhir::Identifier
 

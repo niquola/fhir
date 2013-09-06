@@ -3,9 +3,12 @@
 class Fhir::Alert < Fhir::Resource
   invariants do
     validates_presence_of :status
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
     validates_presence_of :note
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # The category of this alert
   attribute :category, Fhir::CodeableConcept

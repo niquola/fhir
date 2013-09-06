@@ -1,5 +1,8 @@
 # A supply -  request and provision.
 class Fhir::Supply < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # The kind of supply (central, non-stock, etc)
   attribute :name, Fhir::CodeableConcept
 

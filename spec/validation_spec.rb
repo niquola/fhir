@@ -17,7 +17,7 @@ describe "Validation" do
     attribute :codings, *Fhir::Collection[Code]
   end
 
-  class Allergy < Fhir::Resource
+  class Allergy < Fhir::Type
     invariants do
       validates_presence_of :substance
     end
@@ -25,8 +25,8 @@ describe "Validation" do
     attribute :substance, *Fhir::Type[Substance]
   end
 
-  example do
-    allergy = Allergy.create(substance: {
+  it "should create with valid attrs" do
+    allergy = Allergy.new(substance: {
                                _type: "Substance",
                                codings: [
                                  {
@@ -39,8 +39,13 @@ describe "Validation" do
 
     allergy.should be_instance_of(Allergy)
 
-    -> { allergy.substance = nil }.should raise_error(/Invalid value/)
-    -> { Allergy.create(substance: nil) }.should raise_error(/Invalid value/)
+    -> { allergy.substance = nil }
+    .should raise_error(/Invalid value/)
+  end
+
+  it "should raise on new" do
+    -> { Allergy.create(substance: nil) }
+    .should raise_error(/Invalid value/)
   end
 
   example do
@@ -56,7 +61,6 @@ describe "Validation" do
         ]
       }
     }
-
     hash_with_errors = Allergy.validate_attributes(hash_to_validate)
     hash_with_errors[:substance][:codings].first[:_errors][:code].should_not be_empty
   end

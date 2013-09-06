@@ -2,6 +2,9 @@
 # instructions for administration of the medicine to a
 # patient.
 class Fhir::MedicationPrescription < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # External identifier
   attribute :identifiers, Array[Fhir::Identifier]
 

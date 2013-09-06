@@ -7,6 +7,9 @@ class Fhir::Encounter < Fhir::Resource
     validates_presence_of :encounter_class
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Identifier(s) by which this encounter is known
   attribute :identifiers, Array[Fhir::Identifier]
 
@@ -104,7 +107,7 @@ class Fhir::Encounter < Fhir::Resource
   # List of locations the patient has been at.
   class Location < Fhir::ValueObject
     invariants do
-      validates_presence_of :location
+      validates_presence_of :location_ref
       validates_presence_of :period
     end
 

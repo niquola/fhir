@@ -1,9 +1,12 @@
 # Specific reactions to a substance.
 class Fhir::AdverseReaction < Fhir::Resource
   invariants do
-    validates_presence_of :subject
-    validates_presence_of :did_not_occur_flag
+    validates_presence_of :subject_ref
+    validates_inclusion_of :did_not_occur_flag, in: [true, false]
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # When the reaction occurred
   attribute :reaction_date, DateTime

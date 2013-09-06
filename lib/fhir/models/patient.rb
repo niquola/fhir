@@ -2,6 +2,9 @@
 # person or animal receiving care or other health-related
 # services.
 class Fhir::Patient < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # An identifier for the person as this patient
   attribute :identifiers, Array[Fhir::Identifier]
 

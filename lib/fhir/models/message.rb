@@ -13,6 +13,9 @@ class Fhir::Message < Fhir::Resource
     validates_presence_of :destination
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Id of this message
   # Should be present
   attribute :identifier, String

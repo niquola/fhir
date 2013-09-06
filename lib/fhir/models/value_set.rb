@@ -7,6 +7,9 @@ class Fhir::ValueSet < Fhir::Resource
     validates_presence_of :status
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Logical id to reference this value set
   attribute :identifier, String
 

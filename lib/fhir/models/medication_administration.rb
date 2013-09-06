@@ -6,11 +6,14 @@
 class Fhir::MedicationAdministration < Fhir::Resource
   invariants do
     validates_presence_of :status
-    validates_presence_of :patient
-    validates_presence_of :practitioner
-    validates_presence_of :prescription
+    validates_presence_of :patient_ref
+    validates_presence_of :practitioner_ref
+    validates_presence_of :prescription_ref
     validates_presence_of :when_given
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # External Identifier
   attribute :identifiers, Array[Fhir::Identifier]

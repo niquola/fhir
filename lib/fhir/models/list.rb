@@ -5,6 +5,9 @@ class Fhir::List < Fhir::Resource
     validates_presence_of :mode
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # What the purpose of this list is
   attribute :code, Fhir::CodeableConcept
 
@@ -24,7 +27,7 @@ class Fhir::List < Fhir::Resource
   # Entries in this list.
   class Entry < Fhir::ValueObject
     invariants do
-      validates_presence_of :item
+      validates_presence_of :item_ref
     end
 
     # Workflow information about this item

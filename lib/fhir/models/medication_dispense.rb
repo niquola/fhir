@@ -2,6 +2,9 @@
 # a description of the supply provided and the instructions
 # for administering the medication.
 class Fhir::MedicationDispense < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # External identifier
   attribute :identifier, Fhir::Identifier
 

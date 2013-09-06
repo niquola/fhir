@@ -2,6 +2,9 @@
 # individual who is directly or indirectly involved in the
 # provisioning of healthcare.
 class Fhir::Practitioner < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # A identifier for the person as this agent
   attribute :identifiers, Array[Fhir::Identifier]
 

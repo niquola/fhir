@@ -7,6 +7,9 @@ class Fhir::Location < Fhir::Resource
     validates_presence_of :name
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Name of the location
   # Should be present
   attribute :name, String

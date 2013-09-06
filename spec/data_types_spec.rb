@@ -3,9 +3,9 @@ require 'spec_helper'
 describe "Datatypes" do
   example do
     address = Fhir::Address.new(
-      uses: 'blah',
-      texts: ['f safsad','f sadf sad'],
-      line: 'Spb',
+      use: 'blah',
+      text: ['f safsad','f sadf sad'],
+      lines: ['Spb'],
       city: 'Omsk'
     )
 

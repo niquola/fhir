@@ -2,8 +2,11 @@
 # performed.
 class Fhir::DiagnosticOrder < Fhir::Resource
   invariants do
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Who/what test is about
   # Should be present

@@ -1,5 +1,8 @@
 # Describes the set of data produced by a device.
 class Fhir::DeviceCapabilities < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # The name of this device
   attribute :name, String
 

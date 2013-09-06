@@ -11,6 +11,9 @@ class Fhir::Device < Fhir::Resource
     validates_presence_of :type
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # What kind of device this is
   # Should be present
   attribute :type, Fhir::CodeableConcept

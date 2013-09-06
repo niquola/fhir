@@ -16,16 +16,15 @@ class Fhir::Resource < Fhir::Type
   attribute :text, Fhir::Narrative # Narrative
 
   # Contained, inline Resources
-  attribute :contained, Array[Fhir::Resource] # Resource
+  attribute :containeds, Array[Fhir::Resource] # Resource
 
   def self.generate_uuid
     SecureRandom.uuid
   end
 
-  def initialize(attributes, options = {})
+  def initialize(attributes, skip_invariants_check = false)
     attributes[:uuid] ||= self.class.generate_uuid
-    super(attributes)
-
+    super(attributes, skip_invariants_check)
     contained!
   end
 

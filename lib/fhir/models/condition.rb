@@ -5,10 +5,13 @@
 # such as a Discharge Summary.
 class Fhir::Condition < Fhir::Resource
   invariants do
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
     validates_presence_of :code
     validates_presence_of :status
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Subject of this condition
   # Should be present

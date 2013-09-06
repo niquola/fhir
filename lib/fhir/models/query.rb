@@ -5,6 +5,9 @@ class Fhir::Query < Fhir::Resource
     validates_presence_of :parameters
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Links query and its response(s)
   # Should be present
   attribute :identifier, Fhir::URI

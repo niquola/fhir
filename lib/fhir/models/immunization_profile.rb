@@ -2,9 +2,12 @@
 # recommendation with optional supporting justification.
 class Fhir::ImmunizationProfile < Fhir::Resource
   invariants do
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
     validates_presence_of :recommendations
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Who this profile is for
   # Should be present
@@ -89,6 +92,9 @@ class Fhir::ImmunizationProfile < Fhir::Resource
 
       # Adverse event report date
       attribute :report_date, DateTime
+
+      # Adverse event report text
+      attribute :text, String
 
       # Documented reaction
       resource_references :reactions, [Fhir::AdverseReaction]

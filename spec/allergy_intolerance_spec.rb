@@ -2,11 +2,16 @@ require 'spec_helper'
 
 describe 'AllergyIntolerance' do
   example do
-    allergy = Fhir::AllergyIntolerance.new(
+    allergy = Fhir::AllergyIntolerance.new({
       criticality: 'fatal',
       sensitivity_type: 'allergy',
       recorded_date: Time.now,
       status: 'status',
+      subject_ref: {
+	_type: "Fhir::ResourceReference",
+	type: 'Patient',
+	reference: '3123123'
+      },
       substance: {
         _type: "Fhir::Substance",
         name: 'substance name',
@@ -41,7 +46,7 @@ describe 'AllergyIntolerance' do
           causality_expectation: 'expectation code',
         }]
       }]
-    )
+    }, true)
 
     allergy.criticality.should == 'fatal'
     allergy.sensitivity_type.should == 'allergy'

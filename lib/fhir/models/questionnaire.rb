@@ -8,6 +8,9 @@ class Fhir::Questionnaire < Fhir::Resource
     validates_presence_of :authored
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # registered|interim|final|amended|cancelled|withdrawn
   # Should be present
   attribute :status, Fhir::Code
@@ -39,6 +42,9 @@ class Fhir::Questionnaire < Fhir::Resource
     # Code or name of the question
     attribute :name, Fhir::CodeableConcept
 
+    # Text of the question
+    attribute :text, String
+
     # Single-valued answer to the question
     attribute :answer, *Fhir::Type[Float, Integer, Boolean, Date, String, DateTime, DateTime]
 
@@ -65,6 +71,9 @@ class Fhir::Questionnaire < Fhir::Resource
 
     # Header for the group
     attribute :header, String
+
+    # Additional text for the group
+    attribute :text, String
 
     # The subject this group's answers are about
     resource_reference :subject, [Fhir::Resource]

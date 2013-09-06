@@ -3,8 +3,11 @@
 # counseling or hypnotherapy.
 class Fhir::Procedure < Fhir::Resource
   invariants do
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Subject of this procedure
   # Should be present

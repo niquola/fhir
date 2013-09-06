@@ -1,5 +1,8 @@
 # A set of raw data produced by a device.
 class Fhir::DeviceLog < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # When the data values are reported
   attribute :instant, DateTime
 

@@ -5,6 +5,9 @@ class Fhir::Other < Fhir::Resource
     validates_presence_of :code
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Kind of Resource
   # Should be present
   attribute :code, Fhir::CodeableConcept

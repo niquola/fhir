@@ -6,9 +6,12 @@ class Fhir::Conformance < Fhir::Resource
     validates_presence_of :publisher
     validates_presence_of :date
     validates_presence_of :fhir_version
-    validates_presence_of :accept_unknown
+    validates_inclusion_of :accept_unknown, in: [true, false]
     validates_presence_of :formats
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # Logical id to reference this statement
   attribute :identifier, String
@@ -260,8 +263,8 @@ class Fhir::Conformance < Fhir::Resource
         validates_presence_of :code
         validates_presence_of :mode
         validates_presence_of :focus
-        validates_presence_of :request
-        validates_presence_of :response
+        validates_presence_of :request_ref
+        validates_presence_of :response_ref
       end
 
       # Event type
@@ -301,7 +304,7 @@ class Fhir::Conformance < Fhir::Resource
   class Document < Fhir::ValueObject
     invariants do
       validates_presence_of :mode
-      validates_presence_of :profile
+      validates_presence_of :profile_ref
     end
 
     # producer | consumer

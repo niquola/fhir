@@ -4,6 +4,9 @@
 # corporations, departments, community groups, healthcare
 # practice groups, etc.
 class Fhir::Organization < Fhir::Resource
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # Identifier for this organization
   attribute :identifiers, Array[Fhir::Identifier]
 

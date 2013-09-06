@@ -3,8 +3,11 @@
 # has a formal responsibility in the care process.
 class Fhir::RelatedPerson < Fhir::Resource
   invariants do
-    validates_presence_of :patient
+    validates_presence_of :patient_ref
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # A Human identifier for this person
   attribute :identifiers, Array[Fhir::Identifier]

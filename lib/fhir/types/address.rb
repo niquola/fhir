@@ -5,6 +5,9 @@ class Fhir::Address < Fhir::DataType
   # The use of this address
   attribute :use, Fhir::Code
 
+  # Text representation of the address
+  attribute :text, String
+
   # Line of an address
   attribute :lines, Array[String]
 

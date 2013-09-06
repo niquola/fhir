@@ -5,6 +5,9 @@ class Fhir::Coverage < Fhir::Resource
     validates_presence_of :type
   end
 
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
+
   # An identifier for the plan issuer
   resource_reference :issuer, [Fhir::Organization]
 

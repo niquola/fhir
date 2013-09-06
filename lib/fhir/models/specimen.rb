@@ -1,9 +1,12 @@
 # Sample for analysis.
 class Fhir::Specimen < Fhir::Resource
   invariants do
-    validates_presence_of :subject
+    validates_presence_of :subject_ref
     validates_presence_of :collection
   end
+
+  # Text summary of the resource, for human interpretation
+  attribute :text, Fhir::Narrative
 
   # External Identifier
   attribute :identifier, Fhir::Identifier

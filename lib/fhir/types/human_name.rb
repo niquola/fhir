@@ -4,6 +4,9 @@ class Fhir::HumanName < Fhir::DataType
   # The use of this name
   attribute :use, Fhir::Code
 
+  # Text representation of the full name
+  attribute :text, String
+
   # Family name (often called 'Surname')
   attribute :families, Array[String]
 
