@@ -11,7 +11,6 @@ class Fhir::Observation < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Kind of observation
-  # Should be present
   attribute :name, Fhir::CodeableConcept
 
   # Actual result
@@ -30,11 +29,9 @@ class Fhir::Observation < Fhir::Resource
   attribute :issued, DateTime
 
   # Registered|Interim|Final|Amended|Cancelled|Withdrawn
-  # Should be present
   attribute :status, Fhir::Code
 
   # If quality issues exist (mostly devices)
-  # Should be present
   attribute :reliability, Fhir::Code
 
   # Observed body part
@@ -63,7 +60,6 @@ class Fhir::Observation < Fhir::Resource
     attribute :meaning, Fhir::CodeableConcept
 
     # Reference
-    # Should be present
     attribute :range, *Fhir::Type[Fhir::Quantity, Fhir::Range, String]
   end
 
@@ -77,11 +73,9 @@ class Fhir::Observation < Fhir::Resource
     end
 
     # Kind of component observation
-    # Should be present
     attribute :name, Fhir::CodeableConcept
 
     # Actual component result
-    # Should be present
     attribute :value, *Fhir::Type[Fhir::Quantity, Fhir::CodeableConcept, Fhir::Attachment, Fhir::Ratio, Fhir::Choice, Fhir::Period, Fhir::SampledData, String]
   end
 

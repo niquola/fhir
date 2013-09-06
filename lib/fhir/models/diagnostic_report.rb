@@ -18,19 +18,15 @@ class Fhir::DiagnosticReport < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # registered|interim|final|amended|cancelled|withdrawn
-  # Should be present
   attribute :status, Fhir::Code
 
   # Date this version was released
-  # Should be present
   attribute :issued, DateTime
 
   # The subject of the report
-  # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device]
 
   # Responsible Diagnostic Service
-  # Should be present
   resource_reference :performer, [Fhir::Organization]
 
   # Id for external references to this report
@@ -66,7 +62,6 @@ class Fhir::DiagnosticReport < Fhir::Resource
   attribute :service_category, Fhir::CodeableConcept
 
   # Effective time of diagnostic report
-  # Should be present
   attribute :diagnostic_time, DateTime
 
   # A group of results. Results may be grouped by specimen, or
@@ -78,7 +73,6 @@ class Fhir::DiagnosticReport < Fhir::Resource
     end
 
     # Name/Code for this group of results
-    # Should be present
     attribute :name, Fhir::CodeableConcept
 
     # Specimen details for this group
@@ -91,7 +85,6 @@ class Fhir::DiagnosticReport < Fhir::Resource
     resource_references :results, [Fhir::Observation]
   end
 
-  # Should be present
   attribute :results, Results
 
   # Key images associated with this report

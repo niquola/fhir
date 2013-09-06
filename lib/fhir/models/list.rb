@@ -21,7 +21,6 @@ class Fhir::List < Fhir::Resource
   attribute :ordered, Boolean
 
   # working | snapshot | changes
-  # Should be present
   attribute :mode, Fhir::Code
 
   # Entries in this list.
@@ -40,7 +39,6 @@ class Fhir::List < Fhir::Resource
     attribute :date, DateTime
 
     # Actual entry
-    # Should be present
     resource_reference :item, [Fhir::Resource]
   end
 

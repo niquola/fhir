@@ -17,7 +17,6 @@ class Fhir::ValueSet < Fhir::Resource
   attribute :version, String
 
   # Informal name for this value set
-  # Should be present
   attribute :name, String
 
   # Name of the publisher (Organization or individual)
@@ -27,7 +26,6 @@ class Fhir::ValueSet < Fhir::Resource
   attribute :telecoms, Array[Fhir::Contact]
 
   # Human language description of the value set
-  # Should be present
   attribute :description, String
 
   # About the value set or its content
@@ -35,7 +33,6 @@ class Fhir::ValueSet < Fhir::Resource
 
   # draft | experimental | review | production | withdrawn |
   # superseded
-  # Should be present
   attribute :status, Fhir::Code
 
   # If for testing purposes, not real usage
@@ -51,7 +48,6 @@ class Fhir::ValueSet < Fhir::Resource
     end
 
     # URI to identify the code system
-    # Should be present
     attribute :system, Fhir::URI
 
     # If code comparison is case sensitive
@@ -64,7 +60,6 @@ class Fhir::ValueSet < Fhir::Resource
       end
 
       # Code that identifies concept
-      # Should be present
       attribute :code, Fhir::Code
 
       # If this code is not for use as a real concept
@@ -97,7 +92,6 @@ class Fhir::ValueSet < Fhir::Resource
       end
 
       # The system the codes come from
-      # Should be present
       attribute :system, Fhir::URI
 
       # Specific version of the code system referred to
@@ -118,15 +112,12 @@ class Fhir::ValueSet < Fhir::Resource
         end
 
         # A property defined by the code system
-        # Should be present
         attribute :property, Fhir::Code
 
         # = | is-a | is_not_a | regex
-        # Should be present
         attribute :op, Fhir::Code
 
         # Code from the system, or regex criteria
-        # Should be present
         attribute :value, Fhir::Code
       end
 
@@ -148,7 +139,6 @@ class Fhir::ValueSet < Fhir::Resource
     end
 
     # Time valueset expansion happened
-    # Should be present
     attribute :timestamp, DateTime
 
     # Codes in the value set.

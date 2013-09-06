@@ -10,7 +10,6 @@ class Fhir::ImmunizationProfile < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Who this profile is for
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Vaccine administration recommendations.
@@ -22,18 +21,15 @@ class Fhir::ImmunizationProfile < Fhir::Resource
     end
 
     # Recommendation date
-    # Should be present
     attribute :recommendation_date, DateTime
 
     # Vaccine that pertains to the recommendation
-    # Should be present
     attribute :vaccine_type, Fhir::CodeableConcept
 
     # Recommended dose number
     attribute :dose_number, Integer
 
     # Vaccine administration status
-    # Should be present
     attribute :forecast_status, Fhir::Code
 
     # Vaccine date recommentations - e.g. earliest date to
@@ -45,11 +41,9 @@ class Fhir::ImmunizationProfile < Fhir::Resource
       end
 
       # Date classification of recommendation
-      # Should be present
       attribute :code, Fhir::CodeableConcept
 
       # Date recommendation
-      # Should be present
       attribute :value, DateTime
     end
 
@@ -84,7 +78,6 @@ class Fhir::ImmunizationProfile < Fhir::Resource
       end
 
       # Adverse event report identifier
-      # Should be present
       attribute :identifiers, Array[String]
 
       # Adverse event report classification
@@ -106,7 +99,6 @@ class Fhir::ImmunizationProfile < Fhir::Resource
     resource_references :supporting_patient_observations, [Fhir::Observation]
   end
 
-  # Should be present
   attribute :recommendations, Array[Recommendation]
 end
 

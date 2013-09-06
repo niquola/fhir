@@ -23,7 +23,6 @@ class Fhir::Conformance < Fhir::Resource
   attribute :name, String
 
   # Publishing Organization
-  # Should be present
   attribute :publisher, String
 
   # Contacts for Organization
@@ -40,7 +39,6 @@ class Fhir::Conformance < Fhir::Resource
   attribute :experimental, Boolean
 
   # Publication Date
-  # Should be present
   attribute :date, DateTime
 
   # Describes the software that is covered by this conformance
@@ -53,7 +51,6 @@ class Fhir::Conformance < Fhir::Resource
     end
 
     # Name software is known by
-    # Should be present
     attribute :name, String
 
     # Version covered by this statement
@@ -75,7 +72,6 @@ class Fhir::Conformance < Fhir::Resource
     end
 
     # Describes this specific instance
-    # Should be present
     attribute :description, String
 
     # Base URL for the installation
@@ -85,15 +81,12 @@ class Fhir::Conformance < Fhir::Resource
   attribute :implementation, Implementation
 
   # FHIR Version
-  # Should be present
   attribute :fhir_version, String
 
   # True if application accepts unknown elements
-  # Should be present
   attribute :accept_unknown, Boolean
 
   # formats supported (xml | json | mime type)
-  # Should be present
   attribute :formats, Array[Fhir::Code]
 
   # Defines the restful capabilities of the solution, if any.
@@ -104,7 +97,6 @@ class Fhir::Conformance < Fhir::Resource
     end
 
     # client | server
-    # Should be present
     attribute :mode, Fhir::Code
 
     # General description of implementation
@@ -141,7 +133,6 @@ class Fhir::Conformance < Fhir::Resource
       end
 
       # Resource type
-      # Should be present
       attribute :type, Fhir::Code
 
       # Resource Profiles supported
@@ -154,14 +145,12 @@ class Fhir::Conformance < Fhir::Resource
         end
 
         # read | vread | update | etc.
-        # Should be present
         attribute :code, Fhir::Code
 
         # Anything special about operation behavior
         attribute :documentation, String
       end
 
-      # Should be present
       attribute :operations, Array[Operation]
 
       # Whether vRead can return past versions
@@ -180,18 +169,15 @@ class Fhir::Conformance < Fhir::Resource
         end
 
         # Name of search parameter
-        # Should be present
         attribute :name, String
 
         # Source of definition
         attribute :source, Fhir::URI
 
         # Type of search parameter
-        # Should be present
         attribute :type, Fhir::Code
 
         # Contents and meaning of search parameter
-        # Should be present
         attribute :documentation, String
 
         # XPath that extracts the parameter set
@@ -207,7 +193,6 @@ class Fhir::Conformance < Fhir::Resource
       attribute :search_params, Array[SearchParam]
     end
 
-    # Should be present
     attribute :resources, Array[Resource]
 
     # If batches are supported
@@ -225,11 +210,9 @@ class Fhir::Conformance < Fhir::Resource
       end
 
       # Name of the query (_query=)
-      # Should be present
       attribute :name, String
 
       # Describes the named query
-      # Should be present
       attribute :documentation, String
 
       # Parameter for the named query
@@ -268,33 +251,27 @@ class Fhir::Conformance < Fhir::Resource
       end
 
       # Event type
-      # Should be present
       attribute :code, Fhir::Code
 
       # sender | receiver
-      # Should be present
       attribute :mode, Fhir::Code
 
       # http | ftp |MLLP | etc.
       attribute :protocols, Array[Fhir::Coding]
 
       # Resource that's focus of message
-      # Should be present
       attribute :focus, Fhir::Code
 
       # Profile that describes the request
-      # Should be present
       resource_reference :request, [Fhir::Profile]
 
       # Profile that describes the response
-      # Should be present
       resource_reference :response, [Fhir::Profile]
 
       # Endpoint-specific event documentation
       attribute :documentation, String
     end
 
-    # Should be present
     attribute :events, Array[Event]
   end
 
@@ -308,14 +285,12 @@ class Fhir::Conformance < Fhir::Resource
     end
 
     # producer | consumer
-    # Should be present
     attribute :mode, Fhir::Code
 
     # Description of document support
     attribute :documentation, String
 
     # Constraint on a resource used in the document
-    # Should be present
     resource_reference :profile, [Fhir::Profile]
   end
 

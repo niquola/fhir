@@ -17,25 +17,21 @@ class Fhir::AllergyIntolerance < Fhir::Resource
   attribute :criticality, Fhir::Code
 
   # Type of the sensitivity
-  # Should be present
   attribute :sensitivity_type, Fhir::Code
 
   # Date when the sensitivity was recorded
   attribute :recorded_date, DateTime
 
   # Status of the sensitivity
-  # Should be present
   attribute :status, Fhir::Code
 
   # Who the sensitivity is for
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Who recorded the sensitivity
   resource_reference :recorder, [Fhir::Practitioner, Fhir::Patient]
 
   # The substance that causes the sensitivity
-  # Should be present
   resource_reference :substance, [Fhir::Substance]
 
   # Reactions associated with the sensitivity

@@ -12,7 +12,6 @@ class Fhir::Substance < Fhir::Resource
   attribute :identifier, Fhir::Identifier
 
   # Name of the substance
-  # Should be present
   attribute :name, String
 
   # Type of the substance

@@ -11,7 +11,6 @@ class Fhir::Media < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # photo | audio | video
-  # Should be present
   attribute :type, Fhir::Code
 
   # The type of acquisition equipment/process
@@ -51,7 +50,6 @@ class Fhir::Media < Fhir::Resource
   attribute :length, Integer
 
   # Actual Media - reference or data
-  # Should be present
   attribute :content, Fhir::Attachment
 end
 

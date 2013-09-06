@@ -9,7 +9,6 @@ class Fhir::Other < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Kind of Resource
-  # Should be present
   attribute :code, Fhir::CodeableConcept
 
   # Identifies the

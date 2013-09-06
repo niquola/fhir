@@ -93,7 +93,6 @@ class Fhir::MedicationPrescription < Fhir::Resource
     end
 
     # Type of substitiution
-    # Should be present
     attribute :type, Fhir::CodeableConcept
 
     # Why should substitution (not) be made

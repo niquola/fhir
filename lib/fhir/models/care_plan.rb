@@ -15,11 +15,9 @@ class Fhir::CarePlan < Fhir::Resource
   attribute :identifier, Fhir::Identifier
 
   # Who care plan is for
-  # Should be present
   resource_reference :patient, [Fhir::Patient]
 
   # planned | active | ended
-  # Should be present
   attribute :status, Fhir::Code
 
   # Time period plan covers
@@ -42,7 +40,6 @@ class Fhir::CarePlan < Fhir::Resource
     attribute :role, Fhir::CodeableConcept
 
     # Who is involved
-    # Should be present
     resource_reference :member, [Fhir::Practitioner, Fhir::RelatedPerson, Fhir::Patient, Fhir::Organization]
   end
 
@@ -56,7 +53,6 @@ class Fhir::CarePlan < Fhir::Resource
     end
 
     # What's the desired outcome?
-    # Should be present
     attribute :description, String
 
     # in progress | achieved | sustaining | abandoned
@@ -78,7 +74,6 @@ class Fhir::CarePlan < Fhir::Resource
     end
 
     # encounter | procedure | observation | +
-    # Should be present
     attribute :category, Fhir::Code
 
     # Detail type of activity
@@ -88,7 +83,6 @@ class Fhir::CarePlan < Fhir::Resource
     attribute :status, Fhir::Code
 
     # Do NOT do
-    # Should be present
     attribute :prohibited, Boolean
 
     # When activity is to occur

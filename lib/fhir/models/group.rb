@@ -16,11 +16,9 @@ class Fhir::Group < Fhir::Resource
   attribute :identifier, Fhir::Identifier
 
   # Group Classification
-  # Should be present
   attribute :type, Fhir::Code
 
   # Descriptive or actual
-  # Should be present
   attribute :actual, Boolean
 
   # Kind of Group members
@@ -41,15 +39,12 @@ class Fhir::Group < Fhir::Resource
     end
 
     # Kind of characteristic
-    # Should be present
     attribute :type, Fhir::CodeableConcept
 
     # Value held by characteristic
-    # Should be present
     attribute :value, *Fhir::Type[Fhir::CodeableConcept, String, Boolean, Fhir::Quantity, Fhir::Range]
 
     # Group includes or excludes
-    # Should be present
     attribute :exclude, Boolean
   end
 

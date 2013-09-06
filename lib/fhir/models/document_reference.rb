@@ -14,25 +14,21 @@ class Fhir::DocumentReference < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Master Version Specific Identifier
-  # Should be present
   attribute :master_identifier, Fhir::Identifier
 
   # Other identifiers for the document
   attribute :identifiers, Array[Fhir::Identifier]
 
   # The subject of the document
-  # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device]
 
   # What kind of document this is (LOINC if possible)
-  # Should be present
   attribute :type, Fhir::CodeableConcept
 
   # More detail about the document type
   attribute :subtype, Fhir::CodeableConcept
 
   # Who/what authored the document
-  # Should be present
   resource_references :authors, [Fhir::Practitioner, Fhir::Device]
 
   # Org which maintains the document
@@ -45,11 +41,9 @@ class Fhir::DocumentReference < Fhir::Resource
   attribute :created, DateTime
 
   # When this document reference created
-  # Should be present
   attribute :indexed, DateTime
 
   # current | superseded | error
-  # Should be present
   attribute :status, Fhir::Code
 
   # Status of the underlying document
@@ -68,7 +62,6 @@ class Fhir::DocumentReference < Fhir::Resource
   attribute :primary_language, Fhir::Code
 
   # Mime type of the document
-  # Should be present
   attribute :mime_type, Fhir::Code
 
   # Format of the document
@@ -91,7 +84,6 @@ class Fhir::DocumentReference < Fhir::Resource
     end
 
     # Type of service (i.e. XDS.b)
-    # Should be present
     attribute :type, Fhir::CodeableConcept
 
     # Where service is located (usually a URL)
@@ -105,7 +97,6 @@ class Fhir::DocumentReference < Fhir::Resource
       end
 
       # Name of parameter
-      # Should be present
       attribute :name, String
 
       # Parameter value

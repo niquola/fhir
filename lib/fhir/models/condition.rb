@@ -14,7 +14,6 @@ class Fhir::Condition < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Subject of this condition
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Encounter during which the condition was first asserted
@@ -27,14 +26,12 @@ class Fhir::Condition < Fhir::Resource
   attribute :date_asserted, Date
 
   # Identification of the condition, problem or diagnosis
-  # Should be present
   attribute :code, Fhir::CodeableConcept
 
   # E.g. complaint | symptom | finding | diagnosis
   attribute :category, Fhir::CodeableConcept
 
   # provisional | working | confirmed | refuted
-  # Should be present
   attribute :status, Fhir::Code
 
   # Degree of confidence
@@ -94,7 +91,6 @@ class Fhir::Condition < Fhir::Resource
     end
 
     # due-to | follows
-    # Should be present
     attribute :type, Fhir::Code
 
     # Relationship target by means of a predefined code

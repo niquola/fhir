@@ -10,7 +10,6 @@ class Fhir::FamilyHistory < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Subject of this history
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Additional details
@@ -27,7 +26,6 @@ class Fhir::FamilyHistory < Fhir::Resource
     attribute :name, String
 
     # Relationship to the subject
-    # Should be present
     attribute :relationship, Fhir::CodeableConcept
 
     # Is the person deceased
@@ -46,7 +44,6 @@ class Fhir::FamilyHistory < Fhir::Resource
       end
 
       # The condition
-      # Should be present
       attribute :type, Fhir::CodeableConcept
 
       # deceased | permanent disability | etc.

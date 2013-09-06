@@ -19,7 +19,6 @@ class Fhir::DeviceLog < Fhir::Resource
     end
 
     # Reference to device capabilities declaration
-    # Should be present
     attribute :key, String
 
     # The value of the data item, if available

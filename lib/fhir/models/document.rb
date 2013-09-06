@@ -26,11 +26,9 @@ class Fhir::Document < Fhir::Resource
   attribute :version_identifier, Fhir::Identifier
 
   # Document creation time
-  # Should be present
   attribute :created, DateTime
 
   # Kind of document (LOINC if possible)
-  # Should be present
   attribute :type, Fhir::CodeableConcept
 
   # More detail about the document type
@@ -40,19 +38,15 @@ class Fhir::Document < Fhir::Resource
   attribute :title, String
 
   # Status of this document
-  # Should be present
   attribute :status, Fhir::Code
 
   # As defined by affinity domain
-  # Should be present
   attribute :confidentiality, Fhir::Coding
 
   # Who/what the document is about
-  # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device]
 
   # Who/what authored the final document
-  # Should be present
   resource_references :authors, [Fhir::Practitioner, Fhir::Device]
 
   # A participant who has attested to the accuracy of the
@@ -63,7 +57,6 @@ class Fhir::Document < Fhir::Resource
     end
 
     # personal | professional | legal | official
-    # Should be present
     attribute :mode, Fhir::Code
 
     # When document attested

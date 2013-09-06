@@ -20,11 +20,9 @@ class Fhir::Schedule < Fhir::DataType
     attribute :when, Fhir::Code
 
     # Repeating or event-related duration
-    # Should be present
     attribute :duration, Float
 
     # The units of time for the duration
-    # Should be present
     attribute :units, Fhir::Code
 
     # Number of times to repeat

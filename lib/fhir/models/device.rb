@@ -15,7 +15,6 @@ class Fhir::Device < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # What kind of device this is
-  # Should be present
   attribute :type, Fhir::CodeableConcept
 
   # Name of device manufacturer
@@ -43,7 +42,6 @@ class Fhir::Device < Fhir::Resource
     attribute :lot, String
 
     # Serial number assigned by the manufacturer
-    # Should be present
     attribute :serial_number, String
   end
 

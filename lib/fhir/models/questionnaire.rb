@@ -12,11 +12,9 @@ class Fhir::Questionnaire < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # registered|interim|final|amended|cancelled|withdrawn
-  # Should be present
   attribute :status, Fhir::Code
 
   # Date this version was authored
-  # Should be present
   attribute :authored, DateTime
 
   # The subject of the questionnaires

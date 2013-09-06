@@ -5,7 +5,6 @@ class Fhir::Attachment < Fhir::DataType
   end
 
   # Mime type of the content, with charset etc.
-  # Should be present
   attribute :content_type, Fhir::Code
 
   # Human language of the content (BCP-47)

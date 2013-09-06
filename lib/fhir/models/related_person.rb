@@ -13,7 +13,6 @@ class Fhir::RelatedPerson < Fhir::Resource
   attribute :identifiers, Array[Fhir::Identifier]
 
   # The patient this person is related to
-  # Should be present
   resource_reference :patient, [Fhir::Patient]
 
   # The nature of the relationship

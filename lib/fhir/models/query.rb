@@ -9,11 +9,9 @@ class Fhir::Query < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Links query and its response(s)
-  # Should be present
   attribute :identifier, Fhir::URI
 
   # Set of query parameters with values
-  # Should be present
   attribute :parameters, Array[Fhir::Extension]
 
   # If this is a response to a query.
@@ -24,11 +22,9 @@ class Fhir::Query < Fhir::Resource
     end
 
     # Links response to source query
-    # Should be present
     attribute :identifier, Fhir::URI
 
     # Outcome of processing the query
-    # Should be present
     attribute :outcome, Fhir::Code
 
     # Total number of matching records

@@ -22,7 +22,6 @@ class Fhir::Specimen < Fhir::Resource
     end
 
     # parent | child
-    # Should be present
     attribute :relationship, Fhir::Code
 
     # The subject of the relationship
@@ -32,7 +31,6 @@ class Fhir::Specimen < Fhir::Resource
   attribute :sources, Array[Source]
 
   # The subject of the report
-  # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Substance]
 
   # Accession Identifier
@@ -54,7 +52,6 @@ class Fhir::Specimen < Fhir::Resource
     attribute :comments, Array[String]
 
     # Collection time
-    # Should be present
     attribute :collected_time, DateTime
 
     # The quantity of specimen collected
@@ -67,7 +64,6 @@ class Fhir::Specimen < Fhir::Resource
     attribute :source_site, Fhir::CodeableConcept
   end
 
-  # Should be present
   attribute :collection, Collection
 
   # Details concerning treatment and processing steps for the
@@ -93,7 +89,6 @@ class Fhir::Specimen < Fhir::Resource
     end
 
     # Id for container
-    # Should be present
     attribute :identifiers, Array[Fhir::Identifier]
 
     # Textual description of container

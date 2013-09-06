@@ -189,13 +189,22 @@ module RubyCodeGeneration
 
   KEYWORDS = ["class"]
 
-  def attribute_name(node_path, minmax)
+  def attribute_name(node)
+    node_path = node_path(node)
     class_name = node_path[-2].underscore
-    node_name = node_path[-1]
+    node_name = node_path.last
 
     attr_name = node_name.gsub('[x]', '').underscore
-    attr_name = "#{class_name}_#{attr_name}" if KEYWORDS.include?(attr_name)
-    minmax && minmax.last == '*' ? attr_name.pluralize : attr_name
+
+    if KEYWORDS.include?(attr_name)
+      attr_name = "#{class_name}_#{attr_name}"
+    end
+
+    if is_collection?(node)
+      attr_name.pluralize
+    else
+      attr_name
+    end
   end
 
   def attribute_class_name(node_name)
@@ -220,104 +229,144 @@ module RubyCodeGeneration
 
   IGNORED_ATTRIBUTES = %w[contained extension]
 
-  def node_invariants(node)
-    code = get_attributes(node).map do |node_name, node|
-      minmax = el_minmax(node[:el])
-      node_path = node_path(node)
-      should_be_present = minmax.first == '1'
-      is_collection = minmax.last == '*'
+  def reference_name(node)
+    attr_name = attribute_name(node)
+    if is_collection?(node)
+      attr_name = "#{attr_name.singularize}_refs"
+    else
+      attr_name = "#{attr_name}_ref"
+    end
+  end
 
-      if should_be_present
-	attr_name = attribute_name(node_path, minmax)
-	if attribute_resource_ref?(node)
-	  if is_collection
-	    attr_name = "#{attr_name.singularize}_refs"
-	  else
-	    attr_name = "#{attr_name}_ref"
-	  end
-	end
-
-	if attribute_types(node) == ["Boolean"]
-	  "  validates_inclusion_of :#{attr_name}, in: [true, false]"
-	else
-	  "  validates_presence_of :#{attr_name}"
-	  end
+  def attribute_validation(node, attr_name)
+    if attribute_types(node) == ["Boolean"]
+      "  validates_inclusion_of :#{attr_name}, in: [true, false]"
+    else
+      "  validates_presence_of :#{attr_name}"
       end
+  end
+
+  def attribute_invariant_code(node)
+    return unless required?(node)
+    if attribute_resource_ref?(node)
+      attribute_validation(node, reference_name(node))
+    else
+      attribute_validation(node, attribute_name(node))
+    end
+  end
+
+  def has_invariants?(node)
+    get_attributes(node)
+    .values
+    .any? { |n| required?(n) }
+  end
+
+  def ruby_block_code(start, content)
+    [start, content, 'end'].join("\n") << "\n"
+  end
+
+  def node_invariants(node)
+    code = get_attributes(node).map do |_, n|
+      attribute_invariant_code(n)
     end.compact.join("\n")
 
-    if code.present?
-      "invariants do\n#{code}\nend\n"
-      else
-	''
-      end
+    ruby_block_code 'invariants do',  code
+  end
+
+  def is_collection?(node)
+    minmax = el_minmax(node[:el])
+    minmax.last == '*'
+  end
+
+  def resource_ref_code(node)
+    resource_types = attribute_resource_types(node)
+    res_ref_method = is_collection?(node) ? 'resource_references' : 'resource_reference'
+    "#{res_ref_method} :#{attribute_name(node)}, [#{resource_types.join(", ")}]"
+  end
+
+  def required?(node)
+    minmax = el_minmax(node[:el])
+    minmax.present? && minmax.first == '1'
+  end
+
+  def plain_attribute_type(node)
+    types = attribute_types(node)
+    if types.size > 1
+      virtus_type = is_collection?(node) ? 'Collection' : 'Type'
+      return "*Fhir::#{virtus_type}[#{types.join(', ')}]"
     end
+    ruby_type = types.first
+    return ruby_type unless is_collection?(node)
+    "Array[#{ruby_type}]"
+  end
 
-    def tree_to_ruby_code(tree, root_class_name)
-      code = ""
+  def plain_attribute_code(node)
+    attr_name = attribute_name(node)
+    attr_type = plain_attribute_type(node)
+    "attribute :#{attr_name}, #{attr_type}"
+  end
 
-      get_attributes(tree).each do |node_name, node|
-	depth = node_depth(node)
-	node_path = node_path(node)
-	next if IGNORED_ATTRIBUTES.include?(node_name)
-
-	write_attribute = ->(write_comment = true) {
-	  minmax = el_minmax(node[:el])
-	  is_collection = minmax.last == '*'
-
-	  line(code, depth, attribute_comment(node)) if write_comment
-
-	  if minmax && minmax.first == '1'
-	    line(code, depth, "# Should be present")
-	  end
-
-	  if attribute_resource_ref?(node)
-	    resource_types = attribute_resource_types(node)
-
-	    res_ref_method = is_collection ? 'resource_references' : 'resource_reference'
-
-	    line(code, depth, "#{res_ref_method} :#{attribute_name(node_path, minmax)}, [#{resource_types.join(", ")}]")
-	  else
-	    ruby_types = attribute_types(node)
-	    # fhir_types_present = ruby_types.any? { |rt| rt.include?("Fhir::") }
-
-	    if ruby_types.size == 1
-	      types_code = is_collection ? "Array[#{ruby_types.first}]" : ruby_types.first
-	    else
-	      types_code = "*Fhir::#{is_collection ? 'Collection' : 'Type'}[#{ruby_types.join(', ')}]"
-	      end
-
-	    line(code, depth, "attribute :#{attribute_name(node_path, minmax)}, #{types_code}")
-	    end
-
-	  blank_line(code)
-	}
-
-	if get_attributes(node).blank? # it's attr
-	  write_attribute.call
-	else                           # it's a class!
-	  value_object = depth == 0 ? false : true
-	  parent_class = value_object ? "Fhir::ValueObject" : root_class_name
-
-	  classname = attribute_class_name(node_name)
-	  classname = "Fhir::#{classname}" if !value_object
-
-	    line(code, depth, attribute_comment(node))
-	  line(code, depth, "class #{classname} < #{parent_class}")
-
-	  invariants = node_invariants(node)
-	  if invariants.present?
-	    line(code, depth + 1, invariants)
-	    blank_line(code)
-	  end
-
-	  line(code, 0, tree_to_ruby_code(node, root_class_name))
-	  line(code, depth, "end")
-	  blank_line(code)
-
-	  write_attribute.call(false) if value_object
-      end
+  def write_attribute(node)
+    if attribute_resource_ref?(node)
+      resource_ref_code(node)
+    else
+      plain_attribute_code(node)
     end
+  end
 
-    code
+  def classname(node_name, node)
+    classname = attribute_class_name(node_name)
+    return classname if value_object?(node)
+    "Fhir::#{classname}"
+  end
+
+  def value_object?(node)
+    node_depth(node) != 0
+  end
+
+  def parent_class(node, root_class_name)
+    value_object?(node) ? "Fhir::ValueObject" : root_class_name
+  end
+
+  def is_attribute?(node)
+    get_attributes(node).blank? # it's attr
+  end
+
+  def attribute_to_ruby_code(node_name, node, root_class_name)
+    code = ""
+    depth = node_depth(node)
+
+    if is_attribute?(node)
+      line(code, depth, attribute_comment(node))
+      line(code, depth, write_attribute(node))
+      blank_line(code)
+    else                           # it's a class!
+      line(code, depth, attribute_comment(node))
+      line(code, depth, "class #{classname(node_name, node)} < #{parent_class(node, root_class_name)}")
+
+      if has_invariants?(node)
+	line(code, depth + 1, node_invariants(node))
+	blank_line(code)
+      end
+      line(code, 0, tree_to_ruby_code(node, root_class_name))
+
+      line(code, depth, 'end')
+
+      blank_line(code)
+
+      if value_object?(node)
+	line(code, depth, write_attribute(node))
+	blank_line(code)
+      end
+      code
+    end
+  end
+
+  def tree_to_ruby_code(tree, root_class_name)
+    get_attributes(tree)
+    .map do |node_name, node|
+      next if IGNORED_ATTRIBUTES.include?(node_name)
+      attribute_to_ruby_code(node_name, node, root_class_name)
+    end.join
   end
 end

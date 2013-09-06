@@ -15,7 +15,6 @@ class Fhir::Coverage < Fhir::Resource
   attribute :period, Fhir::Period
 
   # Type of coverage
-  # Should be present
   attribute :type, Fhir::Coding
 
   # The primary coverage ID

@@ -5,7 +5,6 @@ class Fhir::Extension < Fhir::DataType
   end
 
   # identifies the meaning of the extension
-  # Should be present
   attribute :url, Fhir::URI
 
   # If extension modifies other elements/extensions

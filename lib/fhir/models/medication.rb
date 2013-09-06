@@ -31,7 +31,6 @@ class Fhir::Medication < Fhir::Resource
       end
 
       # Ingredient
-      # Should be present
       resource_reference :item, [Fhir::Substance, Fhir::Medication]
 
       # Amount of ingredient
@@ -55,7 +54,6 @@ class Fhir::Medication < Fhir::Resource
       end
 
       # A product in the package
-      # Should be present
       resource_reference :item, [Fhir::Medication]
 
       # Amount in the package

@@ -9,7 +9,6 @@ class Fhir::OrderResponse < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # The order that this is a response to
-  # Should be present
   resource_reference :request, [Fhir::Order]
 
   # When the response was made
@@ -25,7 +24,6 @@ class Fhir::OrderResponse < Fhir::Resource
   attribute :cost, Fhir::Money
 
   # The status of the response
-  # Should be present
   attribute :code, Fhir::Code
 
   # Additional description of the response

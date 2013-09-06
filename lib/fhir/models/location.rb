@@ -11,7 +11,6 @@ class Fhir::Location < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Name of the location
-  # Should be present
   attribute :name, String
 
   # Description of the Location
@@ -36,11 +35,9 @@ class Fhir::Location < Fhir::Resource
     end
 
     # Longitude
-    # Should be present
     attribute :longitude, Float
 
     # Latitude
-    # Should be present
     attribute :latitude, Float
 
     # Altitude

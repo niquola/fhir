@@ -18,7 +18,6 @@ class Fhir::Profile < Fhir::Resource
   attribute :version, String
 
   # Informal name for this profile
-  # Should be present
   attribute :name, String
 
   # Name of the publisher (Organization or individual)
@@ -35,7 +34,6 @@ class Fhir::Profile < Fhir::Resource
 
   # draft | experimental | review | production | withdrawn |
   # superseded
-  # Should be present
   attribute :status, Fhir::Code
 
   # If for testing purposes, not real usage
@@ -55,7 +53,6 @@ class Fhir::Profile < Fhir::Resource
     end
 
     # The Resource or Data Type being described
-    # Should be present
     attribute :type, Fhir::Code
 
     # Name for this particular structure (reference target)
@@ -74,7 +71,6 @@ class Fhir::Profile < Fhir::Resource
       end
 
       # The path of the element (see the formal definitions)
-      # Should be present
       attribute :path, String
 
       # Name for this particular element definition (reference
@@ -95,15 +91,12 @@ class Fhir::Profile < Fhir::Resource
         end
 
         # Element that used to distinguish the slices
-        # Should be present
         attribute :discriminator, String
 
         # If elements must be in same order as slices
-        # Should be present
         attribute :ordered, Boolean
 
         # Whether slice list is open or closed
-        # Should be present
         attribute :rules, Fhir::Code
       end
 
@@ -122,11 +115,9 @@ class Fhir::Profile < Fhir::Resource
         end
 
         # Concise definition for xml presentation
-        # Should be present
         attribute :short, String
 
         # Formal definition
-        # Should be present
         attribute :formal, String
 
         # Comments about the use of this element
@@ -139,11 +130,9 @@ class Fhir::Profile < Fhir::Resource
         attribute :synonyms, Array[String]
 
         # Minimum Cardinality
-        # Should be present
         attribute :min, Integer
 
         # Maximum Cardinality (a number or *)
-        # Should be present
         attribute :max, String
 
         # The data type or resource that the value of this element
@@ -154,7 +143,6 @@ class Fhir::Profile < Fhir::Resource
           end
 
           # Data type or Resource
-          # Should be present
           attribute :code, Fhir::Code
 
           # Profile.structure to apply
@@ -193,22 +181,18 @@ class Fhir::Profile < Fhir::Resource
           end
 
           # Target of 'condition' reference above
-          # Should be present
           attribute :key, String
 
           # Short human label
           attribute :name, String
 
           # error | warning
-          # Should be present
           attribute :severity, Fhir::Code
 
           # Human description of constraint
-          # Should be present
           attribute :human, String
 
           # XPath expression of constraint
-          # Should be present
           attribute :xpath, String
 
           # OCL expression of constraint
@@ -221,7 +205,6 @@ class Fhir::Profile < Fhir::Resource
         attribute :must_support, Boolean
 
         # If this modifies the meaning of other elements
-        # Should be present
         attribute :is_modifier, Boolean
 
         # Reference to a binding (local or absolute)
@@ -235,7 +218,6 @@ class Fhir::Profile < Fhir::Resource
           end
 
           # Which mapping this is (v2, CDA, openEHR, etc.)
-          # Should be present
           attribute :target, Fhir::URI
 
           # Details of the mapping
@@ -263,19 +245,15 @@ class Fhir::Profile < Fhir::Resource
     end
 
     # Identifies the extension in this profile
-    # Should be present
     attribute :code, Fhir::Code
 
     # resource | datatype | mapping | extension
-    # Should be present
     attribute :context_type, Fhir::Code
 
     # Where the extension can be used in instances
-    # Should be present
     attribute :contexts, Array[String]
 
     # Definition of the extension and its content
-    # Should be present
     attribute :definition, Fhir::Profile::Structure::Element::Definition
   end
 
@@ -290,7 +268,6 @@ class Fhir::Profile < Fhir::Resource
     end
 
     # Binding name
-    # Should be present
     attribute :name, String
 
     # Can additional codes be used?

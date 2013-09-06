@@ -16,7 +16,6 @@ class Fhir::OperationOutcome < Fhir::Resource
     end
 
     # error | warning | information
-    # Should be present
     attribute :severity, Fhir::Code
 
     # Error or warning code
@@ -29,7 +28,6 @@ class Fhir::OperationOutcome < Fhir::Resource
     attribute :locations, Array[String]
   end
 
-  # Should be present
   attribute :issues, Array[Issue]
 end
 

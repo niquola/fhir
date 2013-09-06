@@ -15,14 +15,12 @@ class Fhir::Choice < Fhir::DataType
     end
 
     # Possible code
-    # Should be present
     attribute :code, Fhir::Code
 
     # Display for the code
     attribute :display, String
   end
 
-  # Should be present
   attribute :options, Array[Option]
 
   # If order of the values has meaning

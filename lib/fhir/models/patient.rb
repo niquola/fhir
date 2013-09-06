@@ -66,7 +66,6 @@ class Fhir::Patient < Fhir::Resource
     end
 
     # E.g. Dog, Cow
-    # Should be present
     attribute :species, Fhir::CodeableConcept
 
     # E.g. Poodle, Angus

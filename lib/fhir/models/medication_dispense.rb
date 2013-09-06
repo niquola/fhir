@@ -93,7 +93,6 @@ class Fhir::MedicationDispense < Fhir::Resource
     end
 
     # Type of substitiution
-    # Should be present
     attribute :type, Fhir::CodeableConcept
 
     # Why was substitution made

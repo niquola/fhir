@@ -15,14 +15,12 @@ class Fhir::Provenance < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Target resource(s) (usually version specific)
-  # Should be present
   resource_references :targets, [Fhir::Resource]
 
   # When the activity occurred
   attribute :period, Fhir::Period
 
   # When the activity was recorded / updated
-  # Should be present
   attribute :recorded, DateTime
 
   # Reason the activity is occurring
@@ -47,15 +45,12 @@ class Fhir::Provenance < Fhir::Resource
     end
 
     # author | overseer | enterer | attester | source | cc: +
-    # Should be present
     attribute :role, Fhir::Coding
 
     # Resource | Person | Application | Record | Document +
-    # Should be present
     attribute :type, Fhir::Coding
 
     # Identity of agent (urn or url)
-    # Should be present
     attribute :reference, Fhir::URI
 
     # Human description of participant
@@ -73,15 +68,12 @@ class Fhir::Provenance < Fhir::Resource
     end
 
     # derivation | revision | quotation | source
-    # Should be present
     attribute :role, Fhir::Code
 
     # Resource Type, or something else
-    # Should be present
     attribute :type, Fhir::Coding
 
     # Identity of participant (urn or url)
-    # Should be present
     attribute :reference, Fhir::URI
 
     # Human description of participant

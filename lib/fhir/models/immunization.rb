@@ -12,23 +12,18 @@ class Fhir::Immunization < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Vaccination  Administration Date
-  # Should be present
   attribute :date, DateTime
 
   # Vaccine Product Administered
-  # Should be present
   attribute :vaccine_type, Fhir::CodeableConcept
 
   # Who this immunization was adminstered to
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Resual Indicator
-  # Should be present
   attribute :refused_indicator, Boolean
 
   # If self-reported
-  # Should be present
   attribute :reported, Boolean
 
   # Vaccine Administering Provider Name
@@ -93,7 +88,6 @@ class Fhir::Immunization < Fhir::Resource
     end
 
     # Dose Number
-    # Should be present
     attribute :dose_sequence, Integer
 
     # Vaccine Administration Protocol Description
@@ -112,7 +106,6 @@ class Fhir::Immunization < Fhir::Resource
     attribute :dose_target, Fhir::CodeableConcept
 
     # Dose Status
-    # Should be present
     attribute :dose_status, Fhir::CodeableConcept
 
     # Dose Status Reason

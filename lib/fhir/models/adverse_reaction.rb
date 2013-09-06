@@ -12,11 +12,9 @@ class Fhir::AdverseReaction < Fhir::Resource
   attribute :reaction_date, DateTime
 
   # The subject of the adverse reaction
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # To say that a reaction to substance did not occur
-  # Should be present
   attribute :did_not_occur_flag, Boolean
 
   # Who recorded the reaction
@@ -30,7 +28,6 @@ class Fhir::AdverseReaction < Fhir::Resource
     end
 
     # Indicates the specific sign or symptom that was observed
-    # Should be present
     attribute :code, Fhir::CodeableConcept
 
     # The severity of the sign or symptom

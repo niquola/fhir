@@ -36,11 +36,9 @@ class Fhir::DeviceCapabilities < Fhir::Resource
         end
 
         # Describes the metrics
-        # Should be present
         attribute :code, Fhir::CodeableConcept
 
         # Used to link to data in device log
-        # Should be present
         attribute :key, String
 
         # How to interpret this metric value.
@@ -50,7 +48,6 @@ class Fhir::DeviceCapabilities < Fhir::Resource
           end
 
           # Quantity | Coding | Array | string
-          # Should be present
           attribute :type, Fhir::Code
 
           # Human Readable units of data value
@@ -66,7 +63,6 @@ class Fhir::DeviceCapabilities < Fhir::Resource
           attribute :system, Fhir::URI
         end
 
-        # Should be present
         attribute :info, Info
 
         # Additional data that qualifies the metric, or contributes
@@ -79,18 +75,15 @@ class Fhir::DeviceCapabilities < Fhir::Resource
           end
 
           # Describes the facet
-          # Should be present
           attribute :code, Fhir::CodeableConcept
 
           # Factor to apply to raw values (default = 1)
           attribute :scale, Float
 
           # Used to link to data in device log
-          # Should be present
           attribute :key, String
 
           # How to interpret this facet value
-          # Should be present
           attribute :info, Fhir::DeviceCapabilities::VirtualDevice::Channel::Metric::Info
         end
 

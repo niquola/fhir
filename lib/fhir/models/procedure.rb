@@ -10,7 +10,6 @@ class Fhir::Procedure < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Subject of this procedure
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Identification of the procedure

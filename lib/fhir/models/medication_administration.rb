@@ -20,22 +20,18 @@ class Fhir::MedicationAdministration < Fhir::Resource
 
   # Status of the administration - active | paused | completed
   # | nullified
-  # Should be present
   attribute :status, Fhir::Code
 
   # Patient
-  # Should be present
   resource_reference :patient, [Fhir::Patient]
 
   # Practitioner (responsible Health Care professional)
-  # Should be present
   resource_reference :practitioner, [Fhir::Practitioner]
 
   # Current Encounter / Admission
   resource_reference :encounter, [Fhir::Encounter]
 
   # Prescription
-  # Should be present
   resource_reference :prescription, [Fhir::MedicationPrescription]
 
   # True if asserting medication was not given
@@ -45,7 +41,6 @@ class Fhir::MedicationAdministration < Fhir::Resource
   attribute :reason_not_givens, Array[Fhir::CodeableConcept]
 
   # Effective time
-  # Should be present
   attribute :when_given, Fhir::Period
 
   # Medication

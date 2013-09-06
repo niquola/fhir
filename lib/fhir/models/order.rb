@@ -38,7 +38,6 @@ class Fhir::Order < Fhir::Resource
   attribute :when, When
 
   # What action is being ordered
-  # Should be present
   resource_references :details, [Fhir::Resource]
 end
 

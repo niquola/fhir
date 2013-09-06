@@ -17,15 +17,12 @@ class Fhir::Message < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Id of this message
-  # Should be present
   attribute :identifier, String
 
   # Time that the message was sent
-  # Should be present
   attribute :timestamp, DateTime
 
   # Code for the event this message represents
-  # Should be present
   attribute :event, Fhir::Code
 
   # Information about the message that this message is a
@@ -37,11 +34,9 @@ class Fhir::Message < Fhir::Resource
     end
 
     # Id of original message
-    # Should be present
     attribute :identifier, String
 
     # Type of response to the message
-    # Should be present
     attribute :code, Fhir::Code
 
     # Specific list of hints/warnings/errors
@@ -61,7 +56,6 @@ class Fhir::Message < Fhir::Resource
     attribute :name, String
 
     # Name of software running the system
-    # Should be present
     attribute :software, String
 
     # Version of software running
@@ -71,11 +65,9 @@ class Fhir::Message < Fhir::Resource
     attribute :contact, Fhir::Contact
 
     # Actual message source address or id
-    # Should be present
     attribute :endpoint, Fhir::URI
   end
 
-  # Should be present
   attribute :source, Source
 
   # The destination application which the message is intended
@@ -92,11 +84,9 @@ class Fhir::Message < Fhir::Resource
     resource_reference :target, [Fhir::Device]
 
     # Actual destination address or id
-    # Should be present
     attribute :endpoint, Fhir::URI
   end
 
-  # Should be present
   attribute :destination, Destination
 
   # The source of the data entry

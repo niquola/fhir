@@ -9,7 +9,6 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   attribute :text, Fhir::Narrative
 
   # Who/what test is about
-  # Should be present
   resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Location, Fhir::Device]
 
   # Who ordered the test
@@ -45,11 +44,9 @@ class Fhir::DiagnosticOrder < Fhir::Resource
 
     # requested | received | accepted | inprogress | review |
     # complete | suspended | rejected | failed
-    # Should be present
     attribute :status, Fhir::Code
 
     # The date at which the event happened
-    # Should be present
     attribute :date, DateTime
 
     # Who recorded or did this
@@ -68,7 +65,6 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     end
 
     # Code for this item
-    # Should be present
     attribute :code, Fhir::CodeableConcept
 
     # If this item relates to specific specimens

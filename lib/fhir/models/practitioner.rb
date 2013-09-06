@@ -46,7 +46,6 @@ class Fhir::Practitioner < Fhir::Resource
     end
 
     # Qualification
-    # Should be present
     attribute :code, Fhir::CodeableConcept
 
     # Period during which the qualification is valid

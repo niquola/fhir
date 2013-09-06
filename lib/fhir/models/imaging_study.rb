@@ -16,11 +16,9 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :date_time, DateTime
 
   # Who the images are of
-  # Should be present
   resource_reference :subject, [Fhir::Patient]
 
   # Formal identifier for the study (0020,000D)
-  # Should be present
   attribute :uid, String
 
   # Accession Number (0008,0050)
@@ -42,11 +40,9 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :url, Fhir::URI
 
   # Number of Study Related Series (0020,1206)
-  # Should be present
   attribute :number_of_series, Integer
 
   # Number of Study Related Instances (0020,1208)
-  # Should be present
   attribute :number_of_instances, Integer
 
   # Diagnoses etc with request (0008,1080)
@@ -74,18 +70,15 @@ class Fhir::ImagingStudy < Fhir::Resource
     attribute :number, Integer
 
     # The modality of this sequence (0008,0060)
-    # Should be present
     attribute :modality, Fhir::Code
 
     # Formal identifier for this series (0020,000E)
-    # Should be present
     attribute :uid, String
 
     # A description of the series (0008,103E)
     attribute :description, String
 
     # Number of Series Related Instances (0020,1209)
-    # Should be present
     attribute :number_of_instances, Integer
 
     # Instance Availability (0008,0056)
@@ -111,11 +104,9 @@ class Fhir::ImagingStudy < Fhir::Resource
       attribute :number, Integer
 
       # Formal identifier for this instance (0008,0018)
-      # Should be present
       attribute :uid, String
 
       # DICOM class type (0008,0016)
-      # Should be present
       attribute :sopclass, String
 
       # Type of instance (0004,1430)
@@ -131,7 +122,6 @@ class Fhir::ImagingStudy < Fhir::Resource
       resource_reference :attachment, [Fhir::Resource]
     end
 
-    # Should be present
     attribute :instances, Array[Instance]
   end
 

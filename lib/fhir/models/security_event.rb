@@ -20,7 +20,6 @@ class Fhir::SecurityEvent < Fhir::Resource
     end
 
     # Type of event
-    # Should be present
     attribute :type, Fhir::CodeableConcept
 
     # Sub-type of event
@@ -30,7 +29,6 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :action, Fhir::Code
 
     # Time when the event occurred on source
-    # Should be present
     attribute :date_time, DateTime
 
     # Whether the event succeeded or failed
@@ -40,7 +38,6 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :outcome_desc, String
   end
 
-  # Should be present
   attribute :event, Event
 
   # A person, a hardware device or software process.
@@ -65,7 +62,6 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :name, String
 
     # Whether user is initiator
-    # Should be present
     attribute :requestor, Boolean
 
     # Type of media
@@ -84,7 +80,6 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :network, Network
   end
 
-  # Should be present
   attribute :participants, Array[Participant]
 
   # Application systems and processes.
@@ -97,14 +92,12 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :site, String
 
     # The id of source where event originated
-    # Should be present
     attribute :identifier, String
 
     # The type of source where event originated
     attribute :types, Array[Fhir::Coding]
   end
 
-  # Should be present
   attribute :source, Source
 
   # Specific instances of data or objects that have been
@@ -142,11 +135,9 @@ class Fhir::SecurityEvent < Fhir::Resource
       end
 
       # Name of the property
-      # Should be present
       attribute :type, String
 
       # Property value
-      # Should be present
       attribute :value, String
     end
 

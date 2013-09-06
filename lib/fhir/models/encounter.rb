@@ -14,11 +14,9 @@ class Fhir::Encounter < Fhir::Resource
   attribute :identifiers, Array[Fhir::Identifier]
 
   # E.g. active, aborted, finished
-  # Should be present
   attribute :status, Fhir::Code
 
   # Inpatient | Outpatient etc
-  # Should be present
   attribute :encounter_class, Fhir::Code
 
   # Specific type of encounter
@@ -112,12 +110,10 @@ class Fhir::Encounter < Fhir::Resource
     end
 
     # The location the encounter takes place
-    # Should be present
     resource_reference :location, [Fhir::Location]
 
     # Time period during which the patient was present at the
     # location
-    # Should be present
     attribute :period, Fhir::Period
   end
 
