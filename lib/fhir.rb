@@ -17,7 +17,6 @@ module Fhir
   autoload :Money,             'fhir/handmade/money'
 
   autoload :Virtus,            'fhir/virtus'
-  autoload :Validations,       'fhir/validations'
 end
 
 require "fhir/models/autoloads"

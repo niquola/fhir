@@ -115,6 +115,6 @@ class Fhir::Message < Fhir::Resource
   attribute :reason, Fhir::CodeableConcept
 
   # The actual content of the message
-  resource_references :datas, [Fhir::Resource]
+  resource_references :data, [Fhir::Resource]
 end
 

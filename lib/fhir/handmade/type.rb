@@ -1,7 +1,25 @@
+require 'active_model'
+
 class Fhir::Type
   include Virtus
   include Fhir::Virtus
-  include Fhir::Validations
+  include ActiveModel::Validations
+
+  module Validations
+    def validate_attributes(attributes)
+      self.new(attributes).to_hash_with_errors
+    end
+
+    def validator(validator_name, &block)
+      with_options(:if => ->(obj) { obj.active_validators.include?(validator_name) }, &block)
+    end
+
+    def invariants(&block)
+      validator(:invariants, &block)
+    end
+  end
+
+  extend Validations
 
   attr_accessor :skip_invariants_check
 
@@ -18,6 +36,14 @@ class Fhir::Type
     instance
   end
 
+  def validator_active?(validator_name)
+    [:invariant].include?(validator_name)
+  end
+
+  def skip_invariants_check?
+    @skip_invariants_check
+  end
+
   def check_invariants!
     found_errors = []
 
@@ -25,12 +51,12 @@ class Fhir::Type
       found_errors << hash[:_errors] if hash[:_errors].present?
 
       hash.each do |key, value|
-        next if key == :_errors
-        if value.is_a?(Hash)
-          collect_errors.call(value)
-        elsif value.is_a?(Array)
-          value.each { |el| collect_errors.call(el) if el.is_a?(Hash) }
-        end
+	next if key == :_errors
+	if value.is_a?(Hash)
+	  collect_errors.call(value)
+	elsif value.is_a?(Array)
+	  value.each { |el| collect_errors.call(el) if el.is_a?(Hash) }
+	end
       end
     end
 
@@ -51,14 +77,26 @@ class Fhir::Type
       value = send(attribute)
 
       if value.is_a?(Array)
-        result[attribute] = value.map { |v| to_hash_with_errors.call(v) }
+	result[attribute] = value.map { |v| to_hash_with_errors.call(v) }
       else
-        result[attribute] = to_hash_with_errors.call(value)
+	result[attribute] = to_hash_with_errors.call(value)
       end
     end
 
     result[:_errors] = self.errors if self.errors.present?
     result
+  end
+
+  def validate_attribute(attr_name)
+    valid?
+
+    if !skip_invariants_check? && self.errors.present?
+      raise "Invalid value for attribute #{attr_name}: " + self.errors.inspect
+    end
+  end
+
+  def attribute_changed(attr_name)
+    validate_attribute(attr_name)
   end
 
 
