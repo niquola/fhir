@@ -6,7 +6,7 @@
 class Fhir::Group < Fhir::Resource
   invariants do
     validates_presence_of :type
-    validates_inclusion_of :actual, in: [true, false]
+    validates_inclusion_of :actual, in: [true, false], message: 'must be either true or false'
   end
 
   # Text summary of the resource, for human interpretation
@@ -35,7 +35,7 @@ class Fhir::Group < Fhir::Resource
     invariants do
       validates_presence_of :type
       validates_presence_of :value
-      validates_inclusion_of :exclude, in: [true, false]
+      validates_inclusion_of :exclude, in: [true, false], message: 'must be either true or false'
     end
 
     # Kind of characteristic

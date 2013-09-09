@@ -4,8 +4,8 @@ class Fhir::Immunization < Fhir::Resource
     validates_presence_of :date
     validates_presence_of :vaccine_type
     validates_presence_of :subject_ref
-    validates_inclusion_of :refused_indicator, in: [true, false]
-    validates_inclusion_of :reported, in: [true, false]
+    validates_inclusion_of :refused_indicator, in: [true, false], message: 'must be either true or false'
+    validates_inclusion_of :reported, in: [true, false], message: 'must be either true or false'
   end
 
   # Text summary of the resource, for human interpretation

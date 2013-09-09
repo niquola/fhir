@@ -43,7 +43,7 @@ class Fhir::SecurityEvent < Fhir::Resource
   # A person, a hardware device or software process.
   class Participant < Fhir::ValueObject
     invariants do
-      validates_inclusion_of :requestor, in: [true, false]
+      validates_inclusion_of :requestor, in: [true, false], message: 'must be either true or false'
     end
 
     # User roles (e.g. local RBAC codes)

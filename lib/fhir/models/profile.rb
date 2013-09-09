@@ -86,7 +86,7 @@ class Fhir::Profile < Fhir::Resource
       class Slicing < Fhir::ValueObject
         invariants do
           validates_presence_of :discriminator
-          validates_inclusion_of :ordered, in: [true, false]
+          validates_inclusion_of :ordered, in: [true, false], message: 'must be either true or false'
           validates_presence_of :rules
         end
 
@@ -111,7 +111,7 @@ class Fhir::Profile < Fhir::Resource
           validates_presence_of :formal
           validates_presence_of :min
           validates_presence_of :max
-          validates_inclusion_of :is_modifier, in: [true, false]
+          validates_inclusion_of :is_modifier, in: [true, false], message: 'must be either true or false'
         end
 
         # Concise definition for xml presentation

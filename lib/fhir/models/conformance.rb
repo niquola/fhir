@@ -6,7 +6,7 @@ class Fhir::Conformance < Fhir::Resource
     validates_presence_of :publisher
     validates_presence_of :date
     validates_presence_of :fhir_version
-    validates_inclusion_of :accept_unknown, in: [true, false]
+    validates_inclusion_of :accept_unknown, in: [true, false], message: 'must be either true or false'
     validates_presence_of :formats
   end
 

@@ -137,11 +137,11 @@ module RubyCodeGeneration
     puts "to many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
 
     original_type = types.find {|t| t.include?("Resource(") }
-					       types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
-						 MISSED_RESOURCES.include?(type) ? nil : "Fhir::#{type}"
-					       end.compact
+                                               types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
+                                                 MISSED_RESOURCES.include?(type) ? nil : "Fhir::#{type}"
+                                               end.compact
 
-						 types.empty? ? ["Fhir::Resource"] : types
+                                                 types.empty? ? ["Fhir::Resource"] : types
   end
 
   def attribute_resource_ref?(node)
@@ -158,14 +158,14 @@ module RubyCodeGeneration
 	mapped_type = TYPE_MAPPINGS[original_type]
 
 	if mapped_type.nil?
-	  if original_type.starts_with?("@")
-	    mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
-	    mapped_type = "Fhir::#{mapped_type}"
-	  else
-	    mapped_type = "Fhir::#{original_type}"
-	    end
+          if original_type.starts_with?("@")
+            mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
+            mapped_type = "Fhir::#{mapped_type}"
+          else
+            mapped_type = "Fhir::#{original_type}"
+            end
 	else
-	  mapped_type
+          mapped_type
 	end
       end.compact
     else
@@ -240,10 +240,10 @@ module RubyCodeGeneration
 
   def attribute_validation(node, attr_name)
     if attribute_types(node) == ["Boolean"]
-      "  validates_inclusion_of :#{attr_name}, in: [true, false]"
+      "  validates_inclusion_of :#{attr_name}, in: [true, false], message: 'must be either true or false'"
     else
       "  validates_presence_of :#{attr_name}"
-      end
+    end
   end
 
   def attribute_invariant_code(node)
@@ -345,8 +345,8 @@ module RubyCodeGeneration
       line(code, depth, "class #{classname(node_name, node)} < #{parent_class(node, root_class_name)}")
 
       if has_invariants?(node)
-	line(code, depth + 1, node_invariants(node))
-	blank_line(code)
+        line(code, depth + 1, node_invariants(node))
+        blank_line(code)
       end
       line(code, 0, tree_to_ruby_code(node, root_class_name))
 
@@ -355,8 +355,8 @@ module RubyCodeGeneration
       blank_line(code)
 
       if value_object?(node)
-	line(code, depth, write_attribute(node))
-	blank_line(code)
+        line(code, depth, write_attribute(node))
+        blank_line(code)
       end
       code
     end

@@ -70,7 +70,7 @@ class Fhir::CarePlan < Fhir::Resource
   class Activity < Fhir::ValueObject
     invariants do
       validates_presence_of :category
-      validates_inclusion_of :prohibited, in: [true, false]
+      validates_inclusion_of :prohibited, in: [true, false], message: 'must be either true or false'
     end
 
     # encounter | procedure | observation | +

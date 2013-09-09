@@ -2,7 +2,7 @@
 class Fhir::AdverseReaction < Fhir::Resource
   invariants do
     validates_presence_of :subject_ref
-    validates_inclusion_of :did_not_occur_flag, in: [true, false]
+    validates_inclusion_of :did_not_occur_flag, in: [true, false], message: 'must be either true or false'
   end
 
   # Text summary of the resource, for human interpretation
