@@ -134,7 +134,7 @@ module RubyCodeGeneration
 
   def attribute_resource_types(node)
     types = el_types(node[:el])
-    puts "to many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
+    puts "too many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
 
     original_type = types.find {|t| t.include?("Resource(") }
                                                types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
