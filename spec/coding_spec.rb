@@ -10,4 +10,8 @@ describe 'Fhir::Coding' do
     coding = Fhir::Coding.new(system: 'ups')
     coding.system.should == "ups"
   end
+
+  it 'test equality' do
+    Fhir::Coding.new(system: 'ups').should == Fhir::Coding.new(system: 'ups')
+  end
 end
