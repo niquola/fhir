@@ -8,5 +8,14 @@ class Fhir::Coding < Fhir::DataType
 
   # Representation defined by the system
   attribute :display, String
-end
 
+  def initialize(raw_attrs)
+    attrs = raw_attrs.dup
+    attrs[:system] ||= "urn:oid:#{attrs.delete(:system_oid)}"
+    super(attrs)
+  end
+
+  def system_oid
+    self.system.sub(/^urn\:oid\:/, '')
+  end
+end
