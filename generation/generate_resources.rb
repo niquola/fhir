@@ -28,7 +28,7 @@ def generate_resources
 
   autoload_code = "module Fhir\n"
 
-  autoload_code << autoloads.map do |autoload|
+  autoload_code << autoloads.sort.map do |autoload|
     "  autoload :#{autoload.first}, #{autoload.last.inspect}"
   end.join("\n")
 
