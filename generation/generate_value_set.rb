@@ -40,13 +40,12 @@ valuesets(FHIR_DIR).each do |f|
     out << comment_text(value_by_path(vs, 'description'))
     out << comment_text(vs.to_s)
     out<< "class Fhir::#{name.camelize} < Fhir::ValueSet\n"
-      vs.xpath('./compose/include').each do |inc|
+    vs.xpath('./compose/include').each do |inc|
       out<< "#  #{value_by_path(inc, 'system')}\n"
       inc.xpath('./code').each do |c|
-	out<< "#     #{c}\n"
+        out<< "#     #{c}\n"
       end
     end
     out<< "end\n"
-end
-
+  end
 end

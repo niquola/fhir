@@ -77,7 +77,7 @@ def generate_types
 
   open("#{lib_dir}/autoloads.rb", 'w') do |f|
     f<< ruby_block("module Fhir") do
-      autoloads.map do |(c,f)|
+      autoloads.sort.map do |(c,f)|
         %Q[ autoload :#{c}, 'fhir/types/#{f}.rb']
       end.join("\n")
     end

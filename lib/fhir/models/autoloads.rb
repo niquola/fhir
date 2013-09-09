@@ -1,5 +1,4 @@
 module Fhir
-  autoload :ValueSet, "fhir/models/value_set"
   autoload :AdverseReaction, "fhir/models/adverse_reaction"
   autoload :Alert, "fhir/models/alert"
   autoload :AllergyIntolerance, "fhir/models/allergy_intolerance"
@@ -48,4 +47,5 @@ module Fhir
   autoload :Specimen, "fhir/models/specimen"
   autoload :Substance, "fhir/models/substance"
   autoload :Supply, "fhir/models/supply"
+  autoload :ValueSet, "fhir/models/value_set"
 end
