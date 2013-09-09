@@ -1,6 +1,6 @@
 # Fhir
 
-TODO: Write a gem description
+FHIR Ruby implementation
 
 ## Installation
 
