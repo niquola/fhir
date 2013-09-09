@@ -1,9 +1,13 @@
 require 'spec_helper'
 
 describe 'Fhir::Coding' do
-  example do
+  it 'should create coding by system_oid' do
     coding = Fhir::Coding.new(system_oid: 'ups')
-    coding.system.should_not be_nil
-    p coding
+    coding.system.should == "urn:oid:ups"
+  end
+
+  it 'should create coding by system' do
+    coding = Fhir::Coding.new(system: 'ups')
+    coding.system.should == "ups"
   end
 end
