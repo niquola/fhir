@@ -26,19 +26,20 @@ class Fhir::Type
   attr_accessor :parent
 
   def initialize(attributes, skip_invariants_check = false)
-
     @skip_invariants_check = skip_invariants_check
+
     attrs_with_parent = attributes.symbolize_keys
-    self.class.check_attribute_keys!(attrs_with_parent)
+    self.class.check_attributes_keys!(attrs_with_parent)
     attrs_with_parent.each do |k,v|
       if v.is_a?(::Hash)
-	v[:parent] = self
+        v[:parent] = self
       elsif v.is_a?(::Array)
-	v.each do |vv|
-	  vv[:parent] = self if vv.is_a?(::Hash)
-	end
+        v.each do |vv|
+          vv[:parent] = self if vv.is_a?(::Hash)
+        end
       end
     end
+
     @parent = attrs_with_parent.delete(:parent)
     @initiated = false
     super(attrs_with_parent)
@@ -46,9 +47,9 @@ class Fhir::Type
     validate_attribute(:base)
   end
 
-  def self.check_attribute_keys!(attrs)
-    extra_keys =  (attrs.keys - self.attribute_set.map(&:name) - [:parent, :_type])
-    raise "While creating #{self.name} unknown keys : #{extra_keys.join(', ')} #{attrs.inspect}" unless extra_keys.empty?
+  def self.check_attributes_keys!(attrs)
+    unknown_keys =  (attrs.keys - self.attribute_set.map(&:name) - [:parent, :_type])
+    raise "While creating #{self.name} unknown keys: #{unknown_keys.join(', ')}" unless unknown_keys.empty?
   end
 
   def skip_invariants_check?
@@ -71,7 +72,6 @@ class Fhir::Type
     [:invariant].include?(validator_name)
   end
 
-
   def check_invariants!
     found_errors = []
 
@@ -79,12 +79,12 @@ class Fhir::Type
       found_errors << hash[:_errors] if hash[:_errors].present?
 
       hash.each do |key, value|
-	next if key == :_errors
-	if value.is_a?(Hash)
-	  collect_errors.call(value)
-	elsif value.is_a?(Array)
-	  value.each { |el| collect_errors.call(el) if el.is_a?(Hash) }
-	end
+        next if key == :_errors
+        if value.is_a?(Hash)
+          collect_errors.call(value)
+        elsif value.is_a?(Array)
+          value.each { |el| collect_errors.call(el) if el.is_a?(Hash) }
+        end
       end
     end
 
@@ -105,9 +105,9 @@ class Fhir::Type
       value = send(attribute)
 
       if value.is_a?(Array)
-	result[attribute] = value.map { |v| to_hash_with_errors.call(v) }
+        result[attribute] = value.map { |v| to_hash_with_errors.call(v) }
       else
-	result[attribute] = to_hash_with_errors.call(value)
+        result[attribute] = to_hash_with_errors.call(value)
       end
     end
 
