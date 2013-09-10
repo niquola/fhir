@@ -2,7 +2,7 @@ module Fhir::Virtus::Serializable
   def serialize
     self.class.attribute_set.each_with_object({}) do |attr, hash|
       hash[attr.name] = serialize_value(self.send(attr.name))
-    end
+    end.merge(_type: self.class.name)
   end
 
   private

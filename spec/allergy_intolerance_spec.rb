@@ -7,11 +7,11 @@ describe 'AllergyIntolerance' do
       sensitivity_type: 'allergy',
       recorded_date: Time.now,
       status: 'status',
-      subject_ref: {
-	_type: "Fhir::ResourceReference",
-	type: 'Patient',
-	reference: '3123123'
-      },
+                                             subject_ref: {
+                                               _type: "Fhir::ResourceReference",
+                                               type: 'Patient',
+                                               reference: '3123123'
+                                             },
       substance: {
         _type: "Fhir::Substance",
         name: 'substance name',

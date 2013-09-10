@@ -6,7 +6,7 @@ module Fhir::Virtus
 
     def call(value)
       if value.is_a?(::Hash) && value.key?(:_type)
-        type = value.delete(:_type)
+        type = value[:_type]
 
         klass = type.constantize
 
@@ -47,7 +47,7 @@ module Fhir::Virtus
 
     def check_type!(klass, value)
       if klass != NilClass && !allowed_types.any? { |t| klass <= t }
-        raise ArgumentError.new("Unexpected value #{value.inspect} with type #{klass.name}, expected one of: #{allowed_types.inspect}")
+        raise ArgumentError.new("Unexpected value with type #{klass.name}, expected one of: #{allowed_types.inspect}\n#{value.to_yaml}")
       end
     end
   end
