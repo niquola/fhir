@@ -8,6 +8,14 @@ class Fhir::CodeableConcept < Fhir::DataType
   attribute :text, String
 
   # Which code was chosen directly by the user
-  attribute :primary, Integer
+  #attribute :primary, Integer
+
+  def find_by_system(coding_system)
+    codings.select { |c| c.system == coding_system }.first
+  end
+
+  def primary
+    codings.first
+  end
 end
 
