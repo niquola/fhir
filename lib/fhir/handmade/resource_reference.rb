@@ -1,6 +1,6 @@
 class Fhir::ResourceReference < Fhir::DataType
   attribute :type, String
-  attribute :reference, String
+  attribute :reference, Fhir::URI
   attribute :display, String
 
   def initialize(attributes = {})
