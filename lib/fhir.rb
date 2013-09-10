@@ -15,7 +15,8 @@ module Fhir
   autoload :ResourceReference, 'fhir/handmade/resource_reference'
   autoload :Resource,          'fhir/handmade/resource'
   autoload :Money,             'fhir/handmade/money'
-  autoload :Coding,             'fhir/handmade/coding'
+  autoload :Coding,            'fhir/handmade/coding'
+  autoload :CodeableConcept,   'fhir/handmade/codeable_concept'
 
   autoload :Virtus,            'fhir/virtus'
 end

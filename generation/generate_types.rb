@@ -47,7 +47,7 @@ extend FhirElementsToTree
 extend FhirProfile
 extend RubyCodeGeneration
 
-HANDMADE_TYPES = ["ResourceReference", "Coding"]
+HANDMADE_TYPES = ["ResourceReference", "Coding", "CodeableConcept"]
 
 def generate_types
   lib_dir  = File.expand_path('lib/fhir/types', FHIR_DIR)
