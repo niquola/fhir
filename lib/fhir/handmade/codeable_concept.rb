@@ -10,7 +10,7 @@ class Fhir::CodeableConcept < Fhir::DataType
   # Which code was chosen directly by the user
   #attribute :primary, Integer
 
-  def find_by_system(coding_system)
+  def with_system(coding_system)
     codings.select { |c| c.system == coding_system }.first
   end
 

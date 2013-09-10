@@ -20,12 +20,12 @@ describe 'Fhir::CodeableConcept' do
         }]
       }
     )
-    rgb_color = model.color.find_by_system('RGB')
+    rgb_color = model.color.with_system('RGB')
     rgb_color.system.should == 'RGB'
     rgb_color.code.should == 'FF0000'
     rgb_color.display.should == 'red'
 
-    rgba_color = model.color.find_by_system('RGBA')
+    rgba_color = model.color.with_system('RGBA')
     rgba_color.system.should == 'RGBA'
     rgba_color.code.should == 'FF000000'
     rgba_color.display.should == 'red'
