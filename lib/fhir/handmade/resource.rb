@@ -2,7 +2,9 @@ require 'securerandom'
 
 class Fhir::Resource < Fhir::Type
   # Unique Identifier for Resource
+  # see http://www.hl7.org/implement/standards/fhir/resources.htm#metadata
   attribute :uuid, String
+  attribute :last_modified_date, Time
 
   # Unique Resource Identifier
   def uri
