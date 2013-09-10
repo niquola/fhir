@@ -5,6 +5,8 @@ module Fhir::Virtus
     end
 
     def call(value)
+      value = value.symbolize_keys if value.is_a?(::Hash)
+
       if value.is_a?(::Hash) && value.key?(:_type)
         type = value[:_type]
 
