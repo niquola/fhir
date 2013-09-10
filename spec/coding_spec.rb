@@ -14,4 +14,13 @@ describe 'Fhir::Coding' do
   it 'test equality' do
     Fhir::Coding.new(system: 'ups').should == Fhir::Coding.new(system: 'ups')
   end
+
+  it "#to_concept should convert to CodableConcept" do
+    coding = Fhir::Coding.new(system: 'ups', code: 'ups', display: 'display')
+    concept = coding.to_concept
+    concept.should_not be_nil
+    concept.should be_a(Fhir::CodeableConcept)
+    concept.text.should == coding.display
+    concept.codings.first.should == coding
+  end
 end

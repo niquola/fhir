@@ -18,4 +18,11 @@ class Fhir::Coding < Fhir::DataType
   def system_oid
     self.system.sub(/^urn\:oid\:/, '')
   end
+
+  def to_concept
+    Fhir::CodeableConcept.new(
+      text: self.display,
+      codings: [self]
+    )
+  end
 end
