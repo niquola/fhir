@@ -29,6 +29,7 @@ class Fhir::Type
     @skip_invariants_check = skip_invariants_check
 
     attrs_with_parent = attributes.symbolize_keys
+
     self.class.check_attributes_keys!(attrs_with_parent)
     attrs_with_parent.each do |k,v|
       if v.is_a?(::Hash)

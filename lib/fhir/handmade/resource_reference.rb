@@ -9,4 +9,8 @@ class Fhir::ResourceReference < Fhir::DataType
 
     super(attributes)
   end
+
+  def to_s
+    self.reference
+  end
 end
