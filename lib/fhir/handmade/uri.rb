@@ -1,6 +1,6 @@
 class Fhir::URI < String
   def uuid
-    components.last
+    components.last.gsub("@", '')
   end
 
   def type
