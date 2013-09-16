@@ -76,3 +76,5 @@ class Fhir::MedicationAdministration < Fhir::Resource
   attribute :dosages, Array[Dosage]
 end
 
+
+Fhir.load_handmade('models/medication_administration')

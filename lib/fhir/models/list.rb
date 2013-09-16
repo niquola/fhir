@@ -48,3 +48,5 @@ class Fhir::List < Fhir::Resource
   attribute :empty_reason, Fhir::CodeableConcept
 end
 
+
+Fhir.load_handmade('models/list')

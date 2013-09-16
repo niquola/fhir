@@ -66,3 +66,5 @@ class Fhir::Device < Fhir::Resource
   attribute :url, Fhir::URI
 end
 
+
+Fhir.load_handmade('models/device')

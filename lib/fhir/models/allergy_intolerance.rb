@@ -41,3 +41,5 @@ class Fhir::AllergyIntolerance < Fhir::Resource
   resource_references :sensitivity_tests, [Fhir::Observation]
 end
 
+
+Fhir.load_handmade('models/allergy_intolerance')

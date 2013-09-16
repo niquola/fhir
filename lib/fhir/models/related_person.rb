@@ -35,3 +35,5 @@ class Fhir::RelatedPerson < Fhir::Resource
   attribute :photos, Array[Fhir::Attachment]
 end
 
+
+Fhir.load_handmade('models/related_person')

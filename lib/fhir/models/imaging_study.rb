@@ -128,3 +128,5 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :series, Array[Series]
 end
 
+
+Fhir.load_handmade('models/imaging_study')

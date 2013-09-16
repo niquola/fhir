@@ -100,3 +100,5 @@ class Fhir::DiagnosticReport < Fhir::Resource
   attribute :representations, Array[Fhir::Attachment]
 end
 
+
+Fhir.load_handmade('models/diagnostic_report')

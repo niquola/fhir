@@ -54,3 +54,5 @@ class Fhir::Group < Fhir::Resource
   resource_references :members, [Fhir::Patient, Fhir::Practitioner, Fhir::Device, Fhir::Medication]
 end
 
+
+Fhir.load_handmade('models/group')

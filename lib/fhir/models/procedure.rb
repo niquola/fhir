@@ -67,3 +67,5 @@ class Fhir::Procedure < Fhir::Resource
   attribute :notes, String
 end
 
+
+Fhir.load_handmade('models/procedure')

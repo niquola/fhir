@@ -286,3 +286,5 @@ class Fhir::Profile < Fhir::Resource
   attribute :bindings, Array[Binding]
 end
 
+
+Fhir.load_handmade('models/profile')

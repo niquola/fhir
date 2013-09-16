@@ -62,3 +62,5 @@ class Fhir::Practitioner < Fhir::Resource
   attribute :communications, Array[Fhir::CodeableConcept]
 end
 
+
+Fhir.load_handmade('models/practitioner')

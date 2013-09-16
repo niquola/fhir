@@ -29,3 +29,5 @@ class Fhir::DeviceObservation < Fhir::Resource
   resource_references :measurements, [Fhir::Observation]
 end
 
+
+Fhir.load_handmade('models/device_observation')

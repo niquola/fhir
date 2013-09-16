@@ -106,3 +106,5 @@ class Fhir::Condition < Fhir::Resource
   attribute :notes, String
 end
 
+
+Fhir.load_handmade('models/condition')

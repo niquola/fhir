@@ -49,3 +49,5 @@ class Fhir::Organization < Fhir::Resource
   attribute :active, Boolean
 end
 
+
+Fhir.load_handmade('models/organization')

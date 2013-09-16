@@ -89,3 +89,5 @@ class Fhir::Provenance < Fhir::Resource
   attribute :signature, String
 end
 
+
+Fhir.load_handmade('models/provenance')

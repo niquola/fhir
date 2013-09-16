@@ -120,3 +120,5 @@ class Fhir::Document < Fhir::Resource
   attribute :sections, Array[Section]
 end
 
+
+Fhir.load_handmade('models/document')

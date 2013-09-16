@@ -50,3 +50,5 @@ class Fhir::Coverage < Fhir::Resource
   attribute :subscriber, Subscriber
 end
 
+
+Fhir.load_handmade('models/coverage')

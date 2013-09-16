@@ -110,3 +110,5 @@ class Fhir::Specimen < Fhir::Resource
   attribute :containers, Array[Container]
 end
 
+
+Fhir.load_handmade('models/specimen')

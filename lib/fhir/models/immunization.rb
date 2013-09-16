@@ -115,3 +115,5 @@ class Fhir::Immunization < Fhir::Resource
   attribute :vaccination_protocol, VaccinationProtocol
 end
 
+
+Fhir.load_handmade('models/immunization')

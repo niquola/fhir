@@ -91,3 +91,5 @@ class Fhir::Patient < Fhir::Resource
   attribute :active, Boolean
 end
 
+
+Fhir.load_handmade('models/patient')

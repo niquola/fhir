@@ -31,3 +31,5 @@ class Fhir::DeviceLog < Fhir::Resource
   attribute :items, Array[Item]
 end
 
+
+Fhir.load_handmade('models/device_log')

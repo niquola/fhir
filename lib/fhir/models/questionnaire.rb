@@ -86,3 +86,5 @@ class Fhir::Questionnaire < Fhir::Resource
   attribute :groups, Array[Group]
 end
 
+
+Fhir.load_handmade('models/questionnaire')

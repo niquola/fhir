@@ -126,3 +126,5 @@ class Fhir::Encounter < Fhir::Resource
   resource_reference :part_of, [Fhir::Encounter]
 end
 
+
+Fhir.load_handmade('models/encounter')

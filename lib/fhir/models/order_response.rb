@@ -33,3 +33,5 @@ class Fhir::OrderResponse < Fhir::Resource
   resource_references :fulfillments, [Fhir::Resource]
 end
 
+
+Fhir.load_handmade('models/order_response')

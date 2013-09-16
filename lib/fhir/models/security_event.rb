@@ -147,3 +147,5 @@ class Fhir::SecurityEvent < Fhir::Resource
   attribute :objects, Array[Object]
 end
 
+
+Fhir.load_handmade('models/security_event')

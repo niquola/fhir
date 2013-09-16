@@ -21,3 +21,5 @@ class Fhir::Other < Fhir::Resource
   attribute :created, Date
 end
 
+
+Fhir.load_handmade('models/other')

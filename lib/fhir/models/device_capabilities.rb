@@ -99,3 +99,5 @@ class Fhir::DeviceCapabilities < Fhir::Resource
   attribute :virtual_devices, Array[VirtualDevice]
 end
 
+
+Fhir.load_handmade('models/device_capabilities')

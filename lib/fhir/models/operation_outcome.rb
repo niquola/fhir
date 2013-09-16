@@ -31,3 +31,5 @@ class Fhir::OperationOutcome < Fhir::Resource
   attribute :issues, Array[Issue]
 end
 
+
+Fhir.load_handmade('models/operation_outcome')

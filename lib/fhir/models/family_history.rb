@@ -62,3 +62,5 @@ class Fhir::FamilyHistory < Fhir::Resource
   attribute :relations, Array[Relation]
 end
 
+
+Fhir.load_handmade('models/family_history')

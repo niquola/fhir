@@ -82,3 +82,5 @@ class Fhir::Observation < Fhir::Resource
   attribute :components, Array[Component]
 end
 
+
+Fhir.load_handmade('models/observation')
