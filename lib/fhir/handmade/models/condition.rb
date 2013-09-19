@@ -1,6 +1,8 @@
 class Fhir::Condition
+  ACTIVE_STATUSES = %w(provisional working confirmed)
+
   def active?
-    %w(provisional working confirmed).include?(status)
+    ACTIVE_STATUSES.include?(status)
   end
 
   def inactive?
