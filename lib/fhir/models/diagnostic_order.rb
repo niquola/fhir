@@ -84,3 +84,5 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   attribute :items, Array[Item]
 end
 
+
+Fhir.load_handmade('models/diagnostic_order')

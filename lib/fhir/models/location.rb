@@ -57,3 +57,5 @@ class Fhir::Location < Fhir::Resource
   resource_reference :part_of, [Fhir::Location]
 end
 
+
+Fhir.load_handmade('models/location')

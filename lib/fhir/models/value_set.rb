@@ -162,3 +162,5 @@ class Fhir::ValueSet < Fhir::Resource
   attribute :expansion, Expansion
 end
 
+
+Fhir.load_handmade('models/value_set')

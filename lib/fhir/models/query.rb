@@ -52,3 +52,5 @@ class Fhir::Query < Fhir::Resource
   attribute :response, Response
 end
 
+
+Fhir.load_handmade('models/query')

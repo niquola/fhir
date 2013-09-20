@@ -57,3 +57,5 @@ class Fhir::AdverseReaction < Fhir::Resource
   attribute :exposures, Array[Exposure]
 end
 
+
+Fhir.load_handmade('models/adverse_reaction')

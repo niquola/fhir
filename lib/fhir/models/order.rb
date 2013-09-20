@@ -41,3 +41,5 @@ class Fhir::Order < Fhir::Resource
   resource_references :details, [Fhir::Resource]
 end
 
+
+Fhir.load_handmade('models/order')

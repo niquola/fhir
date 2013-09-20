@@ -29,7 +29,7 @@ describe 'ResourceAttribute' do
     res.subject_ref.should_not be_nil
     res.subject_ref.type.should == 'Res1'
     res.subject_ref.reference.should_not be_nil
-    res.subject_ref.reference.should == res.subject.uuid
+    res.subject_ref.reference.should == res.subject.uri
   end
 
   it "should allow to set any resource if reference is declared with base Resource class" do
@@ -37,7 +37,7 @@ describe 'ResourceAttribute' do
                          _type: 'Res1',
                          prop1: "some value"
                        })
-    res.any_resource_ref.reference.should == res.any_resource.uuid
+    res.any_resource_ref.reference.should == res.any_resource.uri
   end
 
   it "wrong object in constructor" do
@@ -61,7 +61,7 @@ describe 'ResourceAttribute' do
     res.subject_ref.should_not be_nil
     res.subject_ref.type.should == 'Res1'
     res.subject_ref.reference.should_not be_nil
-    res.subject_ref.reference.should == res.subject.uuid
+    res.subject_ref.reference.should == res.subject.uri
   end
 
   it "polymorphic resource ref" do
@@ -74,7 +74,7 @@ describe 'ResourceAttribute' do
     res.subject_ref.should_not be_nil
     res.subject_ref.type.should == 'Res1'
     res.subject_ref.reference.should_not be_nil
-    res.subject_ref.reference.should == res.subject.uuid
+    res.subject_ref.reference.should == res.subject.uri
   end
 
   it "polymorphic resource ref" do
@@ -90,6 +90,6 @@ describe 'ResourceAttribute' do
     res.subject_ref.should_not be_nil
     res.subject_ref.type.should == 'Res2'
     res.subject_ref.reference.should_not be_nil
-    res.subject_ref.reference.should == res.subject.uuid
+    res.subject_ref.reference.should == res.subject.uri
   end
 end

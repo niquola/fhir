@@ -25,9 +25,14 @@ class Fhir::Type
 
   attr_accessor :parent
 
-  def initialize(attributes, skip_invariants_check = false)
+  def initialize(attributes_or_object, skip_invariants_check = false)
     @skip_invariants_check = skip_invariants_check
 
+    attributes = if attributes_or_object.is_a?(::Hash)
+                   attributes_or_object
+                 else
+                   attributes_or_object.serialize
+                 end
     attrs_with_parent = attributes.symbolize_keys
 
     self.class.check_attributes_keys!(attrs_with_parent)

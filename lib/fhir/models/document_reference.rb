@@ -123,3 +123,5 @@ class Fhir::DocumentReference < Fhir::Resource
   attribute :context, Context
 end
 
+
+Fhir.load_handmade('models/document_reference')

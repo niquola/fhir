@@ -55,3 +55,5 @@ class Fhir::Supply < Fhir::Resource
   attribute :dispenses, Array[Dispense]
 end
 
+
+Fhir.load_handmade('models/supply')

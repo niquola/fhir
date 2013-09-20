@@ -66,3 +66,5 @@ class Fhir::Medication < Fhir::Resource
   attribute :package, Package
 end
 
+
+Fhir.load_handmade('models/medication')

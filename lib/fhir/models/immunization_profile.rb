@@ -102,3 +102,5 @@ class Fhir::ImmunizationProfile < Fhir::Resource
   attribute :recommendations, Array[Recommendation]
 end
 
+
+Fhir.load_handmade('models/immunization_profile')

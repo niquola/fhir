@@ -119,3 +119,5 @@ class Fhir::CarePlan < Fhir::Resource
   attribute :notes, String
 end
 
+
+Fhir.load_handmade('models/care_plan')

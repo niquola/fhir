@@ -26,3 +26,5 @@ class Fhir::Alert < Fhir::Resource
   attribute :note, String
 end
 
+
+Fhir.load_handmade('models/alert')

@@ -23,3 +23,10 @@ end
 
 require "fhir/models/autoloads"
 require "fhir/types/autoloads"
+
+def Fhir.load_handmade(file_name)
+  fname = File.dirname(__FILE__) + "/fhir/handmade/#{file_name}.rb"
+  if File.exists?(fname)
+    load(fname)
+  end
+end

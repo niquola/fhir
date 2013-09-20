@@ -36,3 +36,5 @@ class Fhir::Substance < Fhir::Resource
   attribute :quantity_mode, Fhir::CodeableConcept
 end
 
+
+Fhir.load_handmade('models/substance')

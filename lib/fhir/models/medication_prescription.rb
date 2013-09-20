@@ -102,3 +102,5 @@ class Fhir::MedicationPrescription < Fhir::Resource
   attribute :substitution, Substitution
 end
 
+
+Fhir.load_handmade('models/medication_prescription')

@@ -297,3 +297,5 @@ class Fhir::Conformance < Fhir::Resource
   attribute :documents, Array[Document]
 end
 
+
+Fhir.load_handmade('models/conformance')

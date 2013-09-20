@@ -53,3 +53,5 @@ class Fhir::Media < Fhir::Resource
   attribute :content, Fhir::Attachment
 end
 
+
+Fhir.load_handmade('models/media')

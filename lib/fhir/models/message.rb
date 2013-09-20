@@ -111,3 +111,5 @@ class Fhir::Message < Fhir::Resource
   resource_references :data, [Fhir::Resource]
 end
 
+
+Fhir.load_handmade('models/message')
