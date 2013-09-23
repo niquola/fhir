@@ -116,4 +116,4 @@ class Fhir::Immunization < Fhir::Resource
 end
 
 
-Fhir.load_handmade('immunization')
+Fhir.load_extension('immunization')

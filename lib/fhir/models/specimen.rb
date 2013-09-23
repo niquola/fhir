@@ -111,4 +111,4 @@ class Fhir::Specimen < Fhir::Resource
 end
 
 
-Fhir.load_handmade('specimen')
+Fhir.load_extension('specimen')

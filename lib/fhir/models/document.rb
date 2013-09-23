@@ -121,4 +121,4 @@ class Fhir::Document < Fhir::Resource
 end
 
 
-Fhir.load_handmade('document')
+Fhir.load_extension('document')

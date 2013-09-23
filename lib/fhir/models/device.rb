@@ -67,4 +67,4 @@ class Fhir::Device < Fhir::Resource
 end
 
 
-Fhir.load_handmade('device')
+Fhir.load_extension('device')

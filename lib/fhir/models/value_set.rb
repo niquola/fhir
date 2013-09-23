@@ -163,4 +163,4 @@ class Fhir::ValueSet < Fhir::Resource
 end
 
 
-Fhir.load_handmade('value_set')
+Fhir.load_extension('value_set')

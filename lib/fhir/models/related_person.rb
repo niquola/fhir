@@ -36,4 +36,4 @@ class Fhir::RelatedPerson < Fhir::Resource
 end
 
 
-Fhir.load_handmade('related_person')
+Fhir.load_extension('related_person')

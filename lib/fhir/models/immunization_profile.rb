@@ -103,4 +103,4 @@ class Fhir::ImmunizationProfile < Fhir::Resource
 end
 
 
-Fhir.load_handmade('immunization_profile')
+Fhir.load_extension('immunization_profile')

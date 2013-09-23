@@ -68,4 +68,4 @@ class Fhir::Procedure < Fhir::Resource
 end
 
 
-Fhir.load_handmade('procedure')
+Fhir.load_extension('procedure')

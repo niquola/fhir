@@ -85,4 +85,4 @@ class Fhir::DiagnosticOrder < Fhir::Resource
 end
 
 
-Fhir.load_handmade('diagnostic_order')
+Fhir.load_extension('diagnostic_order')

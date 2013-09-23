@@ -49,4 +49,4 @@ class Fhir::List < Fhir::Resource
 end
 
 
-Fhir.load_handmade('list')
+Fhir.load_extension('list')

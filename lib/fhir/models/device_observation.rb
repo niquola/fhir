@@ -30,4 +30,4 @@ class Fhir::DeviceObservation < Fhir::Resource
 end
 
 
-Fhir.load_handmade('device_observation')
+Fhir.load_extension('device_observation')

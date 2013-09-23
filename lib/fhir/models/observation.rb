@@ -83,4 +83,4 @@ class Fhir::Observation < Fhir::Resource
 end
 
 
-Fhir.load_handmade('observation')
+Fhir.load_extension('observation')

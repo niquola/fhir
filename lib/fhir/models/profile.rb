@@ -287,4 +287,4 @@ class Fhir::Profile < Fhir::Resource
 end
 
 
-Fhir.load_handmade('profile')
+Fhir.load_extension('profile')

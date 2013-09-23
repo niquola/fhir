@@ -101,4 +101,4 @@ class Fhir::DiagnosticReport < Fhir::Resource
 end
 
 
-Fhir.load_handmade('diagnostic_report')
+Fhir.load_extension('diagnostic_report')

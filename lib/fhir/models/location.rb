@@ -58,4 +58,4 @@ class Fhir::Location < Fhir::Resource
 end
 
 
-Fhir.load_handmade('location')
+Fhir.load_extension('location')

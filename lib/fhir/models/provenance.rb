@@ -90,4 +90,4 @@ class Fhir::Provenance < Fhir::Resource
 end
 
 
-Fhir.load_handmade('provenance')
+Fhir.load_extension('provenance')

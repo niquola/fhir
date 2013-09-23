@@ -129,4 +129,4 @@ class Fhir::ImagingStudy < Fhir::Resource
 end
 
 
-Fhir.load_handmade('imaging_study')
+Fhir.load_extension('imaging_study')

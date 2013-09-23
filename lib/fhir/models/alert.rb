@@ -27,4 +27,4 @@ class Fhir::Alert < Fhir::Resource
 end
 
 
-Fhir.load_handmade('alert')
+Fhir.load_extension('alert')

@@ -55,4 +55,4 @@ class Fhir::MedicationStatement < Fhir::Resource
 end
 
 
-Fhir.load_handmade('medication_statement')
+Fhir.load_extension('medication_statement')

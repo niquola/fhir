@@ -37,4 +37,4 @@ class Fhir::Substance < Fhir::Resource
 end
 
 
-Fhir.load_handmade('substance')
+Fhir.load_extension('substance')

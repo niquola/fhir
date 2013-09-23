@@ -42,4 +42,4 @@ class Fhir::Order < Fhir::Resource
 end
 
 
-Fhir.load_handmade('order')
+Fhir.load_extension('order')

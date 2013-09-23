@@ -25,7 +25,7 @@ end
 require "fhir/models/autoloads"
 require "fhir/types/autoloads"
 
-def Fhir.load_handmade(file_name)
+def Fhir.load_extension(file_name)
   if extension_path = Fhir.config[:extension_path]
     fname = extension_path + "/#{file_name}.rb"
     if File.exists?(fname)

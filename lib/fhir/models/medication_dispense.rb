@@ -106,4 +106,4 @@ class Fhir::MedicationDispense < Fhir::Resource
 end
 
 
-Fhir.load_handmade('medication_dispense')
+Fhir.load_extension('medication_dispense')

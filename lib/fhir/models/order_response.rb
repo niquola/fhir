@@ -34,4 +34,4 @@ class Fhir::OrderResponse < Fhir::Resource
 end
 
 
-Fhir.load_handmade('order_response')
+Fhir.load_extension('order_response')

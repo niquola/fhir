@@ -92,4 +92,4 @@ class Fhir::Patient < Fhir::Resource
 end
 
 
-Fhir.load_handmade('patient')
+Fhir.load_extension('patient')

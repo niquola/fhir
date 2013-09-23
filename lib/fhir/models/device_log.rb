@@ -32,4 +32,4 @@ class Fhir::DeviceLog < Fhir::Resource
 end
 
 
-Fhir.load_handmade('device_log')
+Fhir.load_extension('device_log')
