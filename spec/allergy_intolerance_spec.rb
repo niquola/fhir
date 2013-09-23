@@ -46,7 +46,7 @@ describe 'AllergyIntolerance' do
           causality_expectation: 'expectation code',
         }]
       }]
-    }, true)
+    })
 
     allergy.criticality.should == 'fatal'
     allergy.sensitivity_type.should == 'allergy'
