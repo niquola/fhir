@@ -56,4 +56,4 @@ class Fhir::Supply < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/supply')
+Fhir.load_handmade('supply')

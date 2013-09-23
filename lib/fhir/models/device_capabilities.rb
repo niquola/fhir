@@ -100,4 +100,4 @@ class Fhir::DeviceCapabilities < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/device_capabilities')
+Fhir.load_handmade('device_capabilities')

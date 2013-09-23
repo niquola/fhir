@@ -298,4 +298,4 @@ class Fhir::Conformance < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/conformance')
+Fhir.load_handmade('conformance')

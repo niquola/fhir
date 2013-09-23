@@ -50,4 +50,4 @@ class Fhir::Organization < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/organization')
+Fhir.load_handmade('organization')

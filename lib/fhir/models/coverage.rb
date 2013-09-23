@@ -51,4 +51,4 @@ class Fhir::Coverage < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/coverage')
+Fhir.load_handmade('coverage')

@@ -124,4 +124,4 @@ class Fhir::DocumentReference < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/document_reference')
+Fhir.load_handmade('document_reference')

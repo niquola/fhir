@@ -87,4 +87,4 @@ class Fhir::Questionnaire < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/questionnaire')
+Fhir.load_handmade('questionnaire')

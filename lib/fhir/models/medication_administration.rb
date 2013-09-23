@@ -77,4 +77,4 @@ class Fhir::MedicationAdministration < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/medication_administration')
+Fhir.load_handmade('medication_administration')

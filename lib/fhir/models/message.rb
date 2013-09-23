@@ -112,4 +112,4 @@ class Fhir::Message < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/message')
+Fhir.load_handmade('message')

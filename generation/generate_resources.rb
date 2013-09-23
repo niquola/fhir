@@ -23,7 +23,7 @@ def generate_resources
 
     tree = make_tree(elements)
     code = tree_to_ruby_code(tree, "Fhir::Resource")
-    code += "\nFhir.load_handmade('models/#{file_name}')\n"
+    code += "\nFhir.load_handmade('#{file_name}')\n"
     File.open("#{lib_dir}/#{file_name}.rb",'w+'){ |f| f << code }
   end
 

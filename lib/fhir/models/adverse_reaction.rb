@@ -58,4 +58,4 @@ class Fhir::AdverseReaction < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/adverse_reaction')
+Fhir.load_handmade('adverse_reaction')

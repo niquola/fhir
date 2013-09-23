@@ -63,4 +63,4 @@ class Fhir::FamilyHistory < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/family_history')
+Fhir.load_handmade('family_history')

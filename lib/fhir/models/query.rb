@@ -53,4 +53,4 @@ class Fhir::Query < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/query')
+Fhir.load_handmade('query')

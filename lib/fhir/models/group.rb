@@ -55,4 +55,4 @@ class Fhir::Group < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/group')
+Fhir.load_handmade('group')

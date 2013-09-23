@@ -127,4 +127,4 @@ class Fhir::Encounter < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/encounter')
+Fhir.load_handmade('encounter')

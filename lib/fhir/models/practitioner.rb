@@ -63,4 +63,4 @@ class Fhir::Practitioner < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/practitioner')
+Fhir.load_handmade('practitioner')

@@ -32,4 +32,4 @@ class Fhir::OperationOutcome < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/operation_outcome')
+Fhir.load_handmade('operation_outcome')

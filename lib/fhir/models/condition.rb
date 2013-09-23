@@ -107,4 +107,4 @@ class Fhir::Condition < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/condition')
+Fhir.load_handmade('condition')

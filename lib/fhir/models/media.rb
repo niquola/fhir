@@ -54,4 +54,4 @@ class Fhir::Media < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/media')
+Fhir.load_handmade('media')

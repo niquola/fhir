@@ -42,4 +42,4 @@ class Fhir::AllergyIntolerance < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/allergy_intolerance')
+Fhir.load_handmade('allergy_intolerance')

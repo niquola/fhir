@@ -120,4 +120,4 @@ class Fhir::CarePlan < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/care_plan')
+Fhir.load_handmade('care_plan')

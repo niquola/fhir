@@ -22,4 +22,4 @@ class Fhir::Other < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/other')
+Fhir.load_handmade('other')

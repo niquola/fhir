@@ -111,4 +111,4 @@ class Fhir::Specimen < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/specimen')
+Fhir.load_handmade('specimen')

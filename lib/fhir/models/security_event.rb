@@ -148,4 +148,4 @@ class Fhir::SecurityEvent < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/security_event')
+Fhir.load_handmade('security_event')

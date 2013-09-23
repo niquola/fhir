@@ -83,4 +83,4 @@ class Fhir::Observation < Fhir::Resource
 end
 
 
-Fhir.load_handmade('models/observation')
+Fhir.load_handmade('observation')
