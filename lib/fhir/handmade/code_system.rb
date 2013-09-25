@@ -27,7 +27,7 @@ class Fhir::CodeSystem
       display: 'MED_NAME_ID',
       oid: "2.16.840.1.113883.3.567.12.2"
     }, {
-      symbolic: :fdb_alrgn_grp,
+      symbolic: :fdb_allergen_group,
       display: 'DAM_ALRGN_GRP',
       oid: "2.16.840.1.113883.4.296"
     }, {
