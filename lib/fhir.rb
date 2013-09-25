@@ -12,6 +12,7 @@ module Fhir
 
   autoload :Collection,        'fhir/handmade/collection'
   autoload :Code,              'fhir/handmade/code'
+  autoload :CodeSystem,        'fhir/handmade/code_system'
   autoload :URI,               'fhir/handmade/uri'
   autoload :ResourceReference, 'fhir/handmade/resource_reference'
   autoload :Resource,          'fhir/handmade/resource'

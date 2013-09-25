@@ -19,6 +19,10 @@ class Fhir::Coding < Fhir::DataType
     self.system.sub(/^urn\:oid\:/, '')
   end
 
+  def get_system
+    Fhir::CodeSystem.find_by_uri(self.system)
+  end
+
   def to_concept
     Fhir::CodeableConcept.new(
       text: self.display,
