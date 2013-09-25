@@ -1,10 +1,15 @@
 class Fhir::CodeSystem
-  attr_reader :symbolic, :display, :oid, :uri
+  attr_reader :symbolic, :display, :oid, :uris
 
   DECLARED_SYSTEMS = [{
       symbolic: :unii,
       display: 'UNII',
       oid: '2.16.840.1.113883.4.9'
+    }, {
+      symbolic: :snomed,
+      display: 'SNOMED',
+      oid: '2.16.840.1.113883.6.96',
+      uri: 'http://snomed.info/id'
     }, {
       symbolic: :rxnorm,
       display: 'RxNorm',
@@ -26,6 +31,18 @@ class Fhir::CodeSystem
       display: 'DAM_ALRGN_GRP',
       oid: "2.16.840.1.113883.4.296"
     }, {
+      symbolic: :fhir_administrative_gender,
+      display: "Gender",
+      uri: 'http://hl7.org/fhir/v3/AdministrativeGender'
+    }, {
+      symbolic: :iso639_2,
+      display: "ISO639-2 Language Names",
+      uri: 'http://www.loc.gov/standards/iso639-2'
+    }, {
+      symbolic: :race,
+      display: "CDC Race code",
+      oid: "2.16.840.1.113883.6.238"
+    }, {
       symbolic: :rgb,
       display: 'RGB',
       oid: "RGB"
@@ -38,9 +55,16 @@ class Fhir::CodeSystem
   def initialize(attributes)
     @symbolic = attributes.fetch(:symbolic)
     @display = attributes.fetch(:display)
-    @oid = attributes.fetch(:oid)
+    @oid = attributes[:oid]
 
-    @uri = attributes[:uri] || "urn:oid:#{@oid}"
+    @uris = [attributes[:uri]]
+    @uris << "urn:oid:#{@oid}" if @oid.present?
+
+    @uris = @uris.flatten.uniq.compact
+  end
+
+  def uri
+    uris.first
   end
 
   def self.all
@@ -62,6 +86,6 @@ class Fhir::CodeSystem
 
     all.find { |cs| cs.symbolic == key ||
       cs.oid == key ||
-      cs.uri == key }
+      cs.uris.include?(key) }
   end
 end

@@ -11,7 +11,11 @@ class Fhir::Coding < Fhir::DataType
 
   def initialize(raw_attrs)
     attrs = raw_attrs.dup
-    attrs[:system] ||= "urn:oid:#{attrs.delete(:system_oid)}"
+
+    if attrs[:system].respond_to?(:uri)
+      attrs[:system] = attrs[:system].uri
+    end
+
     super(attrs)
   end
 
