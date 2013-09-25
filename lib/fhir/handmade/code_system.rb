@@ -47,6 +47,15 @@ class Fhir::CodeSystem
       display: "CDC Race code",
       oid: "2.16.840.1.113883.6.238"
     }, {
+      symbolic: :null_flavor,
+      display: "HL7 v3 NULL Flavor",
+      oid: "2.16.840.1.113883.5.1008",
+      uri: 'http://hl7.org/fhir/v3/NullFlavor'
+    },
+
+
+    # for tests
+    {
       symbolic: :rgb,
       display: 'RGB',
       oid: "RGB"
