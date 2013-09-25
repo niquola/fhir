@@ -15,6 +15,10 @@ class Fhir::CodeSystem
       display: 'RxNorm',
       oid: '2.16.840.1.113883.6.88'
     }, {
+      symbolic: :ndc,
+      display: 'NDC',
+      oid: '2.16.840.1.113883.6.69'
+    }, {
       symbolic: :ndfrt,
       display: 'NDFRT',
       oid: '2.16.840.1.113883.6.209'
