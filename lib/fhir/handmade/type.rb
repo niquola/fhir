@@ -53,6 +53,10 @@ class Fhir::Type
     validate_attribute(:base)
   end
 
+  def ==(other)
+    self.class == other.class && self.serialize == other.serialize
+  end
+
   def self.check_attributes_keys!(attrs)
     unknown_keys =  (attrs.keys - self.attribute_set.map(&:name) - [:parent, :_type])
     raise "While creating #{self.name} unknown keys: #{unknown_keys.join(', ')}" unless unknown_keys.empty?
