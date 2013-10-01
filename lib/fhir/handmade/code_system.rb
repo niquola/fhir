@@ -52,6 +52,11 @@ class Fhir::CodeSystem
       oid: "2.16.840.1.113883.5.1008",
       uri: 'http://hl7.org/fhir/v3/NullFlavor'
     },
+    {
+      symbolic: :fhir_condition_category,
+      display: "Fhir Condition Category",
+      uri: 'http://hl7.org/fhir/vs/condition-category'
+    },
 
 
     # for tests
