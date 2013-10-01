@@ -11,10 +11,15 @@ class Fhir::Coding < Fhir::DataType
 
   def initialize(raw_attrs)
     attrs = raw_attrs.dup
+    system = attrs[:system]
 
-    if attrs[:system].respond_to?(:uri)
-      attrs[:system] = attrs[:system].uri
-    end
+    attrs[:system] = if system.respond_to?(:uri)
+                       system.uri
+                     elsif system.is_a?(Symbol)
+                       Fhir::CodeSystem[system].uri
+                     else
+                       system
+                     end
 
     super(attrs)
   end
