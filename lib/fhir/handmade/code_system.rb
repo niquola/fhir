@@ -11,9 +11,19 @@ class Fhir::CodeSystem
       oid: '2.16.840.1.113883.6.96',
       uri: 'http://snomed.info/id'
     }, {
+      symbolic: :loinc,
+      display: 'LOINC',
+      oid: '2.16.840.1.113883.6.1',
+      uri: 'http://loinc.org'
+    }, {
       symbolic: :rxnorm,
       display: 'RxNorm',
       oid: '2.16.840.1.113883.6.88'
+    }, {
+      symbolic: :ucum,
+      display: 'The Unified Code for Units of Measure',
+      oid: '2.16.840.1.113883.6.8',
+      uri: "http://unitsofmeasure.org"
     }, {
       symbolic: :ndc,
       display: 'NDC',
