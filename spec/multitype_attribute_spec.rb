@@ -2,26 +2,26 @@ require 'spec_helper'
 
 describe 'Fhir::Virtus::Coercer' do
   class Quantity
-    include Virtus::ValueObject
+    include Virtus.value_object
 
     attribute :value, Float
     attribute :units, String
   end
 
   class Coding
-    include Virtus::ValueObject
+    include Virtus.value_object
 
     attribute :code, String
     attribute :system, String
   end
 
   class SomeType
-    include Virtus::ValueObject
+    include Virtus.value_object
     attribute :value, String
   end
 
   class Observation
-    include Virtus
+    include Virtus.model
     attribute :name, String
     attribute :value,  *Fhir::Type[Float, Quantity, Coding]
     attribute :values, *Fhir::Collection[Float, Quantity, Coding]

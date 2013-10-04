@@ -1,3 +1,3 @@
 class Fhir::DataType < Fhir::Type
-  include Virtus::ValueObject
+  include Virtus.value_object
 end

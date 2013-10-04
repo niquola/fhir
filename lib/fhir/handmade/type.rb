@@ -1,7 +1,7 @@
 require 'active_model'
 
 class Fhir::Type
-  include Virtus
+  include Virtus.model
   include Fhir::Virtus
   include ActiveModel::Validations
 
