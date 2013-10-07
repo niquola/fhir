@@ -29,18 +29,23 @@ module Fhir::Virtus
     end
 
     def coerce_according_to_types(value)
-      result = nil
       return nil if value.nil?
 
-      allowed_types.each do |type|
-        result = virtus_coerce(type, value)
+      if allowed_types.include?(value.class)
+        value
+      else
+        result = nil
 
-        if !result.nil? && result.class <= type
-          break
+        allowed_types.each do |type|
+          result = virtus_coerce(type, value)
+
+          if !result.nil? && result.class <= type
+            break
+          end
         end
-      end
 
-      result
+        result
+      end
     end
 
     def allowed_types
