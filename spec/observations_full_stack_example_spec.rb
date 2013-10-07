@@ -38,7 +38,7 @@ describe "Observation full stack example" do
         _type: "Fhir::CodeableConcept"
       },
       comments: "Comment",
-      applies: DateTime.now,
+      applies: Time.now,
       issued: 5.days.ago,
       status: {
         system: "http://hl7.org/fhir/observation-status",

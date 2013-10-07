@@ -41,6 +41,7 @@ describe 'ResourceAttribute' do
   end
 
   it "wrong object in constructor" do
+    pending
     ->  {
       TestRes1.new(subject: Object.new)
     }.should raise_error /Unexpected value/

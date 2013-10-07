@@ -25,7 +25,11 @@ module Fhir::Virtus
 
     def virtus_coerce(type, value)
       method = "to_#{type.name.downcase}"
-      Virtus.coercer[String].public_send(method, value) rescue nil
+      coercer = Virtus.coercer[value.class]
+
+      if coercer.respond_to?(method)
+        coercer.public_send(method, value)
+      end
     end
 
     def coerce_according_to_types(value)
