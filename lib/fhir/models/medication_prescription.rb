@@ -47,7 +47,7 @@ class Fhir::MedicationPrescription < Fhir::Resource
     attribute :route, Fhir::CodeableConcept
 
     # Administration method
-    attribute :method, Fhir::CodeableConcept
+    attribute :method_name, Fhir::CodeableConcept
 
     # Dose quantity per dose
     attribute :dose_quantity, Fhir::Quantity

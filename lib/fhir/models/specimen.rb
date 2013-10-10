@@ -58,7 +58,7 @@ class Fhir::Specimen < Fhir::Resource
     attribute :quantity, Fhir::Quantity
 
     # Specimen Collection Method
-    attribute :method, Fhir::CodeableConcept
+    attribute :method_name, Fhir::CodeableConcept
 
     # Site of the source of the specimen
     attribute :source_site, Fhir::CodeableConcept

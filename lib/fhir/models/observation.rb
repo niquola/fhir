@@ -38,7 +38,7 @@ class Fhir::Observation < Fhir::Resource
   attribute :body_site, Fhir::CodeableConcept
 
   # How it was done
-  attribute :method, Fhir::CodeableConcept
+  attribute :method_name, Fhir::CodeableConcept
 
   # Observation id
   attribute :identifier, Fhir::Identifier

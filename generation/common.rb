@@ -132,6 +132,15 @@ module RubyCodeGeneration
     "Any"
   ]
 
+  RENAMINGS = {
+    ["MedicationAdministration", "dosage", "method"] => "method_name",
+    ["MedicationDispense", "dispense", "dosage", "method"] => "method_name",
+    ["MedicationPrescription", "dosageInstruction", "method"] => "method_name",
+    ["MedicationStatement", "dosage", "method"] => "method_name",
+    ["Observation", "method"] => "method_name",
+    ["Specimen", "collection", "method"] => "method_name"
+  }
+
   def attribute_resource_types(node)
     types = el_types(node[:el])
     puts "too many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
@@ -198,6 +207,10 @@ module RubyCodeGeneration
 
     if KEYWORDS.include?(attr_name)
       attr_name = "#{class_name}_#{attr_name}"
+    end
+
+    if RENAMINGS.keys.include?(node_path)
+      attr_name = RENAMINGS[node_path]
     end
 
     if is_collection?(node)
