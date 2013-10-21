@@ -23,7 +23,7 @@ class Fhir::CodeSystem
       symbolic: :ucum,
       display: 'The Unified Code for Units of Measure',
       oid: '2.16.840.1.113883.6.8',
-      uri: "http://unitsofmeasure.org"
+      uri: 'http://unitsofmeasure.org'
     }, {
       symbolic: :ndc,
       display: 'NDC',
@@ -35,36 +35,36 @@ class Fhir::CodeSystem
     }, {
       symbolic: :fdb_hic,
       display: 'HIC_SEQN',
-      oid: "2.16.840.1.113883.3.84"
+      oid: '2.16.840.1.113883.3.84'
     }, {
       symbolic: :fdb_med_name,
       display: 'MED_NAME_ID',
-      oid: "2.16.840.1.113883.3.567.12.2"
+      oid: '2.16.840.1.113883.3.567.12.2'
     }, {
       symbolic: :fdb_allergen_group,
       display: 'DAM_ALRGN_GRP',
-      oid: "2.16.840.1.113883.4.296"
+      oid: '2.16.840.1.113883.4.296'
     }, {
       symbolic: :fhir_administrative_gender,
-      display: "Gender",
+      display: 'Gender',
       uri: 'http://hl7.org/fhir/v3/AdministrativeGender'
     }, {
       symbolic: :iso639_2,
-      display: "ISO639-2 Language Names",
+      display: 'ISO639-2 Language Names',
       uri: 'http://www.loc.gov/standards/iso639-2'
     }, {
       symbolic: :race,
-      display: "CDC Race code",
-      oid: "2.16.840.1.113883.6.238"
+      display: 'CDC Race code',
+      oid: '2.16.840.1.113883.6.238'
     }, {
       symbolic: :null_flavor,
-      display: "HL7 v3 NULL Flavor",
-      oid: "2.16.840.1.113883.5.1008",
+      display: 'HL7 v3 NULL Flavor',
+      oid: '2.16.840.1.113883.5.1008',
       uri: 'http://hl7.org/fhir/v3/NullFlavor'
     },
     {
       symbolic: :fhir_condition_category,
-      display: "Fhir Condition Category",
+      display: 'Fhir Condition Category',
       uri: 'http://hl7.org/fhir/vs/condition-category'
     },
 
@@ -73,11 +73,11 @@ class Fhir::CodeSystem
     {
       symbolic: :rgb,
       display: 'RGB',
-      oid: "RGB"
+      oid: 'RGB'
     }, {
       symbolic: :rgba,
       display: 'RGBA',
-      oid: "RGBA"
+      oid: 'RGBA'
     }]
 
   def initialize(attributes)
