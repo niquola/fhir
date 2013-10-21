@@ -67,6 +67,11 @@ class Fhir::CodeSystem
       display: 'Fhir Condition Category',
       uri: 'http://hl7.org/fhir/vs/condition-category'
     },
+    {
+      symbolic: :cpt,
+      display: 'Current Procedural Terminology',
+      uri: 'http://ama-assn.org/go/cpt'
+    },
 
 
     # for tests
