@@ -61,7 +61,12 @@ class Fhir::Type
 
   def self.check_attributes_keys!(attrs)
     unknown_keys =  (attrs.keys - self.attribute_set.map(&:name) - [:parent, :_type])
-    raise "While creating #{self.name} unknown keys: #{unknown_keys.join(', ')}" unless unknown_keys.empty?
+    unless unknown_keys.empty?
+      error_msg = "While creating #{self.name} unknown keys: #{unknown_keys.join(', ')}\n"
+      error_msg += "Full hash: #{attrs.except(:parent, :_type).inspect}"
+
+      raise ArgumentError, error_msg
+    end
   end
 
   def skip_invariants_check?
