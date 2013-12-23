@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>NarrativeStatus</h2>
       <p>The status of a resource narrative</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/narrative-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/narrative-status</p>
       <table>
         <tr>
           <td>
@@ -20,24 +20,32 @@
           </td>
         </tr>
         <tr>
-          <td>generated</td>
+          <td>
+            <a name="generated">generated</a>
+          </td>
           <td/>
           <td>The contents of the narrative are entirely generated from the structured data in the resource.</td>
         </tr>
         <tr>
-          <td>extensions</td>
+          <td>
+            <a name="extensions">extensions</a>
+          </td>
           <td/>
           <td>The contents of the narrative are entirely generated from the structured data in the resource and some of the content is generated from extensions.</td>
         </tr>
         <tr>
-          <td>additional</td>
+          <td>
+            <a name="additional">additional</a>
+          </td>
           <td/>
           <td>The contents of the narrative contain additional information not found in the structured data.</td>
         </tr>
         <tr>
-          <td>empty</td>
+          <td>
+            <a name="empty">empty</a>
+          </td>
           <td/>
-          <td>the contents of the narrative are some equivalent of &quot;No human readable text provided for this resource&quot;.</td>
+          <td>the contents of the narrative are some equivalent of &quot;No human-readable text provided for this resource&quot;.</td>
         </tr>
       </table>
     </div>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The status of a resource narrative"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.975+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/narrative-status"/>
     <caseSensitive value="true"/>
@@ -73,7 +81,7 @@
     </concept>
     <concept>
       <code value="empty"/>
-      <definition value="the contents of the narrative are some equivalent of &quot;No human readable text provided for this resource&quot;."/>
+      <definition value="the contents of the narrative are some equivalent of &quot;No human-readable text provided for this resource&quot;."/>
     </concept>
   </define>
 </ValueSet>

@@ -1,7 +1,8 @@
 module Fhir
  autoload :Address, 'fhir/types/address.rb'
  autoload :Attachment, 'fhir/types/attachment.rb'
- autoload :Choice, 'fhir/types/choice.rb'
+ autoload :CodeableConcept, 'fhir/types/codeable_concept.rb'
+ autoload :Coding, 'fhir/types/coding.rb'
  autoload :Contact, 'fhir/types/contact.rb'
  autoload :Extension, 'fhir/types/extension.rb'
  autoload :HumanName, 'fhir/types/human_name.rb'

@@ -9,13 +9,17 @@ class Fhir::Group < Fhir::Resource
     validates_inclusion_of :actual, in: [true, false], message: 'must be either true or false'
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # Unique id
   attribute :identifier, Fhir::Identifier
 
-  # Group Classification
+  # person | animal | practitioner | device | medication |
+  # substance
   attribute :type, Fhir::Code
 
   # Descriptive or actual
@@ -33,25 +37,28 @@ class Fhir::Group < Fhir::Resource
   # Identifies the traits shared by members of the group.
   class Characteristic < Fhir::ValueObject
     invariants do
-      validates_presence_of :type
+      validates_presence_of :code
       validates_presence_of :value
       validates_inclusion_of :exclude, in: [true, false], message: 'must be either true or false'
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Kind of characteristic
-    attribute :type, Fhir::CodeableConcept
+    attribute :code, Fhir::CodeableConcept
 
     # Value held by characteristic
-    attribute :value, *Fhir::Type[Fhir::CodeableConcept, String, Boolean, Fhir::Quantity, Fhir::Range]
+    attribute :value, *Fhir::Type[Fhir::CodeableConcept, Boolean, Fhir::Quantity, Fhir::Range]
 
     # Group includes or excludes
     attribute :exclude, Boolean
   end
 
-  attribute :characteristics, Array[Characteristic]
+  attribute :characteristic, Array[Characteristic]
 
   # Who is in group
-  resource_references :members, [Fhir::Patient, Fhir::Practitioner, Fhir::Device, Fhir::Medication]
+  resource_references :member, [Fhir::Patient, Fhir::Practitioner, Fhir::Device, Fhir::Medication, Fhir::Substance]
 end
 
 

@@ -27,26 +27,31 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Location" type="Location">
     <xs:annotation>
-      <xs:documentation>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</xs:documentation>
+      <xs:documentation>Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="Location">
     <xs:annotation>
-      <xs:documentation>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</xs:documentation>
+      <xs:documentation>Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
       <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Resource">
         <xs:sequence>
-          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+          <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
-              <xs:documentation>Name of the location which identifies it to its users.</xs:documentation>
+              <xs:documentation>Unique code or number identifying the location to its users.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation>Name of the location as used by humans. Needs not be unique.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
@@ -54,9 +59,9 @@
               <xs:documentation>Description of the Location, which helps in finding or referencing the place.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation>Classification of the location.</xs:documentation>
+              <xs:documentation>Indicates the type of function performed at the location.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="telecom" minOccurs="0" maxOccurs="1" type="Contact">
@@ -69,24 +74,34 @@
               <xs:documentation>Physical location.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="physicalType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation>Physical form of the location, e.g. building, room, vehicle, road.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="position" type="Location.Position" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>The absolute geographic location of the Location, expressed in a KML compatible manner (see notes below for KML).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="provider" minOccurs="0" maxOccurs="1" type="ResourceReference">
+          <xs:element name="managingOrganization" minOccurs="0" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
-              <xs:documentation>The organization that provides services at the location.</xs:documentation>
+              <xs:documentation>The organization that is responsible for the provisioning and upkeep of the location.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
+          <xs:element name="status" minOccurs="0" maxOccurs="1" type="LocationStatus">
             <xs:annotation>
-              <xs:documentation>Whether the location is still used to provide services.</xs:documentation>
+              <xs:documentation>active | suspended | inactive.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="partOf" minOccurs="0" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
-              <xs:documentation>Another Location which this Location is physically inside of.</xs:documentation>
+              <xs:documentation>Another Location which this Location is physically part of.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="mode" minOccurs="0" maxOccurs="1" type="LocationMode">
+            <xs:annotation>
+              <xs:documentation>Indicates whether a resource instance represents a specific location or a class of locations.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -95,10 +110,10 @@
   </xs:complexType>
   <xs:complexType name="Location.Position">
     <xs:annotation>
-      <xs:documentation>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</xs:documentation>
+      <xs:documentation>Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="longitude" minOccurs="1" maxOccurs="1" type="decimal">
             <xs:annotation>
@@ -116,6 +131,61 @@
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="LocationStatus-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="active">
+        <xs:annotation>
+          <xs:documentation>The location is operational.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="suspended">
+        <xs:annotation>
+          <xs:documentation>The location is temporarily closed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="inactive">
+        <xs:annotation>
+          <xs:documentation>The location is no longer used.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LocationStatus">
+    <xs:annotation>
+      <xs:documentation>Indicates whether the location is still in use</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="LocationStatus-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="LocationMode-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="instance">
+        <xs:annotation>
+          <xs:documentation>The Location resource represents a specific instance of a Location.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="kind">
+        <xs:annotation>
+          <xs:documentation>The Location represents a class of Locations.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LocationMode">
+    <xs:annotation>
+      <xs:documentation>Indicates whether a resource instance represents a specific location or a class of locations</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="LocationMode-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

@@ -1,0 +1,1 @@
+{"resourceType":"ImmunizationRecommendation","text":{"status":"generated","div":"<div>Authored by Joginder Madra</div>"},"subject":{"reference":"Patient/example"},"recommendation":[{"recommendationDate":"2013-03-01","vaccineType":{"_id":"396427003"},"forecastStatus":"DUE"}]}

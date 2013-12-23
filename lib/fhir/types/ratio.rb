@@ -1,10 +1,11 @@
 # A ratio of two Quantity values - a numerator and a
 # denominator.
 class Fhir::Ratio < Fhir::DataType
-  # The numerator
+  # Numerator value
   attribute :numerator, Fhir::Quantity
 
-  # The denominator
+  # Denominator value
   attribute :denominator, Fhir::Quantity
 end
 
+Fhir.load_extension('ratio')

@@ -1,0 +1,82 @@
+{
+  "resourceType": "ConceptMap",
+  "identifier": "http://hl7.org/fhir/cm/v2/contact-use",
+  "name": "v2 map for ContactUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v2 Map (0201)",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.983+11:00",
+  "source": {
+    "reference": "http://hl7.org/fhir/vs/contact-use"
+  },
+  "target": {
+    "reference": "http://hl7.org/fhir/v2/vs/0201"
+  },
+  "concept": [
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v2/0201",
+          "code": "PRN",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v2/0201",
+          "code": "ORN",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v2/0201",
+          "code": "VHN",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "work",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v2/0201",
+          "code": "WPN",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "mobile",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v2/0201",
+          "code": "PRS",
+          "equivalence": "equivalent"
+        }
+      ]
+    }
+  ]
+}

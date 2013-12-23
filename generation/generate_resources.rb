@@ -5,7 +5,7 @@ extend FhirProfile
 extend RubyCodeGeneration
 
 def generate_resources
-  doc = Nokogiri::XML(open(File.dirname(__FILE__) + "/meta/resources.xml").read)
+  doc = Nokogiri::XML(open(File.dirname(__FILE__) + "/../meta/profiles-resources.xml").read)
   doc.remove_namespaces!
   lib_dir  = File.expand_path('../lib/fhir/models', File.dirname(__FILE__))
 
@@ -14,8 +14,7 @@ def generate_resources
 
   autoloads = []
 
-  doc.xpath('//Profile/structure')
-    .each do |st|
+  doc.xpath('//Profile/structure').each do |st|
     resource_name =  value_by_path(st, 'type')
     file_name = resource_name.underscore
     elements = st.xpath('./element').to_a

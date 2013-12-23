@@ -5,8 +5,14 @@ class Fhir::AdverseReaction < Fhir::Resource
     validates_inclusion_of :did_not_occur_flag, in: [true, false], message: 'must be either true or false'
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
+
+  # External Ids for this adverse reaction
+  attribute :identifier, Array[Fhir::Identifier]
 
   # When the reaction occurred
   attribute :reaction_date, DateTime
@@ -27,34 +33,38 @@ class Fhir::AdverseReaction < Fhir::Resource
       validates_presence_of :code
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Indicates the specific sign or symptom that was observed
     attribute :code, Fhir::CodeableConcept
 
-    # The severity of the sign or symptom
+    # severe | serious | moderate | minor
     attribute :severity, Fhir::Code
   end
 
-  attribute :symptoms, Array[Symptom]
+  attribute :symptom, Array[Symptom]
 
   # An exposure to a substance that preceded a reaction
   # occurrence.
   class Exposure < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # When the exposure occurred
     attribute :exposure_date, DateTime
 
-    # The type of exposure
+    # drugadmin | immuniz | coincidental
     attribute :exposure_type, Fhir::Code
 
-    # A statement of how confident that the recorder was that
-    # this exposure caused the reaction
+    # likely | unlikely | confirmed | unknown
     attribute :causality_expectation, Fhir::Code
 
-    # Substance(s) that is presumed to have caused the adverse
-    # reaction
+    # Presumed causative substance
     resource_reference :substance, [Fhir::Substance]
   end
 
-  attribute :exposures, Array[Exposure]
+  attribute :exposure, Array[Exposure]
 end
 
 

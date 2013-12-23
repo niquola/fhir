@@ -30,7 +30,7 @@
     <requestor value="false"/>
     <network>
       <identifier value="127.0.0.1"/>
-      <type value="ip"/>
+      <type value="2"/>
     </network>
   </participant>
   <source>
@@ -44,7 +44,7 @@
   <object>
     <identifier>
       <label value="Dell Serial Number"/>
-      <key value="ABCDEF"/>
+      <value value="ABCDEF"/>
     </identifier>
     <type value="4"/>
     <role value="4"/>

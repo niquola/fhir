@@ -1,1 +1,33 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div>\n      <p>This value sets refers to a substance status<\/p>\n    <\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/substance-status"},"name":{"value":"Substance Status"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"Substance Status"},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/substance-status"},"concept":[{"code":{"value":"active"},"display":{"value":"Active"},"definition":{"value":"The substance is active"}},{"code":{"value":"inactive"},"display":{"value":"Inactive"},"definition":{"value":"The substance is inactive"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>This value sets refers to a substance status</p>\n    </div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/substance-status",
+  "name": "Substance Status",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Substance Status",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/substance-status",
+    "concept": [
+      {
+        "code": "active",
+        "display": "Active",
+        "definition": "The substance is active"
+      },
+      {
+        "code": "inactive",
+        "display": "Inactive",
+        "definition": "The substance is inactive"
+      }
+    ]
+  }
+}

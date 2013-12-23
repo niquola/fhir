@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>AnimalBreeds</h2>
       <p>This example value set defines a set of codes that can be used to indicate breeds of species.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/animal-breed</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/animal-breed</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>gsd</td>
+          <td>
+            <a name="gsd">gsd</a>
+          </td>
           <td>German Shepherd Dog</td>
           <td/>
         </tr>
         <tr>
-          <td>irt</td>
+          <td>
+            <a name="irt">irt</a>
+          </td>
           <td>Irish Terrier</td>
           <td/>
         </tr>
         <tr>
-          <td>tibmas</td>
+          <td>
+            <a name="tibmas">tibmas</a>
+          </td>
           <td>Tibetan Mastiff</td>
           <td/>
         </tr>
         <tr>
-          <td>gret</td>
+          <td>
+            <a name="gret">gret</a>
+          </td>
           <td>Golden Retriever</td>
           <td/>
         </tr>

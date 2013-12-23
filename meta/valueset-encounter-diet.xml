@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Diet</h2>
       <p>This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/diet</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/diet</p>
       <table>
         <tr>
           <td>
@@ -20,37 +20,51 @@
           </td>
         </tr>
         <tr>
-          <td>vegetarian</td>
+          <td>
+            <a name="vegetarian">vegetarian</a>
+          </td>
           <td/>
           <td>Food without meat, poultry or seafood</td>
         </tr>
         <tr>
-          <td>dairy-free</td>
+          <td>
+            <a name="dairy-free">dairy-free</a>
+          </td>
           <td/>
           <td>Exludes dairy products</td>
         </tr>
         <tr>
-          <td>nut-free</td>
+          <td>
+            <a name="nut-free">nut-free</a>
+          </td>
           <td/>
           <td>Excludes ingredients containing nuts</td>
         </tr>
         <tr>
-          <td>gluten-free</td>
+          <td>
+            <a name="gluten-free">gluten-free</a>
+          </td>
           <td/>
           <td>Excludes ingredients containing gluten</td>
         </tr>
         <tr>
-          <td>vegan</td>
+          <td>
+            <a name="vegan">vegan</a>
+          </td>
           <td/>
           <td>Food without meat, poultry, seafood, eggs, dairy products and other animal-derived substances</td>
         </tr>
         <tr>
-          <td>halal</td>
+          <td>
+            <a name="halal">halal</a>
+          </td>
           <td/>
           <td>Foods that conform to Islamic law</td>
         </tr>
         <tr>
-          <td>kosher</td>
+          <td>
+            <a name="kosher">kosher</a>
+          </td>
           <td/>
           <td>foods that conform to Jewish dietary law</td>
         </tr>

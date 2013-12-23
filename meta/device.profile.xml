@@ -3,24 +3,21 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health." class="dict" href="device-definitions.htm#Device"><b>Device</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="Describes what kind of device that this." class="dict" href="device-definitions.htm#Device.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">What kind of device this is</span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
- &lt;<a title="The name of the manufacturer." class="dict" href="device-definitions.htm#Device.manufacturer"><b>manufacturer</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Name of device manufacturer</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The &quot;model&quot; - an identifier assigned by the manufacturer to identify the product by its type. This number is shared by the all devices sold as the same type." class="dict" href="device-definitions.htm#Device.model"><b>model</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Model id assigned by the manufacturer</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The version of the device, if the device has multiple releases under the same model, or if the device is software or carries firmware." class="dict" href="device-definitions.htm#Device.version"><b>version</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Version number (i.e. software)</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Date of expiry of this device (if applicable)." class="dict" href="device-definitions.htm#Device.expiry"><b>expiry</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#date">date</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Date of expiry of this device (if applicable)</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Universal Device Id fields." class="dict" href="device-definitions.htm#Device.identity"><b>identity</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Universal Device Id fields --&gt;</span>
-  &lt;<a title="The number assigned to this device by an authorised issuer of Device GTINs, based on the standards set by GS1." class="dict" href="device-definitions.htm#Device.identity.gtin"><b>gtin</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Global Trade Identification Number</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Lot number of manufacture." class="dict" href="device-definitions.htm#Device.identity.lot"><b>lot</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Lot number of manufacture</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="The serial number assigned by the organization when the device was manufactured." class="dict" href="device-definitions.htm#Device.identity.serialNumber"><b>serialNumber</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Serial number assigned by the manufacturer</span><span style="color: Gray"> --&gt;</span>
- &lt;/identity&gt;
- &lt;<a title="The organization that is responsible for the provision and ongoing maintenance of the device." class="dict" href="device-definitions.htm#Device.owner"><b>owner</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="organization.htm#Organization">Organization</a>)</span> <span style="color: navy">Organization responsible for device</span><span style="color: Gray"> --&gt;</span>&lt;/owner&gt;
- &lt;<a title="Identifiers assigned to this device by various organizations (unless other specific fields exist for them)." class="dict" href="device-definitions.htm#Device.assignedId"><b>assignedId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Identifier assigned by various organizations</span><span style="color: Gray"> --&gt;</span>&lt;/assignedId&gt;
- &lt;<a title="The resource may be found in a literal location (i.e. GPS coordinates), a logical place (i.e. &quot;in/with the patient&quot;), or a coded location." class="dict" href="device-definitions.htm#Device.location"><b>location</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="location.htm#Location">Location</a>)</span> <span style="color: navy">Where the resource is found</span><span style="color: Gray"> --&gt;</span>&lt;/location&gt;
- &lt;<a title="If the resource is affixed to a person." class="dict" href="device-definitions.htm#Device.patient"><b>patient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="patient.htm#Patient">Patient</a>)</span> <span style="color: navy">If the resource is affixed to a person</span><span style="color: Gray"> --&gt;</span>&lt;/patient&gt;
- &lt;<a title="Contact details for an organization or a particular human that is responsible for the device." class="dict" href="device-definitions.htm#Device.contact"><b>contact</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Contact">Contact</a></span> <span style="color: navy">Details for human/organization for support</span><span style="color: Gray"> --&gt;</span>&lt;/contact&gt;
- &lt;<a title="A network address on which the device may be contacted directly." class="dict" href="device-definitions.htm#Device.url"><b>url</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Network address to contact device</span><span style="color: Gray"> --&gt;</span>
+&lt;<a title="This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health." class="dict" href="device-definitions.html#Device"><b>Device</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifiers assigned to this device by various organizations. The most likely organizations to assign identifiers are the manufacturer and the owner, though regulatory agencies may also assign an identifier. The identifiers identify the particular device, not the kind of device." class="dict" href="device-definitions.html#Device.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Instance id from manufacturer, owner and others</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="Describes what kind of device that this." class="dict" href="device-definitions.html#Device.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="http://hit-testing.nist.gov:13110/rtmms/index.htm.html">What kind of device this is</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="The name of the manufacturer." class="dict" href="device-definitions.html#Device.manufacturer"><b>manufacturer</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Name of device manufacturer</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The &quot;model&quot; - an identifier assigned by the manufacturer to identify the product by its type. This number is shared by the all devices sold as the same type." class="dict" href="device-definitions.html#Device.model"><b>model</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Model id assigned by the manufacturer</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The version of the device, if the device has multiple releases under the same model, or if the device is software or carries firmware." class="dict" href="device-definitions.html#Device.version"><b>version</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Version number (i.e. software)</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Date of expiry of this device (if applicable)." class="dict" href="device-definitions.html#Device.expiry"><b>expiry</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Date of expiry of this device (if applicable)</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="FDA Mandated Unique Device Identifier. Use the human readable information (the content that the user sees, which is sometimes different to the exact syntax represented in the barcode)  - see http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/default.htm." class="dict" href="device-definitions.html#Device.udi"><b>udi</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">FDA Mandated Unique Device Identifier</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Lot number of manufacture." class="dict" href="device-definitions.html#Device.lotNumber"><b>lotNumber</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Lot number of manufacture</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The organization that is responsible for the provision and ongoing maintenance of the device." class="dict" href="device-definitions.html#Device.owner"><b>owner</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Organization responsible for device</span><span style="color: Gray"> --&gt;</span>&lt;/owner&gt;
+ &lt;<a title="The resource may be found in a literal location (i.e. GPS coordinates), a logical place (i.e. &quot;in/with the patient&quot;), or a coded location." class="dict" href="device-definitions.html#Device.location"><b>location</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Where the resource is found</span><span style="color: Gray"> --&gt;</span>&lt;/location&gt;
+ &lt;<a title="If the resource is affixed to a person." class="dict" href="device-definitions.html#Device.patient"><b>patient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">If the resource is affixed to a person</span><span style="color: Gray"> --&gt;</span>&lt;/patient&gt;
+ &lt;<a title="Contact details for an organization or a particular human that is responsible for the device." class="dict" href="device-definitions.html#Device.contact"><b>contact</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Contact">Contact</a></span> <span style="color: navy">Details for human/organization for support</span><span style="color: Gray"> --&gt;</span>&lt;/contact&gt;
+ &lt;<a title="A network address on which the device may be contacted directly." class="dict" href="device-definitions.html#Device.url"><b>url</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Network address to contact device</span><span style="color: Gray"> --&gt;</span>
 &lt;/Device&gt;
 </pre></div>
   </text>
@@ -28,7 +25,7 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
   <structure>
     <type value="Device"/>
     <publish value="true"/>
@@ -49,9 +46,24 @@
       <path value="Device.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -66,7 +78,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="Device.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -98,6 +110,36 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Device.identifier"/>
+      <definition>
+        <short value="Instance id from manufacturer, owner and others"/>
+        <formal value="Identifiers assigned to this device by various organizations. The most likely organizations to assign identifiers are the manufacturer and the owner, though regulatory agencies may also assign an identifier. The identifiers identify the particular device, not the kind of device."/>
+        <comments value="Often fixed to the device as a barcode. May include names given to the device in local usage. Note that some of the barcodes affixed to the device identify it&#39;s type, not it&#39;s instance."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Device.type"/>
       <definition>
         <short value="What kind of device this is"/>
@@ -108,7 +150,28 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DeviceKind"/>
+        <binding>
+          <name value="DeviceKind"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceUri value="http://hit-testing.nist.gov:13110/rtmms/index.htm"/>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -120,6 +183,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.manufacturer.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -138,6 +217,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Device.model.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Device.version"/>
       <definition>
         <short value="Version number (i.e. software)"/>
@@ -146,6 +241,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.version.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -164,21 +275,27 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Device.identity"/>
+      <path value="Device.expiry.extension"/>
       <definition>
-        <short value="Universal Device Id fields"/>
-        <formal value="Universal Device Id fields."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
     <element>
-      <path value="Device.identity.gtin"/>
+      <path value="Device.udi"/>
       <definition>
-        <short value="Global Trade Identification Number"/>
-        <formal value="The number assigned to this device by an authorised issuer of Device GTINs, based on the standards set by GS1."/>
-        <comments value="This is a 14 digit number that may include leading 0s."/>
+        <short value="FDA Mandated Unique Device Identifier"/>
+        <formal value="FDA Mandated Unique Device Identifier. Use the human readable information (the content that the user sees, which is sometimes different to the exact syntax represented in the barcode)  - see http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/default.htm."/>
+        <comments value="The unique identifier may identify an instance of a device uniquely, or it may just identify the type of the device. A portion of the UDI - the DI part - can be extracted from the UDI when required, and used to look up information about the device through the GUDID."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -188,7 +305,23 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Device.identity.lot"/>
+      <path value="Device.udi.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.lotNumber"/>
       <definition>
         <short value="Lot number of manufacture"/>
         <formal value="Lot number of manufacture."/>
@@ -202,15 +335,17 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Device.identity.serialNumber"/>
+      <path value="Device.lotNumber.extension"/>
       <definition>
-        <short value="Serial number assigned by the manufacturer"/>
-        <formal value="The serial number assigned by the organization when the device was manufactured."/>
-        <comments value="Alphanumeric Maximum 20."/>
-        <min value="1"/>
-        <max value="1"/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
         <type>
-          <code value="string"/>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -229,15 +364,17 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Device.assignedId"/>
+      <path value="Device.owner.extension"/>
       <definition>
-        <short value="Identifier assigned by various organizations"/>
-        <formal value="Identifiers assigned to this device by various organizations (unless other specific fields exist for them)."/>
-        <comments value="Often fixed to the device as a barcode. May include names given to the device in local usage."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
         <min value="0"/>
         <max value="*"/>
         <type>
-          <code value="Identifier"/>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -256,6 +393,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Device.location.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Device.patient"/>
       <definition>
         <short value="If the resource is affixed to a person"/>
@@ -264,6 +417,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="Resource(Patient)"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Device.patient.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -283,6 +452,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Device.contact.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Device.url"/>
       <definition>
         <short value="Network address to contact device"/>
@@ -296,11 +481,21 @@ associated with the use of extensions by any application, project, or standard -
         <isModifier value="false"/>
       </definition>
     </element>
+    <element>
+      <path value="Device.url.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="DeviceKind"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <description value="Defines the nature of the device and the kind of functionality/services/behavior that may be expected from it"/>
-  </binding>
 </Profile>

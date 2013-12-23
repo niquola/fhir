@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Condition" type="Condition">
     <xs:annotation>
@@ -44,6 +44,11 @@
     <xs:complexContent>
       <xs:extension base="Resource">
         <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation>This records identifiers associated with this condition that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
               <xs:documentation>Subject of this condition.</xs:documentation>
@@ -138,7 +143,7 @@
       <xs:documentation>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="summary" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -159,7 +164,7 @@
       <xs:documentation>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -180,7 +185,7 @@
       <xs:documentation>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="code" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -201,7 +206,7 @@
       <xs:documentation>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="ConditionRelationshipType">
             <xs:annotation>
@@ -261,7 +266,7 @@
     <xs:restriction base="xs:string">
       <xs:enumeration value="due-to">
         <xs:annotation>
-          <xs:documentation>this condition is a consequence of the identified condition/procedure/substance.</xs:documentation>
+          <xs:documentation>this condition follows the identified condition/procedure/substance and is a consequence of it.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="following">

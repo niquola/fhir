@@ -32,7 +32,7 @@
   <status value="draft"/>
   <compose>
     <include>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <filter>
         <property value="concept"/>
         <op value="is-a"/>

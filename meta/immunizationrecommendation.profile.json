@@ -1,0 +1,1029 @@
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"A patient's point-of-time immunization status and recommendation with optional supporting justification.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation\"><b>ImmunizationRecommendation</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"The patient who is the subject of the profile.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>)</span> <span style=\"color: navy\">Who this profile is for</span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n &lt;<a title=\"Vaccine administration recommendations.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation\"><b>recommendation</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>1..*</b></span> Vaccine administration recommendations --&gt;</span>\r\n  &lt;<a title=\"The date of the immunization recommendation.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.recommendationDate\"><b>recommendationDate</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Recommendation date</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Vaccine that pertains to the recommendation.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.vaccineType\"><b>vaccineType</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\">Vaccine that pertains to the recommendation</span><span style=\"color: Gray\"> --&gt;</span>&lt;/vaccineType&gt;\r\n  &lt;<a title=\"Recommended dose number.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.doseNumber\"><b>doseNumber</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#integer\">integer</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Recommended dose number</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Vaccine administration status.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.forecastStatus\"><b>forecastStatus</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"immunization-forecast-status.html\">Vaccine administration status</a></span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Vaccine date recommentations - e.g. earliest date to administer, latest date to administer, etc.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion\"><b>dateCriterion</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Pertinent dates --&gt;</span>\r\n   &lt;<a title=\"Date classification of recommendation - e.g. earliest date to give, latest date to give, etc.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.code\"><b>code</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\">Date classification of recommendation</span><span style=\"color: Gray\"> --&gt;</span>&lt;/code&gt;\r\n   &lt;<a title=\"Date recommendation.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.dateCriterion.value\"><b>value</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Date recommendation</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;/dateCriterion&gt;\r\n  &lt;<a title=\"Contains information about the protocol under which the vaccine was administered.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol\"><b>protocol</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..1</b></span> Vaccine Administration Protocol --&gt;</span>\r\n   &lt;<a title=\"Nominal position in a series.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.doseSequence\"><b>doseSequence</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#integer\">integer</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Dose Number</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"Contains the description about the protocol under which the vaccine was administered.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.description\"><b>description</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Vaccine Administration Protocol Description</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"Indicates the authority who published the protocol?  E.g. ACIP.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.authority\"><b>authority</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>)</span> <span style=\"color: navy\">Vaccine Administration Protocol Authority</span><span style=\"color: Gray\"> --&gt;</span>&lt;/authority&gt;\r\n   &lt;<a title=\"One possible path to achieve presumed immunity against a disease - within the context of an authority.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.protocol.series\"><b>series</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Vaccine Series</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;/protocol&gt;\r\n  &lt;<a title=\"Immunization event history that supports the status and recommendation.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingImmunization\"><b>supportingImmunization</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"immunization.html#Immunization\">Immunization</a>)</span> <span style=\"color: navy\">\r\n      Supporting Immunization</span><span style=\"color: Gray\"> --&gt;</span>&lt;/supportingImmunization&gt;\r\n  &lt;<a title=\"Adverse event report information that supports the status and recommendation.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingAdverseEventReport\"><b>supportingAdverseEventReport</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Supporting adverse event report --&gt;</span>\r\n   &lt;<a title=\"Unique identifier of the adverse event report.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingAdverseEventReport.identifier\"><b>identifier</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#id\">id</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..*</b></span> <span style=\"color: navy\">Adverse event report identifier</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"Advers event report classification.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reportType\"><b>reportType</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\">Adverse event report classification</span><span style=\"color: Gray\"> --&gt;</span>&lt;/reportType&gt;\r\n   &lt;<a title=\"The date of the adverse event report.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reportDate\"><b>reportDate</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Adverse event report date</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"The content of the adverse event report.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingAdverseEventReport.text\"><b>text</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Adverse event report text</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"The documented reaction described in the adverse event report.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reaction\"><b>reaction</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"adversereaction.html#AdverseReaction\">AdverseReaction</a>)</span> <span style=\"color: navy\">Documented reaction</span><span style=\"color: Gray\"> --&gt;</span>&lt;/reaction&gt;\r\n  &lt;/supportingAdverseEventReport&gt;\r\n  &lt;<a title=\"Patient observation that supports the status and recommendation.\" class=\"dict\" href=\"immunizationrecommendation-definitions.html#ImmunizationRecommendation.recommendation.supportingPatientObservation\"><b>supportingPatientObservation</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"observation.html#Observation\">Observation</a>)</span> <span style=\"color: navy\">\r\n      Supporting Patient Observation</span><span style=\"color: Gray\"> --&gt;</span>&lt;/supportingPatientObservation&gt;\r\n &lt;/recommendation&gt;\r\n&lt;/ImmunizationRecommendation&gt;\r\n</pre></div>"
+  },
+  "name": "immunizationrecommendation",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. A patient's point-of-time immunization status and recommendation with optional supporting justification.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "ImmunizationRecommendation",
+      "publish": true,
+      "element": [
+        {
+          "path": "ImmunizationRecommendation",
+          "definition": {
+            "short": "An immunization profile",
+            "formal": "A patient's point-of-time immunization status and recommendation with optional supporting justification.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "SubstanceAdministration"
+              },
+              {
+                "identity": "v2",
+                "map": "VXU_V04"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.subject",
+          "definition": {
+            "short": "Who this profile is for",
+            "formal": "The patient who is the subject of the profile.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": ".partipication[ttypeCode=].role"
+              },
+              {
+                "identity": "v2",
+                "map": "PID-3-patient ID list"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation",
+          "definition": {
+            "short": "Vaccine administration recommendations",
+            "formal": "Vaccine administration recommendations.",
+            "min": "1",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.recommendationDate",
+          "definition": {
+            "short": "Recommendation date",
+            "formal": "The date of the immunization recommendation.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-15-date/time of the observation"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.recommendationDate.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.vaccineType",
+          "definition": {
+            "short": "Vaccine that pertains to the recommendation",
+            "formal": "Vaccine that pertains to the recommendation.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "VaccineType",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "description": "The type of vaccine administered"
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier e { 30956-7 | 38890-0 }"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.vaccineType.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.doseNumber",
+          "definition": {
+            "short": "Recommended dose number",
+            "formal": "Recommended dose number.",
+            "comments": "May need other dose concepts such as administered vs. valid.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "integer"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier = 30973-2"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.doseNumber.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.forecastStatus",
+          "definition": {
+            "short": "Vaccine administration status",
+            "formal": "Vaccine administration status.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "ImmunizationForecastStatus",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/immunization-forecast-status"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier = 59783-1"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.forecastStatus.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.dateCriterion",
+          "definition": {
+            "short": "Pertinent dates",
+            "formal": "Vaccine date recommentations - e.g. earliest date to administer, latest date to administer, etc.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-3: 30980-7 = Next dose recommended, 59777-3 = Latest next dose should be given, 59778-1 = Dose is overdue"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.dateCriterion.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.dateCriterion.code",
+          "definition": {
+            "short": "Date classification of recommendation",
+            "formal": "Date classification of recommendation - e.g. earliest date to give, latest date to give, etc.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "ImmunizationProfileDateCriterion",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "description": "Classifies date criterion with respect to conveying information about a patient's vaccination status (e.g. due date, latest to give date, etc.)"
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-3-observation identifier"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.dateCriterion.code.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.dateCriterion.value",
+          "definition": {
+            "short": "Date recommendation",
+            "formal": "Date recommendation.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.dateCriterion.value.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol",
+          "definition": {
+            "short": "Vaccine Administration Protocol",
+            "formal": "Contains information about the protocol under which the vaccine was administered.",
+            "min": "0",
+            "max": "1",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.doseSequence",
+          "definition": {
+            "short": "Dose Number",
+            "formal": "Nominal position in a series.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "integer"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier = 30973-2"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.doseSequence.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.description",
+          "definition": {
+            "short": "Vaccine Administration Protocol Description",
+            "formal": "Contains the description about the protocol under which the vaccine was administered.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier = 30956-7"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.description.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.authority",
+          "definition": {
+            "short": "Vaccine Administration Protocol Authority",
+            "formal": "Indicates the authority who published the protocol?  E.g. ACIP.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier = 59779-9"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.authority.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.series",
+          "definition": {
+            "short": "Vaccine Series",
+            "formal": "One possible path to achieve presumed immunity against a disease - within the context of an authority.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "RXA-5-administered code"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.protocol.series.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingImmunization",
+          "definition": {
+            "short": "Supporting Immunization",
+            "formal": "Immunization event history that supports the status and recommendation.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Immunization)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "? No clear way to associate in V2.x or IG"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingImmunization.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport",
+          "definition": {
+            "short": "Supporting adverse event report",
+            "formal": "Adverse event report information that supports the status and recommendation.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.identifier",
+          "definition": {
+            "short": "Adverse event report identifier",
+            "formal": "Unique identifier of the adverse event report.",
+            "min": "1",
+            "max": "*",
+            "type": [
+              {
+                "code": "id"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reportType",
+          "definition": {
+            "short": "Adverse event report classification",
+            "formal": "Advers event report classification.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "AdverseEventReportType",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "description": "Classifies an adverse event report"
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "[tbd] : OBX-3-observation identifier = 31044-1 (seems to be only one LOINC code for 'reaction' -> only one AdverseEventReportType?)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reportType.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reportDate",
+          "definition": {
+            "short": "Adverse event report date",
+            "formal": "The date of the adverse event report.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-15-date/time of the observation"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reportDate.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.text",
+          "definition": {
+            "short": "Adverse event report text",
+            "formal": "The content of the adverse event report.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX-5-observation value : OBX-3-observation identifier = 31044-1"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.text.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reaction",
+          "definition": {
+            "short": "Documented reaction",
+            "formal": "The documented reaction described in the adverse event report.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(AdverseReaction)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "IAM/IAR"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingAdverseEventReport.reaction.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingPatientObservation",
+          "definition": {
+            "short": "Supporting Patient Observation",
+            "formal": "Patient observation that supports the status and recommendation.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Observation)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "OBX If OBX is associated with ( RXA : RXA-5-administered code = '998^No vaccine administered^CVX' ), could contain the reason the vaccine was not administered"
+              }
+            ]
+          }
+        },
+        {
+          "path": "ImmunizationRecommendation.recommendation.supportingPatientObservation.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

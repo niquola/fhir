@@ -1,1 +1,49 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>EncounterState<\/h2><p>Current state of the encounter<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/encounter-state<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>planned<\/td><td/><td>The Encounter has not yet started.<\/td><\/tr><tr><td>current<\/td><td/><td>The Encounter has begun and the patient is present / the practitioner and the patient are meeting.<\/td><\/tr><tr><td>onleave<\/td><td/><td>The Encounter has begun, but the patient is temporarily on leave.<\/td><\/tr><tr><td>finished<\/td><td/><td>The Encounter has ended.<\/td><\/tr><tr><td>cancelled<\/td><td/><td>The Encounter has ended before it has begun.<\/td><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/encounter-state"},"name":{"value":"EncounterState"},"publisher":{"value":"HL7 (FHIR Project)"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}},{"system":{"value":"email"},"value":{"value":"fhir@lists.hl7.org"}}],"description":{"value":"Current state of the encounter"},"status":{"value":"draft"},"date":{"value":"2023-05-12T00:10:00"},"define":{"system":{"value":"http://hl7.org/fhir/encounter-state"},"caseSensitive":{"value":true},"concept":[{"code":{"value":"planned"},"definition":{"value":"The Encounter has not yet started."}},{"code":{"value":"current"},"definition":{"value":"The Encounter has begun and the patient is present / the practitioner and the patient are meeting."}},{"code":{"value":"onleave"},"definition":{"value":"The Encounter has begun, but the patient is temporarily on leave."}},{"code":{"value":"finished"},"definition":{"value":"The Encounter has ended."}},{"code":{"value":"cancelled"},"definition":{"value":"The Encounter has ended before it has begun."}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>EncounterState</h2><p>Current state of the encounter</p><p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-state</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"planned\">planned</a></td><td/><td>The Encounter has not yet started.</td></tr><tr><td><a name=\"inprogress\">in progress</a></td><td/><td>The Encounter has begun and the patient is present / the practitioner and the patient are meeting.</td></tr><tr><td><a name=\"onleave\">onleave</a></td><td/><td>The Encounter has begun, but the patient is temporarily on leave.</td></tr><tr><td><a name=\"finished\">finished</a></td><td/><td>The Encounter has ended.</td></tr><tr><td><a name=\"cancelled\">cancelled</a></td><td/><td>The Encounter has ended before it has begun.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-state",
+  "name": "EncounterState",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "Current state of the encounter",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.982+11:00",
+  "define": {
+    "system": "http://hl7.org/fhir/encounter-state",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "planned",
+        "definition": "The Encounter has not yet started."
+      },
+      {
+        "code": "in progress",
+        "definition": "The Encounter has begun and the patient is present / the practitioner and the patient are meeting."
+      },
+      {
+        "code": "onleave",
+        "definition": "The Encounter has begun, but the patient is temporarily on leave."
+      },
+      {
+        "code": "finished",
+        "definition": "The Encounter has ended."
+      },
+      {
+        "code": "cancelled",
+        "definition": "The Encounter has ended before it has begun."
+      }
+    ]
+  }
+}

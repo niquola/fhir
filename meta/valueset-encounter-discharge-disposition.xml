@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>DischargeDisposition</h2>
       <p>This value set defines a set of codes that can be used to where the patient left the hospital</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/discharge-disposition</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/discharge-disposition</p>
       <table>
         <tr>
           <td>
@@ -20,47 +20,65 @@
           </td>
         </tr>
         <tr>
-          <td>home</td>
+          <td>
+            <a name="home">home</a>
+          </td>
           <td>Home</td>
           <td/>
         </tr>
         <tr>
-          <td>other-hcf</td>
+          <td>
+            <a name="other-hcf">other-hcf</a>
+          </td>
           <td>Other healthcare facility</td>
           <td/>
         </tr>
         <tr>
-          <td>hosp</td>
+          <td>
+            <a name="hosp">hosp</a>
+          </td>
           <td>Hospice</td>
           <td/>
         </tr>
         <tr>
-          <td>long</td>
+          <td>
+            <a name="long">long</a>
+          </td>
           <td>Long-term care</td>
           <td/>
         </tr>
         <tr>
-          <td>aadvice</td>
+          <td>
+            <a name="aadvice">aadvice</a>
+          </td>
           <td>Left against advice</td>
           <td/>
         </tr>
         <tr>
-          <td>exp</td>
+          <td>
+            <a name="exp">exp</a>
+          </td>
           <td>Expired</td>
           <td/>
         </tr>
         <tr>
-          <td>psy</td>
+          <td>
+            <a name="psy">psy</a>
+          </td>
           <td>Psychiatric hospital</td>
           <td/>
         </tr>
         <tr>
-          <td>rehab</td>
+          <td>
+            <a name="rehab">rehab</a>
+          </td>
           <td>Rehabilitation</td>
           <td/>
         </tr>
         <tr>
-          <td>oth</td>
+          <td>
+            <a name="oth">oth</a>
+          </td>
           <td>Other</td>
           <td/>
         </tr>

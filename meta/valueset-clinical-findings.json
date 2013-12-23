@@ -1,1 +1,32 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>Snomed-CT Clinical Findings<\/h2><p>This value set includes all the &quot;Clinical finding&quot; Snomed-CT codes (i.e. codes with an is-a relationship with 404684003: Clinical finding)<\/p><p>This value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include codes from http://snomed.info/id where concept  is-a  404684003<\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/clinical-findings"},"name":{"value":"Snomed-CT Clinical Findings"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This value set includes all the \"Clinical finding\" Snomed-CT codes (i.e. codes with an is-a relationship with 404684003: Clinical finding)"},"status":{"value":"draft"},"compose":{"include":[{"system":{"value":"http://snomed.info/id"},"filter":[{"property":{"value":"concept"},"op":{"value":"is-a"},"value":{"value":"404684003"}}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SNOMED CT Clinical Findings</h2><p>This value set includes all the &quot;Clinical finding&quot; SNOMED CT codes (i.e. codes with an is-a relationship with 404684003: Clinical finding)</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include codes from http://snomed.info/sct where concept  is-a  404684003</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/clinical-findings",
+  "name": "SNOMED CT Clinical Findings",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set includes all the \"Clinical finding\" SNOMED CT codes (i.e. codes with an is-a relationship with 404684003: Clinical finding)",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "404684003"
+          }
+        ]
+      }
+    ]
+  }
+}

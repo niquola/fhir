@@ -9,7 +9,7 @@
       <p>
         <b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association
       </p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/security-event-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/security-event-type</p>
       <table>
         <tr>
           <td>
@@ -23,7 +23,9 @@
           </td>
         </tr>
         <tr>
-          <td>rest</td>
+          <td>
+            <a name="rest">rest</a>
+          </td>
           <td>RESTful Operation</td>
           <td>Security Event: Execution of a RESTful operation as defined by FHIR</td>
         </tr>
@@ -31,7 +33,7 @@
       <p>In addition, this value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include these codes as defined in 
-          <a href="valueset-dicom-dcim.htm">http://nema.org/dicom/dcid</a>
+          <a href="valueset-dicom-dcim.html">http://nema.org/dicom/dcid</a>
           <table>
             <tr>
               <td>

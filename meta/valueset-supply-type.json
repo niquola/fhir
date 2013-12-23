@@ -1,1 +1,33 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>Supply Type<\/h2><p>This value sets refers to a Category of supply<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/supply-type<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>central<\/td><td>Central Supply<\/td><td>Supply is stored and requested from central supply<\/td><\/tr><tr><td>nonstock<\/td><td>Non-Stock<\/td><td>Supply is not onsite and must be requested from an outside vendor using a non-stock requisition<\/td><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/supply-type"},"name":{"value":"Supply Type"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This value sets refers to a Category of supply"},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/supply-type"},"concept":[{"code":{"value":"central"},"display":{"value":"Central Supply"},"definition":{"value":"Supply is stored and requested from central supply"}},{"code":{"value":"nonstock"},"display":{"value":"Non-Stock"},"definition":{"value":"Supply is not onsite and must be requested from an outside vendor using a non-stock requisition"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Supply Type</h2><p>This value sets refers to a Category of supply</p><p>This value set defines its own terms in the system http://hl7.org/fhir/supply-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"central\">central</a></td><td>Central Supply</td><td>Supply is stored and requested from central supply</td></tr><tr><td><a name=\"nonstock\">nonstock</a></td><td>Non-Stock</td><td>Supply is not onsite and must be requested from an outside vendor using a non-stock requisition</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/supply-type",
+  "name": "Supply Type",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value sets refers to a Category of supply",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/supply-type",
+    "concept": [
+      {
+        "code": "central",
+        "display": "Central Supply",
+        "definition": "Supply is stored and requested from central supply"
+      },
+      {
+        "code": "nonstock",
+        "display": "Non-Stock",
+        "definition": "Supply is not onsite and must be requested from an outside vendor using a non-stock requisition"
+      }
+    ]
+  }
+}

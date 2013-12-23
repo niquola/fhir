@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ConditionRelationshipType</h2>
       <p>The type of relationship between a condition and its related item</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/condition-relationship-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/condition-relationship-type</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>due-to</td>
+          <td>
+            <a name="due-to">due-to</a>
+          </td>
           <td/>
-          <td>this condition is a consequence of the identified condition/procedure/substance.</td>
+          <td>this condition follows the identified condition/procedure/substance and is a consequence of it.</td>
         </tr>
         <tr>
-          <td>following</td>
+          <td>
+            <a name="following">following</a>
+          </td>
           <td/>
           <td>this condition follows the identified condition/procedure/substance, but it is not known whether they are causually linked.</td>
         </tr>
@@ -45,13 +49,13 @@
   </telecom>
   <description value="The type of relationship between a condition and its related item"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/condition-relationship-type"/>
     <caseSensitive value="true"/>
     <concept>
       <code value="due-to"/>
-      <definition value="this condition is a consequence of the identified condition/procedure/substance."/>
+      <definition value="this condition follows the identified condition/procedure/substance and is a consequence of it."/>
     </concept>
     <concept>
       <code value="following"/>

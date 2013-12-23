@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Provenance" type="Provenance">
     <xs:annotation>
@@ -84,9 +84,9 @@
               <xs:documentation>An entity used in this activity.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="signature" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="integritySignature" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation>A digital signature on the target resource. The signature should reference a participant by xml:id. The signature is only added to support checking cryptographic integrity of the provenance, and not to represent workflow and clinical aspects of the signing process.</xs:documentation>
+              <xs:documentation>A digital signature on the target resource(s). The signature should match a Provenance.agent.reference in the provenance resource. The signature is only added to support checking cryptographic integrity of the resource, and not to represent workflow and clinical aspects of the signing process, or to support non-repudiation.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -98,7 +98,7 @@
       <xs:documentation>Provenance information that describes the activity that lead to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="role" minOccurs="1" maxOccurs="1" type="Coding">
             <xs:annotation>
@@ -117,7 +117,7 @@
           </xs:element>
           <xs:element name="display" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation>Human readable description of the participant.</xs:documentation>
+              <xs:documentation>Human-readable description of the participant.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -129,7 +129,7 @@
       <xs:documentation>Provenance information that describes the activity that lead to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="role" minOccurs="1" maxOccurs="1" type="ProvenanceEntityRole">
             <xs:annotation>
@@ -148,7 +148,7 @@
           </xs:element>
           <xs:element name="display" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation>Human readable description of the entity.</xs:documentation>
+              <xs:documentation>Human-readable description of the entity.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="agent" type="Provenance.Agent" minOccurs="0" maxOccurs="1">

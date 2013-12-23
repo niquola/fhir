@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>DataAbsentReason</h2>
       <p>Used to specify why the normally expected content of the data element is missing</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/data-absent-reason</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/data-absent-reason</p>
       <table>
         <tr>
           <td>
@@ -18,46 +18,96 @@
           <td>
             <b>Definition</b>
           </td>
+          <td>
+            <b>
+              <a href="v3\NullFlavor\index.html">v3 Map (NullFlavor)</a>
+            </b>
+          </td>
         </tr>
         <tr>
-          <td>unknown</td>
+          <td>
+            <a name="unknown">unknown</a>
+          </td>
           <td/>
           <td>The value is not known</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\NullFlavor\index.html#UNK">UNK</a>
+          </td>
         </tr>
         <tr>
-          <td>asked</td>
+          <td>
+            <a name="asked">asked</a>
+          </td>
           <td/>
           <td>The source human does not know the value</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\NullFlavor\index.html#ASKU">ASKU</a>
+          </td>
         </tr>
         <tr>
-          <td>temp</td>
+          <td>
+            <a name="temp">temp</a>
+          </td>
           <td/>
           <td>There is reason to expect (from the workflow) that the value may become known</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\NullFlavor\index.html#NAV">NAV</a>
+          </td>
         </tr>
         <tr>
-          <td>notasked</td>
+          <td>
+            <a name="notasked">notasked</a>
+          </td>
           <td/>
           <td>The workflow didn&#39;t lead to this value being known</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\NullFlavor\index.html#NASK">NASK</a>
+          </td>
         </tr>
         <tr>
-          <td>masked</td>
+          <td>
+            <a name="masked">masked</a>
+          </td>
           <td/>
           <td>The information is not available due to security, privacy or related reasons</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\NullFlavor\index.html#MSK">MSK</a>
+          </td>
         </tr>
         <tr>
-          <td>unsupported</td>
+          <td>
+            <a name="unsupported">unsupported</a>
+          </td>
           <td/>
           <td>The source system wasn&#39;t capable of supporting this element</td>
+          <td>
+            <span title="wider">&lt;</span>
+            <a href="v3\NullFlavor\index.html#NA">NA</a>
+          </td>
         </tr>
         <tr>
-          <td>astext</td>
+          <td>
+            <a name="astext">astext</a>
+          </td>
           <td/>
-          <td>The content of the data is represented as text</td>
+          <td>The content of the data is represented in the resource narrative</td>
+          <td/>
         </tr>
         <tr>
-          <td>error</td>
+          <td>
+            <a name="error">error</a>
+          </td>
           <td/>
           <td>Some system or workflow process error means that the information is not available</td>
+          <td>
+            <span title="wider">&lt;</span>
+            <a href="v3\NullFlavor\index.html#NA">NA</a>
+          </td>
         </tr>
       </table>
     </div>
@@ -75,7 +125,7 @@
   </telecom>
   <description value="Used to specify why the normally expected content of the data element is missing"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.970+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/data-absent-reason"/>
     <caseSensitive value="true"/>
@@ -105,7 +155,7 @@
     </concept>
     <concept>
       <code value="astext"/>
-      <definition value="The content of the data is represented as text"/>
+      <definition value="The content of the data is represented in the resource narrative"/>
     </concept>
     <concept>
       <code value="error"/>

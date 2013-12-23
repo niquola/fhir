@@ -6,7 +6,7 @@ class Fhir::Quantity < Fhir::DataType
   # Numerical value (with implicit precision)
   attribute :value, Float
 
-  # Relationship of stated value to actual value
+  # < | <= | >= | > - how to understand the value
   attribute :comparator, Fhir::Code
 
   # Unit representation
@@ -19,3 +19,4 @@ class Fhir::Quantity < Fhir::DataType
   attribute :code, Fhir::Code
 end
 
+Fhir.load_extension('quantity')

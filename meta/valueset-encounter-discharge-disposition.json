@@ -1,1 +1,60 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>DischargeDisposition<\/h2><p>This value set defines a set of codes that can be used to where the patient left the hospital<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/discharge-disposition<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>home<\/td><td>Home<\/td><td/><\/tr><tr><td>other-hcf<\/td><td>Other healthcare facility<\/td><td/><\/tr><tr><td>hosp<\/td><td>Hospice<\/td><td/><\/tr><tr><td>long<\/td><td>Long-term care<\/td><td/><\/tr><tr><td>aadvice<\/td><td>Left against advice<\/td><td/><\/tr><tr><td>exp<\/td><td>Expired<\/td><td/><\/tr><tr><td>psy<\/td><td>Psychiatric hospital<\/td><td/><\/tr><tr><td>rehab<\/td><td>Rehabilitation<\/td><td/><\/tr><tr><td>oth<\/td><td>Other<\/td><td/><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/encounter-discharge-disposition"},"name":{"value":"DischargeDisposition"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This value set defines a set of codes that can be used to where the patient left the hospital"},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/discharge-disposition"},"caseSensitive":{"value":true},"concept":[{"code":{"value":"home"},"display":{"value":"Home"}},{"code":{"value":"other-hcf"},"display":{"value":"Other healthcare facility"}},{"code":{"value":"hosp"},"display":{"value":"Hospice"}},{"code":{"value":"long"},"display":{"value":"Long-term care"}},{"code":{"value":"aadvice"},"display":{"value":"Left against advice"}},{"code":{"value":"exp"},"display":{"value":"Expired"}},{"code":{"value":"psy"},"display":{"value":"Psychiatric hospital"}},{"code":{"value":"rehab"},"display":{"value":"Rehabilitation"}},{"code":{"value":"oth"},"display":{"value":"Other"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>DischargeDisposition</h2><p>This value set defines a set of codes that can be used to where the patient left the hospital</p><p>This value set defines its own terms in the system http://hl7.org/fhir/discharge-disposition</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"home\">home</a></td><td>Home</td><td/></tr><tr><td><a name=\"other-hcf\">other-hcf</a></td><td>Other healthcare facility</td><td/></tr><tr><td><a name=\"hosp\">hosp</a></td><td>Hospice</td><td/></tr><tr><td><a name=\"long\">long</a></td><td>Long-term care</td><td/></tr><tr><td><a name=\"aadvice\">aadvice</a></td><td>Left against advice</td><td/></tr><tr><td><a name=\"exp\">exp</a></td><td>Expired</td><td/></tr><tr><td><a name=\"psy\">psy</a></td><td>Psychiatric hospital</td><td/></tr><tr><td><a name=\"rehab\">rehab</a></td><td>Rehabilitation</td><td/></tr><tr><td><a name=\"oth\">oth</a></td><td>Other</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-discharge-disposition",
+  "name": "DischargeDisposition",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines a set of codes that can be used to where the patient left the hospital",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/discharge-disposition",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "home",
+        "display": "Home"
+      },
+      {
+        "code": "other-hcf",
+        "display": "Other healthcare facility"
+      },
+      {
+        "code": "hosp",
+        "display": "Hospice"
+      },
+      {
+        "code": "long",
+        "display": "Long-term care"
+      },
+      {
+        "code": "aadvice",
+        "display": "Left against advice"
+      },
+      {
+        "code": "exp",
+        "display": "Expired"
+      },
+      {
+        "code": "psy",
+        "display": "Psychiatric hospital"
+      },
+      {
+        "code": "rehab",
+        "display": "Rehabilitation"
+      },
+      {
+        "code": "oth",
+        "display": "Other"
+      }
+    ]
+  }
+}

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>FilterOperator</h2>
       <p>The kind of operation to perform as part of a property based filter</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/filter-operator</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/filter-operator</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>=</td>
+          <td>
+            <a name=".61">=</a>
+          </td>
           <td/>
           <td>The property value has the concept specified by the value.</td>
         </tr>
         <tr>
-          <td>is-a</td>
+          <td>
+            <a name="is-a">is-a</a>
+          </td>
           <td/>
           <td>The property value has a concept that has an is-a relationship with the value.</td>
         </tr>
         <tr>
-          <td>is-not-a</td>
+          <td>
+            <a name="is-not-a">is-not-a</a>
+          </td>
           <td/>
           <td>The property value has a concept that does not have an is-a relationship with the value.</td>
         </tr>
         <tr>
-          <td>regex</td>
+          <td>
+            <a name="regex">regex</a>
+          </td>
           <td/>
           <td>The property value representation matches the regex specified in the value.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The kind of operation to perform as part of a property based filter"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.969+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/filter-operator"/>
     <caseSensitive value="true"/>

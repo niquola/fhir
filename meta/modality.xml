@@ -12,7 +12,7 @@
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include these codes as defined in 
-          <a href="valueset-dicom-dcim.htm">http://nema.org/dicom/dcid</a>
+          <a href="valueset-dicom-dcim.html">http://nema.org/dicom/dcid</a>
           <table>
             <tr>
               <td>
@@ -309,7 +309,7 @@
   <description value="Type of data in the instance"/>
   <copyright value="These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.969+11:00"/>
   <compose>
     <include>
       <system value="http://nema.org/dicom/dcid"/>

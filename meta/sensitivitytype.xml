@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SensitivityType</h2>
       <p>The type of an adverse sensitivity</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/sensitivitytype</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/sensitivitytype</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>allergy</td>
+          <td>
+            <a name="allergy">allergy</a>
+          </td>
           <td/>
           <td>Allergic Reaction.</td>
         </tr>
         <tr>
-          <td>intolerance</td>
+          <td>
+            <a name="intolerance">intolerance</a>
+          </td>
           <td/>
           <td>Non-Allergic Reaction.</td>
         </tr>
         <tr>
-          <td>unknown</td>
+          <td>
+            <a name="unknown">unknown</a>
+          </td>
           <td/>
           <td>Unknown type.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="The type of an adverse sensitivity"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.969+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/sensitivitytype"/>
     <caseSensitive value="true"/>

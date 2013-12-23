@@ -5,13 +5,19 @@ class Fhir::List < Fhir::Resource
     validates_presence_of :mode
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # What the purpose of this list is
   attribute :code, Fhir::CodeableConcept
 
-  # Source of the list
+  # If all resources have the same subject
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Location]
+
+  # Who/what defined the list contents
   resource_reference :source, [Fhir::Practitioner, Fhir::Patient, Fhir::Device]
 
   # When the list was prepared
@@ -29,8 +35,11 @@ class Fhir::List < Fhir::Resource
       validates_presence_of :item_ref
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Workflow information about this item
-    attribute :flags, Array[Fhir::CodeableConcept]
+    attribute :flag, Array[Fhir::CodeableConcept]
 
     # If this item is actually marked as deleted
     attribute :deleted, Boolean
@@ -42,7 +51,7 @@ class Fhir::List < Fhir::Resource
     resource_reference :item, [Fhir::Resource]
   end
 
-  attribute :entries, Array[Entry]
+  attribute :entry, Array[Entry]
 
   # Why list is empty
   attribute :empty_reason, Fhir::CodeableConcept

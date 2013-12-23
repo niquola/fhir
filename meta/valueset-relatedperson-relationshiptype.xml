@@ -9,11 +9,11 @@
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Import all the codes that are part of 
-          <a href="valueset-patient-contact-relationship.htm">http://hl7.org/fhir/vs/patient-contact-relationship</a>
+          <a href="valueset-patient-contact-relationship.html">http://hl7.org/fhir/vs/patient-contact-relationship</a>
         </li>
         <li>Include codes from 
           <a href="http://hl7.org/fhir/v3/RoleCode">http://hl7.org/fhir/v3/RoleCode</a> where concept  is-a  
-          <a href="v3/RoleCode/index.htm#_PersonalRelationshipRoleType">_PersonalRelationshipRoleType</a>
+          <a href="v3/RoleCode/index.html#_PersonalRelationshipRoleType">_PersonalRelationshipRoleType</a>
         </li>
       </ul>
     </div>

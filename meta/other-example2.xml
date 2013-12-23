@@ -1,40 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?><Other xmlns="http://hl7.org/fhir">
-  <extension>
-    <extension>
-      <url value="http://example.org/do-not-use/fhir-extensions/UML#class.name"/>
+  <extension url="http://example.org/do-not-use/fhir-extensions/UML#class">
+    <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.name">
       <valueString value="Class1"/>
     </extension>
-    <extension>
-      <extension>
-        <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.name"/>
+    <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute">
+      <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.name">
         <valueString value="attribute1"/>
       </extension>
-      <extension>
-        <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.minOccurs"/>
+      <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.minOccurs">
         <valueInteger value="1"/>
       </extension>
-      <extension>
-        <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.maxOccurs"/>
+      <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.maxOccurs">
         <valueCode value="*"/>
       </extension>
-      <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute"/>
     </extension>
-    <extension>
-      <extension>
-        <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.name"/>
+    <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute">
+      <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.name">
         <valueString value="attribute2"/>
       </extension>
-      <extension>
-        <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.minOccurs"/>
+      <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.minOccurs">
         <valueInteger value="0"/>
       </extension>
-      <extension>
-        <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.maxOccurs"/>
+      <extension url="http://example.org/do-not-use/fhir-extensions/UML#class.attribute.maxOccurs">
         <valueInteger value="1"/>
       </extension>
-      <url value="http://example.org/do-not-use/fhir-extensions/UML#class.attribute"/>
     </extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/UML#class"/>
   </extension>
   <text>
     <status value="generated"/>

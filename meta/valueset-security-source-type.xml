@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Security Event Source Type</h2>
       <p>The type of process where the security event originated from</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/security-source-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/security-source-type</p>
       <table>
         <tr>
           <td>
@@ -20,47 +20,65 @@
           </td>
         </tr>
         <tr>
-          <td>1</td>
+          <td>
+            <a name="1">1</a>
+          </td>
           <td>User Device</td>
           <td>End-user display device, diagnostic device</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>
+            <a name="2">2</a>
+          </td>
           <td>Data Interface</td>
           <td>Data acquisition device or instrument</td>
         </tr>
         <tr>
-          <td>3</td>
+          <td>
+            <a name="3">3</a>
+          </td>
           <td>Web Server</td>
           <td>Web Server process or thread</td>
         </tr>
         <tr>
-          <td>4</td>
+          <td>
+            <a name="4">4</a>
+          </td>
           <td>Application Server</td>
           <td>Application Server process or thread</td>
         </tr>
         <tr>
-          <td>5</td>
+          <td>
+            <a name="5">5</a>
+          </td>
           <td>Database Server</td>
           <td>Database Server process or thread</td>
         </tr>
         <tr>
-          <td>6</td>
+          <td>
+            <a name="6">6</a>
+          </td>
           <td>Security Server</td>
           <td>Security server, e.g., a domain controller</td>
         </tr>
         <tr>
-          <td>7</td>
+          <td>
+            <a name="7">7</a>
+          </td>
           <td>Network Device</td>
           <td>ISO level 1-3 network component</td>
         </tr>
         <tr>
-          <td>8</td>
+          <td>
+            <a name="8">8</a>
+          </td>
           <td>Network Router</td>
           <td>ISO level 4-6 operating software</td>
         </tr>
         <tr>
-          <td>9</td>
+          <td>
+            <a name="9">9</a>
+          </td>
           <td>Other</td>
           <td>other kind of device (defined by DICOM, but some other code/system can be used)</td>
         </tr>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Criticality</h2>
       <p>The criticality of an adverse sensitivity</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/criticality</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/criticality</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>fatal</td>
+          <td>
+            <a name="fatal">fatal</a>
+          </td>
           <td/>
           <td>Likely to result in death if re-exposed.</td>
         </tr>
         <tr>
-          <td>high</td>
+          <td>
+            <a name="high">high</a>
+          </td>
           <td/>
           <td>Likely to result in reactions that will need to be treated if re-exposed.</td>
         </tr>
         <tr>
-          <td>medium</td>
+          <td>
+            <a name="medium">medium</a>
+          </td>
           <td/>
           <td>Likely to result in reactions that will inconvenience the subject.</td>
         </tr>
         <tr>
-          <td>low</td>
+          <td>
+            <a name="low">low</a>
+          </td>
           <td/>
           <td>Not likely to result in any inconveniences for the subject.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The criticality of an adverse sensitivity"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.969+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/criticality"/>
     <caseSensitive value="true"/>

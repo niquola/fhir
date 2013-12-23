@@ -74,49 +74,42 @@
   </telecom>
   <description value="A unit of time (units from UCUM)"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <compose>
     <include>
       <system value="http://unitsofmeasure.org"/>
       <code value="s">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="second."/>
         </extension>
       </code>
       <code value="min">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="minute."/>
         </extension>
       </code>
       <code value="h">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="hour."/>
         </extension>
       </code>
       <code value="d">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="day."/>
         </extension>
       </code>
       <code value="wk">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="week."/>
         </extension>
       </code>
       <code value="mo">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="month."/>
         </extension>
       </code>
       <code value="a">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="year."/>
         </extension>
       </code>

@@ -8,7 +8,9 @@
       <p>The  technique that is used to perform the process or preserve the specimen</p>
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
-        <li>Include all codes defined in http://hl7.org/fhir/v2/0373</li>
+        <li>Include all codes defined in 
+          <a href="v2/0373/index.html">http://hl7.org/fhir/v2/0373</a>
+        </li>
       </ul>
     </div>
   </text>

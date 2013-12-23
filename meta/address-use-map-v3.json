@@ -1,0 +1,82 @@
+{
+  "resourceType": "ConceptMap",
+  "identifier": "http://hl7.org/fhir/cm/v3/address-use",
+  "name": "v3 map for AddressUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v3 Map (AddressUse)",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.981+11:00",
+  "source": {
+    "reference": "http://hl7.org/fhir/vs/address-use"
+  },
+  "target": {
+    "reference": "http://hl7.org/fhir/v3/vs/AddressUse"
+  },
+  "concept": [
+    {
+      "system": "http://hl7.org/fhir/address-use",
+      "code": "home",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "H",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/address-use",
+      "code": "work",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "WP",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/address-use",
+      "code": "temp",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "TMP",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/address-use",
+      "code": "old",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "OLD",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/address-use",
+      "code": "old",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "BAD",
+          "equivalence": "narrower"
+        }
+      ]
+    }
+  ]
+}

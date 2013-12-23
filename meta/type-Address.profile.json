@@ -1,1 +1,329 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><div>Type definition for Address from <a href=\"http://hl7.org/fhir/datatypes.htm#Address\">FHIR Specification<\/a><\/div><\/div>"},"name":{"value":"Basic Profile for Address"},"publisher":{"value":"FHIR Specification"},"description":{"value":"Basic Profile for Address for validation support"},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Address"},"element":[{"path":{"value":"Address"},"definition":{"short":{"value":"A postal address"},"formal":{"value":"There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for addresses all around the world."},"comments":{"value":"Note: address is for postal addresses, not physical locations."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Structure"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"AD"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD"}}]}},{"path":{"value":"Address.use"},"definition":{"short":{"value":"The use of this address"},"formal":{"value":"Identifies the intended purpose of this address."},"comments":{"value":"This is labelled as \"Is Modifier\" because applications should not mistake a temporary or old address etc for a current/permanent one. Applications can assume that an address is not temporary or old unless it explicitly says that it is."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":true},"binding":{"value":"AddressUse"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./use)"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.7"}}]}},{"path":{"value":"Address.text"},"definition":{"short":{"value":"Text representation of the address"},"formal":{"value":"A full text representation of the address."},"comments":{"value":"Can provide both a text representation and parts."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./formatted"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6"}}]}},{"path":{"value":"Address.line"},"definition":{"short":{"value":"Line of an address"},"formal":{"value":"A line of an address (typically used for street names & numbers, unit details, delivery hints, etc.) ."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"}},{"target":{"value":"http://w3.org/vcard"},"map":{"value":"street address"}}]}},{"path":{"value":"Address.city"},"definition":{"short":{"value":"Name of city, town etc."},"formal":{"value":"The name of the city, town, village or other community or delivery center."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.3"}},{"target":{"value":"http://w3.org/vcard"},"map":{"value":"locality"}}]}},{"path":{"value":"Address.state"},"definition":{"short":{"value":"Sub-unit of country (abreviations ok)"},"formal":{"value":"Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes)."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.4"}},{"target":{"value":"http://w3.org/vcard"},"map":{"value":"region"}}]}},{"path":{"value":"Address.zip"},"definition":{"short":{"value":"Post code for area"},"formal":{"value":"A postal code designating a region defined by the postal service."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.5"}},{"target":{"value":"http://w3.org/vcard"},"map":{"value":"postal code"}}]}},{"path":{"value":"Address.country"},"definition":{"short":{"value":"Country (can be ISO 3166 3 letter code)"},"formal":{"value":"Country. ISO 3166 3 letter codes can be used in place of a full country name."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.6"}},{"target":{"value":"http://w3.org/vcard"},"map":{"value":"country name"}}]}},{"path":{"value":"Address.period"},"definition":{"short":{"value":"Time period when address was/is in use"},"formal":{"value":"Time period when address was/is in use."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Period"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./usablePeriod[type=\"IVL<TS>\"]"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XAD.12 / XAD.13 + XAD.14"}}]}}]}],"binding":[{"name":{"value":"AddressUse"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/address-use"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for Address from <a href=\"http://hl7.org/fhir/datatypes.html#Address\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for Address",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for Address for validation support",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "vcard",
+      "uri": "http://w3.org/vcard",
+      "name": "vCard"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Address",
+      "element": [
+        {
+          "path": "Address",
+          "definition": {
+            "short": "A postal address",
+            "formal": "There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for addresses all around the world.",
+            "comments": "Note: address is for postal addresses, not physical locations.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Structure"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "AD"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD"
+              },
+              {
+                "identity": "servd",
+                "map": "Address"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.use",
+          "definition": {
+            "short": "home | work | temp | old - purpose of this address",
+            "formal": "The use of this address.",
+            "comments": "This is labeled as \"Is Modifier\" because applications should not mistake a temporary or old address etc for a current/permanent one. Applications can assume that an address is not temporary or old unless it explicitly says that it is.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "AddressUse",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/address-use"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "unique(./use)"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.7"
+              },
+              {
+                "identity": "servd",
+                "map": "./AddressPurpose"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.text",
+          "definition": {
+            "short": "Text representation of the address",
+            "formal": "A full text representation of the address.",
+            "comments": "Can provide both a text representation and parts.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./formatted"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.line",
+          "definition": {
+            "short": "Street name, number, direction & P.O. Box etc",
+            "formal": "This component contains the house number, apartment number, street name, street direction, \nP.O. Box number, delivery hints, and similar address information.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "AD.part[parttype = AL]"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"
+              },
+              {
+                "identity": "vcard",
+                "map": "street address"
+              },
+              {
+                "identity": "servd",
+                "map": "./StreetAddress (newline delimitted)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.city",
+          "definition": {
+            "short": "Name of city, town etc.",
+            "formal": "The name of the city, town, village or other community or delivery center.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "AD.part[parttype = CTY]"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.3"
+              },
+              {
+                "identity": "vcard",
+                "map": "locality"
+              },
+              {
+                "identity": "servd",
+                "map": "./Jurisdiction"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.state",
+          "definition": {
+            "short": "Sub-unit of country (abreviations ok)",
+            "formal": "Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (i.e. US 2 letter state codes).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "AD.part[parttype = STA]"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.4"
+              },
+              {
+                "identity": "vcard",
+                "map": "region"
+              },
+              {
+                "identity": "servd",
+                "map": "./Region"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.zip",
+          "definition": {
+            "short": "Postal code for area",
+            "formal": "A postal code designating a region defined by the postal service.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "AD.part[parttype = ZIP]"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.5"
+              },
+              {
+                "identity": "vcard",
+                "map": "postal code"
+              },
+              {
+                "identity": "servd",
+                "map": "./PostalIdentificationCode"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.country",
+          "definition": {
+            "short": "Country (can be ISO 3166 3 letter code)",
+            "formal": "Country. ISO 3166 3 letter codes can be used in place of a full country name.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "AD.part[parttype = CNT]"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.6"
+              },
+              {
+                "identity": "vcard",
+                "map": "country name"
+              },
+              {
+                "identity": "servd",
+                "map": "./Country"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Address.period",
+          "definition": {
+            "short": "Time period when address was/is in use",
+            "formal": "Time period when address was/is in use.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./usablePeriod[type=\"IVL<TS>\"]"
+              },
+              {
+                "identity": "v2",
+                "map": "XAD.12 / XAD.13 + XAD.14"
+              },
+              {
+                "identity": "servd",
+                "map": "./StartDate and ./EndDate"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

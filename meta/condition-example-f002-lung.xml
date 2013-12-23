@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?><Condition xmlns="http://hl7.org/fhir">
     <subject>
-        <type value="Patient"/>
-        <reference value="patient/@f001"/>
+        <reference value="Patient/f001"/>
         <display value="P. van de Heuvel"/>
     </subject>
     <encounter>
-        <type value="Encounter"/>
-        <reference value="encounter/@f002"/>
+        <reference value="Encounter/f002"/>
     </encounter>
     <asserter>
-        <type value="Patient"/>
-        <reference value="patient/@f001"/>
+        <reference value="Patient/f001"/>
         <display value="P. van de Heuvel"/>
     </asserter>
     <dateAsserted value="2012-06-03"/>
     <code>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="254637007"/>
             <display value="NSCLC - Non-small cell lung cancer"/>
         </coding>
     </code>
     <category>
         <coding>
-            <system value="http://snomed.info/id"/>
-            <code value="diagnosis"/>
-            <display value="439401001"/>
+            <system value="http://snomed.info/sct"/>
+            <code value="439401001"/>
+            <display value="diagnosis"/>
         </coding>
     </category>
     <status value="confirmed"/>
     <severity>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="24484000"/>
             <display value="Severe"/>
         </coding>
@@ -40,16 +37,16 @@
     <stage>
         <summary>
             <coding>
-                <system value="http://snomed.info/id"/>
-                <code value="stage II"/>
-                <display value="258219007"/>
+                <system value="http://snomed.info/sct"/>
+                <code value="258219007"/>
+                <display value="stage II"/>
             </coding>
         </summary>
     </stage>
     <evidence>
         <code>
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="169069000"/>
                 <display value="CT of thorax"/>
             </coding>
@@ -58,7 +55,7 @@
     <location>
         <code>
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="51185008"/>
                 <display value="Thorax"/>    
             </coding>

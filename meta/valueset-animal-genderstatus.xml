@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>GenderStatus</h2>
       <p> This example value set defines a set of codes that can be used to indicate the current state of the      animal&#39;s reproductive organs.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/animal-genderstatus</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/animal-genderstatus</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>neutered</td>
+          <td>
+            <a name="neutered">neutered</a>
+          </td>
           <td>Neutered</td>
           <td>The animal has been castrated and is infertile</td>
         </tr>
         <tr>
-          <td>intact</td>
+          <td>
+            <a name="intact">intact</a>
+          </td>
           <td>Intact</td>
           <td>The animals reproductive organs are intact</td>
         </tr>

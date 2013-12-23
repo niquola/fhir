@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>EncounterClass</h2>
       <p>Classification of the encounter</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/encounter-class</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-class</p>
       <table>
         <tr>
           <td>
@@ -20,42 +20,58 @@
           </td>
         </tr>
         <tr>
-          <td>inpatient</td>
+          <td>
+            <a name="inpatient">inpatient</a>
+          </td>
           <td/>
           <td>An encounter during which the patient is hospitalized and stays overnight.</td>
         </tr>
         <tr>
-          <td>outpatient</td>
+          <td>
+            <a name="outpatient">outpatient</a>
+          </td>
           <td/>
           <td>An encounter during which the patient is not hospitalized overnight.</td>
         </tr>
         <tr>
-          <td>ambulatory</td>
+          <td>
+            <a name="ambulatory">ambulatory</a>
+          </td>
           <td/>
           <td>An encounter where the patient visits the practitioner in his/her office, e.g. a G.P. visit.</td>
         </tr>
         <tr>
-          <td>emergency</td>
+          <td>
+            <a name="emergency">emergency</a>
+          </td>
           <td/>
           <td>An encounter where the patient needs urgent care.</td>
         </tr>
         <tr>
-          <td>home</td>
+          <td>
+            <a name="home">home</a>
+          </td>
           <td/>
           <td>An encounter where the practitioner visits the patient at his/her home.</td>
         </tr>
         <tr>
-          <td>field</td>
+          <td>
+            <a name="field">field</a>
+          </td>
           <td/>
           <td>An encounter taking place outside the regular environment for giving care.</td>
         </tr>
         <tr>
-          <td>daytime</td>
+          <td>
+            <a name="daytime">daytime</a>
+          </td>
           <td/>
           <td>An encounter where the patient needs more prolonged treatment or investigations than outpatients, but who do not need to stay in the hospital overnight.</td>
         </tr>
         <tr>
-          <td>virtual</td>
+          <td>
+            <a name="virtual">virtual</a>
+          </td>
           <td/>
           <td>An encounter that takes place where the patient and practitioner do not physically meet but use electronic means for contact.</td>
         </tr>
@@ -75,7 +91,7 @@
   </telecom>
   <description value="Classification of the encounter"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.979+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/encounter-class"/>
     <caseSensitive value="true"/>

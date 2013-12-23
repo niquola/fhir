@@ -4,7 +4,7 @@
         <use value="official"/>
         <label value="UZI-nummer"/>
         <system value="urn:oid:2.16.528.1.1007.3.1"/>
-        <key value="12345678901"/>
+        <value value="12345678901"/>
     </identifier>
         <!-- Practitioner's personal demographics -->
         <name>
@@ -33,7 +33,7 @@
     <gender>
             <!-- The practitioner's administrative gender -->
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="248153007"/>
                 <display value="Male"/>
             </coding>
@@ -41,26 +41,24 @@
         <birthDate value="1956-12-24"/>
         <!-- Fortunately, the doctor is still alive! -->
 <!--         <photo>
-            <type value="Picture"/>
             <reference value="picture/@AB-201.bmp"/>
             <display value="Picture_Dokter_Bronsig"/>
         </photo>  -->
     
     <organization>
-        <type value="Organization"/>
-        <reference value="organization/@f201"/>
+        <reference value="Organization/f201"/>
         <display value="AUMC"/>
     </organization>
     <role>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="225304007"/>
             <display value="Implementation of planned interventions"/>
         </coding>
     </role>
     <specialty>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="310512001"/>
             <display value="Medical oncologist"/>
         </coding>
@@ -69,7 +67,7 @@
         <code>
             <!-- Dr. Bronsig is not only a medical oncologist, but also a pulmonologist -->
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="41672002"/>
                 <display value="Pulmonologist"/>
             </coding>

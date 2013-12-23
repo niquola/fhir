@@ -11,7 +11,7 @@
         
         <li>v3 Code System &quot;ObservationMethod&quot;: this is very incomplete and not currently maintained</li>      
         
-        <li>Snomed-CT Techniques (descendents of 272394005): this is very incomplete, more than just observation methods, and has SNOMED-CT licensing issues</li>      
+        <li>SNOMED CT Techniques (descendents of 272394005): this is very incomplete, more than just observation methods, and has SNOMED CT licensing issues</li>      
         
         <li>LOINC Method List: this is less incomplete, but not designed to be used as a formal code system</li>      
       
@@ -33,7 +33,7 @@
       <system value="http://hl7.org/fhir/v3/ObservationMethod"/>
     </include>
     <include>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <filter>
         <property value="concept"/>
         <op value="is-a"/>

@@ -2,6 +2,13 @@
 # lower limits. There may be more than one dimension in the
 # data.
 class Fhir::SampledData < Fhir::DataType
+  invariants do
+    validates_presence_of :origin
+    validates_presence_of :period
+    validates_presence_of :dimensions
+    validates_presence_of :data
+  end
+
   # Zero value and units
   attribute :origin, Fhir::Quantity
 
@@ -24,3 +31,4 @@ class Fhir::SampledData < Fhir::DataType
   attribute :data, String
 end
 
+Fhir.load_extension('sampled_data')

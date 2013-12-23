@@ -1,1 +1,1 @@
-{"Substance":{"name":{"value":"House Dust"},"type":{"coding":[{"system":{"value":"http://snomed.info/id"},"code":{"value":"406466009"},"display":{"value":"House dust allergen"}}]}}}
+{"resourceType":"Substance","type":{"coding":[{"system":"http://snomed.info/sct","code":"406466009","display":"House dust allergen"}]}}

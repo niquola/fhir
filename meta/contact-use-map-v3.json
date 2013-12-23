@@ -1,0 +1,93 @@
+{
+  "resourceType": "ConceptMap",
+  "identifier": "http://hl7.org/fhir/cm/v3/contact-use",
+  "name": "v3 map for ContactUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v3 Map (AddressUse)",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.985+11:00",
+  "source": {
+    "reference": "http://hl7.org/fhir/vs/contact-use"
+  },
+  "target": {
+    "reference": "http://hl7.org/fhir/v3/vs/AddressUse"
+  },
+  "concept": [
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "home",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "H",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "work",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "WP",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "temp",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "TMP",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "old",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "OLD",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "old",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "BAD",
+          "equivalence": "narrower"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/contact-use",
+      "code": "mobile",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/AddressUse",
+          "code": "MC",
+          "equivalence": "equal"
+        }
+      ]
+    }
+  ]
+}

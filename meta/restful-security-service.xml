@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>RestfulSecurityService</h2>
       <p>Types of security services used with FHIR</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/restful-security-service</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/restful-security-service</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>OAuth</td>
+          <td>
+            <a name="OAuth">OAuth</a>
+          </td>
           <td/>
           <td>OAuth (see oauth.net).</td>
         </tr>
         <tr>
-          <td>OAuth2</td>
+          <td>
+            <a name="OAuth2">OAuth2</a>
+          </td>
           <td/>
           <td>OAuth version 2 (see oauth.net).</td>
         </tr>
         <tr>
-          <td>NTLM</td>
+          <td>
+            <a name="NTLM">NTLM</a>
+          </td>
           <td/>
           <td>Microsoft NTLM Authentication.</td>
         </tr>
         <tr>
-          <td>Basic</td>
+          <td>
+            <a name="Basic">Basic</a>
+          </td>
           <td/>
           <td>Basic authentication defined in HTTP specification.</td>
         </tr>
         <tr>
-          <td>Kerberos</td>
+          <td>
+            <a name="Kerberos">Kerberos</a>
+          </td>
           <td/>
           <td>see http://www.ietf.org/rfc/rfc4120.txt.</td>
         </tr>
@@ -60,7 +70,7 @@
   </telecom>
   <description value="Types of security services used with FHIR"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/restful-security-service"/>
     <caseSensitive value="true"/>

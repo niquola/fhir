@@ -1,1 +1,712 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"Significant health events and conditions for people related to the subject relevant in the context of care for the subject.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory\"><b>FamilyHistory<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"The person who this history concerns.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.subject\"><b>subject<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"patient.htm#Patient\">Patient<\/a>)<\/span> <span style=\"color: navy\">Subject of this history<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/subject&gt;\r\n &lt;<a title=\"Conveys information about family history not specific to individual relations.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.note\"><b>note<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Additional details<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"The related person. Each FamilyHistory resource contains the entire family history for a single person.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation\"><b>relation<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> The relation --&gt;<\/span>\r\n  &lt;<a title=\"This will either be a name or a description.  E.g. &quot;Aunt Susan&quot;, &quot;my cousin with the red hair&quot;.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.name\"><b>name<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">The family member who had the condition<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"The type of relationship this person has to the patient (father, mother, brother etc.) At the moment this is a code linking to a fixed set of values. I'm not sure if there is an international standard for this. A fixed (possibly extensible) set of codes feels better than a codeable concept for something like this...\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.relationship\"><b>relationship<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"familial-relationship.htm\">Relationship to the subject<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/relationship&gt;\r\n  &lt;<a title=\"If this resource is indicating that the related person is deceased, then an indicator of whether the person is deceased (yes) or not (no) or the age or age range or description of age at death - can be indicated here. If the reason for death is known, then it can be indicated in the outcome code of the condition - in this case the deceased property should still be set.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.deceased_x_\"><b>deceased[x]<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#boolean\">boolean<\/a>|<a href=\"datatypes.htm#Age\">Age<\/a>|<a href=\"datatypes.htm#Range\">Range<\/a>|<a href=\"datatypes.htm#string\">string<\/a><\/span> <span style=\"color: navy\">Is the person deceased<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/deceased[x]&gt;\r\n  &lt;<a title=\"This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.note\"><b>note<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">General note about the related person<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.condition\"><b>condition<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> The Condition that the related person had --&gt;<\/span>\r\n   &lt;<a title=\"The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.condition.type\"><b>type<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\">The condition<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/type&gt;\r\n   &lt;<a title=\"Indicates what happened as a result of this condition.  If the condition resulted in death, deceased date is captured on the relation.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.condition.outcome\"><b>outcome<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\">deceased | permanent disability | etc.<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/outcome&gt;\r\n   &lt;<a title=\"Either the age of onset, range of approximate age or descriptive string can be recorded.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.condition.onset_x_\"><b>onset[x]<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Age\">Age<\/a>|<a href=\"datatypes.htm#Range\">Range<\/a>|<a href=\"datatypes.htm#string\">string<\/a><\/span> <span style=\"color: navy\">How old the person was when the condition manifested<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/onset[x]&gt;\r\n   &lt;<a title=\"An area where general notes can be placed about this specific condition.\" class=\"dict\" href=\"familyhistory-definitions.htm#FamilyHistory.relation.condition.note\"><b>note<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">General notes<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;/condition&gt;\r\n &lt;/relation&gt;\r\n&lt;/FamilyHistory&gt;\r\n<\/pre><\/div>"},"name":{"value":"familyhistory"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. Significant health events and conditions for people related to the subject relevant in the context of care for the subject."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"FamilyHistory"},"publish":{"value":true},"element":[{"path":{"value":"FamilyHistory"},"definition":{"short":{"value":"Family History"},"formal":{"value":"Significant health events and conditions for people related to the subject relevant in the context of care for the subject."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"Not in scope for v2"}}]}},{"path":{"value":"FamilyHistory.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.subject"},"definition":{"short":{"value":"Subject of this history"},"formal":{"value":"The person who this history concerns."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Patient)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.note"},"definition":{"short":{"value":"Additional details"},"formal":{"value":"Conveys information about family history not specific to individual relations."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation"},"definition":{"short":{"value":"The relation"},"formal":{"value":"The related person. Each FamilyHistory resource contains the entire family history for a single person."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.name"},"definition":{"short":{"value":"The family member who had the condition"},"formal":{"value":"This will either be a name or a description.  E.g. \"Aunt Susan\", \"my cousin with the red hair\"."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.relationship"},"definition":{"short":{"value":"Relationship to the subject"},"formal":{"value":"The type of relationship this person has to the patient (father, mother, brother etc.) At the moment this is a code linking to a fixed set of values. I'm not sure if there is an international standard for this. A fixed (possibly extensible) set of codes feels better than a codeable concept for something like this..."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"FamilialRelationship"}}},{"path":{"value":"FamilyHistory.relation.deceased[x]"},"definition":{"short":{"value":"Is the person deceased"},"formal":{"value":"If this resource is indicating that the related person is deceased, then an indicator of whether the person is deceased (yes) or not (no) or the age or age range or description of age at death - can be indicated here. If the reason for death is known, then it can be indicated in the outcome code of the condition - in this case the deceased property should still be set."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"boolean"}},{"code":{"value":"Age"}},{"code":{"value":"Range"}},{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.note"},"definition":{"short":{"value":"General note about the related person"},"formal":{"value":"This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.condition"},"definition":{"short":{"value":"The Condition that the related person had"},"formal":{"value":"The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.condition.type"},"definition":{"short":{"value":"The condition"},"formal":{"value":"The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.condition.outcome"},"definition":{"short":{"value":"deceased | permanent disability | etc."},"formal":{"value":"Indicates what happened as a result of this condition.  If the condition resulted in death, deceased date is captured on the relation."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"ConditionOutcome"}}},{"path":{"value":"FamilyHistory.relation.condition.onset[x]"},"definition":{"short":{"value":"How old the person was when the condition manifested"},"formal":{"value":"Either the age of onset, range of approximate age or descriptive string can be recorded."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Age"}},{"code":{"value":"Range"}},{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"FamilyHistory.relation.condition.note"},"definition":{"short":{"value":"General notes"},"formal":{"value":"An area where general notes can be placed about this specific condition."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}}]}],"binding":[{"name":{"value":"FamilialRelationship"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/familial-relationship"}}},{"name":{"value":"ConditionOutcome"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"description":{"value":"The result of the condition for the patient.  E.g. death, permanent disability, temporary disability, etc."}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"Significant health events and conditions for people related to the subject relevant in the context of care for the subject.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory\"><b>FamilyHistory</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"This records identifiers associated with this family history record that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">External Id(s) for this record<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n &lt;<a title=\"The person who this history concerns.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>)</span> <span style=\"color: navy\">Patient history is about<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n &lt;<a title=\"Conveys information about family history not specific to individual relations.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.note\"><b>note</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Additional details not covered elsewhere</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"The related person. Each FamilyHistory resource contains the entire family history for a single person.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation\"><b>relation</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Relative described by history --&gt;</span>\r\n  &lt;<a title=\"This will either be a name or a description.  E.g. &quot;Aunt Susan&quot;, &quot;my cousin with the red hair&quot;.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.name\"><b>name</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">The family member described<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"The type of relationship this person has to the patient (father, mother, brother etc.).\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.relationship\"><b>relationship</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <a style=\"color: navy\" href=\"v3/vs/FamilyMember/index.html\">Relationship to the subject<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a><span style=\"color: Gray\"> --&gt;</span>&lt;/relationship&gt;\r\n  &lt;<a title=\"The actual or approximate date of birth of the relative.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.born_x_\"><b>born[x]</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a>|<a href=\"datatypes.html#date\">date</a>|<a href=\"datatypes.html#string\">string</a></span> <span style=\"color: navy\">(approximate) date of birth</span><span style=\"color: Gray\"> --&gt;</span>&lt;/born[x]&gt;\r\n  &lt;<a title=\"If this resource is indicating that the related person is deceased, then an indicator of whether the person is deceased (yes) or not (no) or the age or age range or description of age at death - can be indicated here. If the reason for death is known, then it can be indicated in the outcome code of the condition - in this case the deceased property should still be set.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.deceased_x_\"><b>deceased[x]</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#boolean\">boolean</a>|<a href=\"datatypes.html#Age\">Age</a>|<a href=\"datatypes.html#Range\">Range</a>|<a href=\"datatypes.html#date\">date</a>|<a href=\"datatypes.html#string\">string</a></span> <span style=\"color: navy\">Dead? How old/when?</span><span style=\"color: Gray\"> --&gt;</span>&lt;/deceased[x]&gt;\r\n  &lt;<a title=\"This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.note\"><b>note</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">General note about related person</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.condition\"><b>condition</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Condition that the related person had --&gt;</span>\r\n   &lt;<a title=\"The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.condition.type\"><b>type</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\">Condition suffered by relation</span><span style=\"color: Gray\"> --&gt;</span>&lt;/type&gt;\r\n   &lt;<a title=\"Indicates what happened as a result of this condition.  If the condition resulted in death, deceased date is captured on the relation.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.condition.outcome\"><b>outcome</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\">deceased | permanent disability | etc.</span><span style=\"color: Gray\"> --&gt;</span>&lt;/outcome&gt;\r\n   &lt;<a title=\"Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.condition.onset_x_\"><b>onset[x]</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Age\">Age</a>|<a href=\"datatypes.html#Range\">Range</a>|<a href=\"datatypes.html#string\">string</a></span> <span style=\"color: navy\">When condition first manifested</span><span style=\"color: Gray\"> --&gt;</span>&lt;/onset[x]&gt;\r\n   &lt;<a title=\"An area where general notes can be placed about this specific condition.\" class=\"dict\" href=\"familyhistory-definitions.html#FamilyHistory.relation.condition.note\"><b>note</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Extra information about condition</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;/condition&gt;\r\n &lt;/relation&gt;\r\n&lt;/FamilyHistory&gt;\r\n</pre></div>"
+  },
+  "name": "familyhistory",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. Significant health events and conditions for people related to the subject relevant in the context of care for the subject.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "FamilyHistory",
+      "publish": true,
+      "element": [
+        {
+          "path": "FamilyHistory",
+          "definition": {
+            "short": "Family History",
+            "formal": "Significant health events and conditions for people related to the subject relevant in the context of care for the subject.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "Observation[classCode=OBS, moodCode=EVN]"
+              },
+              {
+                "identity": "v2",
+                "map": "Not in scope for v2"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.identifier",
+          "definition": {
+            "short": "External Id(s) for this record",
+            "formal": "This records identifiers associated with this family history record that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "id"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.subject",
+          "definition": {
+            "short": "Patient history is about",
+            "formal": "The person who this history concerns.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=SBJ].role"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.note",
+          "definition": {
+            "short": "Additional details not covered elsewhere",
+            "formal": "Conveys information about family history not specific to individual relations.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=ActCode#ANNGEN].value"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.note.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation",
+          "definition": {
+            "short": "Relative described by history",
+            "formal": "The related person. Each FamilyHistory resource contains the entire family history for a single person.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=SBJ].role[classCode=PAT].player[classCode<LIV, moodCode=INSTANCE].scopedRole"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.name",
+          "definition": {
+            "short": "The family member described",
+            "formal": "This will either be a name or a description.  E.g. \"Aunt Susan\", \"my cousin with the red hair\".",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "name"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.relationship",
+          "definition": {
+            "short": "Relationship to the subject",
+            "formal": "The type of relationship this person has to the patient (father, mother, brother etc.).",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "FamilialRelationship",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/v3/vs/FamilyMember"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "code"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.relationship.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.born[x]",
+          "definition": {
+            "short": "(approximate) date of birth",
+            "formal": "The actual or approximate date of birth of the relative.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              },
+              {
+                "code": "date"
+              },
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "player[classCode=LIV, determinerCode=INSTANCE]. birthDate (could be URG)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.born[x].extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.deceased[x]",
+          "definition": {
+            "short": "Dead? How old/when?",
+            "formal": "If this resource is indicating that the related person is deceased, then an indicator of whether the person is deceased (yes) or not (no) or the age or age range or description of age at death - can be indicated here. If the reason for death is known, then it can be indicated in the outcome code of the condition - in this case the deceased property should still be set.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              },
+              {
+                "code": "Age"
+              },
+              {
+                "code": "Range"
+              },
+              {
+                "code": "date"
+              },
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "player[classCode=LIV, determinerCode=INSTANCE].deceasedInd, deceasedDate (could be URG)\n\nFor age, you'd hang an observation off the role"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.deceased[x].extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.note",
+          "definition": {
+            "short": "General note about related person",
+            "formal": "This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=ActCode#ANNGEN].value"
+              }
+            ]
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.note.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition",
+          "definition": {
+            "short": "Condition that the related person had",
+            "formal": "The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.type",
+          "definition": {
+            "short": "Condition suffered by relation",
+            "formal": "The actual condition specified. Could be a coded condition (like MI or Diabetes) or a less specific string like 'cancer' depending on how much is known about the condition and the capabilities of the creating system.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.type.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.outcome",
+          "definition": {
+            "short": "deceased | permanent disability | etc.",
+            "formal": "Indicates what happened as a result of this condition.  If the condition resulted in death, deceased date is captured on the relation.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "ConditionOutcome",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "description": "The result of the condition for the patient.  E.g. death, permanent disability, temporary disability, etc."
+            }
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.outcome.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.onset[x]",
+          "definition": {
+            "short": "When condition first manifested",
+            "formal": "Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Age"
+              },
+              {
+                "code": "Range"
+              },
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.onset[x].extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.note",
+          "definition": {
+            "short": "Extra information about condition",
+            "formal": "An area where general notes can be placed about this specific condition.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "FamilyHistory.relation.condition.note.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

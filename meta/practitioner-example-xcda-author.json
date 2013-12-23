@@ -1,1 +1,1 @@
-{"Practitioner":{"text":{"status":{"value":"generated"},"div":"<div>\n      <p>Bob Dolin, MD<\/p>\n    <\/div>"},"name":{"family":[{"value":"Dolin"}],"given":[{"value":"Bob"}],"suffix":[{"value":"MD"}]}}}
+{"resourceType":"Practitioner","text":{"status":"generated","div":"<div>\n      <p>Bob Dolin, MD</p>\n    </div>"},"name":{"family":["Dolin"],"given":["Bob"],"suffix":["MD"]}}

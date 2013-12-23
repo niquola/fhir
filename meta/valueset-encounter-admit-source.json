@@ -1,1 +1,64 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>AdmitSource<\/h2><p>This value set defines a set of codes that can be used to indicate from where the patient came in.<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/admit-source<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>hosp-trans<\/td><td>Transferred from other hospital<\/td><td/><\/tr><tr><td>hosp-trans<\/td><td>Transferred from other hospital<\/td><td/><\/tr><tr><td>emd<\/td><td>From accident/emergency department<\/td><td/><\/tr><tr><td>outp<\/td><td>From outpatient department<\/td><td/><\/tr><tr><td>born<\/td><td>Born in hospital<\/td><td/><\/tr><tr><td>gp<\/td><td>General Practitioner referral<\/td><td/><\/tr><tr><td>mp<\/td><td>Medical Practitioner/physician referral<\/td><td/><\/tr><tr><td>nursing<\/td><td>From nursing home<\/td><td/><\/tr><tr><td>psych<\/td><td>From psychiatric hospital<\/td><td/><\/tr><tr><td>rehab<\/td><td>From rehabilitation facility<\/td><td/><\/tr><tr><td>other<\/td><td>Other<\/td><td/><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/encounter-admit-source"},"name":{"value":"AdmitSource"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This value set defines a set of codes that can be used to indicate from where the patient came in."},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/admit-source"},"caseSensitive":{"value":true},"concept":[{"code":{"value":"hosp-trans"},"display":{"value":"Transferred from other hospital"}},{"code":{"value":"hosp-trans"},"display":{"value":"Transferred from other hospital"}},{"code":{"value":"emd"},"display":{"value":"From accident/emergency department"}},{"code":{"value":"outp"},"display":{"value":"From outpatient department"}},{"code":{"value":"born"},"display":{"value":"Born in hospital"}},{"code":{"value":"gp"},"display":{"value":"General Practitioner referral"}},{"code":{"value":"mp"},"display":{"value":"Medical Practitioner/physician referral"}},{"code":{"value":"nursing"},"display":{"value":"From nursing home"}},{"code":{"value":"psych"},"display":{"value":"From psychiatric hospital"}},{"code":{"value":"rehab"},"display":{"value":"From rehabilitation facility"}},{"code":{"value":"other"},"display":{"value":"Other"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>AdmitSource</h2><p>This value set defines a set of codes that can be used to indicate from where the patient came in.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/admit-source</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"hosp-trans\">hosp-trans</a></td><td>Transferred from other hospital</td><td/></tr><tr><td><a name=\"emd\">emd</a></td><td>From accident/emergency department</td><td/></tr><tr><td><a name=\"outp\">outp</a></td><td>From outpatient department</td><td/></tr><tr><td><a name=\"born\">born</a></td><td>Born in hospital</td><td/></tr><tr><td><a name=\"gp\">gp</a></td><td>General Practitioner referral</td><td/></tr><tr><td><a name=\"mp\">mp</a></td><td>Medical Practitioner/physician referral</td><td/></tr><tr><td><a name=\"nursing\">nursing</a></td><td>From nursing home</td><td/></tr><tr><td><a name=\"psych\">psych</a></td><td>From psychiatric hospital</td><td/></tr><tr><td><a name=\"rehab\">rehab</a></td><td>From rehabilitation facility</td><td/></tr><tr><td><a name=\"other\">other</a></td><td>Other</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/encounter-admit-source",
+  "name": "AdmitSource",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set defines a set of codes that can be used to indicate from where the patient came in.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/admit-source",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "hosp-trans",
+        "display": "Transferred from other hospital"
+      },
+      {
+        "code": "emd",
+        "display": "From accident/emergency department"
+      },
+      {
+        "code": "outp",
+        "display": "From outpatient department"
+      },
+      {
+        "code": "born",
+        "display": "Born in hospital"
+      },
+      {
+        "code": "gp",
+        "display": "General Practitioner referral"
+      },
+      {
+        "code": "mp",
+        "display": "Medical Practitioner/physician referral"
+      },
+      {
+        "code": "nursing",
+        "display": "From nursing home"
+      },
+      {
+        "code": "psych",
+        "display": "From psychiatric hospital"
+      },
+      {
+        "code": "rehab",
+        "display": "From rehabilitation facility"
+      },
+      {
+        "code": "other",
+        "display": "Other"
+      }
+    ]
+  }
+}

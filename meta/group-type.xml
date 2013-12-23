@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>GroupType</h2>
       <p>Types of resources that are part of group</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/group-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/group-type</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>person</td>
+          <td>
+            <a name="person">person</a>
+          </td>
           <td/>
           <td>Group contains &quot;person&quot; Patient resources.</td>
         </tr>
         <tr>
-          <td>animal</td>
+          <td>
+            <a name="animal">animal</a>
+          </td>
           <td/>
           <td>Group contains &quot;animal&quot; Patient resources.</td>
         </tr>
         <tr>
-          <td>device</td>
+          <td>
+            <a name="practitioner">practitioner</a>
+          </td>
+          <td/>
+          <td>Group contains healthcare practitioner resources.</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="device">device</a>
+          </td>
           <td/>
           <td>Group contains Device resources.</td>
         </tr>
         <tr>
-          <td>medication</td>
+          <td>
+            <a name="medication">medication</a>
+          </td>
           <td/>
           <td>Group contains Medication resources.</td>
         </tr>
         <tr>
-          <td>substance</td>
+          <td>
+            <a name="substance">substance</a>
+          </td>
           <td/>
           <td>Group contains Substance resources.</td>
         </tr>
@@ -60,7 +77,7 @@
   </telecom>
   <description value="Types of resources that are part of group"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.974+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/group-type"/>
     <caseSensitive value="true"/>
@@ -71,6 +88,10 @@
     <concept>
       <code value="animal"/>
       <definition value="Group contains &quot;animal&quot; Patient resources."/>
+    </concept>
+    <concept>
+      <code value="practitioner"/>
+      <definition value="Group contains healthcare practitioner resources."/>
     </concept>
     <concept>
       <code value="device"/>

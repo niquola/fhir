@@ -1,4 +1,4 @@
-# A human readable formatted text, including images.
+# A human-readable formatted text, including images.
 class Fhir::Narrative < Fhir::DataType
   invariants do
     validates_presence_of :status
@@ -12,3 +12,4 @@ class Fhir::Narrative < Fhir::DataType
   attribute :div, String
 end
 
+Fhir.load_extension('narrative')

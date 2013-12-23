@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SpecialValues</h2>
       <p>A set of generally useful codes defined so they can be included in value sets</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/special-values</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/special-values</p>
       <table>
         <tr>
           <td>
@@ -20,32 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>true</td>
+          <td>
+            <a name="true">true</a>
+          </td>
           <td>true</td>
           <td>Boolean true</td>
         </tr>
         <tr>
-          <td>false</td>
+          <td>
+            <a name="false">false</a>
+          </td>
           <td>false</td>
           <td>Boolean false</td>
         </tr>
         <tr>
-          <td>trace</td>
+          <td>
+            <a name="trace">trace</a>
+          </td>
           <td>Trace Amount Detected</td>
           <td>The content is greater than zero, but too small to be quantified</td>
         </tr>
         <tr>
-          <td>sufficient</td>
+          <td>
+            <a name="sufficient">sufficient</a>
+          </td>
           <td>Sufficient Quantity</td>
           <td>The specific quantity is not known, but is known to be non-zero and is not specified because it makes up the bulk of the material</td>
         </tr>
         <tr>
-          <td>withdrawn</td>
+          <td>
+            <a name="withdrawn">withdrawn</a>
+          </td>
           <td>Value Withdrawn</td>
           <td>The value is no longer available</td>
         </tr>
         <tr>
-          <td>nil known</td>
+          <td>
+            <a name="nilknown">nil known</a>
+          </td>
           <td>Nil Known</td>
           <td>The are no known applicable values in this context</td>
         </tr>
@@ -65,7 +77,7 @@
   </telecom>
   <description value="A set of generally useful codes defined so they can be included in value sets"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.975+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/special-values"/>
     <caseSensitive value="true"/>

@@ -1,8 +1,11 @@
 # A request to perform an action.
 class Fhir::Order < Fhir::Resource
   invariants do
-    validates_presence_of :detail_refs
+    validates_presence_of :detail_ref
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
@@ -27,6 +30,9 @@ class Fhir::Order < Fhir::Resource
 
   # When order should be fulfilled.
   class When < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Code specifies when request should be done. The code may
     # simply be a priority code
     attribute :code, Fhir::CodeableConcept
@@ -38,7 +44,7 @@ class Fhir::Order < Fhir::Resource
   attribute :when, When
 
   # What action is being ordered
-  resource_references :details, [Fhir::Resource]
+  resource_references :detail, [Fhir::Resource]
 end
 
 

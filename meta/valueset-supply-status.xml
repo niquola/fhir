@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Supply Status</h2>
       <p>This value sets refers to a supply status</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/supply-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/supply-status</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>dispensed</td>
+          <td>
+            <a name="dispensed">dispensed</a>
+          </td>
           <td>Dispensed</td>
           <td>Supply is part of a pharmacy order and has been dispensed</td>
         </tr>
         <tr>
-          <td>received</td>
+          <td>
+            <a name="received">received</a>
+          </td>
           <td>Received</td>
           <td>Supply has been received by the requestor</td>
         </tr>

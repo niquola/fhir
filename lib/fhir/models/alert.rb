@@ -7,13 +7,16 @@ class Fhir::Alert < Fhir::Resource
     validates_presence_of :note
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # The category of this alert
   attribute :category, Fhir::CodeableConcept
 
-  # active | inactive | incorrect
+  # active | inactive | entered in error
   attribute :status, Fhir::Code
 
   # Subject of this alert

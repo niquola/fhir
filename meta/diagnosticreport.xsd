@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="DiagnosticReport" type="DiagnosticReport">
     <xs:annotation>
@@ -44,7 +44,7 @@
     <xs:complexContent>
       <xs:extension base="Resource">
         <xs:sequence>
-          <xs:element name="status" minOccurs="1" maxOccurs="1" type="ObservationStatus">
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="DiagnosticReportStatus">
             <xs:annotation>
               <xs:documentation>The status of the diagnostic report as a whole.</xs:documentation>
            </xs:annotation>
@@ -79,11 +79,13 @@
               <xs:documentation>The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="diagnosticTime" minOccurs="1" maxOccurs="1" type="dateTime">
+          <xs:choice minOccurs="1" maxOccurs="1" >
             <xs:annotation>
-              <xs:documentation>The diagnostically relevant time for this report.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+              <xs:documentation>The diagnostically relevant time for this report - that is, the point in time at which the observations that are reported in this diagnostic report relate to the patient.</xs:documentation>
+            </xs:annotation>
+            <xs:element name="diagnosticDateTime" type="dateTime"/>
+            <xs:element name="diagnosticPeriod" type="Period"/>
+          </xs:choice>
           <xs:element name="results" type="DiagnosticReport.Results" minOccurs="1" maxOccurs="1">
             <xs:annotation>
               <xs:documentation>A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together.</xs:documentation>
@@ -106,7 +108,7 @@
           </xs:element>
           <xs:element name="representation" minOccurs="0" maxOccurs="unbounded" type="Attachment">
             <xs:annotation>
-              <xs:documentation>Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.</xs:documentation>
+              <xs:documentation>Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -118,7 +120,7 @@
       <xs:documentation>The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
@@ -164,7 +166,7 @@
       <xs:documentation>The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -187,6 +189,61 @@
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DiagnosticReportStatus-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="registered">
+        <xs:annotation>
+          <xs:documentation>The existence of the report is registered, but there is nothing yet available.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="partial">
+        <xs:annotation>
+          <xs:documentation>This is a partial (e.g. initial, interim or preliminary) report: data in the report may be incomplete or unverified.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="final">
+        <xs:annotation>
+          <xs:documentation>The report is complete and verified by an authorised person.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="corrected">
+        <xs:annotation>
+          <xs:documentation>The report has been modified subsequent to being Final, and is complete and verified by an authorised person.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="amended">
+        <xs:annotation>
+          <xs:documentation>The report has been modified subsequent to being Final, and is complete and verified by an authorised person, and data has been changed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="appended">
+        <xs:annotation>
+          <xs:documentation>The report has been modified subsequent to being Final, and is complete and verified by an authorised person. New content has been added, but existing content hasn't changed.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="cancelled">
+        <xs:annotation>
+          <xs:documentation>The report is unavailable because the measurement was not started or not completed (also sometimes called &quot;aborted&quot;).</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="entered in error">
+        <xs:annotation>
+          <xs:documentation>The report has been withdrawn following previous Final release.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="DiagnosticReportStatus">
+    <xs:annotation>
+      <xs:documentation>The status of the diagnostic report as a whole</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="DiagnosticReportStatus-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

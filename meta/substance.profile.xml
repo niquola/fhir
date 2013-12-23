@@ -3,17 +3,20 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="A homogeneous material with a definite composition used in healthcare." class="dict" href="substance-definitions.htm#Substance"><b>Substance</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="Identifier of the substance." class="dict" href="substance-definitions.htm#Substance.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Identifier of the substance</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
- &lt;<a title="Name of the substance." class="dict" href="substance-definitions.htm#Substance.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Name of the substance</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Type of the substance." class="dict" href="substance-definitions.htm#Substance.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-substance-type.htm">Type of the substance</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
- &lt;<a title="Description of the substance." class="dict" href="substance-definitions.htm#Substance.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Description of the substance</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Substance status." class="dict" href="substance-definitions.htm#Substance.status"><b>status</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-substance-status.htm">Substance status</a></span><span style="color: Gray"> --&gt;</span>&lt;/status&gt;
- &lt;<a title="When the substance is active or effective." class="dict" href="substance-definitions.htm#Substance.effectiveTime"><b>effectiveTime</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Period">Period</a></span> <span style="color: navy">Substance effective period</span><span style="color: Gray"> --&gt;</span>&lt;/effectiveTime&gt;
- &lt;<a title="The amount of the substance." class="dict" href="substance-definitions.htm#Substance.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Quantity">Quantity</a></span> <span style="color: navy">Substance amount</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
- &lt;<a title="A substance can be composed of other substances." class="dict" href="substance-definitions.htm#Substance.ingredient"><b>ingredient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="substance.htm#Substance">Substance</a>)</span> <span style="color: navy">Substance composition</span><span style="color: Gray"> --&gt;</span>&lt;/ingredient&gt;
- &lt;<a title="Indicates whether the substance quantity (used for ingredients) are absolute values or values relative to each other (percentages)." class="dict" href="substance-definitions.htm#Substance.quantityMode"><b>quantityMode</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-substance-mode.htm">Absolute | Relative</a></span><span style="color: Gray"> --&gt;</span>&lt;/quantityMode&gt;
+&lt;<a title="A homogeneous material with a definite composition used in healthcare." class="dict" href="substance-definitions.html#Substance"><b>Substance</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="A code (or set of codes) that identify this substance." class="dict" href="substance-definitions.html#Substance.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-substance-type.html">Type of the substance</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="A description of the substance - it&#39;s appearance, handling requirements, and other usage notes." class="dict" href="substance-definitions.html#Substance.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Description of the substance</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Don&#39;t know." class="dict" href="substance-definitions.html#Substance.status"><b>status</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-substance-status.html">Don&#39;t know ??</a></span><span style="color: Gray"> --&gt;</span>&lt;/status&gt;
+ &lt;<a title="Substance may be used to desribe a kind of substance, or a specific package/container of the substance: an instance." class="dict" href="substance-definitions.html#Substance.instance"><b>instance</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> If this describes a specific package/container of the substance --&gt;</span>
+  &lt;<a title="Identifier associated with the package/container (usually a label affixed directly)." class="dict" href="substance-definitions.html#Substance.instance.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Identifier of the package/container</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+  &lt;<a title="When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry." class="dict" href="substance-definitions.html#Substance.instance.expiry"><b>expiry</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When no longer valid to use</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The amount of the substance." class="dict" href="substance-definitions.html#Substance.instance.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Quantity">Quantity</a></span> <span style="color: navy">Amount of substance in the package</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
+ &lt;/instance&gt;
+ &lt;<a title="A substance can be composed of other substances." class="dict" href="substance-definitions.html#Substance.ingredient"><b>ingredient</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Composition information about the substance --&gt;</span>
+  &lt;<a title="The amount of the ingredient in the substance - a concentration ratio." class="dict" href="substance-definitions.html#Substance.ingredient.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Ratio">Ratio</a></span> <span style="color: navy">Optional amount (concentration)</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
+  &lt;<a title="Another substance that is a component of this substance." class="dict" href="substance-definitions.html#Substance.ingredient.substance"><b>substance</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="substance.html#Substance">Substance</a>)</span> <span style="color: navy">A component of the substance</span><span style="color: Gray"> --&gt;</span>&lt;/substance&gt;
+ &lt;/ingredient&gt;
 &lt;/Substance&gt;
 </pre></div>
   </text>
@@ -21,7 +24,7 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. A homogeneous material with a definite composition used in healthcare."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
   <structure>
     <type value="Substance"/>
     <publish value="true"/>
@@ -42,9 +45,24 @@
       <path value="Substance.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -59,7 +77,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="Substance.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -91,10 +109,140 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Substance.identifier"/>
+      <path value="Substance.type"/>
       <definition>
-        <short value="Identifier of the substance"/>
-        <formal value="Identifier of the substance."/>
+        <short value="Type of the substance"/>
+        <formal value="A code (or set of codes) that identify this substance."/>
+        <comments value="This could be a reference to an externally defined code.  It could also be a locally assigned code (e.g. a formulary),  optionally with translations to the standard drug codes."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="SubstanceType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/substance-type"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.description"/>
+      <definition>
+        <short value="Description of the substance"/>
+        <formal value="A description of the substance - it&#39;s appearance, handling requirements, and other usage notes."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.description.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.status"/>
+      <definition>
+        <short value="Don&#39;t know ??"/>
+        <formal value="Don&#39;t know."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="SubstanceStatus"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/substance-status"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.status.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.instance"/>
+      <definition>
+        <short value="If this describes a specific package/container of the substance"/>
+        <formal value="Substance may be used to desribe a kind of substance, or a specific package/container of the substance: an instance."/>
+        <min value="0"/>
+        <max value="1"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.instance.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.instance.identifier"/>
+      <definition>
+        <short value="Identifier of the package/container"/>
+        <formal value="Identifier associated with the package/container (usually a label affixed directly)."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -104,76 +252,54 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Substance.name"/>
+      <path value="Substance.instance.identifier.extension"/>
       <definition>
-        <short value="Name of the substance"/>
-        <formal value="Name of the substance."/>
-        <min value="1"/>
-        <max value="1"/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
         <type>
-          <code value="string"/>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
     </element>
     <element>
-      <path value="Substance.type"/>
+      <path value="Substance.instance.expiry"/>
       <definition>
-        <short value="Type of the substance"/>
-        <formal value="Type of the substance."/>
+        <short value="When no longer valid to use"/>
+        <formal value="When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry."/>
         <min value="0"/>
         <max value="1"/>
         <type>
-          <code value="CodeableConcept"/>
+          <code value="dateTime"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SubstanceType"/>
       </definition>
     </element>
     <element>
-      <path value="Substance.description"/>
+      <path value="Substance.instance.expiry.extension"/>
       <definition>
-        <short value="Description of the substance"/>
-        <formal value="Description of the substance."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
         <type>
-          <code value="string"/>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
     </element>
     <element>
-      <path value="Substance.status"/>
+      <path value="Substance.instance.quantity"/>
       <definition>
-        <short value="Substance status"/>
-        <formal value="Substance status."/>
-        <min value="0"/>
-        <max value="1"/>
-        <type>
-          <code value="CodeableConcept"/>
-        </type>
-        <isModifier value="false"/>
-        <binding value="SubstanceStatus"/>
-      </definition>
-    </element>
-    <element>
-      <path value="Substance.effectiveTime"/>
-      <definition>
-        <short value="Substance effective period"/>
-        <formal value="When the substance is active or effective."/>
-        <min value="0"/>
-        <max value="1"/>
-        <type>
-          <code value="Period"/>
-        </type>
-        <isModifier value="false"/>
-      </definition>
-    </element>
-    <element>
-      <path value="Substance.quantity"/>
-      <definition>
-        <short value="Substance amount"/>
+        <short value="Amount of substance in the package"/>
         <formal value="The amount of the substance."/>
         <min value="0"/>
         <max value="1"/>
@@ -184,12 +310,83 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Substance.instance.quantity.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Substance.ingredient"/>
       <definition>
-        <short value="Substance composition"/>
+        <short value="Composition information about the substance"/>
         <formal value="A substance can be composed of other substances."/>
         <min value="0"/>
         <max value="*"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.ingredient.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.ingredient.quantity"/>
+      <definition>
+        <short value="Optional amount (concentration)"/>
+        <formal value="The amount of the ingredient in the substance - a concentration ratio."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="Ratio"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.ingredient.quantity.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Substance.ingredient.substance"/>
+      <definition>
+        <short value="A component of the substance"/>
+        <formal value="Another substance that is a component of this substance."/>
+        <min value="1"/>
+        <max value="1"/>
         <type>
           <code value="Resource(Substance)"/>
         </type>
@@ -197,45 +394,20 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
-      <path value="Substance.quantityMode"/>
+      <path value="Substance.ingredient.substance.extension"/>
       <definition>
-        <short value="Absolute | Relative"/>
-        <formal value="Indicates whether the substance quantity (used for ingredients) are absolute values or values relative to each other (percentages)."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
         <type>
-          <code value="CodeableConcept"/>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SubstanceQuantityMode"/>
       </definition>
     </element>
   </structure>
-  <binding>
-    <name value="SubstanceQuantityMode"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/substance-mode"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SubstanceStatus"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/substance-status"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SubstanceType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/substance-type"/>
-    </referenceResource>
-  </binding>
 </Profile>

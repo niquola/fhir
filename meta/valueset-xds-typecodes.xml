@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>XDS Connect-a-thon healthcareFacilityTypeCodes</h2>
       <p>Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml, with substantial corrections applied</p>
-      <p>This value set defines it&#39;s own terms in the system urn:uuid:f0306f51-975f-434e-a61c-c59651d33983</p>
+      <p>This value set defines its own terms in the system urn:uuid:f0306f51-975f-434e-a61c-c59651d33983</p>
       <table>
         <tr>
           <td>
@@ -20,7 +20,9 @@
           </td>
         </tr>
         <tr>
-          <td>Laboratory Report</td>
+          <td>
+            <a name="LaboratoryReport">Laboratory Report</a>
+          </td>
           <td>Laboratory Report</td>
           <td/>
         </tr>
@@ -42,607 +44,607 @@
             </tr>
             <tr>
               <td>34096-8</td>
-              <td>Nursing Home Comprehensive History and Physical Note</td>
+              <td>Nursing facility Comprehensive history and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>4121-4</td>
-              <td>Interventional Procedure Note</td>
+              <td>34121-4</td>
+              <td>Interventional procedure note</td>
               <td/>
             </tr>
             <tr>
-              <td>8743-5</td>
-              <td>Autopsy Note</td>
+              <td>18743-5</td>
+              <td>Autopsy report</td>
               <td/>
             </tr>
             <tr>
-              <td>4095-0</td>
-              <td>Comprehensive History and Physical Note</td>
+              <td>34095-0</td>
+              <td>Comprehensive history and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>4098-4</td>
-              <td>Conference Evaluation Note</td>
+              <td>34098-4</td>
+              <td>Conference evaluation note</td>
               <td/>
             </tr>
             <tr>
-              <td>1488-4</td>
-              <td>Consultation Note</td>
+              <td>11488-4</td>
+              <td>Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>8574-2</td>
-              <td>Discharge Note</td>
+              <td>28574-2</td>
+              <td>Discharge note</td>
               <td/>
             </tr>
             <tr>
-              <td>8842-5</td>
-              <td>Discharge Summarization Note</td>
+              <td>18842-5</td>
+              <td>Discharge summary</td>
               <td/>
             </tr>
             <tr>
-              <td>4109-9</td>
-              <td>Evaluation And Management Note</td>
+              <td>34109-9</td>
+              <td>Note</td>
               <td/>
             </tr>
             <tr>
-              <td>4117-2</td>
-              <td>History And Physical Note</td>
+              <td>34117-2</td>
+              <td>History and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>8636-9</td>
-              <td>Initial Evaluation Note</td>
+              <td>28636-9</td>
+              <td>Provider-unspecified Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8570-0</td>
-              <td>Procedure Note</td>
+              <td>28570-0</td>
+              <td>Provider-unspecified Procedure note</td>
               <td/>
             </tr>
             <tr>
-              <td>1506-3</td>
-              <td>Subsequent Visit Evaluation Note</td>
+              <td>11506-3</td>
+              <td>Provider-unspecified Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4133-9</td>
-              <td>Summarization of Episode Note</td>
+              <td>34133-9</td>
+              <td>Summarization of episode note</td>
               <td/>
             </tr>
             <tr>
-              <td>1504-8</td>
-              <td>Surgical Operation Note</td>
+              <td>11504-8</td>
+              <td>Provider-unspecified Operation note</td>
               <td/>
             </tr>
             <tr>
-              <td>4138-8</td>
-              <td>Targeted History And Physical Note</td>
+              <td>34138-8</td>
+              <td>Targeted history and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>4140-4</td>
-              <td>Transfer of Care Referral Note</td>
+              <td>34140-4</td>
+              <td>Transfer of care referral note</td>
               <td/>
             </tr>
             <tr>
-              <td>8761-7</td>
-              <td>Transfer Summarization Note</td>
+              <td>18761-7</td>
+              <td>Provider-unspecified Transfer summary</td>
               <td/>
             </tr>
             <tr>
-              <td>4100-8</td>
-              <td>Critical Care Unit Consultation Note</td>
+              <td>34100-8</td>
+              <td>Intensive care unit Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>4126-3</td>
-              <td>Critical Care Unit Subsequent Visit Evaluation Note</td>
+              <td>34126-3</td>
+              <td>Intensive care unit Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4111-5</td>
-              <td>Emergency Department Evaluation And Management Note</td>
+              <td>34111-5</td>
+              <td>Emergency department Note</td>
               <td/>
             </tr>
             <tr>
-              <td>5507-7</td>
-              <td>Emergency Department Subsequent Visit Evaluation Note</td>
+              <td>15507-7</td>
+              <td>Provider-unspecified ED Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4107-3</td>
-              <td>Home Health Education Procedure Note</td>
+              <td>34107-3</td>
+              <td>Home health Education note</td>
               <td/>
             </tr>
             <tr>
-              <td>4118-0</td>
-              <td>Home Health Initial Evaluation Note</td>
+              <td>34118-0</td>
+              <td>Home health Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>4129-7</td>
-              <td>Home Health Subsequent Visit Evaluation Note</td>
+              <td>34129-7</td>
+              <td>Home health Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4104-0</td>
-              <td>Hospital Consultation Note</td>
+              <td>34104-0</td>
+              <td>Hospital Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>4105-7</td>
-              <td>Hospital Discharge Summarization Note</td>
+              <td>34105-7</td>
+              <td>Hospital Discharge summary</td>
               <td/>
             </tr>
             <tr>
-              <td>4114-9</td>
-              <td>Hospital Group Counseling Note</td>
+              <td>34114-9</td>
+              <td>Hospital Group counseling note</td>
               <td/>
             </tr>
             <tr>
-              <td>1492-6</td>
-              <td>Hospital History and Physical Note</td>
+              <td>11492-6</td>
+              <td>Provider-unspecifed, History and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>4130-5</td>
-              <td>Hospital Subsequent Visit Evaluation Note</td>
+              <td>34130-5</td>
+              <td>Hospital Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4112-3</td>
-              <td>Inpatient Evaluation And Management Note</td>
+              <td>34112-3</td>
+              <td>Hospital Note</td>
               <td/>
             </tr>
             <tr>
-              <td>4097-6</td>
-              <td>Nursing Home Conference Evaluation Note</td>
+              <td>34097-6</td>
+              <td>Nursing facility Conference evaluation note</td>
               <td/>
             </tr>
             <tr>
-              <td>4113-1</td>
-              <td>Nursing Home Evaluation And Management Note</td>
+              <td>34113-1</td>
+              <td>Nursing facility Note</td>
               <td/>
             </tr>
             <tr>
-              <td>4119-8</td>
-              <td>Nursing Home Initial Evaluation Note</td>
+              <td>34119-8</td>
+              <td>Nursing facility Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>4611-6</td>
-              <td>Outpatient Confirmatory Consultation Note</td>
+              <td>24611-6</td>
+              <td>Outpatient Consultation 2nd opinion</td>
               <td/>
             </tr>
             <tr>
-              <td>4108-1</td>
-              <td>Outpatient Evaluation And Management</td>
+              <td>34108-1</td>
+              <td>Outpatient Note</td>
               <td/>
             </tr>
             <tr>
-              <td>4120-6</td>
-              <td>Outpatient Initial Evaluation Note</td>
+              <td>34120-6</td>
+              <td>Outpatient Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>4131-3</td>
-              <td>Outpatient Subsequent Visit Evaluation Note</td>
+              <td>34131-3</td>
+              <td>Outpatient Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4137-0</td>
-              <td>Outpatient Surgical Operation Note</td>
+              <td>34137-0</td>
+              <td>Outpatient Surgical operation note</td>
               <td/>
             </tr>
             <tr>
-              <td>4123-0</td>
-              <td>Anesthesia Hospital Pre-Operative Evaluation And Management Note</td>
+              <td>34123-0</td>
+              <td>Anesthesiology Hospital Pre-operative evaluation and management note</td>
               <td/>
             </tr>
             <tr>
-              <td>8655-9</td>
-              <td>Attending Physician Discharge Summarization Note</td>
+              <td>28655-9</td>
+              <td>Physician attending Discharge summary</td>
               <td/>
             </tr>
             <tr>
-              <td>8654-2</td>
-              <td>Attending Physician Initial Evaluation Note</td>
+              <td>28654-2</td>
+              <td>Physician attending Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8733-6</td>
-              <td>Attending Physician Subsequent Visit Evaluation Note</td>
+              <td>18733-6</td>
+              <td>Physician attending Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4134-7</td>
-              <td>Attending Physician Outpatient Supervisory Note</td>
+              <td>34134-7</td>
+              <td>Physician attending Outpatient Supervisory note</td>
               <td/>
             </tr>
             <tr>
-              <td>4135-4</td>
-              <td>Attending Physician Cardiology Outpatient Supervisory Note</td>
+              <td>34135-4</td>
+              <td>Physician attending.cardiology Outpatient Supervisory note</td>
               <td/>
             </tr>
             <tr>
-              <td>4136-2</td>
-              <td>Attending Physician Gastroenterology Outpatient Supervisory Note</td>
+              <td>34136-2</td>
+              <td>Physician attending.gastroenterology Outpatient Supervisory note</td>
               <td/>
             </tr>
             <tr>
-              <td>4099-2</td>
-              <td>Cardiology Consultation Note</td>
+              <td>34099-2</td>
+              <td>Cardiovascular disease Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>4094-3</td>
-              <td>Cardiology Hospital Admission History And Physical Note</td>
+              <td>34094-3</td>
+              <td>Cardiovascular disease Hospital Admission history and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>4124-8</td>
-              <td>Cardiology Outpatient Subsequent Visit Evaluation Note</td>
+              <td>34124-8</td>
+              <td>Cardiovascular disease Outpatient Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4125-5</td>
-              <td>Case Manager Home Health Care Subsequent Visit Evaluation Note</td>
+              <td>34125-5</td>
+              <td>Case manager Home health care Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8581-7</td>
-              <td>Chiropractor Initial Evaluation Note</td>
+              <td>28581-7</td>
+              <td>Chiropractor Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8762-5</td>
-              <td>Chiropractor Subsequent Visit Evaluation Note</td>
+              <td>18762-5</td>
+              <td>Deprecated Chiropractor Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8763-3</td>
-              <td>Consulting Physician Initial Evaluation Note</td>
+              <td>18763-3</td>
+              <td>Physician consulting Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8569-2</td>
-              <td>Consulting Physician Subsequent Visit Evaluation Note</td>
+              <td>28569-2</td>
+              <td>Physician consulting Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4127-1</td>
-              <td>Dental Hygienist Outpatient Subsequent Visit Evaluation Note</td>
+              <td>34127-1</td>
+              <td>Dentistry.hygienist Outpatient Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>9761-4</td>
-              <td>Dentistry Discharge Summarization Note</td>
+              <td>29761-4</td>
+              <td>Dentist Discharge summary</td>
               <td/>
             </tr>
             <tr>
-              <td>8572-6</td>
-              <td>Dentistry Initial Evaluation Note</td>
+              <td>28572-6</td>
+              <td>Dentist Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8577-5</td>
-              <td>Dentistry Procedure Note</td>
+              <td>28577-5</td>
+              <td>Dentist procedure note</td>
               <td/>
             </tr>
             <tr>
-              <td>8617-9</td>
-              <td>Dentistry Subsequent Visit Evaluation Note</td>
+              <td>28617-9</td>
+              <td>Dentistry Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8583-3</td>
-              <td>Dentistry Surgical Operation Note</td>
+              <td>28583-3</td>
+              <td>Dentist Operation note</td>
               <td/>
             </tr>
             <tr>
-              <td>8618-7</td>
-              <td>Dentistry Visit Note</td>
+              <td>28618-7</td>
+              <td>Dentistry Note</td>
               <td/>
             </tr>
             <tr>
-              <td>4128-9</td>
-              <td>Dentistry Outpatient Subsequent Visit Evaluation Note</td>
+              <td>34128-9</td>
+              <td>Dentistry Outpatient Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4110-7</td>
-              <td>Diabetology Outpatient Evaluation And Management Note</td>
+              <td>34110-7</td>
+              <td>Diabetology Outpatient Note</td>
               <td/>
             </tr>
             <tr>
-              <td>8748-4</td>
-              <td>Diagnostic Imaging Report</td>
+              <td>18748-4</td>
+              <td>Diagnostic imaging study</td>
               <td/>
             </tr>
             <tr>
-              <td>4101-6</td>
-              <td>General Medicine Outpatient Consultation Note</td>
+              <td>34101-6</td>
+              <td>General medicine Outpatient Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>4115-6</td>
-              <td>Medical Student Hospital History and Physical Note</td>
+              <td>34115-6</td>
+              <td>Medical student Hospital History and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>8621-1</td>
-              <td>Nurse Practitioner Initial Evaluation Note</td>
+              <td>28621-1</td>
+              <td>Nurse practitioner Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8764-1</td>
-              <td>Nurse Practitioner Subsequent Visit Evaluation Note</td>
+              <td>18764-1</td>
+              <td>Deprecated Nurse practitioner Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8622-9</td>
-              <td>Nursing Discharge Assessment Note</td>
+              <td>28622-9</td>
+              <td>Nurse Discharge assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>9753-1</td>
-              <td>Nursing Initial Evaluation Note</td>
+              <td>29753-1</td>
+              <td>Nurse Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8623-7</td>
-              <td>Nursing Subsequent Visit Evaluation Note</td>
+              <td>28623-7</td>
+              <td>Nursing Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4139-6</td>
-              <td>Nursing Telephone Encounter Note</td>
+              <td>34139-6</td>
+              <td>Nursing Telephone encounter Note</td>
               <td/>
             </tr>
             <tr>
-              <td>8651-8</td>
-              <td>Nursing Transfer Summarization Note</td>
+              <td>28651-8</td>
+              <td>Nurse Transfer note</td>
               <td/>
             </tr>
             <tr>
-              <td>8734-4</td>
-              <td>Occupational Therapy Initial Evaluation Note</td>
+              <td>18734-4</td>
+              <td>Occupational therapy Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>1507-1</td>
-              <td>Occupational Therapy Subsequent Visit Evaluation Note</td>
+              <td>11507-1</td>
+              <td>Occupational therapy Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4122-2</td>
-              <td>Pathology Pathology Procedure Note</td>
+              <td>34122-2</td>
+              <td>Pathology procedure note</td>
               <td/>
             </tr>
             <tr>
-              <td>4132-1</td>
-              <td>Pharmacy Outpatient Subsequent Visit Evaluation Note</td>
+              <td>34132-1</td>
+              <td>Pharmacy Outpatient Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8735-1</td>
-              <td>Physical Therapy Initial Evaluation Note</td>
+              <td>18735-1</td>
+              <td>Physical therapy Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>1508-9</td>
-              <td>Physical Therapy Subsequent Visit Evaluation Note</td>
+              <td>11508-9</td>
+              <td>Physical therapy Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8579-1</td>
-              <td>Physical Therapy Visit Note</td>
+              <td>28579-1</td>
+              <td>Physical therapy Note</td>
               <td/>
             </tr>
             <tr>
-              <td>1490-0</td>
-              <td>Physician Discharge Summarization Note</td>
+              <td>11490-0</td>
+              <td>Physician Discharge summary</td>
               <td/>
             </tr>
             <tr>
-              <td>8626-0</td>
-              <td>Physician History and Physical Note</td>
+              <td>28626-0</td>
+              <td>Physician History and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>8736-9</td>
-              <td>Physician Initial Evaluation Note</td>
+              <td>18736-9</td>
+              <td>Physician Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>1505-5</td>
-              <td>Physician Procedure Note</td>
+              <td>11505-5</td>
+              <td>Physician procedure note</td>
               <td/>
             </tr>
             <tr>
-              <td>8573-4</td>
-              <td>Physician Surgical Operation Note</td>
+              <td>28573-4</td>
+              <td>Physician, Operation note</td>
               <td/>
             </tr>
             <tr>
-              <td>8616-1</td>
-              <td>Physician Transfer Summarization Note</td>
+              <td>28616-1</td>
+              <td>Physician Transfer note</td>
               <td/>
             </tr>
             <tr>
-              <td>8568-4</td>
-              <td>Physician Emergency Department Visit Note</td>
+              <td>28568-4</td>
+              <td>Physician Emergency department Note</td>
               <td/>
             </tr>
             <tr>
-              <td>4106-5</td>
-              <td>Physician Hospital Discharge Summarization Note</td>
+              <td>34106-5</td>
+              <td>Physician Hospital Discharge summary</td>
               <td/>
             </tr>
             <tr>
-              <td>4116-4</td>
-              <td>Physician Nursing Home History and Physical Note</td>
+              <td>34116-4</td>
+              <td>Physician Nursing facility History and physical note</td>
               <td/>
             </tr>
             <tr>
-              <td>8737-7</td>
-              <td>Podiatry Initial Evaluation Note</td>
+              <td>18737-7</td>
+              <td>Podiatry Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8625-2</td>
-              <td>Podiatry Procedure Note</td>
+              <td>28625-2</td>
+              <td>Podiatry procedure note</td>
               <td/>
             </tr>
             <tr>
-              <td>1509-7</td>
-              <td>Podiatry Subsequent Visit Evaluation Note</td>
+              <td>11509-7</td>
+              <td>Podiatry Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8624-5</td>
-              <td>Podiatry Surgical Operation Note</td>
+              <td>28624-5</td>
+              <td>Podiatry Operation note</td>
               <td/>
             </tr>
             <tr>
-              <td>8635-1</td>
-              <td>Psychiatry Initial Evaluation Note</td>
+              <td>28635-1</td>
+              <td>Psychiatry Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8627-8</td>
-              <td>Psychiatry Subsequent Visit Evaluation Note</td>
+              <td>28627-8</td>
+              <td>Psychiatry Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4102-4</td>
-              <td>Psychiatry Hospital Consultation Note</td>
+              <td>34102-4</td>
+              <td>Psychiatry Hospital Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>8738-5</td>
-              <td>Psychology Initial Evaluation Note</td>
+              <td>18738-5</td>
+              <td>Psychology Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>1510-5</td>
-              <td>Psychology Subsequent Visit Evaluation Note</td>
+              <td>11510-5</td>
+              <td>Psychology Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4103-2</td>
-              <td>Pulmonary Consultation Note</td>
+              <td>34103-2</td>
+              <td>Pulmonary Consult note</td>
               <td/>
             </tr>
             <tr>
-              <td>8739-3</td>
-              <td>Social Service Initial Evaluation Note</td>
+              <td>18739-3</td>
+              <td>Social service Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>8656-7</td>
-              <td>Social Service Subsequent Visit Evaluation Note</td>
+              <td>28656-7</td>
+              <td>Social service Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>8653-4</td>
-              <td>Social Service Visit Note</td>
+              <td>28653-4</td>
+              <td>Social work Note</td>
               <td/>
             </tr>
             <tr>
-              <td>8740-1</td>
-              <td>Speech Therapy Initial Evaluation Note</td>
+              <td>18740-1</td>
+              <td>Speech therapy Initial assessment</td>
               <td/>
             </tr>
             <tr>
-              <td>1512-1</td>
-              <td>Speech Therapy Subsequent Visit Evaluation Note</td>
+              <td>11512-1</td>
+              <td>Speech therapy Progress note</td>
               <td/>
             </tr>
             <tr>
-              <td>4138-3</td>
-              <td>Remote Health Reading</td>
+              <td>54138-3</td>
+              <td>Name family member</td>
               <td/>
             </tr>
             <tr>
-              <td>4133-9</td>
-              <td>SUMMARIZATION OF EPISODE NOTE</td>
+              <td>34133-9</td>
+              <td>Summarization of episode note</td>
               <td/>
             </tr>
             <tr>
-              <td>8717-9</td>
-              <td>BLOOD BANK STUDIES</td>
+              <td>18717-9</td>
+              <td>Blood bank studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8718-7</td>
-              <td>CELL MARKER STUDIES</td>
+              <td>18718-7</td>
+              <td>Cell marker studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8719-5</td>
-              <td>CHEMISTRY STUDIES</td>
+              <td>18719-5</td>
+              <td>Chemistry studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8722-9</td>
-              <td>FERTILITY STUDIES</td>
+              <td>18722-9</td>
+              <td>Fertility studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8723-7</td>
-              <td>HEMATOLOGY STUDIES</td>
+              <td>18723-7</td>
+              <td>Hematology studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8724-5</td>
-              <td>HLA STUDIES</td>
+              <td>18724-5</td>
+              <td>HLA studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8725-2</td>
-              <td>MICROBIOLOGY STUDIES</td>
+              <td>18725-2</td>
+              <td>Microbiology studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8727-8</td>
-              <td>SEROLOGY STUDIES</td>
+              <td>18727-8</td>
+              <td>Serology studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8767-4</td>
-              <td>BLOOD GAS STUDIES</td>
+              <td>18767-4</td>
+              <td>Blood gas studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>8768-2</td>
-              <td>CELL COUNTS+DIFFERENTIAL STUDIES</td>
+              <td>18768-2</td>
+              <td>Cell counts+Differential studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>6435-8</td>
-              <td>MOLECULAR PATHOLOGY STUDIES</td>
+              <td>26435-8</td>
+              <td>Molecular pathology studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>6436-6</td>
-              <td>LABORATORY STUDIES</td>
+              <td>26436-6</td>
+              <td>Laboratory studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>6437-4</td>
-              <td>CHEMISTRY CHALLENGE STUDIES</td>
+              <td>26437-4</td>
+              <td>Chemistry challenge studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>6438-2</td>
-              <td>CYTOLOGY STUDIES</td>
+              <td>26438-2</td>
+              <td>Cytology studies (set)</td>
               <td/>
             </tr>
             <tr>
-              <td>1502-2</td>
-              <td>LABORATORY REPORT.TOTAL</td>
+              <td>11502-2</td>
+              <td>Laboratory report</td>
               <td/>
             </tr>
           </table>
@@ -669,732 +671,127 @@
   <compose>
     <include>
       <system value="http://loinc.org"/>
-      <code value="34096-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Home Comprehensive History and Physical Note"/>
-        </extension>
-      </code>
-      <code value="4121-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Interventional Procedure Note"/>
-        </extension>
-      </code>
-      <code value="8743-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Autopsy Note"/>
-        </extension>
-      </code>
-      <code value="4095-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Comprehensive History and Physical Note"/>
-        </extension>
-      </code>
-      <code value="4098-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Conference Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="1488-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Consultation Note"/>
-        </extension>
-      </code>
-      <code value="8574-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Discharge Note"/>
-        </extension>
-      </code>
-      <code value="8842-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Discharge Summarization Note"/>
-        </extension>
-      </code>
-      <code value="4109-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Evaluation And Management Note"/>
-        </extension>
-      </code>
-      <code value="4117-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="History And Physical Note"/>
-        </extension>
-      </code>
-      <code value="8636-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8570-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Procedure Note"/>
-        </extension>
-      </code>
-      <code value="1506-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4133-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Summarization of Episode Note"/>
-        </extension>
-      </code>
-      <code value="1504-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Surgical Operation Note"/>
-        </extension>
-      </code>
-      <code value="4138-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Targeted History And Physical Note"/>
-        </extension>
-      </code>
-      <code value="4140-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Transfer of Care Referral Note"/>
-        </extension>
-      </code>
-      <code value="8761-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Transfer Summarization Note"/>
-        </extension>
-      </code>
-      <code value="4100-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Critical Care Unit Consultation Note"/>
-        </extension>
-      </code>
-      <code value="4126-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Critical Care Unit Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4111-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Emergency Department Evaluation And Management Note"/>
-        </extension>
-      </code>
-      <code value="5507-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Emergency Department Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4107-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Home Health Education Procedure Note"/>
-        </extension>
-      </code>
-      <code value="4118-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Home Health Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4129-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Home Health Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4104-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Hospital Consultation Note"/>
-        </extension>
-      </code>
-      <code value="4105-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Hospital Discharge Summarization Note"/>
-        </extension>
-      </code>
-      <code value="4114-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Hospital Group Counseling Note"/>
-        </extension>
-      </code>
-      <code value="1492-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Hospital History and Physical Note"/>
-        </extension>
-      </code>
-      <code value="4130-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Hospital Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4112-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Inpatient Evaluation And Management Note"/>
-        </extension>
-      </code>
-      <code value="4097-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Home Conference Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4113-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Home Evaluation And Management Note"/>
-        </extension>
-      </code>
-      <code value="4119-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Home Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4611-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Outpatient Confirmatory Consultation Note"/>
-        </extension>
-      </code>
-      <code value="4108-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Outpatient Evaluation And Management"/>
-        </extension>
-      </code>
-      <code value="4120-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Outpatient Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4131-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Outpatient Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4137-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Outpatient Surgical Operation Note"/>
-        </extension>
-      </code>
-      <code value="4123-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Anesthesia Hospital Pre-Operative Evaluation And Management Note"/>
-        </extension>
-      </code>
-      <code value="8655-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Attending Physician Discharge Summarization Note"/>
-        </extension>
-      </code>
-      <code value="8654-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Attending Physician Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8733-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Attending Physician Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4134-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Attending Physician Outpatient Supervisory Note"/>
-        </extension>
-      </code>
-      <code value="4135-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Attending Physician Cardiology Outpatient Supervisory Note"/>
-        </extension>
-      </code>
-      <code value="4136-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Attending Physician Gastroenterology Outpatient Supervisory Note"/>
-        </extension>
-      </code>
-      <code value="4099-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Cardiology Consultation Note"/>
-        </extension>
-      </code>
-      <code value="4094-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Cardiology Hospital Admission History And Physical Note"/>
-        </extension>
-      </code>
-      <code value="4124-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Cardiology Outpatient Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4125-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Case Manager Home Health Care Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8581-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Chiropractor Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8762-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Chiropractor Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8763-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Consulting Physician Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8569-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Consulting Physician Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4127-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dental Hygienist Outpatient Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="9761-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Discharge Summarization Note"/>
-        </extension>
-      </code>
-      <code value="8572-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8577-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Procedure Note"/>
-        </extension>
-      </code>
-      <code value="8617-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8583-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Surgical Operation Note"/>
-        </extension>
-      </code>
-      <code value="8618-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Visit Note"/>
-        </extension>
-      </code>
-      <code value="4128-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Dentistry Outpatient Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4110-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Diabetology Outpatient Evaluation And Management Note"/>
-        </extension>
-      </code>
-      <code value="8748-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Diagnostic Imaging Report"/>
-        </extension>
-      </code>
-      <code value="4101-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="General Medicine Outpatient Consultation Note"/>
-        </extension>
-      </code>
-      <code value="4115-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Medical Student Hospital History and Physical Note"/>
-        </extension>
-      </code>
-      <code value="8621-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nurse Practitioner Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8764-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nurse Practitioner Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8622-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Discharge Assessment Note"/>
-        </extension>
-      </code>
-      <code value="9753-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8623-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4139-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Telephone Encounter Note"/>
-        </extension>
-      </code>
-      <code value="8651-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Nursing Transfer Summarization Note"/>
-        </extension>
-      </code>
-      <code value="8734-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Occupational Therapy Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="1507-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Occupational Therapy Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4122-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Pathology Pathology Procedure Note"/>
-        </extension>
-      </code>
-      <code value="4132-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Pharmacy Outpatient Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8735-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physical Therapy Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="1508-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physical Therapy Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8579-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physical Therapy Visit Note"/>
-        </extension>
-      </code>
-      <code value="1490-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Discharge Summarization Note"/>
-        </extension>
-      </code>
-      <code value="8626-0">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician History and Physical Note"/>
-        </extension>
-      </code>
-      <code value="8736-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="1505-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Procedure Note"/>
-        </extension>
-      </code>
-      <code value="8573-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Surgical Operation Note"/>
-        </extension>
-      </code>
-      <code value="8616-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Transfer Summarization Note"/>
-        </extension>
-      </code>
-      <code value="8568-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Emergency Department Visit Note"/>
-        </extension>
-      </code>
-      <code value="4106-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Hospital Discharge Summarization Note"/>
-        </extension>
-      </code>
-      <code value="4116-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Physician Nursing Home History and Physical Note"/>
-        </extension>
-      </code>
-      <code value="8737-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Podiatry Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8625-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Podiatry Procedure Note"/>
-        </extension>
-      </code>
-      <code value="1509-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Podiatry Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8624-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Podiatry Surgical Operation Note"/>
-        </extension>
-      </code>
-      <code value="8635-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Psychiatry Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8627-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Psychiatry Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4102-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Psychiatry Hospital Consultation Note"/>
-        </extension>
-      </code>
-      <code value="8738-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Psychology Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="1510-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Psychology Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4103-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Pulmonary Consultation Note"/>
-        </extension>
-      </code>
-      <code value="8739-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Social Service Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8656-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Social Service Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="8653-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Social Service Visit Note"/>
-        </extension>
-      </code>
-      <code value="8740-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Speech Therapy Initial Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="1512-1">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Speech Therapy Subsequent Visit Evaluation Note"/>
-        </extension>
-      </code>
-      <code value="4138-3">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="Remote Health Reading"/>
-        </extension>
-      </code>
-      <code value="4133-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="SUMMARIZATION OF EPISODE NOTE"/>
-        </extension>
-      </code>
-      <code value="8717-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="BLOOD BANK STUDIES"/>
-        </extension>
-      </code>
-      <code value="8718-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="CELL MARKER STUDIES"/>
-        </extension>
-      </code>
-      <code value="8719-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="CHEMISTRY STUDIES"/>
-        </extension>
-      </code>
-      <code value="8722-9">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="FERTILITY STUDIES"/>
-        </extension>
-      </code>
-      <code value="8723-7">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="HEMATOLOGY STUDIES"/>
-        </extension>
-      </code>
-      <code value="8724-5">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="HLA STUDIES"/>
-        </extension>
-      </code>
-      <code value="8725-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="MICROBIOLOGY STUDIES"/>
-        </extension>
-      </code>
-      <code value="8727-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="SEROLOGY STUDIES"/>
-        </extension>
-      </code>
-      <code value="8767-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="BLOOD GAS STUDIES"/>
-        </extension>
-      </code>
-      <code value="8768-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="CELL COUNTS+DIFFERENTIAL STUDIES"/>
-        </extension>
-      </code>
-      <code value="6435-8">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="MOLECULAR PATHOLOGY STUDIES"/>
-        </extension>
-      </code>
-      <code value="6436-6">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="LABORATORY STUDIES"/>
-        </extension>
-      </code>
-      <code value="6437-4">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="CHEMISTRY CHALLENGE STUDIES"/>
-        </extension>
-      </code>
-      <code value="6438-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="CYTOLOGY STUDIES"/>
-        </extension>
-      </code>
-      <code value="1502-2">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#display"/>
-          <valueString value="LABORATORY REPORT.TOTAL"/>
-        </extension>
-      </code>
+      <code value="34096-8"/>
+      <code value="34121-4"/>
+      <code value="18743-5"/>
+      <code value="34095-0"/>
+      <code value="34098-4"/>
+      <code value="11488-4"/>
+      <code value="28574-2"/>
+      <code value="18842-5"/>
+      <code value="34109-9"/>
+      <code value="34117-2"/>
+      <code value="28636-9"/>
+      <code value="28570-0"/>
+      <code value="11506-3"/>
+      <code value="34133-9"/>
+      <code value="11504-8"/>
+      <code value="34138-8"/>
+      <code value="34140-4"/>
+      <code value="18761-7"/>
+      <code value="34100-8"/>
+      <code value="34126-3"/>
+      <code value="34111-5"/>
+      <code value="15507-7"/>
+      <code value="34107-3"/>
+      <code value="34118-0"/>
+      <code value="34129-7"/>
+      <code value="34104-0"/>
+      <code value="34105-7"/>
+      <code value="34114-9"/>
+      <code value="11492-6"/>
+      <code value="34130-5"/>
+      <code value="34112-3"/>
+      <code value="34097-6"/>
+      <code value="34113-1"/>
+      <code value="34119-8"/>
+      <code value="24611-6"/>
+      <code value="34108-1"/>
+      <code value="34120-6"/>
+      <code value="34131-3"/>
+      <code value="34137-0"/>
+      <code value="34123-0"/>
+      <code value="28655-9"/>
+      <code value="28654-2"/>
+      <code value="18733-6"/>
+      <code value="34134-7"/>
+      <code value="34135-4"/>
+      <code value="34136-2"/>
+      <code value="34099-2"/>
+      <code value="34094-3"/>
+      <code value="34124-8"/>
+      <code value="34125-5"/>
+      <code value="28581-7"/>
+      <code value="18762-5"/>
+      <code value="18763-3"/>
+      <code value="28569-2"/>
+      <code value="34127-1"/>
+      <code value="29761-4"/>
+      <code value="28572-6"/>
+      <code value="28577-5"/>
+      <code value="28617-9"/>
+      <code value="28583-3"/>
+      <code value="28618-7"/>
+      <code value="34128-9"/>
+      <code value="34110-7"/>
+      <code value="18748-4"/>
+      <code value="34101-6"/>
+      <code value="34115-6"/>
+      <code value="28621-1"/>
+      <code value="18764-1"/>
+      <code value="28622-9"/>
+      <code value="29753-1"/>
+      <code value="28623-7"/>
+      <code value="34139-6"/>
+      <code value="28651-8"/>
+      <code value="18734-4"/>
+      <code value="11507-1"/>
+      <code value="34122-2"/>
+      <code value="34132-1"/>
+      <code value="18735-1"/>
+      <code value="11508-9"/>
+      <code value="28579-1"/>
+      <code value="11490-0"/>
+      <code value="28626-0"/>
+      <code value="18736-9"/>
+      <code value="11505-5"/>
+      <code value="28573-4"/>
+      <code value="28616-1"/>
+      <code value="28568-4"/>
+      <code value="34106-5"/>
+      <code value="34116-4"/>
+      <code value="18737-7"/>
+      <code value="28625-2"/>
+      <code value="11509-7"/>
+      <code value="28624-5"/>
+      <code value="28635-1"/>
+      <code value="28627-8"/>
+      <code value="34102-4"/>
+      <code value="18738-5"/>
+      <code value="11510-5"/>
+      <code value="34103-2"/>
+      <code value="18739-3"/>
+      <code value="28656-7"/>
+      <code value="28653-4"/>
+      <code value="18740-1"/>
+      <code value="11512-1"/>
+      <code value="54138-3"/>
+      <code value="34133-9"/>
+      <code value="18717-9"/>
+      <code value="18718-7"/>
+      <code value="18719-5"/>
+      <code value="18722-9"/>
+      <code value="18723-7"/>
+      <code value="18724-5"/>
+      <code value="18725-2"/>
+      <code value="18727-8"/>
+      <code value="18767-4"/>
+      <code value="18768-2"/>
+      <code value="26435-8"/>
+      <code value="26436-6"/>
+      <code value="26437-4"/>
+      <code value="26438-2"/>
+      <code value="11502-2"/>
     </include>
   </compose>
 </ValueSet>

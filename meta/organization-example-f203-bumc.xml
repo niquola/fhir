@@ -4,13 +4,13 @@
       <use value="official"/>
       <label value="Zorginstelling naam"/>
       <system value="http://www.zorgkaartnederland.nl/"/>
-      <key value="Blijdorp MC"/>
+      <value value="Blijdorp MC"/>
    </identifier>
    <name value="Blijdorp Medisch Centrum (BUMC)"/>
    <type>
       <!-- BMC is an Academic Medical Center -->
       <coding>
-         <system value="http://snomed.info/id"/>
+         <system value="http://snomed.info/sct"/>
          <code value="405608006"/>
          <display value="Academic Medical Center"/>
       </coding>
@@ -38,7 +38,7 @@
          <!-\-Identifier for the accreditation -\->
          <label value="BMC's NIAZ accreditation"/>
          <system value="http://www.niaz.nl/"/>
-         <key value="NIAZ accreditation"/>
+         <value value="NIAZ accreditation"/>
       </identifier>
       <period>
          <start value="2008-11-07"/>

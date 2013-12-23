@@ -7,15 +7,14 @@
   </text>
   <code>
     <coding>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <code value="182836005"/>
       <display value="Review of medication"/>
     </coding>
     <text value="Medication Review"/>
   </code>
   <source>
-    <type value="Patient"/>
-    <reference value="patient/@example"/>
+    <reference value="Patient/example"/>
   </source>
   <date value="2012-11-26T07:30:23+11:00"/>
   <mode value="snapshot"/>

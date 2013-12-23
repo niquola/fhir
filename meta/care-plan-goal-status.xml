@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>CarePlanGoalStatus</h2>
       <p>Indicates whether the goal has been met and is still being targeted</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/care-plan-goal-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/care-plan-goal-status</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>in progress</td>
+          <td>
+            <a name="inprogress">in progress</a>
+          </td>
           <td/>
           <td>The goal is being sought but has not yet been reached.  (Also applies if goal was reached in the past but there has been regression and goal is being sought again).</td>
         </tr>
         <tr>
-          <td>achieved</td>
+          <td>
+            <a name="achieved">achieved</a>
+          </td>
           <td/>
           <td>The goal has been met and no further action is needed.</td>
         </tr>
         <tr>
-          <td>sustaining</td>
+          <td>
+            <a name="sustaining">sustaining</a>
+          </td>
           <td/>
           <td>The goal has been met, but ongoing activity is needed to sustain the goal objective.</td>
         </tr>
         <tr>
-          <td>abandoned</td>
+          <td>
+            <a name="cancelled">cancelled</a>
+          </td>
           <td/>
           <td>The goal is no longer being sought.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="Indicates whether the goal has been met and is still being targeted"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/care-plan-goal-status"/>
     <caseSensitive value="true"/>
@@ -72,7 +80,7 @@
       <definition value="The goal has been met, but ongoing activity is needed to sustain the goal objective."/>
     </concept>
     <concept>
-      <code value="abandoned"/>
+      <code value="cancelled"/>
       <definition value="The goal is no longer being sought."/>
     </concept>
   </define>

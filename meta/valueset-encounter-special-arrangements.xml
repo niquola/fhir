@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SpecialArrangements</h2>
       <p>This value set defines a set of codes that can be used to indicate the kinds     of special arrangements in place for a patients visit</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/encounter-special-arrangements</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-special-arrangements</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>wheel</td>
+          <td>
+            <a name="wheel">wheel</a>
+          </td>
           <td>Wheelchair</td>
           <td/>
         </tr>
         <tr>
-          <td>stret</td>
+          <td>
+            <a name="stret">stret</a>
+          </td>
           <td>Stretcher</td>
           <td/>
         </tr>
         <tr>
-          <td>int</td>
+          <td>
+            <a name="int">int</a>
+          </td>
           <td>Interpreter</td>
           <td/>
         </tr>
         <tr>
-          <td>att</td>
+          <td>
+            <a name="att">att</a>
+          </td>
           <td>Attendant</td>
           <td/>
         </tr>
         <tr>
-          <td>dog</td>
+          <td>
+            <a name="dog">dog</a>
+          </td>
           <td>Guide dog</td>
           <td/>
         </tr>

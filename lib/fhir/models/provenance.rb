@@ -7,15 +7,18 @@
 # significance.
 class Fhir::Provenance < Fhir::Resource
   invariants do
-    validates_presence_of :target_refs
+    validates_presence_of :target_ref
     validates_presence_of :recorded
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # Target resource(s) (usually version specific)
-  resource_references :targets, [Fhir::Resource]
+  resource_references :target, [Fhir::Resource]
 
   # When the activity occurred
   attribute :period, Fhir::Period
@@ -30,7 +33,7 @@ class Fhir::Provenance < Fhir::Resource
   resource_reference :location, [Fhir::Location]
 
   # Policy or plan the activity was defined by
-  attribute :policies, Array[Fhir::URI]
+  attribute :policy, Array[Fhir::URI]
 
   # An agent takes a role in an activity such that the agent
   # can be assigned some degree of responsibility for the
@@ -44,10 +47,14 @@ class Fhir::Provenance < Fhir::Resource
       validates_presence_of :reference
     end
 
-    # author | overseer | enterer | attester | source | cc: +
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # e.g. author | overseer | enterer | attester | source | cc:
+    # +
     attribute :role, Fhir::Coding
 
-    # Resource | Person | Application | Record | Document +
+    # e.g. Resource | Person | Application | Record | Document +
     attribute :type, Fhir::Coding
 
     # Identity of agent (urn or url)
@@ -57,7 +64,7 @@ class Fhir::Provenance < Fhir::Resource
     attribute :display, String
   end
 
-  attribute :agents, Array[Agent]
+  attribute :agent, Array[Agent]
 
   # An entity used in this activity.
   class Entity < Fhir::ValueObject
@@ -66,6 +73,9 @@ class Fhir::Provenance < Fhir::Resource
       validates_presence_of :type
       validates_presence_of :reference
     end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
     # derivation | revision | quotation | source
     attribute :role, Fhir::Code
@@ -83,10 +93,10 @@ class Fhir::Provenance < Fhir::Resource
     attribute :agent, Fhir::Provenance::Agent
   end
 
-  attribute :entities, Array[Entity]
+  attribute :entity, Array[Entity]
 
-  # Base64 Cryptographic signature of resource (DigSig)
-  attribute :signature, String
+  # Base64 signature (DigSig) - integrity check
+  attribute :integrity_signature, String
 end
 
 

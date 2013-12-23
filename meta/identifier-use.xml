@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>IdentifierUse</h2>
       <p>Identifies the use for this identifier, if known</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/identifier-use</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/identifier-use</p>
       <table>
         <tr>
           <td>
@@ -20,19 +20,32 @@
           </td>
         </tr>
         <tr>
-          <td>usual</td>
+          <td>
+            <a name="usual">usual</a>
+          </td>
           <td/>
           <td>the identifier recommended for display and use in real-world interactions.</td>
         </tr>
         <tr>
-          <td>official</td>
+          <td>
+            <a name="official">official</a>
+          </td>
           <td/>
           <td>the identifier considered to be most trusted for the identification of this item.</td>
         </tr>
         <tr>
-          <td>temp</td>
+          <td>
+            <a name="temp">temp</a>
+          </td>
           <td/>
           <td>A temporary identifier.</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="secondary">secondary</a>
+          </td>
+          <td/>
+          <td>An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context.</td>
         </tr>
       </table>
     </div>
@@ -50,7 +63,7 @@
   </telecom>
   <description value="Identifies the use for this identifier, if known"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.969+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/identifier-use"/>
     <caseSensitive value="true"/>
@@ -65,6 +78,10 @@
     <concept>
       <code value="temp"/>
       <definition value="A temporary identifier."/>
+    </concept>
+    <concept>
+      <code value="secondary"/>
+      <definition value="An identifier that was assigned in secondary use - it serves to identify the object in a relative context, but cannot be consistently assigned to the same object again in a different context."/>
     </concept>
   </define>
 </ValueSet>

@@ -2,19 +2,34 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.htm#HumanName">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.html#HumanName">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for HumanName"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for HumanName for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <mapping>
+    <identity value="servd"/>
+    <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+    <name value="ServD"/>
+  </mapping>
   <structure>
     <type value="HumanName"/>
     <element>
       <path value="HumanName"/>
       <definition>
-        <short value="Name of a human"/>
+        <short value="Name of a human - parts and usage"/>
         <formal value="A human&#39;s name with the ability to identify parts and usage."/>
         <comments value="Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts may or may not be imbued with some implicit meaning; various cultures associate different importance with the name parts, and the degree to which systems must care about name parts around the world varies widely."/>
         <min value="1"/>
@@ -24,27 +39,50 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="EN"/>
+          <identity value="rim"/>
+          <map value="EN (actually, PN)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="ProviderName"/>
         </mapping>
       </definition>
     </element>
     <element>
       <path value="HumanName.use"/>
       <definition>
-        <short value="The use of this name"/>
+        <short value="usual | official | temp | nickname | anonymous | old | maiden"/>
         <formal value="Identifies the purpose for this name."/>
-        <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old name etc for a current/permanent one. Applications can assume that a name is not temporary or old unless it explicitly says that it is."/>
+        <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old name etc for a current/permanent one. Applications can assume that a name is not temporary or old unless it explicitly says that it is."/>
         <min value="0"/>
         <max value="1"/>
         <type>
           <code value="code"/>
         </type>
         <isModifier value="true"/>
-        <binding value="NameUse"/>
+        <binding>
+          <name value="NameUse"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/name-use"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="unique(./use)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN.7, but often indicated by which field contains the name"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./NamePurpose"/>
         </mapping>
       </definition>
     </element>
@@ -61,8 +99,12 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./formatted"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="implied by XPN.11"/>
         </mapping>
       </definition>
     </element>
@@ -71,13 +113,25 @@
       <definition>
         <short value="Family name (often called &#39;Surname&#39;)"/>
         <formal value="Family name, this is the name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father."/>
-        <comments value="family name is allowed to repeat. A single family name with spaces is equivalent to multiple family names with the same values."/>
+        <comments value="For family name, hyphenated names such as &quot;Smith-Jones&quot; are a single name, but names with spaces such as &quot;Smith Jones&quot; are broken into multiple parts."/>
         <min value="0"/>
         <max value="*"/>
         <type>
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="./part[partType = FAM]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN.1"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./FamilyName"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -85,12 +139,25 @@
       <definition>
         <short value="Given names (not always &#39;first&#39;). Includes middle names"/>
         <formal value="Given name. NOTE: Not to be called &quot;first name&quot; since given names do not always come first."/>
+        <comments value="If only initials are recorded, they may be used in place of the full name."/>
         <min value="0"/>
         <max value="*"/>
         <type>
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="./part[partType = GIV]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN.2 + XPN.3"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./GivenNames"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -104,6 +171,18 @@
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="./part[partType = PFX]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN.5"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./TitleCode"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -117,6 +196,14 @@
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="./part[partType = SFX]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN/4"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -131,18 +218,18 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="XPN.13 + XPN.14"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./StartDate and ./EndDate"/>
         </mapping>
       </definition>
     </element>
   </structure>
-  <binding>
-    <name value="NameUse"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/name-use"/>
-    </referenceResource>
-  </binding>
 </Profile>

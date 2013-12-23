@@ -9,7 +9,7 @@
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include all codes defined in 
-          <a href="v2/0074/index.htm">http://hl7.org/fhir/v2/0074</a>
+          <a href="v2/0074/index.html">http://hl7.org/fhir/v2/0074</a>
         </li>
       </ul>
     </div>

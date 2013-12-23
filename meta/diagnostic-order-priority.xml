@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>DiagnosticOrderPriority</h2>
       <p>The clinical priority of a diagnostic order</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/diagnostic-order-priority</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/diagnostic-order-priority</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>normal</td>
+          <td>
+            <a name="normal">normal</a>
+          </td>
           <td>Normal</td>
           <td>The order has no particular priority with it.</td>
         </tr>
         <tr>
-          <td>urgent</td>
+          <td>
+            <a name="urgent">urgent</a>
+          </td>
           <td>Urgent</td>
           <td>The order should be urgently.</td>
         </tr>
         <tr>
-          <td>stat</td>
+          <td>
+            <a name="stat">stat</a>
+          </td>
           <td>Stat</td>
           <td>The order is time-critical.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="The clinical priority of a diagnostic order"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/diagnostic-order-priority"/>
     <caseSensitive value="true"/>

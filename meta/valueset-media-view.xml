@@ -5,10 +5,10 @@
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Media Collection View/Projection</h2>
-      <p>Codes defined in Snomed-CT that can be used to record Media Recording views</p>
+      <p>Codes defined in SNOMED CT that can be used to record Media Recording views</p>
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
-        <li>Include codes from http://snomed.info/id where concept  is-a  260419006</li>
+        <li>Include codes from http://snomed.info/sct where concept  is-a  260419006</li>
       </ul>
     </div>
   </text>
@@ -19,11 +19,11 @@
     <system value="url"/>
     <value value="http://hl7.org/fhir"/>
   </telecom>
-  <description value="Codes defined in Snomed-CT that can be used to record Media Recording views"/>
+  <description value="Codes defined in SNOMED CT that can be used to record Media Recording views"/>
   <status value="draft"/>
   <compose>
     <include>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <filter>
         <property value="concept"/>
         <op value="is-a"/>

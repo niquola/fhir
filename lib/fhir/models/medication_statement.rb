@@ -3,11 +3,14 @@
 # is the result of a report from the patient, or another
 # clinician.
 class Fhir::MedicationStatement < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # External Identifier
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
   # Patient
   resource_reference :patient, [Fhir::Patient]
@@ -16,7 +19,7 @@ class Fhir::MedicationStatement < Fhir::Resource
   attribute :was_not_given, Boolean
 
   # True if asserting medication was not given
-  attribute :reason_not_givens, Array[Fhir::CodeableConcept]
+  attribute :reason_not_given, Array[Fhir::CodeableConcept]
 
   # Effective time
   attribute :when_given, Fhir::Period
@@ -25,10 +28,13 @@ class Fhir::MedicationStatement < Fhir::Resource
   resource_reference :medication, [Fhir::Medication]
 
   # Administration device
-  resource_references :administration_devices, [Fhir::Device]
+  resource_references :administration_device, [Fhir::Device]
 
   # Indicates how the medication is to be used by the patient.
   class Dosage < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Medication timing
     attribute :timing, Fhir::Schedule
 
@@ -51,7 +57,7 @@ class Fhir::MedicationStatement < Fhir::Resource
     attribute :max_dose_per_period, Fhir::Ratio
   end
 
-  attribute :dosages, Array[Dosage]
+  attribute :dosage, Array[Dosage]
 end
 
 

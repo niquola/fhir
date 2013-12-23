@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MessageTransport</h2>
       <p>The protocol used for message transport</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/message-transport</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/message-transport</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>http</td>
+          <td>
+            <a name="http">http</a>
+          </td>
           <td/>
           <td>The application sends or receives messages using HTTP POST (may be over http or https).</td>
         </tr>
         <tr>
-          <td>ftp</td>
+          <td>
+            <a name="ftp">ftp</a>
+          </td>
           <td/>
           <td>The application sends or receives messages using File Transfer Protocol.</td>
         </tr>
         <tr>
-          <td>mllp</td>
+          <td>
+            <a name="mllp">mllp</a>
+          </td>
           <td/>
           <td>The application sends or receivers messages using HL7&#39;s Minimal Lower Level Protocol.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="The protocol used for message transport"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/message-transport"/>
     <caseSensitive value="true"/>

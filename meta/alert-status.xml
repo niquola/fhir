@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>AlertStatus</h2>
       <p>Indicates whether this alert is active and needs to be displayed to a user, or whether it is no longer needed or entered in error</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/alert-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/alert-status</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>active</td>
+          <td>
+            <a name="active">active</a>
+          </td>
           <td/>
           <td>A current alert that should be displayed to a user. A system may use the category to determine which roles should view the alert.</td>
         </tr>
         <tr>
-          <td>inactive</td>
+          <td>
+            <a name="inactive">inactive</a>
+          </td>
           <td/>
           <td>The alert does not need to be displayed any more.</td>
         </tr>
         <tr>
-          <td>error</td>
+          <td>
+            <a name="enteredinerror">entered in error</a>
+          </td>
           <td/>
           <td>The alert was added in error, and should no longer be displayed.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="Indicates whether this alert is active and needs to be displayed to a user, or whether it is no longer needed or entered in error"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/alert-status"/>
     <caseSensitive value="true"/>
@@ -63,7 +69,7 @@
       <definition value="The alert does not need to be displayed any more."/>
     </concept>
     <concept>
-      <code value="error"/>
+      <code value="entered in error"/>
       <definition value="The alert was added in error, and should no longer be displayed."/>
     </concept>
   </define>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>CarePlanStatus</h2>
       <p>Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/care-plan-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/care-plan-status</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>planned</td>
+          <td>
+            <a name="planned">planned</a>
+          </td>
           <td/>
           <td>The plan is in development or awaiting use but is not yet intended to be acted upon.</td>
         </tr>
         <tr>
-          <td>active</td>
+          <td>
+            <a name="active">active</a>
+          </td>
           <td/>
           <td>The plan is intended to be followed and used as part of patient care.</td>
         </tr>
         <tr>
-          <td>ended</td>
+          <td>
+            <a name="completed">completed</a>
+          </td>
           <td/>
           <td>The plan is no longer in use and is not expected to be followed or used in patient care.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="Indicates whether the plan is currently being acted upon, represents future intentions or is now just historical record."/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/care-plan-status"/>
     <caseSensitive value="true"/>
@@ -63,7 +69,7 @@
       <definition value="The plan is intended to be followed and used as part of patient care."/>
     </concept>
     <concept>
-      <code value="ended"/>
+      <code value="completed"/>
       <definition value="The plan is no longer in use and is not expected to be followed or used in patient care."/>
     </concept>
   </define>

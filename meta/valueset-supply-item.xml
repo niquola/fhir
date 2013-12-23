@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Supply Item Type</h2>
       <p>This value sets refers to a specific supply item</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/supply-item-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/supply-item-type</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>medication</td>
+          <td>
+            <a name="medication">medication</a>
+          </td>
           <td>Central Supply</td>
           <td>Supply is a kind of medication.</td>
         </tr>
         <tr>
-          <td>device</td>
+          <td>
+            <a name="device">device</a>
+          </td>
           <td>Device</td>
           <td>What is supplied (or requested) is a device</td>
         </tr>

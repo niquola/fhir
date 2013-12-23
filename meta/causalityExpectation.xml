@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>CausalityExpectation</h2>
       <p>How likely is it that the given exposure caused a reaction</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/causalityExpectation</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/causalityExpectation</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>likely</td>
+          <td>
+            <a name="likely">likely</a>
+          </td>
           <td/>
           <td>Likely that this specific exposure caused the reaction.</td>
         </tr>
         <tr>
-          <td>unlikely</td>
+          <td>
+            <a name="unlikely">unlikely</a>
+          </td>
           <td/>
           <td>Unlikely that this specific exposure caused the reaction - the exposure is being linked to for information purposes.</td>
         </tr>
         <tr>
-          <td>confirmed</td>
+          <td>
+            <a name="confirmed">confirmed</a>
+          </td>
           <td/>
           <td>It has been confirmed that this exposure was one of the causes of the reaction.</td>
         </tr>
         <tr>
-          <td>unknown</td>
+          <td>
+            <a name="unknown">unknown</a>
+          </td>
           <td/>
           <td>It is unknown whether this exposure had anything to do with the reaction.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="How likely is it that the given exposure caused a reaction"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.969+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/causalityExpectation"/>
     <caseSensitive value="true"/>

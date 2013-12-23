@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>QuantityCompararator</h2>
       <p>How the Quantity should be understood and represented</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/quantity-comparator</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/quantity-comparator</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>&lt;</td>
+          <td>
+            <a name=".60">&lt;</a>
+          </td>
           <td/>
           <td>The actual value is less than the given value.</td>
         </tr>
         <tr>
-          <td>&lt;=</td>
+          <td>
+            <a name=".60.61">&lt;=</a>
+          </td>
           <td/>
           <td>The actual value is less than or equal to the given value.</td>
         </tr>
         <tr>
-          <td>&gt;=</td>
+          <td>
+            <a name=".62.61">&gt;=</a>
+          </td>
           <td/>
           <td>The actual value is greater than or equal to the given value.</td>
         </tr>
         <tr>
-          <td>&gt;</td>
+          <td>
+            <a name=".62">&gt;</a>
+          </td>
           <td/>
           <td>The actual value is greater than the given value.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="How the Quantity should be understood and represented"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/quantity-comparator"/>
     <caseSensitive value="true"/>

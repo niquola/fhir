@@ -2,7 +2,7 @@
  <name value="Paracetamol"/>
  <code>
     <coding>
-       <system value="http://snomed.info/id"/>
+       <system value="http://snomed.info/sct"/>
        <code value="387517004"/>
        <display value="Paracetamol"/>
     </coding>
@@ -12,7 +12,7 @@
  <product> 
   <form>
     <coding>
-       <system value="http://snomed.info/id"/>
+       <system value="http://snomed.info/sct"/>
        <code value="385055001"/>
        <display value="Tablet"/>
     </coding>

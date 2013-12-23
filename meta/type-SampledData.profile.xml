@@ -2,13 +2,23 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.htm#SampledData">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.html#SampledData">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for SampledData"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for SampledData for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="SampledData"/>
     <element>
@@ -24,8 +34,12 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="SLIST + GLIST"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A (but see section 7.14 in v2.7)"/>
         </mapping>
       </definition>
     </element>
@@ -34,14 +48,14 @@
       <definition>
         <short value="Zero value and units"/>
         <formal value="The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series."/>
-        <min value="0"/>
+        <min value="1"/>
         <max value="1"/>
         <type>
           <code value="Quantity"/>
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="SLIST.origin"/>
         </mapping>
       </definition>
@@ -52,14 +66,14 @@
         <short value="Number of milliseconds between samples"/>
         <formal value="The length of time between sampling times, measured in milliseconds."/>
         <comments value="This is usually a whole number."/>
-        <min value="0"/>
+        <min value="1"/>
         <max value="1"/>
         <type>
           <code value="decimal"/>
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="GLIST.increment"/>
         </mapping>
       </definition>
@@ -76,7 +90,7 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="SLIST.factor"/>
         </mapping>
       </definition>
@@ -92,6 +106,10 @@
           <code value="decimal"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (use SLIST.digits.nullFlavor)"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -105,6 +123,10 @@
           <code value="decimal"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (use SLIST.digits.nullFlavor)"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -113,12 +135,16 @@
         <short value="Number of sample points at each time point"/>
         <formal value="The Number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once."/>
         <comments value="If there is more than one dimension, the code for the type of data will define the meaning of the dimensions (typically ECG data)."/>
-        <min value="0"/>
+        <min value="1"/>
         <max value="1"/>
         <type>
           <code value="integer"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A (fixed to 1)"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -126,14 +152,14 @@
       <definition>
         <short value="Decimal values with spaces, or &quot;E&quot; | &quot;U&quot; | &quot;L&quot;"/>
         <formal value="A series of data points separated by a single space (character u20). The special values &quot;E&quot; (error), &quot;L&quot; (below detection limit) and &quot;U&quot; (above detection limit) can also be used."/>
-        <min value="0"/>
+        <min value="1"/>
         <max value="1"/>
         <type>
           <code value="string"/>
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="SLIST.digits"/>
         </mapping>
       </definition>

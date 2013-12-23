@@ -2,8 +2,11 @@
 class Fhir::Query < Fhir::Resource
   invariants do
     validates_presence_of :identifier
-    validates_presence_of :parameters
+    validates_presence_of :parameter
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
@@ -12,7 +15,7 @@ class Fhir::Query < Fhir::Resource
   attribute :identifier, Fhir::URI
 
   # Set of query parameters with values
-  attribute :parameters, Array[Fhir::Extension]
+  attribute :parameter, Array[Fhir::Extension]
 
   # If this is a response to a query.
   class Response < Fhir::ValueObject
@@ -21,32 +24,35 @@ class Fhir::Query < Fhir::Resource
       validates_presence_of :outcome
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Links response to source query
     attribute :identifier, Fhir::URI
 
-    # Outcome of processing the query
+    # ok | limited | refused | error
     attribute :outcome, Fhir::Code
 
     # Total number of matching records
     attribute :total, Integer
 
     # Parameters server used
-    attribute :parameters, Array[Fhir::Extension]
+    attribute :parameter, Array[Fhir::Extension]
 
     # To get first page (if paged)
-    attribute :firsts, Array[Fhir::Extension]
+    attribute :first, Array[Fhir::Extension]
 
     # To get previous page (if paged)
     attribute :previous, Array[Fhir::Extension]
 
     # To get next page (if paged)
-    attribute :nexts, Array[Fhir::Extension]
+    attribute :next, Array[Fhir::Extension]
 
     # To get last page (if paged)
-    attribute :lasts, Array[Fhir::Extension]
+    attribute :last, Array[Fhir::Extension]
 
     # Resources that are the results of the search
-    resource_references :references, [Fhir::Resource]
+    resource_references :reference, [Fhir::Resource]
   end
 
   attribute :response, Response

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Other Resource Types</h2>
       <p>This value set defines codes for resources not yet supported by (or which will never be supported by) FHIR.  Many of the codes listed here will eventually be turned into official resources.  However, there is no guarantee that any particular resource will be created nor that the scope will be exactly as defined by the codes presented here.  Codes in this set will be deprecated if/when formal resources are defined that encompass these concepts.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/other-resource-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/other-resource-type</p>
       <table>
         <tr>
           <td>
@@ -20,92 +20,128 @@
           </td>
         </tr>
         <tr>
-          <td>CONSENT</td>
+          <td>
+            <a name="CONSENT">CONSENT</a>
+          </td>
           <td>consent</td>
           <td>An assertion of permission for an activity or set of activities to occur, possibly subject to particular limitations.  E.g. surgical consent, information disclosure consent, etc.</td>
         </tr>
         <tr>
-          <td>REFERRAL</td>
+          <td>
+            <a name="REFERRAL">REFERRAL</a>
+          </td>
           <td>referral</td>
           <td>A request that care of a particular type be provided to a patient.  Could involve the transfer of care, a consult, etc.</td>
         </tr>
         <tr>
-          <td>SLOT</td>
+          <td>
+            <a name="SLOT">SLOT</a>
+          </td>
           <td>resource slot</td>
           <td>A bounded time-period when a particular set of resources (practioners, devices and/or locations) is available for the delivery of healthcare services.  Used for scheduling.</td>
         </tr>
         <tr>
-          <td>APTMT</td>
+          <td>
+            <a name="APTMT">APTMT</a>
+          </td>
           <td>appointment</td>
           <td>An agreement for a particular type of service to occur for a specified patient at a specific time with a particular set of resources (practitioners, devices, locations, etc.)</td>
         </tr>
         <tr>
-          <td>APTMTREQ</td>
+          <td>
+            <a name="APTMTREQ">APTMTREQ</a>
+          </td>
           <td>appointment request</td>
           <td>A request that a time be scheduled for a type of service for a specified patient, potentially subject to other constraints</td>
         </tr>
         <tr>
-          <td>TRANSFER</td>
+          <td>
+            <a name="TRANSFER">TRANSFER</a>
+          </td>
           <td>transfer</td>
           <td>The transition of a patient or set of material from one location to another</td>
         </tr>
         <tr>
-          <td>DIET</td>
+          <td>
+            <a name="DIET">DIET</a>
+          </td>
           <td>diet</td>
           <td>The specification of a set of food and/or other nutritonal material to be delivered to a patient.</td>
         </tr>
         <tr>
-          <td>ADMINACT</td>
+          <td>
+            <a name="ADMINACT">ADMINACT</a>
+          </td>
           <td>administrative activity</td>
           <td>An occurrence of a non-care-related event in the healthcare domain, such as approvals, reviews, etc.</td>
         </tr>
         <tr>
-          <td>EXPOSURE</td>
+          <td>
+            <a name="EXPOSURE">EXPOSURE</a>
+          </td>
           <td>exposure</td>
           <td>Record of a situation where a subject was exposed to a substance.  Usually of interest to public health.</td>
         </tr>
         <tr>
-          <td>INVESTIGATION</td>
+          <td>
+            <a name="INVESTIGATION">INVESTIGATION</a>
+          </td>
           <td>investigation</td>
           <td>A formalized inquiry into the circumstances surrounding a particular unplanned event or potential event for the purposes of identifying possible causes and contributing factors for the event</td>
         </tr>
         <tr>
-          <td>ACCOUNT</td>
+          <td>
+            <a name="ACCOUNT">ACCOUNT</a>
+          </td>
           <td>account</td>
           <td>A financial instrument used to track costs, charges or other amounts.</td>
         </tr>
         <tr>
-          <td>INVOICE</td>
+          <td>
+            <a name="INVOICE">INVOICE</a>
+          </td>
           <td>invoice</td>
           <td>A request for payment for goods and/or services.  Includes the idea of a healthcare insurance claim.</td>
         </tr>
         <tr>
-          <td>ADJUDICAT</td>
+          <td>
+            <a name="ADJUDICAT">ADJUDICAT</a>
+          </td>
           <td>invoice adjudication</td>
           <td>The determination of what will be paid against a particular invoice based on coverage, plan rules, etc.</td>
         </tr>
         <tr>
-          <td>PAYMENT</td>
+          <td>
+            <a name="PAYMENT">PAYMENT</a>
+          </td>
           <td>payment</td>
           <td>A record of a transfer of funds between accounts and/or individuals</td>
         </tr>
         <tr>
-          <td>PREDETREQ</td>
+          <td>
+            <a name="PREDETREQ">PREDETREQ</a>
+          </td>
           <td>predetermination request</td>
           <td>A request for a predication of the cost that would be paid under an insurance plan for a hypothetical claim for goods or services</td>
         </tr>
         <tr>
-          <td>PREDETERMINE</td>
+          <td>
+            <a name="PREDETERMINE">PREDETERMINE</a>
+          </td>
           <td>predetermination</td>
           <td>An adjudication of what would be paid under an insurance plan for a hypothetical claim for goods or services</td>
         </tr>
         <tr>
-          <td>STUDY</td>
+          <td>
+            <a name="STUDY">STUDY</a>
+          </td>
           <td>study</td>
           <td>An investigation to determine information about a particular therapy or product</td>
         </tr>
         <tr>
-          <td>PROTOCOL</td>
+          <td>
+            <a name="PROTOCOL">PROTOCOL</a>
+          </td>
           <td>protocol</td>
           <td>A set of (possibly conditional) steps to be taken to achieve some aim.  Includes study protocols, treatment protocols, emergency protocols, etc.</td>
         </tr>

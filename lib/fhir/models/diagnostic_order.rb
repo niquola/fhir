@@ -5,6 +5,9 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     validates_presence_of :subject_ref
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -15,7 +18,7 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   resource_reference :orderer, [Fhir::Practitioner]
 
   # Identifiers assigned to this order
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
   # The encounter that this diagnostic order is associated
   # with
@@ -27,8 +30,8 @@ class Fhir::DiagnosticOrder < Fhir::Resource
   # If the whole order relates to specific specimens
   resource_references :specimen, [Fhir::Specimen]
 
-  # requested | received | accepted | inprogress | review |
-  # complete | suspended | rejected | failed
+  # requested | received | accepted | in progress | review |
+  # completed | on hold | rejected | failed
   attribute :status, Fhir::Code
 
   # normal | urgent | stat
@@ -42,8 +45,11 @@ class Fhir::DiagnosticOrder < Fhir::Resource
       validates_presence_of :date
     end
 
-    # requested | received | accepted | inprogress | review |
-    # complete | suspended | rejected | failed
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # requested | received | accepted | in progress | review |
+    # completed | on hold | rejected | failed
     attribute :status, Fhir::Code
 
     # The date at which the event happened
@@ -53,7 +59,7 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     resource_reference :actor, [Fhir::Practitioner, Fhir::Device]
   end
 
-  attribute :events, Array[Event]
+  attribute :event, Array[Event]
 
   # The specific diagnostic investigations that are requested
   # as part of this request. Sometimes, there can only be one
@@ -64,6 +70,9 @@ class Fhir::DiagnosticOrder < Fhir::Resource
       validates_presence_of :code
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Code for this item
     attribute :code, Fhir::CodeableConcept
 
@@ -73,15 +82,15 @@ class Fhir::DiagnosticOrder < Fhir::Resource
     # Location of requested test (if applicable)
     attribute :body_site, Fhir::CodeableConcept
 
-    # requested | received | accepted | inprogress | review |
-    # complete | suspended | rejected | failed
+    # requested | received | accepted | in progress | review |
+    # completed | on hold | rejected | failed
     attribute :status, Fhir::Code
 
     # Events specific to this item
-    attribute :events, Array[Fhir::DiagnosticOrder::Event]
+    attribute :event, Array[Fhir::DiagnosticOrder::Event]
   end
 
-  attribute :items, Array[Item]
+  attribute :item, Array[Item]
 end
 
 

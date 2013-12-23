@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ContactSystem</h2>
       <p>Telecommunications form for contact</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/contact-system</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/contact-system</p>
       <table>
         <tr>
           <td>
@@ -18,26 +18,56 @@
           <td>
             <b>Definition</b>
           </td>
+          <td>
+            <b>
+              <a href="v2\0202\index.html">v2 Map (0202)</a>
+            </b>
+          </td>
         </tr>
         <tr>
-          <td>phone</td>
+          <td>
+            <a name="phone">phone</a>
+          </td>
           <td/>
           <td>The value is a telephone number used for voice calls. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0202\index.html#PH">PH</a>
+          </td>
         </tr>
         <tr>
-          <td>fax</td>
+          <td>
+            <a name="fax">fax</a>
+          </td>
           <td/>
           <td>The value is a fax machine. Use of full international numbers starting with + is recommended to enable automatic dialing support but not required.</td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0202\index.html#FX">FX</a>
+          </td>
         </tr>
         <tr>
-          <td>email</td>
+          <td>
+            <a name="email">email</a>
+          </td>
           <td/>
           <td>The value is an email address.</td>
+          <td>
+            <span title="wider">&lt;</span>
+            <a href="v2\0202\index.html#Internet">Internet</a>
+            <i>(use mailto: protocol)</i>
+          </td>
         </tr>
         <tr>
-          <td>url</td>
+          <td>
+            <a name="url">url</a>
+          </td>
           <td/>
           <td>The value is a url. This is intended for various personal contacts including blogs, Twitter, Facebook, etc. Do not use for email addresses.</td>
+          <td>
+            <span title="wider">&lt;</span>
+            <a href="v2\0202\index.html#Internet">Internet</a>
+          </td>
         </tr>
       </table>
     </div>
@@ -55,7 +85,7 @@
   </telecom>
   <description value="Telecommunications form for contact"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.987+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/contact-system"/>
     <caseSensitive value="true"/>

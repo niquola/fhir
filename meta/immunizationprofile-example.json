@@ -1,1 +1,0 @@
-{"ImmunizationProfile":{"text":{"status":{"value":"generated"},"div":"<div>Authored by Joginder Madra<\/div>"},"subject":{"type":{"value":"Patient"},"reference":{"value":"patient/@example"}},"recommendation":[{"recommendationDate":{"value":"2013-03-01"},"vaccineType":{"_id":"396427003"},"forecastStatus":{"value":"DUE"}}]}}

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>IssueSeverity</h2>
       <p>How the issue affects the success of the action</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/issue-severity</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/issue-severity</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>fatal</td>
+          <td>
+            <a name="fatal">fatal</a>
+          </td>
           <td/>
           <td>The issue caused the action to fail, and no further checking could be performed.</td>
         </tr>
         <tr>
-          <td>error</td>
+          <td>
+            <a name="error">error</a>
+          </td>
           <td/>
           <td>The issue is sufficiently important to cause the action to fail.</td>
         </tr>
         <tr>
-          <td>warning</td>
+          <td>
+            <a name="warning">warning</a>
+          </td>
           <td/>
           <td>The issue is not important enough to cause the action to fail, but may cause it to be performed suboptimally or in a way that is not as desired.</td>
         </tr>
         <tr>
-          <td>information</td>
+          <td>
+            <a name="information">information</a>
+          </td>
           <td/>
           <td>The issue has no relation to the degree of success of the action.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="How the issue affects the success of the action"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/issue-severity"/>
     <caseSensitive value="true"/>

@@ -8,6 +8,9 @@ class Fhir::Immunization < Fhir::Resource
     validates_inclusion_of :reported, in: [true, false], message: 'must be either true or false'
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -55,11 +58,14 @@ class Fhir::Immunization < Fhir::Resource
 
   # Reasons why a vaccine was administered or refused.
   class Explanation < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Administration Reasons
-    attribute :reasons, Array[Fhir::CodeableConcept]
+    attribute :reason, Array[Fhir::CodeableConcept]
 
     # Explanation of refusal / exemption
-    attribute :refusal_reasons, Array[Fhir::CodeableConcept]
+    attribute :refusal_reason, Array[Fhir::CodeableConcept]
   end
 
   attribute :explanation, Explanation
@@ -67,6 +73,9 @@ class Fhir::Immunization < Fhir::Resource
   # Categorical data indicating that an adverse event is
   # associated in time to an immunization.
   class Reaction < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Reaction Date
     attribute :date, DateTime
 
@@ -77,7 +86,7 @@ class Fhir::Immunization < Fhir::Resource
     attribute :reported, Boolean
   end
 
-  attribute :reactions, Array[Reaction]
+  attribute :reaction, Array[Reaction]
 
   # Contains information about the protocol under which the
   # vaccine was administered.
@@ -86,6 +95,9 @@ class Fhir::Immunization < Fhir::Resource
       validates_presence_of :dose_sequence
       validates_presence_of :dose_status
     end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
     # Dose Number
     attribute :dose_sequence, Integer

@@ -1,13 +1,16 @@
 # Primarily used for identification and definition of
 # Medication, but also covers ingredients and packaging.
 class Fhir::Medication < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # Common / Commercial name
   attribute :name, String
 
-  # References to std. medication terminologies
+  # Codes that identify this medication
   attribute :code, Fhir::CodeableConcept
 
   # True if a brand
@@ -21,6 +24,9 @@ class Fhir::Medication < Fhir::Resource
 
   # If is a product.
   class Product < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Powder | tablets | carton etc
     attribute :form, Fhir::CodeableConcept
 
@@ -30,6 +36,9 @@ class Fhir::Medication < Fhir::Resource
         validates_presence_of :item_ref
       end
 
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # Ingredient
       resource_reference :item, [Fhir::Substance, Fhir::Medication]
 
@@ -37,13 +46,16 @@ class Fhir::Medication < Fhir::Resource
       attribute :amount, Fhir::Ratio
     end
 
-    attribute :ingredients, Array[Ingredient]
+    attribute :ingredient, Array[Ingredient]
   end
 
   attribute :product, Product
 
   # Specifies Ingredient / Product / Package.
   class Package < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Kind of container
     attribute :container, Fhir::CodeableConcept
 
@@ -53,6 +65,9 @@ class Fhir::Medication < Fhir::Resource
         validates_presence_of :item_ref
       end
 
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # A product in the package
       resource_reference :item, [Fhir::Medication]
 
@@ -60,7 +75,7 @@ class Fhir::Medication < Fhir::Resource
       attribute :amount, Fhir::Quantity
     end
 
-    attribute :contents, Array[Content]
+    attribute :content, Array[Content]
   end
 
   attribute :package, Package

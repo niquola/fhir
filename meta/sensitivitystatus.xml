@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SensitivityStatus</h2>
       <p>The status of the adverse sensitivity</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/sensitivitystatus</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/sensitivitystatus</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>suspected</td>
+          <td>
+            <a name="suspected">suspected</a>
+          </td>
           <td/>
           <td>A suspected sensitivity to a substance.</td>
         </tr>
         <tr>
-          <td>confirmed</td>
+          <td>
+            <a name="confirmed">confirmed</a>
+          </td>
           <td/>
           <td>The sensitivity has been confirmed and is active.</td>
         </tr>
         <tr>
-          <td>refuted</td>
+          <td>
+            <a name="refuted">refuted</a>
+          </td>
           <td/>
           <td>The sensitivity has been shown to never have existed.</td>
         </tr>
         <tr>
-          <td>resolved</td>
+          <td>
+            <a name="resolved">resolved</a>
+          </td>
           <td/>
           <td>The sensitivity used to exist but no longer does.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The status of the adverse sensitivity"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.986+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/sensitivitystatus"/>
     <caseSensitive value="true"/>

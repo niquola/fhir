@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ConformanceStatementStatus</h2>
       <p>The status of this conformance statement</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/conformance-statement-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/conformance-statement-status</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>draft</td>
+          <td>
+            <a name="draft">draft</a>
+          </td>
           <td/>
           <td>This conformance statement is still under development.</td>
         </tr>
         <tr>
-          <td>active</td>
+          <td>
+            <a name="active">active</a>
+          </td>
           <td/>
           <td>This conformance statement is ready for use in production systems.</td>
         </tr>
         <tr>
-          <td>retired</td>
+          <td>
+            <a name="retired">retired</a>
+          </td>
           <td/>
           <td>This conformance statement has been withdrawn or superceded and should no longer be used.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="The status of this conformance statement"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/conformance-statement-status"/>
     <caseSensitive value="true"/>

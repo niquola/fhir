@@ -1,1 +1,1032 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"A set of answers to predefined lists of questions. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire\"><b>Questionnaire<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"The status of the questionnaire as a whole (this element modifies the meaning of other elements)\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.status\"><span style=\"text-decoration: underline\"><b>status<\/b><\/span><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#code\">code<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"observation-status.htm\">registered|interim|final|amended|cancelled|withdrawn<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"The date and/or time that this version of the questionnaire was authored.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.authored\"><b>authored<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Date this version was authored<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"The subject of the questionnaires: this is the patient that the answers apply to, but this person is not necessarily the source of information.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.subject\"><b>subject<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"patient.htm#Patient\">Patient<\/a>|<a href=\"relatedperson.htm#RelatedPerson\">RelatedPerson<\/a>)<\/span> <span style=\"color: navy\">The subject of the questionnaires<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/subject&gt;\r\n &lt;<a title=\"Person that collected the answers to the questions in the Questionnaire.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.author\"><b>author<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"practitioner.htm#Practitioner\">Practitioner<\/a>|<a href=\"patient.htm#Patient\">Patient<\/a>|<a href=\"relatedperson.htm#RelatedPerson\">RelatedPerson<\/a>)<\/span> <span style=\"color: navy\">Person that collected the answers<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/author&gt;\r\n &lt;<a title=\"The person that answered the questions about the subject. Only used when this is not the subject him/herself.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.source\"><b>source<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"patient.htm#Patient\">Patient<\/a>|<a href=\"practitioner.htm#Practitioner\">Practitioner<\/a>|<a href=\"relatedperson.htm#RelatedPerson\">RelatedPerson<\/a>)<\/span> <span style=\"color: navy\">The person that answered the questions<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/source&gt;\r\n &lt;<a title=\"Structured name for a predefined list of questions this questionnaire is responding to.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.name\"><b>name<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-questionnaire-name.htm\">Name/code for a predefined list of questions<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/name&gt;\r\n &lt;<a title=\"An identifier that identifier this specific set of answers.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.identifier\"><b>identifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Identification of this questionnaire<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/identifier&gt;\r\n &lt;<a title=\"Encounter during which this questionnaireanswers were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.encounter\"><b>encounter<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"encounter.htm#Encounter\">Encounter<\/a>)<\/span> <span style=\"color: navy\">Primary encounter during which the answers were collected<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/encounter&gt;\r\n &lt;<a title=\"Answers to questions on a questionnaire.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question\"><b>question<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Answers to questions --&gt;<\/span>\r\n  &lt;<a title=\"Structured name for the question.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.name\"><b>name<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-questionnaire-question-name.htm\">Code or name of the question<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/name&gt;\r\n  &lt;<a title=\"Text of the question as it may appear on screen or on a form.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.text\"><b>text<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Text of the question<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"Single-valued answer to the question.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.answer_x_\"><b>answer[x]<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span title=\"Inv-1: Must supply either a simple answer, a choice, data or nothing\" style=\"color: deeppink\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#decimal\">decimal<\/a>|<a href=\"datatypes.htm#integer\">integer<\/a>|<a href=\"datatypes.htm#boolean\">boolean<\/a>|\r\n              <a href=\"datatypes.htm#date\">date<\/a>|<a href=\"datatypes.htm#string\">string<\/a>|<a href=\"datatypes.htm#dateTime\">dateTime<\/a>|<a href=\"datatypes.htm#instant\">instant<\/a><\/span> <span style=\"color: navy\">Single-valued answer to the question<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/answer[x]&gt;\r\n  &lt;<a title=\"One of more selections from the list of options.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.choice\"><b>choice<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Coding\">Coding<\/a><\/span> <span style=\"color: navy\">Selected options<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/choice&gt;\r\n  &lt;<a title=\"Reference to a valueset containing the possible options.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.options_x_\"><b>options[x]<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#uri\">uri<\/a>|<a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"valueset.htm#ValueSet\">ValueSet<\/a>)<\/span> <span style=\"color: navy\">Valueset containing the possible options<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/options[x]&gt;\r\n  &lt;<a title=\"Structured answer in the form of a FHIR Resource or datatype.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.data_x_\"><b>data[x]<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span title=\"Inv-1: Must supply either a simple answer, a choice, data or nothing\" style=\"color: deeppink\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#open\">*<\/a><\/span> <span style=\"color: navy\">Structured answer<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/data[x]&gt;\r\n  &lt;<a title=\"The remark contains information about the answer given. This is additional information about the answer the author wishes to convey, but should not be used to contain information that is part of the answer itself.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.question.remarks\"><b>remarks<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Remarks about the answer given<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;/question&gt;\r\n &lt;<a title=\"A group of questions to a possibly similarly grouped set of question in the questionnaire.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group\"><b>group<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Grouped answers --&gt;<\/span>\r\n  &lt;<a title=\"Structured name for a section of a predefined list of questions this questionnaire is responding to.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group.name\"><b>name<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-questionnaire-group-name.htm\">Code or name of the section on a questionnaire<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/name&gt;\r\n  &lt;<a title=\"Header for the group, used for display purposes.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group.header\"><b>header<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Header for the group<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"Additional text for the group, used for display purposes.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group.text\"><b>text<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Additional text for the group<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"More specific subject this section's answers are about, details the subject given in Questionnaire.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group.subject\"><b>subject<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"resourcelist.htm\">Any<\/a>)<\/span> <span style=\"color: navy\">The subject this group's answers are about<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/subject&gt;\r\n  &lt;<a title=\"Set of questions within this group.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group.question\"><b>question<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\">Content as for Questionnaire.question<\/span> <span style=\"color: navy\">Questions belonging to this group<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/question&gt;\r\n  &lt;<a title=\"A sub-group within a group.\" class=\"dict\" href=\"questionnaire-definitions.htm#Questionnaire.group.group\"><b>group<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\">Content as for Questionnaire.group<\/span> <span style=\"color: navy\">Nested questionnaire group<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/group&gt;\r\n &lt;/group&gt;\r\n&lt;/Questionnaire&gt;\r\n<\/pre><\/div>"},"name":{"value":"questionnaire"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. A set of answers to predefined lists of questions. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Questionnaire"},"publish":{"value":true},"element":[{"path":{"value":"Questionnaire"},"definition":{"short":{"value":"A set of answers to predefined lists of questions"},"formal":{"value":"A set of answers to predefined lists of questions. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.status"},"definition":{"short":{"value":"registered|interim|final|amended|cancelled|withdrawn"},"formal":{"value":"The status of the questionnaire as a whole."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":true},"binding":{"value":"ObservationStatus"}}},{"path":{"value":"Questionnaire.authored"},"definition":{"short":{"value":"Date this version was authored"},"formal":{"value":"The date and/or time that this version of the questionnaire was authored."},"comments":{"value":"May be different from the update time of the resource itself, because that is the status of the collection and authoring."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.subject"},"definition":{"short":{"value":"The subject of the questionnaires"},"formal":{"value":"The subject of the questionnaires: this is the patient that the answers apply to, but this person is not necessarily the source of information."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Patient|RelatedPerson)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.author"},"definition":{"short":{"value":"Person that collected the answers"},"formal":{"value":"Person that collected the answers to the questions in the Questionnaire."},"comments":{"value":"Mapping a subject's answers to multiple choice options and determining what to put in textual answer is a matter of interpretation."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Practitioner|Patient|RelatedPerson)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.source"},"definition":{"short":{"value":"The person that answered the questions"},"formal":{"value":"The person that answered the questions about the subject. Only used when this is not the subject him/herself."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Patient|Practitioner|RelatedPerson)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.name"},"definition":{"short":{"value":"Name/code for a predefined list of questions"},"formal":{"value":"Structured name for a predefined list of questions this questionnaire is responding to."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"QuestionnaireName"}}},{"path":{"value":"Questionnaire.identifier"},"definition":{"short":{"value":"Identification of this questionnaire"},"formal":{"value":"An identifier that identifier this specific set of answers."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.encounter"},"definition":{"short":{"value":"Primary encounter during which the answers were collected"},"formal":{"value":"Encounter during which this questionnaireanswers were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Encounter)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question"},"definition":{"short":{"value":"Answers to questions"},"formal":{"value":"Answers to questions on a questionnaire."},"min":{"value":0},"max":{"value":"*"},"condition":[],"constraint":[{"key":{"value":"1"},"name":{"value":"SimpleChoiceOrData"},"severity":{"value":"error"},"human":{"value":"Must supply either a simple answer, a choice, data or nothing"},"xpath":{"value":"count(f:data) + count(f:choice) + count(f:value) <= 1"}}],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question.name"},"definition":{"short":{"value":"Code or name of the question"},"formal":{"value":"Structured name for the question."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"QuestionName"}}},{"path":{"value":"Questionnaire.question.text"},"definition":{"short":{"value":"Text of the question"},"formal":{"value":"Text of the question as it may appear on screen or on a form."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question.answer[x]"},"definition":{"short":{"value":"Single-valued answer to the question"},"formal":{"value":"Single-valued answer to the question."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"decimal"}},{"code":{"value":"integer"}},{"code":{"value":"boolean"}},{"code":{"value":"date"}},{"code":{"value":"string"}},{"code":{"value":"dateTime"}},{"code":{"value":"instant"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question.choice"},"definition":{"short":{"value":"Selected options"},"formal":{"value":"One of more selections from the list of options."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Coding"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question.options[x]"},"definition":{"short":{"value":"Valueset containing the possible options"},"formal":{"value":"Reference to a valueset containing the possible options."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"uri"}},{"code":{"value":"Resource(ValueSet)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question.data[x]"},"definition":{"short":{"value":"Structured answer"},"formal":{"value":"Structured answer in the form of a FHIR Resource or datatype."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"*"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.question.remarks"},"definition":{"short":{"value":"Remarks about the answer given"},"formal":{"value":"The remark contains information about the answer given. This is additional information about the answer the author wishes to convey, but should not be used to contain information that is part of the answer itself."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.group"},"definition":{"short":{"value":"Grouped answers"},"formal":{"value":"A group of questions to a possibly similarly grouped set of question in the questionnaire."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.group.name"},"definition":{"short":{"value":"Code or name of the section on a questionnaire"},"formal":{"value":"Structured name for a section of a predefined list of questions this questionnaire is responding to."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"QuestionnaireGroupName"}}},{"path":{"value":"Questionnaire.group.header"},"definition":{"short":{"value":"Header for the group"},"formal":{"value":"Header for the group, used for display purposes."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.group.text"},"definition":{"short":{"value":"Additional text for the group"},"formal":{"value":"Additional text for the group, used for display purposes."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.group.subject"},"definition":{"short":{"value":"The subject this group's answers are about"},"formal":{"value":"More specific subject this section's answers are about, details the subject given in Questionnaire."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Any)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.group.question"},"definition":{"short":{"value":"Questions belonging to this group"},"formal":{"value":"Set of questions within this group."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"@Questionnaire.question"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Questionnaire.group.group"},"definition":{"short":{"value":"Nested questionnaire group"},"formal":{"value":"A sub-group within a group."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"@Questionnaire.group"}}],"condition":[],"isModifier":{"value":false}}}]}],"binding":[{"name":{"value":"QuestionnaireName"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/questionnaire-name"}}},{"name":{"value":"QuestionName"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/questionnaire-question-name"}}},{"name":{"value":"QuestionnaireGroupName"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/questionnaire-group-name"}}},{"name":{"value":"ObservationStatus"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/observation-status"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire\"><b>Questionnaire</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"The lifecycle status of the questionnaire as a whole (this element modifies the meaning of other elements)\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.status\"><span style=\"text-decoration: underline\"><b>status</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"questionnaire-status.html\">draft | published | retired | in progress | completed | amended<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"The date and/or time that this version of the questionnaire was authored.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.authored\"><b>authored</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Date this version was authored<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"The subject of the questionnaires: this is the patient that the answers apply to, but this person is not necessarily the source of information.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>|<a href=\"relatedperson.html#RelatedPerson\">RelatedPerson</a>)</span> <span style=\"color: navy\">The subject of the questions<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n &lt;<a title=\"Person who received the answers to the questions in the Questionnaire and recorded them in the system.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.author\"><b>author</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"practitioner.html#Practitioner\">Practitioner</a>|<a href=\"patient.html#Patient\">Patient</a>|<a href=\"relatedperson.html#RelatedPerson\">RelatedPerson</a>)</span> <span style=\"color: navy\">\r\n     Person who received and recorded the answers<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/author&gt;\r\n &lt;<a title=\"The person who answered the questions about the subject. Only used when this is not the subject him/herself.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.source\"><b>source</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>|<a href=\"practitioner.html#Practitioner\">Practitioner</a>|<a href=\"relatedperson.html#RelatedPerson\">RelatedPerson</a>)</span> <span style=\"color: navy\">\r\n     The person who answered the questions<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/source&gt;\r\n &lt;<a title=\"Structured name for a predefined list of questions this questionnaire is responding to.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.name\"><b>name</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-questionnaire-name.html\">Name/code for a predefined list of questions<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/name&gt;\r\n &lt;<a title=\"This records identifiers associated with this question/answer set that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">External Ids for this questionnaire<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n &lt;<a title=\"Encounter during which this questionnaireanswers were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.encounter\"><b>encounter</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"encounter.html#Encounter\">Encounter</a>)</span> <span style=\"color: navy\">\r\n     Primary encounter during which the answers were collected<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/encounter&gt;\r\n &lt;<a title=\"A group of questions to a possibly similarly grouped set of question in the questionnaire.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group\"><b>group</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..1</b></span> Grouped questions --&gt;</span>\r\n  &lt;<a title=\"Structured name for a section of a predefined list of questions this questionnaire is responding to.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.name\"><b>name</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-questionnaire-group-name.html\">Code or name of the section on a questionnaire</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/name&gt;\r\n  &lt;<a title=\"Text that is displayed above the contents of the group.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.header\"><b>header</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Text that is displayed above the contents of the group</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Additional text for the group, used for display purposes.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.text\"><b>text</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Additional text for the group</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Whether the contents of this group have a meaningful order (this element modifies the meaning of other elements)\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.ordered\"><span style=\"text-decoration: underline\"><b>ordered</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#boolean\">boolean</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Whether the contents of this group have a meaningful order</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"More specific subject this section's answers are about, details the subject given in Questionnaire.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"resourcelist.html\">Any</a>)</span> <span style=\"color: navy\">The subject this group's answers are about</span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n  &lt;<a title=\"A sub-group within a group.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.group\"><b>group</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span title=\"Inv-3: Groups may either contain questions or groups but not both\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..*</b></span> <span style=\"color: darkgreen\">Content as for Questionnaire.group</span> <span style=\"color: navy\">Nested questionnaire group</span><span style=\"color: Gray\"> --&gt;</span>&lt;/group&gt;\r\n  &lt;<a title=\"Set of questions within this group.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question\"><b>question</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span title=\"Inv-3: Groups may either contain questions or groups but not both\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..*</b></span> Questions in this group --&gt;</span>\r\n   &lt;<a title=\"Structured name for the question that identifies this question within the Questionnaire or Group.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.name\"><b>name</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span title=\"Inv-2: Must supply a name, a question's text or both\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-questionnaire-question-name.html\">Code or name of the question</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/name&gt;\r\n   &lt;<a title=\"Text of the question as it is shown to the user.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.text\"><b>text</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span title=\"Inv-2: Must supply a name, a question's text or both\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..1</b></span> <span style=\"color: navy\">Text of the question as it is shown to the user</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"Single-valued answer to the question.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.answer_x_\"><b>answer[x]</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span title=\"Inv-1: Must supply either a simple answer, a choice, data or nothing\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#decimal\">decimal</a>|<a href=\"datatypes.html#integer\">integer</a>|<a href=\"datatypes.html#boolean\">boolean</a>|<a href=\"datatypes.html#date\">date</a>|<a href=\"datatypes.html#string\">string</a>|<a href=\"datatypes.html#dateTime\">dateTime</a>|<a href=\"datatypes.html#instant\">instant</a></span> <span style=\"color: navy\">\r\n       Single-valued answer to the question</span><span style=\"color: Gray\"> --&gt;</span>&lt;/answer[x]&gt;\r\n   &lt;<a title=\"Selections made by the user from the list of options.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.choice\"><b>choice</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span title=\"Inv-1: Must supply either a simple answer, a choice, data or nothing\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Coding\">Coding</a></span> <span style=\"color: navy\">Selected options</span><span style=\"color: Gray\"> --&gt;</span>&lt;/choice&gt;\r\n   &lt;<a title=\"Reference to a valueset containing the possible options.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.options\"><b>options</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"valueset.html#ValueSet\">ValueSet</a>)</span> <span style=\"color: navy\">Valueset containing the possible options</span><span style=\"color: Gray\"> --&gt;</span>&lt;/options&gt;\r\n   &lt;<a title=\"Structured answer in the form of a FHIR Resource or datatype.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.data_x_\"><b>data[x]</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span title=\"Inv-1: Must supply either a simple answer, a choice, data or nothing\" style=\"color: brown\"><b><img alt=\"??\" src=\"lock.png\"/> 0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#open\">*</a></span> <span style=\"color: navy\">Structured answer</span><span style=\"color: Gray\"> --&gt;</span>&lt;/data[x]&gt;\r\n   &lt;<a title=\"The remark contains information about the answer given. This is additional information about the answer the author wishes to convey, but should not be used to contain information that is part of the answer itself.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.remarks\"><b>remarks</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Remarks about the answer given</span><span style=\"color: Gray\"> --&gt;</span>\r\n   &lt;<a title=\"Nested group, containing nested question for this question.\" class=\"dict\" href=\"questionnaire-definitions.html#Questionnaire.group.question.group\"><b>group</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\">Content as for Questionnaire.group</span> <span style=\"color: navy\">Nested questionnaire group</span><span style=\"color: Gray\"> --&gt;</span>&lt;/group&gt;\r\n  &lt;/question&gt;\r\n &lt;/group&gt;\r\n&lt;/Questionnaire&gt;\r\n</pre></div>"
+  },
+  "name": "questionnaire",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Questionnaire",
+      "publish": true,
+      "element": [
+        {
+          "path": "Questionnaire",
+          "definition": {
+            "short": "A structured set of questions and their answers",
+            "formal": "A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.status",
+          "definition": {
+            "short": "draft | published | retired | in progress | completed | amended",
+            "formal": "The lifecycle status of the questionnaire as a whole.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "QuestionnaireStatus",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/questionnaire-status"
+              }
+            }
+          }
+        },
+        {
+          "path": "Questionnaire.status.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.authored",
+          "definition": {
+            "short": "Date this version was authored",
+            "formal": "The date and/or time that this version of the questionnaire was authored.",
+            "comments": "May be different from the update time of the resource itself, because that is the status of the collection and authoring.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.authored.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.subject",
+          "definition": {
+            "short": "The subject of the questions",
+            "formal": "The subject of the questionnaires: this is the patient that the answers apply to, but this person is not necessarily the source of information.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient|RelatedPerson)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.author",
+          "definition": {
+            "short": "Person who received and recorded the answers",
+            "formal": "Person who received the answers to the questions in the Questionnaire and recorded them in the system.",
+            "comments": "Mapping a subject's answers to multiple choice options and determining what to put in textual answer is a matter of interpretation.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Practitioner|Patient|RelatedPerson)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.author.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.source",
+          "definition": {
+            "short": "The person who answered the questions",
+            "formal": "The person who answered the questions about the subject. Only used when this is not the subject him/herself.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient|Practitioner|RelatedPerson)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.source.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.name",
+          "definition": {
+            "short": "Name/code for a predefined list of questions",
+            "formal": "Structured name for a predefined list of questions this questionnaire is responding to.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "QuestionnaireName",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/questionnaire-name"
+              }
+            }
+          }
+        },
+        {
+          "path": "Questionnaire.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.identifier",
+          "definition": {
+            "short": "External Ids for this questionnaire",
+            "formal": "This records identifiers associated with this question/answer set that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": ".id"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Questionnaire.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.encounter",
+          "definition": {
+            "short": "Primary encounter during which the answers were collected",
+            "formal": "Encounter during which this questionnaireanswers were collected. When there were multiple encounters, this is the one considered most relevant to the context of the answers.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Encounter)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.encounter.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group",
+          "definition": {
+            "short": "Grouped questions",
+            "formal": "A group of questions to a possibly similarly grouped set of question in the questionnaire.",
+            "comments": "The Questionnaire itself has one \"root\" group with the actual contents of the Questionnaire.",
+            "min": "0",
+            "max": "1",
+            "constraint": [
+              {
+                "key": "3",
+                "name": "GroupHaveSubOrQuestions",
+                "severity": "error",
+                "human": "Groups may either contain questions or groups but not both",
+                "xpath": "not(exists(f:group) and exists(f:question))"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.name",
+          "definition": {
+            "short": "Code or name of the section on a questionnaire",
+            "formal": "Structured name for a section of a predefined list of questions this questionnaire is responding to.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "QuestionnaireGroupName",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/questionnaire-group-name"
+              }
+            }
+          }
+        },
+        {
+          "path": "Questionnaire.group.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.header",
+          "definition": {
+            "short": "Text that is displayed above the contents of the group",
+            "formal": "Text that is displayed above the contents of the group.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.header.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.text",
+          "definition": {
+            "short": "Additional text for the group",
+            "formal": "Additional text for the group, used for display purposes.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.text.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.ordered",
+          "definition": {
+            "short": "Whether the contents of this group have a meaningful order",
+            "formal": "Whether the contents of this group have a meaningful order.",
+            "comments": "When ordered is not given, false is assumed.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "isModifier": true
+          }
+        },
+        {
+          "path": "Questionnaire.group.ordered.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.subject",
+          "definition": {
+            "short": "The subject this group's answers are about",
+            "formal": "More specific subject this section's answers are about, details the subject given in Questionnaire.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Any)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.group",
+          "definition": {
+            "short": "Nested questionnaire group",
+            "formal": "A sub-group within a group.",
+            "min": "0",
+            "max": "*",
+            "nameReference": "Questionnaire.group",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.group.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question",
+          "definition": {
+            "short": "Questions in this group",
+            "formal": "Set of questions within this group.",
+            "min": "0",
+            "max": "*",
+            "constraint": [
+              {
+                "key": "2",
+                "name": "MustHaveNameOrText",
+                "severity": "error",
+                "human": "Must supply a name, a question's text or both",
+                "xpath": "count(f:name) + count(f:text) >= 1"
+              },
+              {
+                "key": "1",
+                "name": "SimpleChoiceOrData",
+                "severity": "error",
+                "human": "Must supply either a simple answer, a choice, data or nothing",
+                "xpath": "count(f:data) + count(f:choice) + count(f:answer) <= 1"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.name",
+          "definition": {
+            "short": "Code or name of the question",
+            "formal": "Structured name for the question that identifies this question within the Questionnaire or Group.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "QuestionName",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/questionnaire-question-name"
+              }
+            }
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.text",
+          "definition": {
+            "short": "Text of the question as it is shown to the user",
+            "formal": "Text of the question as it is shown to the user.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.text.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.answer[x]",
+          "definition": {
+            "short": "Single-valued answer to the question",
+            "formal": "Single-valued answer to the question.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "decimal"
+              },
+              {
+                "code": "integer"
+              },
+              {
+                "code": "boolean"
+              },
+              {
+                "code": "date"
+              },
+              {
+                "code": "string"
+              },
+              {
+                "code": "dateTime"
+              },
+              {
+                "code": "instant"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.answer[x].extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.choice",
+          "definition": {
+            "short": "Selected options",
+            "formal": "Selections made by the user from the list of options.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Coding"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.choice.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.options",
+          "definition": {
+            "short": "Valueset containing the possible options",
+            "formal": "Reference to a valueset containing the possible options.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(ValueSet)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.options.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.data[x]",
+          "definition": {
+            "short": "Structured answer",
+            "formal": "Structured answer in the form of a FHIR Resource or datatype.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "*"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.data[x].extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.remarks",
+          "definition": {
+            "short": "Remarks about the answer given",
+            "formal": "The remark contains information about the answer given. This is additional information about the answer the author wishes to convey, but should not be used to contain information that is part of the answer itself.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.remarks.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.group",
+          "definition": {
+            "short": "Nested questionnaire group",
+            "formal": "Nested group, containing nested question for this question.",
+            "min": "0",
+            "max": "*",
+            "nameReference": "Questionnaire.group",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Questionnaire.group.question.group.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

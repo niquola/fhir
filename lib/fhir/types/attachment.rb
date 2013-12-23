@@ -26,3 +26,4 @@ class Fhir::Attachment < Fhir::DataType
   attribute :title, String
 end
 
+Fhir.load_extension('attachment')

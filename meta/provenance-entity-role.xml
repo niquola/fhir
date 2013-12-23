@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ProvenanceEntityRole</h2>
       <p>How an entity was used in an activity</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/provenance-entity-role</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/provenance-entity-role</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>derivation</td>
+          <td>
+            <a name="derivation">derivation</a>
+          </td>
           <td/>
           <td>A transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a preexisting entity.</td>
         </tr>
         <tr>
-          <td>..revision</td>
+          <td>..
+            <a name="revision">revision</a>
+          </td>
           <td/>
           <td>A derivation for which the resulting entity is a revised version of some original.</td>
         </tr>
         <tr>
-          <td>..quotation</td>
+          <td>..
+            <a name="quotation">quotation</a>
+          </td>
           <td/>
           <td>The repeat of (some or all of) an entity, such as text or image, by someone who may or may not be its original author.</td>
         </tr>
         <tr>
-          <td>..source</td>
+          <td>..
+            <a name="source">source</a>
+          </td>
           <td/>
           <td>A primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic&#39;s study, without benefit from hindsight.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="How an entity was used in an activity"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/provenance-entity-role"/>
     <caseSensitive value="true"/>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SecurityEventOutcome</h2>
       <p>Indicates whether the event succeeded or failed</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/security-event-outcome</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/security-event-outcome</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>0</td>
+          <td>
+            <a name="0">0</a>
+          </td>
           <td>Success</td>
           <td>The operation completed successfully (whether with warnings or not).</td>
         </tr>
         <tr>
-          <td>4</td>
+          <td>
+            <a name="4">4</a>
+          </td>
           <td>Minor failure</td>
           <td>The action was not successful due to some kind of catered for error (often equivalent to an HTTP 400 response).</td>
         </tr>
         <tr>
-          <td>8</td>
+          <td>
+            <a name="8">8</a>
+          </td>
           <td>Serious failure</td>
           <td>The action was not successful due to some kind of unexpected error (often equivalent to an HTTP 500 response).</td>
         </tr>
         <tr>
-          <td>12</td>
+          <td>
+            <a name="12">12</a>
+          </td>
           <td>Major failure</td>
           <td>An error of such magnitude occurred that the system is not longer available for use (i.e. the system died).</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="Indicates whether the event succeeded or failed"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/security-event-outcome"/>
     <caseSensitive value="true"/>

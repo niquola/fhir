@@ -5,6 +5,9 @@ class Fhir::OrderResponse < Fhir::Resource
     validates_presence_of :code
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -23,14 +26,15 @@ class Fhir::OrderResponse < Fhir::Resource
   # How much the request will/did cost
   attribute :cost, Fhir::Money
 
-  # The status of the response
+  # pending | review | rejected | error | accepted | cancelled
+  # | aborted | complete
   attribute :code, Fhir::Code
 
   # Additional description of the response
   attribute :description, String
 
   # Details of the outcome of performing the order
-  resource_references :fulfillments, [Fhir::Resource]
+  resource_references :fulfillment, [Fhir::Resource]
 end
 
 

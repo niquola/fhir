@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MessageEvent</h2>
       <p>One of the message events defined as part of FHIR</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/message-events</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/message-events</p>
       <table>
         <tr>
           <td>
@@ -20,47 +20,79 @@
           </td>
         </tr>
         <tr>
-          <td>MedicationAdministration-Complete</td>
+          <td>
+            <a name="MedicationAdministration-Complete">MedicationAdministration-Complete</a>
+          </td>
           <td/>
           <td>Change the status of a Medication Administration to show that it is complete.</td>
         </tr>
         <tr>
-          <td>MedicationAdministration-Nullification</td>
+          <td>
+            <a name="MedicationAdministration-Nullification">MedicationAdministration-Nullification</a>
+          </td>
           <td/>
           <td>Someone wishes to record that the record of administration of a medication is in error and should be ignored.</td>
         </tr>
         <tr>
-          <td>MedicationAdministration-Recording</td>
+          <td>
+            <a name="MedicationAdministration-Recording">MedicationAdministration-Recording</a>
+          </td>
           <td/>
           <td>Indicates that a medication has been recorded against the patient&#39;s record.</td>
         </tr>
         <tr>
-          <td>MedicationAdministration-Update</td>
+          <td>
+            <a name="MedicationAdministration-Update">MedicationAdministration-Update</a>
+          </td>
           <td/>
           <td>Update a Medication Administration record.</td>
         </tr>
         <tr>
-          <td>admin-notify</td>
+          <td>
+            <a name="admin-notify">admin-notify</a>
+          </td>
           <td/>
-          <td>Notification of a change to an administrative resource (either create or update). Note that there is no delete, though some administrative resources have status or period elements for this use.</td>
+          <td>Notification that a patient or other administrative resource as been created or updated.</td>
         </tr>
         <tr>
-          <td>diagnosticreport-provide</td>
+          <td>
+            <a name="diagnosticreport-provide">diagnosticreport-provide</a>
+          </td>
           <td/>
           <td>Provide a diagnostic report, or update a previously provided diagnostic report.</td>
         </tr>
         <tr>
-          <td>observation-provide</td>
+          <td>
+            <a name="observation-provide">observation-provide</a>
+          </td>
           <td/>
           <td>Provide a simple observation or update a previously provided simple observation.</td>
         </tr>
         <tr>
-          <td>query</td>
+          <td>
+            <a name="patient-link">patient-link</a>
+          </td>
+          <td/>
+          <td>Notification that two patient records actually identify the same patient.</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="patient-unlink">patient-unlink</a>
+          </td>
+          <td/>
+          <td>Notification that previous advice that two patient records concern the same patient is now considered incorrect.</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="query">query</a>
+          </td>
           <td/>
           <td>Request to perform a query according to the attached query resource.</td>
         </tr>
         <tr>
-          <td>query-response</td>
+          <td>
+            <a name="query-response">query-response</a>
+          </td>
           <td/>
           <td>Response with the result of processing the query.</td>
         </tr>
@@ -80,7 +112,7 @@
   </telecom>
   <description value="One of the message events defined as part of FHIR"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/message-events"/>
     <caseSensitive value="true"/>
@@ -102,7 +134,7 @@
     </concept>
     <concept>
       <code value="admin-notify"/>
-      <definition value="Notification of a change to an administrative resource (either create or update). Note that there is no delete, though some administrative resources have status or period elements for this use."/>
+      <definition value="Notification that a patient or other administrative resource as been created or updated."/>
     </concept>
     <concept>
       <code value="diagnosticreport-provide"/>
@@ -111,6 +143,14 @@
     <concept>
       <code value="observation-provide"/>
       <definition value="Provide a simple observation or update a previously provided simple observation."/>
+    </concept>
+    <concept>
+      <code value="patient-link"/>
+      <definition value="Notification that two patient records actually identify the same patient."/>
+    </concept>
+    <concept>
+      <code value="patient-unlink"/>
+      <definition value="Notification that previous advice that two patient records concern the same patient is now considered incorrect."/>
     </concept>
     <concept>
       <code value="query"/>

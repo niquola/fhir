@@ -1,1 +1,34 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>Media Type Code<\/h2><p>Media Type Code<\/p><p><b>Copyright Statement:<\/b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association<\/p><p>This value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include these codes as defined in <a href=\"valueset-dicom-dcim.htm\">http://nema.org/dicom/dcid<\/a><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>110030<\/td><td>USB Disk Emulation<\/td><td>A device that connects using the USB hard drive interface.  These may be USB-Sticks, portable hard drives, and other technologies.<\/td><\/tr><tr><td>110031<\/td><td>Email<\/td><td>Email and email attachments used as a media for data transport.<\/td><\/tr><tr><td>110032<\/td><td>CD<\/td><td>CD-R, CD-ROM, and CD-RW media used for data transport.<\/td><\/tr><tr><td>110033<\/td><td>DVD<\/td><td>DVD, DVD-RAM, and other DVD formatted media used for data transport.<\/td><\/tr><tr><td>110034<\/td><td>Compact Flash<\/td><td>Media that comply with the Compact Flash standard.<\/td><\/tr><tr><td>110035<\/td><td>Multi-media Card<\/td><td>Media that comply with the Multi-media Card standard.<\/td><\/tr><tr><td>110036<\/td><td>Secure Digital Card<\/td><td>Media that comply with the Secure Digital Card standard.<\/td><\/tr><tr><td>110037<\/td><td>URI<\/td><td>URI Identifier for network or other resource, see RFC 3968<\/td><\/tr><tr><td>110010<\/td><td>Film<\/td><td>Film type of output<\/td><\/tr><tr><td>110038<\/td><td>Paper Document<\/td><td>Any paper or similar document.<\/td><\/tr><\/table><\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/dicm-405-mediatype"},"version":{"value":"20100826"},"name":{"value":"Media Type Code"},"publisher":{"value":"NEMA/DICOM"},"description":{"value":"Media Type Code"},"copyright":{"value":"These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association"},"status":{"value":"active"},"date":{"value":"2010-08-26"},"compose":{"include":[{"system":{"value":"http://nema.org/dicom/dcid"},"code":[{"value":"110030"},{"value":"110031"},{"value":"110032"},{"value":"110033"},{"value":"110034"},{"value":"110035"},{"value":"110036"},{"value":"110037"},{"value":"110010"},{"value":"110038"}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Media Type Code</h2><p>Media Type Code</p><p><b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include these codes as defined in <a href=\"valueset-dicom-dcim.html\">http://nema.org/dicom/dcid</a><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>110030</td><td>USB Disk Emulation</td><td>A device that connects using the USB hard drive interface.  These may be USB-Sticks, portable hard drives, and other technologies.</td></tr><tr><td>110031</td><td>Email</td><td>Email and email attachments used as a media for data transport.</td></tr><tr><td>110032</td><td>CD</td><td>CD-R, CD-ROM, and CD-RW media used for data transport.</td></tr><tr><td>110033</td><td>DVD</td><td>DVD, DVD-RAM, and other DVD formatted media used for data transport.</td></tr><tr><td>110034</td><td>Compact Flash</td><td>Media that comply with the Compact Flash standard.</td></tr><tr><td>110035</td><td>Multi-media Card</td><td>Media that comply with the Multi-media Card standard.</td></tr><tr><td>110036</td><td>Secure Digital Card</td><td>Media that comply with the Secure Digital Card standard.</td></tr><tr><td>110037</td><td>URI</td><td>URI Identifier for network or other resource, see RFC 3968</td></tr><tr><td>110010</td><td>Film</td><td>Film type of output</td></tr><tr><td>110038</td><td>Paper Document</td><td>Any paper or similar document.</td></tr></table></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/dicm-405-mediatype",
+  "version": "20100826",
+  "name": "Media Type Code",
+  "publisher": "NEMA/DICOM",
+  "description": "Media Type Code",
+  "copyright": "These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association",
+  "status": "active",
+  "date": "2010-08-26",
+  "compose": {
+    "include": [
+      {
+        "system": "http://nema.org/dicom/dcid",
+        "code": [
+          "110030",
+          "110031",
+          "110032",
+          "110033",
+          "110034",
+          "110035",
+          "110036",
+          "110037",
+          "110010",
+          "110038"
+        ]
+      }
+    ]
+  }
+}

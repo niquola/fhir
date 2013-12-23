@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>AnswerFormat</h2>
       <p>The expected format of an answer</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/answer-format</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/answer-format</p>
       <table>
         <tr>
           <td>
@@ -20,57 +20,79 @@
           </td>
         </tr>
         <tr>
-          <td>decimal</td>
+          <td>
+            <a name="decimal">decimal</a>
+          </td>
           <td/>
           <td>Answer is a floating point number.</td>
         </tr>
         <tr>
-          <td>integer</td>
+          <td>
+            <a name="integer">integer</a>
+          </td>
           <td/>
           <td>Answer is an integer.</td>
         </tr>
         <tr>
-          <td>boolean</td>
+          <td>
+            <a name="boolean">boolean</a>
+          </td>
           <td/>
           <td>Answer is a yes/no answer.</td>
         </tr>
         <tr>
-          <td>date</td>
+          <td>
+            <a name="date">date</a>
+          </td>
           <td/>
           <td>Answer is a date.</td>
         </tr>
         <tr>
-          <td>string</td>
+          <td>
+            <a name="string">string</a>
+          </td>
           <td/>
           <td>Answer is a free-text entry.</td>
         </tr>
         <tr>
-          <td>dateTime</td>
+          <td>
+            <a name="dateTime">dateTime</a>
+          </td>
           <td/>
           <td>Answer is a date and time.</td>
         </tr>
         <tr>
-          <td>instant</td>
+          <td>
+            <a name="instant">instant</a>
+          </td>
           <td/>
           <td>Answer is a system timestamp.</td>
         </tr>
         <tr>
-          <td>single-choice</td>
+          <td>
+            <a name="single-choice">single-choice</a>
+          </td>
           <td/>
           <td>Answer is a single choice from the options.</td>
         </tr>
         <tr>
-          <td>multiple-choice</td>
+          <td>
+            <a name="multiple-choice">multiple-choice</a>
+          </td>
           <td/>
           <td>Answer is one or more choices from the options.</td>
         </tr>
         <tr>
-          <td>open-single-choice</td>
+          <td>
+            <a name="open-single-choice">open-single-choice</a>
+          </td>
           <td/>
           <td>Answer is a single choice from the options or a free-text entry.</td>
         </tr>
         <tr>
-          <td>open-multiple-choice</td>
+          <td>
+            <a name="open-multiple-choice">open-multiple-choice</a>
+          </td>
           <td/>
           <td>Answer is one or more choices from the options and/or a free-text entry.</td>
         </tr>
@@ -90,7 +112,7 @@
   </telecom>
   <description value="The expected format of an answer"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/answer-format"/>
     <caseSensitive value="true"/>

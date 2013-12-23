@@ -20,12 +20,12 @@
   </event>
   <participant>
     <userId value="95"/>
-    <authId value="601847123"/>
+    <altId value="601847123"/>
     <name value="Grahame Grieve"/>
     <requestor value="true"/>
     <network>
       <identifier value="127.0.0.1"/>
-      <type value="ip"/>
+      <type value="2"/>
     </network>
   </participant>
   <source>

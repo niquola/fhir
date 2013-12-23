@@ -1,1 +1,32 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>Media Collection View/Projection<\/h2><p>Codes defined in Snomed-CT that can be used to record Media Recording views<\/p><p>This value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include codes from http://snomed.info/id where concept  is-a  260419006<\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/media-view"},"name":{"value":"Media Collection View/Projection"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"Codes defined in Snomed-CT that can be used to record Media Recording views"},"status":{"value":"draft"},"compose":{"include":[{"system":{"value":"http://snomed.info/id"},"filter":[{"property":{"value":"concept"},"op":{"value":"is-a"},"value":{"value":"260419006"}}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Media Collection View/Projection</h2><p>Codes defined in SNOMED CT that can be used to record Media Recording views</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include codes from http://snomed.info/sct where concept  is-a  260419006</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/media-view",
+  "name": "Media Collection View/Projection",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Codes defined in SNOMED CT that can be used to record Media Recording views",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "260419006"
+          }
+        ]
+      }
+    ]
+  }
+}

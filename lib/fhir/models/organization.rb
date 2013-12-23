@@ -4,11 +4,14 @@
 # corporations, departments, community groups, healthcare
 # practice groups, etc.
 class Fhir::Organization < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
-  # Identifier for this organization
-  attribute :identifiers, Array[Fhir::Identifier]
+  # Identifies this organization  across multiple systems
+  attribute :identifier, Array[Fhir::Identifier]
 
   # Name used for the organization
   attribute :name, String
@@ -17,16 +20,19 @@ class Fhir::Organization < Fhir::Resource
   attribute :type, Fhir::CodeableConcept
 
   # A contact detail for the organization
-  attribute :telecoms, Array[Fhir::Contact]
+  attribute :telecom, Array[Fhir::Contact]
 
   # An address for the organization
-  attribute :addresses, Array[Fhir::Address]
+  attribute :address, Array[Fhir::Address]
 
   # The organization of which this organization forms a part
   resource_reference :part_of, [Fhir::Organization]
 
   # Contact for the organization for a certain purpose.
   class Contact < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # The type of contact
     attribute :purpose, Fhir::CodeableConcept
 
@@ -34,7 +40,7 @@ class Fhir::Organization < Fhir::Resource
     attribute :name, Fhir::HumanName
 
     # Contact details (telephone, email, etc)  for a contact
-    attribute :telecoms, Array[Fhir::Contact]
+    attribute :telecom, Array[Fhir::Contact]
 
     # Visiting or postal addresses for the contact
     attribute :address, Fhir::Address
@@ -43,7 +49,10 @@ class Fhir::Organization < Fhir::Resource
     attribute :gender, Fhir::CodeableConcept
   end
 
-  attribute :contacts, Array[Contact]
+  attribute :contact, Array[Contact]
+
+  # Location(s) the organization uses to provide services
+  resource_references :location, [Fhir::Location]
 
   # Whether the organization's record is still in active use
   attribute :active, Boolean

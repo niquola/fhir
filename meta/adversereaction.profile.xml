@@ -3,21 +3,22 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="Specific reactions to a substance." class="dict" href="adversereaction-definitions.htm#AdverseReaction"><b>AdverseReaction</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="When the reaction occurred." class="dict" href="adversereaction-definitions.htm#AdverseReaction.reactionDate"><b>reactionDate</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the reaction occurred</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The subject of the adverse reaction." class="dict" href="adversereaction-definitions.htm#AdverseReaction.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="patient.htm#Patient">Patient</a>)</span> <span style="color: navy">The subject of the adverse reaction</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
- &lt;<a title="To say that a reaction to substance did not occur (this element modifies the meaning of other elements)" class="dict" href="adversereaction-definitions.htm#AdverseReaction.didNotOccurFlag"><span style="text-decoration: underline"><b>didNotOccurFlag</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">To say that a reaction to substance did not occur</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Who recorded the reaction." class="dict" href="adversereaction-definitions.htm#AdverseReaction.recorder"><b>recorder</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>|<a href="patient.htm#Patient">Patient</a>)</span> <span style="color: navy">Who recorded the reaction</span><span style="color: Gray"> --&gt;</span>&lt;/recorder&gt;
- &lt;<a title="The signs and symptoms that were observed as part of the reaction." class="dict" href="adversereaction-definitions.htm#AdverseReaction.symptom"><b>symptom</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> The signs and symptoms that were observed as part of the reaction --&gt;</span>
-  &lt;<a title="Indicates the specific sign or symptom that was observed." class="dict" href="adversereaction-definitions.htm#AdverseReaction.symptom.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="http://apps.who.int/classifications/icd10/browse/2010/en.htm">Indicates the specific sign or symptom that was observed</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
-  &lt;<a title="The severity of the sign or symptom." class="dict" href="adversereaction-definitions.htm#AdverseReaction.symptom.severity"><b>severity</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="reactionSeverity.htm">The severity of the sign or symptom</a></span><span style="color: Gray"> --&gt;</span>
+&lt;<a title="Specific reactions to a substance." class="dict" href="adversereaction-definitions.html#AdverseReaction"><b>AdverseReaction</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)." class="dict" href="adversereaction-definitions.html#AdverseReaction.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External Ids for this adverse reaction</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="When the reaction occurred." class="dict" href="adversereaction-definitions.html#AdverseReaction.reactionDate"><b>reactionDate</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the reaction occurred</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The subject of the adverse reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">The subject of the adverse reaction</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="To say that a reaction to substance did not occur (this element modifies the meaning of other elements)" class="dict" href="adversereaction-definitions.html#AdverseReaction.didNotOccurFlag"><span style="text-decoration: underline"><b>didNotOccurFlag</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">To say that a reaction to substance did not occur</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Who recorded the reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.recorder"><b>recorder</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Who recorded the reaction</span><span style="color: Gray"> --&gt;</span>&lt;/recorder&gt;
+ &lt;<a title="The signs and symptoms that were observed as part of the reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.symptom"><b>symptom</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> The signs and symptoms that were observed as part of the reaction --&gt;</span>
+  &lt;<a title="Indicates the specific sign or symptom that was observed." class="dict" href="adversereaction-definitions.html#AdverseReaction.symptom.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="http://apps.who.int/classifications/icd10/browse/2010/en.html">Indicates the specific sign or symptom that was observed</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="The severity of the sign or symptom." class="dict" href="adversereaction-definitions.html#AdverseReaction.symptom.severity"><b>severity</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="reactionSeverity.html">severe | serious | moderate | minor</a></span><span style="color: Gray"> --&gt;</span>
  &lt;/symptom&gt;
- &lt;<a title="An exposure to a substance that preceded a reaction occurrence." class="dict" href="adversereaction-definitions.htm#AdverseReaction.exposure"><b>exposure</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> An exposure to a substance that preceded a reaction occurrence --&gt;</span>
-  &lt;<a title="When the exposure occurred." class="dict" href="adversereaction-definitions.htm#AdverseReaction.exposure.exposureDate"><b>exposureDate</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the exposure occurred</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Drug Administration, Immunization, Coincidental." class="dict" href="adversereaction-definitions.htm#AdverseReaction.exposure.exposureType"><b>exposureType</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="exposureType.htm">The type of exposure</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="A statement of how confident that the recorder was that this exposure caused the reaction." class="dict" href="adversereaction-definitions.htm#AdverseReaction.exposure.causalityExpectation"><b>causalityExpectation</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="causalityExpectation.htm">A statement of how confident that the recorder was that this exposure caused the reaction</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Substance(s) that is presumed to have caused the adverse reaction." class="dict" href="adversereaction-definitions.htm#AdverseReaction.exposure.substance"><b>substance</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="substance.htm#Substance">Substance</a>)</span> <span style="color: navy">Substance(s) that is presumed to have caused the adverse reaction</span><span style="color: Gray"> --&gt;</span>&lt;/substance&gt;
+ &lt;<a title="An exposure to a substance that preceded a reaction occurrence." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure"><b>exposure</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> An exposure to a substance that preceded a reaction occurrence --&gt;</span>
+  &lt;<a title="When the exposure occurred." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.exposureDate"><b>exposureDate</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When the exposure occurred</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The type of exposure: Drug Administration, Immunization, Coincidental." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.exposureType"><b>exposureType</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="exposureType.html">drugadmin | immuniz | coincidental</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A statement of how confident that the recorder was that this exposure caused the reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.causalityExpectation"><b>causalityExpectation</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="causalityExpectation.html">likely | unlikely | confirmed | unknown</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Substance(s) that is presumed to have caused the adverse reaction." class="dict" href="adversereaction-definitions.html#AdverseReaction.exposure.substance"><b>substance</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="substance.html#Substance">Substance</a>)</span> <span style="color: navy">Presumed causative substance</span><span style="color: Gray"> --&gt;</span>&lt;/substance&gt;
  &lt;/exposure&gt;
 &lt;/AdverseReaction&gt;
 </pre></div>
@@ -26,7 +27,17 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. Specific reactions to a substance."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="AdverseReaction"/>
     <publish value="true"/>
@@ -42,7 +53,11 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="Observation[classCode=OBS, moodCode=EVN]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="IAM-11-Onset Date (Does not allow for IAM-12-Onset Date Text)"/>
         </mapping>
       </definition>
@@ -51,9 +66,24 @@
       <path value="AdverseReaction.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -68,7 +98,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="AdverseReaction.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -100,6 +130,39 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="AdverseReaction.identifier"/>
+      <definition>
+        <short value="External Ids for this adverse reaction"/>
+        <formal value="This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="AdverseReaction.reactionDate"/>
       <definition>
         <short value="When the reaction occurred"/>
@@ -108,6 +171,26 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="dateTime"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="effectiveTime"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.reactionDate.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -124,9 +207,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=SBJ]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="PID-3-Patient ID List"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.subject.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -141,6 +244,26 @@ associated with the use of extensions by any application, project, or standard -
           <code value="boolean"/>
         </type>
         <isModifier value="true"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="actionNegationInd"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.didNotOccurFlag.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -155,9 +278,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=AUT]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="IAM-14-Reported By (if patient) / IAM-18-Statused By Person (if practitioner)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.recorder.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -167,6 +310,26 @@ associated with the use of extensions by any application, project, or standard -
         <formal value="The signs and symptoms that were observed as part of the reaction."/>
         <min value="0"/>
         <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&lt;&lt;symptom&gt;&gt;]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.symptom.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -181,17 +344,42 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SymptomType"/>
+        <binding>
+          <name value="SymptomType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceUri value="http://apps.who.int/classifications/icd10/browse/2010/en"/>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="value"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="IAR-1"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="AdverseReaction.symptom.code.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="AdverseReaction.symptom.severity"/>
       <definition>
-        <short value="The severity of the sign or symptom"/>
+        <short value="severe | serious | moderate | minor"/>
         <formal value="The severity of the sign or symptom."/>
         <min value="0"/>
         <max value="1"/>
@@ -199,11 +387,38 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ReactionSeverity"/>
+        <binding>
+          <name value="ReactionSeverity"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/reactionSeverity"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&lt;&lt;severity&gt;&gt;].value"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="AL1-4-Allergy Severity Code / IAM-4-Allergy Severity Code"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.symptom.severity.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -213,6 +428,26 @@ associated with the use of extensions by any application, project, or standard -
         <formal value="An exposure to a substance that preceded a reaction occurrence."/>
         <min value="0"/>
         <max value="*"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=SAS].target[classCode=EXPOS, moodCode=EVN]"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.exposure.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -228,29 +463,76 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="effectiveTime"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="(V2 does not define distinct concepts of exposure date and reaction date)"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="AdverseReaction.exposure.exposureDate.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="AdverseReaction.exposure.exposureType"/>
       <definition>
-        <short value="The type of exposure"/>
-        <formal value="Drug Administration, Immunization, Coincidental."/>
+        <short value="drugadmin | immuniz | coincidental"/>
+        <formal value="The type of exposure: Drug Administration, Immunization, Coincidental."/>
         <min value="0"/>
         <max value="1"/>
         <type>
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ExposureType"/>
+        <binding>
+          <name value="ExposureType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/exposureType"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="AdverseReaction.exposure.exposureType.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="AdverseReaction.exposure.causalityExpectation"/>
       <definition>
-        <short value="A statement of how confident that the recorder was that this exposure caused the reaction"/>
+        <short value="likely | unlikely | confirmed | unknown"/>
         <formal value="A statement of how confident that the recorder was that this exposure caused the reaction."/>
         <min value="0"/>
         <max value="1"/>
@@ -258,17 +540,46 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="CausalityExpectation"/>
+        <binding>
+          <name value="CausalityExpectation"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/causalityExpectation"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&lt;&lt;ReactionRelatedness&gt;, ].value
+
+Note: Observation also needs to have a subject of the Adverse Reaction itself (i.e. it&#39;s expressing relatedness of exposure &amp; reaction)"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="IAM-17-Allergy Clinical Status Code"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="AdverseReaction.exposure.causalityExpectation.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="AdverseReaction.exposure.substance"/>
       <definition>
-        <short value="Substance(s) that is presumed to have caused the adverse reaction"/>
+        <short value="Presumed causative substance"/>
         <formal value="Substance(s) that is presumed to have caused the adverse reaction."/>
         <min value="0"/>
         <max value="1"/>
@@ -277,40 +588,30 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=EXPAGNT]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="AL1-3 / IAM-3 Allergen Code/Mnemonic/Description"/>
         </mapping>
       </definition>
     </element>
+    <element>
+      <path value="AdverseReaction.exposure.substance.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="ReactionSeverity"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/reactionSeverity"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ExposureType"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/exposureType"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="CausalityExpectation"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/causalityExpectation"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SymptomType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceUri value="http://apps.who.int/classifications/icd10/browse/2010/en"/>
-  </binding>
 </Profile>

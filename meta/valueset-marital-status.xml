@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Marital Status Codes</h2>
       <p>This value set defines the set of codes that can be used to indicate the marital status of a person</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/marital-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/marital-status</p>
       <table>
         <tr>
           <td>
@@ -20,7 +20,9 @@
           </td>
         </tr>
         <tr>
-          <td>U</td>
+          <td>
+            <a name="U">U</a>
+          </td>
           <td>unmarried</td>
           <td>The person is not presently married. The marital history is not known or stated</td>
         </tr>

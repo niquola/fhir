@@ -5,5 +5,11 @@
   <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
   <sch:pattern>
     <sch:title>OperationOutcome</sch:title>
+    <sch:rule context="/f:OperationOutcome/f:issue/f:type">
+      <sch:assert test="not (exists(f:valueSet) and exists(f:code)) or exists(f:system)">Inv-1: If a valueSet is provided, a system URI SHALL also be provided.</sch:assert>
+    </sch:rule>
+    <sch:rule context="/f:OperationOutcome/f:issue/f:type/f:valueSet">
+      <sch:assert test="not(starts-with(f:reference/@value, '#')) or exists(ancestor::a:content/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, '#')]|/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, '#')])">Inv-1: SHALL have a local reference if the resource is provided inline</sch:assert>
+    </sch:rule>
   </sch:pattern>
 </sch:schema>

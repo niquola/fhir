@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Document Reference Service Types</h2>
       <p>Known Service types that can be referred to from a Document Reference</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/document-reference-service-types</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/document-reference-service-types</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>XDS</td>
+          <td>
+            <a name="XDS">XDS</a>
+          </td>
           <td>IHE XDS</td>
           <td/>
         </tr>
         <tr>
-          <td>RLUS</td>
+          <td>
+            <a name="RLUS">RLUS</a>
+          </td>
           <td>OMG RLUS</td>
           <td/>
         </tr>

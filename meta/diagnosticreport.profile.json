@@ -1,1 +1,1256 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport\"><b>DiagnosticReport<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"The status of the diagnostic report as a whole (this element modifies the meaning of other elements)\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.status\"><span style=\"text-decoration: underline\"><b>status<\/b><\/span><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#code\">code<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"observation-status.htm\">registered|interim|final|amended|cancelled|withdrawn<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"The date and/or time that this version of the report was released from the source diagnostic service.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.issued\"><b>issued<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Date this version was released<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.subject\"><b>subject<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"patient.htm#Patient\">Patient<\/a>|<a href=\"group.htm#Group\">Group<\/a>|<a href=\"device.htm#Device\">Device<\/a>)<\/span> <span style=\"color: navy\">The subject of the report<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/subject&gt;\r\n &lt;<a title=\"The diagnostic service that is responsible for issuing the report.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.performer\"><b>performer<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"organization.htm#Organization\">Organization<\/a>)<\/span> <span style=\"color: navy\">Responsible Diagnostic Service<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/performer&gt;\r\n &lt;<a title=\"The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.reportId\"><b>reportId<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Id for external references to this report<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/reportId&gt;\r\n &lt;<a title=\"Details concerning a single pathology test requested.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail\"><b>requestDetail<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> What was requested --&gt;<\/span>\r\n  &lt;<a title=\"The encounter that this diagnostic investigation is associated with.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.encounter\"><b>encounter<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"encounter.htm#Encounter\">Encounter<\/a>)<\/span> <span style=\"color: navy\">Context where request was made<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/encounter&gt;\r\n  &lt;<a title=\"The local ID assigned to the order by the order requester.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.requestOrderId\"><b>requestOrderId<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Id assigned by requester<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/requestOrderId&gt;\r\n  &lt;<a title=\"The local ID assigned to the test order by the diagnostic service provider.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.receiverOrderId\"><b>receiverOrderId<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Receiver's Id for the request<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/receiverOrderId&gt;\r\n  &lt;<a title=\"Identification of pathology test requested,.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.requestTest\"><b>requestTest<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-diagnostic-requests.htm\">Test Requested<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/requestTest&gt;\r\n  &lt;<a title=\"Anatomical location where the request test should be performed.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.bodySite\"><b>bodySite<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-body-site.htm\">Location of requested test (if applicable)<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/bodySite&gt;\r\n  &lt;<a title=\"Details of the clinician or organization requesting the diagnostic service.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.requester\"><b>requester<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"organization.htm#Organization\">Organization<\/a>|<a href=\"practitioner.htm#Practitioner\">Practitioner<\/a>)<\/span> <span style=\"color: navy\">Responsible for request<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/requester&gt;\r\n  &lt;<a title=\"Details of the clinical information provided to the diagnostic service along with the original request.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.clinicalInfo\"><b>clinicalInfo<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Clinical information provided<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;/requestDetail&gt;\r\n &lt;<a title=\"The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.serviceCategory\"><b>serviceCategory<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-diagnostic-service-sections.htm\">Biochemistry, Haematology etc.<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/serviceCategory&gt;\r\n &lt;<a title=\"The diagnostically relevant time for this report.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.diagnosticTime\"><b>diagnosticTime<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Effective time of diagnostic report<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.results\"><b>results<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>1..1<\/b><\/span> Results grouped by specimen/kind/category --&gt;<\/span>\r\n  &lt;<a title=\"A code or name that describes this group of results. For the base group, this is the report name.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.results.name\"><b>name<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-report-names.htm\">Name/Code for this group of results<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/name&gt;\r\n  &lt;<a title=\"Details about the individual specimen to which these 'Result group' test results refer.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.results.specimen\"><b>specimen<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"specimen.htm#Specimen\">Specimen<\/a>)<\/span> <span style=\"color: navy\">Specimen details for this group<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/specimen&gt;\r\n  &lt;<a title=\"A sub-group in a report group. Sub groups can be grouped in arbitrary ways. The group.name defines the purpose and interpretation of the grouping.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.results.group\"><b>group<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\">Content as for DiagnosticReport.results<\/span> <span style=\"color: navy\">Nested Report Group<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/group&gt;\r\n  &lt;<a title=\"Specific detailed result, including both the value of the result item and additional information that may be useful for clinical interpretation. Results include whatever specific data items pathology labs report as part of the clinical service; it is not confined to measurements.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.results.result\"><b>result<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"observation.htm#Observation\">Observation<\/a>)<\/span> <span style=\"color: navy\">An atomic data result<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/result&gt;\r\n &lt;/results&gt;\r\n &lt;<a title=\"A list of key images associated with this report. The images are generally created during the diagnostic process, and maybe directly of the patient, or of treated specimens (i.e. slides of interest).\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.image\"><b>image<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"media.htm#Media\">Media<\/a>|<a href=\"imagingstudy.htm#ImagingStudy\">ImagingStudy<\/a>)<\/span> <span style=\"color: navy\">Key images associated with this report<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/image&gt;\r\n &lt;<a title=\"Concise and clinically contextualised narrative interpretation of the diagnostic report.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.conclusion\"><b>conclusion<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Clinical Interpretation of test results<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Codes for the conclusion.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.codedDiagnosis\"><b>codedDiagnosis<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-clinical-findings.htm\">Codes for the conclusion<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/codedDiagnosis&gt;\r\n &lt;<a title=\"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.\" class=\"dict\" href=\"diagnosticreport-definitions.htm#DiagnosticReport.representation\"><b>representation<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Attachment\">Attachment<\/a><\/span> <span style=\"color: navy\">Entire Report as issued<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/representation&gt;\r\n&lt;/DiagnosticReport&gt;\r\n<\/pre><\/div>"},"name":{"value":"diagnosticreport"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"DiagnosticReport"},"publish":{"value":true},"element":[{"path":{"value":"DiagnosticReport"},"definition":{"short":{"value":"A Diagnostic report - a combination of request information, atomic results, images, interpretation, and formatted reports"},"formal":{"value":"The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."},"comments":{"value":"This is intended to capture a single report,and is not suitable for use in displaying summary information that covers multiple reports. A typical example is a laboratory cumulative report format."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"Observation[isNormalAct() and subsumesCode(\"ActClass#OBS\", classCode) and moodCode=\"EVN\" and domainMember(\"LabObservationType\", code)]"}}]}},{"path":{"value":"DiagnosticReport.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"DiagnosticReport.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"DiagnosticReport.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"DiagnosticReport.status"},"definition":{"short":{"value":"registered|interim|final|amended|cancelled|withdrawn"},"formal":{"value":"The status of the diagnostic report as a whole."},"comments":{"value":"This is labelled as \"Is Modifier\" because applications need to take appropriate action if a report is withdrawn."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":true},"binding":{"value":"ObservationStatus"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"registered: ./statusCode[isNormalDatatype()]=\"new\";\n\ninterim: ./statusCode[isNormalDatatype()]=\"active\";\n\nfinal: ./statusCode[isNormalDatatype()]=\"complete\" and not(./inboundRelationship[typeCode=\"SUBJ\" and isNormalActRelationship()]/source[subsumesCode(\"ActClass#CACT\") and moodCode=\"EVN\" and domainMember(\"ReviseLabOrder\", code) and isNormalAct()]);\n\namended: ./statusCode[isNormalDatatype()]=\"complete\" and ./inboundRelationship[typeCode=\"SUBJ\" and isNormalActRelationship()]/source[subsumesCode(\"ActClass#CACT\") and moodCode=\"EVN\" and domainMember(\"ReviseLabOrder\", code) and isNormalAct() and statusCode=\"completed\"];\n\ncancelled: \n./statusCode[isNormalDatatype()]=\"aborted\";\n\nwithdrawn: ./statusCode[isNormalDatatype()]=\"obsolete\""}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-25-Result Status (not 1:1 mapping)"}}]}},{"path":{"value":"DiagnosticReport.issued"},"definition":{"short":{"value":"Date this version was released"},"formal":{"value":"The date and/or time that this version of the report was released from the source diagnostic service."},"comments":{"value":"May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"firstOf(unique(./participation[isHighest(priorityCode) and typeCode=\"VRF\" and isNormalParticipation()]/time[type=\"TS\"]), \nunique(./participation[isHighest(priorityCode) and typeCode=\"AUT\" and isNormalParticipation()]/time[type=\"TS\"]))"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-22-Results Rpt/Status Chng - Date/Time"}}]}},{"path":{"value":"DiagnosticReport.subject"},"definition":{"short":{"value":"The subject of the report"},"formal":{"value":"The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Patient|Group|Device)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./participation[isHighest(priorityCode) and typeCode=\"SBJ\" and isNormalParticipation()]/role[classCode=\"PAT\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PID-3-Patient ID List (no V2 mapping for Group or Device)"}}]}},{"path":{"value":"DiagnosticReport.performer"},"definition":{"short":{"value":"Responsible Diagnostic Service"},"formal":{"value":"The diagnostic service that is responsible for issuing the report."},"comments":{"value":"This is not necessarily the source of the atomic data items - it's the entity that takes responsibility for the clinical report."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Organization)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./participation[isHighest(priorityCode) and typeCode=\"AUT\" and isNormalParticipation()]/role[subsumesCode(\"RoleClass#ASSIGN\", classCode)]/scoper[subsumesCode(\"EntityClass#ORG\", classCode) and determinerCode=\"INSTANCE\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRT-8-Participation Organization (where this PRT-4-Participation = \"PO\")"}}]}},{"path":{"value":"DiagnosticReport.reportId"},"definition":{"short":{"value":"Id for external references to this report"},"formal":{"value":"The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./id[displayable=\"true\" and scope=\"OBJ\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-51-Observation Group ID (todo: check semantic intent of OBR-51 with OOWG)"}}]}},{"path":{"value":"DiagnosticReport.requestDetail"},"definition":{"short":{"value":"What was requested"},"formal":{"value":"Details concerning a single pathology test requested."},"comments":{"value":"Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single Pathology test result resource. Note that there are also cases where one request leads to multiple reports."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./outboundRelationship[typeCode=\"FLFS\" and isNormalActRelationship()]/target[subsumesCode(\"ActClass#OBS\", classCode) and subsumes(\"ActMood#PRMS\", moodCode) and isNormalAct()])"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.encounter"},"definition":{"short":{"value":"Context where request was made"},"formal":{"value":"The encounter that this diagnostic investigation is associated with."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Encounter)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./inboundRelationship[isHighest(priorityCode) and typeCode=\"SUBJ\" and isNormalActRelationship()]/source[subsumesCode(\"ActClass#ENC\", code) and moodCode=\"EVN\" and isNormalAct()])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-19-Visit Number"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.requestOrderId"},"definition":{"short":{"value":"Id assigned by requester"},"formal":{"value":"The local ID assigned to the order by the order requester."},"comments":{"value":"Equivalent to the Placer Order Identifier."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./outboundRelationship[typeCode=\"FLFS\" and isNormalActRelationship()]/target[subsumesCode(\"ActClass#OBS\", classCode) and subsumes(\"ActMood#RQO\", moodCode) and isNormalAct()]/id[scope=\"OBJ\" and displayable=\"true\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-2-Placer Order Number"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.receiverOrderId"},"definition":{"short":{"value":"Receiver's Id for the request"},"formal":{"value":"The local ID assigned to the test order by the diagnostic service provider."},"comments":{"value":"Usually equivalent to the DICOM Accession Number and the Filler Order Identifier."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./id[scope=\"OBJ\" and displayable=\"true\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-3-Filler Order Number"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.requestTest"},"definition":{"short":{"value":"Test Requested"},"formal":{"value":"Identification of pathology test requested,."},"comments":{"value":"Useful where the test requested differs from the test actually performed."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"DiagnosticRequests"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./code"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-4-Universal Service ID"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.bodySite"},"definition":{"short":{"value":"Location of requested test (if applicable)"},"formal":{"value":"Anatomical location where the request test should be performed."},"comments":{"value":"This is often implicit or explicit in the requested test, and doesn't need to be specified if so."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"BodySite"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBX-20-Observation Site (need to distinguish requested site from site actually performed at)"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.requester"},"definition":{"short":{"value":"Responsible for request"},"formal":{"value":"Details of the clinician or organization requesting the diagnostic service."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Organization|Practitioner)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"Practitioner: unique(./participation[isHighest(priorityCode) and typeCode=\"AUT\" and isNormalParticipation()]/role[subsumesCode(\"RoleClass#ASSIGN\", classCode)]\n\nOrganization: unique(./participation[isHighest(priorityCode) and typeCode=\"AUT\" and isNormalParticipation()]/role[subsumesCode(\"RoleClass#ASSIGN\", classCode)]/scoper[subsumesCode(\"EntityClass#ORG\", classCode) and determinerCode=\"INSTANCE\" and code[isNormalDatatype]])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-16-Ordering Provider"}}]}},{"path":{"value":"DiagnosticReport.requestDetail.clinicalInfo"},"definition":{"short":{"value":"Clinical information provided"},"formal":{"value":"Details of the clinical information provided to the diagnostic service along with the original request."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./outboundRelationship[typeCode=\"PERT\" and isNormalActRelationship()]/target.text"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-13-Relevant Clinical Information (could also be in NTE-3 or OBR-18, 19, 20, 21)"}}]}},{"path":{"value":"DiagnosticReport.serviceCategory"},"definition":{"short":{"value":"Biochemistry, Haematology etc."},"formal":{"value":"The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"DiagnosticServiceSection"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./inboundRelationship[typeCode=\"COMP\" and isNormalActRelationship()]/source[subsumesCode(\"ActClass#LIST\", classCode) and moodCode=\"EVN\" and inDomain(code,\"Lab Service\") and isNormalAct()]/code"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-24-Diagnostic Service Section ID"}}]}},{"path":{"value":"DiagnosticReport.diagnosticTime"},"definition":{"short":{"value":"Effective time of diagnostic report"},"formal":{"value":"The diagnostically relevant time for this report."},"comments":{"value":"If the diagnostic procedure was performed on the patient, this is the time it was peformed. If there is specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and nor is the exact relationship is not always automatic."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./effectiveTime[type=\"TS\"]"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-7-Observation Date/Time"}}]}},{"path":{"value":"DiagnosticReport.results"},"definition":{"short":{"value":"Results grouped by specimen/kind/category"},"formal":{"value":"A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together."},"min":{"value":1},"max":{"value":"1"},"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./outboundRelationship[typeCode=\"COMP\" and isNormalActRelationship()]/target[isNormalAct() and subsumesCode(\"ActClass#OBS\", classCode) and moodCode=\"EVN\" and fromDomain(code, \"LabObservationBattery\")]"}}]}},{"path":{"value":"DiagnosticReport.results.name"},"definition":{"short":{"value":"Name/Code for this group of results"},"formal":{"value":"A code or name that describes this group of results. For the base group, this is the report name."},"comments":{"value":"Examples of nested report groups: the antibody code for a goup of antibody related test, or the organism code for a group of isolate/sensitivities, or a set of perinatal measurements on a single fetus."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"DiagnosticResultGroupNames"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./code"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBR-4-Universal Service ID (V2 doesn't provide an easy way to indicate both the ordered test and the performed panel)"}}]}},{"path":{"value":"DiagnosticReport.results.specimen"},"definition":{"short":{"value":"Specimen details for this group"},"formal":{"value":"Details about the individual specimen to which these 'Result group' test results refer."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Specimen)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./participation[typeCode=\"SBJ\" and isNormalParticipation()]/role[subsumesCode(\"RoleClass#SPEC\", classCode)])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"SPM"}}]}},{"path":{"value":"DiagnosticReport.results.group"},"definition":{"short":{"value":"Nested Report Group"},"formal":{"value":"A sub-group in a report group. Sub groups can be grouped in arbitrary ways. The group.name defines the purpose and interpretation of the grouping."},"comments":{"value":"Nested report groups beyond the first level are not used often, but arise in structured pathology reports, and where there is more than one sensitivity assessment per discovered organism."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"@DiagnosticReport.results"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"DiagnosticReport.results.result"},"definition":{"short":{"value":"An atomic data result"},"formal":{"value":"Specific detailed result, including both the value of the result item and additional information that may be useful for clinical interpretation. Results include whatever specific data items pathology labs report as part of the clinical service; it is not confined to measurements."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource(Observation)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./outboundRelationship[typeCode=\"COMP\" and isNormalActRelationship()]/target[subsumesCode(\"ActClass#OBS\", classCode) and moodCode=\"EVN\" and isNormalAct() and fromDomain(code, \"LabObservationResult\")]"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBX"}}]}},{"path":{"value":"DiagnosticReport.image"},"definition":{"short":{"value":"Key images associated with this report"},"formal":{"value":"A list of key images associated with this report. The images are generally created during the diagnostic process, and maybe directly of the patient, or of treated specimens (i.e. slides of interest)."},"comments":{"value":"An imaging study is a list of images following a DICOM specification - only list one of these, or multiple images."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource(Media|ImagingStudy)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBX?"}}]}},{"path":{"value":"DiagnosticReport.conclusion"},"definition":{"short":{"value":"Clinical Interpretation of test results"},"formal":{"value":"Concise and clinically contextualised narrative interpretation of the diagnostic report."},"comments":{"value":"Typically, a report is either [all data, no narrative (e.g. Core lab)] or [a mix of data with some concluding narrative (e.g. Structured Pathology Report, Bone Density)], or [all narative (e.g. typical imaging report, histopathology)]. In all these cases, the narrative goes in \"text\"."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./inboundRelationship[typeCode=\"SPRT\" and isNormalActRelationship()]/source[subsumesCode(\"ActClass#OBS\", classCode) and moodCode=\"EVN\" and mapsTo(code, \"LOINC#\n48767-8\") and isNormalAct()]/value[type=\"ST\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBX"}}]}},{"path":{"value":"DiagnosticReport.codedDiagnosis"},"definition":{"short":{"value":"Codes for the conclusion"},"formal":{"value":"Codes for the conclusion."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"DiagnosisCodes"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./inboundRelationship[typeCode=\"SPRT\" and isNormalActRelationship()]/source[subsumesCode(\"ActClass#OBS\", classCode) and moodCode=\"EVN\" and subsumesCode(code, \"LOINC#\n54531-9\") and isNormalAct()]/value[type=\"CD\"])"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBX"}}]}},{"path":{"value":"DiagnosticReport.representation"},"definition":{"short":{"value":"Entire Report as issued"},"formal":{"value":"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent."},"comments":{"value":"Possible formats: text/html, text/plain, text/rtf, application/msword, application/pdf, application/rtf, application/vnd.oasis.opendocument.text, application/vnd.openxmlformats-officedocument.wordprocessingml.document. Application/pdf is recommended as the most reliable and interoperable in this context."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Attachment"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./text[type=\"ED\"]"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"OBX"}}]}}]}],"binding":[{"name":{"value":"DiagnosticRequests"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/diagnostic-requests"}}},{"name":{"value":"BodySite"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/body-site"}}},{"name":{"value":"DiagnosisCodes"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/clinical-findings"}}},{"name":{"value":"DiagnosticServiceSection"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/diagnostic-service-sections"}}},{"name":{"value":"DiagnosticResultGroupNames"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/report-names"}}},{"name":{"value":"ObservationStatus"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/observation-status"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport\"><b>DiagnosticReport</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"The status of the diagnostic report as a whole (this element modifies the meaning of other elements)\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.status\"><span style=\"text-decoration: underline\"><b>status</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"diagnostic-report-status.html\">registered | partial | final | corrected +<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"The date and/or time that this version of the report was released from the source diagnostic service.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.issued\"><b>issued</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Date this version was released<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>|<a href=\"group.html#Group\">Group</a>|<a href=\"device.html#Device\">Device</a>|<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">The subject of the report<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n &lt;<a title=\"The diagnostic service that is responsible for issuing the report.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.performer\"><b>performer</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>)</span> <span style=\"color: navy\">Responsible Diagnostic Service<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/performer&gt;\r\n &lt;<a title=\"The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.reportId\"><b>reportId</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Id for external references to this report<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/reportId&gt;\r\n &lt;<a title=\"Details concerning a single pathology test requested.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail\"><b>requestDetail</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> What was requested --&gt;</span>\r\n  &lt;<a title=\"The encounter that this diagnostic investigation is associated with.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.encounter\"><b>encounter</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"encounter.html#Encounter\">Encounter</a>)</span> <span style=\"color: navy\">Context where request was made</span><span style=\"color: Gray\"> --&gt;</span>&lt;/encounter&gt;\r\n  &lt;<a title=\"The local ID assigned to the order by the order requester.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.requestOrderId\"><b>requestOrderId</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Id assigned by requester</span><span style=\"color: Gray\"> --&gt;</span>&lt;/requestOrderId&gt;\r\n  &lt;<a title=\"The local ID assigned to the test order by the diagnostic service provider.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.receiverOrderId\"><b>receiverOrderId</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Receiver's Id for the request</span><span style=\"color: Gray\"> --&gt;</span>&lt;/receiverOrderId&gt;\r\n  &lt;<a title=\"Identification of pathology test requested,.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.requestTest\"><b>requestTest</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-diagnostic-requests.html\">Test Requested</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/requestTest&gt;\r\n  &lt;<a title=\"Anatomical location where the request test should be performed.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.bodySite\"><b>bodySite</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-body-site.html\">Location of requested test (if applicable)</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/bodySite&gt;\r\n  &lt;<a title=\"Details of the clinician or organization requesting the diagnostic service.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.requester\"><b>requester</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>|<a href=\"practitioner.html#Practitioner\">Practitioner</a>)</span> <span style=\"color: navy\">Responsible for request</span><span style=\"color: Gray\"> --&gt;</span>&lt;/requester&gt;\r\n  &lt;<a title=\"Details of the clinical information provided to the diagnostic service along with the original request.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.requestDetail.clinicalInfo\"><b>clinicalInfo</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Clinical information provided</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;/requestDetail&gt;\r\n &lt;<a title=\"The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.serviceCategory\"><b>serviceCategory</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-diagnostic-service-sections.html\">Biochemistry, Haematology etc.<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/serviceCategory&gt;\r\n &lt;<a title=\"The diagnostically relevant time for this report - that is, the point in time at which the observations that are reported in this diagnostic report relate to the patient.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.diagnostic_x_\"><b>diagnostic[x]</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a>|<a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">\r\n     Diagnostically relevant time of diagnostic report<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/diagnostic[x]&gt;\r\n &lt;<a title=\"A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.results\"><b>results</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>1..1</b></span> Results grouped by specimen/kind/category --&gt;</span>\r\n  &lt;<a title=\"A code or name that describes this group of results. For the base group, this is the report name.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.results.name\"><b>name</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-report-names.html\">Name/Code for this group of results</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/name&gt;\r\n  &lt;<a title=\"Details about the individual specimen to which these 'Result group' test results refer.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.results.specimen\"><b>specimen</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"specimen.html#Specimen\">Specimen</a>)</span> <span style=\"color: navy\">Specimen details for this group</span><span style=\"color: Gray\"> --&gt;</span>&lt;/specimen&gt;\r\n  &lt;<a title=\"A sub-group in a report group. Sub groups can be grouped in arbitrary ways. The group.name defines the purpose and interpretation of the grouping.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.results.group\"><b>group</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\">Content as for DiagnosticReport.results</span> <span style=\"color: navy\">Nested Report Group</span><span style=\"color: Gray\"> --&gt;</span>&lt;/group&gt;\r\n  &lt;<a title=\"Specific detailed result, including both the value of the result item and additional information that may be useful for clinical interpretation. Results include whatever specific data items pathology labs report as part of the clinical service; it is not confined to measurements.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.results.result\"><b>result</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"observation.html#Observation\">Observation</a>)</span> <span style=\"color: navy\">An atomic data result</span><span style=\"color: Gray\"> --&gt;</span>&lt;/result&gt;\r\n &lt;/results&gt;\r\n &lt;<a title=\"A list of key images associated with this report. The images are generally created during the diagnostic process, and maybe directly of the patient, or of treated specimens (i.e. slides of interest).\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.image\"><b>image</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"media.html#Media\">Media</a>|<a href=\"imagingstudy.html#ImagingStudy\">ImagingStudy</a>)</span> <span style=\"color: navy\">Key images associated with this report</span><span style=\"color: Gray\"> --&gt;</span>&lt;/image&gt;\r\n &lt;<a title=\"Concise and clinically contextualised narrative interpretation of the diagnostic report.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.conclusion\"><b>conclusion</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Clinical Interpretation of test results</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Codes for the conclusion.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.codedDiagnosis\"><b>codedDiagnosis</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-clinical-findings.html\">Codes for the conclusion</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/codedDiagnosis&gt;\r\n &lt;<a title=\"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.\" class=\"dict\" href=\"diagnosticreport-definitions.html#DiagnosticReport.representation\"><b>representation</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Attachment\">Attachment</a></span> <span style=\"color: navy\">Entire Report as issued</span><span style=\"color: Gray\"> --&gt;</span>&lt;/representation&gt;\r\n&lt;/DiagnosticReport&gt;\r\n</pre></div>"
+  },
+  "name": "diagnosticreport",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "DiagnosticReport",
+      "publish": true,
+      "element": [
+        {
+          "path": "DiagnosticReport",
+          "definition": {
+            "short": "A Diagnostic report - a combination of request information, atomic results, images, interpretation, and formatted reports",
+            "formal": "The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.",
+            "comments": "This is intended to capture a single report,and is not suitable for use in displaying summary information that covers multiple reports. A typical example is a laboratory cumulative report format.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "Observation[classCode=OBS, moodCode=EVN]"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.status",
+          "definition": {
+            "short": "registered | partial | final | corrected +",
+            "formal": "The status of the diagnostic report as a whole.",
+            "comments": "This is labeled as \"Is Modifier\" because applications need to take appropriate action if a report is withdrawn.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "DiagnosticReportStatus",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/diagnostic-report-status"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "statusCode\n\nNote: final and amended are distinguished by whether observation is the subject of a ControlAct event of type \"revise\""
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-25-Result Status (not 1:1 mapping)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.status.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.issued",
+          "definition": {
+            "short": "Date this version was released",
+            "formal": "The date and/or time that this version of the report was released from the source diagnostic service.",
+            "comments": "May be different from the update time of the resource itself, because that is the status of the record (potentially a secondary copy), not the actual release time of the report.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=VRF or AUT].time"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-22-Results Rpt/Status Chng - Date/Time"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.issued.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.subject",
+          "definition": {
+            "short": "The subject of the report",
+            "formal": "The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient|Group|Device|Location)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=SBJ]"
+              },
+              {
+                "identity": "v2",
+                "map": "PID-3-Patient ID List (no V2 mapping for Group or Device)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.performer",
+          "definition": {
+            "short": "Responsible Diagnostic Service",
+            "formal": "The diagnostic service that is responsible for issuing the report.",
+            "comments": "This is not necessarily the source of the atomic data items - it's the entity that takes responsibility for the clinical report.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=AUT].role[classCode=ASSIGN].scoper"
+              },
+              {
+                "identity": "v2",
+                "map": "PRT-8-Participation Organization (where this PRT-4-Participation = \"PO\")"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.performer.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.reportId",
+          "definition": {
+            "short": "Id for external references to this report",
+            "formal": "The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "id"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-51-Observation Group ID (todo: check semantic intent of OBR-51 with OOWG)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.reportId.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail",
+          "definition": {
+            "short": "What was requested",
+            "formal": "Details concerning a single pathology test requested.",
+            "comments": "Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single Pathology test result resource. Note that there are also cases where one request leads to multiple reports.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=FLFS].target"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.encounter",
+          "definition": {
+            "short": "Context where request was made",
+            "formal": "The encounter that this diagnostic investigation is associated with.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Encounter)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundRelationship[typeCode=SUBJ].source"
+              },
+              {
+                "identity": "v2",
+                "map": "PV1-19-Visit Number"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.encounter.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.requestOrderId",
+          "definition": {
+            "short": "Id assigned by requester",
+            "formal": "The local ID assigned to the order by the order requester.",
+            "comments": "Equivalent to the Placer Order Identifier.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=FLFS].target[classCode=OBS, moodCode=RQO].id"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-2-Placer Order Number"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.requestOrderId.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.receiverOrderId",
+          "definition": {
+            "short": "Receiver's Id for the request",
+            "formal": "The local ID assigned to the test order by the diagnostic service provider.",
+            "comments": "Usually equivalent to the DICOM Accession Number and the Filler Order Identifier.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "id"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-3-Filler Order Number"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.receiverOrderId.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.requestTest",
+          "definition": {
+            "short": "Test Requested",
+            "formal": "Identification of pathology test requested,.",
+            "comments": "Useful where the test requested differs from the test actually performed.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "DiagnosticRequests",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/diagnostic-requests"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "code"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-4-Universal Service ID"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.requestTest.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.bodySite",
+          "definition": {
+            "short": "Location of requested test (if applicable)",
+            "formal": "Anatomical location where the request test should be performed.",
+            "comments": "This is often implicit or explicit in the requested test, and doesn't need to be specified if so.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "BodySite",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/body-site"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "targetSiteCode"
+              },
+              {
+                "identity": "v2",
+                "map": "OBX-20-Observation Site (need to distinguish requested site from site actually performed at)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.bodySite.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.requester",
+          "definition": {
+            "short": "Responsible for request",
+            "formal": "Details of the clinician or organization requesting the diagnostic service.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization|Practitioner)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=AUT]"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-16-Ordering Provider"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.requester.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.clinicalInfo",
+          "definition": {
+            "short": "Clinical information provided",
+            "formal": "Details of the clinical information provided to the diagnostic service along with the original request.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=PERT].target.text"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-13-Relevant Clinical Information (could also be in NTE-3 or OBR-18, 19, 20, 21)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.requestDetail.clinicalInfo.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.serviceCategory",
+          "definition": {
+            "short": "Biochemistry, Haematology etc.",
+            "formal": "The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "DiagnosticServiceSection",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/diagnostic-service-sections"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code < LabService].code"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-24-Diagnostic Service Section ID"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.serviceCategory.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.diagnostic[x]",
+          "definition": {
+            "short": "Diagnostically relevant time of diagnostic report",
+            "formal": "The diagnostically relevant time for this report - that is, the point in time at which the observations that are reported in this diagnostic report relate to the patient.",
+            "comments": "If the diagnostic procedure was performed on the patient, this is the time it was peformed. If there is specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              },
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "effectiveTime"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-7-Observation Date/Time"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.diagnostic[x].extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.results",
+          "definition": {
+            "short": "Results grouped by specimen/kind/category",
+            "formal": "A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together.",
+            "min": "1",
+            "max": "1",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=COMP].target"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.name",
+          "definition": {
+            "short": "Name/Code for this group of results",
+            "formal": "A code or name that describes this group of results. For the base group, this is the report name.",
+            "comments": "Examples of nested report groups: the antibody code for a goup of antibody related test, or the organism code for a group of isolate/sensitivities, or a set of perinatal measurements on a single fetus.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "DiagnosticReportNames",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/report-names"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "code"
+              },
+              {
+                "identity": "v2",
+                "map": "OBR-4-Universal Service ID (V2 doesn't provide an easy way to indicate both the ordered test and the performed panel)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.specimen",
+          "definition": {
+            "short": "Specimen details for this group",
+            "formal": "Details about the individual specimen to which these 'Result group' test results refer.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Specimen)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "participation[typeCode=SBJ]"
+              },
+              {
+                "identity": "v2",
+                "map": "SPM"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.specimen.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.group",
+          "definition": {
+            "short": "Nested Report Group",
+            "formal": "A sub-group in a report group. Sub groups can be grouped in arbitrary ways. The group.name defines the purpose and interpretation of the grouping.",
+            "comments": "Nested report groups beyond the first level are not used often, but arise in structured pathology reports, and where there is more than one sensitivity assessment per discovered organism.",
+            "min": "0",
+            "max": "*",
+            "nameReference": "DiagnosticReport.results",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=COMP].target"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.group.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.result",
+          "definition": {
+            "short": "An atomic data result",
+            "formal": "Specific detailed result, including both the value of the result item and additional information that may be useful for clinical interpretation. Results include whatever specific data items pathology labs report as part of the clinical service; it is not confined to measurements.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Observation)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=COMP].target"
+              },
+              {
+                "identity": "v2",
+                "map": "OBX"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.results.result.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.image",
+          "definition": {
+            "short": "Key images associated with this report",
+            "formal": "A list of key images associated with this report. The images are generally created during the diagnostic process, and maybe directly of the patient, or of treated specimens (i.e. slides of interest).",
+            "comments": "An imaging study is a list of images following a DICOM specification - only list one of these, or multiple images.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Media|ImagingStudy)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "outboundRelationship[typeCode=COMP].target"
+              },
+              {
+                "identity": "v2",
+                "map": "OBX?"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.image.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.conclusion",
+          "definition": {
+            "short": "Clinical Interpretation of test results",
+            "formal": "Concise and clinically contextualised narrative interpretation of the diagnostic report.",
+            "comments": "Typically, a report is either [all data, no narrative (e.g. Core lab)] or [a mix of data with some concluding narrative (e.g. Structured Pathology Report, Bone Density)], or [all narative (e.g. typical imaging report, histopathology)]. In all these cases, the narrative goes in \"text\".",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundRelationship[typeCode=\"SPRT\"].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)"
+              },
+              {
+                "identity": "v2",
+                "map": "OBX"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.conclusion.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.codedDiagnosis",
+          "definition": {
+            "short": "Codes for the conclusion",
+            "formal": "Codes for the conclusion.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "AdjunctDiagnosis",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/clinical-findings"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)"
+              },
+              {
+                "identity": "v2",
+                "map": "OBX"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.codedDiagnosis.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "DiagnosticReport.representation",
+          "definition": {
+            "short": "Entire Report as issued",
+            "formal": "Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.",
+            "comments": "Possible formats: text/html, text/plain, text/rtf, application/msword, application/pdf, application/rtf, application/vnd.oasis.opendocument.text, application/vnd.openxmlformats-officedocument.wordprocessingml.document. Application/pdf is recommended as the most reliable and interoperable in this context.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Attachment"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "text (type=ED)"
+              },
+              {
+                "identity": "v2",
+                "map": "OBX"
+              }
+            ]
+          }
+        },
+        {
+          "path": "DiagnosticReport.representation.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

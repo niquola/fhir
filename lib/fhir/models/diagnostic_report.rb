@@ -10,21 +10,24 @@ class Fhir::DiagnosticReport < Fhir::Resource
     validates_presence_of :issued
     validates_presence_of :subject_ref
     validates_presence_of :performer_ref
-    validates_presence_of :diagnostic_time
+    validates_presence_of :diagnostic
     validates_presence_of :results
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
-  # registered|interim|final|amended|cancelled|withdrawn
+  # registered | partial | final | corrected +
   attribute :status, Fhir::Code
 
   # Date this version was released
   attribute :issued, DateTime
 
   # The subject of the report
-  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device]
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Location]
 
   # Responsible Diagnostic Service
   resource_reference :performer, [Fhir::Organization]
@@ -34,6 +37,9 @@ class Fhir::DiagnosticReport < Fhir::Resource
 
   # Details concerning a single pathology test requested.
   class RequestDetail < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Context where request was made
     resource_reference :encounter, [Fhir::Encounter]
 
@@ -44,7 +50,7 @@ class Fhir::DiagnosticReport < Fhir::Resource
     attribute :receiver_order_id, Fhir::Identifier
 
     # Test Requested
-    attribute :request_tests, Array[Fhir::CodeableConcept]
+    attribute :request_test, Array[Fhir::CodeableConcept]
 
     # Location of requested test (if applicable)
     attribute :body_site, Fhir::CodeableConcept
@@ -56,13 +62,13 @@ class Fhir::DiagnosticReport < Fhir::Resource
     attribute :clinical_info, String
   end
 
-  attribute :request_details, Array[RequestDetail]
+  attribute :request_detail, Array[RequestDetail]
 
   # Biochemistry, Haematology etc.
   attribute :service_category, Fhir::CodeableConcept
 
-  # Effective time of diagnostic report
-  attribute :diagnostic_time, DateTime
+  # Diagnostically relevant time of diagnostic report
+  attribute :diagnostic, *Fhir::Type[DateTime, Fhir::Period]
 
   # A group of results. Results may be grouped by specimen, or
   # by some value in DiagnosticReport.resultGroup.name to
@@ -72,6 +78,9 @@ class Fhir::DiagnosticReport < Fhir::Resource
       validates_presence_of :name
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Name/Code for this group of results
     attribute :name, Fhir::CodeableConcept
 
@@ -79,25 +88,25 @@ class Fhir::DiagnosticReport < Fhir::Resource
     resource_reference :specimen, [Fhir::Specimen]
 
     # Nested Report Group
-    attribute :groups, Array[Fhir::DiagnosticReport::Results]
+    attribute :group, Array[Fhir::DiagnosticReport::Results]
 
     # An atomic data result
-    resource_references :results, [Fhir::Observation]
+    resource_references :result, [Fhir::Observation]
   end
 
   attribute :results, Results
 
   # Key images associated with this report
-  resource_references :images, [Fhir::Media, Fhir::ImagingStudy]
+  resource_references :image, [Fhir::Media, Fhir::ImagingStudy]
 
   # Clinical Interpretation of test results
   attribute :conclusion, String
 
   # Codes for the conclusion
-  attribute :coded_diagnoses, Array[Fhir::CodeableConcept]
+  attribute :coded_diagnosis, Array[Fhir::CodeableConcept]
 
   # Entire Report as issued
-  attribute :representations, Array[Fhir::Attachment]
+  attribute :representation, Array[Fhir::Attachment]
 end
 
 

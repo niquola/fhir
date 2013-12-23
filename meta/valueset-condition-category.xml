@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Condition/Problem/Diagnosis Codes</h2>
       <p>Example value set for Condition (Problem/Diagnosis) Categories</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/condition-category</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/condition-category</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>complaint</td>
+          <td>
+            <a name="complaint">complaint</a>
+          </td>
           <td>Complaint</td>
           <td>The patient considers the condition an issue to be addressed</td>
         </tr>
         <tr>
-          <td>symptom</td>
+          <td>
+            <a name="symptom">symptom</a>
+          </td>
           <td>Symptom</td>
           <td>A symptom of a condition (as might be mentioned in a review of systems)</td>
         </tr>
         <tr>
-          <td>finding</td>
+          <td>
+            <a name="finding">finding</a>
+          </td>
           <td>Finding</td>
           <td>An observation made by a healthcare provider</td>
         </tr>
         <tr>
-          <td>diagnosis</td>
+          <td>
+            <a name="diagnosis">diagnosis</a>
+          </td>
           <td>Diagnosis</td>
           <td>This is a judgment made by a healthcare provider that the patient has a particular disease or condition</td>
         </tr>

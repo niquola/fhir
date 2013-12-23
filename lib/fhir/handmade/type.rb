@@ -167,7 +167,8 @@ class Fhir::Type
   end
 
   def self.resource_references(attribute_name, resource_types)
-    ref_attr_name = "#{attribute_name.to_s.singularize}_refs"
+    ref_attr_name = "#{attribute_name.to_s}_refs"
+
     attribute attribute_name, *Fhir::Collection[*resource_types]
     attribute ref_attr_name, Array[Fhir::ResourceReference]
 

@@ -2,13 +2,23 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.htm#Attachment">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.html#Attachment">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for Attachment"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for Attachment for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="Attachment"/>
     <element>
@@ -23,11 +33,11 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="ED"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="ED/RP"/>
         </mapping>
       </definition>
@@ -43,13 +53,18 @@
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="MimeType"/>
+        <binding>
+          <name value="MimeType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./mediaType, ./charset"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used"/>
         </mapping>
       </definition>
@@ -65,9 +80,14 @@
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="Language"/>
+        <binding>
+          <name value="Language"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./language"/>
         </mapping>
       </definition>
@@ -77,7 +97,7 @@
       <definition>
         <short value="Data inline, base64ed"/>
         <formal value="The actual data of the attachment - a sequence of bytes. In XML, represented using base64."/>
-        <comments value="The base64-encoded data must be expressed in the same character set as the base resource XML."/>
+        <comments value="The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -85,11 +105,11 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./data"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="ED.5"/>
         </mapping>
       </definition>
@@ -99,7 +119,7 @@
       <definition>
         <short value="Uri where the data can be found"/>
         <formal value="An alternative location where the data can be accessed."/>
-        <comments value="If both data and url are provided, the url must point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. If a URL is provided, it must resolve to actual data."/>
+        <comments value="If both data and url are provided, the url SHALL point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. Relative URLs are interpreted relative to the service url, like a resource reference, rather than relative to the resource itself. If a URL is provided, it SHALL resolve to actual data."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -107,11 +127,11 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./reference/literal"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="RP.1+RP.2 - if they refer to a URL (see v2.6)"/>
         </mapping>
       </definition>
@@ -129,8 +149,8 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="(needs data type R3 proposal)"/>
+          <identity value="rim"/>
+          <map value="N/A (needs data type R3 proposal)"/>
         </mapping>
       </definition>
     </element>
@@ -146,7 +166,7 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value=".integrityCheck[parent::ED/integrityCheckAlgorithm=&quot;SHA-1&quot;]"/>
         </mapping>
       </definition>
@@ -163,20 +183,10 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./title/data"/>
         </mapping>
       </definition>
     </element>
   </structure>
-  <binding>
-    <name value="MimeType"/>
-    <conformance value="required"/>
-    <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
-  </binding>
-  <binding>
-    <name value="Language"/>
-    <conformance value="required"/>
-    <referenceUri value="http://tools.ietf.org/html/bcp47"/>
-  </binding>
 </Profile>

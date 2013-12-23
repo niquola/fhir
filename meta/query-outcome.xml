@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>QueryOutcome</h2>
       <p>The outcome of processing a query request</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/query-outcome</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/query-outcome</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>ok</td>
+          <td>
+            <a name="ok">ok</a>
+          </td>
           <td/>
           <td>The query was processed successfully.</td>
         </tr>
         <tr>
-          <td>limited</td>
+          <td>
+            <a name="limited">limited</a>
+          </td>
           <td/>
           <td>The query was processed successfully, but some additional limitations were added.</td>
         </tr>
         <tr>
-          <td>refused</td>
+          <td>
+            <a name="refused">refused</a>
+          </td>
           <td/>
           <td>The server refused to process the query.</td>
         </tr>
         <tr>
-          <td>error</td>
+          <td>
+            <a name="error">error</a>
+          </td>
           <td/>
           <td>The server tried to process the query, but some error occurred.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The outcome of processing a query request"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/query-outcome"/>
     <caseSensitive value="true"/>

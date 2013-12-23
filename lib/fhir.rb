@@ -17,8 +17,7 @@ module Fhir
   autoload :ResourceReference, 'fhir/handmade/resource_reference'
   autoload :Resource,          'fhir/handmade/resource'
   autoload :Money,             'fhir/handmade/money'
-  autoload :Coding,            'fhir/handmade/coding'
-  autoload :CodeableConcept,   'fhir/handmade/codeable_concept'
+  autoload :Binary,            'fhir/handmade/binary'
 
   autoload :Virtus,            'fhir/virtus'
 end
@@ -27,10 +26,12 @@ require "fhir/models/autoloads"
 require "fhir/types/autoloads"
 
 def Fhir.load_extension(file_name)
-  if extension_path = Fhir.config[:extension_path]
-    fname = extension_path + "/#{file_name}.rb"
-    if File.exists?(fname)
-      load(fname)
-    end
+  fhir_extension_dir = File.dirname(__FILE__) + "/fhir/extensions"
+  extension_paths = [fhir_extension_dir, Fhir.config[:extension_path]].compact
+
+  extension_paths.each do |path|
+    fname = path + "/#{file_name}.rb"
+
+    load(fname) if File.exist?(fname)
   end
 end

@@ -2,13 +2,23 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.htm#Ratio">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.html#Ratio">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for Ratio"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for Ratio for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="Ratio"/>
     <element>
@@ -21,18 +31,29 @@
         <type>
           <code value="Type"/>
         </type>
+        <constraint>
+          <key value="1"/>
+          <name value="both numerator and denominator"/>
+          <severity value="error"/>
+          <human value="numerator and denominator SHALL both be present, or both be absent"/>
+          <xpath value="count(f:numerator) = count(f:denominator)"/>
+        </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="RTO"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
         </mapping>
       </definition>
     </element>
     <element>
       <path value="Ratio.numerator"/>
       <definition>
-        <short value="The numerator"/>
-        <formal value="The numerator."/>
+        <short value="Numerator value"/>
+        <formal value="The value of the numerator."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -40,16 +61,16 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="RTO.numerator"/>
+          <identity value="rim"/>
+          <map value=".numerator"/>
         </mapping>
       </definition>
     </element>
     <element>
       <path value="Ratio.denominator"/>
       <definition>
-        <short value="The denominator"/>
-        <formal value="The denominator."/>
+        <short value="Denominator value"/>
+        <formal value="The value of the denominator."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -57,8 +78,8 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="RTO.denominator"/>
+          <identity value="rim"/>
+          <map value=".denominator"/>
         </mapping>
       </definition>
     </element>

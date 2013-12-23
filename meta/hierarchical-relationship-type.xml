@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>HierarchicalRelationshipType</h2>
       <p>Type indicating if this is a parent or child relationship</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/hierarchical-relationship-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/hierarchical-relationship-type</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>parent</td>
+          <td>
+            <a name="parent">parent</a>
+          </td>
           <td>Parent</td>
           <td>The target resource is the parent of the focal specimen resource.</td>
         </tr>
         <tr>
-          <td>child</td>
+          <td>
+            <a name="child">child</a>
+          </td>
           <td>Child</td>
           <td>The target resource is the child of the focal specimen resource.</td>
         </tr>
@@ -45,7 +49,7 @@
   </telecom>
   <description value="Type indicating if this is a parent or child relationship"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/hierarchical-relationship-type"/>
     <caseSensitive value="true"/>

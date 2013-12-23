@@ -1,1 +1,38 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div>\n      <p>This value sets refers to a substance type<\/p>\n    <\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/substance-type"},"name":{"value":"Substance Type"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"Substance Type"},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/substance-type"},"concept":[{"code":{"value":"406466009"},"display":{"value":"House dust allergen"},"definition":{"value":"House dust allergen"}},{"code":{"value":"3092008"},"display":{"value":"Staphylococcus Aureus"},"definition":{"value":"Staphylococcus Aureus"}},{"code":{"value":"88480006"},"display":{"value":"Potassium"},"definition":{"value":"Potassium"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>This value sets refers to a substance type</p>\n    </div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/substance-type",
+  "name": "Substance Type",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Substance Type",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/substance-type",
+    "concept": [
+      {
+        "code": "406466009",
+        "display": "House dust allergen",
+        "definition": "House dust allergen"
+      },
+      {
+        "code": "3092008",
+        "display": "Staphylococcus Aureus",
+        "definition": "Staphylococcus Aureus"
+      },
+      {
+        "code": "88480006",
+        "display": "Potassium",
+        "definition": "Potassium"
+      }
+    ]
+  }
+}

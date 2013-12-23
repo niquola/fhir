@@ -1,1 +1,773 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.\" class=\"dict\" href=\"location-definitions.htm#Location\"><b>Location<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"Name of the location which identifies it to its users.\" class=\"dict\" href=\"location-definitions.htm#Location.name\"><b>name<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Name of the location<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Description of the Location, which helps in finding or referencing the place.\" class=\"dict\" href=\"location-definitions.htm#Location.description\"><b>description<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Description of the Location<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Classification of the location.\" class=\"dict\" href=\"location-definitions.htm#Location.type\"><b>type<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-location-type.htm\">Classification of the location<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/type&gt;\r\n &lt;<a title=\"The contact details of the main communication devices present at the location.\" class=\"dict\" href=\"location-definitions.htm#Location.telecom\"><b>telecom<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Contact\">Contact<\/a><\/span> <span style=\"color: navy\">Contact details of the location<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/telecom&gt;\r\n &lt;<a title=\"Physical location.\" class=\"dict\" href=\"location-definitions.htm#Location.address\"><b>address<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Address\">Address<\/a><\/span> <span style=\"color: navy\">Physical location<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/address&gt;\r\n &lt;<a title=\"The absolute geographic location of the Location, expressed in a KML compatible manner (see notes below for KML).\" class=\"dict\" href=\"location-definitions.htm#Location.position\"><b>position<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..1<\/b><\/span> The absolute geographic location --&gt;<\/span>\r\n  &lt;<a title=\"Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).\" class=\"dict\" href=\"location-definitions.htm#Location.position.longitude\"><b>longitude<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#decimal\">decimal<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Longitude<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).\" class=\"dict\" href=\"location-definitions.htm#Location.position.latitude\"><b>latitude<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#decimal\">decimal<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Latitude<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).\" class=\"dict\" href=\"location-definitions.htm#Location.position.altitude\"><b>altitude<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#decimal\">decimal<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Altitude<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;/position&gt;\r\n &lt;<a title=\"The organization that provides services at the location.\" class=\"dict\" href=\"location-definitions.htm#Location.provider\"><b>provider<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"organization.htm#Organization\">Organization<\/a>)<\/span> <span style=\"color: navy\">The organization that provides services at the location<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/provider&gt;\r\n &lt;<a title=\"Whether the location is still used to provide services (this element modifies the meaning of other elements)\" class=\"dict\" href=\"location-definitions.htm#Location.active\"><span style=\"text-decoration: underline\"><b>active<\/b><\/span><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#boolean\">boolean<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Whether the location is still used to provide services<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Another Location which this Location is physically inside of.\" class=\"dict\" href=\"location-definitions.htm#Location.partOf\"><b>partOf<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"location.htm#Location\">Location<\/a>)<\/span> <span style=\"color: navy\">Another Location which this Location is physically inside of<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/partOf&gt;\r\n&lt;/Location&gt;\r\n<\/pre><\/div>"},"name":{"value":"location"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Location"},"publish":{"value":true},"element":[{"path":{"value":"Location"},"definition":{"short":{"value":"Contact details and position information for a physical place"},"formal":{"value":"Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"ServiceDeliveryLocation"}}]}},{"path":{"value":"Location.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"Location.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"Location.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"Location.name"},"definition":{"short":{"value":"Name of the location"},"formal":{"value":"Name of the location which identifies it to its users."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./location/name"}}]}},{"path":{"value":"Location.description"},"definition":{"short":{"value":"Description of the Location"},"formal":{"value":"Description of the Location, which helps in finding or referencing the place."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./location/desc"}}]}},{"path":{"value":"Location.type"},"definition":{"short":{"value":"Classification of the location"},"formal":{"value":"Classification of the location."},"comments":{"value":"There are many ways by which locations can be classified, so this element may be repeated."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"LocationType"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./code"}}]}},{"path":{"value":"Location.telecom"},"definition":{"short":{"value":"Contact details of the location"},"formal":{"value":"The contact details of the main communication devices present at the location."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Contact"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./location/telecom"}}]}},{"path":{"value":"Location.address"},"definition":{"short":{"value":"Physical location"},"formal":{"value":"Physical location."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Address"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./location/addr"}}]}},{"path":{"value":"Location.position"},"definition":{"short":{"value":"The absolute geographic location"},"formal":{"value":"The absolute geographic location of the Location, expressed in a KML compatible manner (see notes below for KML)."},"min":{"value":0},"max":{"value":"1"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Location.position.longitude"},"definition":{"short":{"value":"Longitude"},"formal":{"value":"Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below)."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"decimal"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Location.position.latitude"},"definition":{"short":{"value":"Latitude"},"formal":{"value":"Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below)."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"decimal"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Location.position.altitude"},"definition":{"short":{"value":"Altitude"},"formal":{"value":"Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below)."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"decimal"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Location.provider"},"definition":{"short":{"value":"The organization that provides services at the location"},"formal":{"value":"The organization that provides services at the location."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Organization)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./servicePractitionerOrganization"}}]}},{"path":{"value":"Location.active"},"definition":{"short":{"value":"Whether the location is still used to provide services"},"formal":{"value":"Whether the location is still used to provide services."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"boolean"}}],"condition":[],"isModifier":{"value":true},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./statusCode"}}]}},{"path":{"value":"Location.partOf"},"definition":{"short":{"value":"Another Location which this Location is physically inside of"},"formal":{"value":"Another Location which this Location is physically inside of."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Location)"}}],"condition":[],"isModifier":{"value":false}}}]}],"binding":[{"name":{"value":"LocationType"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/location-type"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.\" class=\"dict\" href=\"location-definitions.html#Location\"><b>Location</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"Unique code or number identifying the location to its users.\" class=\"dict\" href=\"location-definitions.html#Location.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">\r\n     Unique code or number identifying the location to its users</span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n &lt;<a title=\"Name of the location as used by humans. Needs not be unique.\" class=\"dict\" href=\"location-definitions.html#Location.name\"><b>name</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Name of the location as used by humans</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Description of the Location, which helps in finding or referencing the place.\" class=\"dict\" href=\"location-definitions.html#Location.description\"><b>description</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Description of the Location, which helps in finding or referencing the place</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Indicates the type of function performed at the location.\" class=\"dict\" href=\"location-definitions.html#Location.type\"><b>type</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <a style=\"color: navy\" href=\"v3/vs/ServiceDeliveryLocationRoleType/index.html\">Indicates the type of function performed at the location</a><span style=\"color: Gray\"> --&gt;</span>&lt;/type&gt;\r\n &lt;<a title=\"The contact details of the main communication devices present at the location.\" class=\"dict\" href=\"location-definitions.html#Location.telecom\"><b>telecom</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Contact\">Contact</a></span> <span style=\"color: navy\">Contact details of the location</span><span style=\"color: Gray\"> --&gt;</span>&lt;/telecom&gt;\r\n &lt;<a title=\"Physical location.\" class=\"dict\" href=\"location-definitions.html#Location.address\"><b>address</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Address\">Address</a></span> <span style=\"color: navy\">Physical location</span><span style=\"color: Gray\"> --&gt;</span>&lt;/address&gt;\r\n &lt;<a title=\"Physical form of the location, e.g. building, room, vehicle, road.\" class=\"dict\" href=\"location-definitions.html#Location.physicalType\"><b>physicalType</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-location-physical-type.html\">Physical form of the location</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/physicalType&gt;\r\n &lt;<a title=\"The absolute geographic location of the Location, expressed in a KML compatible manner (see notes below for KML).\" class=\"dict\" href=\"location-definitions.html#Location.position\"><b>position</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..1</b></span> The absolute geographic location --&gt;</span>\r\n  &lt;<a title=\"Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).\" class=\"dict\" href=\"location-definitions.html#Location.position.longitude\"><b>longitude</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#decimal\">decimal</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Longitude as expressed in KML</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).\" class=\"dict\" href=\"location-definitions.html#Location.position.latitude\"><b>latitude</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#decimal\">decimal</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Latitude as expressed in KML</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).\" class=\"dict\" href=\"location-definitions.html#Location.position.altitude\"><b>altitude</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#decimal\">decimal</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Altitude as expressed in KML</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;/position&gt;\r\n &lt;<a title=\"The organization that is responsible for the provisioning and upkeep of the location.\" class=\"dict\" href=\"location-definitions.html#Location.managingOrganization\"><b>managingOrganization</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>)</span> <span style=\"color: navy\">\r\n     The organization that is responsible for the provisioning and upkeep of the location</span><span style=\"color: Gray\"> --&gt;</span>&lt;/managingOrganization&gt;\r\n &lt;<a title=\"active | suspended | inactive (this element modifies the meaning of other elements)\" class=\"dict\" href=\"location-definitions.html#Location.status\"><span style=\"text-decoration: underline\"><b>status</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"location-status.html\">active | suspended | inactive</a></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Another Location which this Location is physically part of.\" class=\"dict\" href=\"location-definitions.html#Location.partOf\"><b>partOf</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">\r\n     Another Location which this Location is physically part of</span><span style=\"color: Gray\"> --&gt;</span>&lt;/partOf&gt;\r\n &lt;<a title=\"Indicates whether a resource instance represents a specific location or a class of locations (this element modifies the meaning of other elements)\" class=\"dict\" href=\"location-definitions.html#Location.mode\"><span style=\"text-decoration: underline\"><b>mode</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"location-mode.html\">instance | kind</a></span><span style=\"color: Gray\"> --&gt;</span>\r\n&lt;/Location&gt;\r\n</pre></div>"
+  },
+  "name": "location",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Location",
+      "publish": true,
+      "element": [
+        {
+          "path": "Location",
+          "definition": {
+            "short": "Details and position information for a physical place",
+            "formal": "Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "Role[classCode=SDLC]."
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.identifier",
+          "definition": {
+            "short": "Unique code or number identifying the location to its users",
+            "formal": "Unique code or number identifying the location to its users.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "id"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.name",
+          "definition": {
+            "short": "Name of the location as used by humans",
+            "formal": "Name of the location as used by humans. Needs not be unique.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "name"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.description",
+          "definition": {
+            "short": "Description of the Location, which helps in finding or referencing the place",
+            "formal": "Description of the Location, which helps in finding or referencing the place.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "playingEntity[classCode=PLC determinerCode=INSTANCE].desc"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.description.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.type",
+          "definition": {
+            "short": "Indicates the type of function performed at the location",
+            "formal": "Indicates the type of function performed at the location.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "LocationType",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/v3/vs/ServiceDeliveryLocationRoleType"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "code"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.type.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.telecom",
+          "definition": {
+            "short": "Contact details of the location",
+            "formal": "The contact details of the main communication devices present at the location.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Contact"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "telecom"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.telecom.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.address",
+          "definition": {
+            "short": "Physical location",
+            "formal": "Physical location.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Address"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "addr"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.address.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.physicalType",
+          "definition": {
+            "short": "Physical form of the location",
+            "formal": "Physical form of the location, e.g. building, room, vehicle, road.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "PhysicalType",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/location-physical-type"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "playingEntity [classCode=PLC].code"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.physicalType.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.position",
+          "definition": {
+            "short": "The absolute geographic location",
+            "formal": "The absolute geographic location of the Location, expressed in a KML compatible manner (see notes below for KML).",
+            "min": "0",
+            "max": "1",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "playingEntity [classCode=PLC determinerCode=INSTANCE].positionText"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.position.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.position.longitude",
+          "definition": {
+            "short": "Longitude as expressed in KML",
+            "formal": "Longitude. The value domain and the interpretation are the same as for the text of the longitude element in KML (see notes below).",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "decimal"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "?? RIM Opted not to map the sub-elements of GPS location) is now an OBS"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.position.longitude.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.position.latitude",
+          "definition": {
+            "short": "Latitude as expressed in KML",
+            "formal": "Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "decimal"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "?? RIM Opted not to map the sub-elements of GPS location) is now an OBS"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.position.latitude.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.position.altitude",
+          "definition": {
+            "short": "Altitude as expressed in KML",
+            "formal": "Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "decimal"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "?? RIM Opted not to map the sub-elements of GPS location) is now an OBS"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.position.altitude.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.managingOrganization",
+          "definition": {
+            "short": "The organization that is responsible for the provisioning and upkeep of the location",
+            "formal": "The organization that is responsible for the provisioning and upkeep of the location.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "scopingEntity[classCode=ORG determinerKind=INSTANCE]"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.managingOrganization.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.status",
+          "definition": {
+            "short": "active | suspended | inactive",
+            "formal": "active | suspended | inactive.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "LocationStatus",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/location-status"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "statusCode"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.status.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.partOf",
+          "definition": {
+            "short": "Another Location which this Location is physically part of",
+            "formal": "Another Location which this Location is physically part of.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Location)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "inboundLink[typeCode=PART].source[classCode=SDLC]"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.partOf.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Location.mode",
+          "definition": {
+            "short": "instance | kind",
+            "formal": "Indicates whether a resource instance represents a specific location or a class of locations.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "LocationMode",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/location-mode"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "playingEntity[classCode=PLC].determinerCode"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Location.mode.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

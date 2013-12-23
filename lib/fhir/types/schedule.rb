@@ -3,7 +3,7 @@
 # happen, but when they are expected or requested to occur.
 class Fhir::Schedule < Fhir::DataType
   # When the event occurs
-  attribute :events, Array[Fhir::Period]
+  attribute :event, Array[Fhir::Period]
 
   # Identifies a repeating pattern to the intended time
   # periods.
@@ -16,13 +16,14 @@ class Fhir::Schedule < Fhir::DataType
     # Event occurs frequency times per duration
     attribute :frequency, Integer
 
-    # Event occurs duration from common life event
+    # HS | WAKE | AC | ACM | ACD | ACV | PC | PCM | PCD | PCV -
+    # common life events
     attribute :when, Fhir::Code
 
     # Repeating or event-related duration
     attribute :duration, Float
 
-    # The units of time for the duration
+    # s | min | h | d | wk | mo | a - unit of time (UCUM)
     attribute :units, Fhir::Code
 
     # Number of times to repeat
@@ -35,3 +36,4 @@ class Fhir::Schedule < Fhir::DataType
   attribute :repeat, Repeat
 end
 
+Fhir.load_extension('schedule')

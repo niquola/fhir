@@ -2,17 +2,20 @@
 # individual who is directly or indirectly involved in the
 # provisioning of healthcare.
 class Fhir::Practitioner < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # A identifier for the person as this agent
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
   # A name associated with the person
   attribute :name, Fhir::HumanName
 
   # A contact detail for the practitioner
-  attribute :telecoms, Array[Fhir::Contact]
+  attribute :telecom, Array[Fhir::Contact]
 
   # One or more addresses for the practitioner
   attribute :address, Fhir::Address
@@ -24,28 +27,34 @@ class Fhir::Practitioner < Fhir::Resource
   attribute :birth_date, DateTime
 
   # Image of the person
-  attribute :photos, Array[Fhir::Attachment]
+  attribute :photo, Array[Fhir::Attachment]
 
   # The represented organization
   resource_reference :organization, [Fhir::Organization]
 
-  # A role the practitioner has
-  attribute :roles, Array[Fhir::CodeableConcept]
+  # Roles which this practitioner may perform
+  attribute :role, Array[Fhir::CodeableConcept]
 
   # Specific specialty of the practitioner
-  attribute :specialties, Array[Fhir::CodeableConcept]
+  attribute :specialty, Array[Fhir::CodeableConcept]
 
-  # The period during which the person is authorized to
-  # perform the service
+  # The period during which the practitioner is authorized to
+  # perform in these role(s)
   attribute :period, Fhir::Period
 
-  # Qualifications relevant to the provided service.
+  # The location(s) at which this practitioner provides care
+  resource_references :location, [Fhir::Location]
+
+  # Qualifications obtained by training and certification.
   class Qualification < Fhir::ValueObject
     invariants do
       validates_presence_of :code
     end
 
-    # Qualification
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # Coded representation of the qualification
     attribute :code, Fhir::CodeableConcept
 
     # Period during which the qualification is valid
@@ -55,11 +64,11 @@ class Fhir::Practitioner < Fhir::Resource
     resource_reference :issuer, [Fhir::Organization]
   end
 
-  attribute :qualifications, Array[Qualification]
+  attribute :qualification, Array[Qualification]
 
   # A language the practitioner is able to use in patient
   # communication
-  attribute :communications, Array[Fhir::CodeableConcept]
+  attribute :communication, Array[Fhir::CodeableConcept]
 end
 
 

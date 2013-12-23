@@ -2,6 +2,8 @@ require 'nokogiri'
 require 'active_support/core_ext'
 require 'fileutils'
 
+IGNORED_ATTRIBUTES = %w[contained extension]
+
 module FhirElementsToTree
   def add_node(tree, el)
     path = el_path(el)
@@ -41,7 +43,7 @@ module FhirElementsToTree
 
   def make_tree(els)
     els.each_with_object(make_node(nil)) do |el, tree|
-      add_node(tree, el)
+      add_node(tree, el) unless IGNORED_ATTRIBUTES.include?(el_name(el))
     end
   end
 end
@@ -76,6 +78,10 @@ module FhirProfile
 
   def el_types(el)
     values_by_path(el, 'definition/type/code')
+  end
+
+  def el_name_reference(el)
+    value_by_path(el, 'definition/nameReference')
   end
 
   def el_name(el)
@@ -143,14 +149,14 @@ module RubyCodeGeneration
 
   def attribute_resource_types(node)
     types = el_types(node[:el])
-    puts "too many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
+    puts "WARNING: too many types for resource ref #{el_path(node[:el])} #{types.inspect}" if types.length > 1
 
     original_type = types.find {|t| t.include?("Resource(") }
-                                               types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
-                                                 MISSED_RESOURCES.include?(type) ? nil : "Fhir::#{type}"
-                                               end.compact
+    types = original_type.gsub!(/^Resource\((.*?)?\)/, '\\1').split('|').map do |type|
+      MISSED_RESOURCES.include?(type) ? nil : "Fhir::#{type}"
+    end.compact
 
-                                                 types.empty? ? ["Fhir::Resource"] : types
+    types.empty? ? ["Fhir::Resource"] : types
   end
 
   def attribute_resource_ref?(node)
@@ -161,22 +167,26 @@ module RubyCodeGeneration
 
   def attribute_types(node)
     original_types = el_types(node[:el])
+    name_reference = el_name_reference(node[:el])
 
     if original_types.present?
       original_types.map do |original_type|
-	mapped_type = TYPE_MAPPINGS[original_type]
+        mapped_type = TYPE_MAPPINGS[original_type]
 
-	if mapped_type.nil?
+        if mapped_type.nil?
           if original_type.starts_with?("@")
             mapped_type = original_type.gsub('@', '').split('.').map(&:camelize).join("::")
             mapped_type = "Fhir::#{mapped_type}"
           else
             mapped_type = "Fhir::#{original_type}"
-            end
-	else
+          end
+        else
           mapped_type
-	end
+        end
       end.compact
+    elsif name_reference.present?
+      full_class_name = (["Fhir"] + name_reference.split('.')).map(&:camelize).join("::")
+      [full_class_name]
     else
       [attribute_class_name(node_path(node).last)]
     end
@@ -213,11 +223,7 @@ module RubyCodeGeneration
       attr_name = RENAMINGS[node_path]
     end
 
-    if is_collection?(node)
-      attr_name.pluralize
-    else
-      attr_name
-    end
+    attr_name
   end
 
   def attribute_class_name(node_name)
@@ -240,15 +246,9 @@ module RubyCodeGeneration
     end * "\n"
   end
 
-  IGNORED_ATTRIBUTES = %w[contained extension]
-
   def reference_name(node)
     attr_name = attribute_name(node)
-    if is_collection?(node)
-      attr_name = "#{attr_name.singularize}_refs"
-    else
-      attr_name = "#{attr_name}_ref"
-    end
+    "#{attr_name}_ref"
   end
 
   def attribute_validation(node, attr_name)
@@ -270,8 +270,8 @@ module RubyCodeGeneration
 
   def has_invariants?(node)
     get_attributes(node)
-    .values
-    .any? { |n| required?(n) }
+      .values
+      .any? { |n| required?(n) }
   end
 
   def ruby_block_code(start, content)
@@ -304,11 +304,14 @@ module RubyCodeGeneration
 
   def plain_attribute_type(node)
     types = attribute_types(node)
+
     if types.size > 1
       virtus_type = is_collection?(node) ? 'Collection' : 'Type'
       return "*Fhir::#{virtus_type}[#{types.join(', ')}]"
     end
+
     ruby_type = types.first
+
     return ruby_type unless is_collection?(node)
     "Array[#{ruby_type}]"
   end
@@ -329,8 +332,12 @@ module RubyCodeGeneration
 
   def classname(node_name, node)
     classname = attribute_class_name(node_name)
-    return classname if value_object?(node)
-    "Fhir::#{classname}"
+
+    if value_object?(node)
+      classname
+    else
+      "Fhir::#{classname}"
+    end
   end
 
   def value_object?(node)
@@ -361,8 +368,8 @@ module RubyCodeGeneration
         line(code, depth + 1, node_invariants(node))
         blank_line(code)
       end
-      line(code, 0, tree_to_ruby_code(node, root_class_name))
 
+      line(code, 0, tree_to_ruby_code(node, root_class_name))
       line(code, depth, 'end')
 
       blank_line(code)
@@ -377,8 +384,7 @@ module RubyCodeGeneration
 
   def tree_to_ruby_code(tree, root_class_name)
     get_attributes(tree)
-    .map do |node_name, node|
-      next if IGNORED_ATTRIBUTES.include?(node_name)
+      .map do |node_name, node|
       attribute_to_ruby_code(node_name, node, root_class_name)
     end.join
   end

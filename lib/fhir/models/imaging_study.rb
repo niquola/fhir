@@ -9,6 +9,9 @@ class Fhir::ImagingStudy < Fhir::Resource
     validates_presence_of :number_of_instances
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -25,18 +28,21 @@ class Fhir::ImagingStudy < Fhir::Resource
   attribute :accession_no, Fhir::Identifier
 
   # Other identifiers for the study (0020,0010)
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
+
+  # Order(s) that caused this study to be performed
+  resource_references :order, [Fhir::DiagnosticOrder]
 
   # All series.modality if actual acquisition modalities
-  attribute :modalities, Array[Fhir::Code]
+  attribute :modality, Array[Fhir::Code]
 
   # Referring physician (0008,0090)
   resource_reference :referrer, [Fhir::Practitioner]
 
-  # Instance Availability (0008,0056)
+  # ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)
   attribute :availability, Fhir::Code
 
-  # Retrieve URI (0040,E010)
+  # Retrieve URI (0008,1190)
   attribute :url, Fhir::URI
 
   # Number of Study Related Series (0020,1206)
@@ -45,11 +51,11 @@ class Fhir::ImagingStudy < Fhir::Resource
   # Number of Study Related Instances (0020,1208)
   attribute :number_of_instances, Integer
 
-  # Diagnoses etc with request (0008,1080)
+  # Diagnoses etc with request (0040,1002)
   attribute :clinical_information, String
 
   # Type of procedure performed (0008,1032)
-  attribute :procedures, Array[Fhir::Coding]
+  attribute :procedure, Array[Fhir::Coding]
 
   # Who interpreted images (0008,1060)
   resource_reference :interpreter, [Fhir::Practitioner]
@@ -63,13 +69,16 @@ class Fhir::ImagingStudy < Fhir::Resource
       validates_presence_of :modality
       validates_presence_of :uid
       validates_presence_of :number_of_instances
-      validates_presence_of :instances
+      validates_presence_of :instance
     end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
     # Number of this series in overall sequence (0020,0011)
     attribute :number, Integer
 
-    # The modality of this sequence (0008,0060)
+    # The modality of the instances in the series (0008,0060)
     attribute :modality, Fhir::Code
 
     # Formal identifier for this series (0020,000E)
@@ -81,10 +90,10 @@ class Fhir::ImagingStudy < Fhir::Resource
     # Number of Series Related Instances (0020,1209)
     attribute :number_of_instances, Integer
 
-    # Instance Availability (0008,0056)
+    # ONLINE | OFFLINE | NEARLINE | UNAVAILABLE (0008,0056)
     attribute :availability, Fhir::Code
 
-    # Retrieve URI (0040,E010)
+    # Retrieve URI (0008,1115 > 0008,1190)
     attribute :url, Fhir::URI
 
     # Body part examined (Map from 0018,0015)
@@ -100,6 +109,9 @@ class Fhir::ImagingStudy < Fhir::Resource
         validates_presence_of :sopclass
       end
 
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # The number of this instance in the series (0020,0013)
       attribute :number, Integer
 
@@ -109,20 +121,22 @@ class Fhir::ImagingStudy < Fhir::Resource
       # DICOM class type (0008,0016)
       attribute :sopclass, String
 
-      # Type of instance (0004,1430)
+      # Type of instance (image etc) (0004,1430)
       attribute :type, String
 
-      # Description to be provided
+      # Description (0070,0080 | 0040,A043 > 0008,0104 | 0042,0010
+      # | 0008,0008)
       attribute :title, String
 
-      # WADO / WADO-RS service where instance is available
+      # WADO-RS service where instance is available  (0008,1199 >
+      # 0008,1190)
       attribute :url, Fhir::URI
 
       # A FHIR resource with content for this instance
       resource_reference :attachment, [Fhir::Resource]
     end
 
-    attribute :instances, Array[Instance]
+    attribute :instance, Array[Instance]
   end
 
   attribute :series, Array[Series]

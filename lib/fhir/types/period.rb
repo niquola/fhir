@@ -1,9 +1,10 @@
 # A time period defined by a start and end time.
 class Fhir::Period < Fhir::DataType
-  # The start of the period
+  # Starting time with inclusive boundary
   attribute :start, DateTime
 
-  # The end of the period, if not ongoing
+  # End time with inclusive boundary, if not ongoing
   attribute :end, DateTime
 end
 
+Fhir.load_extension('period')

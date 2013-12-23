@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>CodeSelectionMode</h2>
       <p>The way in which the code is selected</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/code-selection-mode</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/code-selection-mode</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>code</td>
+          <td>
+            <a name="code">code</a>
+          </td>
           <td/>
           <td>Only this code is selected.</td>
         </tr>
         <tr>
-          <td>children</td>
+          <td>
+            <a name="children">children</a>
+          </td>
           <td/>
           <td>Only the immediate children (codes with a is-a relationship) are selected, but not this code itself.</td>
         </tr>
         <tr>
-          <td>descendants</td>
+          <td>
+            <a name="descendants">descendants</a>
+          </td>
           <td/>
           <td>All descendants of this code are selected, but not this code itself.</td>
         </tr>
         <tr>
-          <td>all</td>
+          <td>
+            <a name="all">all</a>
+          </td>
           <td/>
           <td>This code and any descendants are selected.</td>
         </tr>
         <tr>
-          <td>system</td>
+          <td>
+            <a name="system">system</a>
+          </td>
           <td/>
           <td>All codes from the specified code system.</td>
         </tr>
@@ -60,7 +70,7 @@
   </telecom>
   <description value="The way in which the code is selected"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.975+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/code-selection-mode"/>
     <caseSensitive value="true"/>

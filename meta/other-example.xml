@@ -1,47 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?><Other xmlns="http://hl7.org/fhir">
-  <extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/referral#referredForService"/>
-    <isModifier value="true"/>
+  <extension url="http://example.org/do-not-use/fhir-extensions/referral#requestingPractitioner">
+    <valueResource>
+      <reference value="Practitioner/f201"/>
+      <display value="Dokter Bronsig"/>
+    </valueResource>
+  </extension>
+  <extension url="http://example.org/do-not-use/fhir-extensions/referral#notes">
+    <valueString value="The patient had fever peaks over the last couple of days. He is worried about these peaks."/>
+  </extension>
+  <extension url="http://example.org/do-not-use/fhir-extensions/referral#fulfillingEncounter">
+    <valueResource>
+      <reference value="Encounter/f201"/>
+    </valueResource>
+  </extension>
+  <modifierExtension url="http://example.org/do-not-use/fhir-extensions/referral#referredForService">
     <valueCodeableConcept>
       <coding>
-        <system value="http://snomed.info/id"/>
+        <system value="http://snomed.info/sct"/>
         <code value="11429006"/>
         <display value="Consultation"/>
       </coding>
     </valueCodeableConcept>
-  </extension>
-  <extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/referral#requestingPractitioner"/>
-    <valueResource>
-      <type value="Practitioner"/>
-      <reference value="practitioner/@f201"/>
-      <display value="Dokter Bronsig"/>
-    </valueResource>
-  </extension>
-  <extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/referral#targetDate"/>
-    <isModifier value="true"/>
+  </modifierExtension>
+  <modifierExtension url="http://example.org/do-not-use/fhir-extensions/referral#targetDate">
     <valuePeriod>
       <start value="2013-04-01"/>
       <end value="2013-04-15"/>
     </valuePeriod>
-  </extension>
-  <extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/referral#status"/>
-    <isModifier value="true"/>
+  </modifierExtension>
+  <modifierExtension url="http://example.org/do-not-use/fhir-extensions/referral#status">
     <valueCode value="complete"/>
-  </extension>
-  <extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/referral#notes"/>
-    <valueString value="The patient had fever peaks over the last couple of days. He is worried about these peaks."/>
-  </extension>
-  <extension>
-    <url value="http://example.org/do-not-use/fhir-extensions/referral#fulfillingEncounter"/>
-    <valueResource>
-      <type value="Encounter"/>
-      <reference value="encounter/@f201"/>
-    </valueResource>
-  </extension>
+  </modifierExtension>
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
@@ -60,8 +49,7 @@
     </coding>
   </code>
   <subject>
-    <type value="Patient"/>
-    <reference value="patient/@f201"/>
+    <reference value="Patient/f201"/>
     <display value="Roel"/>
   </subject>
 </Other>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>AdmitSource</h2>
       <p>This value set defines a set of codes that can be used to indicate from where the patient came in.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/admit-source</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/admit-source</p>
       <table>
         <tr>
           <td>
@@ -20,57 +20,72 @@
           </td>
         </tr>
         <tr>
-          <td>hosp-trans</td>
+          <td>
+            <a name="hosp-trans">hosp-trans</a>
+          </td>
           <td>Transferred from other hospital</td>
           <td/>
         </tr>
         <tr>
-          <td>hosp-trans</td>
-          <td>Transferred from other hospital</td>
-          <td/>
-        </tr>
-        <tr>
-          <td>emd</td>
+          <td>
+            <a name="emd">emd</a>
+          </td>
           <td>From accident/emergency department</td>
           <td/>
         </tr>
         <tr>
-          <td>outp</td>
+          <td>
+            <a name="outp">outp</a>
+          </td>
           <td>From outpatient department</td>
           <td/>
         </tr>
         <tr>
-          <td>born</td>
+          <td>
+            <a name="born">born</a>
+          </td>
           <td>Born in hospital</td>
           <td/>
         </tr>
         <tr>
-          <td>gp</td>
+          <td>
+            <a name="gp">gp</a>
+          </td>
           <td>General Practitioner referral</td>
           <td/>
         </tr>
         <tr>
-          <td>mp</td>
+          <td>
+            <a name="mp">mp</a>
+          </td>
           <td>Medical Practitioner/physician referral</td>
           <td/>
         </tr>
         <tr>
-          <td>nursing</td>
+          <td>
+            <a name="nursing">nursing</a>
+          </td>
           <td>From nursing home</td>
           <td/>
         </tr>
         <tr>
-          <td>psych</td>
+          <td>
+            <a name="psych">psych</a>
+          </td>
           <td>From psychiatric hospital</td>
           <td/>
         </tr>
         <tr>
-          <td>rehab</td>
+          <td>
+            <a name="rehab">rehab</a>
+          </td>
           <td>From rehabilitation facility</td>
           <td/>
         </tr>
         <tr>
-          <td>other</td>
+          <td>
+            <a name="other">other</a>
+          </td>
           <td>Other</td>
           <td/>
         </tr>
@@ -89,10 +104,6 @@
   <define>
     <system value="http://hl7.org/fhir/admit-source"/>
     <caseSensitive value="true"/>
-    <concept>
-      <code value="hosp-trans"/>
-      <display value="Transferred from other hospital"/>
-    </concept>
     <concept>
       <code value="hosp-trans"/>
       <display value="Transferred from other hospital"/>

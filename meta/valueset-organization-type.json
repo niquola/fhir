@@ -1,1 +1,59 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>OrganizationType<\/h2><p>This example value set defines a set of codes that can be used to indicate a type of organization.<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/organization-type<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>prov<\/td><td>Healthcare Provider<\/td><td/><\/tr><tr><td>dept<\/td><td>Hospital Department<\/td><td/><\/tr><tr><td>icu<\/td><td>Intensive Care Unit<\/td><td/><\/tr><tr><td>team<\/td><td>Organizational team<\/td><td/><\/tr><tr><td>fed<\/td><td>Federal Government<\/td><td/><\/tr><tr><td>ins<\/td><td>Insurance Company<\/td><td/><\/tr><tr><td>edu<\/td><td>Educational Institute<\/td><td/><\/tr><tr><td>reli<\/td><td>Religious Institution<\/td><td/><\/tr><tr><td>pharm<\/td><td>Pharmacy<\/td><td/><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/organization-type"},"name":{"value":"OrganizationType"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This example value set defines a set of codes that can be used to indicate a type of organization."},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/organization-type"},"concept":[{"code":{"value":"prov"},"display":{"value":"Healthcare Provider"}},{"code":{"value":"dept"},"display":{"value":"Hospital Department"}},{"code":{"value":"icu"},"display":{"value":"Intensive Care Unit"}},{"code":{"value":"team"},"display":{"value":"Organizational team"}},{"code":{"value":"fed"},"display":{"value":"Federal Government"}},{"code":{"value":"ins"},"display":{"value":"Insurance Company"}},{"code":{"value":"edu"},"display":{"value":"Educational Institute"}},{"code":{"value":"reli"},"display":{"value":"Religious Institution"}},{"code":{"value":"pharm"},"display":{"value":"Pharmacy"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>OrganizationType</h2><p>This example value set defines a set of codes that can be used to indicate a type of organization.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/organization-type</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"prov\">prov</a></td><td>Healthcare Provider</td><td/></tr><tr><td><a name=\"dept\">dept</a></td><td>Hospital Department</td><td/></tr><tr><td><a name=\"icu\">icu</a></td><td>Intensive Care Unit</td><td/></tr><tr><td><a name=\"team\">team</a></td><td>Organizational team</td><td/></tr><tr><td><a name=\"fed\">fed</a></td><td>Federal Government</td><td/></tr><tr><td><a name=\"ins\">ins</a></td><td>Insurance Company</td><td/></tr><tr><td><a name=\"edu\">edu</a></td><td>Educational Institute</td><td/></tr><tr><td><a name=\"reli\">reli</a></td><td>Religious Institution</td><td/></tr><tr><td><a name=\"pharm\">pharm</a></td><td>Pharmacy</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/organization-type",
+  "name": "OrganizationType",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to indicate a type of organization.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/organization-type",
+    "concept": [
+      {
+        "code": "prov",
+        "display": "Healthcare Provider"
+      },
+      {
+        "code": "dept",
+        "display": "Hospital Department"
+      },
+      {
+        "code": "icu",
+        "display": "Intensive Care Unit"
+      },
+      {
+        "code": "team",
+        "display": "Organizational team"
+      },
+      {
+        "code": "fed",
+        "display": "Federal Government"
+      },
+      {
+        "code": "ins",
+        "display": "Insurance Company"
+      },
+      {
+        "code": "edu",
+        "display": "Educational Institute"
+      },
+      {
+        "code": "reli",
+        "display": "Religious Institution"
+      },
+      {
+        "code": "pharm",
+        "display": "Pharmacy"
+      }
+    ]
+  }
+}

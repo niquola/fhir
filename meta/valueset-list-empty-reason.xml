@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>List Empty Reasons</h2>
       <p>General reasons for a list to be empty. Reasons are either related to a summary list (i.e. problem or medication list) or to a workflow related list (i.e. consultation list)</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/list-empty-reason</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/list-empty-reason</p>
       <table>
         <tr>
           <td>
@@ -23,7 +23,9 @@
           </td>
         </tr>
         <tr>
-          <td>nilknown</td>
+          <td>
+            <a name="nilknown">nilknown</a>
+          </td>
           <td>Nil Known</td>
           <td>Clinical judgement that there are no known items for this list after reasonable investigation. Note that this a positive statement by a clinical user, and not a default position asserted by a computer system in the lack of other information. Example uses:
             <br/> * For allergies: the patient or patient&#39;s agent/guardian has asserted that he/she is not aware of any allergies (NKA - nil known allergies)
@@ -31,29 +33,37 @@
             <br/> * For diagnoses, problems and procedures: the patient or patient&#39;s agent/guardian has asserted that there is no known event to record.
           </td>
           <td>Other language is sometimes used for this concept, such as &#39;no significant [x] known&#39;.
-            <br/>SNOMED-CT includes many codes for this general concept, but no single generalisation. If using SNOMED-CT, use this code and the appropriate specific SNOMED-CT code
+            <br/>SNOMED CT includes many codes for this general concept, but no single generalisation. If using SNOMED CT, use this code and the appropriate specific SNOMED CT code
           </td>
         </tr>
         <tr>
-          <td>notasked</td>
+          <td>
+            <a name="notasked">notasked</a>
+          </td>
           <td>Not Asked</td>
-          <td>Clinical judgement that there are no known items for this list after reasonable investigation</td>
+          <td>THe investigation to find out whether there are items for this list has not occurred</td>
           <td/>
         </tr>
         <tr>
-          <td>withheld</td>
+          <td>
+            <a name="withheld">withheld</a>
+          </td>
           <td>Information Withheld</td>
           <td>Information was not provided due to privacy or confidentiality concerns. Note that it should not be assumed that this means that the particular information in question was withheld due to it&#39;s contents - it can also be a policy decision</td>
           <td>In spite of the definition, this code should be used carefully as it represents potential information leakage or the perception thereof</td>
         </tr>
         <tr>
-          <td>notstarted</td>
+          <td>
+            <a name="notstarted">notstarted</a>
+          </td>
           <td>Not Started</td>
           <td>The work to populate this list has not yet begun</td>
           <td/>
         </tr>
         <tr>
-          <td>closed</td>
+          <td>
+            <a name="closed">closed</a>
+          </td>
           <td>Closed</td>
           <td>This list has now closed or has ceased to be relevant or useful</td>
           <td/>
@@ -73,10 +83,9 @@
   <define>
     <system value="http://hl7.org/fhir/list-empty-reason"/>
     <concept>
-      <extension>
-        <url value="http://hl7.org/fhir/tools/extensions#comment"/>
+      <extension url="http://hl7.org/fhir/Profile/tools-extensions#comment">
         <valueString value="Other language is sometimes used for this concept, such as &#39;no significant [x] known&#39;.
-SNOMED-CT includes many codes for this general concept, but no single generalisation. If using SNOMED-CT, use this code and the appropriate specific SNOMED-CT code"/>
+SNOMED CT includes many codes for this general concept, but no single generalisation. If using SNOMED CT, use this code and the appropriate specific SNOMED CT code"/>
       </extension>
       <code value="nilknown"/>
       <display value="Nil Known"/>
@@ -88,11 +97,10 @@ SNOMED-CT includes many codes for this general concept, but no single generalisa
     <concept>
       <code value="notasked"/>
       <display value="Not Asked"/>
-      <definition value="Clinical judgement that there are no known items for this list after reasonable investigation"/>
+      <definition value="THe investigation to find out whether there are items for this list has not occurred"/>
     </concept>
     <concept>
-      <extension>
-        <url value="http://hl7.org/fhir/tools/extensions#comment"/>
+      <extension url="http://hl7.org/fhir/Profile/tools-extensions#comment">
         <valueString value="In spite of the definition, this code should be used carefully as it represents potential information leakage or the perception thereof"/>
       </extension>
       <code value="withheld"/>

@@ -1,1 +1,241 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>XDS Connect-a-thon practiceSettingCodes<\/h2><p>Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml<\/p><p>This value set defines it's own terms in the system urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>Anesthesia<\/td><td>Anesthesia<\/td><td/><\/tr><tr><td>Cardiology<\/td><td>Cardiology<\/td><td/><\/tr><tr><td>Case Manager<\/td><td>Case Manager<\/td><td/><\/tr><tr><td>Chaplain<\/td><td>Chaplain<\/td><td/><\/tr><tr><td>Chemotherapy<\/td><td>Chemotherapy<\/td><td/><\/tr><tr><td>Chiropractic<\/td><td>Chiropractic<\/td><td/><\/tr><tr><td>Critical Care<\/td><td>Critical Care<\/td><td/><\/tr><tr><td>Dentistry<\/td><td>Dentistry<\/td><td/><\/tr><tr><td>Diabetology<\/td><td>Diabetology<\/td><td/><\/tr><tr><td>Dialysis<\/td><td>Dialysis<\/td><td/><\/tr><tr><td>Dialysis<\/td><td>Dialysis<\/td><td/><\/tr><tr><td>Emergency<\/td><td>Emergency<\/td><td/><\/tr><tr><td>Endocrinology<\/td><td>Endocrinology<\/td><td/><\/tr><tr><td>Gastroenterology<\/td><td>Gastroenterology<\/td><td/><\/tr><tr><td>General Medicine<\/td><td>General Medicine<\/td><td/><\/tr><tr><td>General Surgery<\/td><td>General Surgery<\/td><td/><\/tr><tr><td>Gynecology<\/td><td>Gynecology<\/td><td/><\/tr><tr><td>Labor and Delivery<\/td><td>Labor and Delivery<\/td><td/><\/tr><tr><td>Laboratory<\/td><td>Laboratory<\/td><td/><\/tr><tr><td>Multidisciplinary<\/td><td>Multidisciplinary<\/td><td/><\/tr><tr><td>Neonatal Intensive Care<\/td><td>Neonatal Intensive Care<\/td><td/><\/tr><tr><td>Neurosurgery<\/td><td>Neurosurgery<\/td><td/><\/tr><tr><td>Nursery<\/td><td>Nursery<\/td><td/><\/tr><tr><td>Nursing<\/td><td>Nursing<\/td><td/><\/tr><tr><td>Obstetrics<\/td><td>Obstetrics<\/td><td/><\/tr><tr><td>Occupational Therapy<\/td><td>Occupational Therapy<\/td><td/><\/tr><tr><td>Ophthalmology<\/td><td>Ophthalmology<\/td><td/><\/tr><tr><td>Optometry<\/td><td>Optometry<\/td><td/><\/tr><tr><td>Orthopedics<\/td><td>Orthopedics<\/td><td/><\/tr><tr><td>Otorhinolaryngology<\/td><td>Otorhinolaryngology<\/td><td/><\/tr><tr><td>Pathology<\/td><td>Pathology<\/td><td/><\/tr><tr><td>Perioperative<\/td><td>Perioperative<\/td><td/><\/tr><tr><td>Pharmacacy<\/td><td>Pharmacacy<\/td><td/><\/tr><tr><td>Physical Medicine<\/td><td>Physical Medicine<\/td><td/><\/tr><tr><td>Plastic Surgery<\/td><td>Plastic Surgery<\/td><td/><\/tr><tr><td>Podiatry<\/td><td>Podiatry<\/td><td/><\/tr><tr><td>Psychiatry<\/td><td>Psychiatry<\/td><td/><\/tr><tr><td>Pulmonary<\/td><td>Pulmonary<\/td><td/><\/tr><tr><td>Radiology<\/td><td>Radiology<\/td><td/><\/tr><tr><td>Social Services<\/td><td>Social Services<\/td><td/><\/tr><tr><td>Speech Therapy<\/td><td>Speech Therapy<\/td><td/><\/tr><tr><td>Thyroidology<\/td><td>Thyroidology<\/td><td/><\/tr><tr><td>Tumor Board<\/td><td>Tumor Board<\/td><td/><\/tr><tr><td>Urology<\/td><td>Urology<\/td><td/><\/tr><tr><td>Home<\/td><td>Home<\/td><td/><\/tr><tr><td>Veterinary Medicine<\/td><td>Veterinary Medicine<\/td><td/><\/tr><\/table><p>In addition, this value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include these codes as defined in http://snomed.info/id<table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>394802001<\/td><td>General Medicine<\/td><td/><\/tr><tr><td>408478003<\/td><td>Critical Care Medicine<\/td><td/><\/tr><tr><td>410001006<\/td><td>Military Medicine<\/td><td/><\/tr><\/table><\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/xds-practice-codes"},"name":{"value":"XDS Connect-a-thon practiceSettingCodes"},"publisher":{"value":"IHE"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://ihe.net"}}],"description":{"value":"Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml"},"status":{"value":"draft"},"define":{"system":{"value":"urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead"},"concept":[{"code":{"value":"Anesthesia"},"display":{"value":"Anesthesia"}},{"code":{"value":"Cardiology"},"display":{"value":"Cardiology"}},{"code":{"value":"Case Manager"},"display":{"value":"Case Manager"}},{"code":{"value":"Chaplain"},"display":{"value":"Chaplain"}},{"code":{"value":"Chemotherapy"},"display":{"value":"Chemotherapy"}},{"code":{"value":"Chiropractic"},"display":{"value":"Chiropractic"}},{"code":{"value":"Critical Care"},"display":{"value":"Critical Care"}},{"code":{"value":"Dentistry"},"display":{"value":"Dentistry"}},{"code":{"value":"Diabetology"},"display":{"value":"Diabetology"}},{"code":{"value":"Dialysis"},"display":{"value":"Dialysis"}},{"code":{"value":"Dialysis"},"display":{"value":"Dialysis"}},{"code":{"value":"Emergency"},"display":{"value":"Emergency"}},{"code":{"value":"Endocrinology"},"display":{"value":"Endocrinology"}},{"code":{"value":"Gastroenterology"},"display":{"value":"Gastroenterology"}},{"code":{"value":"General Medicine"},"display":{"value":"General Medicine"}},{"code":{"value":"General Surgery"},"display":{"value":"General Surgery"}},{"code":{"value":"Gynecology"},"display":{"value":"Gynecology"}},{"code":{"value":"Labor and Delivery"},"display":{"value":"Labor and Delivery"}},{"code":{"value":"Laboratory"},"display":{"value":"Laboratory"}},{"code":{"value":"Multidisciplinary"},"display":{"value":"Multidisciplinary"}},{"code":{"value":"Neonatal Intensive Care"},"display":{"value":"Neonatal Intensive Care"}},{"code":{"value":"Neurosurgery"},"display":{"value":"Neurosurgery"}},{"code":{"value":"Nursery"},"display":{"value":"Nursery"}},{"code":{"value":"Nursing"},"display":{"value":"Nursing"}},{"code":{"value":"Obstetrics"},"display":{"value":"Obstetrics"}},{"code":{"value":"Occupational Therapy"},"display":{"value":"Occupational Therapy"}},{"code":{"value":"Ophthalmology"},"display":{"value":"Ophthalmology"}},{"code":{"value":"Optometry"},"display":{"value":"Optometry"}},{"code":{"value":"Orthopedics"},"display":{"value":"Orthopedics"}},{"code":{"value":"Otorhinolaryngology"},"display":{"value":"Otorhinolaryngology"}},{"code":{"value":"Pathology"},"display":{"value":"Pathology"}},{"code":{"value":"Perioperative"},"display":{"value":"Perioperative"}},{"code":{"value":"Pharmacacy"},"display":{"value":"Pharmacacy"}},{"code":{"value":"Physical Medicine"},"display":{"value":"Physical Medicine"}},{"code":{"value":"Plastic Surgery"},"display":{"value":"Plastic Surgery"}},{"code":{"value":"Podiatry"},"display":{"value":"Podiatry"}},{"code":{"value":"Psychiatry"},"display":{"value":"Psychiatry"}},{"code":{"value":"Pulmonary"},"display":{"value":"Pulmonary"}},{"code":{"value":"Radiology"},"display":{"value":"Radiology"}},{"code":{"value":"Social Services"},"display":{"value":"Social Services"}},{"code":{"value":"Speech Therapy"},"display":{"value":"Speech Therapy"}},{"code":{"value":"Thyroidology"},"display":{"value":"Thyroidology"}},{"code":{"value":"Tumor Board"},"display":{"value":"Tumor Board"}},{"code":{"value":"Urology"},"display":{"value":"Urology"}},{"code":{"value":"Home"},"display":{"value":"Home"}},{"code":{"value":"Veterinary Medicine"},"display":{"value":"Veterinary Medicine"}}]},"compose":{"include":[{"system":{"value":"http://snomed.info/id"},"code":[{"extension":[{"url":{"value":"http://hl7.org/fhir/tools/extensions#display"},"valueString":{"value":"General Medicine"}}],"value":"394802001"},{"extension":[{"url":{"value":"http://hl7.org/fhir/tools/extensions#display"},"valueString":{"value":"Critical Care Medicine"}}],"value":"408478003"},{"extension":[{"url":{"value":"http://hl7.org/fhir/tools/extensions#display"},"valueString":{"value":"Military Medicine"}}],"value":"410001006"}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>XDS Connect-a-thon practiceSettingCodes</h2><p>Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml</p><p>This value set defines its own terms in the system urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"Anesthesia\">Anesthesia</a></td><td>Anesthesia</td><td/></tr><tr><td><a name=\"Cardiology\">Cardiology</a></td><td>Cardiology</td><td/></tr><tr><td><a name=\"CaseManager\">Case Manager</a></td><td>Case Manager</td><td/></tr><tr><td><a name=\"Chaplain\">Chaplain</a></td><td>Chaplain</td><td/></tr><tr><td><a name=\"Chemotherapy\">Chemotherapy</a></td><td>Chemotherapy</td><td/></tr><tr><td><a name=\"Chiropractic\">Chiropractic</a></td><td>Chiropractic</td><td/></tr><tr><td><a name=\"CriticalCare\">Critical Care</a></td><td>Critical Care</td><td/></tr><tr><td><a name=\"Dentistry\">Dentistry</a></td><td>Dentistry</td><td/></tr><tr><td><a name=\"Diabetology\">Diabetology</a></td><td>Diabetology</td><td/></tr><tr><td><a name=\"Dialysis\">Dialysis</a></td><td>Dialysis</td><td/></tr><tr><td><a name=\"Emergency\">Emergency</a></td><td>Emergency</td><td/></tr><tr><td><a name=\"Endocrinology\">Endocrinology</a></td><td>Endocrinology</td><td/></tr><tr><td><a name=\"Gastroenterology\">Gastroenterology</a></td><td>Gastroenterology</td><td/></tr><tr><td><a name=\"GeneralMedicine\">General Medicine</a></td><td>General Medicine</td><td/></tr><tr><td><a name=\"GeneralSurgery\">General Surgery</a></td><td>General Surgery</td><td/></tr><tr><td><a name=\"Gynecology\">Gynecology</a></td><td>Gynecology</td><td/></tr><tr><td><a name=\"LaborandDelivery\">Labor and Delivery</a></td><td>Labor and Delivery</td><td/></tr><tr><td><a name=\"Laboratory\">Laboratory</a></td><td>Laboratory</td><td/></tr><tr><td><a name=\"Multidisciplinary\">Multidisciplinary</a></td><td>Multidisciplinary</td><td/></tr><tr><td><a name=\"NeonatalIntensiveCare\">Neonatal Intensive Care</a></td><td>Neonatal Intensive Care</td><td/></tr><tr><td><a name=\"Neurosurgery\">Neurosurgery</a></td><td>Neurosurgery</td><td/></tr><tr><td><a name=\"Nursery\">Nursery</a></td><td>Nursery</td><td/></tr><tr><td><a name=\"Nursing\">Nursing</a></td><td>Nursing</td><td/></tr><tr><td><a name=\"Obstetrics\">Obstetrics</a></td><td>Obstetrics</td><td/></tr><tr><td><a name=\"OccupationalTherapy\">Occupational Therapy</a></td><td>Occupational Therapy</td><td/></tr><tr><td><a name=\"Ophthalmology\">Ophthalmology</a></td><td>Ophthalmology</td><td/></tr><tr><td><a name=\"Optometry\">Optometry</a></td><td>Optometry</td><td/></tr><tr><td><a name=\"Orthopedics\">Orthopedics</a></td><td>Orthopedics</td><td/></tr><tr><td><a name=\"Otorhinolaryngology\">Otorhinolaryngology</a></td><td>Otorhinolaryngology</td><td/></tr><tr><td><a name=\"Pathology\">Pathology</a></td><td>Pathology</td><td/></tr><tr><td><a name=\"Perioperative\">Perioperative</a></td><td>Perioperative</td><td/></tr><tr><td><a name=\"Pharmacacy\">Pharmacacy</a></td><td>Pharmacacy</td><td/></tr><tr><td><a name=\"PhysicalMedicine\">Physical Medicine</a></td><td>Physical Medicine</td><td/></tr><tr><td><a name=\"PlasticSurgery\">Plastic Surgery</a></td><td>Plastic Surgery</td><td/></tr><tr><td><a name=\"Podiatry\">Podiatry</a></td><td>Podiatry</td><td/></tr><tr><td><a name=\"Psychiatry\">Psychiatry</a></td><td>Psychiatry</td><td/></tr><tr><td><a name=\"Pulmonary\">Pulmonary</a></td><td>Pulmonary</td><td/></tr><tr><td><a name=\"Radiology\">Radiology</a></td><td>Radiology</td><td/></tr><tr><td><a name=\"SocialServices\">Social Services</a></td><td>Social Services</td><td/></tr><tr><td><a name=\"SpeechTherapy\">Speech Therapy</a></td><td>Speech Therapy</td><td/></tr><tr><td><a name=\"Thyroidology\">Thyroidology</a></td><td>Thyroidology</td><td/></tr><tr><td><a name=\"TumorBoard\">Tumor Board</a></td><td>Tumor Board</td><td/></tr><tr><td><a name=\"Urology\">Urology</a></td><td>Urology</td><td/></tr><tr><td><a name=\"Home\">Home</a></td><td>Home</td><td/></tr><tr><td><a name=\"VeterinaryMedicine\">Veterinary Medicine</a></td><td>Veterinary Medicine</td><td/></tr></table><p>In addition, this value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include these codes as defined in http://snomed.info/sct<table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>394802001</td><td>General Medicine</td><td/></tr><tr><td>408478003</td><td>Critical Care Medicine</td><td/></tr><tr><td>410001006</td><td>Military Medicine</td><td/></tr></table></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/xds-practice-codes",
+  "name": "XDS Connect-a-thon practiceSettingCodes",
+  "publisher": "IHE",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://ihe.net"
+    }
+  ],
+  "description": "Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml",
+  "status": "draft",
+  "define": {
+    "system": "urn:uuid:cccf5598-8b07-4b77-a05e-ae952c785ead",
+    "concept": [
+      {
+        "code": "Anesthesia",
+        "display": "Anesthesia"
+      },
+      {
+        "code": "Cardiology",
+        "display": "Cardiology"
+      },
+      {
+        "code": "Case Manager",
+        "display": "Case Manager"
+      },
+      {
+        "code": "Chaplain",
+        "display": "Chaplain"
+      },
+      {
+        "code": "Chemotherapy",
+        "display": "Chemotherapy"
+      },
+      {
+        "code": "Chiropractic",
+        "display": "Chiropractic"
+      },
+      {
+        "code": "Critical Care",
+        "display": "Critical Care"
+      },
+      {
+        "code": "Dentistry",
+        "display": "Dentistry"
+      },
+      {
+        "code": "Diabetology",
+        "display": "Diabetology"
+      },
+      {
+        "code": "Dialysis",
+        "display": "Dialysis"
+      },
+      {
+        "code": "Emergency",
+        "display": "Emergency"
+      },
+      {
+        "code": "Endocrinology",
+        "display": "Endocrinology"
+      },
+      {
+        "code": "Gastroenterology",
+        "display": "Gastroenterology"
+      },
+      {
+        "code": "General Medicine",
+        "display": "General Medicine"
+      },
+      {
+        "code": "General Surgery",
+        "display": "General Surgery"
+      },
+      {
+        "code": "Gynecology",
+        "display": "Gynecology"
+      },
+      {
+        "code": "Labor and Delivery",
+        "display": "Labor and Delivery"
+      },
+      {
+        "code": "Laboratory",
+        "display": "Laboratory"
+      },
+      {
+        "code": "Multidisciplinary",
+        "display": "Multidisciplinary"
+      },
+      {
+        "code": "Neonatal Intensive Care",
+        "display": "Neonatal Intensive Care"
+      },
+      {
+        "code": "Neurosurgery",
+        "display": "Neurosurgery"
+      },
+      {
+        "code": "Nursery",
+        "display": "Nursery"
+      },
+      {
+        "code": "Nursing",
+        "display": "Nursing"
+      },
+      {
+        "code": "Obstetrics",
+        "display": "Obstetrics"
+      },
+      {
+        "code": "Occupational Therapy",
+        "display": "Occupational Therapy"
+      },
+      {
+        "code": "Ophthalmology",
+        "display": "Ophthalmology"
+      },
+      {
+        "code": "Optometry",
+        "display": "Optometry"
+      },
+      {
+        "code": "Orthopedics",
+        "display": "Orthopedics"
+      },
+      {
+        "code": "Otorhinolaryngology",
+        "display": "Otorhinolaryngology"
+      },
+      {
+        "code": "Pathology",
+        "display": "Pathology"
+      },
+      {
+        "code": "Perioperative",
+        "display": "Perioperative"
+      },
+      {
+        "code": "Pharmacacy",
+        "display": "Pharmacacy"
+      },
+      {
+        "code": "Physical Medicine",
+        "display": "Physical Medicine"
+      },
+      {
+        "code": "Plastic Surgery",
+        "display": "Plastic Surgery"
+      },
+      {
+        "code": "Podiatry",
+        "display": "Podiatry"
+      },
+      {
+        "code": "Psychiatry",
+        "display": "Psychiatry"
+      },
+      {
+        "code": "Pulmonary",
+        "display": "Pulmonary"
+      },
+      {
+        "code": "Radiology",
+        "display": "Radiology"
+      },
+      {
+        "code": "Social Services",
+        "display": "Social Services"
+      },
+      {
+        "code": "Speech Therapy",
+        "display": "Speech Therapy"
+      },
+      {
+        "code": "Thyroidology",
+        "display": "Thyroidology"
+      },
+      {
+        "code": "Tumor Board",
+        "display": "Tumor Board"
+      },
+      {
+        "code": "Urology",
+        "display": "Urology"
+      },
+      {
+        "code": "Home",
+        "display": "Home"
+      },
+      {
+        "code": "Veterinary Medicine",
+        "display": "Veterinary Medicine"
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": [
+          "394802001",
+          "408478003",
+          "410001006"
+        ],
+        "_code": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/Profile/tools-extensions#display",
+                "valueString": "General Medicine"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/Profile/tools-extensions#display",
+                "valueString": "Critical Care Medicine"
+              }
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/Profile/tools-extensions#display",
+                "valueString": "Military Medicine"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

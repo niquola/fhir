@@ -12,7 +12,7 @@
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include these codes as defined in 
-          <a href="valueset-dicom-dcim.htm">http://nema.org/dicom/dcid</a>
+          <a href="valueset-dicom-dcim.html">http://nema.org/dicom/dcid</a>
           <table>
             <tr>
               <td>
@@ -142,8 +142,7 @@
             </tr>
           </table>
         </li>
-        <li>Include these codes as defined in 
-          <a href="restful-operation.htm">http://hl7.org/fhir/restful-operation</a>
+        <li>Include these codes as defined in http://hl7.org/fhir/restful-operation
           <table>
             <tr>
               <td>
@@ -157,54 +156,64 @@
               </td>
             </tr>
             <tr>
-              <td>110142</td>
+              <td>read</td>
               <td/>
               <td/>
             </tr>
             <tr>
-              <td>read</td>
-              <td>read</td>
-              <td>Read the current state of the resource.</td>
-            </tr>
-            <tr>
               <td>vread</td>
-              <td>vread</td>
-              <td>Read the state of a specific version of the resource.</td>
+              <td/>
+              <td/>
             </tr>
             <tr>
               <td>update</td>
-              <td>update</td>
-              <td>Update an existing resource by its id (or create it if it is new).</td>
+              <td/>
+              <td/>
             </tr>
             <tr>
               <td>delete</td>
-              <td>delete</td>
-              <td>Delete a resource.</td>
-            </tr>
-            <tr>
-              <td>history-instance</td>
-              <td>history-instance</td>
-              <td>Retrieve the update history for a resource instance.</td>
+              <td/>
+              <td/>
             </tr>
             <tr>
               <td>validate</td>
-              <td>validate</td>
-              <td>Check that the content would be acceptable as an update.</td>
-            </tr>
-            <tr>
-              <td>history-type</td>
-              <td>history-type</td>
-              <td>Get a list of updates to resources of this type.</td>
+              <td/>
+              <td/>
             </tr>
             <tr>
               <td>create</td>
-              <td>create</td>
-              <td>Create a new resource with a server assigned id.</td>
+              <td/>
+              <td/>
             </tr>
             <tr>
-              <td>search</td>
-              <td>search</td>
-              <td>Supports search operations using the parameters described in the profile.</td>
+              <td>history-instance</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-type</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>history-system</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>search-type</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>search-system</td>
+              <td/>
+              <td/>
+            </tr>
+            <tr>
+              <td>transaction</td>
+              <td/>
+              <td/>
             </tr>
           </table>
         </li>
@@ -248,16 +257,18 @@
     </include>
     <include>
       <system value="http://hl7.org/fhir/restful-operation"/>
-      <code value="110142"/>
       <code value="read"/>
       <code value="vread"/>
       <code value="update"/>
       <code value="delete"/>
-      <code value="history-instance"/>
       <code value="validate"/>
-      <code value="history-type"/>
       <code value="create"/>
-      <code value="search"/>
+      <code value="history-instance"/>
+      <code value="history-type"/>
+      <code value="history-system"/>
+      <code value="search-type"/>
+      <code value="search-system"/>
+      <code value="transaction"/>
     </include>
   </compose>
 </ValueSet>

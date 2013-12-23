@@ -1,1 +1,1 @@
-{"Substance":{"name":{"value":"House Dust"},"type":{"coding":[{"system":{"value":"http://snomed.info/id"},"code":{"value":"3092008"},"display":{"value":"Staphylococcus Aureus"}}]}}}
+{"resourceType":"Substance","type":{"coding":[{"system":"http://snomed.info/sct","code":"3092008","display":"Staphylococcus Aureus"}]}}

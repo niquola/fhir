@@ -3,46 +3,47 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage." class="dict" href="securityevent-definitions.htm#SecurityEvent"><b>SecurityEvent</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="Identifies the name, action type, time, and disposition of the audited event." class="dict" href="securityevent-definitions.htm#SecurityEvent.event"><b>event</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> What was done --&gt;</span>
-  &lt;<a title="Identifier for a family of the event." class="dict" href="securityevent-definitions.htm#SecurityEvent.event.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-type.htm">Type of event</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
-  &lt;<a title="Identifier for the category of event." class="dict" href="securityevent-definitions.htm#SecurityEvent.event.subtype"><b>subtype</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-sub-type.htm">Sub-type of event</a></span><span style="color: Gray"> --&gt;</span>&lt;/subtype&gt;
-  &lt;<a title="Indicator for type of action performed during the event that generated the audit." class="dict" href="securityevent-definitions.htm#SecurityEvent.event.action"><b>action</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="security-event-action.htm">Type of action performed during the event</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="The time when the event occurred on the source." class="dict" href="securityevent-definitions.htm#SecurityEvent.event.dateTime"><b>dateTime</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#instant">instant</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Time when the event occurred on source</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Indicates whether the event succeeded or failed." class="dict" href="securityevent-definitions.htm#SecurityEvent.event.outcome"><b>outcome</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="security-event-outcome.htm">Whether the event succeeded or failed</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="A free text description of the outcome of the event." class="dict" href="securityevent-definitions.htm#SecurityEvent.event.outcomeDesc"><b>outcomeDesc</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Description of the event outcome</span><span style="color: Gray"> --&gt;</span>
+&lt;<a title="A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage." class="dict" href="securityevent-definitions.html#SecurityEvent"><b>SecurityEvent</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Identifies the name, action type, time, and disposition of the audited event." class="dict" href="securityevent-definitions.html#SecurityEvent.event"><b>event</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> What was done --&gt;</span>
+  &lt;<a title="Identifier for a family of the event." class="dict" href="securityevent-definitions.html#SecurityEvent.event.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-type.html">Type/identifier of event</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Identifier for the category of event." class="dict" href="securityevent-definitions.html#SecurityEvent.event.subtype"><b>subtype</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-sub-type.html">More specific type/id for the event</a></span><span style="color: Gray"> --&gt;</span>&lt;/subtype&gt;
+  &lt;<a title="Indicator for type of action performed during the event that generated the audit." class="dict" href="securityevent-definitions.html#SecurityEvent.event.action"><b>action</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="security-event-action.html">Type of action performed during the event</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The time when the event occurred on the source." class="dict" href="securityevent-definitions.html#SecurityEvent.event.dateTime"><b>dateTime</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#instant">instant</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Time when the event occurred on source</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Indicates whether the event succeeded or failed." class="dict" href="securityevent-definitions.html#SecurityEvent.event.outcome"><b>outcome</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="security-event-outcome.html">Whether the event succeeded or failed</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A free text description of the outcome of the event." class="dict" href="securityevent-definitions.html#SecurityEvent.event.outcomeDesc"><b>outcomeDesc</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Description of the event outcome</span><span style="color: Gray"> --&gt;</span>
  &lt;/event&gt;
- &lt;<a title="A person, a hardware device or software process." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant"><b>participant</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> A person, a hardware device or software process --&gt;</span>
-  &lt;<a title="Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.role"><b>role</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-dicm-402-roleid.htm">User roles (e.g. local RBAC codes)</a></span><span style="color: Gray"> --&gt;</span>&lt;/role&gt;
-  &lt;<a title="Direct reference to a resource that identifies the participant." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.reference"><b>reference</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: Either an userId or a reference, but not both" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>|<a href="patient.htm#Patient">Patient</a>|<a href="device.htm#Device">Device</a>)</span> <span style="color: navy">Direct reference to resource</span><span style="color: Gray"> --&gt;</span>&lt;/reference&gt;
-  &lt;<a title="Unique identifier for the user actively participating in the event." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.userId"><b>userId</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: Either an userId or a reference, but not both" style="color: deeppink"><b>0..1</b></span> <span style="color: navy">Unique identifier for the user</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="User identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.authId"><b>authId</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">User id used by authentication system</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Human-meaningful name for the user." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Human-meaningful name for the user</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Indicator that the user is or is not the requestor, or initiator, for the event being audited." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.requestor"><b>requestor</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Whether user is initiator</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Type of media involved. Used when the event is about exporting/importing onto media." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.media"><b>media</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Coding">Coding</a></span> <span style="color: navy">Type of media</span><span style="color: Gray"> --&gt;</span>&lt;/media&gt;
-  &lt;<a title="Logical network location for application activity, if the activity has a network location." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.network"><b>network</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Logical network location for application activity --&gt;</span>
-   &lt;<a title="An identifier for the network access point of the user device for the audit event." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.network.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Identifier for the network access point of the user device</span><span style="color: Gray"> --&gt;</span>
-   &lt;<a title="An identifier for the type of network access point that originated the audit event." class="dict" href="securityevent-definitions.htm#SecurityEvent.participant.network.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="network-type.htm">The type of network access point</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A person, a hardware device or software process." class="dict" href="securityevent-definitions.html#SecurityEvent.participant"><b>participant</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..*</b></span> A person, a hardware device or software process --&gt;</span>
+  &lt;<a title="Specification of the role(s) the user plays when performing the event. Usually the codes used in this element are local codes defined by the role-based access control security system used in the local context." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.role"><b>role</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-dicm-402-roleid.html">User roles (e.g. local RBAC codes)</a></span><span style="color: Gray"> --&gt;</span>&lt;/role&gt;
+  &lt;<a title="Direct reference to a resource that identifies the participant." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.reference"><b>reference</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: Either an userId or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">Direct reference to resource</span><span style="color: Gray"> --&gt;</span>&lt;/reference&gt;
+  &lt;<a title="Unique identifier for the user actively participating in the event." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.userId"><b>userId</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: Either an userId or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Unique identifier for the user</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.altId"><b>altId</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Alternative User id e.g. authentication</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Human-meaningful name for the user." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Human-meaningful name for the user</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Indicator that the user is or is not the requestor, or initiator, for the event being audited." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.requestor"><b>requestor</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#boolean">boolean</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Whether user is initiator</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Type of media involved. Used when the event is about exporting/importing onto media." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.media"><b>media</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Coding">Coding</a></span> <span style="color: navy">Type of media</span><span style="color: Gray"> --&gt;</span>&lt;/media&gt;
+  &lt;<a title="Logical network location for application activity, if the activity has a network location." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.network"><b>network</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Logical network location for application activity --&gt;</span>
+   &lt;<a title="An identifier for the network access point of the user device for the audit event." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.network.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Identifier for the network access point of the user device</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="An identifier for the type of network access point that originated the audit event." class="dict" href="securityevent-definitions.html#SecurityEvent.participant.network.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="network-type.html">The type of network access point</a></span><span style="color: Gray"> --&gt;</span>
   &lt;/network&gt;
  &lt;/participant&gt;
- &lt;<a title="Application systems and processes." class="dict" href="securityevent-definitions.htm#SecurityEvent.source"><b>source</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> Application systems and processes --&gt;</span>
-  &lt;<a title="Logical source location within the healthcare enterprise network." class="dict" href="securityevent-definitions.htm#SecurityEvent.source.site"><b>site</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Logical source location within the enterprise</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Identifier of the source where the event originated." class="dict" href="securityevent-definitions.htm#SecurityEvent.source.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">The id of source where event originated</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Code specifying the type of source where event originated." class="dict" href="securityevent-definitions.htm#SecurityEvent.source.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Coding">Coding</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-source-type.htm">The type of source where event originated</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="Application systems and processes." class="dict" href="securityevent-definitions.html#SecurityEvent.source"><b>source</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> Application systems and processes --&gt;</span>
+  &lt;<a title="Logical source location within the healthcare enterprise network." class="dict" href="securityevent-definitions.html#SecurityEvent.source.site"><b>site</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Logical source location within the enterprise</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Identifier of the source where the event originated." class="dict" href="securityevent-definitions.html#SecurityEvent.source.identifier"><b>identifier</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">The id of source where event originated</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Code specifying the type of source where event originated." class="dict" href="securityevent-definitions.html#SecurityEvent.source.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Coding">Coding</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-source-type.html">The type of source where event originated</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
  &lt;/source&gt;
- &lt;<a title="Specific instances of data or objects that have been accessed." class="dict" href="securityevent-definitions.htm#SecurityEvent.object"><b>object</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Specific instances of data or objects that have been accessed --&gt;</span>
-  &lt;<a title="Identifies a specific instance of the participant object. The reference should always be version specific." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: Either an identifier or a reference, but not both" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Specific instance of object (e.g. versioned)</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
-  &lt;<a title="Identifies a specific instance of the participant object. The reference should always be version specific." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.reference"><b>reference</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: Either an identifier or a reference, but not both" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="resourcelist.htm">Any</a>)</span> <span style="color: navy">Specific instance of resource (e.g. versioned)</span><span style="color: Gray"> --&gt;</span>&lt;/reference&gt;
-  &lt;<a title="Object type being audited." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-type.htm">Object type being audited</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Code representing the functional application role of Participant Object being audited." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.role"><b>role</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-role.htm">Functional application role of Object</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Identifier for the data life-cycle stage for the participant object." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.lifecycle"><b>lifecycle</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-lifecycle.htm">Life-cycle stage for the object</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Denotes policy-defined sensitivity for the Participant Object ID such as VIP, HIV status, mental health status or similar topics." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.sensitivity"><b>sensitivity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-sensitivity.htm">Policy-defined sensitivity for the object</a></span><span style="color: Gray"> --&gt;</span>&lt;/sensitivity&gt;
-  &lt;<a title="An instance-specific descriptor of the Participant Object ID audited, such as a person&#39;s name." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Either a name or a query (or both)" style="color: deeppink"><b>0..1</b></span> <span style="color: navy">Instance-specific descriptor for Object</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="The actual query for a query-type participant object." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.query"><b>query</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#base64Binary">base64Binary</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Either a name or a query (or both)" style="color: deeppink"><b>0..1</b></span> <span style="color: navy">Actual query for object</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Additional Information about the Object." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.detail"><b>detail</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Additional Information about the Object --&gt;</span>
-   &lt;<a title="Name of the property." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.detail.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Name of the property</span><span style="color: Gray"> --&gt;</span>
-   &lt;<a title="Property value." class="dict" href="securityevent-definitions.htm#SecurityEvent.object.detail.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#base64Binary">base64Binary</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Property value</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Specific instances of data or objects that have been accessed." class="dict" href="securityevent-definitions.html#SecurityEvent.object"><b>object</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Specific instances of data or objects that have been accessed --&gt;</span>
+  &lt;<a title="Identifies a specific instance of the participant object. The reference should always be version specific." class="dict" href="securityevent-definitions.html#SecurityEvent.object.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: Either an identifier or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Specific instance of object (e.g. versioned)</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+  &lt;<a title="Identifies a specific instance of the participant object. The reference should always be version specific." class="dict" href="securityevent-definitions.html#SecurityEvent.object.reference"><b>reference</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: Either an identifier or a reference, but not both" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Specific instance of resource (e.g. versioned)</span><span style="color: Gray"> --&gt;</span>&lt;/reference&gt;
+  &lt;<a title="Object type being audited." class="dict" href="securityevent-definitions.html#SecurityEvent.object.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-type.html">Object type being audited</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Code representing the functional application role of Participant Object being audited." class="dict" href="securityevent-definitions.html#SecurityEvent.object.role"><b>role</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-role.html">Functional application role of Object</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Identifier for the data life-cycle stage for the participant object." class="dict" href="securityevent-definitions.html#SecurityEvent.object.lifecycle"><b>lifecycle</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="object-lifecycle.html">Life-cycle stage for the object</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Denotes policy-defined sensitivity for the Participant Object ID such as VIP, HIV status, mental health status or similar topics." class="dict" href="securityevent-definitions.html#SecurityEvent.object.sensitivity"><b>sensitivity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-security-event-sensitivity.html">Policy-defined sensitivity for the object</a></span><span style="color: Gray"> --&gt;</span>&lt;/sensitivity&gt;
+  &lt;<a title="An instance-specific descriptor of the Participant Object ID audited, such as a person&#39;s name." class="dict" href="securityevent-definitions.html#SecurityEvent.object.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Either a name or a query (or both)" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Instance-specific descriptor for Object</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Text that describes the object in more detail." class="dict" href="securityevent-definitions.html#SecurityEvent.object.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Descriptive text</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The actual query for a query-type participant object." class="dict" href="securityevent-definitions.html#SecurityEvent.object.query"><b>query</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#base64Binary">base64Binary</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Either a name or a query (or both)" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Actual query for object</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Additional Information about the Object." class="dict" href="securityevent-definitions.html#SecurityEvent.object.detail"><b>detail</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Additional Information about the Object --&gt;</span>
+   &lt;<a title="Name of the property." class="dict" href="securityevent-definitions.html#SecurityEvent.object.detail.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Name of the property</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="Property value." class="dict" href="securityevent-definitions.html#SecurityEvent.object.detail.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#base64Binary">base64Binary</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Property value</span><span style="color: Gray"> --&gt;</span>
   &lt;/detail&gt;
  &lt;/object&gt;
 &lt;/SecurityEvent&gt;
@@ -52,7 +53,12 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="dicom"/>
+    <uri value="http://nema.org/dicom"/>
+    <name value="DICOM"/>
+  </mapping>
   <structure>
     <type value="SecurityEvent"/>
     <publish value="true"/>
@@ -69,7 +75,7 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="Message"/>
         </mapping>
       </definition>
@@ -78,9 +84,24 @@
       <path value="SecurityEvent.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -95,7 +116,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="SecurityEvent.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -135,15 +156,31 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="EventIdentification"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="SecurityEvent.event.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="SecurityEvent.event.type"/>
       <definition>
-        <short value="Type of event"/>
+        <short value="Type/identifier of event"/>
         <formal value="Identifier for a family of the event."/>
         <comments value="e.g., a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function."/>
         <min value="1"/>
@@ -152,17 +189,40 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventType"/>
+        <binding>
+          <name value="SecurityEventType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/security-event-type"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@EventId"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="SecurityEvent.event.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="SecurityEvent.event.subtype"/>
       <definition>
-        <short value="Sub-type of event"/>
+        <short value="More specific type/id for the event"/>
         <formal value="Identifier for the category of event."/>
         <min value="0"/>
         <max value="*"/>
@@ -170,11 +230,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventSubType"/>
+        <binding>
+          <name value="SecurityEventSubType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/security-event-sub-type"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@EventTypeCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.event.subtype.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -188,11 +271,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventAction"/>
+        <binding>
+          <name value="SecurityEventAction"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/security-event-action"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@EventActionCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.event.action.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -208,9 +314,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@EventDateTime"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.event.dateTime.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -225,11 +347,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventOutcome"/>
+        <binding>
+          <name value="SecurityEventOutcome"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/security-event-outcome"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@EventOutcomeIndicator"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.event.outcome.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -244,9 +389,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@EventOutcomeDescription"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.event.outcomeDesc.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -266,9 +427,25 @@ associated with the use of extensions by any application, project, or standard -
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="ActiveParticipant"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -282,11 +459,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DicomRoleId"/>
+        <binding>
+          <name value="DicomRoleId"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/dicm-402-roleid"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="RoleIdCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.role.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -298,6 +498,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="Resource(Practitioner|Patient|Device)"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.reference.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -315,16 +531,32 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@UserId"/>
         </mapping>
       </definition>
     </element>
     <element>
-      <path value="SecurityEvent.participant.authId"/>
+      <path value="SecurityEvent.participant.userId.extension"/>
       <definition>
-        <short value="User id used by authentication system"/>
-        <formal value="User identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.altId"/>
+      <definition>
+        <short value="Alternative User id e.g. authentication"/>
+        <formal value="Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -332,9 +564,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@AlternativeUserId"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.altId.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -349,9 +597,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@UserName"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.name.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -367,9 +631,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@UserIsRequestor"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.requestor.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -384,9 +664,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="MediaType"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.media.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -396,6 +692,22 @@ associated with the use of extensions by any application, project, or standard -
         <formal value="Logical network location for application activity, if the activity has a network location."/>
         <min value="0"/>
         <max value="1"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.network.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -412,9 +724,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@NetWorkAccessPointID"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.network.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -428,11 +756,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventParticipantNetworkType"/>
+        <binding>
+          <name value="SecurityEventParticipantNetworkType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/network-type"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@NetworkAccessPointTypeCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.participant.network.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -445,9 +796,25 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="AuditSourceIdentification"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.source.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -463,9 +830,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@AuditEnterpriseSiteId"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.source.site.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -480,9 +863,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@AuditSourceId"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.source.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -496,11 +895,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="Coding"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventSourceType"/>
+        <binding>
+          <name value="SecurityEventSourceType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/security-source-type"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="AuditSourceTypeCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.source.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -527,9 +949,25 @@ associated with the use of extensions by any application, project, or standard -
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="ParticipantObjectIdentification"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -545,9 +983,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@ParticipantObjectID"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -562,9 +1016,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@ParticipantObjectID"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.reference.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -579,11 +1049,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventObjectType"/>
+        <binding>
+          <name value="SecurityEventObjectType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/object-type"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@ParticipantObjectTypeCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -598,11 +1091,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventObjectRole"/>
+        <binding>
+          <name value="SecurityEventObjectRole"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/object-role"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@ParticipantObjectTypeCodeRole"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.role.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -617,11 +1133,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventObjectLifecycle"/>
+        <binding>
+          <name value="SecurityEventObjectLifecycle"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/object-lifecycle"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@ParticipantObjectDataLifeCycle"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.lifecycle.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -636,11 +1175,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SecurityEventObjectSensitivity"/>
+        <binding>
+          <name value="SecurityEventObjectSensitivity"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/security-event-sensitivity"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@ParticipantObjectSensitivity"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.sensitivity.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -656,9 +1218,58 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="ParticipantObjectName"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.name.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.description"/>
+      <definition>
+        <short value="Descriptive text"/>
+        <formal value="Text that describes the object in more detail."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="dicom"/>
+          <map value="ParticipantObjectDescription"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.description.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -673,9 +1284,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="ParticipantObjectQuery"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.query.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -687,9 +1314,25 @@ associated with the use of extensions by any application, project, or standard -
         <max value="*"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="ParticipantObjectDetail"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.detail.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -704,9 +1347,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@type"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="SecurityEvent.object.detail.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -721,103 +1380,26 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://nema.org/dicom"/>
+          <identity value="dicom"/>
           <map value="@value"/>
         </mapping>
       </definition>
     </element>
+    <element>
+      <path value="SecurityEvent.object.detail.value.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="SecurityEventObjectRole"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/object-role"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventObjectType"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/object-type"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventAction"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/security-event-action"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventObjectLifecycle"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/object-lifecycle"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventSubType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/security-event-sub-type"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventSourceType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/security-source-type"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventParticipantNetworkType"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/network-type"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/security-event-type"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DicomRoleId"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/dicm-402-roleid"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventOutcome"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/security-event-outcome"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SecurityEventObjectSensitivity"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/security-event-sensitivity"/>
-    </referenceResource>
-  </binding>
 </Profile>

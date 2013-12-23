@@ -2,13 +2,23 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.htm#Range">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.html#Range">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for Range"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for Range for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="Range"/>
     <element>
@@ -33,13 +43,17 @@
           <key value="2"/>
           <name value="Low &lt; high"/>
           <severity value="error"/>
-          <human value="If present, low must have a lower value than high"/>
+          <human value="If present, low SHALL have a lower value than high"/>
           <xpath value="not(exists(f:low/f:value/@value)) or not(exists(f:high/f:value/@value)) or (number(f:low/f:value/@value) &lt;= number(f:high/f:value/@value))"/>
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="IVL&lt;QTY[not(type=&quot;TS&quot;)]&gt; [lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]or URG&lt;QTY[not(type=&quot;TS&quot;)]&gt;"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="NR and also possibly SN (but see also quantity)"/>
         </mapping>
       </definition>
     </element>
@@ -56,8 +70,12 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./low"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="NR.1"/>
         </mapping>
       </definition>
     </element>
@@ -74,8 +92,12 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./high"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="NR.2"/>
         </mapping>
       </definition>
     </element>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>EncounterState</h2>
       <p>Current state of the encounter</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/encounter-state</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-state</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>planned</td>
+          <td>
+            <a name="planned">planned</a>
+          </td>
           <td/>
           <td>The Encounter has not yet started.</td>
         </tr>
         <tr>
-          <td>current</td>
+          <td>
+            <a name="inprogress">in progress</a>
+          </td>
           <td/>
           <td>The Encounter has begun and the patient is present / the practitioner and the patient are meeting.</td>
         </tr>
         <tr>
-          <td>onleave</td>
+          <td>
+            <a name="onleave">onleave</a>
+          </td>
           <td/>
           <td>The Encounter has begun, but the patient is temporarily on leave.</td>
         </tr>
         <tr>
-          <td>finished</td>
+          <td>
+            <a name="finished">finished</a>
+          </td>
           <td/>
           <td>The Encounter has ended.</td>
         </tr>
         <tr>
-          <td>cancelled</td>
+          <td>
+            <a name="cancelled">cancelled</a>
+          </td>
           <td/>
           <td>The Encounter has ended before it has begun.</td>
         </tr>
@@ -60,7 +70,7 @@
   </telecom>
   <description value="Current state of the encounter"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/encounter-state"/>
     <caseSensitive value="true"/>
@@ -69,7 +79,7 @@
       <definition value="The Encounter has not yet started."/>
     </concept>
     <concept>
-      <code value="current"/>
+      <code value="in progress"/>
       <definition value="The Encounter has begun and the patient is present / the practitioner and the patient are meeting."/>
     </concept>
     <concept>

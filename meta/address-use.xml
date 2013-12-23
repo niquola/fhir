@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>AddressUse</h2>
       <p>The use of an address</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/address-use</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/address-use</p>
       <table>
         <tr>
           <td>
@@ -18,26 +18,80 @@
           <td>
             <b>Definition</b>
           </td>
+          <td>
+            <b>
+              <a href="v3\AddressUse\index.html">v3 Map (AddressUse)</a>
+            </b>
+          </td>
+          <td>
+            <b>
+              <a href="v2\0190\index.html">v2 Map (0190)</a>
+            </b>
+          </td>
         </tr>
         <tr>
-          <td>home</td>
+          <td>
+            <a name="home">home</a>
+          </td>
           <td/>
           <td>A communication address at a home.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#H">H</a>
+          </td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0190\index.html#H">H</a>
+          </td>
         </tr>
         <tr>
-          <td>work</td>
+          <td>
+            <a name="work">work</a>
+          </td>
           <td/>
           <td>An office address. First choice for business related contacts during business hours.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#WP">WP</a>
+          </td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0190\index.html#O">O</a>
+          </td>
         </tr>
         <tr>
-          <td>temp</td>
+          <td>
+            <a name="temp">temp</a>
+          </td>
           <td/>
           <td>A temporary address. The period can provide more detailed information.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#TMP">TMP</a>
+          </td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0190\index.html#C">C</a>
+          </td>
         </tr>
         <tr>
-          <td>old</td>
+          <td>
+            <a name="old">old</a>
+          </td>
           <td/>
           <td>This address is no longer in use (or was never correct, but retained for records).</td>
+          <td>
+            <span title="narrower">&gt;</span>
+            <a href="v3\AddressUse\index.html#OLD">OLD</a>
+            <br/>
+            <span title="narrower">&gt;</span>
+            <a href="v3\AddressUse\index.html#BAD">BAD</a>
+          </td>
+          <td>
+            <span title="narrower">&gt;</span>
+            <a href="v2\0190\index.html#BA">BA</a>
+            <i>(unclear about old addresses)</i>
+          </td>
         </tr>
       </table>
     </div>
@@ -55,7 +109,7 @@
   </telecom>
   <description value="The use of an address"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.979+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/address-use"/>
     <caseSensitive value="true"/>

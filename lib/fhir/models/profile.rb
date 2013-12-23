@@ -8,6 +8,9 @@ class Fhir::Profile < Fhir::Resource
     validates_presence_of :status
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -24,16 +27,15 @@ class Fhir::Profile < Fhir::Resource
   attribute :publisher, String
 
   # Contact information of the publisher
-  attribute :telecoms, Array[Fhir::Contact]
+  attribute :telecom, Array[Fhir::Contact]
 
   # Natural language description of the profile
   attribute :description, String
 
   # Assist with indexing and finding
-  attribute :codes, Array[Fhir::Coding]
+  attribute :code, Array[Fhir::Coding]
 
-  # draft | experimental | review | production | withdrawn |
-  # superseded
+  # draft | active | retired
   attribute :status, Fhir::Code
 
   # If for testing purposes, not real usage
@@ -45,12 +47,39 @@ class Fhir::Profile < Fhir::Resource
   # FHIR Version this profile targets
   attribute :fhir_version, String
 
+  # An external specification that the content is mapped to.
+  class Mapping < Fhir::ValueObject
+    invariants do
+      validates_presence_of :identity
+    end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # Internal id when this mapping is used
+    attribute :identity, String
+
+    # Identifies what this mapping refers to
+    attribute :uri, Fhir::URI
+
+    # Names what this mapping refers to
+    attribute :name, String
+
+    # Versions, Issues, Scope limitations etc
+    attribute :comments, String
+  end
+
+  attribute :mapping, Array[Mapping]
+
   # A constraint statement about what contents a resource or
   # data type may have.
   class Structure < Fhir::ValueObject
     invariants do
       validates_presence_of :type
     end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
     # The Resource or Data Type being described
     attribute :type, Fhir::Code
@@ -70,8 +99,14 @@ class Fhir::Profile < Fhir::Resource
         validates_presence_of :path
       end
 
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # The path of the element (see the formal definitions)
       attribute :path, String
+
+      # How this element is represented in instances
+      attribute :representation, Array[Fhir::Code]
 
       # Name for this particular element definition (reference
       # target)
@@ -90,13 +125,16 @@ class Fhir::Profile < Fhir::Resource
           validates_presence_of :rules
         end
 
+        # Extensions that cannot be ignored
+        attribute :modifier_extension, Array[Fhir::Extension]
+
         # Element that used to distinguish the slices
         attribute :discriminator, String
 
         # If elements must be in same order as slices
         attribute :ordered, Boolean
 
-        # Whether slice list is open or closed
+        # closed | open | openAtEnd
         attribute :rules, Fhir::Code
       end
 
@@ -114,10 +152,13 @@ class Fhir::Profile < Fhir::Resource
           validates_inclusion_of :is_modifier, in: [true, false], message: 'must be either true or false'
         end
 
+        # Extensions that cannot be ignored
+        attribute :modifier_extension, Array[Fhir::Extension]
+
         # Concise definition for xml presentation
         attribute :short, String
 
-        # Formal definition
+        # Full formal definition in human language
         attribute :formal, String
 
         # Comments about the use of this element
@@ -127,7 +168,7 @@ class Fhir::Profile < Fhir::Resource
         attribute :requirements, String
 
         # Other names
-        attribute :synonyms, Array[String]
+        attribute :synonym, Array[String]
 
         # Minimum Cardinality
         attribute :min, Integer
@@ -142,17 +183,20 @@ class Fhir::Profile < Fhir::Resource
             validates_presence_of :code
           end
 
-          # Data type or Resource
+          # Extensions that cannot be ignored
+          attribute :modifier_extension, Array[Fhir::Extension]
+
+          # Name of Data type or Resource
           attribute :code, Fhir::Code
 
           # Profile.structure to apply
           attribute :profile, Fhir::URI
 
-          # If code is a Resource, is it in the bundle?
-          attribute :bundled, Boolean
+          # contained | referenced | bundled - how aggregated
+          attribute :aggregation, Array[Fhir::Code]
         end
 
-        attribute :types, Array[Type]
+        attribute :type, Array[Type]
 
         # To another element constraint (by element.name)
         attribute :name_reference, String
@@ -167,7 +211,7 @@ class Fhir::Profile < Fhir::Resource
         attribute :max_length, Integer
 
         # Reference to invariant about presence
-        attribute :conditions, Array[String]
+        attribute :condition, Array[String]
 
         # Formal constraints such as co-occurrence and other
         # constraints that can be computationally evaluated within the
@@ -179,6 +223,9 @@ class Fhir::Profile < Fhir::Resource
             validates_presence_of :human
             validates_presence_of :xpath
           end
+
+          # Extensions that cannot be ignored
+          attribute :modifier_extension, Array[Fhir::Extension]
 
           # Target of 'condition' reference above
           attribute :key, String
@@ -194,96 +241,103 @@ class Fhir::Profile < Fhir::Resource
 
           # XPath expression of constraint
           attribute :xpath, String
-
-          # OCL expression of constraint
-          attribute :ocl, String
         end
 
-        attribute :constraints, Array[Constraint]
+        attribute :constraint, Array[Constraint]
 
-        # If the element must be usable
+        # If the element must supported
         attribute :must_support, Boolean
 
         # If this modifies the meaning of other elements
         attribute :is_modifier, Boolean
 
-        # Reference to a binding (local or absolute)
-        attribute :binding, Fhir::URI
+        # Binds to a value set if this element is coded (code,
+        # Coding, CodeableConcept).
+        class Binding < Fhir::ValueObject
+          invariants do
+            validates_presence_of :name
+            validates_inclusion_of :is_extensible, in: [true, false], message: 'must be either true or false'
+          end
+
+          # Extensions that cannot be ignored
+          attribute :modifier_extension, Array[Fhir::Extension]
+
+          # Descriptive Name
+          attribute :name, String
+
+          # Can additional codes be used?
+          attribute :is_extensible, Boolean
+
+          # required | preferred | example
+          attribute :conformance, Fhir::Code
+
+          # Human explanation of the value set
+          attribute :description, String
+
+          # Source of value set
+          resource_reference :reference, [Fhir::ValueSet]
+        end
+
+        attribute :binding, Binding
 
         # Identifies a concept from an external specification that
         # roughly corresponds to this element.
         class Mapping < Fhir::ValueObject
           invariants do
-            validates_presence_of :target
+            validates_presence_of :identity
+            validates_presence_of :map
           end
 
-          # Which mapping this is (v2, CDA, openEHR, etc.)
-          attribute :target, Fhir::URI
+          # Extensions that cannot be ignored
+          attribute :modifier_extension, Array[Fhir::Extension]
+
+          # Reference to mapping declaration
+          attribute :identity, String
 
           # Details of the mapping
           attribute :map, String
         end
 
-        attribute :mappings, Array[Mapping]
+        attribute :mapping, Array[Mapping]
       end
 
       attribute :definition, Definition
     end
 
-    attribute :elements, Array[Element]
+    attribute :element, Array[Element]
   end
 
-  attribute :structures, Array[Structure]
+  attribute :structure, Array[Structure]
 
   # An extension defined as part of the profile.
   class ExtensionDefn < Fhir::ValueObject
     invariants do
       validates_presence_of :code
       validates_presence_of :context_type
-      validates_presence_of :contexts
+      validates_presence_of :context
       validates_presence_of :definition
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Identifies the extension in this profile
     attribute :code, Fhir::Code
+
+    # Use this name when displaying the value
+    attribute :display, String
 
     # resource | datatype | mapping | extension
     attribute :context_type, Fhir::Code
 
     # Where the extension can be used in instances
-    attribute :contexts, Array[String]
+    attribute :context, Array[String]
 
     # Definition of the extension and its content
     attribute :definition, Fhir::Profile::Structure::Element::Definition
   end
 
-  attribute :extension_defns, Array[ExtensionDefn]
-
-  # Defines a linkage between a vocabulary binding name used
-  # in the profile (or expected to be used in profile importing
-  # this one) and a value set or code list.
-  class Binding < Fhir::ValueObject
-    invariants do
-      validates_presence_of :name
-    end
-
-    # Binding name
-    attribute :name, String
-
-    # Can additional codes be used?
-    attribute :is_extensible, Boolean
-
-    # required | preferred | example
-    attribute :conformance, Fhir::Code
-
-    # Human explanation of the binding
-    attribute :description, String
-
-    # Source of binding content
-    resource_reference :reference, [Fhir::ValueSet]
-  end
-
-  attribute :bindings, Array[Binding]
+  attribute :extension_defn, Array[ExtensionDefn]
 end
 
 

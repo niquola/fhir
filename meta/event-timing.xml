@@ -90,67 +90,57 @@
   </telecom>
   <description value="Real world event that the schedule relates to"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <compose>
     <include>
       <system value="http://hl7.org/fhir/v3/TimingEvent"/>
       <code value="HS">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] before the hour of sleep (or trying to)."/>
         </extension>
       </code>
       <code value="WAKE">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] after waking."/>
         </extension>
       </code>
       <code value="AC">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] before a meal (from the Latin ante cibus)."/>
         </extension>
       </code>
       <code value="ACM">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] before breakfast (from the Latin ante cibus matutinus)."/>
         </extension>
       </code>
       <code value="ACD">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] before lunch (from the Latin ante cibus diurnus)."/>
         </extension>
       </code>
       <code value="ACV">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] before dinner (from the Latin ante cibus vespertinus)."/>
         </extension>
       </code>
       <code value="PC">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] after a meal (from the Latin post cibus)."/>
         </extension>
       </code>
       <code value="PCM">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] after breakfast (from the Latin post cibus matutinus)."/>
         </extension>
       </code>
       <code value="PCD">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] after lunch (from the Latin post cibus diurnus)."/>
         </extension>
       </code>
       <code value="PCV">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="event occurs [duration] after dinner (from the Latin post cibus vespertinus)."/>
         </extension>
       </code>

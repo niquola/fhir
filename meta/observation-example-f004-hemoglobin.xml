@@ -3,7 +3,7 @@
         <coding>
             <system value="http://loinc.org"/>
             <code value="28540-3"/>
-            <display value="Erythrocyte concentration"/>
+            <display value="Erythrocyte mean corpuscular hemoglobin concentration [Mass/volume]"/>
         </coding>
     </name>
     <valueQuantity>
@@ -28,14 +28,14 @@
     <reliability value="ok"/> <!--  2.16.840.1.113883.4.642.1.118  -->
     <bodySite>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="308046002"/>
             <display value="Superficial forearm vein"/>
         </coding>
     </bodySite>
     <method>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="120220003"/>
             <display value="Injection to forearm"/>
         </coding>
@@ -43,32 +43,28 @@
     <identifier>
         <use value="official"/>
         <system value="http://www.bmc.nl/zorgportal/identifiers/observations"/> 
-        <key value="6326"/>
+        <value value="6326"/>
     </identifier>
     <subject>
-        <type value="Patient"/> 
-        <reference value="patient/@f001"/>
+        <reference value="Patient/f001"/>
         <display value="P. van de Heuvel"/>
     </subject>
     <performer>
-        <type value="Practitioner"/>
-        <reference value="practitioner/@f005"/>
+        <reference value="Practitioner/f005"/>
         <display value="A. Langeveld"/>
     </performer>
     <referenceRange>
-        <rangeRange>
-            <low>
-                <value value="32"/>
-                <units value="g/dl"/>
-                <system value="http://unitsofmeasure.org"/>
-                <code value="g/dl"/>
-            </low>
-            <high>
-                <value value="36"/>
-                <units value="g/dl"/>
-                <system value="http://unitsofmeasure.org"/>
-                <code value="g/dl"/>
-            </high>
-        </rangeRange>
+      <low>
+          <value value="32"/>
+          <units value="g/dl"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="g/dl"/>
+      </low>
+      <high>
+          <value value="36"/>
+          <units value="g/dl"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="g/dl"/>
+      </high>
     </referenceRange>
 </Observation>

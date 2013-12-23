@@ -13,17 +13,14 @@
   </text>
   <status value="active"/>
   <patient>
-    <type value="Patient"/>
-    <reference value="patient/@example"/>
+    <reference value="Patient/example"/>
   </patient>
   <prescriber>
-    <type value="Practitioner"/>
-    <reference value="practitioner/@example"/>
+    <reference value="Practitioner/example"/>
   </prescriber>
 
   <medication>
-    <type value="Medication"/>
-    <reference value="medication/@example"/>
+    <reference value="Medication/example"/>
   </medication>
 
   <dosageInstruction>
@@ -36,8 +33,8 @@
     </timingSchedule>
     <route>
       <coding>
-        <system value="http://snomed.info/id"/>
-        <code value="363743006"/>
+        <system value="http://snomed.info/sct"/>
+        <code value="394899003"/>
         <display value="oral administration of treatment"/>
       </coding>
     </route>

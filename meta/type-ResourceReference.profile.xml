@@ -2,13 +2,18 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.htm#ResourceReference">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.html#ResourceReference">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for ResourceReference"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for ResourceReference for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
   <structure>
     <type value="ResourceReference"/>
     <element>
@@ -22,42 +27,16 @@
           <code value="Type"/>
         </type>
         <constraint>
-          <key value="2"/>
+          <key value="1"/>
           <name value="Inline"/>
           <severity value="error"/>
-          <human value="Must have a local reference if the resource is provided inline"/>
-          <xpath value="not(starts-with(f:reference/@value, &#39;#&#39;)) or exists(ancestor::a:content/f:*/f:contained/f:*[local-name(.)=current()/f:type/@value and @id=substring-after(current()/f:reference/@value, &#39;#&#39;)]|/f:*/f:contained/f:*[local-name(.)=current()/f:type/@value and @id=substring-after(current()/f:reference/@value, &#39;#&#39;)])"/>
-        </constraint>
-        <constraint>
-          <key value="1"/>
-          <name value="Type"/>
-          <severity value="error"/>
-          <human value="Must have a type if a reference is provided"/>
-          <xpath value="exists(f:type) or not(exists(f:reference))"/>
+          <human value="SHALL have a local reference if the resource is provided inline"/>
+          <xpath value="not(starts-with(f:reference/@value, &#39;#&#39;)) or exists(ancestor::a:content/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, &#39;#&#39;)]|/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, &#39;#&#39;)])"/>
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
-        </mapping>
-      </definition>
-    </element>
-    <element>
-      <path value="ResourceReference.type"/>
-      <definition>
-        <short value="Resource Type"/>
-        <formal value="The name of one of the resource types defined in this specification to identify the type of the resource being referenced."/>
-        <comments value="Whether or not the type of the resource reference is fixed for a particular element, the reference includes the resource type."/>
-        <min value="0"/>
-        <max value="1"/>
-        <type>
-          <code value="code"/>
-        </type>
-        <isModifier value="false"/>
-        <binding value="ResourceType"/>
-        <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="N/A"/>
         </mapping>
       </definition>
     </element>
@@ -76,7 +55,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="N/A"/>
         </mapping>
       </definition>
@@ -94,18 +73,10 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="N/A"/>
         </mapping>
       </definition>
     </element>
   </structure>
-  <binding>
-    <name value="ResourceType"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/resource-types"/>
-    </referenceResource>
-  </binding>
 </Profile>

@@ -1,1 +1,45 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>QuantityCompararator<\/h2><p>How the Quantity should be understood and represented<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/quantity-comparator<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>&lt;<\/td><td/><td>The actual value is less than the given value.<\/td><\/tr><tr><td>&lt;=<\/td><td/><td>The actual value is less than or equal to the given value.<\/td><\/tr><tr><td>&gt;=<\/td><td/><td>The actual value is greater than or equal to the given value.<\/td><\/tr><tr><td>&gt;<\/td><td/><td>The actual value is greater than the given value.<\/td><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/quantity-comparator"},"name":{"value":"QuantityCompararator"},"publisher":{"value":"HL7 (FHIR Project)"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}},{"system":{"value":"email"},"value":{"value":"fhir@lists.hl7.org"}}],"description":{"value":"How the Quantity should be understood and represented"},"status":{"value":"draft"},"date":{"value":"2023-05-12T00:10:00"},"define":{"system":{"value":"http://hl7.org/fhir/quantity-comparator"},"caseSensitive":{"value":true},"concept":[{"code":{"value":"<"},"definition":{"value":"The actual value is less than the given value."}},{"code":{"value":"<="},"definition":{"value":"The actual value is less than or equal to the given value."}},{"code":{"value":">="},"definition":{"value":"The actual value is greater than or equal to the given value."}},{"code":{"value":">"},"definition":{"value":"The actual value is greater than the given value."}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>QuantityCompararator</h2><p>How the Quantity should be understood and represented</p><p>This value set defines its own terms in the system http://hl7.org/fhir/quantity-comparator</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\".60\">&lt;</a></td><td/><td>The actual value is less than the given value.</td></tr><tr><td><a name=\".60.61\">&lt;=</a></td><td/><td>The actual value is less than or equal to the given value.</td></tr><tr><td><a name=\".62.61\">&gt;=</a></td><td/><td>The actual value is greater than or equal to the given value.</td></tr><tr><td><a name=\".62\">&gt;</a></td><td/><td>The actual value is greater than the given value.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/quantity-comparator",
+  "name": "QuantityCompararator",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "How the Quantity should be understood and represented",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.983+11:00",
+  "define": {
+    "system": "http://hl7.org/fhir/quantity-comparator",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "<",
+        "definition": "The actual value is less than the given value."
+      },
+      {
+        "code": "<=",
+        "definition": "The actual value is less than or equal to the given value."
+      },
+      {
+        "code": ">=",
+        "definition": "The actual value is greater than or equal to the given value."
+      },
+      {
+        "code": ">",
+        "definition": "The actual value is greater than the given value."
+      }
+    ]
+  }
+}

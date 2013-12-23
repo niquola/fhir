@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>AnimalSpecies</h2>
       <p>This example value set defines a set of codes that can be used to indicate species of animal patients.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/animal-species</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/animal-species</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>canislf</td>
+          <td>
+            <a name="canislf">canislf</a>
+          </td>
           <td>Dog</td>
           <td>Canis lupus familiaris</td>
         </tr>
         <tr>
-          <td>ovisa</td>
+          <td>
+            <a name="ovisa">ovisa</a>
+          </td>
           <td>Sheep</td>
           <td>Ovis aries</td>
         </tr>
         <tr>
-          <td>serinuscd</td>
+          <td>
+            <a name="serinuscd">serinuscd</a>
+          </td>
           <td>Domestic Canary</td>
           <td>Serinus canaria domestica</td>
         </tr>

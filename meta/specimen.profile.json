@@ -1,1 +1,1081 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"Sample for analysis.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen\"><b>Specimen<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"Id for specimen.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.identifier\"><b>identifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">External Identifier<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/identifier&gt;\r\n &lt;<a title=\"The type of the specimen. This is sometimes called the &quot;matrix&quot;.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.type\"><b>type<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-type.htm\">Type of specimen<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/type&gt;\r\n &lt;<a title=\"Parent specimen from which the focal specimen was a component.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.source\"><b>source<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Parent of specimen --&gt;<\/span>\r\n  &lt;<a title=\"Whether this relationship is to a parent or to a child.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.source.relationship\"><b>relationship<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#code\">code<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"hierarchical-relationship-type.htm\">parent | child<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"The specimen resource that is the target of this relationship.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.source.target\"><b>target<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"specimen.htm#Specimen\">Specimen<\/a>)<\/span> <span style=\"color: navy\">The subject of the relationship<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/target&gt;\r\n &lt;/source&gt;\r\n &lt;<a title=\"The subject of the report.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.subject\"><b>subject<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"patient.htm#Patient\">Patient<\/a>|<a href=\"group.htm#Group\">Group<\/a>|<a href=\"device.htm#Device\">Device<\/a>|<a href=\"substance.htm#Substance\">Substance<\/a>)<\/span> <span style=\"color: navy\">The subject of the report<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/subject&gt;\r\n &lt;<a title=\"The identifier(s) assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.accessionIdentifier\"><b>accessionIdentifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Accession Identifier<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/accessionIdentifier&gt;\r\n &lt;<a title=\"Time when specimen was received for processing or testing.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.receivedTime\"><b>receivedTime<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Received Time<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Details concerning the specimen collection.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection\"><b>collection<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>1..1<\/b><\/span> Collection details --&gt;<\/span>\r\n  &lt;<a title=\"Person who collected the specimen.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection.collector\"><b>collector<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"practitioner.htm#Practitioner\">Practitioner<\/a>)<\/span> <span style=\"color: navy\">Who collected the specimen<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/collector&gt;\r\n  &lt;<a title=\"To communicate any details or issues encountered during the specimen collection procedure.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection.comment\"><b>comment<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: navy\">Collector comments<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"Time when specimen was collected from subject - the physiologically relevant time.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection.collectedTime\"><b>collectedTime<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\">Collection time<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection.quantity\"><b>quantity<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Quantity\">Quantity<\/a><\/span> <span style=\"color: navy\">The quantity of specimen collected<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/quantity&gt;\r\n  &lt;<a title=\"A coded value specifying the technique that is used to perform the procedure.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection.method\"><b>method<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-collection-type.htm\">Specimen Collection Method<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/method&gt;\r\n  &lt;<a title=\"Anatomical location from which the specimen should be collected (if subject is a patient).\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.collection.sourceSite\"><b>sourceSite<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-body-site.htm\">Site of the source of the specimen<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/sourceSite&gt;\r\n &lt;/collection&gt;\r\n &lt;<a title=\"Details concerning treatment and processing steps for the specimen.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.treatment\"><b>treatment<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Specimen Treatments --&gt;<\/span>\r\n  &lt;<a title=\"Textual description of procedure.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.treatment.description\"><b>description<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Textual description of procedure<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"A coded value specifying the procedure used to process the specimen.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.treatment.procedure\"><b>procedure<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-treatment-procedure.htm\">Specimen Treatment Procedure<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/procedure&gt;\r\n  &lt;<a title=\"Specimen additive.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.treatment.additive\"><b>additive<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"substance.htm#Substance\">Substance<\/a>)<\/span> <span style=\"color: navy\">Specimen additive<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/additive&gt;\r\n &lt;/treatment&gt;\r\n &lt;<a title=\"The container holding the specimen. May be recursive; ie blood in tube in tray in rack.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container\"><b>container<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Specimen Container --&gt;<\/span>\r\n  &lt;<a title=\"Id for container. There may be muliple; a manufacturer's bar code, lab assigned identifier, etc.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container.identifier\"><b>identifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Id for container<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/identifier&gt;\r\n  &lt;<a title=\"Textual description of container.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container.description\"><b>description<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Textual description of container<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"The type of container associated with the specimen (eg slide, aliquot, etc).\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container.type\"><b>type<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-container-type.htm\">Specimen Container Type<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/type&gt;\r\n  &lt;<a title=\"The capacity (volume or other measure the container may contain.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container.capacity\"><b>capacity<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Quantity\">Quantity<\/a><\/span> <span style=\"color: navy\">Container Capacity<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/capacity&gt;\r\n  &lt;<a title=\"The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container.specimenQuantity\"><b>specimenQuantity<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Quantity\">Quantity<\/a><\/span> <span style=\"color: navy\">Specimen Container Quantity<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/specimenQuantity&gt;\r\n  &lt;<a title=\"Additive associated with the container.\" class=\"dict\" href=\"specimen-definitions.htm#Specimen.container.additive\"><b>additive<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"substance.htm#Substance\">Substance<\/a>)<\/span> <span style=\"color: navy\">Container Additive<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/additive&gt;\r\n &lt;/container&gt;\r\n&lt;/Specimen&gt;\r\n<\/pre><\/div>"},"name":{"value":"specimen"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. Sample for analysis."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Specimen"},"publish":{"value":true},"element":[{"path":{"value":"Specimen"},"definition":{"short":{"value":"Sample for analysis"},"formal":{"value":"Sample for analysis."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"Specimen.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"Specimen.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"Specimen.identifier"},"definition":{"short":{"value":"External Identifier"},"formal":{"value":"Id for specimen."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"SPM-2-specimen ID"}}]}},{"path":{"value":"Specimen.type"},"definition":{"short":{"value":"Type of specimen"},"formal":{"value":"The type of the specimen. This is sometimes called the \"matrix\"."},"comments":{"value":"The type can change the way that a spceimen is handled, and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"SpecimenType"}}},{"path":{"value":"Specimen.source"},"definition":{"short":{"value":"Parent of specimen"},"formal":{"value":"Parent specimen from which the focal specimen was a component."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.source.relationship"},"definition":{"short":{"value":"parent | child"},"formal":{"value":"Whether this relationship is to a parent or to a child."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"HierarchicalRelationshipType"}}},{"path":{"value":"Specimen.source.target"},"definition":{"short":{"value":"The subject of the relationship"},"formal":{"value":"The specimen resource that is the target of this relationship."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource(Specimen)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.subject"},"definition":{"short":{"value":"The subject of the report"},"formal":{"value":"The subject of the report."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Patient|Group|Device|Substance)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"unique(./participation[isHighest(priorityCode) and typeCode=\"SBJ\" and isNormalParticipation()]/role[classCode=\"PAT\"])"}}]}},{"path":{"value":"Specimen.accessionIdentifier"},"definition":{"short":{"value":"Accession Identifier"},"formal":{"value":"The identifier(s) assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.receivedTime"},"definition":{"short":{"value":"Received Time"},"formal":{"value":"Time when specimen was received for processing or testing."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.collection"},"definition":{"short":{"value":"Collection details"},"formal":{"value":"Details concerning the specimen collection."},"min":{"value":1},"max":{"value":"1"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.collection.collector"},"definition":{"short":{"value":"Who collected the specimen"},"formal":{"value":"Person who collected the specimen."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Practitioner)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.collection.comment"},"definition":{"short":{"value":"Collector comments"},"formal":{"value":"To communicate any details or issues encountered during the specimen collection procedure."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.collection.collectedTime"},"definition":{"short":{"value":"Collection time"},"formal":{"value":"Time when specimen was collected from subject - the physiologically relevant time."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.collection.quantity"},"definition":{"short":{"value":"The quantity of specimen collected"},"formal":{"value":"The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Quantity"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.collection.method"},"definition":{"short":{"value":"Specimen Collection Method"},"formal":{"value":"A coded value specifying the technique that is used to perform the procedure."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"SpecimenCollectionMethod"}}},{"path":{"value":"Specimen.collection.sourceSite"},"definition":{"short":{"value":"Site of the source of the specimen"},"formal":{"value":"Anatomical location from which the specimen should be collected (if subject is a patient)."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"BodySite"}}},{"path":{"value":"Specimen.treatment"},"definition":{"short":{"value":"Specimen Treatments"},"formal":{"value":"Details concerning treatment and processing steps for the specimen."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.treatment.description"},"definition":{"short":{"value":"Textual description of procedure"},"formal":{"value":"Textual description of procedure."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.treatment.procedure"},"definition":{"short":{"value":"Specimen Treatment Procedure"},"formal":{"value":"A coded value specifying the procedure used to process the specimen."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"SpecimenTreatmentProcedure"}}},{"path":{"value":"Specimen.treatment.additive"},"definition":{"short":{"value":"Specimen additive"},"formal":{"value":"Specimen additive."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource(Substance)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.container"},"definition":{"short":{"value":"Specimen Container"},"formal":{"value":"The container holding the specimen. May be recursive; ie blood in tube in tray in rack."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.container.identifier"},"definition":{"short":{"value":"Id for container"},"formal":{"value":"Id for container. There may be muliple; a manufacturer's bar code, lab assigned identifier, etc."},"min":{"value":1},"max":{"value":"*"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.container.description"},"definition":{"short":{"value":"Textual description of container"},"formal":{"value":"Textual description of container."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.container.type"},"definition":{"short":{"value":"Specimen Container Type"},"formal":{"value":"The type of container associated with the specimen (eg slide, aliquot, etc)."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"SpecimenContainerType"}}},{"path":{"value":"Specimen.container.capacity"},"definition":{"short":{"value":"Container Capacity"},"formal":{"value":"The capacity (volume or other measure the container may contain."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Quantity"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.container.specimenQuantity"},"definition":{"short":{"value":"Specimen Container Quantity"},"formal":{"value":"The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Quantity"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Specimen.container.additive"},"definition":{"short":{"value":"Container Additive"},"formal":{"value":"Additive associated with the container."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Substance)"}}],"condition":[],"isModifier":{"value":false}}}]}],"binding":[{"name":{"value":"BodySite"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/body-site"}}},{"name":{"value":"SpecimenCollectionMethod"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/specimen-collection-type"}}},{"name":{"value":"HierarchicalRelationshipType"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/hierarchical-relationship-type"}}},{"name":{"value":"SpecimenTreatmentProcedure"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/specimen-treatment-procedure"}}},{"name":{"value":"SpecimenContainerType"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/specimen-container-type"}}},{"name":{"value":"SpecimenType"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/specimen-type"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"Sample for analysis.\" class=\"dict\" href=\"specimen-definitions.html#Specimen\"><b>Specimen</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"Id for specimen.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">External Identifier</span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n &lt;<a title=\"The type of the specimen. This is sometimes called the &quot;matrix&quot;.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.type\"><b>type</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-type.html\">Type of specimen</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/type&gt;\r\n &lt;<a title=\"Parent specimen from which the focal specimen was a component.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.source\"><b>source</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Parent of specimen --&gt;</span>\r\n  &lt;<a title=\"Whether this relationship is to a parent or to a child.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.source.relationship\"><b>relationship</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"hierarchical-relationship-type.html\">parent | child</a></span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"The specimen resource that is the target of this relationship.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.source.target\"><b>target</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"specimen.html#Specimen\">Specimen</a>)</span> <span style=\"color: navy\">The subject of the relationship</span><span style=\"color: Gray\"> --&gt;</span>&lt;/target&gt;\r\n &lt;/source&gt;\r\n &lt;<a title=\"The subject of the report.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>|<a href=\"group.html#Group\">Group</a>|<a href=\"device.html#Device\">Device</a>|<a href=\"substance.html#Substance\">Substance</a>)</span> <span style=\"color: navy\">The subject of the report</span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n &lt;<a title=\"The identifier(s) assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.accessionIdentifier\"><b>accessionIdentifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Accession Identifier</span><span style=\"color: Gray\"> --&gt;</span>&lt;/accessionIdentifier&gt;\r\n &lt;<a title=\"Time when specimen was received for processing or testing.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.receivedTime\"><b>receivedTime</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Received Time</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Details concerning the specimen collection.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection\"><b>collection</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>1..1</b></span> Collection details --&gt;</span>\r\n  &lt;<a title=\"Person who collected the specimen.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection.collector\"><b>collector</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"practitioner.html#Practitioner\">Practitioner</a>)</span> <span style=\"color: navy\">Who collected the specimen</span><span style=\"color: Gray\"> --&gt;</span>&lt;/collector&gt;\r\n  &lt;<a title=\"To communicate any details or issues encountered during the specimen collection procedure.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection.comment\"><b>comment</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: navy\">Collector comments</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"Time when specimen was collected from subject - the physiologically relevant time.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection.collectedTime\"><b>collectedTime</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\">Collection time</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection.quantity\"><b>quantity</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Quantity\">Quantity</a></span> <span style=\"color: navy\">The quantity of specimen collected</span><span style=\"color: Gray\"> --&gt;</span>&lt;/quantity&gt;\r\n  &lt;<a title=\"A coded value specifying the technique that is used to perform the procedure.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection.method\"><b>method</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-collection-type.html\">Specimen Collection Method</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/method&gt;\r\n  &lt;<a title=\"Anatomical location from which the specimen should be collected (if subject is a patient).\" class=\"dict\" href=\"specimen-definitions.html#Specimen.collection.sourceSite\"><b>sourceSite</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-body-site.html\">Site of the source of the specimen</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/sourceSite&gt;\r\n &lt;/collection&gt;\r\n &lt;<a title=\"Details concerning treatment and processing steps for the specimen.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.treatment\"><b>treatment</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Specimen Treatments --&gt;</span>\r\n  &lt;<a title=\"Textual description of procedure.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.treatment.description\"><b>description</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Textual description of procedure</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"A coded value specifying the procedure used to process the specimen.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.treatment.procedure\"><b>procedure</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-treatment-procedure.html\">Specimen Treatment Procedure</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/procedure&gt;\r\n  &lt;<a title=\"Specimen additive.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.treatment.additive\"><b>additive</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"substance.html#Substance\">Substance</a>)</span> <span style=\"color: navy\">Specimen additive</span><span style=\"color: Gray\"> --&gt;</span>&lt;/additive&gt;\r\n &lt;/treatment&gt;\r\n &lt;<a title=\"The container holding the specimen. May be recursive; ie blood in tube in tray in rack.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container\"><b>container</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Specimen Container --&gt;</span>\r\n  &lt;<a title=\"Id for container. There may be muliple; a manufacturer's bar code, lab assigned identifier, etc.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Id for container</span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n  &lt;<a title=\"Textual description of container.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container.description\"><b>description</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#string\">string</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Textual description of container</span><span style=\"color: Gray\"> --&gt;</span>\r\n  &lt;<a title=\"The type of container associated with the specimen (eg slide, aliquot, etc).\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container.type\"><b>type</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-specimen-container-type.html\">Specimen Container Type</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/type&gt;\r\n  &lt;<a title=\"The capacity (volume or other measure the container may contain.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container.capacity\"><b>capacity</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Quantity\">Quantity</a></span> <span style=\"color: navy\">Container Capacity</span><span style=\"color: Gray\"> --&gt;</span>&lt;/capacity&gt;\r\n  &lt;<a title=\"The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container.specimenQuantity\"><b>specimenQuantity</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Quantity\">Quantity</a></span> <span style=\"color: navy\">Specimen Container Quantity</span><span style=\"color: Gray\"> --&gt;</span>&lt;/specimenQuantity&gt;\r\n  &lt;<a title=\"Additive associated with the container.\" class=\"dict\" href=\"specimen-definitions.html#Specimen.container.additive\"><b>additive</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"substance.html#Substance\">Substance</a>)</span> <span style=\"color: navy\">Container Additive</span><span style=\"color: Gray\"> --&gt;</span>&lt;/additive&gt;\r\n &lt;/container&gt;\r\n&lt;/Specimen&gt;\r\n</pre></div>"
+  },
+  "name": "specimen",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. Sample for analysis.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Specimen",
+      "publish": true,
+      "element": [
+        {
+          "path": "Specimen",
+          "definition": {
+            "short": "Sample for analysis",
+            "formal": "Sample for analysis.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.identifier",
+          "definition": {
+            "short": "External Identifier",
+            "formal": "Id for specimen.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "SPM-2-specimen ID"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Specimen.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.type",
+          "definition": {
+            "short": "Type of specimen",
+            "formal": "The type of the specimen. This is sometimes called the \"matrix\".",
+            "comments": "The type can change the way that a spceimen is handled, and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "SpecimenType",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/specimen-type"
+              }
+            }
+          }
+        },
+        {
+          "path": "Specimen.type.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.source",
+          "definition": {
+            "short": "Parent of specimen",
+            "formal": "Parent specimen from which the focal specimen was a component.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.source.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.source.relationship",
+          "definition": {
+            "short": "parent | child",
+            "formal": "Whether this relationship is to a parent or to a child.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "HierarchicalRelationshipType",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/hierarchical-relationship-type"
+              }
+            }
+          }
+        },
+        {
+          "path": "Specimen.source.relationship.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.source.target",
+          "definition": {
+            "short": "The subject of the relationship",
+            "formal": "The specimen resource that is the target of this relationship.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Specimen)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.source.target.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.subject",
+          "definition": {
+            "short": "The subject of the report",
+            "formal": "The subject of the report.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient|Group|Device|Substance)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "unique(./participation[isHighest(priorityCode) and typeCode=\"SBJ\" and isNormalParticipation()]/role[classCode=\"PAT\"])"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Specimen.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.accessionIdentifier",
+          "definition": {
+            "short": "Accession Identifier",
+            "formal": "The identifier(s) assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.accessionIdentifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.receivedTime",
+          "definition": {
+            "short": "Received Time",
+            "formal": "Time when specimen was received for processing or testing.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.receivedTime.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection",
+          "definition": {
+            "short": "Collection details",
+            "formal": "Details concerning the specimen collection.",
+            "min": "1",
+            "max": "1",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.collector",
+          "definition": {
+            "short": "Who collected the specimen",
+            "formal": "Person who collected the specimen.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Practitioner)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.collector.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.comment",
+          "definition": {
+            "short": "Collector comments",
+            "formal": "To communicate any details or issues encountered during the specimen collection procedure.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.comment.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.collectedTime",
+          "definition": {
+            "short": "Collection time",
+            "formal": "Time when specimen was collected from subject - the physiologically relevant time.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.collectedTime.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.quantity",
+          "definition": {
+            "short": "The quantity of specimen collected",
+            "formal": "The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.quantity.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.method",
+          "definition": {
+            "short": "Specimen Collection Method",
+            "formal": "A coded value specifying the technique that is used to perform the procedure.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "SpecimenCollectionMethod",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/specimen-collection-type"
+              }
+            }
+          }
+        },
+        {
+          "path": "Specimen.collection.method.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.collection.sourceSite",
+          "definition": {
+            "short": "Site of the source of the specimen",
+            "formal": "Anatomical location from which the specimen should be collected (if subject is a patient).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "BodySite",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/body-site"
+              }
+            }
+          }
+        },
+        {
+          "path": "Specimen.collection.sourceSite.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment",
+          "definition": {
+            "short": "Specimen Treatments",
+            "formal": "Details concerning treatment and processing steps for the specimen.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment.description",
+          "definition": {
+            "short": "Textual description of procedure",
+            "formal": "Textual description of procedure.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment.description.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment.procedure",
+          "definition": {
+            "short": "Specimen Treatment Procedure",
+            "formal": "A coded value specifying the procedure used to process the specimen.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "SpecimenTreatmentProcedure",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/specimen-treatment-procedure"
+              }
+            }
+          }
+        },
+        {
+          "path": "Specimen.treatment.procedure.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment.additive",
+          "definition": {
+            "short": "Specimen additive",
+            "formal": "Specimen additive.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Substance)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.treatment.additive.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container",
+          "definition": {
+            "short": "Specimen Container",
+            "formal": "The container holding the specimen. May be recursive; ie blood in tube in tray in rack.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.identifier",
+          "definition": {
+            "short": "Id for container",
+            "formal": "Id for container. There may be muliple; a manufacturer's bar code, lab assigned identifier, etc.",
+            "min": "1",
+            "max": "*",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.description",
+          "definition": {
+            "short": "Textual description of container",
+            "formal": "Textual description of container.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.description.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.type",
+          "definition": {
+            "short": "Specimen Container Type",
+            "formal": "The type of container associated with the specimen (eg slide, aliquot, etc).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "SpecimenContainerType",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/specimen-container-type"
+              }
+            }
+          }
+        },
+        {
+          "path": "Specimen.container.type.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.capacity",
+          "definition": {
+            "short": "Container Capacity",
+            "formal": "The capacity (volume or other measure the container may contain.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.capacity.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.specimenQuantity",
+          "definition": {
+            "short": "Specimen Container Quantity",
+            "formal": "The quantity of specimen in the container; may be volume, dimensions, or other appropriate measurements, depending on the specimen type.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.specimenQuantity.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.additive",
+          "definition": {
+            "short": "Container Additive",
+            "formal": "Additive associated with the container.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Substance)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Specimen.container.additive.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

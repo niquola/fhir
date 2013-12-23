@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MedicationKind</h2>
       <p>Whether the medication is a product or a package</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/medication-kind</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/medication-kind</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>product</td>
+          <td>
+            <a name="product">product</a>
+          </td>
           <td/>
           <td>The medication is a product.</td>
         </tr>
         <tr>
-          <td>package</td>
+          <td>
+            <a name="package">package</a>
+          </td>
           <td/>
           <td>The medication is a package - a contained group of one of more products.</td>
         </tr>
@@ -45,7 +49,7 @@
   </telecom>
   <description value="Whether the medication is a product or a package"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/medication-kind"/>
     <caseSensitive value="true"/>

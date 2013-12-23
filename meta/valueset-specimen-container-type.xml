@@ -8,7 +8,7 @@
       <p>Containers which may hold specimens or specimen containers - all snomed specimen containers</p>
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
-        <li>Include codes from http://snomed.info/id where concept  is-a  434711009</li>
+        <li>Include codes from http://snomed.info/sct where concept  is-a  434711009</li>
       </ul>
     </div>
   </text>
@@ -23,7 +23,7 @@
   <status value="draft"/>
   <compose>
     <include>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <filter>
         <property value="concept"/>
         <op value="is-a"/>

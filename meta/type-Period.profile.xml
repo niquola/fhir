@@ -2,13 +2,23 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.htm#Period">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.html#Period">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for Period"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for Period for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="Period"/>
     <element>
@@ -26,20 +36,24 @@
           <key value="1"/>
           <name value="Start &lt;= End"/>
           <severity value="error"/>
-          <human value="If present, start must have a lower value than end"/>
+          <human value="If present, start SHALL have a lower value than end"/>
           <xpath value="not(exists(f:start)) or not(exists(f:end)) or (f:start/@value &lt;= f:end/@value)"/>
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="DR"/>
         </mapping>
       </definition>
     </element>
     <element>
       <path value="Period.start"/>
       <definition>
-        <short value="The start of the period"/>
+        <short value="Starting time with inclusive boundary"/>
         <formal value="The start of the period. The boundary is inclusive."/>
         <comments value="If the low element is missing, the meaning is that the low boundary is not known."/>
         <min value="0"/>
@@ -49,15 +63,19 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./low"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="DR.1"/>
         </mapping>
       </definition>
     </element>
     <element>
       <path value="Period.end"/>
       <definition>
-        <short value="The end of the period, if not ongoing"/>
+        <short value="End time with inclusive boundary, if not ongoing"/>
         <formal value="The end of the period. If the high is missing, it means that the period is ongoing."/>
         <comments value="The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03."/>
         <min value="0"/>
@@ -67,8 +85,12 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./high"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="DR.2"/>
         </mapping>
       </definition>
     </element>

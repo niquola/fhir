@@ -4,9 +4,12 @@
 class Fhir::SecurityEvent < Fhir::Resource
   invariants do
     validates_presence_of :event
-    validates_presence_of :participants
+    validates_presence_of :participant
     validates_presence_of :source
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
@@ -19,11 +22,14 @@ class Fhir::SecurityEvent < Fhir::Resource
       validates_presence_of :date_time
     end
 
-    # Type of event
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # Type/identifier of event
     attribute :type, Fhir::CodeableConcept
 
-    # Sub-type of event
-    attribute :subtypes, Array[Fhir::CodeableConcept]
+    # More specific type/id for the event
+    attribute :subtype, Array[Fhir::CodeableConcept]
 
     # Type of action performed during the event
     attribute :action, Fhir::Code
@@ -46,8 +52,11 @@ class Fhir::SecurityEvent < Fhir::Resource
       validates_inclusion_of :requestor, in: [true, false], message: 'must be either true or false'
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # User roles (e.g. local RBAC codes)
-    attribute :roles, Array[Fhir::CodeableConcept]
+    attribute :role, Array[Fhir::CodeableConcept]
 
     # Direct reference to resource
     resource_reference :reference, [Fhir::Practitioner, Fhir::Patient, Fhir::Device]
@@ -55,8 +64,8 @@ class Fhir::SecurityEvent < Fhir::Resource
     # Unique identifier for the user
     attribute :user_id, String
 
-    # User id used by authentication system
-    attribute :auth_id, String
+    # Alternative User id e.g. authentication
+    attribute :alt_id, String
 
     # Human-meaningful name for the user
     attribute :name, String
@@ -70,6 +79,9 @@ class Fhir::SecurityEvent < Fhir::Resource
     # Logical network location for application activity, if the
     # activity has a network location.
     class Network < Fhir::ValueObject
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # Identifier for the network access point of the user device
       attribute :identifier, String
 
@@ -80,13 +92,16 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :network, Network
   end
 
-  attribute :participants, Array[Participant]
+  attribute :participant, Array[Participant]
 
   # Application systems and processes.
   class Source < Fhir::ValueObject
     invariants do
       validates_presence_of :identifier
     end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
     # Logical source location within the enterprise
     attribute :site, String
@@ -95,7 +110,7 @@ class Fhir::SecurityEvent < Fhir::Resource
     attribute :identifier, String
 
     # The type of source where event originated
-    attribute :types, Array[Fhir::Coding]
+    attribute :type, Array[Fhir::Coding]
   end
 
   attribute :source, Source
@@ -103,6 +118,9 @@ class Fhir::SecurityEvent < Fhir::Resource
   # Specific instances of data or objects that have been
   # accessed.
   class Object < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Specific instance of object (e.g. versioned)
     attribute :identifier, Fhir::Identifier
 
@@ -124,6 +142,9 @@ class Fhir::SecurityEvent < Fhir::Resource
     # Instance-specific descriptor for Object
     attribute :name, String
 
+    # Descriptive text
+    attribute :description, String
+
     # Actual query for object
     attribute :query, String
 
@@ -134,6 +155,9 @@ class Fhir::SecurityEvent < Fhir::Resource
         validates_presence_of :value
       end
 
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # Name of the property
       attribute :type, String
 
@@ -141,10 +165,10 @@ class Fhir::SecurityEvent < Fhir::Resource
       attribute :value, String
     end
 
-    attribute :details, Array[Detail]
+    attribute :detail, Array[Detail]
   end
 
-  attribute :objects, Array[Object]
+  attribute :object, Array[Object]
 end
 
 

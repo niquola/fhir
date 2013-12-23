@@ -4,11 +4,14 @@ class Fhir::DocumentReference < Fhir::Resource
     validates_presence_of :master_identifier
     validates_presence_of :subject_ref
     validates_presence_of :type
-    validates_presence_of :author_refs
+    validates_presence_of :author_ref
     validates_presence_of :indexed
     validates_presence_of :status
     validates_presence_of :mime_type
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
@@ -17,24 +20,27 @@ class Fhir::DocumentReference < Fhir::Resource
   attribute :master_identifier, Fhir::Identifier
 
   # Other identifiers for the document
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
-  # The subject of the document
+  # Who|what is the subject of the document
   resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device]
 
   # What kind of document this is (LOINC if possible)
   attribute :type, Fhir::CodeableConcept
 
-  # More detail about the document type
-  attribute :subtype, Fhir::CodeableConcept
+  # Categorisation of Document
+  attribute :document_reference_class, Fhir::CodeableConcept
 
   # Who/what authored the document
-  resource_references :authors, [Fhir::Practitioner, Fhir::Device]
+  resource_references :author, [Fhir::Practitioner, Fhir::Device, Fhir::Patient, Fhir::RelatedPerson]
 
   # Org which maintains the document
   resource_reference :custodian, [Fhir::Organization]
 
-  # Who authenticated the document
+  # Manages access policies for the document
+  attribute :policy_manager, Fhir::URI
+
+  # Who/What authenticated the document
   resource_reference :authenticator, [Fhir::Practitioner, Fhir::Organization]
 
   # Document creation time
@@ -43,29 +49,47 @@ class Fhir::DocumentReference < Fhir::Resource
   # When this document reference created
   attribute :indexed, DateTime
 
-  # current | superseded | error
+  # current | superceded | entered in error
   attribute :status, Fhir::Code
 
-  # Status of the underlying document
+  # preliminary | final | appended | amended | entered in
+  # error
   attribute :doc_status, Fhir::CodeableConcept
 
-  # If this document replaces another
-  resource_reference :supercedes, [Fhir::DocumentReference]
+  # Relationships that this document has with other document
+  # references that already exist.
+  class RelatesTo < Fhir::ValueObject
+    invariants do
+      validates_presence_of :code
+      validates_presence_of :target_ref
+    end
 
-  # Human Readable description (title)
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # replaces | transforms | signs | appends
+    attribute :code, Fhir::Code
+
+    # Target of the relationship
+    resource_reference :target, [Fhir::DocumentReference]
+  end
+
+  attribute :relates_to, Array[RelatesTo]
+
+  # Human-readable description (title)
   attribute :description, String
 
   # Sensitivity of source document
-  attribute :confidentiality, Fhir::CodeableConcept
+  attribute :confidentiality, Array[Fhir::CodeableConcept]
 
-  # Primary language of the document
+  # The marked primary language for the document
   attribute :primary_language, Fhir::Code
 
-  # Mime type of the document
+  # Mime type, + maybe character encoding
   attribute :mime_type, Fhir::Code
 
-  # Format of the document
-  attribute :format, Fhir::CodeableConcept
+  # Format/content rules for the document
+  attribute :format, Array[Fhir::URI]
 
   # Size of the document in bytes
   attribute :size, Integer
@@ -83,6 +107,9 @@ class Fhir::DocumentReference < Fhir::Resource
       validates_presence_of :type
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Type of service (i.e. XDS.b)
     attribute :type, Fhir::CodeableConcept
 
@@ -96,24 +123,30 @@ class Fhir::DocumentReference < Fhir::Resource
         validates_presence_of :name
       end
 
-      # Name of parameter
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
+      # Parameter name in service call
       attribute :name, String
 
-      # Parameter value
+      # Parameter value for the name
       attribute :value, String
     end
 
-    attribute :parameters, Array[Parameter]
+    attribute :parameter, Array[Parameter]
   end
 
   attribute :service, Service
 
   # The clinical context in which the document was prepared.
   class Context < Fhir::ValueObject
-    # Type of context (i.e. type of event)
-    attribute :codes, Array[Fhir::CodeableConcept]
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
-    # Time described by the document
+    # Main Clinical Acts Documented
+    attribute :event, Array[Fhir::CodeableConcept]
+
+    # Time of service that is being documented
     attribute :period, Fhir::Period
 
     # Kind of facility where patient was seen

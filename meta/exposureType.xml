@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ExposureType</h2>
       <p>The type of exposure that resulted in an adverse reaction</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/exposureType</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/exposureType</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>drugadmin</td>
+          <td>
+            <a name="drugadmin">drugadmin</a>
+          </td>
           <td/>
           <td>Drug Administration.</td>
         </tr>
         <tr>
-          <td>immuniz</td>
+          <td>
+            <a name="immuniz">immuniz</a>
+          </td>
           <td/>
           <td>Immunization.</td>
         </tr>
         <tr>
-          <td>coincidental</td>
+          <td>
+            <a name="coincidental">coincidental</a>
+          </td>
           <td/>
           <td>In the same area as the substance.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="The type of exposure that resulted in an adverse reaction"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.979+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/exposureType"/>
     <caseSensitive value="true"/>

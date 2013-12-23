@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Immunization" type="Immunization">
     <xs:annotation>
@@ -71,7 +71,7 @@
           </xs:element>
           <xs:element name="performer" minOccurs="0" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
-              <xs:documentation>Clinician that administered the vaccine.</xs:documentation>
+              <xs:documentation>Clinician who administered the vaccine.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="requester" minOccurs="0" maxOccurs="1" type="ResourceReference">
@@ -138,7 +138,7 @@
       <xs:documentation>Immunization event information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
@@ -159,7 +159,7 @@
       <xs:documentation>Immunization event information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
@@ -185,7 +185,7 @@
       <xs:documentation>Immunization event information.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="doseSequence" minOccurs="1" maxOccurs="1" type="integer">
             <xs:annotation>

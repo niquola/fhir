@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>RestfulConformanceMode</h2>
       <p>The mode of a RESTful conformance statement</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/restful-conformance-mode</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/restful-conformance-mode</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>client</td>
+          <td>
+            <a name="client">client</a>
+          </td>
           <td/>
           <td>The application acts as a server for this resource.</td>
         </tr>
         <tr>
-          <td>server</td>
+          <td>
+            <a name="server">server</a>
+          </td>
           <td/>
           <td>The application acts as a client for this resource.</td>
         </tr>
@@ -45,7 +49,7 @@
   </telecom>
   <description value="The mode of a RESTful conformance statement"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.975+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/restful-conformance-mode"/>
     <caseSensitive value="true"/>

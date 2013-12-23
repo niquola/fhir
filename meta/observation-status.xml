@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ObservationStatus</h2>
       <p>Codes providing the status of an observation</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/observation-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/observation-status</p>
       <table>
         <tr>
           <td>
@@ -20,34 +20,46 @@
           </td>
         </tr>
         <tr>
-          <td>registered</td>
+          <td>
+            <a name="registered">registered</a>
+          </td>
           <td/>
-          <td>The existence of the observation is registered, but there is no result yet available</td>
+          <td>The existence of the observation is registered, but there is no result yet available.</td>
         </tr>
         <tr>
-          <td>interim</td>
+          <td>
+            <a name="preliminary">preliminary</a>
+          </td>
           <td/>
-          <td>This is an initial or interim observation: data may be incomplete or unverified</td>
+          <td>This is an initial or interim observation: data may be incomplete or unverified.</td>
         </tr>
         <tr>
-          <td>final</td>
+          <td>
+            <a name="final">final</a>
+          </td>
           <td/>
-          <td>The observation is complete and verified by an authorised person</td>
+          <td>The observation is complete and verified by an authorised person.</td>
         </tr>
         <tr>
-          <td>amended</td>
+          <td>
+            <a name="amended">amended</a>
+          </td>
           <td/>
-          <td>The observation has been modified subsequent to being Final, and is complete and verified by an authorised person</td>
+          <td>The observation has been modified subsequent to being Final, and is complete and verified by an authorised person.</td>
         </tr>
         <tr>
-          <td>cancelled</td>
+          <td>
+            <a name="cancelled">cancelled</a>
+          </td>
           <td/>
-          <td>The observation is unavailable because the measurement was not started or not completed (also sometimes called &quot;aborted&quot;)</td>
+          <td>The observation is unavailable because the measurement was not started or not completed (also sometimes called &quot;aborted&quot;).</td>
         </tr>
         <tr>
-          <td>withdrawn</td>
+          <td>
+            <a name="enteredinerror">entered in error</a>
+          </td>
           <td/>
-          <td>The observation has been withdrawn following previous Final release</td>
+          <td>The observation has been withdrawn following previous Final release.</td>
         </tr>
       </table>
     </div>
@@ -65,33 +77,33 @@
   </telecom>
   <description value="Codes providing the status of an observation"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/observation-status"/>
     <caseSensitive value="true"/>
     <concept>
       <code value="registered"/>
-      <definition value="The existence of the observation is registered, but there is no result yet available"/>
+      <definition value="The existence of the observation is registered, but there is no result yet available."/>
     </concept>
     <concept>
-      <code value="interim"/>
-      <definition value="This is an initial or interim observation: data may be incomplete or unverified"/>
+      <code value="preliminary"/>
+      <definition value="This is an initial or interim observation: data may be incomplete or unverified."/>
     </concept>
     <concept>
       <code value="final"/>
-      <definition value="The observation is complete and verified by an authorised person"/>
+      <definition value="The observation is complete and verified by an authorised person."/>
     </concept>
     <concept>
       <code value="amended"/>
-      <definition value="The observation has been modified subsequent to being Final, and is complete and verified by an authorised person"/>
+      <definition value="The observation has been modified subsequent to being Final, and is complete and verified by an authorised person."/>
     </concept>
     <concept>
       <code value="cancelled"/>
-      <definition value="The observation is unavailable because the measurement was not started or not completed (also sometimes called &quot;aborted&quot;)"/>
+      <definition value="The observation is unavailable because the measurement was not started or not completed (also sometimes called &quot;aborted&quot;)."/>
     </concept>
     <concept>
-      <code value="withdrawn"/>
-      <definition value="The observation has been withdrawn following previous Final release"/>
+      <code value="entered in error"/>
+      <definition value="The observation has been withdrawn following previous Final release."/>
     </concept>
   </define>
 </ValueSet>

@@ -1,1 +1,1479 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter\"><b>Encounter<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"Identifier(s) by which this encounter is known.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.identifier\"><b>identifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Identifier(s) by which this encounter is known<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/identifier&gt;\r\n &lt;<a title=\"E.g. active, aborted, finished (this element modifies the meaning of other elements)\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.status\"><span style=\"text-decoration: underline\"><b>status<\/b><\/span><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#code\">code<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"encounter-state.htm\">E.g. active, aborted, finished<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Inpatient | Outpatient etc (this element modifies the meaning of other elements)\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.class\"><span style=\"text-decoration: underline\"><b>class<\/b><\/span><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#code\">code<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"encounter-class.htm\">Inpatient | Outpatient etc<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.type\"><b>type<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-type.htm\">Specific type of encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/type&gt;\r\n &lt;<a title=\"The patient present at the encounter.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.subject\"><b>subject<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"patient.htm#Patient\">Patient<\/a>)<\/span> <span style=\"color: navy\">The patient present at the encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/subject&gt;\r\n &lt;<a title=\"The main practitioner responsible for providing the service.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.participant\"><b>participant<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> List of participants involved in the encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span> --&gt;<\/span>\r\n  &lt;<a title=\"Role of participant in encounter.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.participant.type\"><b>type<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#code\">code<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"participant-type.htm\">Role of participant in encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n  &lt;<a title=\"The practitioner that is involved.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.participant.practitioner\"><b>practitioner<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"practitioner.htm#Practitioner\">Practitioner<\/a>)<\/span> <span style=\"color: navy\">The practitioner that is involved<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/practitioner&gt;\r\n &lt;/participant&gt;\r\n &lt;<a title=\"The appointment that scheduled this encounter.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.fulfills\"><b>fulfills<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a title=\"This resource has not been defined yet\">Appointment<\/a>)<\/span> <span style=\"color: navy\">The appointment that scheduled this encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/fulfills&gt;\r\n &lt;<a title=\"The date and time the encounter starts, e.g. the patient arrives.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.start\"><b>start<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">The date and time the encounter starts<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Quantity of time the encounter lasted. This excludes the time during leaves of absence.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.length\"><b>length<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Duration\">Duration<\/a><\/span> <span style=\"color: navy\">Quantity of time the encounter lasted<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/length&gt;\r\n &lt;<a title=\"Reason the encounter takes place.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.reason_x_\"><b>reason[x]<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#string\">string<\/a>|<a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\">Reason the encounter takes place<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/reason[x]&gt;\r\n &lt;<a title=\"Reason the encounter takes place.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.indication\"><b>indication<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"resourcelist.htm\">Any<\/a>)<\/span> <span style=\"color: navy\">Reason the encounter takes place<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/indication&gt;\r\n &lt;<a title=\"Indicates the urgency of the encounter.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.priority\"><b>priority<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-priority.htm\">Indicates the urgency of the encounter<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/priority&gt;\r\n &lt;<a title=\"Details about an admission to a clinic.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization\"><b>hospitalization<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..1<\/b><\/span> Details about an admission to a clinic --&gt;<\/span>\r\n  &lt;<a title=\"Pre-admission identifier.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.preAdmissionIdentifier\"><b>preAdmissionIdentifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">Pre-admission identifier<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/preAdmissionIdentifier&gt;\r\n  &lt;<a title=\"The location the patient came from before admission.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.origin\"><b>origin<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"location.htm#Location\">Location<\/a>)<\/span> <span style=\"color: navy\">The location the patient came from before admission<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/origin&gt;\r\n  &lt;<a title=\"Where patient was admitted from (physician referral, transfer).\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.admitSource\"><b>admitSource<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-admit-source.htm\">Where patient was admitted from (physician referral, transfer)<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/admitSource&gt;\r\n  &lt;<a title=\"Period of hospitalization.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.period\"><b>period<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Period\">Period<\/a><\/span> <span style=\"color: navy\">Period of hospitalization<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/period&gt;\r\n  &lt;<a title=\"Where the patient stays during this encounter.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.accomodation\"><b>accomodation<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Where the patient stays during this encounter --&gt;<\/span>\r\n   &lt;<a title=\"Bed.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.accomodation.bed\"><b>bed<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"location.htm#Location\">Location<\/a>)<\/span> <span style=\"color: navy\">Bed<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/bed&gt;\r\n   &lt;<a title=\"Period during which the patient was assigned the bed.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.accomodation.period\"><b>period<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Period\">Period<\/a><\/span> <span style=\"color: navy\">Period during which the patient was assigned the bed<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/period&gt;\r\n  &lt;/accomodation&gt;\r\n  &lt;<a title=\"Dietary restrictions for the patient.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.diet\"><b>diet<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-diet.htm\">Dietary restrictions for the patient<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/diet&gt;\r\n  &lt;<a title=\"Special courtesies (VIP, board member).\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.specialCourtesy\"><b>specialCourtesy<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-special-courtesy.htm\">Special courtesies (VIP, board member)<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/specialCourtesy&gt;\r\n  &lt;<a title=\"Wheelchair, translator, stretcher, etc.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.specialArrangement\"><b>specialArrangement<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-special-arrangements.htm\">Wheelchair, translator, stretcher, etc<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/specialArrangement&gt;\r\n  &lt;<a title=\"Location the patient is discharged to.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.destination\"><b>destination<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"location.htm#Location\">Location<\/a>)<\/span> <span style=\"color: navy\">Location the patient is discharged to<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/destination&gt;\r\n  &lt;<a title=\"Disposition patient released to.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.dischargeDisposition\"><b>dischargeDisposition<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-discharge-disposition.htm\">Disposition patient released to<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/dischargeDisposition&gt;\r\n  &lt;<a title=\"Is readmission?.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.hospitalization.reAdmission\"><b>reAdmission<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#boolean\">boolean<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">Is readmission?<\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;/hospitalization&gt;\r\n &lt;<a title=\"List of locations the patient has been at.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.location\"><b>location<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> List of locations the patient has been at --&gt;<\/span>\r\n  &lt;<a title=\"The location the encounter takes place.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.location.location\"><b>location<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"location.htm#Location\">Location<\/a>)<\/span> <span style=\"color: navy\">The location the encounter takes place<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/location&gt;\r\n  &lt;<a title=\"Time period during which the patient was present at the location.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.location.period\"><b>period<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Period\">Period<\/a><\/span> <span style=\"color: navy\">Time period during which the patient was present at the location<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/period&gt;\r\n &lt;/location&gt;\r\n &lt;<a title=\"Department or team providing care.\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.serviceProvider\"><b>serviceProvider<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"organization.htm#Organization\">Organization<\/a>)<\/span> <span style=\"color: navy\">Department or team providing care<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/serviceProvider&gt;\r\n &lt;<a title=\"Another Encounter this encounter is part of (administratively or in time).\" class=\"dict\" href=\"encounter-definitions.htm#Encounter.partOf\"><b>partOf<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"encounter.htm#Encounter\">Encounter<\/a>)<\/span> <span style=\"color: navy\">Another Encounter this encounter is part of<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/partOf&gt;\r\n&lt;/Encounter&gt;\r\n<\/pre><\/div>"},"name":{"value":"encounter"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Encounter"},"publish":{"value":true},"element":[{"path":{"value":"Encounter"},"definition":{"short":{"value":"An interaction during which services are provided to the patient"},"formal":{"value":"An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"Encounter.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"Encounter.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"Encounter.identifier"},"definition":{"short":{"value":"Identifier(s) by which this encounter is known"},"formal":{"value":"Identifier(s) by which this encounter is known."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-19-visit number"}}]}},{"path":{"value":"Encounter.status"},"definition":{"short":{"value":"E.g. active, aborted, finished"},"formal":{"value":"E.g. active, aborted, finished."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":true},"binding":{"value":"EncounterState"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"No clear equivalent in V2.x; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16"}}]}},{"path":{"value":"Encounter.class"},"definition":{"short":{"value":"Inpatient | Outpatient etc"},"formal":{"value":"Inpatient | Outpatient etc."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":true},"binding":{"value":"EncounterClass"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-2-patient class"}}]}},{"path":{"value":"Encounter.type"},"definition":{"short":{"value":"Specific type of encounter"},"formal":{"value":"Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation)."},"comments":{"value":"Since there are many ways to further classify encounters, this element is 0..*."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"EncounterType"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-4-admission type"}}]}},{"path":{"value":"Encounter.subject"},"definition":{"short":{"value":"The patient present at the encounter"},"formal":{"value":"The patient present at the encounter."},"comments":{"value":"While the encounter is always about the patient, the patient may not actually be known in all contexts of use."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Patient)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PID-3-patient ID list"}}]}},{"path":{"value":"Encounter.participant"},"definition":{"short":{"value":"List of participants involved in the encounter"},"formal":{"value":"The main practitioner responsible for providing the service."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.participant.type"},"definition":{"short":{"value":"Role of participant in encounter"},"formal":{"value":"Role of participant in encounter."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"ParticipantType"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRT-4-participation"}}]}},{"path":{"value":"Encounter.participant.practitioner"},"definition":{"short":{"value":"The practitioner that is involved"},"formal":{"value":"The practitioner that is involved."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Practitioner)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRT-5-participation person"}}]}},{"path":{"value":"Encounter.fulfills"},"definition":{"short":{"value":"The appointment that scheduled this encounter"},"formal":{"value":"The appointment that scheduled this encounter."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Appointment)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"SCH-1-placer appointment ID / SCH-2-filler appointment ID"}}]}},{"path":{"value":"Encounter.start"},"definition":{"short":{"value":"The date and time the encounter starts"},"formal":{"value":"The date and time the encounter starts, e.g. the patient arrives."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.length"},"definition":{"short":{"value":"Quantity of time the encounter lasted"},"formal":{"value":"Quantity of time the encounter lasted. This excludes the time during leaves of absence."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Duration"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"(PV1-45 less PV1-44) iff ( (PV1-44 not empty) and (PV1-45 not empty) ); units in minutes"}}]}},{"path":{"value":"Encounter.reason[x]"},"definition":{"short":{"value":"Reason the encounter takes place"},"formal":{"value":"Reason the encounter takes place."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}},{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"EncounterReason"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"EVN-4-event reason code / PV2-3-admit reason (note: PV2-3 is nominally constrained to inpatient admissions; V2.x makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations\n)"}}]}},{"path":{"value":"Encounter.indication"},"definition":{"short":{"value":"Reason the encounter takes place"},"formal":{"value":"Reason the encounter takes place."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Any)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.priority"},"definition":{"short":{"value":"Indicates the urgency of the encounter"},"formal":{"value":"Indicates the urgency of the encounter."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"Priority"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV2-25-visit priority code"}}]}},{"path":{"value":"Encounter.hospitalization"},"definition":{"short":{"value":"Details about an admission to a clinic"},"formal":{"value":"Details about an admission to a clinic."},"min":{"value":0},"max":{"value":"1"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.hospitalization.preAdmissionIdentifier"},"definition":{"short":{"value":"Pre-admission identifier"},"formal":{"value":"Pre-admission identifier."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-5-preadmit number"}}]}},{"path":{"value":"Encounter.hospitalization.origin"},"definition":{"short":{"value":"The location the patient came from before admission"},"formal":{"value":"The location the patient came from before admission."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Location)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.hospitalization.admitSource"},"definition":{"short":{"value":"Where patient was admitted from (physician referral, transfer)"},"formal":{"value":"Where patient was admitted from (physician referral, transfer)."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"AdmitSource"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-14-admit source"}}]}},{"path":{"value":"Encounter.hospitalization.period"},"definition":{"short":{"value":"Period of hospitalization"},"formal":{"value":"Period of hospitalization."},"comments":{"value":"May differ from start + length, since length excludes leaves of absence."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Period"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV2-11-actual length of inpatient stay / PV1-44-admit date/time / PV1-45-discharge date/time"}}]}},{"path":{"value":"Encounter.hospitalization.accomodation"},"definition":{"short":{"value":"Where the patient stays during this encounter"},"formal":{"value":"Where the patient stays during this encounter."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.hospitalization.accomodation.bed"},"definition":{"short":{"value":"Bed"},"formal":{"value":"Bed."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Location)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-3-assigned patient location"}}]}},{"path":{"value":"Encounter.hospitalization.accomodation.period"},"definition":{"short":{"value":"Period during which the patient was assigned the bed"},"formal":{"value":"Period during which the patient was assigned the bed."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Period"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.hospitalization.diet"},"definition":{"short":{"value":"Dietary restrictions for the patient"},"formal":{"value":"Dietary restrictions for the patient."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"PatientDiet"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-38-diet type"}}]}},{"path":{"value":"Encounter.hospitalization.specialCourtesy"},"definition":{"short":{"value":"Special courtesies (VIP, board member)"},"formal":{"value":"Special courtesies (VIP, board member)."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"Courtesies"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-16-VIP indicator"}}]}},{"path":{"value":"Encounter.hospitalization.specialArrangement"},"definition":{"short":{"value":"Wheelchair, translator, stretcher, etc"},"formal":{"value":"Wheelchair, translator, stretcher, etc."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"Arrangements"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-15-ambulatory status / OBR-30-transportation mode / OBR-43-planned patient transport comment"}}]}},{"path":{"value":"Encounter.hospitalization.destination"},"definition":{"short":{"value":"Location the patient is discharged to"},"formal":{"value":"Location the patient is discharged to."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Location)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.hospitalization.dischargeDisposition"},"definition":{"short":{"value":"Disposition patient released to"},"formal":{"value":"Disposition patient released to."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"DischargeDisp"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-36-discharge disposition"}}]}},{"path":{"value":"Encounter.hospitalization.reAdmission"},"definition":{"short":{"value":"Is readmission?"},"formal":{"value":"Is readmission?."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"boolean"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-13-re-admission indicator"}}]}},{"path":{"value":"Encounter.location"},"definition":{"short":{"value":"List of locations the patient has been at"},"formal":{"value":"List of locations the patient has been at."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.location.location"},"definition":{"short":{"value":"The location the encounter takes place"},"formal":{"value":"The location the encounter takes place."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Location)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-3-assigned patient location / PV1-6-prior patient location / PV1-11-temporary location / PV1-42-pending location / PV1-43-prior temporary location"}}]}},{"path":{"value":"Encounter.location.period"},"definition":{"short":{"value":"Time period during which the patient was present at the location"},"formal":{"value":"Time period during which the patient was present at the location."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Period"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Encounter.serviceProvider"},"definition":{"short":{"value":"Department or team providing care"},"formal":{"value":"Department or team providing care."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Organization)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PV1-10-hospital service / PL.6 Person Location Type & PL.1 Point of Care (note: V2.x definition is \"the treatment or type of surgery that the patient is scheduled to receive\"; seems slightly out of alignment with the concept name 'hospital service'. Would not trust that implementations apply this semantic by default)"}}]}},{"path":{"value":"Encounter.partOf"},"definition":{"short":{"value":"Another Encounter this encounter is part of"},"formal":{"value":"Another Encounter this encounter is part of (administratively or in time)."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Encounter)"}}],"condition":[],"isModifier":{"value":false}}}]}],"binding":[{"name":{"value":"DischargeDisp"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-discharge-disposition"}}},{"name":{"value":"Courtesies"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-special-courtesy"}}},{"name":{"value":"EncounterClass"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-class"}}},{"name":{"value":"EncounterType"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-type"}}},{"name":{"value":"Arrangements"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-special-arrangements"}}},{"name":{"value":"PatientDiet"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-diet"}}},{"name":{"value":"AdmitSource"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-admit-source"}}},{"name":{"value":"EncounterReason"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"description":{"value":"Reason"}},{"name":{"value":"ParticipantType"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/participant-type"}}},{"name":{"value":"Priority"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-priority"}}},{"name":{"value":"EncounterState"},"conformance":{"value":"required"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/encounter-state"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.\" class=\"dict\" href=\"encounter-definitions.html#Encounter\"><b>Encounter</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"Identifier(s) by which this encounter is known.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Identifier(s) by which this encounter is known<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n &lt;<a title=\"planned | in progress | onleave | finished | cancelled (this element modifies the meaning of other elements)\" class=\"dict\" href=\"encounter-definitions.html#Encounter.status\"><span style=\"text-decoration: underline\"><b>status</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"encounter-state.html\">planned | in progress | onleave | finished | cancelled<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"inpatient | outpatient | ambulatory | emergency + (this element modifies the meaning of other elements)\" class=\"dict\" href=\"encounter-definitions.html#Encounter.class\"><span style=\"text-decoration: underline\"><b>class</b></span></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#code\">code</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"encounter-class.html\">inpatient | outpatient | ambulatory | emergency +<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).\" class=\"dict\" href=\"encounter-definitions.html#Encounter.type\"><b>type</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-type.html\">Specific type of encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/type&gt;\r\n &lt;<a title=\"The patient present at the encounter.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.subject\"><b>subject</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"patient.html#Patient\">Patient</a>)</span> <span style=\"color: navy\">The patient present at the encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/subject&gt;\r\n &lt;<a title=\"The main practitioner responsible for providing the service.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.participant\"><b>participant</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> List of participants involved in the encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span> --&gt;</span>\r\n  &lt;<a title=\"Role of participant in encounter.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.participant.type\"><b>type</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-participant-type.html\">Role of participant in encounter<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/type&gt;\r\n  &lt;<a title=\"Persons involved in the encounter other than the patient.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.participant.individual\"><b>individual</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"practitioner.html#Practitioner\">Practitioner</a>|<a href=\"relatedperson.html#RelatedPerson\">RelatedPerson</a>)</span> <span style=\"color: navy\">\r\n      Persons involved in the encounter other than the patient<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/individual&gt;\r\n &lt;/participant&gt;\r\n &lt;<a title=\"The start and end time of the encounter.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.period\"><b>period</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">The start and end time of the encounter</span><span style=\"color: Gray\"> --&gt;</span>&lt;/period&gt;\r\n &lt;<a title=\"Quantity of time the encounter lasted. This excludes the time during leaves of absence.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.length\"><b>length</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Duration\">Duration</a></span> <span style=\"color: navy\">Quantity of time the encounter lasted</span><span style=\"color: Gray\"> --&gt;</span>&lt;/length&gt;\r\n &lt;<a title=\"Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.reason\"><b>reason</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-reason.html\">Reason the encounter takes place (code)<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/reason&gt;\r\n &lt;<a title=\"Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.indication\"><b>indication</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"resourcelist.html\">Any</a>)</span> <span style=\"color: navy\">Reason the encounter takes place (resource)</span><span style=\"color: Gray\"> --&gt;</span>&lt;/indication&gt;\r\n &lt;<a title=\"Indicates the urgency of the encounter.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.priority\"><b>priority</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-priority.html\">Indicates the urgency of the encounter</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/priority&gt;\r\n &lt;<a title=\"Details about an admission to a clinic.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization\"><b>hospitalization</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..1</b></span> Details about an admission to a clinic --&gt;</span>\r\n  &lt;<a title=\"Pre-admission identifier.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.preAdmissionIdentifier\"><b>preAdmissionIdentifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">Pre-admission identifier</span><span style=\"color: Gray\"> --&gt;</span>&lt;/preAdmissionIdentifier&gt;\r\n  &lt;<a title=\"The location the patient came from before admission.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.origin\"><b>origin</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">The location the patient came from before admission</span><span style=\"color: Gray\"> --&gt;</span>&lt;/origin&gt;\r\n  &lt;<a title=\"Where patient was admitted from (physician referral, transfer).\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.admitSource\"><b>admitSource</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-admit-source.html\">Where patient was admitted from (physician referral, transfer)</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/admitSource&gt;\r\n  &lt;<a title=\"Period during which the patient was admitted.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.period\"><b>period</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">Period during which the patient was admitted</span><span style=\"color: Gray\"> --&gt;</span>&lt;/period&gt;\r\n  &lt;<a title=\"Where the patient stays during this encounter.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.accomodation\"><b>accomodation</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Where the patient stays during this encounter --&gt;</span>\r\n   &lt;<a title=\"The bed that is assigned to the patient.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.accomodation.bed\"><b>bed</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">The bed that is assigned to the patient</span><span style=\"color: Gray\"> --&gt;</span>&lt;/bed&gt;\r\n   &lt;<a title=\"Period during which the patient was assigned the bed.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.accomodation.period\"><b>period</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">Period during which the patient was assigned the bed</span><span style=\"color: Gray\"> --&gt;</span>&lt;/period&gt;\r\n  &lt;/accomodation&gt;\r\n  &lt;<a title=\"Dietary restrictions for the patient.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.diet\"><b>diet</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-diet.html\">Dietary restrictions for the patient</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/diet&gt;\r\n  &lt;<a title=\"Special courtesies (VIP, board member).\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.specialCourtesy\"><b>specialCourtesy</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-special-courtesy.html\">Special courtesies (VIP, board member)</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/specialCourtesy&gt;\r\n  &lt;<a title=\"Wheelchair, translator, stretcher, etc.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.specialArrangement\"><b>specialArrangement</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-special-arrangements.html\">Wheelchair, translator, stretcher, etc</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/specialArrangement&gt;\r\n  &lt;<a title=\"Location the patient is discharged to.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.destination\"><b>destination</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">Location the patient is discharged to</span><span style=\"color: Gray\"> --&gt;</span>&lt;/destination&gt;\r\n  &lt;<a title=\"Disposition patient released to.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.dischargeDisposition\"><b>dischargeDisposition</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-encounter-discharge-disposition.html\">Disposition patient released to</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/dischargeDisposition&gt;\r\n  &lt;<a title=\"The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.dischargeDiagnosis\"><b>dischargeDiagnosis</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"resourcelist.html\">Any</a>)</span> <span style=\"color: navy\">\r\n      The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete</span><span style=\"color: Gray\"> --&gt;</span>&lt;/dischargeDiagnosis&gt;\r\n  &lt;<a title=\"Is this hospitalization a readmission?.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.hospitalization.reAdmission\"><b>reAdmission</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#boolean\">boolean</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">Is this hospitalization a readmission?</span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;/hospitalization&gt;\r\n &lt;<a title=\"List of locations the patient has been at.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.location\"><b>location</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> List of locations the patient has been at --&gt;</span>\r\n  &lt;<a title=\"The location the encounter takes place.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.location.location\"><b>location</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">The location the encounter takes place</span><span style=\"color: Gray\"> --&gt;</span>&lt;/location&gt;\r\n  &lt;<a title=\"Time period during which the patient was present at the location.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.location.period\"><b>period</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">Time period during which the patient was present at the location</span><span style=\"color: Gray\"> --&gt;</span>&lt;/period&gt;\r\n &lt;/location&gt;\r\n &lt;<a title=\"Department or team providing care.\" class=\"dict\" href=\"encounter-definitions.html#Encounter.serviceProvider\"><b>serviceProvider</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>)</span> <span style=\"color: navy\">Department or team providing care</span><span style=\"color: Gray\"> --&gt;</span>&lt;/serviceProvider&gt;\r\n &lt;<a title=\"Another Encounter this encounter is part of (administratively or in time).\" class=\"dict\" href=\"encounter-definitions.html#Encounter.partOf\"><b>partOf</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"encounter.html#Encounter\">Encounter</a>)</span> <span style=\"color: navy\">Another Encounter this encounter is part of</span><span style=\"color: Gray\"> --&gt;</span>&lt;/partOf&gt;\r\n&lt;/Encounter&gt;\r\n</pre></div>"
+  },
+  "name": "encounter",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Encounter",
+      "publish": true,
+      "element": [
+        {
+          "path": "Encounter",
+          "definition": {
+            "short": "An interaction during which services are provided to the patient",
+            "formal": "An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.identifier",
+          "definition": {
+            "short": "Identifier(s) by which this encounter is known",
+            "formal": "Identifier(s) by which this encounter is known.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-19-visit number"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.status",
+          "definition": {
+            "short": "planned | in progress | onleave | finished | cancelled",
+            "formal": "planned | in progress | onleave | finished | cancelled.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "EncounterState",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-state"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "No clear equivalent in V2.x; active/finished could be inferred from PV1-44, PV1-45, PV2-24; inactive could be inferred from PV2-16"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.status.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.class",
+          "definition": {
+            "short": "inpatient | outpatient | ambulatory | emergency +",
+            "formal": "inpatient | outpatient | ambulatory | emergency +.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": true,
+            "binding": {
+              "name": "EncounterClass",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-class"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-2-patient class"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.class.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.type",
+          "definition": {
+            "short": "Specific type of encounter",
+            "formal": "Specific type of encounter (e.g. e-mail consultation, surgical day-care, skilled nursing, rehabilitation).",
+            "comments": "Since there are many ways to further classify encounters, this element is 0..*.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "EncounterType",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-type"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-4-admission type"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.type.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.subject",
+          "definition": {
+            "short": "The patient present at the encounter",
+            "formal": "The patient present at the encounter.",
+            "comments": "While the encounter is always about the patient, the patient may not actually be known in all contexts of use.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Patient)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PID-3-patient ID list"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.subject.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.participant",
+          "definition": {
+            "short": "List of participants involved in the encounter",
+            "formal": "The main practitioner responsible for providing the service.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.participant.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.participant.type",
+          "definition": {
+            "short": "Role of participant in encounter",
+            "formal": "Role of participant in encounter.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "ParticipantType",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-participant-type"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRT-4-participation"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.participant.type.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.participant.individual",
+          "definition": {
+            "short": "Persons involved in the encounter other than the patient",
+            "formal": "Persons involved in the encounter other than the patient.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Practitioner|RelatedPerson)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRT-5-participation person"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.participant.individual.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.period",
+          "definition": {
+            "short": "The start and end time of the encounter",
+            "formal": "The start and end time of the encounter.",
+            "comments": "If not (yet) known, the end of the Period may be omitted.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.period.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.length",
+          "definition": {
+            "short": "Quantity of time the encounter lasted",
+            "formal": "Quantity of time the encounter lasted. This excludes the time during leaves of absence.",
+            "comments": "May differ from the time the Encounter.period lasted because of leave of absence.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Duration"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "(PV1-45 less PV1-44) iff ( (PV1-44 not empty) and (PV1-45 not empty) ); units in minutes"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.length.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.reason",
+          "definition": {
+            "short": "Reason the encounter takes place (code)",
+            "formal": "Reason the encounter takes place, expressed as a code. For admissions, this can be used for a coded admission diagnosis.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "EncounterReason",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-reason"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "EVN-4-event reason code / PV2-3-admit reason (note: PV2-3 is nominally constrained to inpatient admissions; V2.x makes no vocabulary suggestions for PV2-3; would not expect PV2 segment or PV2-3 to be in use in all implementations\n)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.reason.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.indication",
+          "definition": {
+            "short": "Reason the encounter takes place (resource)",
+            "formal": "Reason the encounter takes place, as specified using information from another resource. For admissions, this is the admission diagnosis.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Any)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.indication.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.priority",
+          "definition": {
+            "short": "Indicates the urgency of the encounter",
+            "formal": "Indicates the urgency of the encounter.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "Priority",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-priority"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV2-25-visit priority code"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.priority.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization",
+          "definition": {
+            "short": "Details about an admission to a clinic",
+            "formal": "Details about an admission to a clinic.",
+            "min": "0",
+            "max": "1",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.preAdmissionIdentifier",
+          "definition": {
+            "short": "Pre-admission identifier",
+            "formal": "Pre-admission identifier.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-5-preadmit number"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.preAdmissionIdentifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.origin",
+          "definition": {
+            "short": "The location the patient came from before admission",
+            "formal": "The location the patient came from before admission.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Location)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.origin.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.admitSource",
+          "definition": {
+            "short": "Where patient was admitted from (physician referral, transfer)",
+            "formal": "Where patient was admitted from (physician referral, transfer).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "AdmitSource",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-admit-source"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-14-admit source"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.admitSource.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.period",
+          "definition": {
+            "short": "Period during which the patient was admitted",
+            "formal": "Period during which the patient was admitted.",
+            "comments": "May differ from start + length, since length excludes leaves of absence.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV2-11-actual length of inpatient stay / PV1-44-admit date/time / PV1-45-discharge date/time"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.period.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.accomodation",
+          "definition": {
+            "short": "Where the patient stays during this encounter",
+            "formal": "Where the patient stays during this encounter.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.accomodation.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.accomodation.bed",
+          "definition": {
+            "short": "The bed that is assigned to the patient",
+            "formal": "The bed that is assigned to the patient.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Location)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-3-assigned patient location"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.accomodation.bed.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.accomodation.period",
+          "definition": {
+            "short": "Period during which the patient was assigned the bed",
+            "formal": "Period during which the patient was assigned the bed.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.accomodation.period.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.diet",
+          "definition": {
+            "short": "Dietary restrictions for the patient",
+            "formal": "Dietary restrictions for the patient.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "PatientDiet",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-diet"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-38-diet type"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.diet.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.specialCourtesy",
+          "definition": {
+            "short": "Special courtesies (VIP, board member)",
+            "formal": "Special courtesies (VIP, board member).",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "Courtesies",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-special-courtesy"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-16-VIP indicator"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.specialCourtesy.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.specialArrangement",
+          "definition": {
+            "short": "Wheelchair, translator, stretcher, etc",
+            "formal": "Wheelchair, translator, stretcher, etc.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "Arrangements",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-special-arrangements"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-15-ambulatory status / OBR-30-transportation mode / OBR-43-planned patient transport comment"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.specialArrangement.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.destination",
+          "definition": {
+            "short": "Location the patient is discharged to",
+            "formal": "Location the patient is discharged to.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Location)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.destination.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.dischargeDisposition",
+          "definition": {
+            "short": "Disposition patient released to",
+            "formal": "Disposition patient released to.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "DischargeDisp",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/encounter-discharge-disposition"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-36-discharge disposition"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.dischargeDisposition.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.dischargeDiagnosis",
+          "definition": {
+            "short": "The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete",
+            "formal": "The final diagnosis given a patient before release from the hospital after all testing, surgery, and workup are complete.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Any)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.dischargeDiagnosis.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.reAdmission",
+          "definition": {
+            "short": "Is this hospitalization a readmission?",
+            "formal": "Is this hospitalization a readmission?.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-13-re-admission indicator"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.hospitalization.reAdmission.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.location",
+          "definition": {
+            "short": "List of locations the patient has been at",
+            "formal": "List of locations the patient has been at.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.location.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.location.location",
+          "definition": {
+            "short": "The location the encounter takes place",
+            "formal": "The location the encounter takes place.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Location)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-3-assigned patient location / PV1-6-prior patient location / PV1-11-temporary location / PV1-42-pending location / PV1-43-prior temporary location"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.location.location.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.location.period",
+          "definition": {
+            "short": "Time period during which the patient was present at the location",
+            "formal": "Time period during which the patient was present at the location.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.location.period.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.serviceProvider",
+          "definition": {
+            "short": "Department or team providing care",
+            "formal": "Department or team providing care.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PV1-10-hospital service / PL.6 Person Location Type & PL.1 Point of Care (note: V2.x definition is \"the treatment or type of surgery that the patient is scheduled to receive\"; seems slightly out of alignment with the concept name 'hospital service'. Would not trust that implementations apply this semantic by default)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Encounter.serviceProvider.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.partOf",
+          "definition": {
+            "short": "Another Encounter this encounter is part of",
+            "formal": "Another Encounter this encounter is part of (administratively or in time).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Encounter)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Encounter.partOf.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

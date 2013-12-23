@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="MedicationDispense" type="MedicationDispense">
     <xs:annotation>
@@ -88,7 +88,7 @@
       <xs:documentation>Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
@@ -149,15 +149,13 @@
       <xs:documentation>Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:choice minOccurs="0" maxOccurs="1" >
+          <xs:element name="additionalInstructions" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation>Additional instructions such as &quot;Swallow with plenty of water&quot; which may or may not be coded.</xs:documentation>
-            </xs:annotation>
-            <xs:element name="additionalInstructionsString" type="string"/>
-            <xs:element name="additionalInstructionsCodeableConcept" type="CodeableConcept"/>
-          </xs:choice>
+           </xs:annotation>
+          </xs:element>
           <xs:choice minOccurs="0" maxOccurs="1" >
             <xs:annotation>
               <xs:documentation>The timing schedule for giving the medication to the patient.  The Schedule data type allows many different expressions, for example.  &quot;Every  8 hours&quot;; &quot;Three times a day&quot;; &quot;1/2 an hour before breakfast for 10 days from 23-Dec 2011:&quot;;  &quot;15 Oct 2013, 17 Oct 2013 and 1 Nov 2013&quot;.</xs:documentation>
@@ -207,7 +205,7 @@ Terminologies used often pre-coordinate this term with the route and or form of 
       <xs:documentation>Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -230,14 +228,14 @@ Terminologies used often pre-coordinate this term with the route and or form of 
   </xs:complexType>
   <xs:simpleType name="MedicationDispenseStatus-list">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="active">
+      <xs:enumeration value="in progress">
         <xs:annotation>
           <xs:documentation>The dispense has started but has not yet completed.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="suspended">
+      <xs:enumeration value="on hold">
         <xs:annotation>
-          <xs:documentation>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;held&quot;.</xs:documentation>
+          <xs:documentation>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;suspended&quot;.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="completed">

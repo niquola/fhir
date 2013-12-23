@@ -1,1 +1,107 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><div>Type definition for Ratio from <a href=\"http://hl7.org/fhir/datatypes.htm#Ratio\">FHIR Specification<\/a><\/div><\/div>"},"name":{"value":"Basic Profile for Ratio"},"publisher":{"value":"FHIR Specification"},"description":{"value":"Basic Profile for Ratio for validation support"},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Ratio"},"element":[{"path":{"value":"Ratio"},"definition":{"short":{"value":"A ratio of two Quantity values - a numerator and a denominator"},"formal":{"value":"A ratio of two Quantity values - a numerator and a denominator."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Type"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"RTO"}}]}},{"path":{"value":"Ratio.numerator"},"definition":{"short":{"value":"The numerator"},"formal":{"value":"The numerator."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Quantity"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"RTO.numerator"}}]}},{"path":{"value":"Ratio.denominator"},"definition":{"short":{"value":"The denominator"},"formal":{"value":"The denominator."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Quantity"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"RTO.denominator"}}]}}]}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for Ratio from <a href=\"http://hl7.org/fhir/datatypes.html#Ratio\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for Ratio",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for Ratio for validation support",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Ratio",
+      "element": [
+        {
+          "path": "Ratio",
+          "definition": {
+            "short": "A ratio of two Quantity values - a numerator and a denominator",
+            "formal": "A ratio of two Quantity values - a numerator and a denominator.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Type"
+              }
+            ],
+            "constraint": [
+              {
+                "key": "1",
+                "name": "both numerator and denominator",
+                "severity": "error",
+                "human": "numerator and denominator SHALL both be present, or both be absent",
+                "xpath": "count(f:numerator) = count(f:denominator)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "RTO"
+              },
+              {
+                "identity": "v2",
+                "map": "N/A"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Ratio.numerator",
+          "definition": {
+            "short": "Numerator value",
+            "formal": "The value of the numerator.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": ".numerator"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Ratio.denominator",
+          "definition": {
+            "short": "Denominator value",
+            "formal": "The value of the denominator.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Quantity"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": ".denominator"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

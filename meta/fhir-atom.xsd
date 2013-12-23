@@ -26,9 +26,10 @@ Copyright (c) 2011-2012, HL7, Inc
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE.
 
- Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11
+ Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12
 -->
-<xs:schema xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:fhir="http://hl7.org/fhir" xmlns:at="http://purl.org/atompub/tombstones/1.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.w3.org/2005/Atom" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:atom="http://www.w3.org/2005/Atom" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:os="http://a9.com/-/spec/opensearch/1.1/" xmlns:osr="http://a9.com/-/opensearch/extensions/relevance/1.0/" 
+  xmlns:fhir="http://hl7.org/fhir" xmlns:at="http://purl.org/atompub/tombstones/1.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.w3.org/2005/Atom" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:annotation>
     <xs:documentation>
 				This is a reduced form of the atom schema, that only supports the features profiled in the FHIR specification
@@ -38,6 +39,7 @@ Copyright (c) 2011-2012, HL7, Inc
   <xs:import namespace="http://hl7.org/fhir" schemaLocation="fhir-all.xsd"/>
   <xs:import namespace="http://purl.org/atompub/tombstones/1.0" schemaLocation="tombstone.xsd"/>
   <xs:import namespace="http://a9.com/-/spec/opensearch/1.1/" schemaLocation="opensearch.xsd"/>
+  <xs:import namespace="http://a9.com/-/opensearch/extensions/relevance/1.0/" schemaLocation="opensearchscore.xsd"/>
   <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
   <xs:element name="feed" type="atom:FeedType"/>
   <xs:complexType name="TextType" mixed="true">
@@ -75,9 +77,11 @@ Copyright (c) 2011-2012, HL7, Inc
         <xs:element name="id" type="atom:IdType"/>
         <xs:element name="link" type="atom:LinkType"/>
         <xs:element name="author" type="atom:PersonType" maxOccurs="unbounded"/>
+        <xs:element name="category" type="atom:CategoryType" minOccurs="0" maxOccurs="unbounded"/>
         <xs:element name="entry" type="atom:EntryType"/>
         <xs:element ref="at:deleted-entry"/>
         <xs:element ref="os:totalResults"/> 
+        <xs:element ref="osr:score"/> 
       </xs:choice>
       <xs:element ref="ds:Signature" minOccurs="0" maxOccurs="1"/>
     </xs:sequence>
@@ -92,14 +96,15 @@ Copyright (c) 2011-2012, HL7, Inc
       <xs:element name="published" type="atom:DateTimeType" minOccurs="0"/>
       <xs:element name="author" type="atom:PersonType" maxOccurs="unbounded"/>
       <xs:element name="category" type="atom:CategoryType" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element name="content" type="atom:ContentType"/>
+      <xs:element name="content" type="atom:ContentType" minOccurs="0"/>
       <xs:element name="summary" type="atom:TextType"/>
     </xs:choice>
     <xs:attributeGroup ref="atom:CommonAttributes"/>
   </xs:complexType>
   <xs:complexType name="CategoryType">
-    <xs:attribute name="term" type="fhir:ResourceNamesPlusBinary" use="required"/>
-    <xs:attribute name="scheme" type="xs:anyURI" use="required" fixed="http://hl7.org/fhir/resource-types"/>
+    <xs:attribute name="term" type="xs:anyURI" use="required"/>
+    <xs:attribute name="scheme" type="xs:anyURI" use="required"/>
+    <xs:attribute name="label" type="xs:string" use="optional"/>
     <xs:attributeGroup ref="atom:CommonAttributes"/>
   </xs:complexType>
   <xs:complexType name="ContentType" mixed="true">
@@ -109,23 +114,22 @@ Copyright (c) 2011-2012, HL7, Inc
       <xs:element ref="fhir:Alert"/>
       <xs:element ref="fhir:AllergyIntolerance"/>
       <xs:element ref="fhir:CarePlan"/>
+      <xs:element ref="fhir:Composition"/>
+      <xs:element ref="fhir:ConceptMap"/>
       <xs:element ref="fhir:Condition"/>
       <xs:element ref="fhir:Conformance"/>
-      <xs:element ref="fhir:Coverage"/>
       <xs:element ref="fhir:Device"/>
-      <xs:element ref="fhir:DeviceCapabilities"/>
-      <xs:element ref="fhir:DeviceLog"/>
-      <xs:element ref="fhir:DeviceObservation"/>
+      <xs:element ref="fhir:DeviceObservationReport"/>
       <xs:element ref="fhir:DiagnosticOrder"/>
       <xs:element ref="fhir:DiagnosticReport"/>
-      <xs:element ref="fhir:Document"/>
+      <xs:element ref="fhir:DocumentManifest"/>
       <xs:element ref="fhir:DocumentReference"/>
       <xs:element ref="fhir:Encounter"/>
       <xs:element ref="fhir:FamilyHistory"/>
       <xs:element ref="fhir:Group"/>
       <xs:element ref="fhir:ImagingStudy"/>
       <xs:element ref="fhir:Immunization"/>
-      <xs:element ref="fhir:ImmunizationProfile"/>
+      <xs:element ref="fhir:ImmunizationRecommendation"/>
       <xs:element ref="fhir:List"/>
       <xs:element ref="fhir:Location"/>
       <xs:element ref="fhir:Media"/>
@@ -134,7 +138,7 @@ Copyright (c) 2011-2012, HL7, Inc
       <xs:element ref="fhir:MedicationDispense"/>
       <xs:element ref="fhir:MedicationPrescription"/>
       <xs:element ref="fhir:MedicationStatement"/>
-      <xs:element ref="fhir:Message"/>
+      <xs:element ref="fhir:MessageHeader"/>
       <xs:element ref="fhir:Observation"/>
       <xs:element ref="fhir:OperationOutcome"/>
       <xs:element ref="fhir:Order"/>

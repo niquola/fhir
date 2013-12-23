@@ -5,6 +5,9 @@ class Fhir::Other < Fhir::Resource
     validates_presence_of :code
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 

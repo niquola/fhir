@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ContactEntityType</h2>
       <p>This example value set defines a set of codes that can be used to indicate      the purpose for which you would contact a contact party.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/contactentity-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/contactentity-type</p>
       <table>
         <tr>
           <td>
@@ -20,32 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>BILL</td>
+          <td>
+            <a name="BILL">BILL</a>
+          </td>
           <td>Billing</td>
           <td/>
         </tr>
         <tr>
-          <td>ADMIN</td>
+          <td>
+            <a name="ADMIN">ADMIN</a>
+          </td>
           <td>Administrative</td>
           <td/>
         </tr>
         <tr>
-          <td>HR</td>
+          <td>
+            <a name="HR">HR</a>
+          </td>
           <td>Human Resource</td>
           <td/>
         </tr>
         <tr>
-          <td>PAYOR</td>
+          <td>
+            <a name="PAYOR">PAYOR</a>
+          </td>
           <td>Payor</td>
           <td/>
         </tr>
         <tr>
-          <td>PATINF</td>
+          <td>
+            <a name="PATINF">PATINF</a>
+          </td>
           <td>Patient</td>
           <td>Generic information contact for patients</td>
         </tr>
         <tr>
-          <td>PRESS</td>
+          <td>
+            <a name="PRESS">PRESS</a>
+          </td>
           <td>Press</td>
           <td/>
         </tr>

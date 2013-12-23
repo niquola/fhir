@@ -12,6 +12,7 @@
     </ul>
     </div>
   </text>
+  <name value="PHR Template"/>
   <publisher value="FHIR Project"/>
   <telecom>
     <system value="url"/>
@@ -48,7 +49,7 @@
         <code value="read"/>
       </operation>
       <operation>
-        <code value="search"/>
+        <code value="search-type"/>
         <documentation value="When a client searches patients with no search criteria, they get a list of all patients they have access too. Servers may elect to offer additional search parameters, but this is not required"/>
       </operation>
     </resource>
@@ -59,7 +60,7 @@
         <code value="read"/>
       </operation>
       <operation>
-        <code value="search"/>
+        <code value="search-type"/>
       </operation>
       <searchParam>
         <name value="_id"/>
@@ -76,7 +77,7 @@
         <code value="read"/>
       </operation>
       <operation>
-        <code value="search"/>
+        <code value="search-type"/>
       </operation>
       <searchParam>
         <name value="_id"/>
@@ -92,7 +93,7 @@
         <code value="read"/>
       </operation>
       <operation>
-        <code value="search"/>
+        <code value="search-type"/>
       </operation>
       <searchParam>
         <name value="_id"/>

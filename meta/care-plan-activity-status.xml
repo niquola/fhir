@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>CarePlanActivityStatus</h2>
       <p>Indicates where the activity is at in its overall life cycle</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/care-plan-activity-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/care-plan-activity-status</p>
       <table>
         <tr>
           <td>
@@ -20,32 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>not started</td>
+          <td>
+            <a name="notstarted">not started</a>
+          </td>
           <td/>
           <td>Activity is planned but no action has yet been taken.</td>
         </tr>
         <tr>
-          <td>scheduled</td>
+          <td>
+            <a name="scheduled">scheduled</a>
+          </td>
           <td/>
           <td>Appointment or other booking has occurred but activity has not yet begun.</td>
         </tr>
         <tr>
-          <td>ongoing</td>
+          <td>
+            <a name="inprogress">in progress</a>
+          </td>
           <td/>
           <td>Activity has been started but is not yet complete.</td>
         </tr>
         <tr>
-          <td>on hold</td>
+          <td>
+            <a name="onhold">on hold</a>
+          </td>
           <td/>
           <td>Activity was started but has temporarily ceased with an expectation of resumption at a future time.</td>
         </tr>
         <tr>
-          <td>completed</td>
+          <td>
+            <a name="completed">completed</a>
+          </td>
           <td/>
           <td>The activities have been completed (more or less) as planned.</td>
         </tr>
         <tr>
-          <td>discontinued</td>
+          <td>
+            <a name="cancelled">cancelled</a>
+          </td>
           <td/>
           <td>The activities have been ended prior to completion (perhaps even before they were started).</td>
         </tr>
@@ -65,7 +77,7 @@
   </telecom>
   <description value="Indicates where the activity is at in its overall life cycle"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.982+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/care-plan-activity-status"/>
     <caseSensitive value="true"/>
@@ -78,7 +90,7 @@
       <definition value="Appointment or other booking has occurred but activity has not yet begun."/>
     </concept>
     <concept>
-      <code value="ongoing"/>
+      <code value="in progress"/>
       <definition value="Activity has been started but is not yet complete."/>
     </concept>
     <concept>
@@ -90,7 +102,7 @@
       <definition value="The activities have been completed (more or less) as planned."/>
     </concept>
     <concept>
-      <code value="discontinued"/>
+      <code value="cancelled"/>
       <definition value="The activities have been ended prior to completion (perhaps even before they were started)."/>
     </concept>
   </define>

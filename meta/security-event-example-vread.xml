@@ -20,12 +20,9 @@
   </event>
   <participant>
     <userId value="95"/>
-    <authId value="601847123"/>
+    <altId value="601847123"/>
     <name value="Grahame Grieve"/>
     <requestor value="true"/>
-    <network>
-      <type value="ip"/>
-    </network>
   </participant>
   <source>
     <site value="Cloud"/>
@@ -38,8 +35,7 @@
   </source>
   <object>
     <reference>
-      <type value="Patient"/>
-      <reference value="patient/@example/history/@1"/>
+      <reference value="Patient/example/history/1"/>
     </reference>
     <type value="2"/>
     <lifecycle value="6"/>

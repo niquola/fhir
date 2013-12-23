@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Supply Type</h2>
       <p>This value sets refers to a Category of supply</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/supply-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/supply-type</p>
       <table>
         <tr>
           <td>
@@ -20,12 +20,16 @@
           </td>
         </tr>
         <tr>
-          <td>central</td>
+          <td>
+            <a name="central">central</a>
+          </td>
           <td>Central Supply</td>
           <td>Supply is stored and requested from central supply</td>
         </tr>
         <tr>
-          <td>nonstock</td>
+          <td>
+            <a name="nonstock">nonstock</a>
+          </td>
           <td>Non-Stock</td>
           <td>Supply is not onsite and must be requested from an outside vendor using a non-stock requisition</td>
         </tr>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ProvenanceParticipantType</h2>
       <p>The type of a provenance participant. Use either a defined FHIR resource type, or, if the reference is not to a resource, one of the defined codes, or some other code if none of the defined codes are appropriate</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/provenance-participant-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/provenance-participant-type</p>
       <table>
         <tr>
           <td>
@@ -20,32 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>person</td>
+          <td>
+            <a name="person">person</a>
+          </td>
           <td/>
           <td>The participant is a person acting on their on behalf or on behalf of the patient rather than as an practitioner for an organization.  I.e. &quot;not a healthcare provider&quot;</td>
         </tr>
         <tr>
-          <td>practitioner</td>
+          <td>
+            <a name="practitioner">practitioner</a>
+          </td>
           <td/>
           <td>The participant is a practitioner</td>
         </tr>
         <tr>
-          <td>organization</td>
+          <td>
+            <a name="organization">organization</a>
+          </td>
           <td/>
           <td>The participant is an organization</td>
         </tr>
         <tr>
-          <td>software</td>
+          <td>
+            <a name="software">software</a>
+          </td>
           <td/>
           <td>The participant is a software application</td>
         </tr>
         <tr>
-          <td>record</td>
+          <td>
+            <a name="record">record</a>
+          </td>
           <td/>
           <td>The participant is a logical record. The record itself participated in the activity</td>
         </tr>
         <tr>
-          <td>document</td>
+          <td>
+            <a name="document">document</a>
+          </td>
           <td/>
           <td>The participant is a document</td>
         </tr>
@@ -53,7 +65,7 @@
       <p>In addition, this value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include all codes defined in 
-          <a href="resource-types.htm">http://hl7.org/fhir/resource-types</a>
+          <a href="resource-types.html">http://hl7.org/fhir/resource-types</a>
         </li>
       </ul>
     </div>

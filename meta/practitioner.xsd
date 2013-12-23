@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Practitioner" type="Practitioner">
     <xs:annotation>
@@ -86,7 +86,7 @@
           </xs:element>
           <xs:element name="role" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation>The way in which the person represents the organization - what role do they have?.</xs:documentation>
+              <xs:documentation>Roles which this practitioner is authorized perform for the organization.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="specialty" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -96,12 +96,17 @@
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation>The period during which the person is authorized to perform the service.</xs:documentation>
+              <xs:documentation>The period during which the person is authorized to act as a practitioner in these role(s) for the organization.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="location" minOccurs="0" maxOccurs="unbounded" type="ResourceReference">
+            <xs:annotation>
+              <xs:documentation>The location(s) at which this practitioner provides care.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="qualification" type="Practitioner.Qualification" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation>Qualifications relevant to the provided service.</xs:documentation>
+              <xs:documentation>Qualifications obtained by training and certification.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="communication" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -118,7 +123,7 @@
       <xs:documentation>Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>

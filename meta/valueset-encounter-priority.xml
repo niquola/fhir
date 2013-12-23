@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>Diet</h2>
       <p>This value set defines a set of codes that can be used to indicate the encounter priority as determined by triage.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/diet</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/diet</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>imm</td>
+          <td>
+            <a name="imm">imm</a>
+          </td>
           <td>Immediate</td>
           <td>Within seconds</td>
         </tr>
         <tr>
-          <td>emg</td>
+          <td>
+            <a name="emg">emg</a>
+          </td>
           <td>Emergency</td>
           <td>Within 10 minutes</td>
         </tr>
         <tr>
-          <td>urg</td>
+          <td>
+            <a name="urg">urg</a>
+          </td>
           <td>Urgent</td>
           <td>Within 30 minutes</td>
         </tr>
         <tr>
-          <td>s-urg</td>
+          <td>
+            <a name="s-urg">s-urg</a>
+          </td>
           <td>Semi-urgent</td>
           <td>Within 60 minutes</td>
         </tr>
         <tr>
-          <td>no-urg</td>
+          <td>
+            <a name="no-urg">no-urg</a>
+          </td>
           <td>Non-urgent</td>
           <td>Within 120 minutes</td>
         </tr>

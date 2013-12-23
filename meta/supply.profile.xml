@@ -3,24 +3,26 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="A supply -  request and provision." class="dict" href="supply-definitions.htm#Supply"><b>Supply</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="Category of supply." class="dict" href="supply-definitions.htm#Supply.name"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-type.htm">The kind of supply (central, non-stock, etc)</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
- &lt;<a title="Unique identifier for this kind of supply." class="dict" href="supply-definitions.htm#Supply.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Unique identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
- &lt;<a title="Status of the supply." class="dict" href="supply-definitions.htm#Supply.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-status.htm">Dispensed|Received|Requested</a></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The item which was ordered." class="dict" href="supply-definitions.htm#Supply.orderedItem"><b>orderedItem</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="medication.htm#Medication">Medication</a>|<a href="substance.htm#Substance">Substance</a>|<a href="device.htm#Device">Device</a>)</span> <span style="color: navy">Medication, Substance, or Device requested to be supplied</span><span style="color: Gray"> --&gt;</span>&lt;/orderedItem&gt;
- &lt;<a title="A link to a resource representing the person to whom the medication will be given." class="dict" href="supply-definitions.htm#Supply.patient"><b>patient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="patient.htm#Patient">Patient</a>)</span> <span style="color: navy">Patient</span><span style="color: Gray"> --&gt;</span>&lt;/patient&gt;
- &lt;<a title="Indicates the details of the dispense event such as the days supply and quantity of a supply dispensed." class="dict" href="supply-definitions.htm#Supply.dispense"><b>dispense</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Supply details --&gt;</span>
-  &lt;<a title="Identifier assigned by the dispensing facility.   This is an identifier assigned outside FHIR." class="dict" href="supply-definitions.htm#Supply.dispense.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">External identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
-  &lt;<a title="A code specifying the state of the dispense event (this element modifies the meaning of other elements)" class="dict" href="supply-definitions.htm#Supply.dispense.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-status.htm">Active/Completed/Aborted</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc." class="dict" href="supply-definitions.htm#Supply.dispense.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-item.htm">Type of dispense</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
-  &lt;<a title="The amount of supply that has been dispensed. Includes unit of measure." class="dict" href="supply-definitions.htm#Supply.dispense.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Quantity">Quantity</a></span> <span style="color: navy">Amount dispensed</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
-  &lt;<a title="Identifies the medication or substance being dispensed. This is either a link to a resource representing the details of the medication or substance or a simple attribute carrying a code that identifies the medication from a known list of medications." class="dict" href="supply-definitions.htm#Supply.dispense.suppliedItem"><b>suppliedItem</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="medication.htm#Medication">Medication</a>|<a href="substance.htm#Substance">Substance</a>|<a href="device.htm#Device">Device</a>)</span> <span style="color: navy">Medication, Substance, or Device being supplied</span><span style="color: Gray"> --&gt;</span>&lt;/suppliedItem&gt;
-  &lt;<a title="The individual reponsible for dispensing the medication." class="dict" href="supply-definitions.htm#Supply.dispense.supplier"><b>supplier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>)</span> <span style="color: navy">Dispenser</span><span style="color: Gray"> --&gt;</span>&lt;/supplier&gt;
-  &lt;<a title="The time the dispense event occurred." class="dict" href="supply-definitions.htm#Supply.dispense.whenPrepared"><b>whenPrepared</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Period">Period</a></span> <span style="color: navy">Dispensing time</span><span style="color: Gray"> --&gt;</span>&lt;/whenPrepared&gt;
-  &lt;<a title="The time the dispense event occurred." class="dict" href="supply-definitions.htm#Supply.dispense.whenHandedOver"><b>whenHandedOver</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Period">Period</a></span> <span style="color: navy">Handover time</span><span style="color: Gray"> --&gt;</span>&lt;/whenHandedOver&gt;
-  &lt;<a title="Identification of the facility/location where the Supply was shipped to, as part of the dispense event." class="dict" href="supply-definitions.htm#Supply.dispense.destination"><b>destination</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="location.htm#Location">Location</a>)</span> <span style="color: navy">Where the Supply was sent</span><span style="color: Gray"> --&gt;</span>&lt;/destination&gt;
-  &lt;<a title="Identifies the person who picked up the Supply." class="dict" href="supply-definitions.htm#Supply.dispense.receiver"><b>receiver</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>)</span> <span style="color: navy">Who collected the Supply</span><span style="color: Gray"> --&gt;</span>&lt;/receiver&gt;
+&lt;<a title="A supply -  request and provision." class="dict" href="supply-definitions.html#Supply"><b>Supply</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Category of supply." class="dict" href="supply-definitions.html#Supply.name"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-type.html">The kind of supply (central, non-stock, etc)</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
+ &lt;<a title="Unique identifier for this kind of supply." class="dict" href="supply-definitions.html#Supply.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Unique identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="Status of the supply." class="dict" href="supply-definitions.html#Supply.status"><b>status</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-status.html">Dispensed|Received|Requested</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The item which was ordered." class="dict" href="supply-definitions.html#Supply.orderedItem"><b>orderedItem</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="medication.html#Medication">Medication</a>|<a href="substance.html#Substance">Substance</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">
+     Medication, Substance, or Device requested to be supplied</span><span style="color: Gray"> --&gt;</span>&lt;/orderedItem&gt;
+ &lt;<a title="A link to a resource representing the person to whom the medication will be given." class="dict" href="supply-definitions.html#Supply.patient"><b>patient</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Patient</span><span style="color: Gray"> --&gt;</span>&lt;/patient&gt;
+ &lt;<a title="Indicates the details of the dispense event such as the days supply and quantity of a supply dispensed." class="dict" href="supply-definitions.html#Supply.dispense"><b>dispense</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Supply details --&gt;</span>
+  &lt;<a title="Identifier assigned by the dispensing facility.   This is an identifier assigned outside FHIR." class="dict" href="supply-definitions.html#Supply.dispense.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External identifier</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+  &lt;<a title="A code specifying the state of the dispense event (this element modifies the meaning of other elements)" class="dict" href="supply-definitions.html#Supply.dispense.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-status.html">Active/Completed/Aborted</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc." class="dict" href="supply-definitions.html#Supply.dispense.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-supply-item.html">Type of dispense</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="The amount of supply that has been dispensed. Includes unit of measure." class="dict" href="supply-definitions.html#Supply.dispense.quantity"><b>quantity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Quantity">Quantity</a></span> <span style="color: navy">Amount dispensed</span><span style="color: Gray"> --&gt;</span>&lt;/quantity&gt;
+  &lt;<a title="Identifies the medication or substance being dispensed. This is either a link to a resource representing the details of the medication or substance or a simple attribute carrying a code that identifies the medication from a known list of medications." class="dict" href="supply-definitions.html#Supply.dispense.suppliedItem"><b>suppliedItem</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="medication.html#Medication">Medication</a>|<a href="substance.html#Substance">Substance</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">
+      Medication, Substance, or Device being supplied</span><span style="color: Gray"> --&gt;</span>&lt;/suppliedItem&gt;
+  &lt;<a title="The individual reponsible for dispensing the medication." class="dict" href="supply-definitions.html#Supply.dispense.supplier"><b>supplier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">Dispenser</span><span style="color: Gray"> --&gt;</span>&lt;/supplier&gt;
+  &lt;<a title="The time the dispense event occurred." class="dict" href="supply-definitions.html#Supply.dispense.whenPrepared"><b>whenPrepared</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Dispensing time</span><span style="color: Gray"> --&gt;</span>&lt;/whenPrepared&gt;
+  &lt;<a title="The time the dispense event occurred." class="dict" href="supply-definitions.html#Supply.dispense.whenHandedOver"><b>whenHandedOver</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Handover time</span><span style="color: Gray"> --&gt;</span>&lt;/whenHandedOver&gt;
+  &lt;<a title="Identification of the facility/location where the Supply was shipped to, as part of the dispense event." class="dict" href="supply-definitions.html#Supply.dispense.destination"><b>destination</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="location.html#Location">Location</a>)</span> <span style="color: navy">Where the Supply was sent</span><span style="color: Gray"> --&gt;</span>&lt;/destination&gt;
+  &lt;<a title="Identifies the person who picked up the Supply." class="dict" href="supply-definitions.html#Supply.dispense.receiver"><b>receiver</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">Who collected the Supply</span><span style="color: Gray"> --&gt;</span>&lt;/receiver&gt;
  &lt;/dispense&gt;
 &lt;/Supply&gt;
 </pre></div>
@@ -29,7 +31,12 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. A supply -  request and provision."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
   <structure>
     <type value="Supply"/>
     <publish value="true"/>
@@ -50,9 +57,24 @@
       <path value="Supply.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -67,7 +89,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="Supply.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -109,11 +131,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SupplyType"/>
+        <binding>
+          <name value="SupplyType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/supply-type"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./code"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.name.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -131,6 +176,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Supply.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Supply.status"/>
       <definition>
         <short value="Dispensed|Received|Requested"/>
@@ -141,11 +202,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SupplyStatus"/>
+        <binding>
+          <name value="SupplyStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/supply-status"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="./statusCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.status.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -157,6 +241,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="Resource(Medication|Substance|Device)"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.orderedItem.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -176,12 +276,44 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Supply.patient.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Supply.dispense"/>
       <definition>
         <short value="Supply details"/>
         <formal value="Indicates the details of the dispense event such as the days supply and quantity of a supply dispensed."/>
         <min value="0"/>
         <max value="*"/>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.dispense.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -199,6 +331,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Supply.dispense.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Supply.dispense.status"/>
       <definition>
         <short value="Active/Completed/Aborted"/>
@@ -209,7 +357,30 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="true"/>
-        <binding value="SupplyStatus"/>
+        <binding>
+          <name value="SupplyStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/supply-status"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.dispense.status.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -223,7 +394,30 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="SupplyItemType"/>
+        <binding>
+          <name value="SupplyItemType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/supply-item"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.dispense.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -235,6 +429,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="Quantity"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.dispense.quantity.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -253,6 +463,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Supply.dispense.suppliedItem.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Supply.dispense.supplier"/>
       <definition>
         <short value="Dispenser"/>
@@ -261,6 +487,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="Resource(Practitioner)"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.dispense.supplier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -279,6 +521,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Supply.dispense.whenPrepared.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Supply.dispense.whenHandedOver"/>
       <definition>
         <short value="Handover time"/>
@@ -287,6 +545,22 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <type>
           <code value="Period"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Supply.dispense.whenHandedOver.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -305,6 +579,22 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Supply.dispense.destination.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Supply.dispense.receiver"/>
       <definition>
         <short value="Who collected the Supply"/>
@@ -317,31 +607,21 @@ associated with the use of extensions by any application, project, or standard -
         <isModifier value="false"/>
       </definition>
     </element>
+    <element>
+      <path value="Supply.dispense.receiver.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="SupplyItemType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/supply-item"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SupplyStatus"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/supply-status"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="SupplyType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/supply-type"/>
-    </referenceResource>
-  </binding>
 </Profile>

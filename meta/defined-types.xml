@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>FHIRDefinedType</h2>
       <p>Either a resource or a data type</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/defined-types</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/defined-types</p>
       <table>
         <tr>
           <td>
@@ -20,434 +20,599 @@
           </td>
         </tr>
         <tr>
-          <td>Address</td>
+          <td>
+            <a name="Address">Address</a>
+          </td>
           <td/>
           <td>There is a variety of postal address formats defined around the world. This format defines a superset that is the basis for addresses all around the world.</td>
         </tr>
         <tr>
-          <td>Age</td>
+          <td>
+            <a name="Age">Age</a>
+          </td>
           <td/>
-          <td>The unit must be an amount of time and a UCUM unit must be provided, and the value must be positive</td>
+          <td>There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.  If value is present, it SHALL be positive.</td>
         </tr>
         <tr>
-          <td>Attachment</td>
+          <td>
+            <a name="Attachment">Attachment</a>
+          </td>
           <td/>
           <td>For referring to data content defined in other formats.</td>
         </tr>
         <tr>
-          <td>Choice</td>
-          <td/>
-          <td>A code taken from a short list of codes that are not defined in a formal code system.</td>
-        </tr>
-        <tr>
-          <td>CodeableConcept</td>
+          <td>
+            <a name="CodeableConcept">CodeableConcept</a>
+          </td>
           <td/>
           <td>A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.</td>
         </tr>
         <tr>
-          <td>Coding</td>
+          <td>
+            <a name="Coding">Coding</a>
+          </td>
           <td/>
           <td>A reference to a code defined by a terminology system.</td>
         </tr>
         <tr>
-          <td>Contact</td>
+          <td>
+            <a name="Contact">Contact</a>
+          </td>
           <td/>
           <td>All kinds of technology mediated contact details for a person or organisation, including telephone, email, etc.</td>
         </tr>
         <tr>
-          <td>Count</td>
+          <td>
+            <a name="Count">Count</a>
+          </td>
           <td/>
-          <td>The value must a whole number and the UCUM unit must be &quot;1&quot;</td>
+          <td>There SHALL be a code with a value of &quot;1&quot; if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.  If present, the value SHALL a whole number.</td>
         </tr>
         <tr>
-          <td>Distance</td>
+          <td>
+            <a name="Distance">Distance</a>
+          </td>
           <td/>
-          <td>The unit must be an amount of length and a UCUM unit must be provided.</td>
+          <td>There SHALL be a code if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.</td>
         </tr>
         <tr>
-          <td>Duration</td>
+          <td>
+            <a name="Duration">Duration</a>
+          </td>
           <td/>
-          <td>The unit must be an amount of time and a UCUM unit must be provided.</td>
+          <td>There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.</td>
         </tr>
         <tr>
-          <td>Extension</td>
+          <td>
+            <a name="Extension">Extension</a>
+          </td>
           <td/>
           <td>Optional Extensions Element - found in all resources.</td>
         </tr>
         <tr>
-          <td>HumanName</td>
+          <td>
+            <a name="HumanName">HumanName</a>
+          </td>
           <td/>
           <td>A human&#39;s name with the ability to identify parts and usage.</td>
         </tr>
         <tr>
-          <td>Identifier</td>
+          <td>
+            <a name="Identifier">Identifier</a>
+          </td>
           <td/>
           <td>A technical identifier - identifies some entity uniquely and unambiguously.</td>
         </tr>
         <tr>
-          <td>Money</td>
+          <td>
+            <a name="Money">Money</a>
+          </td>
           <td/>
-          <td>The unit must be a currency and the code must from ISO 4217 (system = &quot;urn:std:iso:4217&quot;)</td>
+          <td>There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = &quot;urn:std:iso:4217&quot; - currency).</td>
         </tr>
         <tr>
-          <td>Narrative</td>
+          <td>
+            <a name="Narrative">Narrative</a>
+          </td>
           <td/>
-          <td>A human readable formatted text, including images.</td>
+          <td>A human-readable formatted text, including images.</td>
         </tr>
         <tr>
-          <td>Period</td>
+          <td>
+            <a name="Period">Period</a>
+          </td>
           <td/>
           <td>A time period defined by a start and end time.</td>
         </tr>
         <tr>
-          <td>Quantity</td>
+          <td>
+            <a name="Quantity">Quantity</a>
+          </td>
           <td/>
           <td>A measured amount (or an amount that can potentially be measured). Note that measured amounts include amounts that are not precisely quantified, including amounts involving arbitrary units and floating currencies.</td>
         </tr>
         <tr>
-          <td>Range</td>
+          <td>
+            <a name="Range">Range</a>
+          </td>
           <td/>
           <td>A set of ordered Quantities defined by a low and high limit.</td>
         </tr>
         <tr>
-          <td>Ratio</td>
+          <td>
+            <a name="Ratio">Ratio</a>
+          </td>
           <td/>
           <td>A ratio of two Quantity values - a numerator and a denominator.</td>
         </tr>
         <tr>
-          <td>ResourceReference</td>
+          <td>
+            <a name="ResourceReference">ResourceReference</a>
+          </td>
           <td/>
           <td>A reference from one resource to another.</td>
         </tr>
         <tr>
-          <td>SampledData</td>
+          <td>
+            <a name="SampledData">SampledData</a>
+          </td>
           <td/>
           <td>A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.</td>
         </tr>
         <tr>
-          <td>Schedule</td>
+          <td>
+            <a name="Schedule">Schedule</a>
+          </td>
           <td/>
           <td>A schedule that specifies an event that may occur multiple times. Schedules are not used for recording when things did happen, but when they are expected or requested to occur.</td>
         </tr>
         <tr>
-          <td>base64Binary</td>
+          <td>
+            <a name="base64Binary">base64Binary</a>
+          </td>
           <td/>
           <td>A stream of bytes</td>
         </tr>
         <tr>
-          <td>boolean</td>
+          <td>
+            <a name="boolean">boolean</a>
+          </td>
           <td/>
           <td>Value of &quot;true&quot; or &quot;false&quot;</td>
         </tr>
         <tr>
-          <td>code</td>
+          <td>
+            <a name="code">code</a>
+          </td>
           <td/>
           <td>A string which has at least one character and no leading or trailing whitespace and where there is no whitespace other than single spaces in the contents</td>
         </tr>
         <tr>
-          <td>date</td>
+          <td>
+            <a name="date">date</a>
+          </td>
           <td/>
-          <td>A date, or partial date (e.g. just year or year + month). There is no timezone. The format is a union of the schema types gYear, gYearMonth and date.  Dates must be valid dates.</td>
+          <td>A date, or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates.</td>
         </tr>
         <tr>
-          <td>dateTime</td>
+          <td>
+            <a name="dateTime">dateTime</a>
+          </td>
           <td/>
-          <td>A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a timezone must be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided but may also be ignored.  Dates must be valid dates.</td>
+          <td>A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided but may also be ignored.  Dates SHALL be valid dates.</td>
         </tr>
         <tr>
-          <td>decimal</td>
+          <td>
+            <a name="decimal">decimal</a>
+          </td>
           <td/>
           <td>A rational number with implicit precision</td>
         </tr>
         <tr>
-          <td>id</td>
+          <td>
+            <a name="id">id</a>
+          </td>
           <td/>
           <td>A whole number in the range 0 to 2^64-1, optionally represented in hex, a uuid, an oid or any other combination of lower-case letters a-z, numerals, &quot;-&quot; and &quot;.&quot;, with a length limit of 36 characters</td>
         </tr>
         <tr>
-          <td>instant</td>
+          <td>
+            <a name="instant">instant</a>
+          </td>
           <td/>
           <td>An instant in time - known at least to the second</td>
         </tr>
         <tr>
-          <td>integer</td>
+          <td>
+            <a name="integer">integer</a>
+          </td>
           <td/>
           <td>A whole number</td>
         </tr>
         <tr>
-          <td>oid</td>
+          <td>
+            <a name="oid">oid</a>
+          </td>
           <td/>
           <td>An oid represented as a URI</td>
         </tr>
         <tr>
-          <td>string</td>
+          <td>
+            <a name="string">string</a>
+          </td>
           <td/>
           <td>A sequence of Unicode characters</td>
         </tr>
         <tr>
-          <td>uri</td>
+          <td>
+            <a name="uri">uri</a>
+          </td>
           <td/>
           <td>String of characters used to identify a name or a resource</td>
         </tr>
         <tr>
-          <td>uuid</td>
+          <td>
+            <a name="uuid">uuid</a>
+          </td>
           <td/>
           <td>A UUID, represented as a URI</td>
         </tr>
         <tr>
-          <td>AdverseReaction</td>
+          <td>
+            <a name="AdverseReaction">AdverseReaction</a>
+          </td>
           <td/>
           <td>Specific reactions to a substance.</td>
         </tr>
         <tr>
-          <td>Alert</td>
+          <td>
+            <a name="Alert">Alert</a>
+          </td>
           <td/>
           <td>Prospective warnings of potential issues when providing care to the patient.</td>
         </tr>
         <tr>
-          <td>AllergyIntolerance</td>
+          <td>
+            <a name="AllergyIntolerance">AllergyIntolerance</a>
+          </td>
           <td/>
           <td>Allergy/Intolerance.</td>
         </tr>
         <tr>
-          <td>CarePlan</td>
+          <td>
+            <a name="CarePlan">CarePlan</a>
+          </td>
           <td/>
           <td>Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions.</td>
         </tr>
         <tr>
-          <td>Condition</td>
+          <td>
+            <a name="Composition">Composition</a>
+          </td>
+          <td/>
+          <td>A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement.</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="ConceptMap">ConceptMap</a>
+          </td>
+          <td/>
+          <td>A statement of relationships from one set of concepts to one or more other concept systems.</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="Condition">Condition</a>
+          </td>
           <td/>
           <td>Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary.</td>
         </tr>
         <tr>
-          <td>Conformance</td>
+          <td>
+            <a name="Conformance">Conformance</a>
+          </td>
           <td/>
           <td>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</td>
         </tr>
         <tr>
-          <td>Coverage</td>
-          <td/>
-          <td>Financial instrument by which payment information for health care.</td>
-        </tr>
-        <tr>
-          <td>Device</td>
+          <td>
+            <a name="Device">Device</a>
+          </td>
           <td/>
           <td>This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health.</td>
         </tr>
         <tr>
-          <td>DeviceCapabilities</td>
+          <td>
+            <a name="DeviceObservationReport">DeviceObservationReport</a>
+          </td>
           <td/>
-          <td>Describes the set of data produced by a device.</td>
+          <td>Describes the data produced by a device at a point in time.</td>
         </tr>
         <tr>
-          <td>DeviceLog</td>
-          <td/>
-          <td>A set of raw data produced by a device.</td>
-        </tr>
-        <tr>
-          <td>DeviceObservation</td>
-          <td/>
-          <td>A set of observations produced by a device.</td>
-        </tr>
-        <tr>
-          <td>DiagnosticOrder</td>
+          <td>
+            <a name="DiagnosticOrder">DiagnosticOrder</a>
+          </td>
           <td/>
           <td>A request for a diagnostic investigation service to be performed.</td>
         </tr>
         <tr>
-          <td>DiagnosticReport</td>
+          <td>
+            <a name="DiagnosticReport">DiagnosticReport</a>
+          </td>
           <td/>
           <td>The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports.</td>
         </tr>
         <tr>
-          <td>Document</td>
+          <td>
+            <a name="DocumentManifest">DocumentManifest</a>
+          </td>
           <td/>
-          <td>A documentation of healthcare-related information that is assembled together into a single statement of meaning that establishes its own context. A document is composed of a set of resources that include both human and computer readable portions. A human may attest to the accuracy of the human readable portion and may authenticate and/or sign the entire whole. A document may be kept as a set of logically linked resources, or they may be bundled together in an atom feed.</td>
+          <td>A manifest that defines a set of documents.</td>
         </tr>
         <tr>
-          <td>DocumentReference</td>
+          <td>
+            <a name="DocumentReference">DocumentReference</a>
+          </td>
           <td/>
           <td>A reference to a document.</td>
         </tr>
         <tr>
-          <td>Encounter</td>
+          <td>
+            <a name="Encounter">Encounter</a>
+          </td>
           <td/>
           <td>An interaction between a patient and healthcare provider(s) for the purpose of providing healthcare service(s) or assessing the health status of a patient.</td>
         </tr>
         <tr>
-          <td>FamilyHistory</td>
+          <td>
+            <a name="FamilyHistory">FamilyHistory</a>
+          </td>
           <td/>
           <td>Significant health events and conditions for people related to the subject relevant in the context of care for the subject.</td>
         </tr>
         <tr>
-          <td>Group</td>
+          <td>
+            <a name="Group">Group</a>
+          </td>
           <td/>
           <td>Represents a defined collection of entities that may be discussed or acted upon collectively but which are not expected to act collectively and are not formally or legally recognized.  I.e. A collection of entities that isn&#39;t an Organization.</td>
         </tr>
         <tr>
-          <td>ImagingStudy</td>
+          <td>
+            <a name="ImagingStudy">ImagingStudy</a>
+          </td>
           <td/>
           <td>Manifest of a set of images produced in study. The set of images may include every image in the study, or it may be an incomplete sample, such as a list of key images.</td>
         </tr>
         <tr>
-          <td>Immunization</td>
+          <td>
+            <a name="Immunization">Immunization</a>
+          </td>
           <td/>
           <td>Immunization event information.</td>
         </tr>
         <tr>
-          <td>ImmunizationProfile</td>
+          <td>
+            <a name="ImmunizationRecommendation">ImmunizationRecommendation</a>
+          </td>
           <td/>
           <td>A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification.</td>
         </tr>
         <tr>
-          <td>List</td>
+          <td>
+            <a name="List">List</a>
+          </td>
           <td/>
           <td>A set of information summarized from a list of other resources.</td>
         </tr>
         <tr>
-          <td>Location</td>
+          <td>
+            <a name="Location">Location</a>
+          </td>
           <td/>
-          <td>Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored.</td>
+          <td>Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated.</td>
         </tr>
         <tr>
-          <td>Media</td>
+          <td>
+            <a name="Media">Media</a>
+          </td>
           <td/>
           <td>A photo, video, or audio recording acquired or used in healthcare. The actual content maybe inline or provided by direct reference.</td>
         </tr>
         <tr>
-          <td>Medication</td>
+          <td>
+            <a name="Medication">Medication</a>
+          </td>
           <td/>
           <td>Primarily used for identification and definition of Medication, but also covers ingredients and packaging.</td>
         </tr>
         <tr>
-          <td>MedicationAdministration</td>
+          <td>
+            <a name="MedicationAdministration">MedicationAdministration</a>
+          </td>
           <td/>
           <td>Describes the event of a patient being given a dose of a medication.  This may be as simple as swallowing a tablet or it may be a long running infusion.
 
 Related resources tie this event to the authorizing prescription, and the specific encounter between patient and health care practitioner.</td>
         </tr>
         <tr>
-          <td>MedicationDispense</td>
+          <td>
+            <a name="MedicationDispense">MedicationDispense</a>
+          </td>
           <td/>
           <td>Dispensing a medication to a named patient.  This includes a description of the supply provided and the instructions for administering the medication.</td>
         </tr>
         <tr>
-          <td>MedicationPrescription</td>
+          <td>
+            <a name="MedicationPrescription">MedicationPrescription</a>
+          </td>
           <td/>
           <td>An order for both supply of the medication and the instructions for administration of the medicine to a patient.</td>
         </tr>
         <tr>
-          <td>MedicationStatement</td>
+          <td>
+            <a name="MedicationStatement">MedicationStatement</a>
+          </td>
           <td/>
           <td>A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient, or another clinician.</td>
         </tr>
         <tr>
-          <td>Message</td>
+          <td>
+            <a name="MessageHeader">MessageHeader</a>
+          </td>
           <td/>
-          <td>The root for a transmission either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle of which the Message resource instance is the first resource in the bundle.</td>
+          <td>The header for a message exchange that is either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle of which the MessageHeader resource instance is the first resource in the bundle.</td>
         </tr>
         <tr>
-          <td>Observation</td>
+          <td>
+            <a name="Observation">Observation</a>
+          </td>
           <td/>
           <td>Simple assertions and measurements made about a patient, device or other subject.</td>
         </tr>
         <tr>
-          <td>OperationOutcome</td>
+          <td>
+            <a name="OperationOutcome">OperationOutcome</a>
+          </td>
           <td/>
           <td>A collection of error, warning or information messages that result from a system action.</td>
         </tr>
         <tr>
-          <td>Order</td>
+          <td>
+            <a name="Order">Order</a>
+          </td>
           <td/>
           <td>A request to perform an action.</td>
         </tr>
         <tr>
-          <td>OrderResponse</td>
+          <td>
+            <a name="OrderResponse">OrderResponse</a>
+          </td>
           <td/>
           <td>A response to an order.</td>
         </tr>
         <tr>
-          <td>Organization</td>
+          <td>
+            <a name="Organization">Organization</a>
+          </td>
           <td/>
           <td>A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, etc.</td>
         </tr>
         <tr>
-          <td>Other</td>
+          <td>
+            <a name="Other">Other</a>
+          </td>
           <td/>
           <td>Other is a conformant for handling resource concepts not yet defined for FHIR or outside HL7&#39;s scope of interest.</td>
         </tr>
         <tr>
-          <td>Patient</td>
+          <td>
+            <a name="Patient">Patient</a>
+          </td>
           <td/>
           <td>Demographics and other administrative information about a person or animal receiving care or other health-related services.</td>
         </tr>
         <tr>
-          <td>Practitioner</td>
+          <td>
+            <a name="Practitioner">Practitioner</a>
+          </td>
           <td/>
           <td>Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare.</td>
         </tr>
         <tr>
-          <td>Procedure</td>
+          <td>
+            <a name="Procedure">Procedure</a>
+          </td>
           <td/>
           <td>An action that is performed on a patient. This can be a physical &#39;thing&#39; like an operation, or less invasive like counseling or hypnotherapy.</td>
         </tr>
         <tr>
-          <td>Profile</td>
+          <td>
+            <a name="Profile">Profile</a>
+          </td>
           <td/>
           <td>A Resource Profile - a statement of use of one or more FHIR Resources.  It may include constraints on Resources and Data Types, Terminology Binding Statements and Extension Definitions.</td>
         </tr>
         <tr>
-          <td>Provenance</td>
+          <td>
+            <a name="Provenance">Provenance</a>
+          </td>
           <td/>
           <td>Provenance information that describes the activity that lead to the creation of a set of resources. This information can be used to help determine their reliability or trace where the information in them came from. The focus of the provenance resource is record keeping, audit and traceability, and not explicit statements of clinical significance.</td>
         </tr>
         <tr>
-          <td>Query</td>
+          <td>
+            <a name="Query">Query</a>
+          </td>
           <td/>
           <td>A description of a query with a set of parameters.</td>
         </tr>
         <tr>
-          <td>Questionnaire</td>
+          <td>
+            <a name="Questionnaire">Questionnaire</a>
+          </td>
           <td/>
-          <td>A set of answers to predefined lists of questions. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.</td>
+          <td>A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions.</td>
         </tr>
         <tr>
-          <td>RelatedPerson</td>
+          <td>
+            <a name="RelatedPerson">RelatedPerson</a>
+          </td>
           <td/>
           <td>Information about a person that is involved in the care for a patient, but who is not the target of healthcare, nor has a formal responsibility in the care process.</td>
         </tr>
         <tr>
-          <td>SecurityEvent</td>
+          <td>
+            <a name="SecurityEvent">SecurityEvent</a>
+          </td>
           <td/>
           <td>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</td>
         </tr>
         <tr>
-          <td>Specimen</td>
+          <td>
+            <a name="Specimen">Specimen</a>
+          </td>
           <td/>
           <td>Sample for analysis.</td>
         </tr>
         <tr>
-          <td>Substance</td>
+          <td>
+            <a name="Substance">Substance</a>
+          </td>
           <td/>
           <td>A homogeneous material with a definite composition used in healthcare.</td>
         </tr>
         <tr>
-          <td>Supply</td>
+          <td>
+            <a name="Supply">Supply</a>
+          </td>
           <td/>
           <td>A supply -  request and provision.</td>
         </tr>
         <tr>
-          <td>ValueSet</td>
+          <td>
+            <a name="ValueSet">ValueSet</a>
+          </td>
           <td/>
           <td>A value set specifies a set of codes drawn from one or more code systems.</td>
         </tr>
         <tr>
-          <td>Appointment</td>
+          <td>
+            <a name="Appointment">Appointment</a>
+          </td>
           <td/>
           <td>Yet to be defined</td>
         </tr>
         <tr>
-          <td>InterestOfCare</td>
+          <td>
+            <a name="AssessmentDefinition">AssessmentDefinition</a>
+          </td>
+          <td/>
+          <td>Yet to be defined</td>
+        </tr>
+        <tr>
+          <td>
+            <a name="InterestOfCare">InterestOfCare</a>
+          </td>
           <td/>
           <td>Yet to be defined</td>
         </tr>
@@ -467,7 +632,7 @@ Related resources tie this event to the authorizing prescription, and the specif
   </telecom>
   <description value="Either a resource or a data type"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/defined-types"/>
     <caseSensitive value="true"/>
@@ -477,15 +642,11 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="Age"/>
-      <definition value="The unit must be an amount of time and a UCUM unit must be provided, and the value must be positive"/>
+      <definition value="There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM.  If value is present, it SHALL be positive."/>
     </concept>
     <concept>
       <code value="Attachment"/>
       <definition value="For referring to data content defined in other formats."/>
-    </concept>
-    <concept>
-      <code value="Choice"/>
-      <definition value="A code taken from a short list of codes that are not defined in a formal code system."/>
     </concept>
     <concept>
       <code value="CodeableConcept"/>
@@ -501,15 +662,15 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="Count"/>
-      <definition value="The value must a whole number and the UCUM unit must be &quot;1&quot;"/>
+      <definition value="There SHALL be a code with a value of &quot;1&quot; if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM.  If present, the value SHALL a whole number."/>
     </concept>
     <concept>
       <code value="Distance"/>
-      <definition value="The unit must be an amount of length and a UCUM unit must be provided."/>
+      <definition value="There SHALL be a code if there is a value and it SHALL be an expression of length.  If system is present, it SHALL be UCUM."/>
     </concept>
     <concept>
       <code value="Duration"/>
-      <definition value="The unit must be an amount of time and a UCUM unit must be provided."/>
+      <definition value="There SHALL be a code if there is a value and it SHALL be an expression of time.  If system is present, it SHALL be UCUM."/>
     </concept>
     <concept>
       <code value="Extension"/>
@@ -525,11 +686,11 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="Money"/>
-      <definition value="The unit must be a currency and the code must from ISO 4217 (system = &quot;urn:std:iso:4217&quot;)"/>
+      <definition value="There SHALL be a code if there is a value and it SHALL be an expression of currency.  If system is present, it SHALL be ISO 4217 (system = &quot;urn:std:iso:4217&quot; - currency)."/>
     </concept>
     <concept>
       <code value="Narrative"/>
-      <definition value="A human readable formatted text, including images."/>
+      <definition value="A human-readable formatted text, including images."/>
     </concept>
     <concept>
       <code value="Period"/>
@@ -573,11 +734,11 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="date"/>
-      <definition value="A date, or partial date (e.g. just year or year + month). There is no timezone. The format is a union of the schema types gYear, gYearMonth and date.  Dates must be valid dates."/>
+      <definition value="A date, or partial date (e.g. just year or year + month). There is no time zone. The format is a union of the schema types gYear, gYearMonth and date.  Dates SHALL be valid dates."/>
     </concept>
     <concept>
       <code value="dateTime"/>
-      <definition value="A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a timezone must be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided but may also be ignored.  Dates must be valid dates."/>
+      <definition value="A date, date-time or partial date (e.g. just year or year + month).  If hours and minutes are specified, a time zone SHALL be populated. The format is a union of the schema types gYear, gYearMonth, date and dateTime. Seconds may be provided but may also be ignored.  Dates SHALL be valid dates."/>
     </concept>
     <concept>
       <code value="decimal"/>
@@ -628,6 +789,14 @@ Related resources tie this event to the authorizing prescription, and the specif
       <definition value="Describes the intention of how one or more practitioners intend to deliver care for a particular patient for a period of time, possibly limited to care for a specific condition or set of conditions."/>
     </concept>
     <concept>
+      <code value="Composition"/>
+      <definition value="A set of healthcare-related information that is assembled together into a single logical document that provides a single coherent statement of meaning, establishes its own context and that has clinical attestation with regard to who is making the statement."/>
+    </concept>
+    <concept>
+      <code value="ConceptMap"/>
+      <definition value="A statement of relationships from one set of concepts to one or more other concept systems."/>
+    </concept>
+    <concept>
       <code value="Condition"/>
       <definition value="Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary."/>
     </concept>
@@ -636,24 +805,12 @@ Related resources tie this event to the authorizing prescription, and the specif
       <definition value="A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation."/>
     </concept>
     <concept>
-      <code value="Coverage"/>
-      <definition value="Financial instrument by which payment information for health care."/>
-    </concept>
-    <concept>
       <code value="Device"/>
       <definition value="This resource identifies an instance of a manufactured thing that is used in the provision of healthcare without being substantially changed through that activity. The device may be a machine, an insert, a computer, an application, etc. This includes durable (reusable) medical equipment as well as disposable equipment used for diagnostic, treatment, and research for healthcare and public health."/>
     </concept>
     <concept>
-      <code value="DeviceCapabilities"/>
-      <definition value="Describes the set of data produced by a device."/>
-    </concept>
-    <concept>
-      <code value="DeviceLog"/>
-      <definition value="A set of raw data produced by a device."/>
-    </concept>
-    <concept>
-      <code value="DeviceObservation"/>
-      <definition value="A set of observations produced by a device."/>
+      <code value="DeviceObservationReport"/>
+      <definition value="Describes the data produced by a device at a point in time."/>
     </concept>
     <concept>
       <code value="DiagnosticOrder"/>
@@ -664,8 +821,8 @@ Related resources tie this event to the authorizing prescription, and the specif
       <definition value="The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."/>
     </concept>
     <concept>
-      <code value="Document"/>
-      <definition value="A documentation of healthcare-related information that is assembled together into a single statement of meaning that establishes its own context. A document is composed of a set of resources that include both human and computer readable portions. A human may attest to the accuracy of the human readable portion and may authenticate and/or sign the entire whole. A document may be kept as a set of logically linked resources, or they may be bundled together in an atom feed."/>
+      <code value="DocumentManifest"/>
+      <definition value="A manifest that defines a set of documents."/>
     </concept>
     <concept>
       <code value="DocumentReference"/>
@@ -692,7 +849,7 @@ Related resources tie this event to the authorizing prescription, and the specif
       <definition value="Immunization event information."/>
     </concept>
     <concept>
-      <code value="ImmunizationProfile"/>
+      <code value="ImmunizationRecommendation"/>
       <definition value="A patient&#39;s point-of-time immunization status and recommendation with optional supporting justification."/>
     </concept>
     <concept>
@@ -701,7 +858,7 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="Location"/>
-      <definition value="Contact details and position information for a physical place that may be visited and where healthcare resources and participants may be found or contained, accommodated, or stored."/>
+      <definition value="Details and position information for a physical place where services are provided  and resources and participants may be stored, found, contained or accommodated."/>
     </concept>
     <concept>
       <code value="Media"/>
@@ -730,8 +887,8 @@ Related resources tie this event to the authorizing prescription, and the specif
       <definition value="A record of medication being taken by a patient, or that the medication has been given to a patient where the record is the result of a report from the patient, or another clinician."/>
     </concept>
     <concept>
-      <code value="Message"/>
-      <definition value="The root for a transmission either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle of which the Message resource instance is the first resource in the bundle."/>
+      <code value="MessageHeader"/>
+      <definition value="The header for a message exchange that is either requesting or responding to an action.  The resource(s) that are the subject of the action as well as other Information related to the action are typically transmitted in a bundle of which the MessageHeader resource instance is the first resource in the bundle."/>
     </concept>
     <concept>
       <code value="Observation"/>
@@ -783,7 +940,7 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="Questionnaire"/>
-      <definition value="A set of answers to predefined lists of questions. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."/>
+      <definition value="A structured set of questions and their answers. The Questionnaire may contain questions, answers or both. The questions may be ordered and grouped into coherent subsets, corresponding to the structure of the grouping of the underlying questions."/>
     </concept>
     <concept>
       <code value="RelatedPerson"/>
@@ -811,6 +968,10 @@ Related resources tie this event to the authorizing prescription, and the specif
     </concept>
     <concept>
       <code value="Appointment"/>
+      <definition value="Yet to be defined"/>
+    </concept>
+    <concept>
+      <code value="AssessmentDefinition"/>
       <definition value="Yet to be defined"/>
     </concept>
     <concept>

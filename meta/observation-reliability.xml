@@ -5,8 +5,8 @@
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ObservationReliability</h2>
-      <p>Codes that provide reliability information about an observation</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/observation-reliability</p>
+      <p>Codes that provide an estimate of the degree to which quality issues have impacted on the value of an observation</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/observation-reliability</p>
       <table>
         <tr>
           <td>
@@ -20,37 +20,51 @@
           </td>
         </tr>
         <tr>
-          <td>ok</td>
+          <td>
+            <a name="ok">ok</a>
+          </td>
           <td/>
           <td>The result has no reliability concerns.</td>
         </tr>
         <tr>
-          <td>ongoing</td>
+          <td>
+            <a name="ongoing">ongoing</a>
+          </td>
           <td/>
           <td>An early estimate of value; measurement is still occurring.</td>
         </tr>
         <tr>
-          <td>early</td>
+          <td>
+            <a name="early">early</a>
+          </td>
           <td/>
           <td>An early estimate of value; processing is still occurring.</td>
         </tr>
         <tr>
-          <td>questionable</td>
+          <td>
+            <a name="questionable">questionable</a>
+          </td>
           <td/>
           <td>The observation value should be treated with care.</td>
         </tr>
         <tr>
-          <td>calibrating</td>
+          <td>
+            <a name="calibrating">calibrating</a>
+          </td>
           <td/>
           <td>The result has been generated while calibration is occurring.</td>
         </tr>
         <tr>
-          <td>error</td>
+          <td>
+            <a name="error">error</a>
+          </td>
           <td/>
           <td>The observation could not be completed because of an error.</td>
         </tr>
         <tr>
-          <td>unknown</td>
+          <td>
+            <a name="unknown">unknown</a>
+          </td>
           <td/>
           <td>No observation value was available.</td>
         </tr>
@@ -68,9 +82,9 @@
     <system value="email"/>
     <value value="fhir@lists.hl7.org"/>
   </telecom>
-  <description value="Codes that provide reliability information about an observation"/>
+  <description value="Codes that provide an estimate of the degree to which quality issues have impacted on the value of an observation"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/observation-reliability"/>
     <caseSensitive value="true"/>

@@ -2,17 +2,20 @@
 # person or animal receiving care or other health-related
 # services.
 class Fhir::Patient < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # An identifier for the person as this patient
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
   # A name associated with the patient
-  attribute :names, Array[Fhir::HumanName]
+  attribute :name, Array[Fhir::HumanName]
 
   # A contact detail for the individual
-  attribute :telecoms, Array[Fhir::Contact]
+  attribute :telecom, Array[Fhir::Contact]
 
   # Gender for administrative purposes
   attribute :gender, Fhir::CodeableConcept
@@ -24,7 +27,7 @@ class Fhir::Patient < Fhir::Resource
   attribute :deceased, *Fhir::Type[Boolean, DateTime]
 
   # Addresses for the individual
-  attribute :addresses, Array[Fhir::Address]
+  attribute :address, Array[Fhir::Address]
 
   # Marital (civil) status of a person
   attribute :marital_status, Fhir::CodeableConcept
@@ -33,19 +36,22 @@ class Fhir::Patient < Fhir::Resource
   attribute :multiple_birth, *Fhir::Type[Boolean, Integer]
 
   # Image of the person
-  attribute :photos, Array[Fhir::Attachment]
+  attribute :photo, Array[Fhir::Attachment]
 
   # A contact party (e.g. guardian, partner, friend) for the
   # patient.
   class Contact < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # The kind of relationship
-    attribute :relationships, Array[Fhir::CodeableConcept]
+    attribute :relationship, Array[Fhir::CodeableConcept]
 
     # A name associated with the person
     attribute :name, Fhir::HumanName
 
     # A contact detail for the person
-    attribute :telecoms, Array[Fhir::Contact]
+    attribute :telecom, Array[Fhir::Contact]
 
     # Address for the contact person
     attribute :address, Fhir::Address
@@ -57,13 +63,16 @@ class Fhir::Patient < Fhir::Resource
     resource_reference :organization, [Fhir::Organization]
   end
 
-  attribute :contacts, Array[Contact]
+  attribute :contact, Array[Contact]
 
   # This element has a value if the patient is an animal.
   class Animal < Fhir::ValueObject
     invariants do
       validates_presence_of :species
     end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
     # E.g. Dog, Cow
     attribute :species, Fhir::CodeableConcept
@@ -78,14 +87,34 @@ class Fhir::Patient < Fhir::Resource
   attribute :animal, Animal
 
   # Languages which may be used to communicate with the
-  # patient
-  attribute :communications, Array[Fhir::CodeableConcept]
+  # patient about his or her health
+  attribute :communication, Array[Fhir::CodeableConcept]
 
-  # Organization managing the patient
-  resource_reference :provider, [Fhir::Organization]
+  # Patient's nominated care provider
+  resource_references :care_provider, [Fhir::Organization, Fhir::Practitioner]
 
-  # Other patient resources linked to this resource
-  resource_references :links, [Fhir::Patient]
+  # Organization that is the custodian of the patient record
+  resource_reference :managing_organization, [Fhir::Organization]
+
+  # Link to another patient resource that concerns the same
+  # actual person.
+  class Link < Fhir::ValueObject
+    invariants do
+      validates_presence_of :other_ref
+      validates_presence_of :type
+    end
+
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # The other patient resource that the link refers to
+    resource_reference :other, [Fhir::Patient]
+
+    # replace | refer | seealso - type of link
+    attribute :type, Fhir::Code
+  end
+
+  attribute :link, Array[Link]
 
   # Whether this patient's record is in active use
   attribute :active, Boolean

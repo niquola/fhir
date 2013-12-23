@@ -4,27 +4,37 @@
   <title>Resources as Profiles</title>
   <id>http://hl7.org/fhir/profile/types</id>
   <link href="http://hl7.org/implement/standards/fhir/profiles-types.xml" rel="self"/>
-  <updated>2013-08-13T07:56:40.654+10:00</updated>
+  <updated>2013-12-18T09:56:05.330+11:00</updated>
   <entry>
     <title>&quot;period&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/period</id>
     <link href="http://hl7.org/implement/standards/fhir/period.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.htm#Period">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.html#Period">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Period"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Period for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Period"/>
           <element>
@@ -42,20 +52,24 @@
                 <key value="1"/>
                 <name value="Start &lt;= End"/>
                 <severity value="error"/>
-                <human value="If present, start must have a lower value than end"/>
+                <human value="If present, start SHALL have a lower value than end"/>
                 <xpath value="not(exists(f:start)) or not(exists(f:end)) or (f:start/@value &lt;= f:end/@value)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;] or URG&lt;TS&gt;[lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="DR"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Period.start"/>
             <definition>
-              <short value="The start of the period"/>
+              <short value="Starting time with inclusive boundary"/>
               <formal value="The start of the period. The boundary is inclusive."/>
               <comments value="If the low element is missing, the meaning is that the low boundary is not known."/>
               <min value="0"/>
@@ -65,15 +79,19 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./low"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="DR.1"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Period.end"/>
             <definition>
-              <short value="The end of the period, if not ongoing"/>
+              <short value="End time with inclusive boundary, if not ongoing"/>
               <formal value="The end of the period. If the high is missing, it means that the period is ongoing."/>
               <comments value="The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has a end value of 2012-02-03."/>
               <min value="0"/>
@@ -83,37 +101,51 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./high"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="DR.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.htm#Period">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Period from <a href="http://hl7.org/fhir/datatypes.html#Period">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;coding&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/coding</id>
     <link href="http://hl7.org/implement/standards/fhir/coding.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Coding from <a href="http://hl7.org/fhir/datatypes.htm#Coding">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Coding from <a href="http://hl7.org/fhir/datatypes.html#Coding">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Coding"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Coding for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Coding"/>
           <element>
@@ -121,16 +153,27 @@
             <definition>
               <short value="A reference to a code defined by a terminology system"/>
               <formal value="A reference to a code defined by a terminology system."/>
-              <comments value="Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED-CT - see the v3 core principles for more information."/>
+              <comments value="Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the v3 core principles for more information."/>
               <min value="1"/>
               <max value="1"/>
               <type>
                 <code value="Type"/>
               </type>
+              <constraint>
+                <key value="1"/>
+                <name value="Value set doesn&#39;t substitute for system"/>
+                <severity value="error"/>
+                <human value="If a valueSet is provided, a system URI SHALL also be provided."/>
+                <xpath value="not (exists(f:valueSet) and exists(f:code)) or exists(f:system)"/>
+              </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CV"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"/>
               </mapping>
             </definition>
           </element>
@@ -138,8 +181,8 @@
             <path value="Coding.system"/>
             <definition>
               <short value="Identity of the terminology system"/>
-              <formal value="The identification of the system that defines the meaning of the symbol in the code. Can be a simple list of enumerations, a list of codes with meanings or all the way to a complex semantic web such as SNOMED-CT, whether classification, terminology, or ontology."/>
-              <comments value="The identity is a uri. It may be an OID or a UUID, which must be references to the HL7 OID registry, or a URI which either comes from HL7&#39;s list of FHIR defined special URIs or from some system defined elsewhere, in which case the URI should de-reference to establish the system unambiguously."/>
+              <formal value="The identification of the code system that defines the meaning of the symbol in the code."/>
+              <comments value="The identity is a uri. It may be an OID or a UUID, which SHALL be references to the HL7 OID registry, or a URI which either comes from HL7&#39;s list of FHIR defined special URIs or from some system defined elsewhere, in which case the URI should de-reference to establish the system unambiguously."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -147,8 +190,33 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="C*E.3"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Coding.version"/>
+            <definition>
+              <short value="Version of the system - if relevant"/>
+              <formal value="The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when it is not, the version SHOULD be exchanged."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="string"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="./codeSystemVersion"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="C*E.7"/>
               </mapping>
             </definition>
           </element>
@@ -156,7 +224,7 @@
             <path value="Coding.code"/>
             <definition>
               <short value="Symbol in syntax defined by the system"/>
-              <formal value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system."/>
+              <formal value="A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination)."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -164,8 +232,12 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./code"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="C*E.1"/>
               </mapping>
             </definition>
           </element>
@@ -181,37 +253,94 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CV.displayName"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="C*E.2 - but note this is not well followed"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Coding.primary"/>
+            <definition>
+              <short value="If this code was chosen directly by the user"/>
+              <formal value="Indicates that this code was chosen by a user directly - i.e. off a pick list of available codes."/>
+              <comments value="Amongst a set of alternatives, a directly chosen coding is the most appropriate starting point for new translations."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="boolean"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="CD.codingRationale"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="Sometimes implied by being first"/>
+              </mapping>
+            </definition>
+          </element>
+          <element>
+            <path value="Coding.valueSet"/>
+            <definition>
+              <short value="Set this coding was chosen from"/>
+              <formal value="The set of possible coded values this coding was chosen from or constrained by."/>
+              <min value="0"/>
+              <max value="1"/>
+              <type>
+                <code value="Resource(ValueSet)"/>
+              </type>
+              <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="CD.valueSet / CD.valueSetVersion"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="C*E.16 - .19"/>
               </mapping>
             </definition>
           </element>
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Coding from <a href="http://hl7.org/fhir/datatypes.htm#Coding">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Coding from <a href="http://hl7.org/fhir/datatypes.html#Coding">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;range&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/range</id>
     <link href="http://hl7.org/implement/standards/fhir/range.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.htm#Range">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.html#Range">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Range"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Range for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Range"/>
           <element>
@@ -236,13 +365,17 @@
                 <key value="2"/>
                 <name value="Low &lt; high"/>
                 <severity value="error"/>
-                <human value="If present, low must have a lower value than high"/>
+                <human value="If present, low SHALL have a lower value than high"/>
                 <xpath value="not(exists(f:low/f:value/@value)) or not(exists(f:high/f:value/@value)) or (number(f:low/f:value/@value) &lt;= number(f:high/f:value/@value))"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL&lt;QTY[not(type=&quot;TS&quot;)]&gt; [lowClosed=&quot;true&quot; and highClosed=&quot;true&quot;]or URG&lt;QTY[not(type=&quot;TS&quot;)]&gt;"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="NR and also possibly SN (but see also quantity)"/>
               </mapping>
             </definition>
           </element>
@@ -259,8 +392,12 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./low"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="NR.1"/>
               </mapping>
             </definition>
           </element>
@@ -277,37 +414,51 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./high"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="NR.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.htm#Range">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Range from <a href="http://hl7.org/fhir/datatypes.html#Range">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;quantity&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/quantity</id>
     <link href="http://hl7.org/implement/standards/fhir/quantity.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Quantity"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Quantity for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Quantity"/>
           <element>
@@ -323,15 +474,19 @@
               </type>
               <constraint>
                 <key value="3"/>
-                <name value="Must have a system"/>
+                <name value="SHALL have a system"/>
                 <severity value="error"/>
-                <human value="If a code for the units is present, the system must also be present"/>
+                <human value="If a code for the units is present, the system SHALL also be present"/>
                 <xpath value="not(exists(f:code)) or exists(f:system)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN (see also Range) or CQ"/>
               </mapping>
             </definition>
           </element>
@@ -348,27 +503,42 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.2  / CQ - N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Quantity.comparator"/>
             <definition>
-              <short value="Relationship of stated value to actual value"/>
+              <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
               <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="QuantityCompararator"/>
+              <binding>
+                <name value="QuantityCompararator"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL properties"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.1  / CQ.1"/>
               </mapping>
             </definition>
           </element>
@@ -376,7 +546,7 @@
             <path value="Quantity.units"/>
             <definition>
               <short value="Unit representation"/>
-              <formal value="A human readable form of the units."/>
+              <formal value="A human-readable form of the units."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -384,8 +554,12 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="rim"/>
+                <map value="PQ.unit"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -401,8 +575,12 @@
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -411,7 +589,7 @@
             <definition>
               <short value="Coded form of the unit"/>
               <formal value="A computer processable form of the units in some unit representation system."/>
-              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+              <comments value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.
 
 The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
               <min value="0"/>
@@ -421,175 +599,51 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.code, MO.currency, PQ.translation.code"/>
               </mapping>
-            </definition>
-          </element>
-        </structure>
-        <binding>
-          <name value="QuantityCompararator"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
-          </referenceResource>
-        </binding>
-      </Profile>
-    </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
-    </summary>
-  </entry>
-  <entry>
-    <title>&quot;choice&quot; as a profile (to help derivation)</title>
-    <id>http://hl7.org/fhir/profile/choice</id>
-    <link href="http://hl7.org/implement/standards/fhir/choice.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
-    <author>
-      <name>HL7, Inc (FHIR Project)</name>
-      <uri>http://hl7.org/fhir</uri>
-    </author>
-    <content type="text/xml">
-      <Profile xmlns="http://hl7.org/fhir">
-        <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Choice from <a href="http://hl7.org/fhir/datatypes.htm#Choice">FHIR Specification</a></div></div>
-        </text>
-        <name value="Basic Profile for Choice"/>
-        <publisher value="FHIR Specification"/>
-        <description value="Basic Profile for Choice for validation support"/>
-        <status value="draft"/>
-        <date value="2013-08-13"/>
-        <structure>
-          <type value="Choice"/>
-          <element>
-            <path value="Choice"/>
-            <definition>
-              <short value="Code from list of choices"/>
-              <formal value="A code taken from a short list of codes that are not defined in a formal code system."/>
-              <comments value="Choice is generally used for things like pain scales, questionnaires or formally defined assessment indexes. The possible codes may be ordered with some arbitrarily defined scale. Choice does not fit all assessment scales - the more combinatorial the value is, the less likely that Choice will be an appropriate data type."/>
-              <min value="1"/>
-              <max value="1"/>
-              <type>
-                <code value="Type"/>
-              </type>
-              <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="CD"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="Choice.code"/>
-            <definition>
-              <short value="Selected code"/>
-              <formal value="The code or value that the user selected from the list of possible codes."/>
-              <comments value="The &quot;code&quot; might be a numerical choice in a pain scale, for instance, 1 where the choices are 1-5 with associated words for severity of pain."/>
-              <min value="0"/>
-              <max value="1"/>
-              <type>
-                <code value="code"/>
-              </type>
-              <isModifier value="false"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="CD.code"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="Choice.option"/>
-            <definition>
-              <short value="List of possible code values"/>
-              <formal value="A list of possible values for the code."/>
-              <min value="1"/>
-              <max value="*"/>
-              <isModifier value="false"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="Expansion of CD.valueSet to list of CDs"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="Choice.option.code"/>
-            <definition>
-              <short value="Possible code"/>
-              <formal value="A possible code or value that the user could have chosen."/>
-              <min value="1"/>
-              <max value="1"/>
-              <type>
-                <code value="code"/>
-              </type>
-              <isModifier value="false"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="CD.code"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="Choice.option.display"/>
-            <definition>
-              <short value="Display for the code"/>
-              <formal value="A set of words associated with the code to give it meaning and displayed to the user."/>
-              <comments value="The code itself may convey sufficient meaning.  If there aren&#39;t both a code and a display provided, the display string is presumed to be the code."/>
-              <min value="0"/>
-              <max value="1"/>
-              <type>
-                <code value="string"/>
-              </type>
-              <isModifier value="false"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="CD.displayName"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="Choice.isOrdered"/>
-            <definition>
-              <short value="If order of the values has meaning"/>
-              <formal value="Whether the order of the values has an assigned meaning."/>
-              <min value="0"/>
-              <max value="1"/>
-              <type>
-                <code value="boolean"/>
-              </type>
-              <isModifier value="false"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Choice from <a href="http://hl7.org/fhir/datatypes.htm#Choice">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;attachment&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/attachment</id>
     <link href="http://hl7.org/implement/standards/fhir/attachment.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.htm#Attachment">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.html#Attachment">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Attachment"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Attachment for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Attachment"/>
           <element>
@@ -604,11 +658,11 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="ED"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="ED/RP"/>
               </mapping>
             </definition>
@@ -624,13 +678,18 @@ The context of use may additionally require a code from a particular system (Unl
                 <code value="code"/>
               </type>
               <isModifier value="false"/>
-              <binding value="MimeType"/>
+              <binding>
+                <name value="MimeType"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./mediaType, ./charset"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used"/>
               </mapping>
             </definition>
@@ -646,9 +705,14 @@ The context of use may additionally require a code from a particular system (Unl
                 <code value="code"/>
               </type>
               <isModifier value="false"/>
-              <binding value="Language"/>
+              <binding>
+                <name value="Language"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./language"/>
               </mapping>
             </definition>
@@ -658,7 +722,7 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Data inline, base64ed"/>
               <formal value="The actual data of the attachment - a sequence of bytes. In XML, represented using base64."/>
-              <comments value="The base64-encoded data must be expressed in the same character set as the base resource XML."/>
+              <comments value="The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -666,11 +730,11 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./data"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="ED.5"/>
               </mapping>
             </definition>
@@ -680,7 +744,7 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Uri where the data can be found"/>
               <formal value="An alternative location where the data can be accessed."/>
-              <comments value="If both data and url are provided, the url must point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. If a URL is provided, it must resolve to actual data."/>
+              <comments value="If both data and url are provided, the url SHALL point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. Relative URLs are interpreted relative to the service url, like a resource reference, rather than relative to the resource itself. If a URL is provided, it SHALL resolve to actual data."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -688,11 +752,11 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./reference/literal"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="RP.1+RP.2 - if they refer to a URL (see v2.6)"/>
               </mapping>
             </definition>
@@ -710,8 +774,8 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="(needs data type R3 proposal)"/>
+                <identity value="rim"/>
+                <map value="N/A (needs data type R3 proposal)"/>
               </mapping>
             </definition>
           </element>
@@ -727,7 +791,7 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value=".integrityCheck[parent::ED/integrityCheckAlgorithm=&quot;SHA-1&quot;]"/>
               </mapping>
             </definition>
@@ -744,47 +808,47 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./title/data"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="MimeType"/>
-          <conformance value="required"/>
-          <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
-        </binding>
-        <binding>
-          <name value="Language"/>
-          <conformance value="required"/>
-          <referenceUri value="http://tools.ietf.org/html/bcp47"/>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.htm#Attachment">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Attachment from <a href="http://hl7.org/fhir/datatypes.html#Attachment">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;ratio&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/ratio</id>
     <link href="http://hl7.org/implement/standards/fhir/ratio.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.htm#Ratio">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.html#Ratio">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Ratio"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Ratio for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Ratio"/>
           <element>
@@ -797,18 +861,29 @@ The context of use may additionally require a code from a particular system (Unl
               <type>
                 <code value="Type"/>
               </type>
+              <constraint>
+                <key value="1"/>
+                <name value="both numerator and denominator"/>
+                <severity value="error"/>
+                <human value="numerator and denominator SHALL both be present, or both be absent"/>
+                <xpath value="count(f:numerator) = count(f:denominator)"/>
+              </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="RTO"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Ratio.numerator"/>
             <definition>
-              <short value="The numerator"/>
-              <formal value="The numerator."/>
+              <short value="Numerator value"/>
+              <formal value="The value of the numerator."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -816,16 +891,16 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="RTO.numerator"/>
+                <identity value="rim"/>
+                <map value=".numerator"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Ratio.denominator"/>
             <definition>
-              <short value="The denominator"/>
-              <formal value="The denominator."/>
+              <short value="Denominator value"/>
+              <formal value="The value of the denominator."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -833,37 +908,47 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="RTO.denominator"/>
+                <identity value="rim"/>
+                <map value=".denominator"/>
               </mapping>
             </definition>
           </element>
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.htm#Ratio">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Ratio from <a href="http://hl7.org/fhir/datatypes.html#Ratio">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;sampleddata&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/sampleddata</id>
     <link href="http://hl7.org/implement/standards/fhir/sampleddata.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.htm#SampledData">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.html#SampledData">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for SampledData"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for SampledData for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="SampledData"/>
           <element>
@@ -879,8 +964,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="SLIST + GLIST"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="N/A (but see section 7.14 in v2.7)"/>
               </mapping>
             </definition>
           </element>
@@ -889,14 +978,14 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Zero value and units"/>
               <formal value="The base quantity that a measured value of zero represents. In addition, this provides the units of the entire measurement series."/>
-              <min value="0"/>
+              <min value="1"/>
               <max value="1"/>
               <type>
                 <code value="Quantity"/>
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="SLIST.origin"/>
               </mapping>
             </definition>
@@ -907,14 +996,14 @@ The context of use may additionally require a code from a particular system (Unl
               <short value="Number of milliseconds between samples"/>
               <formal value="The length of time between sampling times, measured in milliseconds."/>
               <comments value="This is usually a whole number."/>
-              <min value="0"/>
+              <min value="1"/>
               <max value="1"/>
               <type>
                 <code value="decimal"/>
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="GLIST.increment"/>
               </mapping>
             </definition>
@@ -931,7 +1020,7 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="SLIST.factor"/>
               </mapping>
             </definition>
@@ -947,6 +1036,10 @@ The context of use may additionally require a code from a particular system (Unl
                 <code value="decimal"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A (use SLIST.digits.nullFlavor)"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -960,6 +1053,10 @@ The context of use may additionally require a code from a particular system (Unl
                 <code value="decimal"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A (use SLIST.digits.nullFlavor)"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -968,12 +1065,16 @@ The context of use may additionally require a code from a particular system (Unl
               <short value="Number of sample points at each time point"/>
               <formal value="The Number of sample points at each time point. If this value is greater than one, then the dimensions will be interlaced - all the sample points for a point in time will be recorded at once."/>
               <comments value="If there is more than one dimension, the code for the type of data will define the meaning of the dimensions (typically ECG data)."/>
-              <min value="0"/>
+              <min value="1"/>
               <max value="1"/>
               <type>
                 <code value="integer"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A (fixed to 1)"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -981,14 +1082,14 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Decimal values with spaces, or &quot;E&quot; | &quot;U&quot; | &quot;L&quot;"/>
               <formal value="A series of data points separated by a single space (character u20). The special values &quot;E&quot; (error), &quot;L&quot; (below detection limit) and &quot;U&quot; (above detection limit) can also be used."/>
-              <min value="0"/>
+              <min value="1"/>
               <max value="1"/>
               <type>
                 <code value="string"/>
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="SLIST.digits"/>
               </mapping>
             </definition>
@@ -996,29 +1097,34 @@ The context of use may additionally require a code from a particular system (Unl
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.htm#SampledData">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for SampledData from <a href="http://hl7.org/fhir/datatypes.html#SampledData">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;resourcereference&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/resourcereference</id>
     <link href="http://hl7.org/implement/standards/fhir/resourcereference.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.htm#ResourceReference">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.html#ResourceReference">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for ResourceReference"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for ResourceReference for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
         <structure>
           <type value="ResourceReference"/>
           <element>
@@ -1032,42 +1138,16 @@ The context of use may additionally require a code from a particular system (Unl
                 <code value="Type"/>
               </type>
               <constraint>
-                <key value="2"/>
+                <key value="1"/>
                 <name value="Inline"/>
                 <severity value="error"/>
-                <human value="Must have a local reference if the resource is provided inline"/>
-                <xpath value="not(starts-with(f:reference/@value, &#39;#&#39;)) or exists(ancestor::a:content/f:*/f:contained/f:*[local-name(.)=current()/f:type/@value and @id=substring-after(current()/f:reference/@value, &#39;#&#39;)]|/f:*/f:contained/f:*[local-name(.)=current()/f:type/@value and @id=substring-after(current()/f:reference/@value, &#39;#&#39;)])"/>
-              </constraint>
-              <constraint>
-                <key value="1"/>
-                <name value="Type"/>
-                <severity value="error"/>
-                <human value="Must have a type if a reference is provided"/>
-                <xpath value="exists(f:type) or not(exists(f:reference))"/>
+                <human value="SHALL have a local reference if the resource is provided inline"/>
+                <xpath value="not(starts-with(f:reference/@value, &#39;#&#39;)) or exists(ancestor::a:content/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, &#39;#&#39;)]|/f:*/f:contained/f:*[@id=substring-after(current()/f:reference/@value, &#39;#&#39;)])"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="The target of a resource reference is a RIM entry point (Act, Role, or Entity)"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="ResourceReference.type"/>
-            <definition>
-              <short value="Resource Type"/>
-              <formal value="The name of one of the resource types defined in this specification to identify the type of the resource being referenced."/>
-              <comments value="Whether or not the type of the resource reference is fixed for a particular element, the reference includes the resource type."/>
-              <min value="0"/>
-              <max value="1"/>
-              <type>
-                <code value="code"/>
-              </type>
-              <isModifier value="false"/>
-              <binding value="ResourceType"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
               </mapping>
             </definition>
           </element>
@@ -1086,7 +1166,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
@@ -1104,45 +1184,47 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="ResourceType"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/resource-types"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.htm#ResourceReference">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for ResourceReference from <a href="http://hl7.org/fhir/datatypes.html#ResourceReference">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;codeableconcept&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/codeableconcept</id>
     <link href="http://hl7.org/implement/standards/fhir/codeableconcept.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for CodeableConcept from <a href="http://hl7.org/fhir/datatypes.htm#CodeableConcept">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for CodeableConcept from <a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for CodeableConcept"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for CodeableConcept for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="CodeableConcept"/>
           <element>
@@ -1158,18 +1240,18 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <constraint>
                 <key value="2"/>
-                <name value="Primary Reference must resolve"/>
+                <name value="Coding.primary rule"/>
                 <severity value="error"/>
-                <human value="If a primary reference is present, it must point to one of the codings"/>
-                <xpath value="not(exists(f:primary)) or count(f:coding[@id=current()/f:primary/@value])=1"/>
+                <human value="Only one coding in a set can be chosen directly by the user"/>
+                <xpath value="count(f:coding[f:primary/@value=&#39;true&#39;])&lt;1"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CD"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="CE/CNE/CWE"/>
               </mapping>
             </definition>
@@ -1179,7 +1261,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
             <definition>
               <short value="Code defined by a terminology system"/>
               <formal value="A reference to a code defined by a terminology system."/>
-              <comments value="Codes may defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED-CT - see the v3 core principles for more information.  Ordering of codings is undefined and must not be used to infer meaning."/>
+              <comments value="Codes may defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the v3 core principles for more information.  Ordering of codings is undefined and SHALL not be used to infer meaning."/>
               <min value="0"/>
               <max value="*"/>
               <type>
@@ -1187,11 +1269,11 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="union(., ./translation)"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="C*E.1-8, C*E.10-22"/>
               </mapping>
             </definition>
@@ -1209,62 +1291,56 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./originalText[mediaType/code=&quot;text/plain&quot;]/data"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="C*E.9. But note many systems use C*E.2 for this"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="CodeableConcept.primary"/>
-            <definition>
-              <short value="Which code was chosen directly by the user"/>
-              <formal value="Indicates which of the codes in the codings was chosen by a user, if one was chosen directly."/>
-              <min value="0"/>
-              <max value="1"/>
-              <type>
-                <code value="idref"/>
-              </type>
-              <isModifier value="false"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="special(&quot;The id assigned to the coding that corresponds to the root code of the CD&quot;)"/>
-              </mapping>
-              <mapping>
-                <target value="http://hl7.org/v2"/>
-                <map value="Sometimes implied by C*E.1"/>
               </mapping>
             </definition>
           </element>
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for CodeableConcept from <a href="http://hl7.org/fhir/datatypes.htm#CodeableConcept">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for CodeableConcept from <a href="http://hl7.org/fhir/datatypes.html#CodeableConcept">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;identifier&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/identifier</id>
     <link href="http://hl7.org/implement/standards/fhir/identifier.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.htm#Identifier">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.html#Identifier">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Identifier"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Identifier for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+          <name value="ServD"/>
+        </mapping>
         <structure>
           <type value="Identifier"/>
           <element>
@@ -1280,37 +1356,68 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="II"/>
+                <identity value="rim"/>
+                <map value="II - see see identifier pattern at http://wiki.hl7.org/index.php?title=Common_Design_Patterns#Identifier_Pattern for relevant discussion"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CX / EI (occasionally, more often EI maps to a resource id or a URL)"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="Identifier"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Identifier.use"/>
             <definition>
-              <short value="The use of this identifier"/>
-              <formal value="Identifies the use for this identifier, if known."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is not temporary unless it explicitly says that it is."/>
+              <short value="usual | official | temp | secondary (If known)"/>
+              <formal value="The use of this identifier."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is not temporary unless it explicitly says that it is."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="IdentifierUse"/>
+              <binding>
+                <name value="IdentifierUse"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/identifier-use"/>
+                </referenceResource>
+              </binding>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A - this is sometimes implied by context"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CX.5"/>
+              </mapping>
             </definition>
           </element>
           <element>
             <path value="Identifier.label"/>
             <definition>
               <short value="Description of identifier"/>
-              <formal value="A label for the identifier that can be displayed to a human so they can recognise the identifier."/>
+              <formal value="A label for the identifier that can be displayed to a human so they can recognize the identifier."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="string"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A - this is sometimes implied by context"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="N/A"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1325,17 +1432,25 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="II.root"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CX.4 / EI-2-4"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./IdentifierType"/>
               </mapping>
             </definition>
           </element>
           <element>
-            <path value="Identifier.key"/>
+            <path value="Identifier.value"/>
             <definition>
               <short value="The value that is unique"/>
               <formal value="The portion of the identifier typically displayed to the user and which is unique within the context of the system."/>
-              <comments value="if the key value is actually a full uri, then the system is urn:ietf:rfc:3986."/>
+              <comments value="if the value is actually a full uri, then the system SHALL be urn:ietf:rfc:3986."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -1343,8 +1458,16 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="II.extension or II.root if system indicates OID or GUID"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CX.1 / EI.1"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./Value"/>
               </mapping>
             </definition>
           </element>
@@ -1359,6 +1482,18 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="Period"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A - this is sometimes implied by context"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CX.7 + CX.8"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./StartDate and ./EndDate"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1373,42 +1508,51 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="Resource(Organization)"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./IdentifierIssuingAuthority"/>
+              </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="IdentifierUse"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/identifier-use"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.htm#Identifier">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.html#Identifier">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;extension&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/extension</id>
     <link href="http://hl7.org/implement/standards/fhir/extension.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Extension from <a href="http://hl7.org/fhir/datatypes.htm#Extension">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Extension from <a href="http://hl7.org/fhir/datatypes.html#Extension">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Extension"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Extension for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
         <structure>
           <type value="Extension"/>
           <element>
@@ -1421,33 +1565,20 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               <type>
                 <code value="Type"/>
               </type>
-              <constraint>
-                <key value="2"/>
-                <name value="No Internal extensions"/>
-                <severity value="error"/>
-                <human value="No extensions on isModifier"/>
-                <xpath value="not(exists(f:isModifier/f:extension))"/>
-              </constraint>
-              <constraint>
-                <key value="1"/>
-                <name value="No Internal extensions"/>
-                <severity value="error"/>
-                <human value="No extensions on url"/>
-                <xpath value="not(exists(f:url/f:extension))"/>
-              </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Extension.url"/>
+            <representation value="xmlAttr"/>
             <definition>
               <short value="identifies the meaning of the extension"/>
               <formal value="Source of the definition for the extension code - a logical name or a URL."/>
-              <comments value="The definition may point directly to a computable or human readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #."/>
+              <comments value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition should be version specific.  This will ideally be the URI for the Resource Profile defining the extension, with the code for the extension after a #."/>
               <min value="1"/>
               <max value="1"/>
               <type>
@@ -1455,25 +1586,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
-              </mapping>
-            </definition>
-          </element>
-          <element>
-            <path value="Extension.isModifier"/>
-            <definition>
-              <short value="If extension modifies other elements/extensions"/>
-              <formal value="This value should be set to true if the value of the extension qualifies or negates data in other content."/>
-              <comments value="If this element is set to true, then the containing resource/element and its children are only safe to process if the reader understands this extension, and knows what the potential impact is. This does not mean that the application is required to do anything with the value, it is just not permitted to act inappropriately for any possible value in the element."/>
-              <min value="0"/>
-              <max value="1"/>
-              <type>
-                <code value="boolean"/>
-              </type>
-              <isModifier value="true"/>
-              <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
@@ -1490,7 +1603,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
@@ -1498,36 +1611,41 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
         </structure>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Extension from <a href="http://hl7.org/fhir/datatypes.htm#Extension">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Extension from <a href="http://hl7.org/fhir/datatypes.html#Extension">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;narrative&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/narrative</id>
     <link href="http://hl7.org/implement/standards/fhir/narrative.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Narrative from <a href="http://hl7.org/fhir/datatypes.htm#Narrative">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Narrative from <a href="http://hl7.org/fhir/datatypes.html#Narrative">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Narrative"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Narrative for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
         <structure>
           <type value="Narrative"/>
           <element>
             <path value="Narrative"/>
             <definition>
-              <short value="A human readable formatted text, including images"/>
-              <formal value="A human readable formatted text, including images."/>
+              <short value="A human-readable formatted text, including images"/>
+              <formal value="A human-readable formatted text, including images."/>
               <min value="1"/>
               <max value="1"/>
               <type>
@@ -1535,7 +1653,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
@@ -1551,9 +1669,15 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="code"/>
               </type>
               <isModifier value="false"/>
-              <binding value="NarrativeStatus"/>
+              <binding>
+                <name value="NarrativeStatus"/>
+                <isExtensible value="true"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/narrative-status"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
@@ -1569,47 +1693,67 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               <type>
                 <code value="xhtml"/>
               </type>
+              <constraint>
+                <key value="3"/>
+                <severity value="error"/>
+                <human value="The narrative SHALL contain only the basic html formatting attributes described in chapters 7-11 (except section 4 of chapter 9) and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained style attributes"/>
+                <xpath value="not(descendant-or-self::*/@*[not(name(.)=(&#39;abbr&#39;, &#39;accesskey&#39;, &#39;align&#39;, &#39;alt&#39;, &#39;axis&#39;, &#39;bgcolor&#39;, &#39;border&#39;, &#39;cellhalign&#39;, &#39;cellpadding&#39;, &#39;cellspacing&#39;, &#39;cellvalign&#39;, &#39;char&#39;, &#39;charoff&#39;, &#39;charset&#39;, &#39;cite&#39;, &#39;class&#39;, &#39;colspan&#39;, &#39;compact&#39;, &#39;coords&#39;, &#39;dir&#39;, &#39;frame&#39;, &#39;headers&#39;, &#39;height&#39;, &#39;href&#39;, &#39;hreflang&#39;, &#39;hspace&#39;, &#39;id&#39;, &#39;lang&#39;, &#39;longdesc&#39;, &#39;name&#39;, &#39;nowrap&#39;, &#39;rel&#39;, &#39;rev&#39;, &#39;rowspan&#39;, &#39;rules&#39;, &#39;scope&#39;, &#39;shape&#39;, &#39;span&#39;, &#39;src&#39;, &#39;start&#39;, &#39;style&#39;, &#39;summary&#39;, &#39;tabindex&#39;, &#39;title&#39;, &#39;type&#39;, &#39;valign&#39;, &#39;value&#39;, &#39;vspace&#39;, &#39;width&#39;))])"/>
+              </constraint>
+              <constraint>
+                <key value="2"/>
+                <severity value="error"/>
+                <human value="The narrative SHALL have some non-whitespace content"/>
+                <xpath value="descendant::text()[normalize-space(.)!=&#39;&#39;] or descendant::html:img[@src]"/>
+              </constraint>
+              <constraint>
+                <key value="1"/>
+                <severity value="error"/>
+                <human value="The narrative SHALL contain only the basic html formatting elements described in chapters 7-11 (except section 4 of chapter 9) and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained style attributes"/>
+                <xpath value="not(descendant-or-self::*[not(local-name(.)=(&#39;a&#39;, &#39;abbr&#39;, &#39;acronym&#39;, &#39;b&#39;, &#39;big&#39;, &#39;blockquote&#39;, &#39;br&#39;, &#39;caption&#39;, &#39;cite&#39;, &#39;code&#39;, &#39;colgroup&#39;, &#39;dd&#39;, &#39;dfn&#39;, &#39;div&#39;, &#39;dl&#39;, &#39;dt&#39;, &#39;em&#39;, &#39;h1&#39;, &#39;h2&#39;, &#39;h3&#39;, &#39;h4&#39;, &#39;h5&#39;, &#39;h6&#39;, &#39;hr&#39;, &#39;i&#39;, &#39;li&#39;, &#39;ol&#39;, &#39;p&#39;, &#39;pre&#39;, &#39;q&#39;, &#39;samp&#39;, &#39;small&#39;, &#39;span&#39;, &#39;strong&#39;, &#39;table&#39;, &#39;tbody&#39;, &#39;td&#39;, &#39;tfoot&#39;, &#39;th&#39;, &#39;thead&#39;, &#39;tr&#39;, &#39;tt&#39;, &#39;ul&#39;, &#39;var&#39;))])"/>
+              </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="N/A"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="NarrativeStatus"/>
-          <isExtensible value="true"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/narrative-status"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Narrative from <a href="http://hl7.org/fhir/datatypes.htm#Narrative">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Narrative from <a href="http://hl7.org/fhir/datatypes.html#Narrative">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;schedule&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/schedule</id>
     <link href="http://hl7.org/implement/standards/fhir/schedule.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Schedule from <a href="http://hl7.org/fhir/datatypes.htm#Schedule">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Schedule from <a href="http://hl7.org/fhir/datatypes.html#Schedule">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Schedule"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Schedule for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Schedule"/>
           <element>
@@ -1632,8 +1776,12 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="GTS"/>
+                <identity value="rim"/>
+                <map value="QSET&lt;TS&gt; (GTS)"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="N/A"/>
               </mapping>
             </definition>
           </element>
@@ -1648,6 +1796,10 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="Period"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="QLIST&lt;TS&gt; or PIVL.offset"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1669,10 +1821,14 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <key value="2"/>
                 <name value="Repeat cycle"/>
                 <severity value="error"/>
-                <human value="Either frequency or when must be present, but not both"/>
+                <human value="Either frequency or when SHALL be present, but not both"/>
                 <xpath value="exists(f:frequency) != exists(f:when)"/>
               </constraint>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="Implies PIVL or EIVL"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1686,12 +1842,16 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="integer"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="PIVL.phase"/>
+              </mapping>
             </definition>
           </element>
           <element>
             <path value="Schedule.repeat.when"/>
             <definition>
-              <short value="Event occurs duration from common life event"/>
+              <short value="HS | WAKE | AC | ACM | ACD | ACV | PC | PCM | PCD | PCV - common life events"/>
               <formal value="Identifies the occurrence of daily life that determine timing."/>
               <min value="0"/>
               <max value="1"/>
@@ -1699,7 +1859,18 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="code"/>
               </type>
               <isModifier value="false"/>
-              <binding value="EventTiming"/>
+              <binding>
+                <name value="EventTiming"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/event-timing"/>
+                </referenceResource>
+              </binding>
+              <mapping>
+                <identity value="rim"/>
+                <map value="EIVL.event"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1716,16 +1887,20 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <key value="4"/>
                 <name value="Duration Positive"/>
                 <severity value="error"/>
-                <human value="duration must be a positive value"/>
+                <human value="duration SHALL be a positive value"/>
                 <xpath value="@value &gt; 0 or not(@value)"/>
               </constraint>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="PIVL.phase / EIVL.offset"/>
+              </mapping>
             </definition>
           </element>
           <element>
             <path value="Schedule.repeat.units"/>
             <definition>
-              <short value="The units of time for the duration"/>
+              <short value="s | min | h | d | wk | mo | a - unit of time (UCUM)"/>
               <formal value="The units of time for the duration."/>
               <min value="1"/>
               <max value="1"/>
@@ -1733,7 +1908,18 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="code"/>
               </type>
               <isModifier value="false"/>
-              <binding value="UnitsOfTime"/>
+              <binding>
+                <name value="UnitsOfTime"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/units-of-time"/>
+                </referenceResource>
+              </binding>
+              <mapping>
+                <identity value="rim"/>
+                <map value="PIVL.phase.unit"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1748,6 +1934,10 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="integer"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="PIVL.count"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -1762,56 +1952,59 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="dateTime"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="N/A"/>
+              </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="UnitsOfTime"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/units-of-time"/>
-          </referenceResource>
-        </binding>
-        <binding>
-          <name value="EventTiming"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/event-timing"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Schedule from <a href="http://hl7.org/fhir/datatypes.htm#Schedule">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Schedule from <a href="http://hl7.org/fhir/datatypes.html#Schedule">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;contact&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/contact</id>
     <link href="http://hl7.org/implement/standards/fhir/contact.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Contact from <a href="http://hl7.org/fhir/datatypes.htm#Contact">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Contact from <a href="http://hl7.org/fhir/datatypes.html#Contact">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Contact"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Contact for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+          <name value="ServD"/>
+        </mapping>
         <structure>
           <type value="Contact"/>
           <element>
             <path value="Contact"/>
             <definition>
-              <short value="All kinds of technology mediated contact details for a person or organisation, including telephone, email, etc."/>
+              <short value="Technology mediated contact details (phone, fax, email, etc)"/>
               <formal value="All kinds of technology mediated contact details for a person or organisation, including telephone, email, etc."/>
               <min value="1"/>
               <max value="1"/>
@@ -1827,15 +2020,23 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="TEL"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XTN"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="ContactPoint"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Contact.system"/>
             <definition>
-              <short value="Telecommunications form for contact"/>
+              <short value="phone | fax | email | url"/>
               <formal value="Telecommunications form for contact - what communications system is required to make use of the contact."/>
               <min value="0"/>
               <max value="1"/>
@@ -1843,10 +2044,25 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="code"/>
               </type>
               <isModifier value="false"/>
-              <binding value="ContactSystem"/>
+              <binding>
+                <name value="ContactSystem"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/contact-system"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./scheme"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XTN.3"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./ContactPointType"/>
               </mapping>
             </definition>
           </element>
@@ -1863,27 +2079,50 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./url"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XTN.1 (or XTN.12)"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./Value"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Contact.use"/>
             <definition>
-              <short value="How to use this address"/>
+              <short value="home | work | temp | old | mobile - purpose of this address"/>
               <formal value="Identifies the context for the address."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old contact etc for a current/permanent one. Applications can assume that a contact is not temporary or old unless it explicitly says that it is."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old contact etc for a current/permanent one. Applications can assume that a contact is not temporary or old unless it explicitly says that it is."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="ContactUse"/>
+              <binding>
+                <name value="ContactUse"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/contact-use"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="unique(./use)"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XTN.2 - but often indicated by field"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./ContactPointPurpose"/>
               </mapping>
             </definition>
           </element>
@@ -1899,53 +2138,65 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./useablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="N/A"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./StartDate and ./EndDate"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="ContactSystem"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/contact-system"/>
-          </referenceResource>
-        </binding>
-        <binding>
-          <name value="ContactUse"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/contact-use"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Contact from <a href="http://hl7.org/fhir/datatypes.htm#Contact">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Contact from <a href="http://hl7.org/fhir/datatypes.html#Contact">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;address&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/address</id>
     <link href="http://hl7.org/implement/standards/fhir/address.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Address from <a href="http://hl7.org/fhir/datatypes.htm#Address">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Address from <a href="http://hl7.org/fhir/datatypes.html#Address">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for Address"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Address for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+          <name value="ServD"/>
+        </mapping>
+        <mapping>
+          <identity value="vcard"/>
+          <uri value="http://w3.org/vcard"/>
+          <name value="vCard"/>
+        </mapping>
         <structure>
           <type value="Address"/>
           <element>
@@ -1961,35 +2212,50 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="AD"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="XAD"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="Address"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Address.use"/>
             <definition>
-              <short value="The use of this address"/>
-              <formal value="Identifies the intended purpose of this address."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old address etc for a current/permanent one. Applications can assume that an address is not temporary or old unless it explicitly says that it is."/>
+              <short value="home | work | temp | old - purpose of this address"/>
+              <formal value="The use of this address."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old address etc for a current/permanent one. Applications can assume that an address is not temporary or old unless it explicitly says that it is."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="AddressUse"/>
+              <binding>
+                <name value="AddressUse"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/address-use"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="unique(./use)"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="XAD.7"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./AddressPurpose"/>
               </mapping>
             </definition>
           </element>
@@ -2006,11 +2272,11 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./formatted"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="XAD.1 + XAD.2 + XAD.3 + XAD.4 + XAD.5 + XAD.6"/>
               </mapping>
             </definition>
@@ -2018,8 +2284,9 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
           <element>
             <path value="Address.line"/>
             <definition>
-              <short value="Line of an address"/>
-              <formal value="A line of an address (typically used for street names &amp; numbers, unit details, delivery hints, etc.) ."/>
+              <short value="Street name, number, direction &amp; P.O. Box etc"/>
+              <formal value="This component contains the house number, apartment number, street name, street direction, 
+P.O. Box number, delivery hints, and similar address information."/>
               <min value="0"/>
               <max value="*"/>
               <type>
@@ -2027,12 +2294,20 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="rim"/>
+                <map value="AD.part[parttype = AL]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
                 <map value="XAD.1 + XAD.2 (note: XAD.1 and XAD.2 have different meanings for a company address than for a person address)"/>
               </mapping>
               <mapping>
-                <target value="http://w3.org/vcard"/>
+                <identity value="vcard"/>
                 <map value="street address"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./StreetAddress (newline delimitted)"/>
               </mapping>
             </definition>
           </element>
@@ -2048,12 +2323,20 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="rim"/>
+                <map value="AD.part[parttype = CTY]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
                 <map value="XAD.3"/>
               </mapping>
               <mapping>
-                <target value="http://w3.org/vcard"/>
+                <identity value="vcard"/>
                 <map value="locality"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./Jurisdiction"/>
               </mapping>
             </definition>
           </element>
@@ -2069,19 +2352,27 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="rim"/>
+                <map value="AD.part[parttype = STA]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
                 <map value="XAD.4"/>
               </mapping>
               <mapping>
-                <target value="http://w3.org/vcard"/>
+                <identity value="vcard"/>
                 <map value="region"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./Region"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Address.zip"/>
             <definition>
-              <short value="Post code for area"/>
+              <short value="Postal code for area"/>
               <formal value="A postal code designating a region defined by the postal service."/>
               <min value="0"/>
               <max value="1"/>
@@ -2090,12 +2381,20 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="rim"/>
+                <map value="AD.part[parttype = ZIP]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
                 <map value="XAD.5"/>
               </mapping>
               <mapping>
-                <target value="http://w3.org/vcard"/>
+                <identity value="vcard"/>
                 <map value="postal code"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./PostalIdentificationCode"/>
               </mapping>
             </definition>
           </element>
@@ -2111,12 +2410,20 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="rim"/>
+                <map value="AD.part[parttype = CNT]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
                 <map value="XAD.6"/>
               </mapping>
               <mapping>
-                <target value="http://w3.org/vcard"/>
+                <identity value="vcard"/>
                 <map value="country name"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./Country"/>
               </mapping>
             </definition>
           </element>
@@ -2132,55 +2439,66 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
               </mapping>
               <mapping>
-                <target value="http://hl7.org/v2"/>
+                <identity value="v2"/>
                 <map value="XAD.12 / XAD.13 + XAD.14"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./StartDate and ./EndDate"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="AddressUse"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/address-use"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Address from <a href="http://hl7.org/fhir/datatypes.htm#Address">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Address from <a href="http://hl7.org/fhir/datatypes.html#Address">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;humanname&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/humanname</id>
     <link href="http://hl7.org/implement/standards/fhir/humanname.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.htm#HumanName">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.html#HumanName">FHIR Specification</a></div></div>
         </text>
         <name value="Basic Profile for HumanName"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for HumanName for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+          <name value="ServD"/>
+        </mapping>
         <structure>
           <type value="HumanName"/>
           <element>
             <path value="HumanName"/>
             <definition>
-              <short value="Name of a human"/>
+              <short value="Name of a human - parts and usage"/>
               <formal value="A human&#39;s name with the ability to identify parts and usage."/>
               <comments value="Names may be changed, or repudiated, or people may have different names in different contexts. Names may be divided into parts of different type that have variable significance depending on context, though the division into parts does not always matter. With personal names, the different parts may or may not be imbued with some implicit meaning; various cultures associate different importance with the name parts, and the degree to which systems must care about name parts around the world varies widely."/>
               <min value="1"/>
@@ -2190,27 +2508,50 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="EN"/>
+                <identity value="rim"/>
+                <map value="EN (actually, PN)"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="ProviderName"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="HumanName.use"/>
             <definition>
-              <short value="The use of this name"/>
+              <short value="usual | official | temp | nickname | anonymous | old | maiden"/>
               <formal value="Identifies the purpose for this name."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old name etc for a current/permanent one. Applications can assume that a name is not temporary or old unless it explicitly says that it is."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary or old name etc for a current/permanent one. Applications can assume that a name is not temporary or old unless it explicitly says that it is."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="NameUse"/>
+              <binding>
+                <name value="NameUse"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/name-use"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="unique(./use)"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN.7, but often indicated by which field contains the name"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./NamePurpose"/>
               </mapping>
             </definition>
           </element>
@@ -2227,8 +2568,12 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./formatted"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="implied by XPN.11"/>
               </mapping>
             </definition>
           </element>
@@ -2237,13 +2582,25 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
             <definition>
               <short value="Family name (often called &#39;Surname&#39;)"/>
               <formal value="Family name, this is the name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father."/>
-              <comments value="family name is allowed to repeat. A single family name with spaces is equivalent to multiple family names with the same values."/>
+              <comments value="For family name, hyphenated names such as &quot;Smith-Jones&quot; are a single name, but names with spaces such as &quot;Smith Jones&quot; are broken into multiple parts."/>
               <min value="0"/>
               <max value="*"/>
               <type>
                 <code value="string"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="./part[partType = FAM]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN.1"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./FamilyName"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -2251,12 +2608,25 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
             <definition>
               <short value="Given names (not always &#39;first&#39;). Includes middle names"/>
               <formal value="Given name. NOTE: Not to be called &quot;first name&quot; since given names do not always come first."/>
+              <comments value="If only initials are recorded, they may be used in place of the full name."/>
               <min value="0"/>
               <max value="*"/>
               <type>
                 <code value="string"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="./part[partType = GIV]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN.2 + XPN.3"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./GivenNames"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -2270,6 +2640,18 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="string"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="./part[partType = PFX]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN.5"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./TitleCode"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -2283,6 +2665,14 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
                 <code value="string"/>
               </type>
               <isModifier value="false"/>
+              <mapping>
+                <identity value="rim"/>
+                <map value="./part[partType = SFX]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN/4"/>
+              </mapping>
             </definition>
           </element>
           <element>
@@ -2297,45 +2687,55 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="./usablePeriod[type=&quot;IVL&lt;TS&gt;&quot;]"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="XPN.13 + XPN.14"/>
+              </mapping>
+              <mapping>
+                <identity value="servd"/>
+                <map value="./StartDate and ./EndDate"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="NameUse"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/name-use"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.htm#HumanName">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for HumanName from <a href="http://hl7.org/fhir/datatypes.html#HumanName">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;age&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/age</id>
     <link href="http://hl7.org/implement/standards/fhir/age.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
         </text>
         <name value="Profile for Age on Quantity"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Age on Quantity for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Quantity"/>
           <name value="Age"/>
@@ -2352,15 +2752,19 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <constraint>
                 <key value="3"/>
-                <name value="Must have a system"/>
+                <name value="SHALL have a system"/>
                 <severity value="error"/>
-                <human value="If a code for the units is present, the system must also be present"/>
+                <human value="If a code for the units is present, the system SHALL also be present"/>
                 <xpath value="not(exists(f:code)) or exists(f:system)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN (see also Range) or CQ"/>
               </mapping>
             </definition>
           </element>
@@ -2377,27 +2781,42 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.2  / CQ - N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Quantity.comparator"/>
             <definition>
-              <short value="Relationship of stated value to actual value"/>
+              <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
               <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="QuantityCompararator"/>
+              <binding>
+                <name value="QuantityCompararator"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL properties"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.1  / CQ.1"/>
               </mapping>
             </definition>
           </element>
@@ -2405,7 +2824,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
             <path value="Quantity.units"/>
             <definition>
               <short value="Unit representation"/>
-              <formal value="A human readable form of the units."/>
+              <formal value="A human-readable form of the units."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -2413,8 +2832,12 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="rim"/>
+                <map value="PQ.unit"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2430,8 +2853,12 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2440,7 +2867,7 @@ Absolute URLs do not need to point to a FHIR RESTful server, though this is the 
             <definition>
               <short value="Coded form of the unit"/>
               <formal value="A computer processable form of the units in some unit representation system."/>
-              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+              <comments value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.
 
 The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
               <min value="0"/>
@@ -2450,45 +2877,51 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="QuantityCompararator"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;count&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/count</id>
     <link href="http://hl7.org/implement/standards/fhir/count.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
         </text>
         <name value="Profile for Count on Quantity"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Count on Quantity for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Quantity"/>
           <name value="Count"/>
@@ -2505,15 +2938,19 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <constraint>
                 <key value="3"/>
-                <name value="Must have a system"/>
+                <name value="SHALL have a system"/>
                 <severity value="error"/>
-                <human value="If a code for the units is present, the system must also be present"/>
+                <human value="If a code for the units is present, the system SHALL also be present"/>
                 <xpath value="not(exists(f:code)) or exists(f:system)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN (see also Range) or CQ"/>
               </mapping>
             </definition>
           </element>
@@ -2530,27 +2967,42 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.2  / CQ - N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Quantity.comparator"/>
             <definition>
-              <short value="Relationship of stated value to actual value"/>
+              <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
               <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="QuantityCompararator"/>
+              <binding>
+                <name value="QuantityCompararator"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL properties"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.1  / CQ.1"/>
               </mapping>
             </definition>
           </element>
@@ -2558,7 +3010,7 @@ The context of use may additionally require a code from a particular system (Unl
             <path value="Quantity.units"/>
             <definition>
               <short value="Unit representation"/>
-              <formal value="A human readable form of the units."/>
+              <formal value="A human-readable form of the units."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -2566,8 +3018,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="rim"/>
+                <map value="PQ.unit"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2583,8 +3039,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2593,7 +3053,7 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Coded form of the unit"/>
               <formal value="A computer processable form of the units in some unit representation system."/>
-              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+              <comments value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.
 
 The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
               <min value="0"/>
@@ -2603,45 +3063,51 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="QuantityCompararator"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;money&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/money</id>
     <link href="http://hl7.org/implement/standards/fhir/money.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
         </text>
         <name value="Profile for Money on Quantity"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Money on Quantity for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Quantity"/>
           <name value="Money"/>
@@ -2658,15 +3124,19 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <constraint>
                 <key value="3"/>
-                <name value="Must have a system"/>
+                <name value="SHALL have a system"/>
                 <severity value="error"/>
-                <human value="If a code for the units is present, the system must also be present"/>
+                <human value="If a code for the units is present, the system SHALL also be present"/>
                 <xpath value="not(exists(f:code)) or exists(f:system)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN (see also Range) or CQ"/>
               </mapping>
             </definition>
           </element>
@@ -2683,27 +3153,42 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.2  / CQ - N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Quantity.comparator"/>
             <definition>
-              <short value="Relationship of stated value to actual value"/>
+              <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
               <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="QuantityCompararator"/>
+              <binding>
+                <name value="QuantityCompararator"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL properties"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.1  / CQ.1"/>
               </mapping>
             </definition>
           </element>
@@ -2711,7 +3196,7 @@ The context of use may additionally require a code from a particular system (Unl
             <path value="Quantity.units"/>
             <definition>
               <short value="Unit representation"/>
-              <formal value="A human readable form of the units."/>
+              <formal value="A human-readable form of the units."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -2719,8 +3204,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="rim"/>
+                <map value="PQ.unit"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2736,8 +3225,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2746,7 +3239,7 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Coded form of the unit"/>
               <formal value="A computer processable form of the units in some unit representation system."/>
-              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+              <comments value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.
 
 The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
               <min value="0"/>
@@ -2756,45 +3249,51 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="QuantityCompararator"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;distance&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/distance</id>
     <link href="http://hl7.org/implement/standards/fhir/distance.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
         </text>
         <name value="Profile for Distance on Quantity"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Distance on Quantity for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Quantity"/>
           <name value="Distance"/>
@@ -2811,15 +3310,19 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <constraint>
                 <key value="3"/>
-                <name value="Must have a system"/>
+                <name value="SHALL have a system"/>
                 <severity value="error"/>
-                <human value="If a code for the units is present, the system must also be present"/>
+                <human value="If a code for the units is present, the system SHALL also be present"/>
                 <xpath value="not(exists(f:code)) or exists(f:system)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN (see also Range) or CQ"/>
               </mapping>
             </definition>
           </element>
@@ -2836,27 +3339,42 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.2  / CQ - N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Quantity.comparator"/>
             <definition>
-              <short value="Relationship of stated value to actual value"/>
+              <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
               <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="QuantityCompararator"/>
+              <binding>
+                <name value="QuantityCompararator"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL properties"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.1  / CQ.1"/>
               </mapping>
             </definition>
           </element>
@@ -2864,7 +3382,7 @@ The context of use may additionally require a code from a particular system (Unl
             <path value="Quantity.units"/>
             <definition>
               <short value="Unit representation"/>
-              <formal value="A human readable form of the units."/>
+              <formal value="A human-readable form of the units."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -2872,8 +3390,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="rim"/>
+                <map value="PQ.unit"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2889,8 +3411,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -2899,7 +3425,7 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Coded form of the unit"/>
               <formal value="A computer processable form of the units in some unit representation system."/>
-              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+              <comments value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.
 
 The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
               <min value="0"/>
@@ -2909,45 +3435,51 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="QuantityCompararator"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
     </summary>
   </entry>
   <entry>
     <title>&quot;duration&quot; as a profile (to help derivation)</title>
     <id>http://hl7.org/fhir/profile/duration</id>
     <link href="http://hl7.org/implement/standards/fhir/duration.profile.xml" rel="self"/>
-    <updated>2013-08-13T07:56:17.056+10:00</updated>
-    <published>2013-08-13T07:56:17.056+10:00</published>
+    <updated>2013-12-18T09:55:33.799+11:00</updated>
     <author>
       <name>HL7, Inc (FHIR Project)</name>
       <uri>http://hl7.org/fhir</uri>
     </author>
+    <published>2013-12-18T09:55:33.799+11:00</published>
     <content type="text/xml">
       <Profile xmlns="http://hl7.org/fhir">
         <text>
-          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
         </text>
         <name value="Profile for Duration on Quantity"/>
         <publisher value="FHIR Specification"/>
         <description value="Basic Profile for Duration on Quantity for validation support"/>
         <status value="draft"/>
-        <date value="2013-08-13"/>
+        <date value="2013-12-18"/>
+        <mapping>
+          <identity value="rim"/>
+          <uri value="http://hl7.org/v3"/>
+          <name value="RIM"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <uri value="http://hl7.org/v2"/>
+          <name value="HL7 v2"/>
+        </mapping>
         <structure>
           <type value="Quantity"/>
           <name value="Duration"/>
@@ -2964,15 +3496,19 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <constraint>
                 <key value="3"/>
-                <name value="Must have a system"/>
+                <name value="SHALL have a system"/>
                 <severity value="error"/>
-                <human value="If a code for the units is present, the system must also be present"/>
+                <human value="If a code for the units is present, the system SHALL also be present"/>
                 <xpath value="not(exists(f:code)) or exists(f:system)"/>
               </constraint>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ, IVL&lt;PQ&gt;, MO, CO, depending on the values"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN (see also Range) or CQ"/>
               </mapping>
             </definition>
           </element>
@@ -2989,27 +3525,42 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.value, CO.value, MO.value, IVL.high or IVL.low depending on the value"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.2  / CQ - N/A"/>
               </mapping>
             </definition>
           </element>
           <element>
             <path value="Quantity.comparator"/>
             <definition>
-              <short value="Relationship of stated value to actual value"/>
+              <short value="&lt; | &lt;= | &gt;= | &gt; - how to understand the value"/>
               <formal value="How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues. E.g. if the comparator is &quot;&lt;&quot; , then the real value is &lt; stated value."/>
-              <comments value="This is labelled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
+              <comments value="This is labeled as &quot;Is Modifier&quot; because the comparator modifies the interpretation of the value significantly. If there is no comparator, then there is no impact."/>
               <min value="0"/>
               <max value="1"/>
               <type>
                 <code value="code"/>
               </type>
               <isModifier value="true"/>
-              <binding value="QuantityCompararator"/>
+              <binding>
+                <name value="QuantityCompararator"/>
+                <isExtensible value="false"/>
+                <conformance value="required"/>
+                <referenceResource>
+                  <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
+                </referenceResource>
+              </binding>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="IVL properties"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="SN.1  / CQ.1"/>
               </mapping>
             </definition>
           </element>
@@ -3017,7 +3568,7 @@ The context of use may additionally require a code from a particular system (Unl
             <path value="Quantity.units"/>
             <definition>
               <short value="Unit representation"/>
-              <formal value="A human readable form of the units."/>
+              <formal value="A human-readable form of the units."/>
               <min value="0"/>
               <max value="1"/>
               <type>
@@ -3025,8 +3576,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
-                <map value="N/A"/>
+                <identity value="rim"/>
+                <map value="PQ.unit"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -3042,8 +3597,12 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="CO.codeSystem, PQ.translation.codeSystem"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
@@ -3052,7 +3611,7 @@ The context of use may additionally require a code from a particular system (Unl
             <definition>
               <short value="Coded form of the unit"/>
               <formal value="A computer processable form of the units in some unit representation system."/>
-              <comments value="The preferred system is UCUM, but SNOMED-CT can also be used (for customary units) or ISO 4217 for currency.
+              <comments value="The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.
 
 The context of use may additionally require a code from a particular system (Unless the Quantity element has a dataAbsentReason flag)."/>
               <min value="0"/>
@@ -3062,23 +3621,19 @@ The context of use may additionally require a code from a particular system (Unl
               </type>
               <isModifier value="false"/>
               <mapping>
-                <target value="http://hl7.org/v3"/>
+                <identity value="rim"/>
                 <map value="PQ.code, MO.currency, PQ.translation.code"/>
+              </mapping>
+              <mapping>
+                <identity value="v2"/>
+                <map value="(see OBX.6 etc) / CQ.2"/>
               </mapping>
             </definition>
           </element>
         </structure>
-        <binding>
-          <name value="QuantityCompararator"/>
-          <conformance value="required"/>
-          <referenceResource>
-            <type value="ValueSet"/>
-            <reference value="http://hl7.org/fhir/vs/quantity-comparator"/>
-          </referenceResource>
-        </binding>
       </Profile>
     </content>
-    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.htm#Quantity">FHIR Specification</a></div></div>
+    <summary type="xhtml"><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Quantity from <a href="http://hl7.org/fhir/datatypes.html#Quantity">FHIR Specification</a></div></div>
     </summary>
   </entry>
 </feed>

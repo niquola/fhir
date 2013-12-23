@@ -3,37 +3,39 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary." class="dict" href="condition-definitions.htm#Condition"><b>Condition</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="Subject of this condition." class="dict" href="condition-definitions.htm#Condition.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="patient.htm#Patient">Patient</a>)</span> <span style="color: navy">Subject of this condition</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
- &lt;<a title="Encounter during which the condition was first asserted." class="dict" href="condition-definitions.htm#Condition.encounter"><b>encounter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="encounter.htm#Encounter">Encounter</a>)</span> <span style="color: navy">Encounter during which the condition was first asserted</span><span style="color: Gray"> --&gt;</span>&lt;/encounter&gt;
- &lt;<a title="Person who takes responsibility for asserting the existence of the condition as part of the electronic record." class="dict" href="condition-definitions.htm#Condition.asserter"><b>asserter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>|<a href="patient.htm#Patient">Patient</a>)</span> <span style="color: navy">Person who asserts this condition</span><span style="color: Gray"> --&gt;</span>&lt;/asserter&gt;
- &lt;<a title="Estimated or actual date the condition/problem/diagnosis was first detected/suspected." class="dict" href="condition-definitions.htm#Condition.dateAsserted"><b>dateAsserted</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#date">date</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When first detected/suspected/entered</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Identification of the condition, problem or diagnosis." class="dict" href="condition-definitions.htm#Condition.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-code.htm">Identification of the condition, problem or diagnosis</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
- &lt;<a title="A category assigned to the condition. E.g. finding | Condition | diagnosis | concern | condition." class="dict" href="condition-definitions.htm#Condition.category"><b>category</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-category.htm">E.g. complaint | symptom | finding | diagnosis</a></span><span style="color: Gray"> --&gt;</span>&lt;/category&gt;
- &lt;<a title="The clinical status of the condition (this element modifies the meaning of other elements)" class="dict" href="condition-definitions.htm#Condition.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="condition-status.htm">provisional | working | confirmed | refuted</a></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The degree of confidence that this condition is correct (this element modifies the meaning of other elements)" class="dict" href="condition-definitions.htm#Condition.certainty"><span style="text-decoration: underline"><b>certainty</b></span></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-certainty.htm">Degree of confidence</a></span><span style="color: Gray"> --&gt;</span>&lt;/certainty&gt;
- &lt;<a title="A subjective assessment of the severity of the condition as evaluated by the clinician." class="dict" href="condition-definitions.htm#Condition.severity"><b>severity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-severity.htm">Subjective severity of condition</a></span><span style="color: Gray"> --&gt;</span>&lt;/severity&gt;
- &lt;<a title="Estimated or actual date the condition began, in the opinion of the clinician." class="dict" href="condition-definitions.htm#Condition.onset_x_"><b>onset[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#date">date</a>|<a href="datatypes.htm#Age">Age</a></span> <span style="color: navy">Estimated or actual date, or age</span><span style="color: Gray"> --&gt;</span>&lt;/onset[x]&gt;
- &lt;<a title="The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate." class="dict" href="condition-definitions.htm#Condition.abatement_x_"><b>abatement[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#date">date</a>|<a href="datatypes.htm#Age">Age</a>|<a href="datatypes.htm#boolean">boolean</a></span> <span style="color: navy">If/when in resolution/remission</span><span style="color: Gray"> --&gt;</span>&lt;/abatement[x]&gt;
- &lt;<a title="Clinical stage or grade of a condition. May include formal severity assessments." class="dict" href="condition-definitions.htm#Condition.stage"><b>stage</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Stage/grade, usually assessed formally --&gt;</span>
-  &lt;<a title="A simple summary of the stage such as &quot;Stage 3&quot;. The determination of the stage is disease-specific." class="dict" href="condition-definitions.htm#Condition.stage.summary"><b>summary</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Stage must have summary or assessment" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Simple summary (disease specific)</span><span style="color: Gray"> --&gt;</span>&lt;/summary&gt;
-  &lt;<a title="Reference to a formal record of the evidence on which the staging assessment is based." class="dict" href="condition-definitions.htm#Condition.stage.assessment"><b>assessment</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Stage must have summary or assessment" style="color: deeppink"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="resourcelist.htm">Any</a>)</span> <span style="color: navy">Formal record of assessment</span><span style="color: Gray"> --&gt;</span>&lt;/assessment&gt;
+&lt;<a title="Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary." class="dict" href="condition-definitions.html#Condition"><b>Condition</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="This records identifiers associated with this condition that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)." class="dict" href="condition-definitions.html#Condition.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">External Ids for this condition</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="Subject of this condition." class="dict" href="condition-definitions.html#Condition.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Subject of this condition</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="Encounter during which the condition was first asserted." class="dict" href="condition-definitions.html#Condition.encounter"><b>encounter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="encounter.html#Encounter">Encounter</a>)</span> <span style="color: navy">Encounter when condition first asserted</span><span style="color: Gray"> --&gt;</span>&lt;/encounter&gt;
+ &lt;<a title="Person who takes responsibility for asserting the existence of the condition as part of the electronic record." class="dict" href="condition-definitions.html#Condition.asserter"><b>asserter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="patient.html#Patient">Patient</a>)</span> <span style="color: navy">Person who asserts this condition</span><span style="color: Gray"> --&gt;</span>&lt;/asserter&gt;
+ &lt;<a title="Estimated or actual date the condition/problem/diagnosis was first detected/suspected." class="dict" href="condition-definitions.html#Condition.dateAsserted"><b>dateAsserted</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#date">date</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">When first detected/suspected/entered</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Identification of the condition, problem or diagnosis." class="dict" href="condition-definitions.html#Condition.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-code.html">Identification of the condition, problem or diagnosis</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+ &lt;<a title="A category assigned to the condition. E.g. finding | Condition | diagnosis | concern | condition." class="dict" href="condition-definitions.html#Condition.category"><b>category</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-category.html">E.g. complaint | symptom | finding | diagnosis</a></span><span style="color: Gray"> --&gt;</span>&lt;/category&gt;
+ &lt;<a title="The clinical status of the condition (this element modifies the meaning of other elements)" class="dict" href="condition-definitions.html#Condition.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="condition-status.html">provisional | working | confirmed | refuted</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The degree of confidence that this condition is correct (this element modifies the meaning of other elements)" class="dict" href="condition-definitions.html#Condition.certainty"><span style="text-decoration: underline"><b>certainty</b></span></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-certainty.html">Degree of confidence</a></span><span style="color: Gray"> --&gt;</span>&lt;/certainty&gt;
+ &lt;<a title="A subjective assessment of the severity of the condition as evaluated by the clinician." class="dict" href="condition-definitions.html#Condition.severity"><b>severity</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-severity.html">Subjective severity of condition</a></span><span style="color: Gray"> --&gt;</span>&lt;/severity&gt;
+ &lt;<a title="Estimated or actual date the condition began, in the opinion of the clinician." class="dict" href="condition-definitions.html#Condition.onset_x_"><b>onset[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#date">date</a>|<a href="datatypes.html#Age">Age</a></span> <span style="color: navy">Estimated or actual date, or age</span><span style="color: Gray"> --&gt;</span>&lt;/onset[x]&gt;
+ &lt;<a title="The date or estimated date that the condition resolved or went into remission. This is called &quot;abatement&quot; because of the many overloaded connotations associated with &quot;remission&quot; or &quot;resolution&quot; - Conditions are never really resolved, but they can abate." class="dict" href="condition-definitions.html#Condition.abatement_x_"><b>abatement[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#date">date</a>|<a href="datatypes.html#Age">Age</a>|<a href="datatypes.html#boolean">boolean</a></span> <span style="color: navy">If/when in resolution/remission</span><span style="color: Gray"> --&gt;</span>&lt;/abatement[x]&gt;
+ &lt;<a title="Clinical stage or grade of a condition. May include formal severity assessments." class="dict" href="condition-definitions.html#Condition.stage"><b>stage</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Stage/grade, usually assessed formally --&gt;</span>
+  &lt;<a title="A simple summary of the stage such as &quot;Stage 3&quot;. The determination of the stage is disease-specific." class="dict" href="condition-definitions.html#Condition.stage.summary"><b>summary</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Stage SHALL have summary or assessment" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Simple summary (disease specific)</span><span style="color: Gray"> --&gt;</span>&lt;/summary&gt;
+  &lt;<a title="Reference to a formal record of the evidence on which the staging assessment is based." class="dict" href="condition-definitions.html#Condition.stage.assessment"><b>assessment</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: Stage SHALL have summary or assessment" style="color: brown"><b><img alt="??" src="lock.png"/> 0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Formal record of assessment</span><span style="color: Gray"> --&gt;</span>&lt;/assessment&gt;
  &lt;/stage&gt;
- &lt;<a title="Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed." class="dict" href="condition-definitions.htm#Condition.evidence"><b>evidence</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Supporting evidence --&gt;</span>
-  &lt;<a title="A manifestation or symptom that led to the recording of this condition." class="dict" href="condition-definitions.htm#Condition.evidence.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: evidence must have code or details" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Manifestation/symptom</span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
-  &lt;<a title="Links to other relevant information, including pathology reports." class="dict" href="condition-definitions.htm#Condition.evidence.detail"><b>detail</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: evidence must have code or details" style="color: deeppink"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="resourcelist.htm">Any</a>)</span> <span style="color: navy">Supporting information found elsewhere</span><span style="color: Gray"> --&gt;</span>&lt;/detail&gt;
+ &lt;<a title="Supporting Evidence / manifestations that are the basis on which this condition is suspected or confirmed." class="dict" href="condition-definitions.html#Condition.evidence"><b>evidence</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Supporting evidence --&gt;</span>
+  &lt;<a title="A manifestation or symptom that led to the recording of this condition." class="dict" href="condition-definitions.html#Condition.evidence.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: evidence SHALL have code or details" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Manifestation/symptom</span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="Links to other relevant information, including pathology reports." class="dict" href="condition-definitions.html#Condition.evidence.detail"><b>detail</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-2: evidence SHALL have code or details" style="color: brown"><b><img alt="??" src="lock.png"/> 0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="resourcelist.html">Any</a>)</span> <span style="color: navy">Supporting information found elsewhere</span><span style="color: Gray"> --&gt;</span>&lt;/detail&gt;
  &lt;/evidence&gt;
- &lt;<a title="The anatomical location where this condition manifests itself." class="dict" href="condition-definitions.htm#Condition.location"><b>location</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Anatomical location, if relevant --&gt;</span>
-  &lt;<a title="Code that identifies the structural location." class="dict" href="condition-definitions.htm#Condition.location.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: location must have code or details" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Location - may include laterality</span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
-  &lt;<a title="Detailed anatomical location information." class="dict" href="condition-definitions.htm#Condition.location.detail"><b>detail</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: location must have code or details" style="color: deeppink"><b>0..1</b></span> <span style="color: navy">Precise location details</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The anatomical location where this condition manifests itself." class="dict" href="condition-definitions.html#Condition.location"><b>location</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Anatomical location, if relevant --&gt;</span>
+  &lt;<a title="Code that identifies the structural location." class="dict" href="condition-definitions.html#Condition.location.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: location SHALL have code or details" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy">Location - may include laterality</span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="Detailed anatomical location information." class="dict" href="condition-definitions.html#Condition.location.detail"><b>detail</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-3: location SHALL have code or details" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Precise location details</span><span style="color: Gray"> --&gt;</span>
  &lt;/location&gt;
- &lt;<a title="Further conditions, problems, diagnoses, procedures or events that are related in some way to this condition, or the substance that caused/triggered this Condition." class="dict" href="condition-definitions.htm#Condition.relatedItem"><b>relatedItem</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Causes or precedents for this Condition --&gt;</span>
-  &lt;<a title="The type of relationship that this condition has to the related item." class="dict" href="condition-definitions.htm#Condition.relatedItem.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="condition-relationship-type.htm">due-to | follows</a></span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="Code that identifies the target of this relationship. The code takes the place of a detailed instance target." class="dict" href="condition-definitions.htm#Condition.relatedItem.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-4: Relationship must have either a code or a target" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-code.htm">Relationship target by means of a predefined code</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
-  &lt;<a title="Target of the relationship." class="dict" href="condition-definitions.htm#Condition.relatedItem.target"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-4: Relationship must have either a code or a target" style="color: deeppink"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="condition.htm#Condition">Condition</a>|<a href="procedure.htm#Procedure">Procedure</a>|<a href="substance.htm#Substance">Substance</a>)</span> <span style="color: navy">Relationship target resource</span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
+ &lt;<a title="Further conditions, problems, diagnoses, procedures or events that are related in some way to this condition, or the substance that caused/triggered this Condition." class="dict" href="condition-definitions.html#Condition.relatedItem"><b>relatedItem</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Causes or precedents for this Condition --&gt;</span>
+  &lt;<a title="The type of relationship that this condition has to the related item." class="dict" href="condition-definitions.html#Condition.relatedItem.type"><b>type</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="condition-relationship-type.html">due-to | following</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="Code that identifies the target of this relationship. The code takes the place of a detailed instance target." class="dict" href="condition-definitions.html#Condition.relatedItem.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-4: Relationship SHALL have either a code or a target" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-condition-code.html">Relationship target by means of a predefined code</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
+  &lt;<a title="Target of the relationship." class="dict" href="condition-definitions.html#Condition.relatedItem.target"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-4: Relationship SHALL have either a code or a target" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="condition.html#Condition">Condition</a>|<a href="procedure.html#Procedure">Procedure</a>|<a href="medicationadministration.html#MedicationAdministration">MedicationAdministration</a>|
+    <a href="immunization.html#Immunization">Immunization</a>|<a href="medicationstatement.html#MedicationStatement">MedicationStatement</a>)</span> <span style="color: navy">Relationship target resource</span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
  &lt;/relatedItem&gt;
- &lt;<a title="Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis." class="dict" href="condition-definitions.htm#Condition.notes"><b>notes</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional information about the Condition</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis." class="dict" href="condition-definitions.html#Condition.notes"><b>notes</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Additional information about the Condition</span><span style="color: Gray"> --&gt;</span>
 &lt;/Condition&gt;
 </pre></div>
   </text>
@@ -41,7 +43,17 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. Use to record detailed information about conditions, problems or diagnoses recognized by a clinician. There are many uses including: recording a Diagnosis during an Encounter; populating a problem List or a Summary Statement, such as a Discharge Summary."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
   <structure>
     <type value="Condition"/>
     <publish value="true"/>
@@ -57,7 +69,7 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PPR message"/>
         </mapping>
       </definition>
@@ -66,9 +78,24 @@
       <path value="Condition.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -83,7 +110,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="Condition.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -115,6 +142,39 @@ associated with the use of extensions by any application, project, or standard -
       </definition>
     </element>
     <element>
+      <path value="Condition.identifier"/>
+      <definition>
+        <short value="External Ids for this condition"/>
+        <formal value="This records identifiers associated with this condition that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation)."/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Identifier"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".id"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.subject"/>
       <definition>
         <short value="Subject of this condition"/>
@@ -126,15 +186,31 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PID-3"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="Condition.subject.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.encounter"/>
       <definition>
-        <short value="Encounter during which the condition was first asserted"/>
+        <short value="Encounter when condition first asserted"/>
         <formal value="Encounter during which the condition was first asserted."/>
         <min value="0"/>
         <max value="1"/>
@@ -143,9 +219,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PV1-19 (+PV1-54)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.encounter.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -160,9 +252,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="REL-7.1 identifier + REL-7.12 type code"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.asserter.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -177,9 +285,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="REL-11"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.dateAsserted.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -193,11 +317,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ConditionCode"/>
+        <binding>
+          <name value="ConditionKind"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-code"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PRB-3"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.code.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -212,11 +359,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ConditionCategory"/>
+        <binding>
+          <name value="ConditionCategory"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-category"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="&#39;problem&#39; if from PRB-3. &#39;diagnosis&#39; if from DG1 segment in PV1 message"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.category.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -230,11 +400,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="true"/>
-        <binding value="ConditionStatus"/>
+        <binding>
+          <name value="ConditionStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-status"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PRB-14 / DG1-6"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.status.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -249,11 +442,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="true"/>
-        <binding value="ConditionCertainty"/>
+        <binding>
+          <name value="ConditionCertainty"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-certainty"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PRB-19"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.certainty.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -268,11 +484,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ConditionSeverity"/>
+        <binding>
+          <name value="ConditionSeverity"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-severity"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PRB-26 / ABS-3"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.severity.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -291,9 +530,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PRB-16"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.onset[x].extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -319,6 +574,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
       </definition>
     </element>
     <element>
+      <path value="Condition.abatement[x].extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.stage"/>
       <definition>
         <short value="Stage/grade, usually assessed formally"/>
@@ -329,9 +600,25 @@ If there is no abatement element, it is unknown whether the condition has resolv
           <key value="1"/>
           <name value="Stage rule"/>
           <severity value="error"/>
-          <human value="Stage must have summary or assessment"/>
+          <human value="Stage SHALL have summary or assessment"/>
           <xpath value="exists(f:summary) or exists(f:assessment)"/>
         </constraint>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.stage.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -344,6 +631,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
         <max value="1"/>
         <type>
           <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.stage.summary.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -362,6 +665,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
       </definition>
     </element>
     <element>
+      <path value="Condition.stage.assessment.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.evidence"/>
       <definition>
         <short value="Supporting evidence"/>
@@ -373,9 +692,25 @@ If there is no abatement element, it is unknown whether the condition has resolv
           <key value="2"/>
           <name value="Evidence"/>
           <severity value="error"/>
-          <human value="evidence must have code or details"/>
+          <human value="evidence SHALL have code or details"/>
           <xpath value="exists(f:code) or exists(f:detail)"/>
         </constraint>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.evidence.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -388,6 +723,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
         <max value="1"/>
         <type>
           <code value="CodeableConcept"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.evidence.code.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -406,6 +757,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
       </definition>
     </element>
     <element>
+      <path value="Condition.evidence.detail.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.location"/>
       <definition>
         <short value="Anatomical location, if relevant"/>
@@ -417,9 +784,25 @@ If there is no abatement element, it is unknown whether the condition has resolv
           <key value="3"/>
           <name value="Location"/>
           <severity value="error"/>
-          <human value="location must have code or details"/>
+          <human value="location SHALL have code or details"/>
           <xpath value="exists(f:code) or exists(f:detail)"/>
         </constraint>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.location.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
         <isModifier value="false"/>
       </definition>
     </element>
@@ -438,6 +821,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
       </definition>
     </element>
     <element>
+      <path value="Condition.location.code.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.location.detail"/>
       <definition>
         <short value="Precise location details"/>
@@ -446,6 +845,22 @@ If there is no abatement element, it is unknown whether the condition has resolv
         <max value="1"/>
         <type>
           <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.location.detail.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -462,20 +877,36 @@ If there is no abatement element, it is unknown whether the condition has resolv
           <key value="4"/>
           <name value="Relationship"/>
           <severity value="error"/>
-          <human value="Relationship must have either a code or a target"/>
+          <human value="Relationship SHALL have either a code or a target"/>
           <xpath value="exists(f:code) != exists(f:target)"/>
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="could infer from presence of multiple PRB segments in a PPR message that the problems are related, but not clear how to communicate the nature of the relationship"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="Condition.relatedItem.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="Condition.relatedItem.type"/>
       <definition>
-        <short value="due-to | follows"/>
+        <short value="due-to | following"/>
         <formal value="The type of relationship that this condition has to the related item."/>
         <min value="1"/>
         <max value="1"/>
@@ -483,7 +914,30 @@ If there is no abatement element, it is unknown whether the condition has resolv
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ConditionRelationshipType"/>
+        <binding>
+          <name value="ConditionRelationshipType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-relationship-type"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.relatedItem.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -497,7 +951,30 @@ If there is no abatement element, it is unknown whether the condition has resolv
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ConditionFinding"/>
+        <binding>
+          <name value="ConditionKind"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/condition-code"/>
+          </referenceResource>
+        </binding>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.relatedItem.code.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -508,7 +985,23 @@ If there is no abatement element, it is unknown whether the condition has resolv
         <min value="0"/>
         <max value="1"/>
         <type>
-          <code value="Resource(Condition|Procedure|Substance)"/>
+          <code value="Resource(Condition|Procedure|MedicationAdministration|Immunization|MedicationStatement)"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="Condition.relatedItem.target.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -525,71 +1018,26 @@ If there is no abatement element, it is unknown whether the condition has resolv
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="NTE child of PRB"/>
         </mapping>
       </definition>
     </element>
+    <element>
+      <path value="Condition.notes.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="ConditionFinding"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-code"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ConditionCategory"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-category"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ConditionCode"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-code"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ConditionStatus"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-status"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ConditionCertainty"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-certainty"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ConditionRelationshipType"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-relationship-type"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ConditionSeverity"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/condition-severity"/>
-    </referenceResource>
-  </binding>
 </Profile>

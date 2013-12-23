@@ -1,4 +1,4 @@
-<translations>
+﻿<translations>
 <!--
  This file is for the convenience of implementers, to enable sharing of language translations.
  There is no obligation for any implementer to use the messages contained in this file, but
@@ -11,9 +11,79 @@
    dutch: Ewout, Alexander
    italian: origama
 
+   MSG_UNKNOWN_COMPARTMENT
+   
 -->
   <item id="Other">
     <translation lang="en">Other</translation>
+  </item>
+
+  <item id="Appointment">
+    <translation lang="en">Appointment</translation>
+  </item>
+  
+  <item id="ConceptMap">
+    <translation lang="en">ConceptMap</translation>
+  </item>  
+
+  <item id="DeviceObservationReport">
+    <translation lang="en">DeviceObservationReport</translation>
+  </item>
+  
+  <item id="DocumentManifest">
+    <translation lang="en">DocumentManifest</translation>
+  </item>
+  
+  <item id="Remittance">
+    <translation lang="en">Remittance</translation>
+  </item>
+  
+  <item id="Claim">
+    <translation lang="en">Claim</translation>
+  </item>
+  
+  <item id="GeneticAnalysis">
+    <translation lang="en">GeneticAnalysis</translation>
+  </item>
+
+  <item id="Microarray">
+    <translation lang="en">Microarray</translation>
+  </item>
+
+  <item id="Sequence">
+    <translation lang="en">Sequence</translation>
+  </item>
+
+  <item id="GeneExpression">
+    <translation lang="en">GeneExpression</translation>
+  </item>
+
+  <item id="GVFMeta">
+    <translation lang="en">GVFMeta</translation>
+  </item>
+
+  <item id="VCFVariant">
+    <translation lang="en">VCFVariant</translation>
+  </item>
+
+  <item id="VCFMeta">
+    <translation lang="en">VCFMeta</translation>
+  </item>
+
+  <item id="GVFVariant">
+    <translation lang="en">GVFVariant</translation>
+  </item>
+
+  <item id="SequencingLab">
+    <translation lang="en">SeuencingLab</translation>
+  </item>
+
+  <item id="SequencingAnalysis">
+    <translation lang="en">SeuencingAnalysis</translation>
+  </item>
+  
+  <item id="User">
+    <translation lang="en">User</translation>
   </item>
   
   <item id="AdverseReaction">
@@ -48,18 +118,6 @@
     <translation lang="en">Device</translation>
   </item>
 
-  <item id="DeviceCapabilities">
-    <translation lang="en">DeviceCapabilities</translation>
-  </item>
-
-  <item id="DeviceLog">
-    <translation lang="en">DeviceLog</translation>
-  </item>
-
-  <item id="DeviceObservation">
-    <translation lang="en">DeviceObservation</translation>
-  </item>
-
   <item id="DiagnosticOrder">
     <translation lang="en">DiagnosticOrder</translation>
   </item>
@@ -68,8 +126,8 @@
     <translation lang="en">DiagnosticReport</translation>
   </item>
 
-  <item id="Document">
-    <translation lang="en">Document</translation>
+  <item id="Composition">
+    <translation lang="en">Composition</translation>
   </item>
 
   <item id="DocumentReference">
@@ -92,8 +150,8 @@
     <translation lang="en">Immunization</translation>
   </item>
 
-  <item id="ImmunizationProfile">
-    <translation lang="en">ImmunizationProfile</translation>
+  <item id="ImmunizationRecommendation">
+    <translation lang="en">ImmunizationRecommendation</translation>
   </item>
 
   <item id="List">
@@ -128,8 +186,8 @@
     <translation lang="en">MedicationStatement</translation>
   </item>
 
-  <item id="Message">
-    <translation lang="en">Message</translation>
+  <item id="MessageHeader">
+    <translation lang="en">MessageHeader</translation>
   </item>
 
   <item id="Observation">
@@ -249,6 +307,12 @@
   <item id="MSG_TRANSACTION_DUPLICATE_ID">
     <!-- <translation lang="du">Dubbele id in bundel: %s</translation> -->
     <translation lang="en">Duplicate Identifier in transaction: %s</translation>
+    <!-- <translation lang="it">Identificatore duplicato nel batch: %s</translation> -->
+  </item>
+
+  <item id="MSG_TRANSACTION_MISSING_ID">
+    <!-- <translation lang="du">Dubbele id in bundel: %s</translation> -->
+    <translation lang="en">Missing Identifier in transaction - an entry.id must be provided</translation>
     <!-- <translation lang="it">Identificatore duplicato nel batch: %s</translation> -->
   </item>
 
@@ -510,9 +574,9 @@
   </item>
 
   <item id="MSG_UNKNOWN_CONTENT">
-    <translation lang="du">Onbekende content (%s)</translation>
-    <translation lang="en">Unknown Content (%s)</translation>
-    <translation lang="it">Contenuto Sconosciuto (%s)</translation>
+    <translation lang="du">Onbekende content (%s) at %s</translation>
+    <translation lang="en">Unknown Content (%s) at %s</translation>
+    <translation lang="it">Contenuto Sconosciuto (%s) at %s</translation>
   </item>
 
   <item id="MSG_UNKNOWN_OPERATION">
@@ -553,7 +617,7 @@
 
   <item id="MSG_WRONG_NS">
     <translation lang="du">Dit lijkt geen FHIR resource of een atomfeed te zijn (verkeerde namespace "%s")</translation>
-    <translation lang="en">This does not appear to be a FHIR resource or an atom feed (wrong namespace "%s")</translation>
+    <translation lang="en">This does not appear to be a FHIR element, resource or atom feed (wrong namespace "%s")</translation>
     <translation lang="it">Questa non sembra essere una risorsa FHIR o un atom feed (namespace errato: "%s")</translation>
   </item>
 
@@ -575,10 +639,8 @@
     <translation lang="it">Primo</translation>
   </item>
 
-  <item id="NAME_GENERAL_UPLOAD">
-    <translation lang="du">Algemene upload</translation>
-    <translation lang="en">General Upload</translation>
-    <translation lang="it">Upload Generale</translation>
+  <item id="NAME_UPLOAD_SERVICES">
+    <translation lang="en">Upload Services</translation>
   </item>
 
   <item id="NAME_HISTORY">
@@ -793,5 +855,14 @@
     <translation lang="en">Resources with identity "example" cannot be deleted (for testing/training purposes)</translation>
   </item>
 
+  <item id="SEARCH_SUMMARY">
+    <translation lang="en">Summary: </translation>
+  </item>
+  
+  
+  <item id="SEARCH_SUMMARY_COMMENT">
+    <translation lang="en">Return just a summary for each resource (if applicable)</translation>
+  </item>
+  
   
 </translations>

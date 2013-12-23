@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>XDSRelationshipType</h2>
       <p>The kind of relationship between two XDS documents</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/xds-relationship-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/xds-relationship-type</p>
       <table>
         <tr>
           <td>
@@ -20,28 +20,38 @@
           </td>
         </tr>
         <tr>
-          <td>APND</td>
+          <td>
+            <a name="APND">APND</a>
+          </td>
           <td/>
           <td>A separate XDS Document that references a prior document, and may extend or 
 alter the observations in the prior document.</td>
         </tr>
         <tr>
-          <td>RPLC</td>
+          <td>
+            <a name="RPLC">RPLC</a>
+          </td>
           <td/>
           <td>A new version of an existing document.</td>
         </tr>
         <tr>
-          <td>XFRM</td>
+          <td>
+            <a name="XFRM">XFRM</a>
+          </td>
           <td/>
           <td>A transformed document is derived by a machine translation from some other format.</td>
         </tr>
         <tr>
-          <td>XFRM_RPLC</td>
+          <td>
+            <a name="XFRM_RPLC">XFRM_RPLC</a>
+          </td>
           <td/>
           <td>Both a XFRM and a RPLC relationship.</td>
         </tr>
         <tr>
-          <td>signs</td>
+          <td>
+            <a name="signs">signs</a>
+          </td>
           <td/>
           <td>This document signs the target document.</td>
         </tr>
@@ -61,7 +71,7 @@ alter the observations in the prior document.</td>
   </telecom>
   <description value="The kind of relationship between two XDS documents"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/xds-relationship-type"/>
     <caseSensitive value="true"/>

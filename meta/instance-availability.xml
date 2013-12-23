@@ -12,7 +12,7 @@
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include these codes as defined in 
-          <a href="valueset-dicom-dcim.htm">http://nema.org/dicom/dcid</a>
+          <a href="valueset-dicom-dcim.html">http://nema.org/dicom/dcid</a>
           <table>
             <tr>
               <td>
@@ -64,31 +64,27 @@
   <description value="Availability of the resource"/>
   <copyright value="These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <compose>
     <include>
       <system value="http://nema.org/dicom/dcid"/>
       <code value="ONLINE">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="Resources are immediately available,."/>
         </extension>
       </code>
       <code value="OFFLINE">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="Resources need to be retrieved by manual intervention."/>
         </extension>
       </code>
       <code value="NEARLINE">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="Resources need to be retrieved from relatively slow media."/>
         </extension>
       </code>
       <code value="UNAVAILABLE">
-        <extension>
-          <url value="http://hl7.org/fhir/tools/extensions#definition"/>
+        <extension url="http://hl7.org/fhir/Profile/tools-extensions#definition">
           <valueString value="Resources cannot be retrieved."/>
         </extension>
       </code>

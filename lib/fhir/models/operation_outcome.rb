@@ -2,8 +2,11 @@
 # that result from a system action.
 class Fhir::OperationOutcome < Fhir::Resource
   invariants do
-    validates_presence_of :issues
+    validates_presence_of :issue
   end
+
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
 
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
@@ -15,7 +18,10 @@ class Fhir::OperationOutcome < Fhir::Resource
       validates_presence_of :severity
     end
 
-    # error | warning | information
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # fatal | error | warning | information
     attribute :severity, Fhir::Code
 
     # Error or warning code
@@ -25,10 +31,10 @@ class Fhir::OperationOutcome < Fhir::Resource
     attribute :details, String
 
     # XPath of element(s) related to issue
-    attribute :locations, Array[String]
+    attribute :location, Array[String]
   end
 
-  attribute :issues, Array[Issue]
+  attribute :issue, Array[Issue]
 end
 
 

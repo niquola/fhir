@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>BindingConformance</h2>
       <p>Binding conformance for applications</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/binding-conformance</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/binding-conformance</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>required</td>
+          <td>
+            <a name="required">required</a>
+          </td>
           <td/>
           <td>Only codes in the specified set are allowed.  If the binding is extensible, other codes may be used for concepts not covered by the bound set of codes.</td>
         </tr>
         <tr>
-          <td>preferred</td>
+          <td>
+            <a name="preferred">preferred</a>
+          </td>
           <td/>
           <td>For greater interoperability, implementers are strongly encouraged to use the bound set of codes, however alternate codes may be used in derived profiles and implementations if necessary without being considered non-conformant.</td>
         </tr>
         <tr>
-          <td>example</td>
+          <td>
+            <a name="example">example</a>
+          </td>
           <td/>
           <td>The codes in the set are an example to illustrate the meaning of the field. There is no particular preference for its use nor any assertion that the provided values are sufficient to meet implementation needs.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="Binding conformance for applications"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.979+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/binding-conformance"/>
     <caseSensitive value="true"/>

@@ -1,7 +1,7 @@
 # A technical identifier - identifies some entity uniquely
 # and unambiguously.
 class Fhir::Identifier < Fhir::DataType
-  # The use of this identifier
+  # usual | official | temp | secondary (If known)
   attribute :use, Fhir::Code
 
   # Description of identifier
@@ -11,7 +11,7 @@ class Fhir::Identifier < Fhir::DataType
   attribute :system, Fhir::URI
 
   # The value that is unique
-  attribute :key, String
+  attribute :value, String
 
   # Time period when id was valid for use
   attribute :period, Fhir::Period
@@ -20,3 +20,4 @@ class Fhir::Identifier < Fhir::DataType
   resource_reference :assigner, [Fhir::Organization]
 end
 
+Fhir.load_extension('identifier')

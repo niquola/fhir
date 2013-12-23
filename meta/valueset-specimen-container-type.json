@@ -1,1 +1,32 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>SpecimenContainer<\/h2><p>Containers which may hold specimens or specimen containers - all snomed specimen containers<\/p><p>This value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include codes from http://snomed.info/id where concept  is-a  434711009<\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/specimen-container-type"},"name":{"value":"SpecimenContainer"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"Containers which may hold specimens or specimen containers - all snomed specimen containers"},"status":{"value":"draft"},"compose":{"include":[{"system":{"value":"http://snomed.info/id"},"filter":[{"property":{"value":"concept"},"op":{"value":"is-a"},"value":{"value":"434711009"}}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>SpecimenContainer</h2><p>Containers which may hold specimens or specimen containers - all snomed specimen containers</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include codes from http://snomed.info/sct where concept  is-a  434711009</li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/specimen-container-type",
+  "name": "SpecimenContainer",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Containers which may hold specimens or specimen containers - all snomed specimen containers",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "434711009"
+          }
+        ]
+      }
+    ]
+  }
+}

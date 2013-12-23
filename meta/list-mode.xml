@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ListMode</h2>
       <p>The processing mode that applies to this list</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/list-mode</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/list-mode</p>
       <table>
         <tr>
           <td>
@@ -20,17 +20,23 @@
           </td>
         </tr>
         <tr>
-          <td>working</td>
+          <td>
+            <a name="working">working</a>
+          </td>
           <td/>
           <td>This list is the master list, maintained in an ongoing fashion with regular updates as the real world list it is tracking changes.</td>
         </tr>
         <tr>
-          <td>snapshot</td>
+          <td>
+            <a name="snapshot">snapshot</a>
+          </td>
           <td/>
           <td>This list was prepared as a snapshot. It should not be assumed to be current.</td>
         </tr>
         <tr>
-          <td>changes</td>
+          <td>
+            <a name="changes">changes</a>
+          </td>
           <td/>
           <td>The list is prepared as a statement of changes that have been made or recommended.</td>
         </tr>
@@ -50,7 +56,7 @@
   </telecom>
   <description value="The processing mode that applies to this list"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.975+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/list-mode"/>
     <caseSensitive value="true"/>

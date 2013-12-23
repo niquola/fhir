@@ -1,0 +1,104 @@
+{
+  "resourceType": "ConceptMap",
+  "identifier": "http://hl7.org/fhir/cm/v3/name-use",
+  "name": "v3 map for NameUse",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v3 Map (EntityNameUseR2)",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.978+11:00",
+  "source": {
+    "reference": "http://hl7.org/fhir/vs/name-use"
+  },
+  "target": {
+    "reference": "http://hl7.org/fhir/v3/vs/EntityNameUseR2"
+  },
+  "concept": [
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "usual",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "C",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "official",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "OR",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "temp",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "T",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "nickname",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "P",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "anonymous",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "ANON",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "old",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "OLD",
+          "equivalence": "equivalent"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/name-use",
+      "code": "maiden",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/EntityNameUseR2",
+          "code": "M",
+          "equivalence": "equal"
+        }
+      ]
+    }
+  ]
+}

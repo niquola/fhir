@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ConditionStatus</h2>
       <p>The clinical status of the Condition or diagnosis</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/condition-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/condition-status</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>provisional</td>
+          <td>
+            <a name="provisional">provisional</a>
+          </td>
           <td/>
           <td>This is a tentative diagnosis - still a candidate that is under consideration.</td>
         </tr>
         <tr>
-          <td>working</td>
+          <td>
+            <a name="working">working</a>
+          </td>
           <td/>
           <td>The patient is being treated on the basis that this is the condition, but it is still not confirmed.</td>
         </tr>
         <tr>
-          <td>confirmed</td>
+          <td>
+            <a name="confirmed">confirmed</a>
+          </td>
           <td/>
           <td>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</td>
         </tr>
         <tr>
-          <td>refuted</td>
+          <td>
+            <a name="refuted">refuted</a>
+          </td>
           <td/>
           <td>This condition has been ruled out by diagnostic and clinical evidence.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The clinical status of the Condition or diagnosis"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/condition-status"/>
     <caseSensitive value="true"/>

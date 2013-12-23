@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <identifier value="http://hl7.org/fhir/cm/v3/data-absent-reason"/>
+  <name value="v3 map for DataAbsentReason"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <telecom>
+    <system value="url"/>
+    <value value="http://hl7.org/fhir"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="fhir@lists.hl7.org"/>
+  </telecom>
+  <description value="v3 Map (NullFlavor)"/>
+  <status value="draft"/>
+  <date value="2013-12-18T09:56:09.970+11:00"/>
+  <source>
+    <reference value="http://hl7.org/fhir/vs/data-absent-reason"/>
+  </source>
+  <target>
+    <reference value="http://hl7.org/fhir/v3/vs/NullFlavor"/>
+  </target>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="unknown"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="UNK"/>
+      <equivalence value="equal"/>
+    </map>
+  </concept>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="asked"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="ASKU"/>
+      <equivalence value="equal"/>
+    </map>
+  </concept>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="temp"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NAV"/>
+      <equivalence value="equal"/>
+    </map>
+  </concept>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="notasked"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NASK"/>
+      <equivalence value="equal"/>
+    </map>
+  </concept>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="masked"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="MSK"/>
+      <equivalence value="equal"/>
+    </map>
+  </concept>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="unsupported"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NA"/>
+      <equivalence value="wider"/>
+    </map>
+  </concept>
+  <concept>
+    <system value="http://hl7.org/fhir/data-absent-reason"/>
+    <code value="error"/>
+    <map>
+      <system value="http://hl7.org/fhir/v3/NullFlavor"/>
+      <code value="NA"/>
+      <equivalence value="wider"/>
+    </map>
+  </concept>
+</ConceptMap>

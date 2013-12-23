@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>PractitionerRole</h2>
       <p>This example value set defines a set of codes that can be used to indicate the role of a Practitioner.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/practitioner-role</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/practitioner-role</p>
       <table>
         <tr>
           <td>
@@ -20,32 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>doctor</td>
+          <td>
+            <a name="doctor">doctor</a>
+          </td>
           <td/>
           <td/>
         </tr>
         <tr>
-          <td>nurse</td>
+          <td>
+            <a name="nurse">nurse</a>
+          </td>
           <td/>
           <td/>
         </tr>
         <tr>
-          <td>pharmacist</td>
+          <td>
+            <a name="pharmacist">pharmacist</a>
+          </td>
           <td/>
           <td/>
         </tr>
         <tr>
-          <td>researcher</td>
+          <td>
+            <a name="researcher">researcher</a>
+          </td>
           <td/>
           <td/>
         </tr>
         <tr>
-          <td>teacher</td>
+          <td>
+            <a name="teacher">teacher</a>
+          </td>
           <td>Teacher/educator</td>
           <td/>
         </tr>
         <tr>
-          <td>ict</td>
+          <td>
+            <a name="ict">ict</a>
+          </td>
           <td>ICT professional</td>
           <td/>
         </tr>

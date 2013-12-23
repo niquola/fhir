@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MedicationAdministrationStatus</h2>
       <p>A set of codes indicating the current status of a MedicationAdministration</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/medication-admin-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/medication-admin-status</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>active</td>
+          <td>
+            <a name="inprogress">in progress</a>
+          </td>
           <td/>
           <td>The administration has started but has not yet completed.</td>
         </tr>
         <tr>
-          <td>held</td>
+          <td>
+            <a name="onhold">on hold</a>
+          </td>
           <td/>
-          <td>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;held&quot;.</td>
+          <td>Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;suspended&quot;.</td>
         </tr>
         <tr>
-          <td>completed</td>
+          <td>
+            <a name="completed">completed</a>
+          </td>
           <td/>
           <td>All actions that are implied by the administration have occurred.</td>
         </tr>
         <tr>
-          <td>entered in error</td>
+          <td>
+            <a name="enteredinerror">entered in error</a>
+          </td>
           <td/>
           <td>The administration was entered in error and therefore nullified.</td>
         </tr>
         <tr>
-          <td>stopped</td>
+          <td>
+            <a name="stopped">stopped</a>
+          </td>
           <td/>
           <td>Actions implied by the administration have been permanently halted, before all of them occurred.</td>
         </tr>
@@ -60,17 +70,17 @@
   </telecom>
   <description value="A set of codes indicating the current status of a MedicationAdministration"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/medication-admin-status"/>
     <caseSensitive value="true"/>
     <concept>
-      <code value="active"/>
+      <code value="in progress"/>
       <definition value="The administration has started but has not yet completed."/>
     </concept>
     <concept>
-      <code value="held"/>
-      <definition value="Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;held&quot;."/>
+      <code value="on hold"/>
+      <definition value="Actions implied by the administration have been temporarily halted, but are expected to continue later. May also be called &quot;suspended&quot;."/>
     </concept>
     <concept>
       <code value="completed"/>

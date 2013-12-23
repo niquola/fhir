@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>XDS Connect-a-thon healthcareFacilityTypeCodes</h2>
       <p>Example Connectathon Codes from http://ihexds.nist.gov:12080/xdsref/codes/codes.xml, with substantial corrections applied</p>
-      <p>This value set defines it&#39;s own terms in the system urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1</p>
+      <p>This value set defines its own terms in the system urn:uuid:f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1</p>
       <table>
         <tr>
           <td>
@@ -20,67 +20,93 @@
           </td>
         </tr>
         <tr>
+          <td>
+            <a name="Home">Home</a>
+          </td>
           <td>Home</td>
-          <td>Home</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="AssistedLiving">Assisted Living</a>
+          </td>
           <td>Assisted Living</td>
-          <td>Assisted Living</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="HomeHealthCare">Home Health Care</a>
+          </td>
           <td>Home Health Care</td>
-          <td>Home Health Care</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="HospitalSetting">Hospital Setting</a>
+          </td>
           <td>Hospital Setting</td>
-          <td>Hospital Setting</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="Acutecarehospital">Acute care hospital</a>
+          </td>
           <td>Acute care hospital</td>
-          <td>Acute care hospital</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="HospitalUnit">Hospital Unit</a>
+          </td>
           <td>Hospital Unit</td>
-          <td>Hospital Unit</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="CriticalCareUnit">Critical Care Unit</a>
+          </td>
           <td>Critical Care Unit</td>
-          <td>Critical Care Unit</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="EmergencyDepartment">Emergency Department</a>
+          </td>
           <td>Emergency Department</td>
-          <td>Emergency Department</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="ObservationWard">Observation Ward</a>
+          </td>
           <td>Observation Ward</td>
-          <td>Observation Ward</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="Rehabilitationhospital">Rehabilitation hospital</a>
+          </td>
           <td>Rehabilitation hospital</td>
-          <td>Rehabilitation hospital</td>
           <td/>
         </tr>
         <tr>
+          <td>
+            <a name="NursingHome">Nursing Home</a>
+          </td>
           <td>Nursing Home</td>
-          <td>Nursing Home</td>
           <td/>
         </tr>
         <tr>
-          <td>Skilled Nursing Facility</td>
+          <td>
+            <a name="SkilledNursingFacility">Skilled Nursing Facility</a>
+          </td>
           <td>Skilled Nursing Facility</td>
           <td/>
         </tr>
         <tr>
-          <td>Outpatient</td>
+          <td>
+            <a name="Outpatient">Outpatient</a>
+          </td>
           <td>Outpatient</td>
           <td/>
         </tr>

@@ -1,1 +1,230 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><div>Type definition for Attachment from <a href=\"http://hl7.org/fhir/datatypes.htm#Attachment\">FHIR Specification<\/a><\/div><\/div>"},"name":{"value":"Basic Profile for Attachment"},"publisher":{"value":"FHIR Specification"},"description":{"value":"Basic Profile for Attachment for validation support"},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Attachment"},"element":[{"path":{"value":"Attachment"},"definition":{"short":{"value":"Content in a format defined elsewhere"},"formal":{"value":"For referring to data content defined in other formats."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Type"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"ED"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"ED/RP"}}]}},{"path":{"value":"Attachment.contentType"},"definition":{"short":{"value":"Mime type of the content, with charset etc."},"formal":{"value":"Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"MimeType"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./mediaType, ./charset"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used"}}]}},{"path":{"value":"Attachment.language"},"definition":{"short":{"value":"Human language of the content (BCP-47)"},"formal":{"value":"The human language of the content. The value can be any valid value according to BCP 47."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"Language"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./language"}}]}},{"path":{"value":"Attachment.data"},"definition":{"short":{"value":"Data inline, base64ed"},"formal":{"value":"The actual data of the attachment - a sequence of bytes. In XML, represented using base64."},"comments":{"value":"The base64-encoded data must be expressed in the same character set as the base resource XML."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"base64Binary"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./data"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"ED.5"}}]}},{"path":{"value":"Attachment.url"},"definition":{"short":{"value":"Uri where the data can be found"},"formal":{"value":"An alternative location where the data can be accessed."},"comments":{"value":"If both data and url are provided, the url must point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. If a URL is provided, it must resolve to actual data."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"uri"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./reference/literal"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"RP.1+RP.2 - if they refer to a URL (see v2.6)"}}]}},{"path":{"value":"Attachment.size"},"definition":{"short":{"value":"Number of bytes of content (if url provided)"},"formal":{"value":"The number of bytes of data that make up this attachment."},"comments":{"value":"The number of bytes is redundant if the data is provided as a base64binary, but is useful if the data is provided as a url reference."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"integer"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"(needs data type R3 proposal)"}}]}},{"path":{"value":"Attachment.hash"},"definition":{"short":{"value":"Hash of the data (sha-1, base64ed )"},"formal":{"value":"The calculated hash of the data using SHA-1. Represented using base64."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"base64Binary"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":".integrityCheck[parent::ED/integrityCheckAlgorithm=\"SHA-1\"]"}}]}},{"path":{"value":"Attachment.title"},"definition":{"short":{"value":"Label to display in place of the data"},"formal":{"value":"A label or set of text to display in place of the data."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./title/data"}}]}}]}],"binding":[{"name":{"value":"MimeType"},"conformance":{"value":"required"},"referenceUri":{"value":"http://www.rfc-editor.org/bcp/bcp13.txt"}},{"name":{"value":"Language"},"conformance":{"value":"required"},"referenceUri":{"value":"http://tools.ietf.org/html/bcp47"}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for Attachment from <a href=\"http://hl7.org/fhir/datatypes.html#Attachment\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for Attachment",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for Attachment for validation support",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Attachment",
+      "element": [
+        {
+          "path": "Attachment",
+          "definition": {
+            "short": "Content in a format defined elsewhere",
+            "formal": "For referring to data content defined in other formats.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Type"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "ED"
+              },
+              {
+                "identity": "v2",
+                "map": "ED/RP"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.contentType",
+          "definition": {
+            "short": "Mime type of the content, with charset etc.",
+            "formal": "Identifies the type of the data in the attachment and allows a method to be chosen to interpret or render the data. Includes mime type parameters such as charset where appropriate.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "MimeType",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceUri": "http://www.rfc-editor.org/bcp/bcp13.txt"
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./mediaType, ./charset"
+              },
+              {
+                "identity": "v2",
+                "map": "ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.language",
+          "definition": {
+            "short": "Human language of the content (BCP-47)",
+            "formal": "The human language of the content. The value can be any valid value according to BCP 47.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "Language",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceUri": "http://tools.ietf.org/html/bcp47"
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./language"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.data",
+          "definition": {
+            "short": "Data inline, base64ed",
+            "formal": "The actual data of the attachment - a sequence of bytes. In XML, represented using base64.",
+            "comments": "The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "base64Binary"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./data"
+              },
+              {
+                "identity": "v2",
+                "map": "ED.5"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.url",
+          "definition": {
+            "short": "Uri where the data can be found",
+            "formal": "An alternative location where the data can be accessed.",
+            "comments": "If both data and url are provided, the url SHALL point to the same content as the data contains. Urls may be relative references or may be made to transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. Relative URLs are interpreted relative to the service url, like a resource reference, rather than relative to the resource itself. If a URL is provided, it SHALL resolve to actual data.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "uri"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./reference/literal"
+              },
+              {
+                "identity": "v2",
+                "map": "RP.1+RP.2 - if they refer to a URL (see v2.6)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.size",
+          "definition": {
+            "short": "Number of bytes of content (if url provided)",
+            "formal": "The number of bytes of data that make up this attachment.",
+            "comments": "The number of bytes is redundant if the data is provided as a base64binary, but is useful if the data is provided as a url reference.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "integer"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "N/A (needs data type R3 proposal)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.hash",
+          "definition": {
+            "short": "Hash of the data (sha-1, base64ed )",
+            "formal": "The calculated hash of the data using SHA-1. Represented using base64.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "base64Binary"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": ".integrityCheck[parent::ED/integrityCheckAlgorithm=\"SHA-1\"]"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Attachment.title",
+          "definition": {
+            "short": "Label to display in place of the data",
+            "formal": "A label or set of text to display in place of the data.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./title/data"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

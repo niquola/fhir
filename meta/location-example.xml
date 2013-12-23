@@ -3,15 +3,11 @@
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">Burgers UMC, South Wing, second floor</div>
   </text>
-  <name value="South-2"/>
-  <description value="South Wing, Floor 2"/>
-  <type>
-    <coding>
-      <system value="http://hl7.org/fhir/location-type"/>
-      <code value="wi"/>
-      <display value="Wing"/>
-    </coding>
-  </type>
+  <identifier>
+    <value value="B1-S.F2"/>
+  </identifier>
+  <name value="South Wing, second floor"/>
+  <description value="Second floor of the Old South Wing, formerly in use by Psychiatry"/>
   <telecom>
     <system value="phone"/>
     <value value="2328"/>
@@ -23,14 +19,20 @@
         <zip value="9105 PZ"/>
         <country value="NLD"/>
   </address>
+  <physicalType>
+    <coding>
+      <system value="http://hl7.org/fhir/location-physical-type"/>
+      <code value="wi"/>
+      <display value="Wing"/>     
+    </coding>
+  </physicalType>
   <position>
     <longitude value="4.844614000123024"/>
     <latitude value="52.37799399970903"/>
     <altitude value="0"/>
   </position>
-  <provider>
-    <type value="Organization"/>
-    <reference value="organization/@f001"/>
-  </provider>
-  <active value="true"/>
+  <managingOrganization>
+    <reference value="Organization/f001"/>
+  </managingOrganization>
+  <status value="active"/>
 </Location>

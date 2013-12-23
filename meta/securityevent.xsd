@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="SecurityEvent" type="SecurityEvent">
     <xs:annotation>
@@ -73,7 +73,7 @@
       <xs:documentation>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -114,7 +114,7 @@
       <xs:documentation>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="role" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
@@ -131,9 +131,9 @@
               <xs:documentation>Unique identifier for the user actively participating in the event.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="authId" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="altId" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation>User identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available.</xs:documentation>
+              <xs:documentation>Alternative Participant Identifier. For a human, this should be a user identifier text string from authentication system. This identifier would be one known to a common authentication system (e.g., single sign-on), if available.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
@@ -165,7 +165,7 @@
       <xs:documentation>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
@@ -186,7 +186,7 @@
       <xs:documentation>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="site" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
@@ -212,7 +212,7 @@
       <xs:documentation>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
@@ -249,6 +249,11 @@
               <xs:documentation>An instance-specific descriptor of the Participant Object ID audited, such as a person's name.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation>Text that describes the object in more detail.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="query" minOccurs="0" maxOccurs="1" type="base64Binary">
             <xs:annotation>
               <xs:documentation>The actual query for a query-type participant object.</xs:documentation>
@@ -268,7 +273,7 @@
       <xs:documentation>A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
@@ -586,27 +591,27 @@
   </xs:complexType>
   <xs:simpleType name="SecurityEventParticipantNetworkType-list">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="name">
+      <xs:enumeration value="1">
         <xs:annotation>
           <xs:documentation>Machine Name, including DNS name.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ip">
+      <xs:enumeration value="2">
         <xs:annotation>
           <xs:documentation>IP Address.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="phone">
+      <xs:enumeration value="3">
         <xs:annotation>
           <xs:documentation>Telephone Number.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="email">
+      <xs:enumeration value="4">
         <xs:annotation>
           <xs:documentation>Email address.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="uri">
+      <xs:enumeration value="5">
         <xs:annotation>
           <xs:documentation>URI (User directory, HTTP-PUT, ftp, etc.).</xs:documentation>
         </xs:annotation>

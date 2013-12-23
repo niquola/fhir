@@ -7,22 +7,25 @@ class Fhir::AllergyIntolerance < Fhir::Resource
     validates_presence_of :substance_ref
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
-  # An external identifier for the sensitivity
-  attribute :identifier, Fhir::Identifier
+  # External Ids for this item
+  attribute :identifier, Array[Fhir::Identifier]
 
-  # Criticality of the sensitivity
+  # fatal | high | medium | low
   attribute :criticality, Fhir::Code
 
-  # Type of the sensitivity
+  # allergy | intolerance | unknown
   attribute :sensitivity_type, Fhir::Code
 
   # Date when the sensitivity was recorded
   attribute :recorded_date, DateTime
 
-  # Status of the sensitivity
+  # suspected | confirmed | refuted | resolved
   attribute :status, Fhir::Code
 
   # Who the sensitivity is for
@@ -35,10 +38,10 @@ class Fhir::AllergyIntolerance < Fhir::Resource
   resource_reference :substance, [Fhir::Substance]
 
   # Reactions associated with the sensitivity
-  resource_references :reactions, [Fhir::AdverseReaction]
+  resource_references :reaction, [Fhir::AdverseReaction]
 
-  # Observations that confirm or refute the sensitivity
-  resource_references :sensitivity_tests, [Fhir::Observation]
+  # Observations that confirm or refute
+  resource_references :sensitivity_test, [Fhir::Observation]
 end
 
 

@@ -1,1 +1,25 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>Loinc Diagnostic Report Codes<\/h2><p>This value set includes all the codes in HL7 v2 table 0074<\/p><p>This value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include all codes defined in <a href=\"v2/0074/index.htm\">http://hl7.org/fhir/v2/0074<\/a><\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/diagnostic-service-sections"},"name":{"value":"Loinc Diagnostic Report Codes"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This value set includes all the codes in HL7 v2 table 0074"},"status":{"value":"draft"},"compose":{"include":[{"system":{"value":"http://hl7.org/fhir/v2/0074"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Loinc Diagnostic Report Codes</h2><p>This value set includes all the codes in HL7 v2 table 0074</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include all codes defined in <a href=\"v2/0074/index.html\">http://hl7.org/fhir/v2/0074</a></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/diagnostic-service-sections",
+  "name": "Loinc Diagnostic Report Codes",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This value set includes all the codes in HL7 v2 table 0074",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://hl7.org/fhir/v2/0074"
+      }
+    ]
+  }
+}

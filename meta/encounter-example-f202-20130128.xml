@@ -2,50 +2,48 @@
  <identifier>
     <use value="temp"/><!--  0..1 The use of this identifier  -->
     <label value="Roel&#39;s encounter on January 28th, 2013"/>
-    <key value="Encounter_Roel_20130128"/>
+    <value value="Encounter_Roel_20130128"/>
  </identifier>
  <status value="finished"/><!-- Encounter has finished -->
  <class value="outpatient"/><!-- Outpatient encounter for chemotherapy -->
  <type>
     <coding>
-       <system value="http://snomed.info/id"/>
+       <system value="http://snomed.info/sct"/>
        <code value="367336001"/>
        <display value="Chemotherapy"/> 
     </coding>
  </type>
  <subject>
-     <type value="Patient"/>
-     <reference value="patient/@f201"/>
+     <reference value="Patient/f201"/>
      <display value="Roel"/>
  </subject>
  <participant>
-     <practitioner>
-         <type value="Practitioner"/>
-         <reference value="practitioner/@f201"/>
-    </practitioner>
+     <individual>
+         <reference value="Practitioner/f201"/>
+    </individual>
  </participant>
  <length>
     <value value="56"/>
     <units value="minutes"/>
-    <system value="http://snomed.info/id"/>
+    <system value="http://snomed.info/sct"/>
     <code value="258701004"/>
  </length>
- <reasonString value="The patient is treated for a tumor."/>
+ <reason>
+   <text value="The patient is treated for a tumor."/>
+ </reason>
  <indication>
-     <type value="Procedure"/>
-     <reference value="procedure/@f201"/>
+     <reference value="Procedure/f201"/>
      <display value="Roel&#39;s TPF chemotherapy on January 28th, 2013"/>
  </indication>
  <priority><!-- Urgent priority, because of complications -->
     <coding>
-       <system value="http://snomed.info/id"/>
+       <system value="http://snomed.info/sct"/>
        <code value="103391001"/>
        <display value="Urgent"/>
     </coding>
  </priority>
  <!-- No hospitalization was deemed necessary -->
  <serviceProvider>
-     <type value="Organization"/>
-     <reference value="organization/@f201"/>
+     <reference value="Organization/f201"/>
  </serviceProvider>
 </Encounter>

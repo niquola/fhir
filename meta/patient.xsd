@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Patient" type="Patient">
     <xs:annotation>
@@ -110,17 +110,22 @@
           </xs:element>
           <xs:element name="communication" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation>Languages which may be used to communicate with the patient.</xs:documentation>
+              <xs:documentation>Languages which may be used to communicate with the patient about his or her health.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="provider" minOccurs="0" maxOccurs="1" type="ResourceReference">
+          <xs:element name="careProvider" minOccurs="0" maxOccurs="unbounded" type="ResourceReference">
             <xs:annotation>
-              <xs:documentation>The provider for whom this is a patient record.</xs:documentation>
+              <xs:documentation>Patient's nominated care provider.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="link" minOccurs="0" maxOccurs="unbounded" type="ResourceReference">
+          <xs:element name="managingOrganization" minOccurs="0" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
-              <xs:documentation>A linked patient resource is a resource that concerns the same patient. Resources are linked after it is realized that at least one was created in error.</xs:documentation>
+              <xs:documentation>Organization that is the custodian of the patient record.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="link" type="Patient.Link" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+              <xs:documentation>Link to another patient resource that concerns the same actual person.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="active" minOccurs="0" maxOccurs="1" type="boolean">
@@ -137,7 +142,7 @@
       <xs:documentation>Demographics and other administrative information about a person or animal receiving care or other health-related services.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="relationship" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
@@ -178,7 +183,7 @@
       <xs:documentation>Demographics and other administrative information about a person or animal receiving care or other health-related services.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="species" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -196,6 +201,57 @@
            </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Patient.Link">
+    <xs:annotation>
+      <xs:documentation>Demographics and other administrative information about a person or animal receiving care or other health-related services.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="other" minOccurs="1" maxOccurs="1" type="ResourceReference">
+            <xs:annotation>
+              <xs:documentation>The other patient resource that the link refers to.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="LinkType">
+            <xs:annotation>
+              <xs:documentation>The type of link between this patient resource and another patient resource.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="LinkType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="replace">
+        <xs:annotation>
+          <xs:documentation>The patient resource containing this link must no longer be used. The link points forward to another patient resource that must be used in lieu of the patient resource that contains the link.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="refer">
+        <xs:annotation>
+          <xs:documentation>The patient resource containing this link is in use and valid but not considered the main source of information about a patient. The link points forward to another patient resource that should be consulted to retrieve additional patient information.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="seealso">
+        <xs:annotation>
+          <xs:documentation>The patient resource containing this link is in use and valid, but points to another patient resource that is known to contain data about the same person. Data in this resource might overlap or contradict information found in the other patient resource. This link does not indicate any relative importance of the resources concerned, and both should be regarded as equally valid.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="LinkType">
+    <xs:annotation>
+      <xs:documentation>The type of link between this patient resource and another patient resource.</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="LinkType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

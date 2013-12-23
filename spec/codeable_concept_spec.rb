@@ -7,7 +7,7 @@ describe 'Fhir::CodeableConcept' do
 
   let(:model) {
     TestModel.new(color: {
-                    codings: [{
+                    coding: [{
                         system: 'urn:oid:RGB',
                         code: 'FF0000',
                         display: 'red'

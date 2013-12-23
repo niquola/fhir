@@ -5,6 +5,9 @@ class Fhir::Specimen < Fhir::Resource
     validates_presence_of :collection
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -21,20 +24,23 @@ class Fhir::Specimen < Fhir::Resource
       validates_presence_of :relationship
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # parent | child
     attribute :relationship, Fhir::Code
 
     # The subject of the relationship
-    resource_references :targets, [Fhir::Specimen]
+    resource_references :target, [Fhir::Specimen]
   end
 
-  attribute :sources, Array[Source]
+  attribute :source, Array[Source]
 
   # The subject of the report
   resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Substance]
 
   # Accession Identifier
-  attribute :accession_identifiers, Array[Fhir::Identifier]
+  attribute :accession_identifier, Array[Fhir::Identifier]
 
   # Received Time
   attribute :received_time, DateTime
@@ -45,11 +51,14 @@ class Fhir::Specimen < Fhir::Resource
       validates_presence_of :collected_time
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Who collected the specimen
     resource_reference :collector, [Fhir::Practitioner]
 
     # Collector comments
-    attribute :comments, Array[String]
+    attribute :comment, Array[String]
 
     # Collection time
     attribute :collected_time, DateTime
@@ -69,6 +78,9 @@ class Fhir::Specimen < Fhir::Resource
   # Details concerning treatment and processing steps for the
   # specimen.
   class Treatment < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Textual description of procedure
     attribute :description, String
 
@@ -76,20 +88,23 @@ class Fhir::Specimen < Fhir::Resource
     attribute :procedure, Fhir::CodeableConcept
 
     # Specimen additive
-    resource_references :additives, [Fhir::Substance]
+    resource_references :additive, [Fhir::Substance]
   end
 
-  attribute :treatments, Array[Treatment]
+  attribute :treatment, Array[Treatment]
 
   # The container holding the specimen. May be recursive; ie
   # blood in tube in tray in rack.
   class Container < Fhir::ValueObject
     invariants do
-      validates_presence_of :identifiers
+      validates_presence_of :identifier
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Id for container
-    attribute :identifiers, Array[Fhir::Identifier]
+    attribute :identifier, Array[Fhir::Identifier]
 
     # Textual description of container
     attribute :description, String
@@ -107,7 +122,7 @@ class Fhir::Specimen < Fhir::Resource
     resource_reference :additive, [Fhir::Substance]
   end
 
-  attribute :containers, Array[Container]
+  attribute :container, Array[Container]
 end
 
 

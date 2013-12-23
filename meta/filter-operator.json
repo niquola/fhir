@@ -1,1 +1,45 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>FilterOperator<\/h2><p>The kind of operation to perform as part of a property based filter<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/filter-operator<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>=<\/td><td/><td>The property value has the concept specified by the value.<\/td><\/tr><tr><td>is-a<\/td><td/><td>The property value has a concept that has an is-a relationship with the value.<\/td><\/tr><tr><td>is-not-a<\/td><td/><td>The property value has a concept that does not have an is-a relationship with the value.<\/td><\/tr><tr><td>regex<\/td><td/><td>The property value representation matches the regex specified in the value.<\/td><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/filter-operator"},"name":{"value":"FilterOperator"},"publisher":{"value":"HL7 (FHIR Project)"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}},{"system":{"value":"email"},"value":{"value":"fhir@lists.hl7.org"}}],"description":{"value":"The kind of operation to perform as part of a property based filter"},"status":{"value":"draft"},"date":{"value":"2023-05-12T00:10:00"},"define":{"system":{"value":"http://hl7.org/fhir/filter-operator"},"caseSensitive":{"value":true},"concept":[{"code":{"value":"="},"definition":{"value":"The property value has the concept specified by the value."}},{"code":{"value":"is-a"},"definition":{"value":"The property value has a concept that has an is-a relationship with the value."}},{"code":{"value":"is-not-a"},"definition":{"value":"The property value has a concept that does not have an is-a relationship with the value."}},{"code":{"value":"regex"},"definition":{"value":"The property value representation matches the regex specified in the value."}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>FilterOperator</h2><p>The kind of operation to perform as part of a property based filter</p><p>This value set defines its own terms in the system http://hl7.org/fhir/filter-operator</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\".61\">=</a></td><td/><td>The property value has the concept specified by the value.</td></tr><tr><td><a name=\"is-a\">is-a</a></td><td/><td>The property value has a concept that has an is-a relationship with the value.</td></tr><tr><td><a name=\"is-not-a\">is-not-a</a></td><td/><td>The property value has a concept that does not have an is-a relationship with the value.</td></tr><tr><td><a name=\"regex\">regex</a></td><td/><td>The property value representation matches the regex specified in the value.</td></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/filter-operator",
+  "name": "FilterOperator",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "The kind of operation to perform as part of a property based filter",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.969+11:00",
+  "define": {
+    "system": "http://hl7.org/fhir/filter-operator",
+    "caseSensitive": true,
+    "concept": [
+      {
+        "code": "=",
+        "definition": "The property value has the concept specified by the value."
+      },
+      {
+        "code": "is-a",
+        "definition": "The property value has a concept that has an is-a relationship with the value."
+      },
+      {
+        "code": "is-not-a",
+        "definition": "The property value has a concept that does not have an is-a relationship with the value."
+      },
+      {
+        "code": "regex",
+        "definition": "The property value representation matches the regex specified in the value."
+      }
+    ]
+  }
+}

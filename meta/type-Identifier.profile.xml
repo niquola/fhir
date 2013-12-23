@@ -2,13 +2,28 @@
 
 <Profile xmlns="http://hl7.org/fhir">
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.htm#Identifier">FHIR Specification</a></div></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><div>Type definition for Identifier from <a href="http://hl7.org/fhir/datatypes.html#Identifier">FHIR Specification</a></div></div>
   </text>
   <name value="Basic Profile for Identifier"/>
   <publisher value="FHIR Specification"/>
   <description value="Basic Profile for Identifier for validation support"/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
+  <mapping>
+    <identity value="servd"/>
+    <uri value="http://www.omg.org/spec/ServD/1.0/"/>
+    <name value="ServD"/>
+  </mapping>
   <structure>
     <type value="Identifier"/>
     <element>
@@ -24,37 +39,68 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="II"/>
+          <identity value="rim"/>
+          <map value="II - see see identifier pattern at http://wiki.hl7.org/index.php?title=Common_Design_Patterns#Identifier_Pattern for relevant discussion"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="CX / EI (occasionally, more often EI maps to a resource id or a URL)"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="Identifier"/>
         </mapping>
       </definition>
     </element>
     <element>
       <path value="Identifier.use"/>
       <definition>
-        <short value="The use of this identifier"/>
-        <formal value="Identifies the use for this identifier, if known."/>
-        <comments value="This is labelled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is not temporary unless it explicitly says that it is."/>
+        <short value="usual | official | temp | secondary (If known)"/>
+        <formal value="The use of this identifier."/>
+        <comments value="This is labeled as &quot;Is Modifier&quot; because applications should not mistake a temporary id for a permanent one. Applications can assume that an identifier is not temporary unless it explicitly says that it is."/>
         <min value="0"/>
         <max value="1"/>
         <type>
           <code value="code"/>
         </type>
         <isModifier value="true"/>
-        <binding value="IdentifierUse"/>
+        <binding>
+          <name value="IdentifierUse"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/identifier-use"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A - this is sometimes implied by context"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="CX.5"/>
+        </mapping>
       </definition>
     </element>
     <element>
       <path value="Identifier.label"/>
       <definition>
         <short value="Description of identifier"/>
-        <formal value="A label for the identifier that can be displayed to a human so they can recognise the identifier."/>
+        <formal value="A label for the identifier that can be displayed to a human so they can recognize the identifier."/>
         <min value="0"/>
         <max value="1"/>
         <type>
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A - this is sometimes implied by context"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="N/A"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -69,17 +115,25 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="II.root"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="CX.4 / EI-2-4"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./IdentifierType"/>
         </mapping>
       </definition>
     </element>
     <element>
-      <path value="Identifier.key"/>
+      <path value="Identifier.value"/>
       <definition>
         <short value="The value that is unique"/>
         <formal value="The portion of the identifier typically displayed to the user and which is unique within the context of the system."/>
-        <comments value="if the key value is actually a full uri, then the system is urn:ietf:rfc:3986."/>
+        <comments value="if the value is actually a full uri, then the system SHALL be urn:ietf:rfc:3986."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -87,8 +141,16 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
+          <identity value="rim"/>
           <map value="II.extension or II.root if system indicates OID or GUID"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="CX.1 / EI.1"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./Value"/>
         </mapping>
       </definition>
     </element>
@@ -103,6 +165,18 @@
           <code value="Period"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="N/A - this is sometimes implied by context"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="CX.7 + CX.8"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./StartDate and ./EndDate"/>
+        </mapping>
       </definition>
     </element>
     <element>
@@ -117,15 +191,19 @@
           <code value="Resource(Organization)"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="II.assigningAuthorityName but note that this is an improper use by the definition of the field"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value="CX.4 / (CX.4,CX.9,CX.10)"/>
+        </mapping>
+        <mapping>
+          <identity value="servd"/>
+          <map value="./IdentifierIssuingAuthority"/>
+        </mapping>
       </definition>
     </element>
   </structure>
-  <binding>
-    <name value="IdentifierUse"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/identifier-use"/>
-    </referenceResource>
-  </binding>
 </Profile>

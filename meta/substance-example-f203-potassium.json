@@ -1,1 +1,1 @@
-{"Substance":{"name":{"value":"Potassium"},"type":{"coding":[{"system":{"value":"http://snomed.info/id"},"code":{"value":"88480006"},"display":{"value":"Potassium"}}]}}}
+{"resourceType":"Substance","type":{"coding":[{"system":"http://snomed.info/sct","code":"88480006","display":"Potassium"}]}}

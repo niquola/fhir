@@ -5,7 +5,7 @@
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
       
-      <p>This value set includes the following Snomed-CT &quot;Severity&quot; concepts:</p>
+      <p>This value set includes the following SNOMED CT &quot;Severity&quot; concepts:</p>
       
       <ul>
         
@@ -32,7 +32,7 @@
   <status value="draft"/>
   <compose>
     <include>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <code value="399166001"/>
       <code value="24484000"/>
       <code value="6736007"/>

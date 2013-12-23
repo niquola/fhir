@@ -1,0 +1,104 @@
+{
+  "resourceType": "ConceptMap",
+  "identifier": "http://hl7.org/fhir/cm/v3/data-absent-reason",
+  "name": "v3 map for DataAbsentReason",
+  "publisher": "HL7 (FHIR Project)",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    },
+    {
+      "system": "email",
+      "value": "fhir@lists.hl7.org"
+    }
+  ],
+  "description": "v3 Map (NullFlavor)",
+  "status": "draft",
+  "date": "2013-12-18T09:56:09.970+11:00",
+  "source": {
+    "reference": "http://hl7.org/fhir/vs/data-absent-reason"
+  },
+  "target": {
+    "reference": "http://hl7.org/fhir/v3/vs/NullFlavor"
+  },
+  "concept": [
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "unknown",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "UNK",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "asked",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "ASKU",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "temp",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NAV",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "notasked",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NASK",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "masked",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "MSK",
+          "equivalence": "equal"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "unsupported",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NA",
+          "equivalence": "wider"
+        }
+      ]
+    },
+    {
+      "system": "http://hl7.org/fhir/data-absent-reason",
+      "code": "error",
+      "map": [
+        {
+          "system": "http://hl7.org/fhir/v3/NullFlavor",
+          "code": "NA",
+          "equivalence": "wider"
+        }
+      ]
+    }
+  ]
+}

@@ -8,3 +8,4 @@ class Fhir::Range < Fhir::DataType
   attribute :high, Fhir::Quantity
 end
 
+Fhir.load_extension('range')

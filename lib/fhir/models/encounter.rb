@@ -7,20 +7,23 @@ class Fhir::Encounter < Fhir::Resource
     validates_presence_of :encounter_class
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # Identifier(s) by which this encounter is known
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
-  # E.g. active, aborted, finished
+  # planned | in progress | onleave | finished | cancelled
   attribute :status, Fhir::Code
 
-  # Inpatient | Outpatient etc
+  # inpatient | outpatient | ambulatory | emergency +
   attribute :encounter_class, Fhir::Code
 
   # Specific type of encounter
-  attribute :types, Array[Fhir::CodeableConcept]
+  attribute :type, Array[Fhir::CodeableConcept]
 
   # The patient present at the encounter
   resource_reference :subject, [Fhir::Patient]
@@ -28,28 +31,28 @@ class Fhir::Encounter < Fhir::Resource
   # The main practitioner responsible for providing the
   # service.
   class Participant < Fhir::ValueObject
-    # Role of participant in encounter
-    attribute :types, Array[Fhir::Code]
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
 
-    # The practitioner that is involved
-    resource_reference :practitioner, [Fhir::Practitioner]
+    # Role of participant in encounter
+    attribute :type, Array[Fhir::CodeableConcept]
+
+    # Persons involved in the encounter other than the patient
+    resource_reference :individual, [Fhir::Practitioner, Fhir::RelatedPerson]
   end
 
-  attribute :participants, Array[Participant]
+  attribute :participant, Array[Participant]
 
-  # The appointment that scheduled this encounter
-  resource_reference :fulfills, [Fhir::Resource]
-
-  # The date and time the encounter starts
-  attribute :start, DateTime
+  # The start and end time of the encounter
+  attribute :period, Fhir::Period
 
   # Quantity of time the encounter lasted
   attribute :length, Fhir::Quantity
 
-  # Reason the encounter takes place
-  attribute :reason, *Fhir::Type[String, Fhir::CodeableConcept]
+  # Reason the encounter takes place (code)
+  attribute :reason, Fhir::CodeableConcept
 
-  # Reason the encounter takes place
+  # Reason the encounter takes place (resource)
   resource_reference :indication, [Fhir::Resource]
 
   # Indicates the urgency of the encounter
@@ -57,6 +60,9 @@ class Fhir::Encounter < Fhir::Resource
 
   # Details about an admission to a clinic.
   class Hospitalization < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Pre-admission identifier
     attribute :pre_admission_identifier, Fhir::Identifier
 
@@ -67,28 +73,31 @@ class Fhir::Encounter < Fhir::Resource
     # transfer)
     attribute :admit_source, Fhir::CodeableConcept
 
-    # Period of hospitalization
+    # Period during which the patient was admitted
     attribute :period, Fhir::Period
 
     # Where the patient stays during this encounter.
     class Accomodation < Fhir::ValueObject
-      # Bed
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
+      # The bed that is assigned to the patient
       resource_reference :bed, [Fhir::Location]
 
       # Period during which the patient was assigned the bed
       attribute :period, Fhir::Period
     end
 
-    attribute :accomodations, Array[Accomodation]
+    attribute :accomodation, Array[Accomodation]
 
     # Dietary restrictions for the patient
     attribute :diet, Fhir::CodeableConcept
 
     # Special courtesies (VIP, board member)
-    attribute :special_courtesies, Array[Fhir::CodeableConcept]
+    attribute :special_courtesy, Array[Fhir::CodeableConcept]
 
     # Wheelchair, translator, stretcher, etc
-    attribute :special_arrangements, Array[Fhir::CodeableConcept]
+    attribute :special_arrangement, Array[Fhir::CodeableConcept]
 
     # Location the patient is discharged to
     resource_reference :destination, [Fhir::Location]
@@ -96,7 +105,12 @@ class Fhir::Encounter < Fhir::Resource
     # Disposition patient released to
     attribute :discharge_disposition, Fhir::CodeableConcept
 
-    # Is readmission?
+    # The final diagnosis given a patient before release from
+    # the hospital after all testing, surgery, and workup are
+    # complete
+    resource_reference :discharge_diagnosis, [Fhir::Resource]
+
+    # Is this hospitalization a readmission?
     attribute :re_admission, Boolean
   end
 
@@ -109,6 +123,9 @@ class Fhir::Encounter < Fhir::Resource
       validates_presence_of :period
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # The location the encounter takes place
     resource_reference :location, [Fhir::Location]
 
@@ -117,7 +134,7 @@ class Fhir::Encounter < Fhir::Resource
     attribute :period, Fhir::Period
   end
 
-  attribute :locations, Array[Location]
+  attribute :location, Array[Location]
 
   # Department or team providing care
   resource_reference :service_provider, [Fhir::Organization]

@@ -6,7 +6,7 @@
                <name value="Docetaxel"/>
                <code>
                   <coding>
-                     <system value="http://snomed.info/id"/>
+                     <system value="http://snomed.info/sct"/>
                      <code value="108806006"/>
                   </coding>
                </code>
@@ -17,7 +17,7 @@
                <name value="Cisplatin"/>
                <code>
                   <coding>
-                     <system value="http://snomed.info/id"/>
+                     <system value="http://snomed.info/sct"/>
                      <code value="57066004"/>
                   </coding>
                </code>               
@@ -28,7 +28,7 @@
                <name value="5-Fluorouracil"/>
                <code>
                   <coding>
-                     <system value="http://snomed.info/id"/>
+                     <system value="http://snomed.info/sct"/>
                      <code value="3127006"/>
                   </coding>
                </code>
@@ -38,19 +38,16 @@
          <product>
             <ingredient>
                <item>
-                  <type value="Medication"/>
                   <reference value="#doce"/>
                </item>
             </ingredient>
             <ingredient>
                <item>
-                  <type value="Medication"/>
                   <reference value="#cisp"/>
                </item>               
             </ingredient>
             <ingredient>
                <item>
-                  <type value="Medication"/>
                   <reference value="#fluo"/>
                </item>
             </ingredient>
@@ -59,27 +56,24 @@
    </contained>
    <patient>
       <!-- It entails Roel's careplan -->
-      <type value="Patient"/>
-      <reference value="patient/@f201"/>
+      <reference value="Patient/f201"/>
       <display value="Roel"/>
    </patient>
    <status value="active"/>
    <concern>
-      <type value="Condition"/>
-      <reference value="condition/@f202"/>
+      <reference value="Condition/f202"/>
       <display value="Roel&#39;s head-neck tumor"/>
    </concern>
    <participant>
       <role>
          <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="28995006"/>
-            <display value="Treated by"/>
+            <display value="Treated with"/>
          </coding>
       </role>
       <member>
-         <type value="Practitioner"/>
-         <reference value="practitioner/@f201"/>
+         <reference value="Practitioner/f201"/>
          <display value="Dokter Bronsig"/>
       </member>
    </participant>
@@ -88,24 +82,24 @@
       <status value="in progress"/>
    </goal>
    <activity>
-      <category value="procedure"/>
-      <code>
-         <coding>
-            <system value="http://snomed.info/id"/>
-            <code value="367336001"/>
-            <display value="Chemotherapy"/>
-         </coding>
-      </code>
-      <status value="ongoing"/>
+      <status value="in progress"/>
       <prohibited value="false"/>
-      <product>
-         <type value="Medication"/>
-         <reference value="#tpf"/>
-      </product>
-      <actionTaken>
-         <type value="Procedure"/>
-         <reference value="procedure/@f201"/>
+      <actionResulting>
+         <reference value="Procedure/f201"/>
          <display value="Roel&#39;s Chemotherapy"/>
-      </actionTaken>
+      </actionResulting>
+      <simple>
+        <category value="procedure"/>
+        <code>
+           <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="367336001"/>
+              <display value="Chemotherapy"/>
+           </coding>
+        </code>
+        <product>
+           <reference value="#tpf"/>
+        </product>
+      </simple>
    </activity>
 </CarePlan>

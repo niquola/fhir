@@ -1,1 +1,44 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>QuestionnaireGroupName<\/h2><p>This example value set defines a set of codes that can be used to specify a group of questions within a Questionnaire.<\/p><p>This value set defines it's own terms in the system http://hl7.org/fhir/questionnaire-group-name<\/p><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>B.001<\/td><td>Hair Color<\/td><td/><\/tr><tr><td>B.002<\/td><td>Vision<\/td><td/><\/tr><tr><td>B.003<\/td><td>Sleepwalker<\/td><td/><\/tr><tr><td>B.004<\/td><td>Tooth extraction<\/td><td/><\/tr><tr><td>B.005<\/td><td>Stutter<\/td><td/><\/tr><\/table><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/questionnaire-group-name"},"name":{"value":"QuestionnaireGroupName"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"This example value set defines a set of codes that can be used to specify a group of questions within a Questionnaire."},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/questionnaire-group-name"},"caseSensitive":{"value":false},"concept":[{"code":{"value":"B.001"},"display":{"value":"Hair Color"}},{"code":{"value":"B.002"},"display":{"value":"Vision"}},{"code":{"value":"B.003"},"display":{"value":"Sleepwalker"}},{"code":{"value":"B.004"},"display":{"value":"Tooth extraction"}},{"code":{"value":"B.005"},"display":{"value":"Stutter"}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>QuestionnaireGroupName</h2><p>This example value set defines a set of codes that can be used to specify a group of questions within a Questionnaire.</p><p>This value set defines its own terms in the system http://hl7.org/fhir/questionnaire-group-name</p><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a name=\"B.46001\">B.001</a></td><td>Hair Color</td><td/></tr><tr><td><a name=\"B.46002\">B.002</a></td><td>Vision</td><td/></tr><tr><td><a name=\"B.46003\">B.003</a></td><td>Sleepwalker</td><td/></tr><tr><td><a name=\"B.46004\">B.004</a></td><td>Tooth extraction</td><td/></tr><tr><td><a name=\"B.46005\">B.005</a></td><td>Stutter</td><td/></tr></table></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/questionnaire-group-name",
+  "name": "QuestionnaireGroupName",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "This example value set defines a set of codes that can be used to specify a group of questions within a Questionnaire.",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/questionnaire-group-name",
+    "caseSensitive": false,
+    "concept": [
+      {
+        "code": "B.001",
+        "display": "Hair Color"
+      },
+      {
+        "code": "B.002",
+        "display": "Vision"
+      },
+      {
+        "code": "B.003",
+        "display": "Sleepwalker"
+      },
+      {
+        "code": "B.004",
+        "display": "Tooth extraction"
+      },
+      {
+        "code": "B.005",
+        "display": "Stutter"
+      }
+    ]
+  }
+}

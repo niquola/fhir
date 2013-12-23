@@ -1,5 +1,8 @@
 # A supply -  request and provision.
 class Fhir::Supply < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
@@ -21,6 +24,9 @@ class Fhir::Supply < Fhir::Resource
   # Indicates the details of the dispense event such as the
   # days supply and quantity of a supply dispensed.
   class Dispense < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # External identifier
     attribute :identifier, Fhir::Identifier
 
@@ -49,10 +55,10 @@ class Fhir::Supply < Fhir::Resource
     resource_reference :destination, [Fhir::Location]
 
     # Who collected the Supply
-    resource_references :receivers, [Fhir::Practitioner]
+    resource_references :receiver, [Fhir::Practitioner]
   end
 
-  attribute :dispenses, Array[Dispense]
+  attribute :dispense, Array[Dispense]
 end
 
 

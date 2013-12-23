@@ -3,41 +3,48 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="A reference to a document." class="dict" href="documentreference-definitions.htm#DocumentReference"><b>DocumentReference</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document." class="dict" href="documentreference-definitions.htm#DocumentReference.masterIdentifier"><b>masterIdentifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Master Version Specific Identifier</span><span style="color: Gray"> --&gt;</span>&lt;/masterIdentifier&gt;
- &lt;<a title="Other identifiers associated with the record." class="dict" href="documentreference-definitions.htm#DocumentReference.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Other identifiers for the document</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
- &lt;<a title="Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (I.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure)." class="dict" href="documentreference-definitions.htm#DocumentReference.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="patient.htm#Patient">Patient</a>|<a href="practitioner.htm#Practitioner">Practitioner</a>|<a href="group.htm#Group">Group</a>|<a href="device.htm#Device">Device</a>)</span> <span style="color: navy">The subject of the document</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
- &lt;<a title="Specifies the particular kind of document (e.g. Patient Summary, Discharge Summary, Prescription, etc.)." class="dict" href="documentreference-definitions.htm#DocumentReference.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-doc-codes.htm">What kind of document this is (LOINC if possible)</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
- &lt;<a title="More detailed information about the document type." class="dict" href="documentreference-definitions.htm#DocumentReference.subtype"><b>subtype</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-xds-typecodes.htm">More detail about the document type</a></span><span style="color: Gray"> --&gt;</span>&lt;/subtype&gt;
- &lt;<a title="Identifies who is responsible for adding the information to the document." class="dict" href="documentreference-definitions.htm#DocumentReference.author"><b>author</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>|<a href="device.htm#Device">Device</a>)</span> <span style="color: navy">Who/what authored the document</span><span style="color: Gray"> --&gt;</span>&lt;/author&gt;
- &lt;<a title="Identifies the organization or group who is responsible for ongoing maintenance of and access to the document." class="dict" href="documentreference-definitions.htm#DocumentReference.custodian"><b>custodian</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="organization.htm#Organization">Organization</a>)</span> <span style="color: navy">Org which maintains the document</span><span style="color: Gray"> --&gt;</span>&lt;/custodian&gt;
- &lt;<a title="Which person or organization authenticates that this document is valid." class="dict" href="documentreference-definitions.htm#DocumentReference.authenticator"><b>authenticator</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="practitioner.htm#Practitioner">Practitioner</a>|<a href="organization.htm#Organization">Organization</a>)</span> <span style="color: navy">Who authenticated the document</span><span style="color: Gray"> --&gt;</span>&lt;/authenticator&gt;
- &lt;<a title="When the document was created." class="dict" href="documentreference-definitions.htm#DocumentReference.created"><b>created</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Document creation time</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="When the document reference was created." class="dict" href="documentreference-definitions.htm#DocumentReference.indexed"><b>indexed</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#instant">instant</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">When this document reference created</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The status of this document reference (this element modifies the meaning of other elements)" class="dict" href="documentreference-definitions.htm#DocumentReference.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="document-reference-status.htm">current | superseded | error</a></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The status of the underlying document." class="dict" href="documentreference-definitions.htm#DocumentReference.docStatus"><b>docStatus</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="http://hl7.org/fhir/vs/document-status.htm">Status of the underlying document</a></span><span style="color: Gray"> --&gt;</span>&lt;/docStatus&gt;
- &lt;<a title="If this document replaces another (this element modifies the meaning of other elements)" class="dict" href="documentreference-definitions.htm#DocumentReference.supercedes"><span style="text-decoration: underline"><b>supercedes</b></span></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="documentreference.htm#DocumentReference">DocumentReference</a>)</span> <span style="color: navy">If this document replaces another</span><span style="color: Gray"> --&gt;</span>&lt;/supercedes&gt;
- &lt;<a title="Human Readable description of the source document. This is sometimes known as the &quot;title&quot;." class="dict" href="documentreference-definitions.htm#DocumentReference.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Human Readable description (title)</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="A code specifying the level of confidentiality of the XDS Document (this element modifies the meaning of other elements)" class="dict" href="documentreference-definitions.htm#DocumentReference.confidentiality"><span style="text-decoration: underline"><b>confidentiality</b></span></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-doc-confidentiality.htm">Sensitivity of source document</a></span><span style="color: Gray"> --&gt;</span>&lt;/confidentiality&gt;
- &lt;<a title="The primary language in which the source document is written." class="dict" href="documentreference-definitions.htm#DocumentReference.primaryLanguage"><b>primaryLanguage</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="http://tools.ietf.org/html/bcp47.htm">Primary language of the document</a></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The mime type of the source document." class="dict" href="documentreference-definitions.htm#DocumentReference.mimeType"><b>mimeType</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="http://www.rfc-editor.org/bcp/bcp13.txt.htm">Mime type of the document</a></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The format of the document. This is used when the mimeType of the document does not provide enough differentiating information (typically, when the mime type of the document is text/xml)." class="dict" href="documentreference-definitions.htm#DocumentReference.format"><b>format</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-xds-formatcodes.htm">Format of the document</a></span><span style="color: Gray"> --&gt;</span>&lt;/format&gt;
- &lt;<a title="The size of the source document this reference refers to in bytes." class="dict" href="documentreference-definitions.htm#DocumentReference.size"><b>size</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#integer">integer</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Size of the document in bytes</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="A hash of the source document to ensure that changes have not occurred." class="dict" href="documentreference-definitions.htm#DocumentReference.hash"><b>hash</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">HexBinary representation of SHA1</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="A url at which the document can be accessed." class="dict" href="documentreference-definitions.htm#DocumentReference.location"><b>location</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: A location or a service (or both) must be provided" style="color: deeppink"><b>0..1</b></span> <span style="color: navy">Where to access the document</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="A description of a service call that can be used to retrieve the document." class="dict" href="documentreference-definitions.htm#DocumentReference.service"><b>service</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-1: A location or a service (or both) must be provided" style="color: deeppink"><b>0..1</b></span> If access is not fully described by location --&gt;</span>
-  &lt;<a title="The type of the service that can be used to access the documents." class="dict" href="documentreference-definitions.htm#DocumentReference.service.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-documentreference-service-types.htm">Type of service (i.e. XDS.b)</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
-  &lt;<a title="Where the service end-point is located." class="dict" href="documentreference-definitions.htm#DocumentReference.service.address"><b>address</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Where service is located (usually a URL)</span><span style="color: Gray"> --&gt;</span>
-  &lt;<a title="A list of named parameters that is used in the service call." class="dict" href="documentreference-definitions.htm#DocumentReference.service.parameter"><b>parameter</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Service call parameters --&gt;</span>
-   &lt;<a title="The name of a parameter." class="dict" href="documentreference-definitions.htm#DocumentReference.service.parameter.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Name of parameter</span><span style="color: Gray"> --&gt;</span>
-   &lt;<a title="The value of the named parameter." class="dict" href="documentreference-definitions.htm#DocumentReference.service.parameter.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Parameter value</span><span style="color: Gray"> --&gt;</span>
+&lt;<a title="A reference to a document." class="dict" href="documentreference-definitions.html#DocumentReference"><b>DocumentReference</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="Document identifier as assigned by the source of the document. This identifier is specific to this version of the document. This unique identifier may be used elsewhere to identify this version of the document." class="dict" href="documentreference-definitions.html#DocumentReference.masterIdentifier"><b>masterIdentifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Master Version Specific Identifier</span><span style="color: Gray"> --&gt;</span>&lt;/masterIdentifier&gt;
+ &lt;<a title="Other identifiers associated with the document, including version independent, source record and workflow related identifiers." class="dict" href="documentreference-definitions.html#DocumentReference.identifier"><b>identifier</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Other identifiers for the document</span><span style="color: Gray"> --&gt;</span>&lt;/identifier&gt;
+ &lt;<a title="Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (I.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure)." class="dict" href="documentreference-definitions.html#DocumentReference.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>|<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="group.html#Group">Group</a>|<a href="device.html#Device">Device</a>)</span> <span style="color: navy">
+     Who|what is the subject of the document</span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="Specifies the particular kind of document (e.g. Patient Summary, Discharge Summary, Prescription, etc.)." class="dict" href="documentreference-definitions.html#DocumentReference.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-doc-codes.html">What kind of document this is (LOINC if possible)</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+ &lt;<a title="A categorisation for the type of the document. This may be implied by or derived from the code specified in the Document Type." class="dict" href="documentreference-definitions.html#DocumentReference.class"><b>class</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-xds-typecodes.html">Categorisation of Document</a></span><span style="color: Gray"> --&gt;</span>&lt;/class&gt;
+ &lt;<a title="Identifies who is responsible for adding the information to the document." class="dict" href="documentreference-definitions.html#DocumentReference.author"><b>author</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="device.html#Device">Device</a>|<a href="patient.html#Patient">Patient</a>|<a href="relatedperson.html#RelatedPerson">RelatedPerson</a>)</span> <span style="color: navy">
+     Who/what authored the document</span><span style="color: Gray"> --&gt;</span>&lt;/author&gt;
+ &lt;<a title="Identifies the organization or group who is responsible for ongoing maintenance of and access to the document." class="dict" href="documentreference-definitions.html#DocumentReference.custodian"><b>custodian</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Org which maintains the document</span><span style="color: Gray"> --&gt;</span>&lt;/custodian&gt;
+ &lt;<a title="A reference to a domain or server that manages policies under which the document is accessed and/or made available." class="dict" href="documentreference-definitions.html#DocumentReference.policyManager"><b>policyManager</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Manages access policies for the document</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Which person or organization authenticates that this document is valid." class="dict" href="documentreference-definitions.html#DocumentReference.authenticator"><b>authenticator</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="practitioner.html#Practitioner">Practitioner</a>|<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">
+     Who/What authenticated the document</span><span style="color: Gray"> --&gt;</span>&lt;/authenticator&gt;
+ &lt;<a title="When the document was created." class="dict" href="documentreference-definitions.html#DocumentReference.created"><b>created</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Document creation time</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="When the document reference was created." class="dict" href="documentreference-definitions.html#DocumentReference.indexed"><b>indexed</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#instant">instant</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">When this document reference created</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The status of this document reference (this element modifies the meaning of other elements)" class="dict" href="documentreference-definitions.html#DocumentReference.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="document-reference-status.html">current | superceded | entered in error</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The status of the underlying document." class="dict" href="documentreference-definitions.html#DocumentReference.docStatus"><b>docStatus</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="composition-status.html">preliminary | final | appended | amended | entered in error</a><span style="color: Gray"> --&gt;</span>&lt;/docStatus&gt;
+ &lt;<a title="Relationships that this document has with other document references that already exist (this element modifies the meaning of other elements)" class="dict" href="documentreference-definitions.html#DocumentReference.relatesTo"><span style="text-decoration: underline"><b>relatesTo</b></span></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Relationships to other documents --&gt;</span>
+  &lt;<a title="The type of relationship that this document has with anther document." class="dict" href="documentreference-definitions.html#DocumentReference.relatesTo.code"><b>code</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="document-relationship-type.html">replaces | transforms | signs | appends</a></span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="The target document of this relationship." class="dict" href="documentreference-definitions.html#DocumentReference.relatesTo.target"><b>target</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="documentreference.html#DocumentReference">DocumentReference</a>)</span> <span style="color: navy">Target of the relationship</span><span style="color: Gray"> --&gt;</span>&lt;/target&gt;
+ &lt;/relatesTo&gt;
+ &lt;<a title="Human-readable description of the source document. This is sometimes known as the &quot;title&quot;." class="dict" href="documentreference-definitions.html#DocumentReference.description"><b>description</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Human-readable description (title)</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A code specifying the level of confidentiality of the XDS Document (this element modifies the meaning of other elements)" class="dict" href="documentreference-definitions.html#DocumentReference.confidentiality"><span style="text-decoration: underline"><b>confidentiality</b></span></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/vs/Confidentiality/index.html">Sensitivity of source document</a><span style="color: Gray"> --&gt;</span>&lt;/confidentiality&gt;
+ &lt;<a title="The primary language in which the source document is written." class="dict" href="documentreference-definitions.html#DocumentReference.primaryLanguage"><b>primaryLanguage</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy"><a style="color: navy" href="http://tools.ietf.org/html/bcp47.html">The marked primary language for the document</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The mime type of the source document." class="dict" href="documentreference-definitions.html#DocumentReference.mimeType"><b>mimeType</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="http://www.rfc-editor.org/bcp/bcp13.txt.html">Mime type, + maybe character encoding</a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="An identifier that identifies that the format and content of the document conforms to additional rules beyond the base format indicated in the mimeType." class="dict" href="documentreference-definitions.html#DocumentReference.format"><b>format</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: navy">Format/content rules for the document</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The size of the source document this reference refers to in bytes." class="dict" href="documentreference-definitions.html#DocumentReference.size"><b>size</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#integer">integer</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Size of the document in bytes</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A hash of the source document to ensure that changes have not occurred." class="dict" href="documentreference-definitions.html#DocumentReference.hash"><b>hash</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">HexBinary representation of SHA1</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A url at which the document can be accessed." class="dict" href="documentreference-definitions.html#DocumentReference.location"><b>location</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#uri">uri</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span title="Inv-1: A location or a service (or both) SHALL be provided" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> <span style="color: navy">Where to access the document</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="A description of a service call that can be used to retrieve the document." class="dict" href="documentreference-definitions.html#DocumentReference.service"><b>service</b></a>&gt;  <span style="color: Gray">&lt;!-- <span title="Inv-1: A location or a service (or both) SHALL be provided" style="color: brown"><b><img alt="??" src="lock.png"/> 0..1</b></span> If access is not fully described by location --&gt;</span>
+  &lt;<a title="The type of the service that can be used to access the documents." class="dict" href="documentreference-definitions.html#DocumentReference.service.type"><b>type</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-documentreference-service-types.html">Type of service (i.e. XDS.b)</a></span><span style="color: Gray"> --&gt;</span>&lt;/type&gt;
+  &lt;<a title="Where the service end-point is located." class="dict" href="documentreference-definitions.html#DocumentReference.service.address"><b>address</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Where service is located (usually a URL)</span><span style="color: Gray"> --&gt;</span>
+  &lt;<a title="A list of named parameters that is used in the service call." class="dict" href="documentreference-definitions.html#DocumentReference.service.parameter"><b>parameter</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> Service call parameters --&gt;</span>
+   &lt;<a title="The name of a parameter." class="dict" href="documentreference-definitions.html#DocumentReference.service.parameter.name"><b>name</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Parameter name in service call</span><span style="color: Gray"> --&gt;</span>
+   &lt;<a title="The value of the named parameter." class="dict" href="documentreference-definitions.html#DocumentReference.service.parameter.value"><b>value</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Parameter value for the name</span><span style="color: Gray"> --&gt;</span>
   &lt;/parameter&gt;
  &lt;/service&gt;
- &lt;<a title="The clinical context in which the document was prepared." class="dict" href="documentreference-definitions.htm#DocumentReference.context"><b>context</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Clinical context of document --&gt;</span>
-  &lt;<a title="The type of clinical context, such as a kind of surgery, or a kind of speciality, or a clinical type." class="dict" href="documentreference-definitions.htm#DocumentReference.context.code"><b>code</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-doc-event-code.htm">Type of context (i.e. type of event)</a></span><span style="color: Gray"> --&gt;</span>&lt;/code&gt;
-  &lt;<a title="The time period of the patient&#39;s care that is described by the document." class="dict" href="documentreference-definitions.htm#DocumentReference.context.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Period">Period</a></span> <span style="color: navy">Time described by the document</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
-  &lt;<a title="The kind of facility where the patient was seen." class="dict" href="documentreference-definitions.htm#DocumentReference.context.facilityType"><b>facilityType</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-xds-facilitycodes.htm">Kind of facility where patient was seen</a></span><span style="color: Gray"> --&gt;</span>&lt;/facilityType&gt;
+ &lt;<a title="The clinical context in which the document was prepared." class="dict" href="documentreference-definitions.html#DocumentReference.context"><b>context</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..1</b></span> Clinical context of document --&gt;</span>
+  &lt;<a title="This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act." class="dict" href="documentreference-definitions.html#DocumentReference.context.event"><b>event</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <a style="color: navy" href="v3/ActCode/index.html">Main Clinical Acts Documented</a><span style="color: Gray"> --&gt;</span>&lt;/event&gt;
+  &lt;<a title="The time period over which the service that is described by the document was provided." class="dict" href="documentreference-definitions.html#DocumentReference.context.period"><b>period</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Period">Period</a></span> <span style="color: navy">Time of service that is being documented</span><span style="color: Gray"> --&gt;</span>&lt;/period&gt;
+  &lt;<a title="The kind of facility where the patient was seen." class="dict" href="documentreference-definitions.html#DocumentReference.context.facilityType"><b>facilityType</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-xds-facilitycodes.html">Kind of facility where patient was seen</a></span><span style="color: Gray"> --&gt;</span>&lt;/facilityType&gt;
  &lt;/context&gt;
 &lt;/DocumentReference&gt;
 </pre></div>
@@ -46,7 +53,17 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. A reference to a document."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="DocumentReference"/>
     <publish value="true"/>
@@ -65,13 +82,13 @@
           <key value="1"/>
           <name value="Location"/>
           <severity value="error"/>
-          <human value="A location or a service (or both) must be provided"/>
+          <human value="A location or a service (or both) SHALL be provided"/>
           <xpath value="exists(f:location) or exists(f:service)"/>
         </constraint>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="XDS Metadata"/>
+          <identity value="rim"/>
+          <map value="Document[classCode=&quot;DOC&quot; and moodCode=&quot;EVN&quot;]"/>
         </mapping>
       </definition>
     </element>
@@ -79,9 +96,24 @@
       <path value="DocumentReference.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -96,7 +128,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="DocumentReference.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -139,20 +171,38 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-12-Unique Document Number"/>
+          <identity value="rim"/>
+          <map value=".id"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="External ID: 2e82c1f6-a085-4c72-9da3-8640a32e42ab"/>
+          <identity value="v2"/>
+          <map value="TXA-12-Unique Document Number"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.masterIdentifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.identifier"/>
       <definition>
         <short value="Other identifiers for the document"/>
-        <formal value="Other identifiers associated with the record."/>
+        <formal value="Other identifiers associated with the document, including version independent, source record and workflow related identifiers."/>
+        <comments value="Other identifiers can also include Identifiers may be Accession Numbers, Order Numbers, Referral Request 
+Identifiers, XDS Workflow Instance Identifiers."/>
         <min value="0"/>
         <max value="*"/>
         <type>
@@ -160,15 +210,35 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value=".id / .setId"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="TXA-16-Unique Document File Name?"/>
         </mapping>
       </definition>
     </element>
     <element>
+      <path value="DocumentReference.identifier.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
       <path value="DocumentReference.subject"/>
       <definition>
-        <short value="The subject of the document"/>
+        <short value="Who|what is the subject of the document"/>
         <formal value="Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (I.e. machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure)."/>
         <min value="1"/>
         <max value="1"/>
@@ -177,13 +247,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="PID-3-Patient ID List (No standard way to define a Practitioner or Group subject in V2 MDM message)"/>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=&quot;SBJ&quot;].role[typeCode=&quot;PAT&quot;]"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : sourcePatientId + Slot : sourcePatientInfo"/>
+          <identity value="v2"/>
+          <map value="PID-3-Patient ID List (No standard way to define a Practitioner or Group subject in V2 MDM message)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.subject.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -198,33 +284,84 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DocumentType"/>
+        <binding>
+          <name value="DocumentType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/doc-codes"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-2-Document Type"/>
+          <identity value="rim"/>
+          <map value="./code"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification: 41a5887f-8865-4c09-adf7-e362475b143a (classCode)"/>
+          <identity value="v2"/>
+          <map value="TXA-2-Document Type"/>
         </mapping>
       </definition>
     </element>
     <element>
-      <path value="DocumentReference.subtype"/>
+      <path value="DocumentReference.type.extension"/>
       <definition>
-        <short value="More detail about the document type"/>
-        <formal value="More detailed information about the document type."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.class"/>
+      <definition>
+        <short value="Categorisation of Document"/>
+        <formal value="A categorisation for the type of the document. This may be implied by or derived from the code specified in the Document Type."/>
+        <comments value="Helps humans to assess whether the document is of interest when viewing an index of documents."/>
         <min value="0"/>
         <max value="1"/>
         <type>
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DocumentSubType"/>
+        <binding>
+          <name value="DocumentClass"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/xds-typecodes"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification: aa543740-bdda-424e-8c96-df4873be8500 (typeCode)"/>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code"/>
         </mapping>
+        <mapping>
+          <identity value="v2"/>
+          <map value=".outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.class.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -236,17 +373,33 @@ associated with the use of extensions by any application, project, or standard -
         <min value="1"/>
         <max value="*"/>
         <type>
-          <code value="Resource(Practitioner|Device)"/>
+          <code value="Resource(Practitioner|Device|Patient|RelatedPerson)"/>
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-9-Originator Code/Name (No standard way to indicate a Device in V2 MDM message)"/>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=&quot;AUT&quot;].role[classCode=&quot;ASSIGNED&quot;]"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification: 93606bcf-9494-43ec-9b4e-a7748d1a838d (author)"/>
+          <identity value="v2"/>
+          <map value="TXA-9-Originator Code/Name (No standard way to indicate a Device in V2 MDM message)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.author.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -254,7 +407,7 @@ associated with the use of extensions by any application, project, or standard -
       <definition>
         <short value="Org which maintains the document"/>
         <formal value="Identifies the organization or group who is responsible for ongoing maintenance of and access to the document."/>
-        <comments value="Identifies where to go to find the current version, where to report issues, etc."/>
+        <comments value="Identifies the logical organisation to go to find the current version, where to report issues, etc. This is different to the physical location of the document, which is the technical location of the document, which host may be delegated to the management of some other organization."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -262,15 +415,60 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="n/a"/>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=&quot;RCV&quot;].role[classCode=&quot;CUST&quot;].scoper[classCode=&quot;ORG&quot; and determinerCode=&quot;INST&quot;]"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.custodian.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.policyManager"/>
+      <definition>
+        <short value="Manages access policies for the document"/>
+        <formal value="A reference to a domain or server that manages policies under which the document is accessed and/or made available."/>
+        <min value="0"/>
+        <max value="1"/>
+        <type>
+          <code value="uri"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.policyManager.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.authenticator"/>
       <definition>
-        <short value="Who authenticated the document"/>
+        <short value="Who/What authenticated the document"/>
         <formal value="Which person or organization authenticates that this document is valid."/>
         <min value="0"/>
         <max value="1"/>
@@ -279,13 +477,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-10-Assigned Document Authenticator"/>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=&quot;AUTHEN&quot;].role[classCode=&quot;ASSIGNED&quot;]"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="?"/>
+          <identity value="v2"/>
+          <map value="TXA-10-Assigned Document Authenticator"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.authenticator.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -301,13 +515,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-6-Origination Date/Time"/>
+          <identity value="rim"/>
+          <map value=".effectiveTime[type=&quot;TS&quot;]"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : creationTime"/>
+          <identity value="v2"/>
+          <map value="TXA-6-Origination Date/Time"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.created.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -323,15 +553,31 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : creationTime"/>
+          <identity value="rim"/>
+          <map value=".availabilityTime[type=&quot;TS&quot;]"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.indexed.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.status"/>
       <definition>
-        <short value="current | superseded | error"/>
+        <short value="current | superceded | entered in error"/>
         <formal value="The status of this document reference."/>
         <min value="1"/>
         <max value="1"/>
@@ -339,21 +585,50 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="true"/>
-        <binding value="DocumentReferenceStatus"/>
+        <binding>
+          <name value="DocumentReferenceStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/document-reference-status"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="interim: .completionCode=&quot;IN&quot; &amp; ./statusCode[isNormalDatatype()]=&quot;active&quot;;
+
+final: .completionCode=&quot;AU&quot; &amp;&amp;  ./statusCode[isNormalDatatype()]=&quot;complete&quot; and not(./inboundRelationship[typeCode=&quot;SUBJ&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#CACT&quot;) and moodCode=&quot;EVN&quot; and domainMember(&quot;ReviseDocument&quot;, code) and isNormalAct()]);
+
+amended: .completionCode=&quot;AU&quot; &amp;&amp;  ./statusCode[isNormalDatatype()]=&quot;complete&quot; and ./inboundRelationship[typeCode=&quot;SUBJ&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#CACT&quot;) and moodCode=&quot;EVN&quot; and domainMember(&quot;ReviseDocument&quot;, code) and isNormalAct() and statusCode=&quot;completed&quot;];
+
+withdrawn : .completionCode=NI &amp;&amp;  ./statusCode[isNormalDatatype()]=&quot;obsolete&quot;"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="TXA-19-Document Availability Status"/>
         </mapping>
-        <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="implied by XDS workflow"/>
-        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.status.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.docStatus"/>
       <definition>
-        <short value="Status of the underlying document"/>
+        <short value="preliminary | final | appended | amended | entered in error"/>
         <formal value="The status of the underlying document."/>
         <min value="0"/>
         <max value="1"/>
@@ -361,39 +636,150 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="ReferredDocumentStatus"/>
+        <binding>
+          <name value="ReferredDocumentStatus"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/composition-status"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-17-Document Completion Status"/>
+          <identity value="rim"/>
+          <map value=".statusCode"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="n/a ?"/>
+          <identity value="v2"/>
+          <map value="TXA-17-Document Completion Status"/>
         </mapping>
       </definition>
     </element>
     <element>
-      <path value="DocumentReference.supercedes"/>
+      <path value="DocumentReference.docStatus.extension"/>
       <definition>
-        <short value="If this document replaces another"/>
-        <formal value="If this document replaces another."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
         <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.relatesTo"/>
+      <definition>
+        <short value="Relationships to other documents"/>
+        <formal value="Relationships that this document has with other document references that already exist."/>
+        <min value="0"/>
+        <max value="*"/>
+        <isModifier value="true"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.relatesTo.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.relatesTo.code"/>
+      <definition>
+        <short value="replaces | transforms | signs | appends"/>
+        <formal value="The type of relationship that this document has with anther document."/>
+        <comments value="If this document appends another document, then the document cannot be fully understood without also accessing the referenced document."/>
+        <min value="1"/>
+        <max value="1"/>
+        <type>
+          <code value="code"/>
+        </type>
+        <isModifier value="false"/>
+        <binding>
+          <name value="DocumentRelationshipType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/document-relationship-type"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value=".outboundRelationship.typeCode"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.relatesTo.code.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.relatesTo.target"/>
+      <definition>
+        <short value="Target of the relationship"/>
+        <formal value="The target document of this relationship."/>
+        <min value="1"/>
         <max value="1"/>
         <type>
           <code value="Resource(DocumentReference)"/>
         </type>
-        <isModifier value="true"/>
+        <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="todo"/>
+          <identity value="rim"/>
+          <map value=".target[classCode=&quot;DOC&quot;, moodCode=&quot;EVN&quot;].id"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.relatesTo.target.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.description"/>
       <definition>
-        <short value="Human Readable description (title)"/>
-        <formal value="Human Readable description of the source document. This is sometimes known as the &quot;title&quot;."/>
+        <short value="Human-readable description (title)"/>
+        <formal value="Human-readable description of the source document. This is sometimes known as the &quot;title&quot;."/>
         <comments value="What the document is about, rather than a terse summary of the document. It&#39;s commonly the case that records do not have a title and are collectively referred to by the display name of Record code (e.g. a &quot;consultation&quot; or &quot;progress note&quot;)."/>
         <min value="0"/>
         <max value="1"/>
@@ -402,13 +788,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="TXA-25-Document Title"/>
+          <identity value="rim"/>
+          <map value=".outboundRelationship[typeCode=&quot;SUBJ&quot;].target.text"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="ExtrinsicObject/Name"/>
+          <identity value="v2"/>
+          <map value="TXA-25-Document Title"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.description.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -418,26 +820,49 @@ associated with the use of extensions by any application, project, or standard -
         <formal value="A code specifying the level of confidentiality of the XDS Document."/>
         <comments value="The interpretation of this field, and more generally enforcement and issues related to highly sensitive documents are beyond the scope of this resource. confidentialityCode can only be understood in the context of the policies, procedures, and value set specified by the context in which the document reference is being used."/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
         <type>
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="true"/>
-        <binding value="DocumentConfidentiality"/>
+        <binding>
+          <name value="DocumentConfidentiality"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/v3/vs/Confidentiality"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value=".confidentialityCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="TXA-18-Document Confidentiality Status"/>
         </mapping>
-        <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification: f4f85eac-e6cb-4883-b524-f2705394840f (confidentialityCode)"/>
-        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.confidentiality.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.primaryLanguage"/>
       <definition>
-        <short value="Primary language of the document"/>
+        <short value="The marked primary language for the document"/>
         <formal value="The primary language in which the source document is written."/>
         <min value="0"/>
         <max value="1"/>
@@ -445,17 +870,38 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="Language"/>
+        <binding>
+          <name value="Language"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceUri value="http://tools.ietf.org/html/bcp47"/>
+        </binding>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : languageCode"/>
+          <identity value="rim"/>
+          <map value=".languageCode"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.primaryLanguage.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.mimeType"/>
       <definition>
-        <short value="Mime type of the document"/>
+        <short value="Mime type, + maybe character encoding"/>
         <formal value="The mime type of the source document."/>
         <comments value="Note: application/hl7-v3+xml for CDA. application/binary for proprietary record formats."/>
         <min value="1"/>
@@ -464,33 +910,70 @@ associated with the use of extensions by any application, project, or standard -
           <code value="code"/>
         </type>
         <isModifier value="false"/>
-        <binding value="MimeType"/>
+        <binding>
+          <name value="MimeType"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value=".text.mediaType"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="TXA-3-Document Content Presentation"/>
         </mapping>
-        <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="ExtrinsicObject/@mimeType"/>
-        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.mimeType.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.format"/>
       <definition>
-        <short value="Format of the document"/>
-        <formal value="The format of the document. This is used when the mimeType of the document does not provide enough differentiating information (typically, when the mime type of the document is text/xml)."/>
+        <short value="Format/content rules for the document"/>
+        <formal value="An identifier that identifies that the format and content of the document conforms to additional rules beyond the base format indicated in the mimeType."/>
+        <comments value="Most often used when the mime-type is text/xml."/>
         <min value="0"/>
-        <max value="1"/>
+        <max value="*"/>
         <type>
-          <code value="CodeableConcept"/>
+          <code value="uri"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DocumentFormat"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification: a09d5840-386c-46f2-b5ad-9c3699a4309d (formatCode)"/>
+          <identity value="rim"/>
+          <map value="n/a"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.format.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -505,9 +988,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : size"/>
+          <identity value="rim"/>
+          <map value=".text.length"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.size.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -523,9 +1022,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : hash"/>
+          <identity value="rim"/>
+          <map value=".text.integrityCheck"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.hash.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -540,13 +1055,29 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
-          <map value="(Might include V2 TXA-16-Unique Document File Name or TXA-24-Folder Assignment)"/>
+          <identity value="rim"/>
+          <map value=".text.reference"/>
         </mapping>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="repository location (by implication &amp; configuration)"/>
+          <identity value="v2"/>
+          <map value="(Might include V2 TXA-16-Unique Document File Name or TXA-24-Folder Assignment)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.location.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -559,9 +1090,25 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="determined from repository location + parameters"/>
+          <identity value="rim"/>
+          <map value=".text.reference"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.service.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -576,7 +1123,34 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DocumentServiceType"/>
+        <binding>
+          <name value="DocumentServiceType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/documentreference-service-types"/>
+          </referenceResource>
+        </binding>
+        <mapping>
+          <identity value="rim"/>
+          <map value="n/a"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.service.type.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -591,6 +1165,26 @@ associated with the use of extensions by any application, project, or standard -
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="n/a"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.service.address.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -602,12 +1196,32 @@ associated with the use of extensions by any application, project, or standard -
         <min value="0"/>
         <max value="*"/>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="n/a"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.service.parameter.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.service.parameter.name"/>
       <definition>
-        <short value="Name of parameter"/>
+        <short value="Parameter name in service call"/>
         <formal value="The name of a parameter."/>
         <min value="1"/>
         <max value="1"/>
@@ -615,17 +1229,57 @@ associated with the use of extensions by any application, project, or standard -
           <code value="string"/>
         </type>
         <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="n/a"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.service.parameter.name.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.service.parameter.value"/>
       <definition>
-        <short value="Parameter value"/>
+        <short value="Parameter value for the name"/>
         <formal value="The value of the named parameter."/>
         <min value="0"/>
         <max value="1"/>
         <type>
           <code value="string"/>
+        </type>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="n/a"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.service.parameter.value.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -640,34 +1294,76 @@ associated with the use of extensions by any application, project, or standard -
         <max value="1"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="(if needed)"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=&quot;SUBJ&quot;].target[classCode&lt;&#39;ACT&#39;]"/>
         </mapping>
       </definition>
     </element>
     <element>
-      <path value="DocumentReference.context.code"/>
+      <path value="DocumentReference.context.modifierExtension"/>
       <definition>
-        <short value="Type of context (i.e. type of event)"/>
-        <formal value="The type of clinical context, such as a kind of surgery, or a kind of speciality, or a clinical type."/>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.context.event"/>
+      <definition>
+        <short value="Main Clinical Acts Documented"/>
+        <formal value="This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act."/>
+        <comments value="In some cases, the event is inherent in the type element, such as a &quot;History and Physical Report&quot; in
+which the procedure being documented is necessarily a &quot;History and Physical&quot; act. An event can further specialize the act inherent in the type, such as 
+where it is simply &quot;Procedure Report&quot; and the procedure was a &quot;colonoscopy&quot;. If one or more event codes are included, they shall not conflict with the values inherent in the class or type elements as such a conflict would create an ambiguous situation."/>
         <min value="0"/>
         <max value="*"/>
         <type>
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DocumentEventCode"/>
+        <binding>
+          <name value="DocumentEventType"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/v3/vs/ActCode"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification : cccf5598-8b07-4b77-a05e-ae952c785ead (practice setting)"/>
+          <identity value="rim"/>
+          <map value=".code"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.context.event.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DocumentReference.context.period"/>
       <definition>
-        <short value="Time described by the document"/>
-        <formal value="The time period of the patient&#39;s care that is described by the document."/>
+        <short value="Time of service that is being documented"/>
+        <formal value="The time period over which the service that is described by the document was provided."/>
         <min value="0"/>
         <max value="1"/>
         <type>
@@ -675,9 +1371,25 @@ associated with the use of extensions by any application, project, or standard -
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Slot : serviceStartTime &amp; Slot : serviceStopTime"/>
+          <identity value="rim"/>
+          <map value=".effectiveTime"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DocumentReference.context.period.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -691,102 +1403,35 @@ associated with the use of extensions by any application, project, or standard -
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DocumentFacilityType"/>
+        <binding>
+          <name value="DocumentFacilityType"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/xds-facilitycodes"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://ihe.net/xds"/>
-          <map value="Classification : f33fb8ac-18af-42cc-ae0e-ed0b0bdb91e1 (healthcare Facility Type)"/>
+          <identity value="rim"/>
+          <map value=".participation[typeCode=&quot;LOC&quot;].role[classCode=&quot;DSDLOC&quot;].code"/>
         </mapping>
       </definition>
     </element>
+    <element>
+      <path value="DocumentReference.context.facilityType.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="DocumentSubType"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/xds-typecodes"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DocumentEventCode"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/doc-event-code"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DocumentConfidentiality"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/doc-confidentiality"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ReferredDocumentStatus"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/document-status"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="MimeType"/>
-    <conformance value="required"/>
-    <referenceUri value="http://www.rfc-editor.org/bcp/bcp13.txt"/>
-  </binding>
-  <binding>
-    <name value="DocumentFormat"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/xds-formatcodes"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="Language"/>
-    <conformance value="required"/>
-    <referenceUri value="http://tools.ietf.org/html/bcp47"/>
-  </binding>
-  <binding>
-    <name value="DocumentType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/doc-codes"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DocumentFacilityType"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/xds-facilitycodes"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DocumentServiceType"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/documentreference-service-types"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DocumentReferenceStatus"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/document-reference-status"/>
-    </referenceResource>
-  </binding>
 </Profile>

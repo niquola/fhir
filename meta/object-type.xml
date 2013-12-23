@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SecurityEventObjectType</h2>
       <p>Code for the participant object type being audited</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/object-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/object-type</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>1</td>
+          <td>
+            <a name="1">1</a>
+          </td>
           <td/>
           <td>Person.</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>
+            <a name="2">2</a>
+          </td>
           <td/>
           <td>System Object.</td>
         </tr>
         <tr>
-          <td>3</td>
+          <td>
+            <a name="3">3</a>
+          </td>
           <td/>
           <td>Organization.</td>
         </tr>
         <tr>
-          <td>4</td>
+          <td>
+            <a name="4">4</a>
+          </td>
           <td/>
           <td>Other.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="Code for the participant object type being audited"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.979+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/object-type"/>
     <caseSensitive value="true"/>

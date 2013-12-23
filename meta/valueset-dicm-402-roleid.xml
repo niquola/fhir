@@ -12,7 +12,7 @@
       <p>This value set includes codes defined in other code systems, using the following rules:</p>
       <ul>
         <li>Include these codes as defined in 
-          <a href="valueset-dicom-dcim.htm">http://nema.org/dicom/dcid</a>
+          <a href="valueset-dicom-dcim.html">http://nema.org/dicom/dcid</a>
           <table>
             <tr>
               <td>

@@ -6,11 +6,14 @@ class Fhir::RelatedPerson < Fhir::Resource
     validates_presence_of :patient_ref
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # A Human identifier for this person
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
   # The patient this person is related to
   resource_reference :patient, [Fhir::Patient]
@@ -22,7 +25,7 @@ class Fhir::RelatedPerson < Fhir::Resource
   attribute :name, Fhir::HumanName
 
   # A contact detail for the person
-  attribute :telecoms, Array[Fhir::Contact]
+  attribute :telecom, Array[Fhir::Contact]
 
   # Gender for administrative purposes
   attribute :gender, Fhir::CodeableConcept
@@ -32,7 +35,7 @@ class Fhir::RelatedPerson < Fhir::Resource
   attribute :address, Fhir::Address
 
   # Image of the person
-  attribute :photos, Array[Fhir::Attachment]
+  attribute :photo, Array[Fhir::Attachment]
 end
 
 

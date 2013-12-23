@@ -1,1 +1,33 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div>\n      <p>This value sets indicates whether a given quantity is absolute or relative<\/p>\n    <\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/substance-mode"},"name":{"value":"Substance Quantity Mode"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"Substance Quantity Mode"},"status":{"value":"draft"},"define":{"system":{"value":"http://hl7.org/fhir/substance-quantity-mode"},"concept":[{"code":{"value":"abs"},"display":{"value":"Absolute"},"definition":{"value":"Quantity values are absolute."}},{"code":{"value":"rel"},"display":{"value":"Relative"},"definition":{"value":"Quantity values are relative to each other."}}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>This value sets indicates whether a given quantity is absolute or relative</p>\n    </div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/substance-mode",
+  "name": "Substance Quantity Mode",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Substance Quantity Mode",
+  "status": "draft",
+  "define": {
+    "system": "http://hl7.org/fhir/substance-quantity-mode",
+    "concept": [
+      {
+        "code": "abs",
+        "display": "Absolute",
+        "definition": "Quantity values are absolute."
+      },
+      {
+        "code": "rel",
+        "display": "Relative",
+        "definition": "Quantity values are relative to each other."
+      }
+    ]
+  }
+}

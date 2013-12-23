@@ -10,13 +10,19 @@ class Fhir::Condition < Fhir::Resource
     validates_presence_of :status
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
+
+  # External Ids for this condition
+  attribute :identifier, Array[Fhir::Identifier]
 
   # Subject of this condition
   resource_reference :subject, [Fhir::Patient]
 
-  # Encounter during which the condition was first asserted
+  # Encounter when condition first asserted
   resource_reference :encounter, [Fhir::Encounter]
 
   # Person who asserts this condition
@@ -49,11 +55,14 @@ class Fhir::Condition < Fhir::Resource
   # Clinical stage or grade of a condition. May include formal
   # severity assessments.
   class Stage < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Simple summary (disease specific)
     attribute :summary, Fhir::CodeableConcept
 
     # Formal record of assessment
-    resource_references :assessments, [Fhir::Resource]
+    resource_references :assessment, [Fhir::Resource]
   end
 
   attribute :stage, Stage
@@ -61,18 +70,24 @@ class Fhir::Condition < Fhir::Resource
   # Supporting Evidence / manifestations that are the basis on
   # which this condition is suspected or confirmed.
   class Evidence < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Manifestation/symptom
     attribute :code, Fhir::CodeableConcept
 
     # Supporting information found elsewhere
-    resource_references :details, [Fhir::Resource]
+    resource_references :detail, [Fhir::Resource]
   end
 
-  attribute :evidences, Array[Evidence]
+  attribute :evidence, Array[Evidence]
 
   # The anatomical location where this condition manifests
   # itself.
   class Location < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Location - may include laterality
     attribute :code, Fhir::CodeableConcept
 
@@ -80,7 +95,7 @@ class Fhir::Condition < Fhir::Resource
     attribute :detail, String
   end
 
-  attribute :locations, Array[Location]
+  attribute :location, Array[Location]
 
   # Further conditions, problems, diagnoses, procedures or
   # events that are related in some way to this condition, or
@@ -90,17 +105,20 @@ class Fhir::Condition < Fhir::Resource
       validates_presence_of :type
     end
 
-    # due-to | follows
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # due-to | following
     attribute :type, Fhir::Code
 
     # Relationship target by means of a predefined code
     attribute :code, Fhir::CodeableConcept
 
     # Relationship target resource
-    resource_reference :target, [Fhir::Condition, Fhir::Procedure, Fhir::Substance]
+    resource_reference :target, [Fhir::Condition, Fhir::Procedure, Fhir::MedicationAdministration, Fhir::Immunization, Fhir::MedicationStatement]
   end
 
-  attribute :related_items, Array[RelatedItem]
+  attribute :related_item, Array[RelatedItem]
 
   # Additional information about the Condition
   attribute :notes, String

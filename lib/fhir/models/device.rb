@@ -11,8 +11,14 @@ class Fhir::Device < Fhir::Resource
     validates_presence_of :type
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
+
+  # Instance id from manufacturer, owner and others
+  attribute :identifier, Array[Fhir::Identifier]
 
   # What kind of device this is
   attribute :type, Fhir::CodeableConcept
@@ -29,29 +35,14 @@ class Fhir::Device < Fhir::Resource
   # Date of expiry of this device (if applicable)
   attribute :expiry, Date
 
-  # Universal Device Id fields.
-  class Identity < Fhir::ValueObject
-    invariants do
-      validates_presence_of :serial_number
-    end
+  # FDA Mandated Unique Device Identifier
+  attribute :udi, String
 
-    # Global Trade Identification Number
-    attribute :gtin, String
-
-    # Lot number of manufacture
-    attribute :lot, String
-
-    # Serial number assigned by the manufacturer
-    attribute :serial_number, String
-  end
-
-  attribute :identity, Identity
+  # Lot number of manufacture
+  attribute :lot_number, String
 
   # Organization responsible for device
   resource_reference :owner, [Fhir::Organization]
-
-  # Identifier assigned by various organizations
-  attribute :assigned_ids, Array[Fhir::Identifier]
 
   # Where the resource is found
   resource_reference :location, [Fhir::Location]
@@ -60,7 +51,7 @@ class Fhir::Device < Fhir::Resource
   resource_reference :patient, [Fhir::Patient]
 
   # Details for human/organization for support
-  attribute :contacts, Array[Fhir::Contact]
+  attribute :contact, Array[Fhir::Contact]
 
   # Network address to contact device
   attribute :url, Fhir::URI

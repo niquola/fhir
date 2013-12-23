@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SecurityEventParticipantNetworkType</h2>
       <p>The type of network access point that originated the audit event</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/network-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/network-type</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>name</td>
+          <td>
+            <a name="1">1</a>
+          </td>
           <td/>
           <td>Machine Name, including DNS name.</td>
         </tr>
         <tr>
-          <td>ip</td>
+          <td>
+            <a name="2">2</a>
+          </td>
           <td/>
           <td>IP Address.</td>
         </tr>
         <tr>
-          <td>phone</td>
+          <td>
+            <a name="3">3</a>
+          </td>
           <td/>
           <td>Telephone Number.</td>
         </tr>
         <tr>
-          <td>email</td>
+          <td>
+            <a name="4">4</a>
+          </td>
           <td/>
           <td>Email address.</td>
         </tr>
         <tr>
-          <td>uri</td>
+          <td>
+            <a name="5">5</a>
+          </td>
           <td/>
           <td>URI (User directory, HTTP-PUT, ftp, etc.).</td>
         </tr>
@@ -60,28 +70,28 @@
   </telecom>
   <description value="The type of network access point that originated the audit event"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/network-type"/>
     <caseSensitive value="true"/>
     <concept>
-      <code value="name"/>
+      <code value="1"/>
       <definition value="Machine Name, including DNS name."/>
     </concept>
     <concept>
-      <code value="ip"/>
+      <code value="2"/>
       <definition value="IP Address."/>
     </concept>
     <concept>
-      <code value="phone"/>
+      <code value="3"/>
       <definition value="Telephone Number."/>
     </concept>
     <concept>
-      <code value="email"/>
+      <code value="4"/>
       <definition value="Email address."/>
     </concept>
     <concept>
-      <code value="uri"/>
+      <code value="5"/>
       <definition value="URI (User directory, HTTP-PUT, ftp, etc.)."/>
     </concept>
   </define>

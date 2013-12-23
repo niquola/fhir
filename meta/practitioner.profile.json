@@ -1,1 +1,949 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><pre>\r\n&lt;<a title=\"Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner\"><b>Practitioner<\/b><\/a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;\r\n &lt;!-- from <a href=\"resources.htm\">Resource<\/a>: <a href=\"extensibility.htm\">extension<\/a>, <a href=\"narrative.htm#Narrative\">narrative<\/a>, and <a href=\"references.htm#contained\">contained<\/a> --&gt;\r\n &lt;<a title=\"An identifier that applies to this person in this role.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.identifier\"><b>identifier<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Identifier\">Identifier<\/a><\/span> <span style=\"color: navy\">A identifier for the person as this agent<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/identifier&gt;\r\n &lt;<a title=\"A name associated with the person.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.name\"><b>name<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#HumanName\">HumanName<\/a><\/span> <span style=\"color: navy\">A name associated with the person<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/name&gt;\r\n &lt;<a title=\"A contact detail for the practitioner, e.g. a telephone number or an email address.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.telecom\"><b>telecom<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Contact\">Contact<\/a><\/span> <span style=\"color: navy\">A contact detail for the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/telecom&gt;\r\n &lt;<a title=\"One or more addresses where the practitioner can be found or visited.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.address\"><b>address<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Address\">Address<\/a><\/span> <span style=\"color: navy\">One or more addresses for the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/address&gt;\r\n &lt;<a title=\"Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.gender\"><b>gender<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-administrative-gender.htm\">Gender for administrative purposes<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/gender&gt;\r\n &lt;<a title=\"The date and time of birth for the practitioner.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.birthDate\"><b>birthDate<\/b><\/a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.htm#dateTime\">dateTime<\/a><\/span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: navy\">The date and time of birth for the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>\r\n &lt;<a title=\"Image of the person.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.photo\"><b>photo<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Attachment\">Attachment<\/a><\/span> <span style=\"color: navy\">Image of the person<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/photo&gt;\r\n &lt;<a title=\"The organization that the practitioner represents.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.organization\"><b>organization<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"organization.htm#Organization\">Organization<\/a>)<\/span> <span style=\"color: navy\">The represented organization<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/organization&gt;\r\n &lt;<a title=\"The way in which the person represents the organization - what role do they have?.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.role\"><b>role<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-practitioner-role.htm\">A role the practitioner has<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/role&gt;\r\n &lt;<a title=\"Specific specialty of the practitioner.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.specialty\"><b>specialty<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-practitioner-specialty.htm\">Specific specialty of the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/specialty&gt;\r\n &lt;<a title=\"The period during which the person is authorized to perform the service.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.period\"><b>period<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Period\">Period<\/a><\/span> <span style=\"color: navy\">The period during which the person is authorized to perform the service<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;<\/span><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/period&gt;\r\n &lt;<a title=\"Qualifications relevant to the provided service.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.qualification\"><b>qualification<\/b><\/a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*<\/b><\/span> Qualifications relevant to the provided service --&gt;<\/span>\r\n  &lt;<a title=\"Coded representation of the qualification.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.qualification.code\"><b>code<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>1..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-anzsco-occupations.htm\">Qualification<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/code&gt;\r\n  &lt;<a title=\"Period during which the qualification is valid.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.qualification.period\"><b>period<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#Period\">Period<\/a><\/span> <span style=\"color: navy\">Period during which the qualification is valid<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/period&gt;\r\n  &lt;<a title=\"Organization that regulates and issues the qualification.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.qualification.issuer\"><b>issuer<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..1<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"references.htm#Resource\">Resource<\/a>(<a href=\"organization.htm#Organization\">Organization<\/a>)<\/span> <span style=\"color: navy\">Organization that regulates and issues the qualification<\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/issuer&gt;\r\n &lt;/qualification&gt;\r\n &lt;<a title=\"A language the practitioner is able to use in patient communication.\" class=\"dict\" href=\"practitioner-definitions.htm#Practitioner.communication\"><b>communication<\/b><\/a>&gt;<span style=\"color: Gray\">&lt;!--<\/span> <span style=\"color: brown\"><b>0..*<\/b><\/span> <span style=\"color: darkgreen\"><a href=\"datatypes.htm#CodeableConcept\">CodeableConcept<\/a><\/span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"http://tools.ietf.org/html/bcp47.htm\">A language the practitioner is able to use in patient communication<\/a><\/span><span style=\"color: Gray\"> --&gt;<\/span>&lt;/communication&gt;\r\n&lt;/Practitioner&gt;\r\n<\/pre><\/div>"},"name":{"value":"practitioner"},"publisher":{"value":"FHIR Project"},"description":{"value":"Basic Profile. Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare."},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Practitioner"},"publish":{"value":true},"element":[{"path":{"value":"Practitioner"},"definition":{"short":{"value":"A person with a  formal responsibility in the provisioning of healthcare or related services"},"formal":{"value":"Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare."},"comments":{"value":"Note that a cab driver no longer fits the bill. You probably would be interested in the organization rather than the individual?."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Resource"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"Role"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRD (as one example)"}}]}},{"path":{"value":"Practitioner.extension"},"definition":{"short":{"value":"Additional Content defined by implementations"},"formal":{"value":"May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."},"comments":{"value":"there can be no stigma\nassociated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."},"synonym":[{"value":"extensions"},{"value":"user content"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Extension"}}],"isModifier":{"value":false}}},{"path":{"value":"Practitioner.text"},"definition":{"short":{"value":"Text summary of the resource, for human interpretation"},"formal":{"value":"A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."},"comments":{"value":"Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."},"synonym":[{"value":"narrative"},{"value":"html"},{"value":"xhtml"},{"value":"display"}],"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Narrative"}}],"isModifier":{"value":false}}},{"path":{"value":"Practitioner.contained"},"definition":{"short":{"value":"Contained, inline Resources"},"formal":{"value":"These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope."},"comments":{"value":"This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again."},"synonym":[{"value":"inline resources"},{"value":"anonymous resources"},{"value":"contained resources"}],"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Resource"}}],"isModifier":{"value":false}}},{"path":{"value":"Practitioner.identifier"},"definition":{"short":{"value":"A identifier for the person as this agent"},"formal":{"value":"An identifier that applies to this person in this role."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Identifier"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRD-7 (or XCN.1 Person Identifier)"}}]}},{"path":{"value":"Practitioner.name"},"definition":{"short":{"value":"A name associated with the person"},"formal":{"value":"A name associated with the person."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"HumanName"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./name"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"XCN Components"}}]}},{"path":{"value":"Practitioner.telecom"},"definition":{"short":{"value":"A contact detail for the practitioner"},"formal":{"value":"A contact detail for the practitioner, e.g. a telephone number or an email address."},"comments":{"value":"Person may have multiple ways to be contacted with different uses or applicable periods. \rMay need to have options for contacting the person urgently, and also to help with identification."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Contact"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./telecom"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRT-15, STF-10, ROL-12"}}]}},{"path":{"value":"Practitioner.address"},"definition":{"short":{"value":"One or more addresses for the practitioner"},"formal":{"value":"One or more addresses where the practitioner can be found or visited."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Address"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./addr"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"ORC-24, STF-11, ROL-11, PRT-14"}}]}},{"path":{"value":"Practitioner.gender"},"definition":{"short":{"value":"Gender for administrative purposes"},"formal":{"value":"Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"AdministrativeGender"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./administrativeGender"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"STF-5"}}]}},{"path":{"value":"Practitioner.birthDate"},"definition":{"short":{"value":"The date and time of birth for the practitioner"},"formal":{"value":"The date and time of birth for the practitioner."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"dateTime"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./birthTime"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"STF-6"}}]}},{"path":{"value":"Practitioner.photo"},"definition":{"short":{"value":"Image of the person"},"formal":{"value":"Image of the person."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Attachment"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Practitioner.organization"},"definition":{"short":{"value":"The represented organization"},"formal":{"value":"The organization that the practitioner represents."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Organization)"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRD-10 (-> 14) / PRA-9-Institution / PRT-8-Participation Organization for person participation"}}]}},{"path":{"value":"Practitioner.role"},"definition":{"short":{"value":"A role the practitioner has"},"formal":{"value":"The way in which the person represents the organization - what role do they have?."},"comments":{"value":"A person may have more than one role. At least one role is required."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"PractitionerRole"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRD-1 / STF-18-job title / PRA-3-practitioner category  / PRT-4-Participation / ROL-3-role-ROL / ORC-12-ordering provider / OBR-16-ordering provider / PV1-7-attending doctor / PV1-8-referring doctor / PV1-9-consulting doctor / PV1-17-admitting doctor"}}]}},{"path":{"value":"Practitioner.specialty"},"definition":{"short":{"value":"Specific specialty of the practitioner"},"formal":{"value":"Specific specialty of the practitioner."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"PractitionerSpecialty"},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRA-5-specialty"}}]}},{"path":{"value":"Practitioner.period"},"definition":{"short":{"value":"The period during which the person is authorized to perform the service"},"formal":{"value":"The period during which the person is authorized to perform the service."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Period"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PRD-8/9 / PRA-5.4-date of certification"}}]}},{"path":{"value":"Practitioner.qualification"},"definition":{"short":{"value":"Qualifications relevant to the provided service"},"formal":{"value":"Qualifications relevant to the provided service."},"min":{"value":0},"max":{"value":"*"},"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v2"},"map":{"value":"CER?"}}]}},{"path":{"value":"Practitioner.qualification.code"},"definition":{"short":{"value":"Qualification"},"formal":{"value":"Coded representation of the qualification."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"Qualification"}}},{"path":{"value":"Practitioner.qualification.period"},"definition":{"short":{"value":"Period during which the qualification is valid"},"formal":{"value":"Period during which the qualification is valid."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Period"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Practitioner.qualification.issuer"},"definition":{"short":{"value":"Organization that regulates and issues the qualification"},"formal":{"value":"Organization that regulates and issues the qualification."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"Resource(Organization)"}}],"condition":[],"isModifier":{"value":false}}},{"path":{"value":"Practitioner.communication"},"definition":{"short":{"value":"A language the practitioner is able to use in patient communication"},"formal":{"value":"A language the practitioner is able to use in patient communication."},"comments":{"value":"The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems actually code this but instead have it as free text. Hence CodeableConcept instead of code as the data type."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"CodeableConcept"}}],"condition":[],"isModifier":{"value":false},"binding":{"value":"Language"},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./languageCode"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"PID-15, NK1-20, LAN-2"}}]}}]}],"binding":[{"name":{"value":"Qualification"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/anzsco-occupations"}}},{"name":{"value":"AdministrativeGender"},"isExtensible":{"value":true},"conformance":{"value":"preferred"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/administrative-gender"}}},{"name":{"value":"Language"},"conformance":{"value":"required"},"referenceUri":{"value":"http://tools.ietf.org/html/bcp47"}},{"name":{"value":"PractitionerSpecialty"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/practitioner-specialty"}}},{"name":{"value":"PractitionerRole"},"isExtensible":{"value":true},"conformance":{"value":"example"},"referenceResource":{"type":{"value":"ValueSet"},"reference":{"value":"http://hl7.org/fhir/vs/practitioner-role"}}}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><pre>\r\n&lt;<a title=\"Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner\"><b>Practitioner</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style=\"float: right\"><a title=\"Documentation for this format\" href=\"formats.html\"><img alt=\"doco\" src=\"help.png\"/></a></span>\r\n &lt;!-- from <a href=\"resources.html\">Resource</a>: <a href=\"extensibility.html\">extension</a>, <a href=\"extensibility.html#modifierExtension\">modifierExtension</a>, language, <a href=\"narrative.html#Narrative\">text</a>, and <a href=\"references.html#contained\">contained</a> --&gt;\r\n &lt;<a title=\"An identifier that applies to this person in this role.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.identifier\"><b>identifier</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Identifier\">Identifier</a></span> <span style=\"color: navy\">A identifier for the person as this agent<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/identifier&gt;\r\n &lt;<a title=\"A name associated with the person.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.name\"><b>name</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#HumanName\">HumanName</a></span> <span style=\"color: navy\">A name associated with the person<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/name&gt;\r\n &lt;<a title=\"A contact detail for the practitioner, e.g. a telephone number or an email address.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.telecom\"><b>telecom</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Contact\">Contact</a></span> <span style=\"color: navy\">A contact detail for the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/telecom&gt;\r\n &lt;<a title=\"One or more addresses where the practitioner can be found or visited.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.address\"><b>address</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Address\">Address</a></span> <span style=\"color: navy\">One or more addresses for the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/address&gt;\r\n &lt;<a title=\"Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.gender\"><b>gender</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-administrative-gender.html\">Gender for administrative purposes<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/gender&gt;\r\n &lt;<a title=\"The date and time of birth for the practitioner.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.birthDate\"><b>birthDate</b></a> value=&quot;[<span style=\"color: darkgreen\"><a href=\"datatypes.html#dateTime\">dateTime</a></span>]&quot;/&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: navy\">The date and time of birth for the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>\r\n &lt;<a title=\"Image of the person.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.photo\"><b>photo</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Attachment\">Attachment</a></span> <span style=\"color: navy\">Image of the person</span><span style=\"color: Gray\"> --&gt;</span>&lt;/photo&gt;\r\n &lt;<a title=\"The organization that the practitioner represents.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.organization\"><b>organization</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>)</span> <span style=\"color: navy\">The represented organization<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/organization&gt;\r\n &lt;<a title=\"Roles which this practitioner is authorized perform for the organization.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.role\"><b>role</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-practitioner-role.html\">Roles which this practitioner may perform<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/role&gt;\r\n &lt;<a title=\"Specific specialty of the practitioner.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.specialty\"><b>specialty</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-practitioner-specialty.html\">Specific specialty of the practitioner<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/specialty&gt;\r\n &lt;<a title=\"The period during which the person is authorized to act as a practitioner in these role(s) for the organization.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.period\"><b>period</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">\r\n     The period during which the practitioner is authorized to perform in these role(s)<span title=\"This element is included in a summary view (See Search/Query)\" style=\"color: Navy\"> &sect;</span></span><span style=\"color: Gray\"> --&gt;</span>&lt;/period&gt;\r\n &lt;<a title=\"The location(s) at which this practitioner provides care.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.location\"><b>location</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"location.html#Location\">Location</a>)</span> <span style=\"color: navy\">\r\n     The location(s) at which this practitioner provides care</span><span style=\"color: Gray\"> --&gt;</span>&lt;/location&gt;\r\n &lt;<a title=\"Qualifications obtained by training and certification.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.qualification\"><b>qualification</b></a>&gt;  <span style=\"color: Gray\">&lt;!-- <span style=\"color: brown\"><b>0..*</b></span> Qualifications obtained by training and certification --&gt;</span>\r\n  &lt;<a title=\"Coded representation of the qualification.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.qualification.code\"><b>code</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>1..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"valueset-anzsco-occupations.html\">Coded representation of the qualification</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/code&gt;\r\n  &lt;<a title=\"Period during which the qualification is valid.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.qualification.period\"><b>period</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#Period\">Period</a></span> <span style=\"color: navy\">Period during which the qualification is valid</span><span style=\"color: Gray\"> --&gt;</span>&lt;/period&gt;\r\n  &lt;<a title=\"Organization that regulates and issues the qualification.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.qualification.issuer\"><b>issuer</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..1</b></span> <span style=\"color: darkgreen\"><a href=\"references.html#Resource\">Resource</a>(<a href=\"organization.html#Organization\">Organization</a>)</span> <span style=\"color: navy\">\r\n      Organization that regulates and issues the qualification</span><span style=\"color: Gray\"> --&gt;</span>&lt;/issuer&gt;\r\n &lt;/qualification&gt;\r\n &lt;<a title=\"A language the practitioner is able to use in patient communication.\" class=\"dict\" href=\"practitioner-definitions.html#Practitioner.communication\"><b>communication</b></a>&gt;<span style=\"color: Gray\">&lt;!--</span> <span style=\"color: brown\"><b>0..*</b></span> <span style=\"color: darkgreen\"><a href=\"datatypes.html#CodeableConcept\">CodeableConcept</a></span> <span style=\"color: navy\"><a style=\"color: navy\" href=\"http://tools.ietf.org/html/bcp47.html\">A language the practitioner is able to use in patient communication</a></span><span style=\"color: Gray\"> --&gt;</span>&lt;/communication&gt;\r\n&lt;/Practitioner&gt;\r\n</pre></div>"
+  },
+  "name": "practitioner",
+  "publisher": "FHIR Project",
+  "description": "Basic Profile. Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare.",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Practitioner",
+      "publish": true,
+      "element": [
+        {
+          "path": "Practitioner",
+          "definition": {
+            "short": "A person with a  formal responsibility in the provisioning of healthcare or related services",
+            "formal": "Demographics and qualification information for an individual who is directly or indirectly involved in the provisioning of healthcare.",
+            "comments": "Note that a cab driver no longer fits the bill. You probably would be interested in the organization rather than the individual?.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "Role"
+              },
+              {
+                "identity": "v2",
+                "map": "PRD (as one example)"
+              },
+              {
+                "identity": "servd",
+                "map": "Provider"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.text",
+          "definition": {
+            "short": "Text summary of the resource, for human interpretation",
+            "formal": "A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it \"clinically safe\" for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety.",
+            "comments": "Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative.",
+            "synonym": [
+              "narrative",
+              "html",
+              "xhtml",
+              "display"
+            ],
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Narrative"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.contained",
+          "definition": {
+            "short": "Contained, inline Resources",
+            "formal": "These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.",
+            "comments": "This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again.",
+            "synonym": [
+              "inline resources",
+              "anonymous resources",
+              "contained resources"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.identifier",
+          "definition": {
+            "short": "A identifier for the person as this agent",
+            "formal": "An identifier that applies to this person in this role.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Identifier"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRD-7 (or XCN.1 Person Identifier)"
+              },
+              {
+                "identity": "servd",
+                "map": "./Identifiers"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.identifier.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.name",
+          "definition": {
+            "short": "A name associated with the person",
+            "formal": "A name associated with the person.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "HumanName"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./name"
+              },
+              {
+                "identity": "v2",
+                "map": "XCN Components"
+              },
+              {
+                "identity": "servd",
+                "map": "./PreferredName (GivenNames, FamilyName, TitleCode)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.name.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.telecom",
+          "definition": {
+            "short": "A contact detail for the practitioner",
+            "formal": "A contact detail for the practitioner, e.g. a telephone number or an email address.",
+            "comments": "Person may have multiple ways to be contacted with different uses or applicable periods. \rMay need to have options for contacting the person urgently, and also to help with identification.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Contact"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./telecom"
+              },
+              {
+                "identity": "v2",
+                "map": "PRT-15, STF-10, ROL-12"
+              },
+              {
+                "identity": "servd",
+                "map": "./ContactPoints"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.telecom.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.address",
+          "definition": {
+            "short": "One or more addresses for the practitioner",
+            "formal": "One or more addresses where the practitioner can be found or visited.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Address"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./addr"
+              },
+              {
+                "identity": "v2",
+                "map": "ORC-24, STF-11, ROL-11, PRT-14"
+              },
+              {
+                "identity": "servd",
+                "map": "./Addresses"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.address.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.gender",
+          "definition": {
+            "short": "Gender for administrative purposes",
+            "formal": "Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "AdministrativeGender",
+              "isExtensible": true,
+              "conformance": "preferred",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/administrative-gender"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./administrativeGender"
+              },
+              {
+                "identity": "v2",
+                "map": "STF-5"
+              },
+              {
+                "identity": "servd",
+                "map": "./GenderCode"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.gender.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.birthDate",
+          "definition": {
+            "short": "The date and time of birth for the practitioner",
+            "formal": "The date and time of birth for the practitioner.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "dateTime"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./birthTime"
+              },
+              {
+                "identity": "v2",
+                "map": "STF-6"
+              },
+              {
+                "identity": "servd",
+                "map": "(not represented in ServD)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.birthDate.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.photo",
+          "definition": {
+            "short": "Image of the person",
+            "formal": "Image of the person.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Attachment"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "servd",
+                "map": "./ImageURI (only supports the URI reference)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.photo.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.organization",
+          "definition": {
+            "short": "The represented organization",
+            "formal": "The organization that the practitioner represents.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRD-10 (-> 14) / PRA-9-Institution / PRT-8-Participation Organization for person participation"
+              },
+              {
+                "identity": "servd",
+                "map": "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.organization.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.role",
+          "definition": {
+            "short": "Roles which this practitioner may perform",
+            "formal": "Roles which this practitioner is authorized perform for the organization.",
+            "comments": "A person may have more than one role. At least one role is required.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "PractitionerRole",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/practitioner-role"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRD-1 / STF-18-job title / PRA-3-practitioner category  / PRT-4-Participation / ROL-3-role-ROL / ORC-12-ordering provider / OBR-16-ordering provider / PV1-7-attending doctor / PV1-8-referring doctor / PV1-9-consulting doctor / PV1-17-admitting doctor"
+              },
+              {
+                "identity": "servd",
+                "map": "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.role.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.specialty",
+          "definition": {
+            "short": "Specific specialty of the practitioner",
+            "formal": "Specific specialty of the practitioner.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "PractitionerSpecialty",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/practitioner-specialty"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRA-5-specialty"
+              },
+              {
+                "identity": "servd",
+                "map": "./Specialty"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.specialty.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.period",
+          "definition": {
+            "short": "The period during which the practitioner is authorized to perform in these role(s)",
+            "formal": "The period during which the person is authorized to act as a practitioner in these role(s) for the organization.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "PRD-8/9 / PRA-5.4-date of certification"
+              },
+              {
+                "identity": "servd",
+                "map": "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.period.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.location",
+          "definition": {
+            "short": "The location(s) at which this practitioner provides care",
+            "formal": "The location(s) at which this practitioner provides care.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Resource(Location)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "servd",
+                "map": "(ServD maps Practitioners and Organizations via another entity, so this concept is not available)<br/>\nHowever these are accessed via the Site.ServiceSite.ServiceSiteProvider record. (The Site has the location)"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.location.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.qualification",
+          "definition": {
+            "short": "Qualifications obtained by training and certification",
+            "formal": "Qualifications obtained by training and certification.",
+            "min": "0",
+            "max": "*",
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "v2",
+                "map": "CER?"
+              },
+              {
+                "identity": "servd",
+                "map": "./Qualifications"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.qualification.modifierExtension",
+          "definition": {
+            "short": "Extensions that cannot be ignored",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.qualification.code",
+          "definition": {
+            "short": "Coded representation of the qualification",
+            "formal": "Coded representation of the qualification.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "Qualification",
+              "isExtensible": true,
+              "conformance": "example",
+              "referenceResource": {
+                "reference": "http://hl7.org/fhir/vs/anzsco-occupations"
+              }
+            },
+            "mapping": [
+              {
+                "identity": "servd",
+                "map": "./Qualifications.Value"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.qualification.code.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.qualification.period",
+          "definition": {
+            "short": "Period during which the qualification is valid",
+            "formal": "Period during which the qualification is valid.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Period"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "servd",
+                "map": "./Qualifications.StartDate and ./Qualifications.EndDate"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.qualification.period.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.qualification.issuer",
+          "definition": {
+            "short": "Organization that regulates and issues the qualification",
+            "formal": "Organization that regulates and issues the qualification.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(Organization)"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.qualification.issuer.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        },
+        {
+          "path": "Practitioner.communication",
+          "definition": {
+            "short": "A language the practitioner is able to use in patient communication",
+            "formal": "A language the practitioner is able to use in patient communication.",
+            "comments": "The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems actually code this but instead have it as free text. Hence CodeableConcept instead of code as the data type.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "CodeableConcept"
+              }
+            ],
+            "isModifier": false,
+            "binding": {
+              "name": "Language",
+              "isExtensible": false,
+              "conformance": "required",
+              "referenceUri": "http://tools.ietf.org/html/bcp47"
+            },
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./languageCode"
+              },
+              {
+                "identity": "v2",
+                "map": "PID-15, NK1-20, LAN-2"
+              },
+              {
+                "identity": "servd",
+                "map": "./Languages.LanguageSpokenCode"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Practitioner.communication.extension",
+          "definition": {
+            "short": "Additional Content defined by implementations",
+            "formal": "May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.",
+            "comments": "there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone.",
+            "synonym": [
+              "extensions",
+              "user content"
+            ],
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Extension"
+              }
+            ],
+            "isModifier": false
+          }
+        }
+      ]
+    }
+  ]
+}

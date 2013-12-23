@@ -22,11 +22,7 @@ end
 def attr_to_ruby(el)
   type = t_to_ruby(el_type(el))
   attr_name = el_name(el).underscore
-  if el_multiple?(el)
-    "  attribute :#{attr_name}, #{type}"
-  else
-    "  attribute :#{attr_name.pluralize}, Array[#{type}]"
-  end
+  "  attribute :#{attr_name}, #{type}"
 end
 
 def ruby_class_from_st(st)
@@ -47,7 +43,7 @@ extend FhirElementsToTree
 extend FhirProfile
 extend RubyCodeGeneration
 
-HANDMADE_TYPES = ["ResourceReference", "Coding", "CodeableConcept"]
+HANDMADE_TYPES = ["ResourceReference"]
 
 def generate_types
   lib_dir  = File.expand_path('lib/fhir/types', FHIR_DIR)
@@ -66,6 +62,7 @@ def generate_types
 
       tree = make_tree(elements)
       code = tree_to_ruby_code(tree, "Fhir::DataType")
+      code += "Fhir.load_extension('#{file_name}')\n"
 
       autoloads << [type, file_name]
 

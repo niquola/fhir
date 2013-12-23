@@ -4,9 +4,9 @@
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h2>OrderOutcomeCode</h2>
+      <h2>OrderOutcomeStatus</h2>
       <p>The status of the response to an order</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/order-outcome-code</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/order-outcome-code</p>
       <table>
         <tr>
           <td>
@@ -20,42 +20,58 @@
           </td>
         </tr>
         <tr>
-          <td>pending</td>
+          <td>
+            <a name="pending">pending</a>
+          </td>
           <td/>
           <td>The order is known, but no processing has occurred at this time.</td>
         </tr>
         <tr>
-          <td>review</td>
+          <td>
+            <a name="review">review</a>
+          </td>
           <td/>
           <td>The order is undergoing initial processing to determine whether it will be accepted (usually this involves human review).</td>
         </tr>
         <tr>
-          <td>rejected</td>
+          <td>
+            <a name="rejected">rejected</a>
+          </td>
           <td/>
           <td>The order was rejected because of a workflow/business logic reason.</td>
         </tr>
         <tr>
-          <td>error</td>
+          <td>
+            <a name="error">error</a>
+          </td>
           <td/>
           <td>The order was unable to be processed because of a technical error (i.e. unexpected error).</td>
         </tr>
         <tr>
-          <td>accepted</td>
+          <td>
+            <a name="accepted">accepted</a>
+          </td>
           <td/>
           <td>The order has been accepted, and work is in progress.</td>
         </tr>
         <tr>
-          <td>cancelled</td>
+          <td>
+            <a name="cancelled">cancelled</a>
+          </td>
           <td/>
           <td>Processing the order was halted at the initiators request.</td>
         </tr>
         <tr>
-          <td>aborted</td>
+          <td>
+            <a name="aborted">aborted</a>
+          </td>
           <td/>
           <td>Processing the order was stopped because of some workflow/business logic reason.</td>
         </tr>
         <tr>
-          <td>complete</td>
+          <td>
+            <a name="complete">complete</a>
+          </td>
           <td/>
           <td>The order has been completed.</td>
         </tr>
@@ -63,7 +79,7 @@
     </div>
   </text>
   <identifier value="http://hl7.org/fhir/vs/order-outcome-code"/>
-  <name value="OrderOutcomeCode"/>
+  <name value="OrderOutcomeStatus"/>
   <publisher value="HL7 (FHIR Project)"/>
   <telecom>
     <system value="url"/>
@@ -75,7 +91,7 @@
   </telecom>
   <description value="The status of the response to an order"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.976+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/order-outcome-code"/>
     <caseSensitive value="true"/>

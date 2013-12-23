@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><Condition xmlns="http://hl7.org/fhir">
    <subject>
       <!-- It entails Roel's problem -->
-      <type value="Patient"/>
-      <reference value="patient/@f201"/>
+      <reference value="Patient/f201"/>
       <display value="Roel"/>
    </subject>
    <!-- It was not established during an encounter, but through a diagnostic report of december 2012 -->
@@ -11,9 +10,9 @@
    <code>
       <!-- The problem is a malignant tumor -->
       <coding>
-         <system value="http://snomed.info/id"/>
+         <system value="http://snomed.info/sct"/>
          <code value="363346000"/>
-         <display value="Malignant tumor"/>
+         <display value="Malignant neoplastic disease"/>
       </coding>
    </code>
    <category>
@@ -25,14 +24,14 @@
    <status value="confirmed"/>
    <certainty>
       <coding>
-         <system value="http://snomed.info/id"/>
+         <system value="http://snomed.info/sct"/>
          <code value="17162000"/>
          <display value="Certain"/>
       </coding>
    </certainty>
    <severity>
       <coding>
-         <system value="http://snomed.info/id"/>
+         <system value="http://snomed.info/sct"/>
          <code value="24484000"/>
          <display value="Severe"/>
       </coding>
@@ -40,15 +39,14 @@
    <onsetAge>
       <value value="52"/>
       <units value="years"/>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <code value="258707000"/>
    </onsetAge>
    <!-- No remission means no <rebatement> -->
    <evidence>
       <!-- Problem is confirmed in diagnostic report -->
       <detail>
-         <type value="DiagnosticReport"/>
-         <reference value="diagnosticreport/@f201"/>
+         <reference value="DiagnosticReport/f201"/>
          <display value="Erasmus&#39; diagnostic report of Roel&#39;s tumor"/>
       </detail>
    </evidence>
@@ -56,9 +54,9 @@
       <!-- Head and neck malignancy -->
       <code>
          <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="361355005"/>
-            <display value="Head and neck"/>
+            <display value="Entire head and neck"/>
          </coding>
       </code>
    </location>

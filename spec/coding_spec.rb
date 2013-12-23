@@ -21,6 +21,6 @@ describe 'Fhir::Coding' do
     concept.should_not be_nil
     concept.should be_a(Fhir::CodeableConcept)
     concept.text.should == coding.display
-    concept.codings.first.should == coding
+    concept.coding.first.should == coding
   end
 end

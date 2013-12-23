@@ -2,29 +2,26 @@
     <identifier>
         <use value="official"/>
         <system value="http://www.bmc.nl/zorgportal/identifiers/encounters"/>
-        <key value="v3251"/>
+        <value value="v3251"/>
     </identifier>
     <status value="finished"/>
     <class value="outpatient"/>
     <type>
         <coding>
-            <system value="http://snomed.info/id"/>
-            <code value="Patient-initiated encounter"/>
-            <display value="270427003"/>
+            <system value="http://snomed.info/sct"/>
+            <code value="270427003"/>
+            <display value="Patient-initiated encounter"/>
         </coding>
     </type>
     <subject>
-        <type value="Patient"/>
-        <reference value="patient/@f001"/>
+        <reference value="Patient/f001"/>
         <display value="P. van de Heuvel"/>
     </subject>
     <participant>
-        <type value="consulting"/>
-        <practitioner>
-            <type value="Practitioner"/>
-            <reference value="practitioner/@f003"/>
+        <individual>
+            <reference value="Practitioner/f003"/>
             <display value="M.I.M Versteegh"/>
-        </practitioner>
+        </individual>
     </participant>
     <length>
         <value value="140"/>
@@ -32,16 +29,16 @@
         <system value="http://unitsofmeasure.org"/>
         <code value="min"/>
     </length>
-    <reasonCodeableConcept>
+    <reason>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="34068001"/>
             <display value="Partial lobectomy of lung"/>
         </coding>
-    </reasonCodeableConcept>
+    </reason>
     <priority>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="103391001"/>
             <display value="Urgent"/>
         </coding>
@@ -50,25 +47,25 @@
         <preAdmissionIdentifier>
             <use value="official"/>
             <system value="http://www.bmc.nl/zorgportal/identifiers/pre-admissions"/>
-            <key value="98682"/>
+            <value value="98682"/>
         </preAdmissionIdentifier>
     <!--     <preAdmissionTest>
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="399208008"/>
                 <display value="Chest X-ray"/>
             </coding>
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="396550006"/>
                 <display value="Blood test"/>
             </coding>
         </preAdmissionTest>  -->
         <admitSource>
             <coding>
-                <system value="http://snomed.info/id"/>
-                <code value="Referral by radiologist"/>
-                <display value="305997006"/>
+                <system value="http://snomed.info/sct"/>
+                <code value="305997006"/>
+                <display value="Referral by radiologist"/>
             </coding>
         </admitSource>
         <period>
@@ -83,16 +80,15 @@
         </accomodation> 
         <dischargeDisposition>
             <coding>
-                <system value="http://snomed.info/id"/>
-                <code value="Discharge to home"/>
-                <display value="306689006"/>
+                <system value="http://snomed.info/sct"/>
+                <code value="306689006"/>
+                <display value="Discharge to home"/>
             </coding>
         </dischargeDisposition>
         <reAdmission value="false"/>
     </hospitalization>
     <serviceProvider>
-        <type value="Organization"/>
-        <reference value="organization/@f001"/>
+        <reference value="Organization/f001"/>
         <display value="BMC"/>
     </serviceProvider>
 </Encounter>

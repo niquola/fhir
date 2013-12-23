@@ -1,1 +1,32 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div>\n      <p>This value set includes all Snomed-CT codes relating to the qualifier &quot;Known&quot; (concepts with an is-a relationship with 36692007)<\/p>\n    <\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/condition-certainty"},"name":{"value":"Condition/Diagnosis Certainty"},"publisher":{"value":"FHIR Project team"},"telecom":[{"system":{"value":"url"},"value":{"value":"http://hl7.org/fhir"}}],"description":{"value":"Example value set for Condition/Problem/Diagnosis certainty"},"status":{"value":"draft"},"compose":{"include":[{"system":{"value":"http://snomed.info/id"},"filter":[{"property":{"value":"concept"},"op":{"value":"is-a"},"value":{"value":"36692007"}}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div>\n      <p>This value set includes all SNOMED CT codes relating to the qualifier &quot;Known&quot; (concepts with an is-a relationship with 36692007)</p>\n    </div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/condition-certainty",
+  "name": "Condition/Diagnosis Certainty",
+  "publisher": "FHIR Project team",
+  "telecom": [
+    {
+      "system": "url",
+      "value": "http://hl7.org/fhir"
+    }
+  ],
+  "description": "Example value set for Condition/Problem/Diagnosis certainty",
+  "status": "draft",
+  "compose": {
+    "include": [
+      {
+        "system": "http://snomed.info/sct",
+        "filter": [
+          {
+            "property": "concept",
+            "op": "is-a",
+            "value": "36692007"
+          }
+        ]
+      }
+    ]
+  }
+}

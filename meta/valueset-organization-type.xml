@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>OrganizationType</h2>
       <p>This example value set defines a set of codes that can be used to indicate a type of organization.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/organization-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/organization-type</p>
       <table>
         <tr>
           <td>
@@ -20,47 +20,65 @@
           </td>
         </tr>
         <tr>
-          <td>prov</td>
+          <td>
+            <a name="prov">prov</a>
+          </td>
           <td>Healthcare Provider</td>
           <td/>
         </tr>
         <tr>
-          <td>dept</td>
+          <td>
+            <a name="dept">dept</a>
+          </td>
           <td>Hospital Department</td>
           <td/>
         </tr>
         <tr>
-          <td>icu</td>
+          <td>
+            <a name="icu">icu</a>
+          </td>
           <td>Intensive Care Unit</td>
           <td/>
         </tr>
         <tr>
-          <td>team</td>
+          <td>
+            <a name="team">team</a>
+          </td>
           <td>Organizational team</td>
           <td/>
         </tr>
         <tr>
-          <td>fed</td>
+          <td>
+            <a name="fed">fed</a>
+          </td>
           <td>Federal Government</td>
           <td/>
         </tr>
         <tr>
-          <td>ins</td>
+          <td>
+            <a name="ins">ins</a>
+          </td>
           <td>Insurance Company</td>
           <td/>
         </tr>
         <tr>
-          <td>edu</td>
+          <td>
+            <a name="edu">edu</a>
+          </td>
           <td>Educational Institute</td>
           <td/>
         </tr>
         <tr>
-          <td>reli</td>
+          <td>
+            <a name="reli">reli</a>
+          </td>
           <td>Religious Institution</td>
           <td/>
         </tr>
         <tr>
-          <td>pharm</td>
+          <td>
+            <a name="pharm">pharm</a>
+          </td>
           <td>Pharmacy</td>
           <td/>
         </tr>

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>EncounterType</h2>
       <p>This example value set defines a set of codes that can be used to indicate the type     of encounter: a specific code indicating type of service provided .</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/encounter-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/encounter-type</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>ADMS</td>
+          <td>
+            <a name="ADMS">ADMS</a>
+          </td>
           <td>Annual diabetes mellitus screening</td>
           <td/>
         </tr>
         <tr>
-          <td>BD/BM-clin</td>
+          <td>
+            <a name="BD.47BM-clin">BD/BM-clin</a>
+          </td>
           <td>Bone drilling/bone marrow punction in clinic</td>
           <td/>
         </tr>
         <tr>
-          <td>CCS60</td>
+          <td>
+            <a name="CCS60">CCS60</a>
+          </td>
           <td>Infant colon screening - 60 minutes</td>
           <td/>
         </tr>
         <tr>
-          <td>OKI</td>
+          <td>
+            <a name="OKI">OKI</a>
+          </td>
           <td>Outpatient Kenacort injection</td>
           <td/>
         </tr>

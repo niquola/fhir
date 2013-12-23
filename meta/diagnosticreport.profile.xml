@@ -3,34 +3,35 @@
 <Profile xmlns="http://hl7.org/fhir">
   <text>
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><pre>
-&lt;<a title="The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport"><b>DiagnosticReport</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
- &lt;!-- from <a href="resources.htm">Resource</a>: <a href="extensibility.htm">extension</a>, <a href="narrative.htm#Narrative">narrative</a>, and <a href="references.htm#contained">contained</a> --&gt;
- &lt;<a title="The status of the diagnostic report as a whole (this element modifies the meaning of other elements)" class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="observation-status.htm">registered|interim|final|amended|cancelled|withdrawn<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The date and/or time that this version of the report was released from the source diagnostic service." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.issued"><b>issued</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Date this version was released<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="patient.htm#Patient">Patient</a>|<a href="group.htm#Group">Group</a>|<a href="device.htm#Device">Device</a>)</span> <span style="color: navy">The subject of the report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
- &lt;<a title="The diagnostic service that is responsible for issuing the report." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.performer"><b>performer</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="organization.htm#Organization">Organization</a>)</span> <span style="color: navy">Responsible Diagnostic Service<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/performer&gt;
- &lt;<a title="The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.reportId"><b>reportId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Id for external references to this report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/reportId&gt;
- &lt;<a title="Details concerning a single pathology test requested." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail"><b>requestDetail</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> What was requested --&gt;</span>
-  &lt;<a title="The encounter that this diagnostic investigation is associated with." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.encounter"><b>encounter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="encounter.htm#Encounter">Encounter</a>)</span> <span style="color: navy">Context where request was made</span><span style="color: Gray"> --&gt;</span>&lt;/encounter&gt;
-  &lt;<a title="The local ID assigned to the order by the order requester." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.requestOrderId"><b>requestOrderId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Id assigned by requester</span><span style="color: Gray"> --&gt;</span>&lt;/requestOrderId&gt;
-  &lt;<a title="The local ID assigned to the test order by the diagnostic service provider." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.receiverOrderId"><b>receiverOrderId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Identifier">Identifier</a></span> <span style="color: navy">Receiver&#39;s Id for the request</span><span style="color: Gray"> --&gt;</span>&lt;/receiverOrderId&gt;
-  &lt;<a title="Identification of pathology test requested,." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.requestTest"><b>requestTest</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-requests.htm">Test Requested</a></span><span style="color: Gray"> --&gt;</span>&lt;/requestTest&gt;
-  &lt;<a title="Anatomical location where the request test should be performed." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.bodySite"><b>bodySite</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-body-site.htm">Location of requested test (if applicable)</a></span><span style="color: Gray"> --&gt;</span>&lt;/bodySite&gt;
-  &lt;<a title="Details of the clinician or organization requesting the diagnostic service." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.requester"><b>requester</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="organization.htm#Organization">Organization</a>|<a href="practitioner.htm#Practitioner">Practitioner</a>)</span> <span style="color: navy">Responsible for request</span><span style="color: Gray"> --&gt;</span>&lt;/requester&gt;
-  &lt;<a title="Details of the clinical information provided to the diagnostic service along with the original request." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.requestDetail.clinicalInfo"><b>clinicalInfo</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Clinical information provided</span><span style="color: Gray"> --&gt;</span>
+&lt;<a title="The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport"><b>DiagnosticReport</b></a> xmlns=&quot;http://hl7.org/fhir&quot;&gt; <span style="float: right"><a title="Documentation for this format" href="formats.html"><img alt="doco" src="help.png"/></a></span>
+ &lt;!-- from <a href="resources.html">Resource</a>: <a href="extensibility.html">extension</a>, <a href="extensibility.html#modifierExtension">modifierExtension</a>, language, <a href="narrative.html#Narrative">text</a>, and <a href="references.html#contained">contained</a> --&gt;
+ &lt;<a title="The status of the diagnostic report as a whole (this element modifies the meaning of other elements)" class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.status"><span style="text-decoration: underline"><b>status</b></span></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#code">code</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy"><a style="color: navy" href="diagnostic-report-status.html">registered | partial | final | corrected +<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The date and/or time that this version of the report was released from the source diagnostic service." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.issued"><b>issued</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Date this version was released<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="The subject of the report. Usually, but not always, this is a patient. However diagnostic services also perform analyses on specimens collected from a variety of other sources." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.subject"><b>subject</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="patient.html#Patient">Patient</a>|<a href="group.html#Group">Group</a>|<a href="device.html#Device">Device</a>|<a href="location.html#Location">Location</a>)</span> <span style="color: navy">The subject of the report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/subject&gt;
+ &lt;<a title="The diagnostic service that is responsible for issuing the report." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.performer"><b>performer</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>)</span> <span style="color: navy">Responsible Diagnostic Service<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/performer&gt;
+ &lt;<a title="The local ID assigned to the report by the order filler, usually by the Information System of the diagnostic service provider." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.reportId"><b>reportId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Id for external references to this report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/reportId&gt;
+ &lt;<a title="Details concerning a single pathology test requested." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail"><b>requestDetail</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>0..*</b></span> What was requested --&gt;</span>
+  &lt;<a title="The encounter that this diagnostic investigation is associated with." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.encounter"><b>encounter</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="encounter.html#Encounter">Encounter</a>)</span> <span style="color: navy">Context where request was made</span><span style="color: Gray"> --&gt;</span>&lt;/encounter&gt;
+  &lt;<a title="The local ID assigned to the order by the order requester." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.requestOrderId"><b>requestOrderId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Id assigned by requester</span><span style="color: Gray"> --&gt;</span>&lt;/requestOrderId&gt;
+  &lt;<a title="The local ID assigned to the test order by the diagnostic service provider." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.receiverOrderId"><b>receiverOrderId</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#Identifier">Identifier</a></span> <span style="color: navy">Receiver&#39;s Id for the request</span><span style="color: Gray"> --&gt;</span>&lt;/receiverOrderId&gt;
+  &lt;<a title="Identification of pathology test requested,." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.requestTest"><b>requestTest</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-requests.html">Test Requested</a></span><span style="color: Gray"> --&gt;</span>&lt;/requestTest&gt;
+  &lt;<a title="Anatomical location where the request test should be performed." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.bodySite"><b>bodySite</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-body-site.html">Location of requested test (if applicable)</a></span><span style="color: Gray"> --&gt;</span>&lt;/bodySite&gt;
+  &lt;<a title="Details of the clinician or organization requesting the diagnostic service." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.requester"><b>requester</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="organization.html#Organization">Organization</a>|<a href="practitioner.html#Practitioner">Practitioner</a>)</span> <span style="color: navy">Responsible for request</span><span style="color: Gray"> --&gt;</span>&lt;/requester&gt;
+  &lt;<a title="Details of the clinical information provided to the diagnostic service along with the original request." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.requestDetail.clinicalInfo"><b>clinicalInfo</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Clinical information provided</span><span style="color: Gray"> --&gt;</span>
  &lt;/requestDetail&gt;
- &lt;<a title="The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.serviceCategory"><b>serviceCategory</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-service-sections.htm">Biochemistry, Haematology etc.<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/serviceCategory&gt;
- &lt;<a title="The diagnostically relevant time for this report." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.diagnosticTime"><b>diagnosticTime</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#dateTime">dateTime</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: navy">Effective time of diagnostic report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.results"><b>results</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> Results grouped by specimen/kind/category --&gt;</span>
-  &lt;<a title="A code or name that describes this group of results. For the base group, this is the report name." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.results.name"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-report-names.htm">Name/Code for this group of results</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
-  &lt;<a title="Details about the individual specimen to which these &#39;Result group&#39; test results refer." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.results.specimen"><b>specimen</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="specimen.htm#Specimen">Specimen</a>)</span> <span style="color: navy">Specimen details for this group</span><span style="color: Gray"> --&gt;</span>&lt;/specimen&gt;
-  &lt;<a title="A sub-group in a report group. Sub groups can be grouped in arbitrary ways. The group.name defines the purpose and interpretation of the grouping." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.results.group"><b>group</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen">Content as for DiagnosticReport.results</span> <span style="color: navy">Nested Report Group</span><span style="color: Gray"> --&gt;</span>&lt;/group&gt;
-  &lt;<a title="Specific detailed result, including both the value of the result item and additional information that may be useful for clinical interpretation. Results include whatever specific data items pathology labs report as part of the clinical service; it is not confined to measurements." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.results.result"><b>result</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="observation.htm#Observation">Observation</a>)</span> <span style="color: navy">An atomic data result</span><span style="color: Gray"> --&gt;</span>&lt;/result&gt;
+ &lt;<a title="The section of the diagnostic service that performs the examination e.g. biochemistry, haematology, MRI." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.serviceCategory"><b>serviceCategory</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-diagnostic-service-sections.html">Biochemistry, Haematology etc.<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></a></span><span style="color: Gray"> --&gt;</span>&lt;/serviceCategory&gt;
+ &lt;<a title="The diagnostically relevant time for this report - that is, the point in time at which the observations that are reported in this diagnostic report relate to the patient." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.diagnostic_x_"><b>diagnostic[x]</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#dateTime">dateTime</a>|<a href="datatypes.html#Period">Period</a></span> <span style="color: navy">
+     Diagnostically relevant time of diagnostic report<span title="This element is included in a summary view (See Search/Query)" style="color: Navy"> §</span></span><span style="color: Gray"> --&gt;</span>&lt;/diagnostic[x]&gt;
+ &lt;<a title="A group of results. Results may be grouped by specimen, or by some value in DiagnosticReport.resultGroup.name to describe what binds all the results together." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.results"><b>results</b></a>&gt;  <span style="color: Gray">&lt;!-- <span style="color: brown"><b>1..1</b></span> Results grouped by specimen/kind/category --&gt;</span>
+  &lt;<a title="A code or name that describes this group of results. For the base group, this is the report name." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.results.name"><b>name</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>1..1</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-report-names.html">Name/Code for this group of results</a></span><span style="color: Gray"> --&gt;</span>&lt;/name&gt;
+  &lt;<a title="Details about the individual specimen to which these &#39;Result group&#39; test results refer." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.results.specimen"><b>specimen</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="specimen.html#Specimen">Specimen</a>)</span> <span style="color: navy">Specimen details for this group</span><span style="color: Gray"> --&gt;</span>&lt;/specimen&gt;
+  &lt;<a title="A sub-group in a report group. Sub groups can be grouped in arbitrary ways. The group.name defines the purpose and interpretation of the grouping." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.results.group"><b>group</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen">Content as for DiagnosticReport.results</span> <span style="color: navy">Nested Report Group</span><span style="color: Gray"> --&gt;</span>&lt;/group&gt;
+  &lt;<a title="Specific detailed result, including both the value of the result item and additional information that may be useful for clinical interpretation. Results include whatever specific data items pathology labs report as part of the clinical service; it is not confined to measurements." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.results.result"><b>result</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="observation.html#Observation">Observation</a>)</span> <span style="color: navy">An atomic data result</span><span style="color: Gray"> --&gt;</span>&lt;/result&gt;
  &lt;/results&gt;
- &lt;<a title="A list of key images associated with this report. The images are generally created during the diagnostic process, and maybe directly of the patient, or of treated specimens (i.e. slides of interest)." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.image"><b>image</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.htm#Resource">Resource</a>(<a href="media.htm#Media">Media</a>|<a href="imagingstudy.htm#ImagingStudy">ImagingStudy</a>)</span> <span style="color: navy">Key images associated with this report</span><span style="color: Gray"> --&gt;</span>&lt;/image&gt;
- &lt;<a title="Concise and clinically contextualised narrative interpretation of the diagnostic report." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.conclusion"><b>conclusion</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.htm#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Clinical Interpretation of test results</span><span style="color: Gray"> --&gt;</span>
- &lt;<a title="Codes for the conclusion." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.codedDiagnosis"><b>codedDiagnosis</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-clinical-findings.htm">Codes for the conclusion</a></span><span style="color: Gray"> --&gt;</span>&lt;/codedDiagnosis&gt;
- &lt;<a title="Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent." class="dict" href="diagnosticreport-definitions.htm#DiagnosticReport.representation"><b>representation</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.htm#Attachment">Attachment</a></span> <span style="color: navy">Entire Report as issued</span><span style="color: Gray"> --&gt;</span>&lt;/representation&gt;
+ &lt;<a title="A list of key images associated with this report. The images are generally created during the diagnostic process, and maybe directly of the patient, or of treated specimens (i.e. slides of interest)." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.image"><b>image</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="references.html#Resource">Resource</a>(<a href="media.html#Media">Media</a>|<a href="imagingstudy.html#ImagingStudy">ImagingStudy</a>)</span> <span style="color: navy">Key images associated with this report</span><span style="color: Gray"> --&gt;</span>&lt;/image&gt;
+ &lt;<a title="Concise and clinically contextualised narrative interpretation of the diagnostic report." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.conclusion"><b>conclusion</b></a> value=&quot;[<span style="color: darkgreen"><a href="datatypes.html#string">string</a></span>]&quot;/&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..1</b></span> <span style="color: navy">Clinical Interpretation of test results</span><span style="color: Gray"> --&gt;</span>
+ &lt;<a title="Codes for the conclusion." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.codedDiagnosis"><b>codedDiagnosis</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#CodeableConcept">CodeableConcept</a></span> <span style="color: navy"><a style="color: navy" href="valueset-clinical-findings.html">Codes for the conclusion</a></span><span style="color: Gray"> --&gt;</span>&lt;/codedDiagnosis&gt;
+ &lt;<a title="Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent." class="dict" href="diagnosticreport-definitions.html#DiagnosticReport.representation"><b>representation</b></a>&gt;<span style="color: Gray">&lt;!--</span> <span style="color: brown"><b>0..*</b></span> <span style="color: darkgreen"><a href="datatypes.html#Attachment">Attachment</a></span> <span style="color: navy">Entire Report as issued</span><span style="color: Gray"> --&gt;</span>&lt;/representation&gt;
 &lt;/DiagnosticReport&gt;
 </pre></div>
   </text>
@@ -38,7 +39,17 @@
   <publisher value="FHIR Project"/>
   <description value="Basic Profile. The findings and interpretation of diagnostic  tests performed on patients and/or specimens. The report includes clinical context such as requesting and provider information, and some mix of atomic results, images, textual and coded interpretation, and formatted representation of diagnostic reports."/>
   <status value="draft"/>
-  <date value="2013-08-13"/>
+  <date value="2013-12-18"/>
+  <mapping>
+    <identity value="rim"/>
+    <uri value="http://hl7.org/v3"/>
+    <name value="RIM"/>
+  </mapping>
+  <mapping>
+    <identity value="v2"/>
+    <uri value="http://hl7.org/v2"/>
+    <name value="HL7 v2"/>
+  </mapping>
   <structure>
     <type value="DiagnosticReport"/>
     <publish value="true"/>
@@ -55,8 +66,8 @@
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="Observation[isNormalAct() and subsumesCode(&quot;ActClass#OBS&quot;, classCode) and moodCode=&quot;EVN&quot; and domainMember(&quot;LabObservationType&quot;, code)]"/>
+          <identity value="rim"/>
+          <map value="Observation[classCode=OBS, moodCode=EVN]"/>
         </mapping>
       </definition>
     </element>
@@ -64,9 +75,24 @@
       <path value="DiagnosticReport.extension"/>
       <definition>
         <short value="Additional Content defined by implementations"/>
-        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that must be met as part of the definition of the extension."/>
-        <comments value="there can be no stigma
-associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
         <synonym value="extensions"/>
         <synonym value="user content"/>
         <min value="0"/>
@@ -81,7 +107,7 @@ associated with the use of extensions by any application, project, or standard -
       <path value="DiagnosticReport.text"/>
       <definition>
         <short value="Text summary of the resource, for human interpretation"/>
-        <formal value="A human readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
+        <formal value="A human-readable narrative that contains a summary of the resource, and may be used to represent the content of the resource to a human. The narrative need not encode all the structured data, but is required to contain sufficient detail to make it &quot;clinically safe&quot; for a human to just read the narrative. Resource definitions may define what content should be represented in the narrative to ensure clinical safety."/>
         <comments value="Contained resources do not have narrative. Resources that are not contained SHOULD have a narrative."/>
         <synonym value="narrative"/>
         <synonym value="html"/>
@@ -115,35 +141,49 @@ associated with the use of extensions by any application, project, or standard -
     <element>
       <path value="DiagnosticReport.status"/>
       <definition>
-        <short value="registered|interim|final|amended|cancelled|withdrawn"/>
+        <short value="registered | partial | final | corrected +"/>
         <formal value="The status of the diagnostic report as a whole."/>
-        <comments value="This is labelled as &quot;Is Modifier&quot; because applications need to take appropriate action if a report is withdrawn."/>
+        <comments value="This is labeled as &quot;Is Modifier&quot; because applications need to take appropriate action if a report is withdrawn."/>
         <min value="1"/>
         <max value="1"/>
         <type>
           <code value="code"/>
         </type>
         <isModifier value="true"/>
-        <binding value="ObservationStatus"/>
+        <binding>
+          <name value="DiagnosticReportStatus"/>
+          <isExtensible value="false"/>
+          <conformance value="required"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/diagnostic-report-status"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="registered: ./statusCode[isNormalDatatype()]=&quot;new&quot;;
+          <identity value="rim"/>
+          <map value="statusCode
 
-interim: ./statusCode[isNormalDatatype()]=&quot;active&quot;;
-
-final: ./statusCode[isNormalDatatype()]=&quot;complete&quot; and not(./inboundRelationship[typeCode=&quot;SUBJ&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#CACT&quot;) and moodCode=&quot;EVN&quot; and domainMember(&quot;ReviseLabOrder&quot;, code) and isNormalAct()]);
-
-amended: ./statusCode[isNormalDatatype()]=&quot;complete&quot; and ./inboundRelationship[typeCode=&quot;SUBJ&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#CACT&quot;) and moodCode=&quot;EVN&quot; and domainMember(&quot;ReviseLabOrder&quot;, code) and isNormalAct() and statusCode=&quot;completed&quot;];
-
-cancelled: 
-./statusCode[isNormalDatatype()]=&quot;aborted&quot;;
-
-withdrawn: ./statusCode[isNormalDatatype()]=&quot;obsolete&quot;"/>
+Note: final and amended are distinguished by whether observation is the subject of a ControlAct event of type &quot;revise&quot;"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-25-Result Status (not 1:1 mapping)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.status.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -159,14 +199,29 @@ withdrawn: ./statusCode[isNormalDatatype()]=&quot;obsolete&quot;"/>
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="firstOf(unique(./participation[isHighest(priorityCode) and typeCode=&quot;VRF&quot; and isNormalParticipation()]/time[type=&quot;TS&quot;]), 
-unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and isNormalParticipation()]/time[type=&quot;TS&quot;]))"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=VRF or AUT].time"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-22-Results Rpt/Status Chng - Date/Time"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.issued.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -177,17 +232,33 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         <min value="1"/>
         <max value="1"/>
         <type>
-          <code value="Resource(Patient|Group|Device)"/>
+          <code value="Resource(Patient|Group|Device|Location)"/>
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./participation[isHighest(priorityCode) and typeCode=&quot;SBJ&quot; and isNormalParticipation()]/role[classCode=&quot;PAT&quot;])"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=SBJ]"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PID-3-Patient ID List (no V2 mapping for Group or Device)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.subject.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -203,13 +274,29 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and isNormalParticipation()]/role[subsumesCode(&quot;RoleClass#ASSIGN&quot;, classCode)]/scoper[subsumesCode(&quot;EntityClass#ORG&quot;, classCode) and determinerCode=&quot;INSTANCE&quot;])"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=AUT].role[classCode=ASSIGN].scoper"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PRT-8-Participation Organization (where this PRT-4-Participation = &quot;PO&quot;)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.performer.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -224,13 +311,29 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./id[displayable=&quot;true&quot; and scope=&quot;OBJ&quot;])"/>
+          <identity value="rim"/>
+          <map value="id"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-51-Observation Group ID (todo: check semantic intent of OBR-51 with OOWG)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.reportId.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -243,9 +346,25 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         <max value="*"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./outboundRelationship[typeCode=&quot;FLFS&quot; and isNormalActRelationship()]/target[subsumesCode(&quot;ActClass#OBS&quot;, classCode) and subsumes(&quot;ActMood#PRMS&quot;, moodCode) and isNormalAct()])"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=FLFS].target"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -260,13 +379,29 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./inboundRelationship[isHighest(priorityCode) and typeCode=&quot;SUBJ&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#ENC&quot;, code) and moodCode=&quot;EVN&quot; and isNormalAct()])"/>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=SUBJ].source"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="PV1-19-Visit Number"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.encounter.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -282,13 +417,29 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./outboundRelationship[typeCode=&quot;FLFS&quot; and isNormalActRelationship()]/target[subsumesCode(&quot;ActClass#OBS&quot;, classCode) and subsumes(&quot;ActMood#RQO&quot;, moodCode) and isNormalAct()]/id[scope=&quot;OBJ&quot; and displayable=&quot;true&quot;])"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=FLFS].target[classCode=OBS, moodCode=RQO].id"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-2-Placer Order Number"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.requestOrderId.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -304,13 +455,29 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./id[scope=&quot;OBJ&quot; and displayable=&quot;true&quot;])"/>
+          <identity value="rim"/>
+          <map value="id"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-3-Filler Order Number"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.receiverOrderId.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -325,15 +492,38 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DiagnosticRequests"/>
+        <binding>
+          <name value="DiagnosticRequests"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/diagnostic-requests"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./code"/>
+          <identity value="rim"/>
+          <map value="code"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-4-Universal Service ID"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.requestTest.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -348,11 +538,38 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="BodySite"/>
+        <binding>
+          <name value="BodySite"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/body-site"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="targetSiteCode"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="OBX-20-Observation Site (need to distinguish requested site from site actually performed at)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.bodySite.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -367,15 +584,29 @@ unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and 
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="Practitioner: unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and isNormalParticipation()]/role[subsumesCode(&quot;RoleClass#ASSIGN&quot;, classCode)]
-
-Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;AUT&quot; and isNormalParticipation()]/role[subsumesCode(&quot;RoleClass#ASSIGN&quot;, classCode)]/scoper[subsumesCode(&quot;EntityClass#ORG&quot;, classCode) and determinerCode=&quot;INSTANCE&quot; and code[isNormalDatatype]])"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=AUT]"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-16-Ordering Provider"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.requester.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -390,13 +621,29 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./outboundRelationship[typeCode=&quot;PERT&quot; and isNormalActRelationship()]/target.text"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=PERT].target.text"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-13-Relevant Clinical Information (could also be in NTE-3 or OBR-18, 19, 20, 21)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.requestDetail.clinicalInfo.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -410,37 +657,79 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DiagnosticServiceSection"/>
+        <binding>
+          <name value="DiagnosticServiceSection"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/diagnostic-service-sections"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./inboundRelationship[typeCode=&quot;COMP&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#LIST&quot;, classCode) and moodCode=&quot;EVN&quot; and inDomain(code,&quot;Lab Service&quot;) and isNormalAct()]/code"/>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=COMP].source[classCode=LIST, moodCode=EVN, code &lt; LabService].code"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-24-Diagnostic Service Section ID"/>
         </mapping>
       </definition>
     </element>
     <element>
-      <path value="DiagnosticReport.diagnosticTime"/>
+      <path value="DiagnosticReport.serviceCategory.extension"/>
       <definition>
-        <short value="Effective time of diagnostic report"/>
-        <formal value="The diagnostically relevant time for this report."/>
-        <comments value="If the diagnostic procedure was performed on the patient, this is the time it was peformed. If there is specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and nor is the exact relationship is not always automatic."/>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.diagnostic[x]"/>
+      <definition>
+        <short value="Diagnostically relevant time of diagnostic report"/>
+        <formal value="The diagnostically relevant time for this report - that is, the point in time at which the observations that are reported in this diagnostic report relate to the patient."/>
+        <comments value="If the diagnostic procedure was performed on the patient, this is the time it was peformed. If there is specimens, the diagnostically relevant time can be derived from the specimen collection times, but the specimen information is not always available, and the exact relationship between the specimens and the diagnostically relevant time is not always automatic."/>
         <min value="1"/>
         <max value="1"/>
         <type>
           <code value="dateTime"/>
         </type>
+        <type>
+          <code value="Period"/>
+        </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./effectiveTime[type=&quot;TS&quot;]"/>
+          <identity value="rim"/>
+          <map value="effectiveTime"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-7-Observation Date/Time"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.diagnostic[x].extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -452,9 +741,25 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         <max value="1"/>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./outboundRelationship[typeCode=&quot;COMP&quot; and isNormalActRelationship()]/target[isNormalAct() and subsumesCode(&quot;ActClass#OBS&quot;, classCode) and moodCode=&quot;EVN&quot; and fromDomain(code, &quot;LabObservationBattery&quot;)]"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.results.modifierExtension"/>
+      <definition>
+        <short value="Extensions that cannot be ignored"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource, and that modifies the understanding of the element that contains it. Usually modifier elements provide negation or qualification. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -469,15 +774,38 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DiagnosticResultGroupNames"/>
+        <binding>
+          <name value="DiagnosticReportNames"/>
+          <isExtensible value="true"/>
+          <conformance value="preferred"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/report-names"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./code"/>
+          <identity value="rim"/>
+          <map value="code"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBR-4-Universal Service ID (V2 doesn&#39;t provide an easy way to indicate both the ordered test and the performed panel)"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.results.name.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -492,13 +820,29 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./participation[typeCode=&quot;SBJ&quot; and isNormalParticipation()]/role[subsumesCode(&quot;RoleClass#SPEC&quot;, classCode)])"/>
+          <identity value="rim"/>
+          <map value="participation[typeCode=SBJ]"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="SPM"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.results.specimen.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -509,8 +853,26 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         <comments value="Nested report groups beyond the first level are not used often, but arise in structured pathology reports, and where there is more than one sensitivity assessment per discovered organism."/>
         <min value="0"/>
         <max value="*"/>
+        <nameReference value="DiagnosticReport.results"/>
+        <isModifier value="false"/>
+        <mapping>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target"/>
+        </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.results.group.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
         <type>
-          <code value="@DiagnosticReport.results"/>
+          <code value="Extension"/>
         </type>
         <isModifier value="false"/>
       </definition>
@@ -527,13 +889,29 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./outboundRelationship[typeCode=&quot;COMP&quot; and isNormalActRelationship()]/target[subsumesCode(&quot;ActClass#OBS&quot;, classCode) and moodCode=&quot;EVN&quot; and isNormalAct() and fromDomain(code, &quot;LabObservationResult&quot;)]"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBX"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.results.result.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -549,9 +927,29 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="rim"/>
+          <map value="outboundRelationship[typeCode=COMP].target"/>
+        </mapping>
+        <mapping>
+          <identity value="v2"/>
           <map value="OBX?"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.image.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -567,14 +965,29 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./inboundRelationship[typeCode=&quot;SPRT&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#OBS&quot;, classCode) and moodCode=&quot;EVN&quot; and mapsTo(code, &quot;LOINC#
-48767-8&quot;) and isNormalAct()]/value[type=&quot;ST&quot;])"/>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=&quot;SPRT&quot;].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBX"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.conclusion.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
@@ -588,23 +1001,45 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
           <code value="CodeableConcept"/>
         </type>
         <isModifier value="false"/>
-        <binding value="DiagnosisCodes"/>
+        <binding>
+          <name value="AdjunctDiagnosis"/>
+          <isExtensible value="true"/>
+          <conformance value="example"/>
+          <referenceResource>
+            <reference value="http://hl7.org/fhir/vs/clinical-findings"/>
+          </referenceResource>
+        </binding>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="unique(./inboundRelationship[typeCode=&quot;SPRT&quot; and isNormalActRelationship()]/source[subsumesCode(&quot;ActClass#OBS&quot;, classCode) and moodCode=&quot;EVN&quot; and subsumesCode(code, &quot;LOINC#
-54531-9&quot;) and isNormalAct()]/value[type=&quot;CD&quot;])"/>
+          <identity value="rim"/>
+          <map value="inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBX"/>
         </mapping>
+      </definition>
+    </element>
+    <element>
+      <path value="DiagnosticReport.codedDiagnosis.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
       </definition>
     </element>
     <element>
       <path value="DiagnosticReport.representation"/>
       <definition>
         <short value="Entire Report as issued"/>
-        <formal value="Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent."/>
+        <formal value="Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent."/>
         <comments value="Possible formats: text/html, text/plain, text/rtf, application/msword, application/pdf, application/rtf, application/vnd.oasis.opendocument.text, application/vnd.openxmlformats-officedocument.wordprocessingml.document. Application/pdf is recommended as the most reliable and interoperable in this context."/>
         <min value="0"/>
         <max value="*"/>
@@ -613,67 +1048,30 @@ Organization: unique(./participation[isHighest(priorityCode) and typeCode=&quot;
         </type>
         <isModifier value="false"/>
         <mapping>
-          <target value="http://hl7.org/v3"/>
-          <map value="./text[type=&quot;ED&quot;]"/>
+          <identity value="rim"/>
+          <map value="text (type=ED)"/>
         </mapping>
         <mapping>
-          <target value="http://hl7.org/v2"/>
+          <identity value="v2"/>
           <map value="OBX"/>
         </mapping>
       </definition>
     </element>
+    <element>
+      <path value="DiagnosticReport.representation.extension"/>
+      <definition>
+        <short value="Additional Content defined by implementations"/>
+        <formal value="May be used to represent additional information that is not part of the basic definition of the resource. In order to make the use of extensions safe and manageable, there is a strict governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
+        <comments value="there can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core simplicity for everyone."/>
+        <synonym value="extensions"/>
+        <synonym value="user content"/>
+        <min value="0"/>
+        <max value="*"/>
+        <type>
+          <code value="Extension"/>
+        </type>
+        <isModifier value="false"/>
+      </definition>
+    </element>
   </structure>
-  <binding>
-    <name value="DiagnosticRequests"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/diagnostic-requests"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="BodySite"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/body-site"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DiagnosisCodes"/>
-    <isExtensible value="true"/>
-    <conformance value="example"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/clinical-findings"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DiagnosticServiceSection"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/diagnostic-service-sections"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="DiagnosticResultGroupNames"/>
-    <isExtensible value="true"/>
-    <conformance value="preferred"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/report-names"/>
-    </referenceResource>
-  </binding>
-  <binding>
-    <name value="ObservationStatus"/>
-    <conformance value="required"/>
-    <referenceResource>
-      <type value="ValueSet"/>
-      <reference value="http://hl7.org/fhir/vs/observation-status"/>
-    </referenceResource>
-  </binding>
 </Profile>

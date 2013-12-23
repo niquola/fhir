@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ReactionSeverity</h2>
       <p>The severity of an adverse reaction.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/reactionSeverity</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/reactionSeverity</p>
       <table>
         <tr>
           <td>
@@ -20,22 +20,30 @@
           </td>
         </tr>
         <tr>
-          <td>severe</td>
+          <td>
+            <a name="severe">severe</a>
+          </td>
           <td/>
           <td>Severe complications arose due to the reaction.</td>
         </tr>
         <tr>
-          <td>serious</td>
+          <td>
+            <a name="serious">serious</a>
+          </td>
           <td/>
           <td>Serious inconvenience to the subject.</td>
         </tr>
         <tr>
-          <td>moderate</td>
+          <td>
+            <a name="moderate">moderate</a>
+          </td>
           <td/>
           <td>Moderate inconvenience to the subject.</td>
         </tr>
         <tr>
-          <td>minor</td>
+          <td>
+            <a name="minor">minor</a>
+          </td>
           <td/>
           <td>Minor inconvenience to the subject.</td>
         </tr>
@@ -55,7 +63,7 @@
   </telecom>
   <description value="The severity of an adverse reaction."/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/reactionSeverity"/>
     <caseSensitive value="true"/>

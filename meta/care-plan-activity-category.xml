@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>CarePlanActivityCategory</h2>
       <p>High-level categorization of the type of activity in a care plan.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/care-plan-activity-category</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/care-plan-activity-category</p>
       <table>
         <tr>
           <td>
@@ -20,37 +20,51 @@
           </td>
         </tr>
         <tr>
-          <td>diet</td>
+          <td>
+            <a name="diet">diet</a>
+          </td>
           <td/>
           <td>Plan for the patient to consume food of a specified nature.</td>
         </tr>
         <tr>
-          <td>drug</td>
+          <td>
+            <a name="drug">drug</a>
+          </td>
           <td/>
           <td>Plan for the patient to consume/receive a drug, vaccine or other product.</td>
         </tr>
         <tr>
-          <td>encounter</td>
+          <td>
+            <a name="encounter">encounter</a>
+          </td>
           <td/>
           <td>Plan to meet or communicate with the patient (in-patient, out-patient, phone call, etc.).</td>
         </tr>
         <tr>
-          <td>observation</td>
+          <td>
+            <a name="observation">observation</a>
+          </td>
           <td/>
           <td>Plan to capture information about a patient (vitals, labs, diagnostic images, etc.).</td>
         </tr>
         <tr>
-          <td>procedure</td>
+          <td>
+            <a name="procedure">procedure</a>
+          </td>
           <td/>
           <td>Plan to modify the patient in some way (surgery, physiotherapy, education, counseling, etc.).</td>
         </tr>
         <tr>
-          <td>supply</td>
+          <td>
+            <a name="supply">supply</a>
+          </td>
           <td/>
           <td>Plan to provide something to the patient (medication, medical supply, etc.).</td>
         </tr>
         <tr>
-          <td>other</td>
+          <td>
+            <a name="other">other</a>
+          </td>
           <td/>
           <td>Some other form of action.</td>
         </tr>
@@ -70,7 +84,7 @@
   </telecom>
   <description value="High-level categorization of the type of activity in a care plan."/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.979+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/care-plan-activity-category"/>
     <caseSensitive value="true"/>

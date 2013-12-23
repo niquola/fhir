@@ -1,1 +1,218 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><div>Type definition for Coding from <a href=\"http://hl7.org/fhir/datatypes.htm#Coding\">FHIR Specification<\/a><\/div><\/div>"},"name":{"value":"Basic Profile for Coding"},"publisher":{"value":"FHIR Specification"},"description":{"value":"Basic Profile for Coding for validation support"},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"Coding"},"element":[{"path":{"value":"Coding"},"definition":{"short":{"value":"A reference to a code defined by a terminology system"},"formal":{"value":"A reference to a code defined by a terminology system."},"comments":{"value":"Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED-CT - see the v3 core principles for more information."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Type"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"CV"}}]}},{"path":{"value":"Coding.system"},"definition":{"short":{"value":"Identity of the terminology system"},"formal":{"value":"The identification of the system that defines the meaning of the symbol in the code. Can be a simple list of enumerations, a list of codes with meanings or all the way to a complex semantic web such as SNOMED-CT, whether classification, terminology, or ontology."},"comments":{"value":"The identity is a uri. It may be an OID or a UUID, which must be references to the HL7 OID registry, or a URI which either comes from HL7's list of FHIR defined special URIs or from some system defined elsewhere, in which case the URI should de-reference to establish the system unambiguously."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"uri"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./codeSystem"}}]}},{"path":{"value":"Coding.code"},"definition":{"short":{"value":"Symbol in syntax defined by the system"},"formal":{"value":"A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"code"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./code"}}]}},{"path":{"value":"Coding.display"},"definition":{"short":{"value":"Representation defined by the system"},"formal":{"value":"A representation of the meaning of the code in the system, following the rules laid out by the system."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"CV.displayName"}}]}}]}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for Coding from <a href=\"http://hl7.org/fhir/datatypes.html#Coding\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for Coding",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for Coding for validation support",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "Coding",
+      "element": [
+        {
+          "path": "Coding",
+          "definition": {
+            "short": "A reference to a code defined by a terminology system",
+            "formal": "A reference to a code defined by a terminology system.",
+            "comments": "Codes may be defined very casually in enumerations or code lists, up to very formal definitions such as SNOMED CT - see the v3 core principles for more information.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Type"
+              }
+            ],
+            "constraint": [
+              {
+                "key": "1",
+                "name": "Value set doesn't substitute for system",
+                "severity": "error",
+                "human": "If a valueSet is provided, a system URI SHALL also be provided.",
+                "xpath": "not (exists(f:valueSet) and exists(f:code)) or exists(f:system)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CV"
+              },
+              {
+                "identity": "v2",
+                "map": "CE/CNE/CWE subset one of the sets of component 1-3 or 4-6"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.system",
+          "definition": {
+            "short": "Identity of the terminology system",
+            "formal": "The identification of the code system that defines the meaning of the symbol in the code.",
+            "comments": "The identity is a uri. It may be an OID or a UUID, which SHALL be references to the HL7 OID registry, or a URI which either comes from HL7's list of FHIR defined special URIs or from some system defined elsewhere, in which case the URI should de-reference to establish the system unambiguously.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "uri"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./codeSystem"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.3"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.version",
+          "definition": {
+            "short": "Version of the system - if relevant",
+            "formal": "The version of the code system which was used when choosing this code. Note that a well-maintained code system does not need the version reported, because the meaning of codes is consistent across versions. However this cannot consistently be assured. and when it is not, the version SHOULD be exchanged.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./codeSystemVersion"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.7"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.code",
+          "definition": {
+            "short": "Symbol in syntax defined by the system",
+            "formal": "A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "code"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./code"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.1"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.display",
+          "definition": {
+            "short": "Representation defined by the system",
+            "formal": "A representation of the meaning of the code in the system, following the rules laid out by the system.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CV.displayName"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.2 - but note this is not well followed"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.primary",
+          "definition": {
+            "short": "If this code was chosen directly by the user",
+            "formal": "Indicates that this code was chosen by a user directly - i.e. off a pick list of available codes.",
+            "comments": "Amongst a set of alternatives, a directly chosen coding is the most appropriate starting point for new translations.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "boolean"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CD.codingRationale"
+              },
+              {
+                "identity": "v2",
+                "map": "Sometimes implied by being first"
+              }
+            ]
+          }
+        },
+        {
+          "path": "Coding.valueSet",
+          "definition": {
+            "short": "Set this coding was chosen from",
+            "formal": "The set of possible coded values this coding was chosen from or constrained by.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "Resource(ValueSet)"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CD.valueSet / CD.valueSetVersion"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.16 - .19"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

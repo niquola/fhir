@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="Conformance" type="Conformance">
     <xs:annotation>
@@ -114,6 +114,11 @@
               <xs:documentation>The formats supported by this implementation.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="profile" minOccurs="0" maxOccurs="unbounded" type="ResourceReference">
+            <xs:annotation>
+              <xs:documentation>A list of profiles supported by the system. Supported by the system means for a server, that the system hosts/produces a set of resources that conform to a particular profile, that it allows clients to search by this profile, and that these will find the appropriate data. For a client, it means that the client will search by this profile, and process the data following the guidance implicit in the profile.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="rest" type="Conformance.Rest" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Defines the restful capabilities of the solution, if any.</xs:documentation>
@@ -138,7 +143,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
@@ -164,7 +169,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="description" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
@@ -185,7 +190,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="mode" minOccurs="1" maxOccurs="1" type="RestfulConformanceMode">
             <xs:annotation>
@@ -207,19 +212,19 @@
               <xs:documentation>Identifies the restful capabilities of the solution for a specific resource type.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="batch" minOccurs="0" maxOccurs="1" type="boolean">
+          <xs:element name="operation" type="Conformance.Operation1" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation>If batches are supported.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="history" minOccurs="0" maxOccurs="1" type="boolean">
-            <xs:annotation>
-              <xs:documentation>If a system wide history list is supported.</xs:documentation>
+              <xs:documentation>Identifies a restful operation supported by the solution.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="query" type="Conformance.Query" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation>Definition of a named query and its parameters and their meaning.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentMailbox" minOccurs="0" maxOccurs="unbounded" type="uri">
+            <xs:annotation>
+              <xs:documentation>A list of profiles that this server implements for accepting documents on mailbox. If the list is empty, then documents are not accepted. The base specification has the profile identifier &quot;http://hl7.org/fhir/documents/mailbox&quot;. Other specifications can declare their own identifier for this use.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -231,8 +236,13 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
+          <xs:element name="cors" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation>Server adds CORS headers when responding to reuqests - this enables javascript applications to yuse the server.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="service" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation>What type of security services are supported/required.</xs:documentation>
@@ -257,7 +267,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="0" maxOccurs="1" type="code">
             <xs:annotation>
@@ -278,7 +288,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
             <xs:annotation>
@@ -300,6 +310,11 @@
               <xs:documentation>A flag for whether the server is able to return past versions as part of the vRead operation.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="updateCreate" minOccurs="0" maxOccurs="1" type="boolean">
+            <xs:annotation>
+              <xs:documentation>If the update operation is used (client) or allowed (server) to a new location where a resource doesn't already exist. This means that the server allows the client to create new identities on the server.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="searchInclude" minOccurs="0" maxOccurs="unbounded" type="string">
             <xs:annotation>
               <xs:documentation>_include values supported by the server.</xs:documentation>
@@ -319,9 +334,9 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="code" minOccurs="1" maxOccurs="1" type="RestfulOperation">
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="RestfulOperationType">
             <xs:annotation>
               <xs:documentation>Identifies which operation is supported.</xs:documentation>
            </xs:annotation>
@@ -340,7 +355,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
@@ -381,12 +396,33 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="Conformance.Operation1">
+    <xs:annotation>
+      <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="RestfulOperationSystem">
+            <xs:annotation>
+              <xs:documentation>Identifies which system operation is supported.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation>Provides guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="Conformance.Query">
     <xs:annotation>
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
@@ -412,7 +448,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="endpoint" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
@@ -443,11 +479,16 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="Coding">
             <xs:annotation>
               <xs:documentation>Identifies the supported messaging event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="MessageSignificanceCategory">
+            <xs:annotation>
+              <xs:documentation>The impact of the content of the message.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="mode" minOccurs="1" maxOccurs="1" type="ConformanceEventMode">
@@ -489,7 +530,7 @@
       <xs:documentation>A conformance statement about how an application or implementation supports FHIR or the set of requirements for a desired implementation.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="mode" minOccurs="1" maxOccurs="1" type="DocumentMode">
             <xs:annotation>
@@ -532,76 +573,6 @@
     <xs:complexContent>
       <xs:extension base="Element">
         <xs:attribute name="value" type="DocumentMode-list" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="RestfulOperation-list">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="read">
-        <xs:annotation>
-          <xs:documentation>Read the current state of the resource.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="vread">
-        <xs:annotation>
-          <xs:documentation>Read the state of a specific version of the resource.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="update">
-        <xs:annotation>
-          <xs:documentation>Update an existing resource by its id (or create it if it is new).</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="delete">
-        <xs:annotation>
-          <xs:documentation>Delete a resource.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="history-instance">
-        <xs:annotation>
-          <xs:documentation>Retrieve the update history for a resource instance.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="validate">
-        <xs:annotation>
-          <xs:documentation>Check that the content would be acceptable as an update.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="history-type">
-        <xs:annotation>
-          <xs:documentation>Get a list of updates to resources of this type.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="create">
-        <xs:annotation>
-          <xs:documentation>Create a new resource with a server assigned id.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="search">
-        <xs:annotation>
-          <xs:documentation>Supports search operations using the parameters described in the profile.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="transaction">
-        <xs:annotation>
-          <xs:documentation>Transaction performed on multiple resources.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="history-system">
-        <xs:annotation>
-          <xs:documentation>Get a list of updates to all resources on the system.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="RestfulOperation">
-    <xs:annotation>
-      <xs:documentation>Operations supported by REST</xs:documentation>
-      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="Element">
-        <xs:attribute name="value" type="RestfulOperation-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -655,6 +626,96 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="MessageSignificanceCategory-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Consequence">
+        <xs:annotation>
+          <xs:documentation>The message represents/requests a change that should not be processed more than once. E.g. Making a booking for an appointment.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Currency">
+        <xs:annotation>
+          <xs:documentation>The message represents a response to query for current information. Retrospective processing is wrong and/or wasteful.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Notification">
+        <xs:annotation>
+          <xs:documentation>The content is not necessarily intended to be current, and it can be reprocessed, though there may be version issues created by processing old notifications.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="MessageSignificanceCategory">
+    <xs:annotation>
+      <xs:documentation>The impact of the content of a message</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="MessageSignificanceCategory-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="RestfulOperationType-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="read">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="vread">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="update">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="delete">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="history-instance">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="validate">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="history-type">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="create">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="search-type">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RestfulOperationType">
+    <xs:annotation>
+      <xs:documentation>Operations supported by REST at the type or instance level</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="RestfulOperationType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="ConformanceStatementStatus-list">
     <xs:restriction base="xs:string">
       <xs:enumeration value="draft">
@@ -685,41 +746,66 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:simpleType name="RestfulOperationSystem-list">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="transaction">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="search-system">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="history-system">
+        <xs:annotation>
+          <xs:documentation></xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RestfulOperationSystem">
+    <xs:annotation>
+      <xs:documentation>Operations supported by REST at the system level</xs:documentation>
+      <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="RestfulOperationSystem-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="SearchParamType-list">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="integer">
+      <xs:enumeration value="number">
         <xs:annotation>
-          <xs:documentation>Search parameter must be a simple whole number.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="string">
-        <xs:annotation>
-          <xs:documentation>Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces and are delineated by double quotes, e.g. &quot;van Zanten&quot;.</xs:documentation>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="text">
-        <xs:annotation>
-          <xs:documentation>Search parameter is on a long string. Used for text filter type search: it functions on searches within a body of text and may contain spaces to separate words. May match even if the separate words are found out of order. Text parameters are delineated by double quotes.</xs:documentation>
+          <xs:documentation>Search parameter SHALL be a number (an whole number, or a decimal).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="date">
         <xs:annotation>
-          <xs:documentation>Search parameter is on a date (and should support :before and :after modifiers). The date format is the standard XML format, though other formats may be supported.</xs:documentation>
+          <xs:documentation>Search parameter is on a date/time. The date format is the standard XML format, though other formats may be supported.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="string">
+        <xs:annotation>
+          <xs:documentation>Search parameter is a simple string, like a name part. Search is case-insensitive and accent-insensitive. May match just the start of a string. String parameters may contain spaces.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="token">
         <xs:annotation>
-          <xs:documentation>Search parameter on a coded element or identifier. May be used to search through the text, displayname, code and code/codesystem (for codes) and label, system and key (for identifier). Its value is either a string or a pair of namespace and value, separated by a &quot;/&quot;, depending on the modifier used.</xs:documentation>
+          <xs:documentation>Search parameter on a coded element or identifier. May be used to search through the text, displayname, code and code/codesystem (for codes) and label, system and key (for identifier). Its value is either a string or a pair of namespace and value, separated by a &quot;|&quot;, depending on the modifier used.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="reference">
         <xs:annotation>
-          <xs:documentation>A pair of resource type and resource id, separated by &quot;/&quot;. Matches when the resource reference resolves to a resource of the given type and id. The resource type may be omitted to search all types if used with the modifier :any.</xs:documentation>
+          <xs:documentation>A reference to another resource.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="composite">
         <xs:annotation>
-          <xs:documentation>A composite search parameter that combines other search parameters together.</xs:documentation>
+          <xs:documentation>A composite search parameter that combines a search on two values together.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>

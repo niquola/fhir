@@ -3,10 +3,9 @@
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">Encounter with patient @example</div>
   </text> 
-  <status value="current"/>
+  <status value="in progress"/>
   <class value="inpatient"/>
   <subject>
-    <type value="Patient"/>
-    <reference value="patient/@example"/>
+    <reference value="Patient/example"/>
   </subject>
 </Encounter>

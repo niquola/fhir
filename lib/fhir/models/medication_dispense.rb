@@ -2,13 +2,17 @@
 # a description of the supply provided and the instructions
 # for administering the medication.
 class Fhir::MedicationDispense < Fhir::Resource
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
   # External identifier
   attribute :identifier, Fhir::Identifier
 
-  # active | paused | completed | nullified
+  # in progress | on hold | completed | entered in error |
+  # stopped
   attribute :status, Fhir::Code
 
   # Patient
@@ -18,15 +22,19 @@ class Fhir::MedicationDispense < Fhir::Resource
   resource_reference :dispenser, [Fhir::Practitioner]
 
   # Medication order that authorises the dispense
-  resource_references :authorizing_prescriptions, [Fhir::MedicationPrescription]
+  resource_references :authorizing_prescription, [Fhir::MedicationPrescription]
 
   # Indicates the details of the dispense event such as the
   # days supply and quantity of medication dispensed.
   class Dispense < Fhir::ValueObject
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # External identifier
     attribute :identifier, Fhir::Identifier
 
-    # Active/Completed/Aborted
+    # in progress | on hold | completed | entered in error |
+    # stopped
     attribute :status, Fhir::Code
 
     # Type of dispense
@@ -48,12 +56,15 @@ class Fhir::MedicationDispense < Fhir::Resource
     resource_reference :destination, [Fhir::Location]
 
     # Who collected the medication
-    resource_references :receivers, [Fhir::Practitioner]
+    resource_references :receiver, [Fhir::Practitioner]
 
     # Indicates how the medication is to be used by the patient.
     class Dosage < Fhir::ValueObject
+      # Extensions that cannot be ignored
+      attribute :modifier_extension, Array[Fhir::Extension]
+
       # Additional dosage instructions
-      attribute :additional_instructions, *Fhir::Type[String, Fhir::CodeableConcept]
+      attribute :additional_instructions, Fhir::CodeableConcept
 
       # Medication timing
       attribute :timing, *Fhir::Type[DateTime, Fhir::Period, Fhir::Schedule]
@@ -77,10 +88,10 @@ class Fhir::MedicationDispense < Fhir::Resource
       attribute :max_dose_per_period, Fhir::Ratio
     end
 
-    attribute :dosages, Array[Dosage]
+    attribute :dosage, Array[Dosage]
   end
 
-  attribute :dispenses, Array[Dispense]
+  attribute :dispense, Array[Dispense]
 
   # Indicates whether or not substitution was made as part of
   # the dispense.  In some cases substitution will be expected
@@ -92,14 +103,17 @@ class Fhir::MedicationDispense < Fhir::Resource
       validates_presence_of :type
     end
 
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
     # Type of substitiution
     attribute :type, Fhir::CodeableConcept
 
     # Why was substitution made
-    attribute :reasons, Array[Fhir::CodeableConcept]
+    attribute :reason, Array[Fhir::CodeableConcept]
 
     # Who is responsible for the substitution
-    resource_references :responsible_parties, [Fhir::Practitioner]
+    resource_references :responsible_party, [Fhir::Practitioner]
   end
 
   attribute :substitution, Substitution

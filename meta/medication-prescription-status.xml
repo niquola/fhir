@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>MedicationPrescriptionStatus</h2>
       <p>A code specifying the state of the prescribing event. Describes the lifecycle of the prescription.</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/medication-prescription-status</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/medication-prescription-status</p>
       <table>
         <tr>
           <td>
@@ -20,32 +20,44 @@
           </td>
         </tr>
         <tr>
-          <td>active</td>
+          <td>
+            <a name="active">active</a>
+          </td>
           <td/>
           <td>The prescription is &#39;actionable&#39;, but not all actions that are implied by it have occurred yet.</td>
         </tr>
         <tr>
-          <td>suspended</td>
+          <td>
+            <a name="onhold">on hold</a>
+          </td>
           <td/>
-          <td>Actions implied by the prescription have been temporarily halted, but are expected to continue later.  May also be called &quot;held&quot;.</td>
+          <td>Actions implied by the prescription have been temporarily halted, but are expected to continue later.  May also be called &quot;suspended&quot;.</td>
         </tr>
         <tr>
-          <td>completed</td>
+          <td>
+            <a name="completed">completed</a>
+          </td>
           <td/>
           <td>All actions that are implied by the prescription have occurred (this will rarely be made explicit).</td>
         </tr>
         <tr>
-          <td>entered in error</td>
+          <td>
+            <a name="enteredinerror">entered in error</a>
+          </td>
           <td/>
           <td>The prescription was entered in error and therefore nullified.</td>
         </tr>
         <tr>
-          <td>stopped</td>
+          <td>
+            <a name="stopped">stopped</a>
+          </td>
           <td/>
           <td>Actions implied by the prescription have been permanently halted, before all of them occurred.</td>
         </tr>
         <tr>
-          <td>obsolete</td>
+          <td>
+            <a name="superceded">superceded</a>
+          </td>
           <td/>
           <td>The prescription was replaced by a newer one, which encompasses all the information in the previous one.</td>
         </tr>
@@ -65,7 +77,7 @@
   </telecom>
   <description value="A code specifying the state of the prescribing event. Describes the lifecycle of the prescription."/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.990+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/medication-prescription-status"/>
     <caseSensitive value="true"/>
@@ -74,8 +86,8 @@
       <definition value="The prescription is &#39;actionable&#39;, but not all actions that are implied by it have occurred yet."/>
     </concept>
     <concept>
-      <code value="suspended"/>
-      <definition value="Actions implied by the prescription have been temporarily halted, but are expected to continue later.  May also be called &quot;held&quot;."/>
+      <code value="on hold"/>
+      <definition value="Actions implied by the prescription have been temporarily halted, but are expected to continue later.  May also be called &quot;suspended&quot;."/>
     </concept>
     <concept>
       <code value="completed"/>
@@ -90,7 +102,7 @@
       <definition value="Actions implied by the prescription have been permanently halted, before all of them occurred."/>
     </concept>
     <concept>
-      <code value="obsolete"/>
+      <code value="superceded"/>
       <definition value="The prescription was replaced by a newer one, which encompasses all the information in the previous one."/>
     </concept>
   </define>

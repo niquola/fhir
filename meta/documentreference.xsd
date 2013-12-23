@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="DocumentReference" type="DocumentReference">
     <xs:annotation>
@@ -51,7 +51,7 @@
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
             <xs:annotation>
-              <xs:documentation>Other identifiers associated with the record.</xs:documentation>
+              <xs:documentation>Other identifiers associated with the document, including version independent, source record and workflow related identifiers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="subject" minOccurs="1" maxOccurs="1" type="ResourceReference">
@@ -64,9 +64,9 @@
               <xs:documentation>Specifies the particular kind of document (e.g. Patient Summary, Discharge Summary, Prescription, etc.).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subtype" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="class" minOccurs="0" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation>More detailed information about the document type.</xs:documentation>
+              <xs:documentation>A categorisation for the type of the document. This may be implied by or derived from the code specified in the Document Type.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="author" minOccurs="1" maxOccurs="unbounded" type="ResourceReference">
@@ -77,6 +77,11 @@
           <xs:element name="custodian" minOccurs="0" maxOccurs="1" type="ResourceReference">
             <xs:annotation>
               <xs:documentation>Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="policyManager" minOccurs="0" maxOccurs="1" type="uri">
+            <xs:annotation>
+              <xs:documentation>A reference to a domain or server that manages policies under which the document is accessed and/or made available.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="authenticator" minOccurs="0" maxOccurs="1" type="ResourceReference">
@@ -104,17 +109,17 @@
               <xs:documentation>The status of the underlying document.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="supercedes" minOccurs="0" maxOccurs="1" type="ResourceReference">
+          <xs:element name="relatesTo" type="DocumentReference.RelatesTo" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation>If this document replaces another.</xs:documentation>
+              <xs:documentation>Relationships that this document has with other document references that already exist.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation>Human Readable description of the source document. This is sometimes known as the &quot;title&quot;.</xs:documentation>
+              <xs:documentation>Human-readable description of the source document. This is sometimes known as the &quot;title&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="confidentiality" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="confidentiality" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation>A code specifying the level of confidentiality of the XDS Document.</xs:documentation>
            </xs:annotation>
@@ -129,9 +134,9 @@
               <xs:documentation>The mime type of the source document.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="format" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+          <xs:element name="format" minOccurs="0" maxOccurs="unbounded" type="uri">
             <xs:annotation>
-              <xs:documentation>The format of the document. This is used when the mimeType of the document does not provide enough differentiating information (typically, when the mime type of the document is text/xml).</xs:documentation>
+              <xs:documentation>An identifier that identifies that the format and content of the document conforms to additional rules beyond the base format indicated in the mimeType.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="size" minOccurs="0" maxOccurs="1" type="integer">
@@ -163,12 +168,33 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="DocumentReference.RelatesTo">
+    <xs:annotation>
+      <xs:documentation>A reference to a document.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="DocumentRelationshipType">
+            <xs:annotation>
+              <xs:documentation>The type of relationship that this document has with anther document.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="target" minOccurs="1" maxOccurs="1" type="ResourceReference">
+            <xs:annotation>
+              <xs:documentation>The target document of this relationship.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="DocumentReference.Service">
     <xs:annotation>
       <xs:documentation>A reference to a document.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -194,7 +220,7 @@
       <xs:documentation>A reference to a document.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
             <xs:annotation>
@@ -215,16 +241,16 @@
       <xs:documentation>A reference to a document.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+          <xs:element name="event" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
-              <xs:documentation>The type of clinical context, such as a kind of surgery, or a kind of speciality, or a clinical type.</xs:documentation>
+              <xs:documentation>This list of codes represents the main clinical acts, such as a colonoscopy or an appendectomy, being documented. In some cases, the event is inherent in the typeCode, such as a &quot;History and Physical Report&quot; in which the procedure being documented is necessarily a &quot;History and Physical&quot; act.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="period" minOccurs="0" maxOccurs="1" type="Period">
             <xs:annotation>
-              <xs:documentation>The time period of the patient's care that is described by the document.</xs:documentation>
+              <xs:documentation>The time period over which the service that is described by the document was provided.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="facilityType" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -236,33 +262,38 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="DocumentReferenceStatus-list">
+  <xs:simpleType name="DocumentRelationshipType-list">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="current">
+      <xs:enumeration value="replaces">
         <xs:annotation>
-          <xs:documentation>This is the current reference for this document.</xs:documentation>
+          <xs:documentation>This document logically replaces or supercedes the target document.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="superseded">
+      <xs:enumeration value="transforms">
         <xs:annotation>
-          <xs:documentation>This reference has been superseded by another reference.</xs:documentation>
+          <xs:documentation>This document was generated by transforming the target document (e.g. format or language conversion).</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="error">
+      <xs:enumeration value="signs">
         <xs:annotation>
-          <xs:documentation>This reference was created in error.</xs:documentation>
+          <xs:documentation>This document is a signature of the target document.</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="appends">
+        <xs:annotation>
+          <xs:documentation>This document adds additional information to the target document.</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="DocumentReferenceStatus">
+  <xs:complexType name="DocumentRelationshipType">
     <xs:annotation>
-      <xs:documentation>The status of the document reference</xs:documentation>
+      <xs:documentation>The type of relationship between documents</xs:documentation>
       <xs:documentation>If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="DocumentReferenceStatus-list" use="optional"/>
+        <xs:attribute name="value" type="DocumentRelationshipType-list" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

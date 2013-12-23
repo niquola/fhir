@@ -4,12 +4,11 @@
     <div xmlns="http://www.w3.org/1999/xhtml">Biopsy of suspected melanoma L) arm</div>
   </text>
   <subject>
-    <type value="Patient"/>
-    <reference value="patient/@example"/>
+    <reference value="Patient/example"/>
   </subject>
   <type>
     <coding>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <code value="90105005"/>
       <display value="Biopsy of soft tissue of forearm (Procedure)"/>
     </coding>
@@ -17,17 +16,18 @@
   </type>
   <bodySite>
     <coding>
-      <system value="http://snomed.info/id"/>
+      <system value="http://snomed.info/sct"/>
       <code value="368225008"/>
       <display value="Entire Left Forearm"/>
     </coding>
     <text value="Left forearm"/>
   </bodySite>
-  <indication value="Dark lesion l) forearm. getting darker last 3 months."/>
+  <indication>
+    <text value="Dark lesion l) forearm. getting darker last 3 months."/>
+  </indication>
   <performer>
     <person>
-      <type value="Practitioner"/>
-      <reference value="practitioner/@example"/>
+      <reference value="Practitioner/example"/>
       <display value="Dr Bert Biopser"/>
     </person>
   </performer>

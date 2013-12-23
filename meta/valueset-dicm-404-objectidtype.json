@@ -1,1 +1,27 @@
-{"ValueSet":{"text":{"status":{"value":"generated"},"div":"<div><h2>Type of participant in a Security Event<\/h2><p>Type of participant in a Security Event<\/p><p><b>Copyright Statement:<\/b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association<\/p><p>This value set includes codes defined in other code systems, using the following rules:<\/p><ul><li>Include these codes as defined in <a href=\"valueset-dicom-dcim.htm\">http://nema.org/dicom/dcid<\/a><table><tr><td><b>Code<\/b><\/td><td><b>Display<\/b><\/td><td><b>Definition<\/b><\/td><\/tr><tr><td>110180<\/td><td>Study Instance UID<\/td><td>ParticipantObjectID type: Study Instance UID<\/td><\/tr><tr><td>110181<\/td><td>SOP Class UID<\/td><td>ParticipantObjectID type: SOP Class UID<\/td><\/tr><tr><td>110182<\/td><td>Node ID<\/td><td>ID of a node that is a participant object of an audit message<\/td><\/tr><\/table><\/li><\/ul><\/div>"},"identifier":{"value":"http://hl7.org/fhir/vs/dicm-404-objectidtype"},"version":{"value":"20100826"},"name":{"value":"Type of participant in a Security Event"},"publisher":{"value":"NEMA/DICOM"},"description":{"value":"Type of participant in a Security Event"},"copyright":{"value":"These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association"},"status":{"value":"active"},"date":{"value":"2010-08-26"},"compose":{"include":[{"system":{"value":"http://nema.org/dicom/dcid"},"code":[{"value":"110180"},{"value":"110181"},{"value":"110182"}]}]}}}
+{
+  "resourceType": "ValueSet",
+  "text": {
+    "status": "generated",
+    "div": "<div><h2>Type of participant in a Security Event</h2><p>Type of participant in a Security Event</p><p><b>Copyright Statement:</b> These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association</p><p>This value set includes codes defined in other code systems, using the following rules:</p><ul><li>Include these codes as defined in <a href=\"valueset-dicom-dcim.html\">http://nema.org/dicom/dcid</a><table><tr><td><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>110180</td><td>Study Instance UID</td><td>ParticipantObjectID type: Study Instance UID</td></tr><tr><td>110181</td><td>SOP Class UID</td><td>ParticipantObjectID type: SOP Class UID</td></tr><tr><td>110182</td><td>Node ID</td><td>ID of a node that is a participant object of an audit message</td></tr></table></li></ul></div>"
+  },
+  "identifier": "http://hl7.org/fhir/vs/dicm-404-objectidtype",
+  "version": "20100826",
+  "name": "Type of participant in a Security Event",
+  "publisher": "NEMA/DICOM",
+  "description": "Type of participant in a Security Event",
+  "copyright": "These codes are excerpted from Digital Imaging and Communications in Medicine (DICOM) Standard, Part 16: Content Mapping Resource, Copyright 2011 by the National Electrical Manufacturers Association",
+  "status": "active",
+  "date": "2010-08-26",
+  "compose": {
+    "include": [
+      {
+        "system": "http://nema.org/dicom/dcid",
+        "code": [
+          "110180",
+          "110181",
+          "110182"
+        ]
+      }
+    ]
+  }
+}

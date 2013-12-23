@@ -1,1 +1,118 @@
-{"Profile":{"text":{"status":{"value":"generated"},"div":"<div><div>Type definition for CodeableConcept from <a href=\"http://hl7.org/fhir/datatypes.htm#CodeableConcept\">FHIR Specification<\/a><\/div><\/div>"},"name":{"value":"Basic Profile for CodeableConcept"},"publisher":{"value":"FHIR Specification"},"description":{"value":"Basic Profile for CodeableConcept for validation support"},"status":{"value":"draft"},"date":{"value":"2013-08-13"},"structure":[{"type":{"value":"CodeableConcept"},"element":[{"path":{"value":"CodeableConcept"},"definition":{"short":{"value":"Concept - reference to a terminology or just  text"},"formal":{"value":"A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text."},"comments":{"value":"Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination."},"min":{"value":1},"max":{"value":"1"},"type":[{"code":{"value":"Type"}}],"condition":[],"constraint":[{"key":{"value":"2"},"name":{"value":"Primary Reference must resolve"},"severity":{"value":"error"},"human":{"value":"If a primary reference is present, it must point to one of the codings"},"xpath":{"value":"not(exists(f:primary)) or count(f:coding[@id=current()/f:primary/@value])=1"}}],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"CD"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"CE/CNE/CWE"}}]}},{"path":{"value":"CodeableConcept.coding"},"definition":{"short":{"value":"Code defined by a terminology system"},"formal":{"value":"A reference to a code defined by a terminology system."},"comments":{"value":"Codes may defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED-CT - see the v3 core principles for more information.  Ordering of codings is undefined and must not be used to infer meaning."},"min":{"value":0},"max":{"value":"*"},"type":[{"code":{"value":"Coding"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"union(., ./translation)"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"C*E.1-8, C*E.10-22"}}]}},{"path":{"value":"CodeableConcept.text"},"definition":{"short":{"value":"Plain text representation of the concept"},"formal":{"value":"A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user or concept."},"comments":{"value":"Very often the text is the same as a displayName of one of the codings."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"string"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"./originalText[mediaType/code=\"text/plain\"]/data"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"C*E.9. But note many systems use C*E.2 for this"}}]}},{"path":{"value":"CodeableConcept.primary"},"definition":{"short":{"value":"Which code was chosen directly by the user"},"formal":{"value":"Indicates which of the codes in the codings was chosen by a user, if one was chosen directly."},"min":{"value":0},"max":{"value":"1"},"type":[{"code":{"value":"idref"}}],"condition":[],"isModifier":{"value":false},"mapping":[{"target":{"value":"http://hl7.org/v3"},"map":{"value":"special(\"The id assigned to the coding that corresponds to the root code of the CD\")"}},{"target":{"value":"http://hl7.org/v2"},"map":{"value":"Sometimes implied by C*E.1"}}]}}]}]}}
+{
+  "resourceType": "Profile",
+  "text": {
+    "status": "generated",
+    "div": "<div><div>Type definition for CodeableConcept from <a href=\"http://hl7.org/fhir/datatypes.html#CodeableConcept\">FHIR Specification</a></div></div>"
+  },
+  "name": "Basic Profile for CodeableConcept",
+  "publisher": "FHIR Specification",
+  "description": "Basic Profile for CodeableConcept for validation support",
+  "status": "draft",
+  "date": "2013-12-18",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2"
+    }
+  ],
+  "structure": [
+    {
+      "type": "CodeableConcept",
+      "element": [
+        {
+          "path": "CodeableConcept",
+          "definition": {
+            "short": "Concept - reference to a terminology or just  text",
+            "formal": "A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.",
+            "comments": "Not all terminology uses fit this general pattern. In some cases, models should not use CodeableConcept and use Coding directly and provide their own structure for managing text, codings, translations and the relationship between elements and pre- and post-coordination.",
+            "min": "1",
+            "max": "1",
+            "type": [
+              {
+                "code": "Type"
+              }
+            ],
+            "constraint": [
+              {
+                "key": "2",
+                "name": "Coding.primary rule",
+                "severity": "error",
+                "human": "Only one coding in a set can be chosen directly by the user",
+                "xpath": "count(f:coding[f:primary/@value='true'])<1"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "CD"
+              },
+              {
+                "identity": "v2",
+                "map": "CE/CNE/CWE"
+              }
+            ]
+          }
+        },
+        {
+          "path": "CodeableConcept.coding",
+          "definition": {
+            "short": "Code defined by a terminology system",
+            "formal": "A reference to a code defined by a terminology system.",
+            "comments": "Codes may defined very casually in enumerations, or code lists, up to very formal definitions such as SNOMED CT - see the v3 core principles for more information.  Ordering of codings is undefined and SHALL not be used to infer meaning.",
+            "min": "0",
+            "max": "*",
+            "type": [
+              {
+                "code": "Coding"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "union(., ./translation)"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.1-8, C*E.10-22"
+              }
+            ]
+          }
+        },
+        {
+          "path": "CodeableConcept.text",
+          "definition": {
+            "short": "Plain text representation of the concept",
+            "formal": "A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user or concept.",
+            "comments": "Very often the text is the same as a displayName of one of the codings.",
+            "min": "0",
+            "max": "1",
+            "type": [
+              {
+                "code": "string"
+              }
+            ],
+            "isModifier": false,
+            "mapping": [
+              {
+                "identity": "rim",
+                "map": "./originalText[mediaType/code=\"text/plain\"]/data"
+              },
+              {
+                "identity": "v2",
+                "map": "C*E.9. But note many systems use C*E.2 for this"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>IssueType</h2>
       <p>A coded expression of the type of issue</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/issue-type</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/issue-type</p>
       <table>
         <tr>
           <td>
@@ -20,132 +20,184 @@
           </td>
         </tr>
         <tr>
-          <td>invalid</td>
+          <td>
+            <a name="invalid">invalid</a>
+          </td>
           <td/>
           <td>Content invalid against Specification or Profile.</td>
         </tr>
         <tr>
-          <td>..structure</td>
+          <td>..
+            <a name="structure">structure</a>
+          </td>
           <td/>
           <td>content structural issue.</td>
         </tr>
         <tr>
-          <td>..required</td>
+          <td>..
+            <a name="required">required</a>
+          </td>
           <td/>
           <td>required element missing.</td>
         </tr>
         <tr>
-          <td>..value</td>
+          <td>..
+            <a name="value">value</a>
+          </td>
           <td/>
           <td>element value invalid.</td>
         </tr>
         <tr>
-          <td>..invariant</td>
+          <td>..
+            <a name="invariant">invariant</a>
+          </td>
           <td/>
           <td>schematron rule.</td>
         </tr>
         <tr>
-          <td>security</td>
+          <td>
+            <a name="security">security</a>
+          </td>
           <td/>
           <td>authorization/permissions issue.</td>
         </tr>
         <tr>
-          <td>..login</td>
+          <td>..
+            <a name="login">login</a>
+          </td>
           <td/>
           <td>the client needs to initiate the authentication process ().</td>
         </tr>
         <tr>
-          <td>..unknown</td>
+          <td>..
+            <a name="unknown">unknown</a>
+          </td>
           <td/>
           <td>user/system not able to be authenticated.</td>
         </tr>
         <tr>
-          <td>..expired</td>
+          <td>..
+            <a name="expired">expired</a>
+          </td>
           <td/>
           <td>user session expired.</td>
         </tr>
         <tr>
-          <td>..forbidden</td>
+          <td>..
+            <a name="forbidden">forbidden</a>
+          </td>
           <td/>
           <td>user rights failure.</td>
         </tr>
         <tr>
-          <td>processing</td>
+          <td>
+            <a name="processing">processing</a>
+          </td>
           <td/>
           <td>processing issues.</td>
         </tr>
         <tr>
-          <td>..not-supported</td>
+          <td>..
+            <a name="not-supported">not-supported</a>
+          </td>
           <td/>
           <td>resource not supported.</td>
         </tr>
         <tr>
-          <td>..duplicate</td>
+          <td>..
+            <a name="duplicate">duplicate</a>
+          </td>
           <td/>
           <td>duplicate resource.</td>
         </tr>
         <tr>
-          <td>..not-found</td>
+          <td>..
+            <a name="not-found">not-found</a>
+          </td>
           <td/>
           <td>reference not found.</td>
         </tr>
         <tr>
-          <td>..too-long</td>
+          <td>..
+            <a name="too-long">too-long</a>
+          </td>
           <td/>
           <td>existing content too long.</td>
         </tr>
         <tr>
-          <td>..code-unknown</td>
+          <td>..
+            <a name="code-unknown">code-unknown</a>
+          </td>
           <td/>
           <td>code could not be understood.</td>
         </tr>
         <tr>
-          <td>..extension</td>
+          <td>..
+            <a name="extension">extension</a>
+          </td>
           <td/>
-          <td>extension not recognised.</td>
+          <td>extension not recognized.</td>
         </tr>
         <tr>
-          <td>..too-costly</td>
+          <td>..
+            <a name="too-costly">too-costly</a>
+          </td>
           <td/>
           <td>operation denied to protect server resources.</td>
         </tr>
         <tr>
-          <td>..business-rule</td>
+          <td>..
+            <a name="business-rule">business-rule</a>
+          </td>
           <td/>
           <td>content failed to pass some business rule.</td>
         </tr>
         <tr>
-          <td>..conflict</td>
+          <td>..
+            <a name="conflict">conflict</a>
+          </td>
           <td/>
           <td>content could not be accepted because of an edit conflict (i.e. version aware updates).</td>
         </tr>
         <tr>
-          <td>transient</td>
+          <td>
+            <a name="transient">transient</a>
+          </td>
           <td/>
           <td>transient processing issues.</td>
         </tr>
         <tr>
-          <td>..lock-error</td>
+          <td>..
+            <a name="lock-error">lock-error</a>
+          </td>
           <td/>
           <td>resource/record locking failure.</td>
         </tr>
         <tr>
-          <td>..no-store</td>
+          <td>..
+            <a name="no-store">no-store</a>
+          </td>
           <td/>
           <td>persistent store unavailable.</td>
         </tr>
         <tr>
-          <td>..exception</td>
+          <td>..
+            <a name="exception">exception</a>
+          </td>
           <td/>
           <td>unexpected internal error.</td>
         </tr>
         <tr>
-          <td>..timeout</td>
+          <td>..
+            <a name="timeout">timeout</a>
+          </td>
           <td/>
           <td>internal timeout.</td>
         </tr>
         <tr>
-          <td>..throttled</td>
+          <td>..
+            <a name="throttled">throttled</a>
+          </td>
           <td/>
           <td>The system is not prepared to handle this request due to load management.</td>
         </tr>
@@ -165,7 +217,7 @@
   </telecom>
   <description value="A coded expression of the type of issue"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.975+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/issue-type"/>
     <caseSensitive value="true"/>
@@ -234,7 +286,7 @@
       </concept>
       <concept>
         <code value="extension"/>
-        <definition value="extension not recognised."/>
+        <definition value="extension not recognized."/>
       </concept>
       <concept>
         <code value="too-costly"/>

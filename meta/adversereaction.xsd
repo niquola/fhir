@@ -27,9 +27,9 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Tue, Aug 13, 2013 07:56+1000 for FHIR v0.11 
+  Generated on Wed, Dec 18, 2013 09:55+1100 for FHIR v0.12 
 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.11">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="0.12">
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="AdverseReaction" type="AdverseReaction">
     <xs:annotation>
@@ -44,6 +44,11 @@
     <xs:complexContent>
       <xs:extension base="Resource">
         <xs:sequence>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            <xs:annotation>
+              <xs:documentation>This records identifiers associated with this reaction that are defined by business processed and/ or used to refer to it when a direct URL refernce to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="reactionDate" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
               <xs:documentation>When the reaction occurred.</xs:documentation>
@@ -83,7 +88,7 @@
       <xs:documentation>Specific reactions to a substance.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="code" minOccurs="1" maxOccurs="1" type="CodeableConcept">
             <xs:annotation>
@@ -104,7 +109,7 @@
       <xs:documentation>Specific reactions to a substance.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
-      <xs:extension base="Element">
+      <xs:extension base="BackboneElement">
         <xs:sequence>
           <xs:element name="exposureDate" minOccurs="0" maxOccurs="1" type="dateTime">
             <xs:annotation>
@@ -113,7 +118,7 @@
           </xs:element>
           <xs:element name="exposureType" minOccurs="0" maxOccurs="1" type="ExposureType">
             <xs:annotation>
-              <xs:documentation>Drug Administration, Immunization, Coincidental.</xs:documentation>
+              <xs:documentation>The type of exposure: Drug Administration, Immunization, Coincidental.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="causalityExpectation" minOccurs="0" maxOccurs="1" type="CausalityExpectation">

@@ -3,23 +3,21 @@
  <dateWritten value="2013-04-04"/>
   <status value="active"/> 
  <patient>
-    <type value="Patient"/>
-    <reference value="patient/@f201"/>
+    <reference value="Patient/f201"/>
     <display value="Roel"/>
  </patient>
  <prescriber>
-    <type value="Practitioner"/>
-    <reference value="practitioner/@f201"/>
+    <reference value="Practitioner/f201"/>
  </prescriber>
  <encounter><!-- TODO <encounter> is not expected... -->
-    <type value="Encounter"/>
-    <reference value="encounter/@f201"/>
+    <reference value="Encounter/f201"/>
     <display value="Roel&#39;s encounter on April fourth 2013"/>
  </encounter>
- <reasonForPrescribingString value="problem/@f201"/>
+ <reasonForPrescribing>
+   <text value="Condition/f201"/>
+ </reasonForPrescribing> 
  <medication>
-    <type value="Medication"/>
-    <reference value="medication/@f203"/>
+    <reference value="Medication/f203"/>
     <display value="Paracetamol"/>
  </medication>
  <dosageInstruction>  
@@ -27,7 +25,7 @@
   <!-- No defined schedule (<timing>) -->
   <method>
     <coding>
-       <system value="http://snomed.info/id"/>
+       <system value="http://snomed.info/sct"/>
        <code value="322236009"/>
        <display value="Paracetamol 500mg tablet"/>
     </coding>
@@ -36,13 +34,13 @@
     <numerator>
         <value value="3000"/>
         <units value="milligram"/>
-        <system value="http://snomed.info/id"/>
+        <system value="http://snomed.info/sct"/>
         <code value="258684004"/>
     </numerator>
     <denominator>
         <value value="24"/>
         <units value="hours"/>
-        <system value="http://snomed.info/id"/>
+        <system value="http://snomed.info/sct"/>
         <code value="258702006"/>
     </denominator>
   </maxDosePerPeriod>

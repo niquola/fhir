@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>ContactUse</h2>
       <p>Location, type or status of telecommunications address indicating use</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/contact-use</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/contact-use</p>
       <table>
         <tr>
           <td>
@@ -18,31 +18,94 @@
           <td>
             <b>Definition</b>
           </td>
+          <td>
+            <b>
+              <a href="v3\AddressUse\index.html">v3 Map (AddressUse)</a>
+            </b>
+          </td>
+          <td>
+            <b>
+              <a href="v2\0201\index.html">v2 Map (0201)</a>
+            </b>
+          </td>
         </tr>
         <tr>
-          <td>home</td>
+          <td>
+            <a name="home">home</a>
+          </td>
           <td/>
           <td>A communication contact at a home; attempted contacts for business purposes might intrude privacy and chances are one will contact family or other household members instead of the person one wishes to call. Typically used with urgent cases, or if no other contacts are available.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#H">H</a>
+          </td>
+          <td>
+            <span title="narrower">&gt;</span>
+            <a href="v2\0201\index.html#PRN">PRN</a>
+            <br/>
+            <span title="narrower">&gt;</span>
+            <a href="v2\0201\index.html#ORN">ORN</a>
+            <br/>
+            <span title="narrower">&gt;</span>
+            <a href="v2\0201\index.html#VHN">VHN</a>
+          </td>
         </tr>
         <tr>
-          <td>work</td>
+          <td>
+            <a name="work">work</a>
+          </td>
           <td/>
           <td>An office contact. First choice for business related contacts during business hours.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#WP">WP</a>
+          </td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0201\index.html#WPN">WPN</a>
+          </td>
         </tr>
         <tr>
-          <td>temp</td>
+          <td>
+            <a name="temp">temp</a>
+          </td>
           <td/>
           <td>A temporary contact. The period can provide more detailed information.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#TMP">TMP</a>
+          </td>
+          <td/>
         </tr>
         <tr>
-          <td>old</td>
+          <td>
+            <a name="old">old</a>
+          </td>
           <td/>
           <td>This contact is no longer in use (or was never correct, but retained for records).</td>
+          <td>
+            <span title="narrower">&gt;</span>
+            <a href="v3\AddressUse\index.html#OLD">OLD</a>
+            <br/>
+            <span title="narrower">&gt;</span>
+            <a href="v3\AddressUse\index.html#BAD">BAD</a>
+          </td>
+          <td/>
         </tr>
         <tr>
-          <td>mobile</td>
+          <td>
+            <a name="mobile">mobile</a>
+          </td>
           <td/>
           <td>A telecommunication device that moves and stays with its owner. May have characteristics of all other use codes, suitable for urgent matters, not the first choice for routine business.</td>
+          <td>
+            <span title="equal">=</span>
+            <a href="v3\AddressUse\index.html#MC">MC</a>
+          </td>
+          <td>
+            <span title="equivalent">~</span>
+            <a href="v2\0201\index.html#PRS">PRS</a>
+          </td>
         </tr>
       </table>
     </div>
@@ -60,7 +123,7 @@
   </telecom>
   <description value="Location, type or status of telecommunications address indicating use"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/contact-use"/>
     <caseSensitive value="true"/>

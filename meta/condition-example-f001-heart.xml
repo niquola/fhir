@@ -1,29 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><Condition xmlns="http://hl7.org/fhir">
     <subject>
-        <type value="Patient"/>
-        <reference value="patient/@f001"/>
+        <reference value="Patient/f001"/>
         <display value="P. van de Heuvel"/>
     </subject>
     <encounter>
-        <type value="Encounter"/>
-        <reference value="encounter/@f001"/>
+        <reference value="Encounter/f001"/>
     </encounter>
     <asserter>
-        <type value="Patient"/>
-        <reference value="patient/@f001"/>
+        <reference value="Patient/f001"/>
         <display value="P. van de Heuvel"/>
     </asserter>
     <dateAsserted value="2011-10-05"/>
     <code>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="368009"/>
             <display value="Heart valve disorder"/>
         </coding>
     </code>
     <category>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="439401001"/>
             <display value="diagnosis"/>
         </coding>
@@ -31,7 +28,7 @@
     <status value="confirmed"/>
     <severity>
         <coding>
-            <system value="http://snomed.info/id"/>
+            <system value="http://snomed.info/sct"/>
             <code value="6736007"/>
             <display value="Moderate"/>
         </coding>
@@ -40,7 +37,7 @@
     <evidence>
         <code>
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="426396005"/>
                 <display value="Cardiac chest pain"/>
             </coding>
@@ -49,7 +46,7 @@
     <location>
         <code>
             <coding>
-                <system value="http://snomed.info/id"/>
+                <system value="http://snomed.info/sct"/>
                 <code value="40768004"/>
                 <display value="Left thorax"/>
             </coding>

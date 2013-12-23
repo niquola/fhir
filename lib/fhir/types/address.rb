@@ -2,14 +2,14 @@
 # around the world. This format defines a superset that is the
 # basis for addresses all around the world.
 class Fhir::Address < Fhir::DataType
-  # The use of this address
+  # home | work | temp | old - purpose of this address
   attribute :use, Fhir::Code
 
   # Text representation of the address
   attribute :text, String
 
-  # Line of an address
-  attribute :lines, Array[String]
+  # Street name, number, direction & P.O. Box etc
+  attribute :line, Array[String]
 
   # Name of city, town etc.
   attribute :city, String
@@ -17,7 +17,7 @@ class Fhir::Address < Fhir::DataType
   # Sub-unit of country (abreviations ok)
   attribute :state, String
 
-  # Post code for area
+  # Postal code for area
   attribute :zip, String
 
   # Country (can be ISO 3166 3 letter code)
@@ -27,3 +27,4 @@ class Fhir::Address < Fhir::DataType
   attribute :period, Fhir::Period
 end
 
+Fhir.load_extension('address')

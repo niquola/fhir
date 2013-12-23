@@ -7,14 +7,17 @@ class Fhir::Observation < Fhir::Resource
     validates_presence_of :reliability
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
-  # Kind of observation
+  # Type of observation (code / type)
   attribute :name, Fhir::CodeableConcept
 
   # Actual result
-  attribute :value, *Fhir::Type[Fhir::Quantity, Fhir::CodeableConcept, Fhir::Attachment, Fhir::Ratio, Fhir::Choice, Fhir::Period, Fhir::SampledData, String]
+  attribute :value, *Fhir::Type[Fhir::Quantity, Fhir::CodeableConcept, Fhir::Attachment, Fhir::Ratio, Fhir::Period, Fhir::SampledData, String]
 
   # High, low, normal, etc.
   attribute :interpretation, Fhir::CodeableConcept
@@ -28,10 +31,11 @@ class Fhir::Observation < Fhir::Resource
   # Date/Time this was made available
   attribute :issued, DateTime
 
-  # Registered|Interim|Final|Amended|Cancelled|Withdrawn
+  # registered | preliminary | final | amended +
   attribute :status, Fhir::Code
 
-  # If quality issues exist (mostly devices)
+  # ok | ongoing | early | questionable | calibrating | error
+  # +
   attribute :reliability, Fhir::Code
 
   # Observed body part
@@ -40,46 +44,38 @@ class Fhir::Observation < Fhir::Resource
   # How it was done
   attribute :method_name, Fhir::CodeableConcept
 
-  # Observation id
+  # Unique Id for this particular observation
   attribute :identifier, Fhir::Identifier
 
   # Who/what this is about
-  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device]
+  resource_reference :subject, [Fhir::Patient, Fhir::Group, Fhir::Device, Fhir::Location]
+
+  # Specimen used for this observation
+  resource_reference :specimen, [Fhir::Specimen]
 
   # Who did the observation
-  resource_reference :performer, [Fhir::Practitioner, Fhir::Device, Fhir::Organization]
+  resource_references :performer, [Fhir::Practitioner, Fhir::Device, Fhir::Organization]
 
   # Guidance on how to interpret the value by comparison to a
   # normal or recommended range.
   class ReferenceRange < Fhir::ValueObject
-    invariants do
-      validates_presence_of :range
-    end
+    # Extensions that cannot be ignored
+    attribute :modifier_extension, Array[Fhir::Extension]
+
+    # Low Range, if relevant
+    attribute :low, Fhir::Quantity
+
+    # High Range, if relevant
+    attribute :high, Fhir::Quantity
 
     # The meaning of this range
     attribute :meaning, Fhir::CodeableConcept
 
-    # Reference
-    attribute :range, *Fhir::Type[Fhir::Quantity, Fhir::Range, String]
+    # Applicable age range, if relevant
+    attribute :age, Fhir::Period
   end
 
-  attribute :reference_ranges, Array[ReferenceRange]
-
-  # Component observation.
-  class Component < Fhir::ValueObject
-    invariants do
-      validates_presence_of :name
-      validates_presence_of :value
-    end
-
-    # Kind of component observation
-    attribute :name, Fhir::CodeableConcept
-
-    # Actual component result
-    attribute :value, *Fhir::Type[Fhir::Quantity, Fhir::CodeableConcept, Fhir::Attachment, Fhir::Ratio, Fhir::Choice, Fhir::Period, Fhir::SampledData, String]
-  end
-
-  attribute :components, Array[Component]
+  attribute :reference_range, Array[ReferenceRange]
 end
 
 

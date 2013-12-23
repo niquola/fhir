@@ -7,26 +7,26 @@ class Fhir::Media < Fhir::Resource
     validates_presence_of :content
   end
 
+  # Extensions that cannot be ignored
+  attribute :modifier_extension, Array[Fhir::Extension]
+
   # Text summary of the resource, for human interpretation
   attribute :text, Fhir::Narrative
 
-  # photo | audio | video
+  # photo | video | audio
   attribute :type, Fhir::Code
 
   # The type of acquisition equipment/process
   attribute :subtype, Fhir::CodeableConcept
 
   # Identifier(s) for the image
-  attribute :identifiers, Array[Fhir::Identifier]
+  attribute :identifier, Array[Fhir::Identifier]
 
-  # When the media was taken/recorded
+  # When the media was taken/recorded (end)
   attribute :date_time, DateTime
 
   # Who/What this Media is a record of
   resource_reference :subject, [Fhir::Patient, Fhir::Practitioner, Fhir::Group, Fhir::Device, Fhir::Specimen]
-
-  # Who asked that this image be collected
-  resource_reference :requester, [Fhir::Practitioner]
 
   # The person who generated the image
   resource_reference :operator, [Fhir::Practitioner]

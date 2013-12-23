@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>PractitionerSpecialty</h2>
       <p>This example value set defines a set of codes that can be used to indicate the specialty of a Practitioner</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/practitioner-specialty</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/practitioner-specialty</p>
       <table>
         <tr>
           <td>
@@ -20,27 +20,37 @@
           </td>
         </tr>
         <tr>
-          <td>cardio</td>
+          <td>
+            <a name="cardio">cardio</a>
+          </td>
           <td>Cardiologist</td>
           <td/>
         </tr>
         <tr>
-          <td>dent</td>
+          <td>
+            <a name="dent">dent</a>
+          </td>
           <td>Dentist</td>
           <td/>
         </tr>
         <tr>
-          <td>dietary</td>
+          <td>
+            <a name="dietary">dietary</a>
+          </td>
           <td>Dietary consultant</td>
           <td/>
         </tr>
         <tr>
-          <td>midw</td>
+          <td>
+            <a name="midw">midw</a>
+          </td>
           <td>Midwife</td>
           <td/>
         </tr>
         <tr>
-          <td>sysarch</td>
+          <td>
+            <a name="sysarch">sysarch</a>
+          </td>
           <td>Systems architect</td>
           <td/>
         </tr>

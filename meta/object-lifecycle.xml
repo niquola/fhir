@@ -6,7 +6,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h2>SecurityEventObjectLifecycle</h2>
       <p>Identifier for the data life-cycle stage for the participant object</p>
-      <p>This value set defines it&#39;s own terms in the system http://hl7.org/fhir/object-lifecycle</p>
+      <p>This value set defines its own terms in the system http://hl7.org/fhir/object-lifecycle</p>
       <table>
         <tr>
           <td>
@@ -20,77 +20,107 @@
           </td>
         </tr>
         <tr>
-          <td>1</td>
+          <td>
+            <a name="1">1</a>
+          </td>
           <td/>
           <td>Origination / Creation.</td>
         </tr>
         <tr>
-          <td>2</td>
+          <td>
+            <a name="2">2</a>
+          </td>
           <td/>
           <td>Import / Copy from original.</td>
         </tr>
         <tr>
-          <td>3</td>
+          <td>
+            <a name="3">3</a>
+          </td>
           <td/>
           <td>Amendment.</td>
         </tr>
         <tr>
-          <td>4</td>
+          <td>
+            <a name="4">4</a>
+          </td>
           <td/>
           <td>Verification.</td>
         </tr>
         <tr>
-          <td>5</td>
+          <td>
+            <a name="5">5</a>
+          </td>
           <td/>
           <td>Translation.</td>
         </tr>
         <tr>
-          <td>6</td>
+          <td>
+            <a name="6">6</a>
+          </td>
           <td/>
           <td>Access / Use.</td>
         </tr>
         <tr>
-          <td>7</td>
+          <td>
+            <a name="7">7</a>
+          </td>
           <td/>
           <td>De-identification.</td>
         </tr>
         <tr>
-          <td>8</td>
+          <td>
+            <a name="8">8</a>
+          </td>
           <td/>
           <td>Aggregation, summarization, derivation.</td>
         </tr>
         <tr>
-          <td>9</td>
+          <td>
+            <a name="9">9</a>
+          </td>
           <td/>
           <td>Report.</td>
         </tr>
         <tr>
-          <td>10</td>
+          <td>
+            <a name="10">10</a>
+          </td>
           <td/>
           <td>Export / Copy to target.</td>
         </tr>
         <tr>
-          <td>11</td>
+          <td>
+            <a name="11">11</a>
+          </td>
           <td/>
           <td>Disclosure.</td>
         </tr>
         <tr>
-          <td>12</td>
+          <td>
+            <a name="12">12</a>
+          </td>
           <td/>
           <td>Receipt of disclosure.</td>
         </tr>
         <tr>
-          <td>13</td>
+          <td>
+            <a name="13">13</a>
+          </td>
           <td/>
           <td>Archiving.</td>
         </tr>
         <tr>
-          <td>14</td>
+          <td>
+            <a name="14">14</a>
+          </td>
           <td/>
           <td>Logical deletion.</td>
         </tr>
         <tr>
-          <td>15</td>
+          <td>
+            <a name="15">15</a>
+          </td>
           <td/>
           <td>Permanent erasure / Physical destruction.</td>
         </tr>
@@ -110,7 +140,7 @@
   </telecom>
   <description value="Identifier for the data life-cycle stage for the participant object"/>
   <status value="draft"/>
-  <date value="2023-05-12T00:10:00"/>
+  <date value="2013-12-18T09:56:09.983+11:00"/>
   <define>
     <system value="http://hl7.org/fhir/object-lifecycle"/>
     <caseSensitive value="true"/>
