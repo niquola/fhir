@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'activesupport', '~>3.2.0'
-gem 'activemodel'
+gem 'activemodel', '3.2.16'
 gem 'i18n'
 gem 'nokogiri'
 gem 'rspec'
